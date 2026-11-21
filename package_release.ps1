@@ -9,7 +9,7 @@
   README-INSTALL.md. The player extracts the zip into the game folder
   (next to the game exe) and runs install.ps1 once.
   Fails loudly (non-zero exit) if any source file is missing.
-  Source of truth for the live deploy flow: deploy.ps1 in this repo.
+  Source of truth for the live deploy flow: deploy.mts (npm run deploy).
 .EXAMPLE
   powershell -ExecutionPolicy Bypass -File .\package_release.ps1
 .EXAMPLE
@@ -42,8 +42,8 @@ $SRC_DAT    = Join-Path $REPO ('runtime\patch_' + $Lang + '.dat')
 $SRC_TTF    = Join-Path $REPO 'fonts\RobotoCondensed-Regular.ttf'
 $SRC_README = Join-Path $REPO 'README-INSTALL.md'
 Need-File $SRC_LOADER 'Rebuild the proxy (build_proxy.py) or restore the repo copy.'
-Need-File $SRC_DLL 'Build the runtime (build.py).'
-Need-File $SRC_DAT ('Compile it first: po2dat.py ' + $Lang + ' (see deploy.ps1). NOTE: runtime/*.dat is gitignored, a fresh clone does not have it.')
+Need-File $SRC_DLL 'Build the runtime (npm run build).'
+Need-File $SRC_DAT ('Compile it first: npm run po2dat -- ' + $Lang + '. NOTE: runtime/*.dat is gitignored, a fresh clone does not have it.')
 Need-File $SRC_TTF 'Restore fonts/RobotoCondensed-Regular.ttf.'
 Need-File $SRC_README 'Restore README-INSTALL.md at the repo root.'
 

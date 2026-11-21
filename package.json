@@ -23,14 +23,17 @@
     "qa:review": "node .opencode/skills/translate-qa/scripts/review_queue.mts",
     "translate:local": "node .opencode/skills/translate-local/scripts/translate_local.mts",
     "test:qa": "node --test .opencode/skills/translate-qa/tests/qa_translate.test.mts .opencode/skills/translate-qa/tests/review_queue.test.mts .opencode/skills/translate-local/tests/translate_local.test.mts",
-    "test": "node --test .opencode/skills/pipeline-common/tests/text_filters.test.mts .opencode/skills/extract-text/tests/po_file.test.mts .opencode/skills/extract-text/tests/po2dat.test.mts .opencode/skills/extract-text/tests/inventory.test.mts .opencode/skills/extract-text/tests/potgen.test.mts .opencode/skills/extract-text/tests/po_update.test.mts .opencode/skills/extract-text/tests/prefill_po.test.mts .opencode/skills/extract-text/tests/find_source.test.mts scripts/languages.test.mts",
+    "test": "node --test .opencode/skills/pipeline-common/tests/text_filters.test.mts .opencode/skills/extract-text/tests/po_file.test.mts .opencode/skills/extract-text/tests/po2dat.test.mts .opencode/skills/extract-text/tests/inventory.test.mts .opencode/skills/extract-text/tests/potgen.test.mts .opencode/skills/extract-text/tests/po_update.test.mts .opencode/skills/extract-text/tests/prefill_po.test.mts .opencode/skills/extract-text/tests/find_source.test.mts scripts/languages.test.mts .opencode/skills/build-translator/tests/build.test.mts .opencode/skills/deploy-translator/tests/deploy.test.mts",
     "test:e2e": "node --test .opencode/skills/extract-text/tests/pipeline.e2e.test.mts",
     "typecheck": "tsc --noEmit",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "verify": "npm run typecheck && npm run lint && npm run format:check && npm run check:langs && npm test && npm run test:qa && npm run test:e2e"
+    "verify": "npm run typecheck && npm run lint && npm run format:check && npm run check:langs && npm test && npm run test:qa && npm run test:e2e",
+    "build": "node .opencode/skills/build-translator/scripts/build.mts",
+    "build:proxy": "node .opencode/skills/build-translator/scripts/build_proxy.mts",
+    "deploy": "node .opencode/skills/deploy-translator/scripts/deploy.mts"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

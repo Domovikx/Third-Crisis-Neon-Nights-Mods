@@ -60,9 +60,14 @@ Steam-обновление, переустановка игры или пере�
 - **`qa_translate.py` (234) → `qa_translate.mts` — ГОТОВО.** Офлайн-QA: покрытие, теги, латиница.
 - **`review_queue.py` (192) → `review_queue.mts` — ГОТОВО.** Очередь ревью (HTML).
 - **`translate_local.py` (487) → `translate_local.mts` — ГОТОВО.** Пакетный перевод локальной LLM (OpenAI-compatible).
-- **`build.py` (76), `build_proxy.py` (94) — READY.** Обёртки над `csc.exe` / `cl.exe`.
-- **`deploy.ps1` — READY.** Деплой в игру → `.mts` + `scripts/game_dir.mts`.
-- **`dump_assets.py` + `dump_sqlite*.py` (1334+) — PYTHON-ОСТРОВ.** UnityPy не имеет
+- **`build.py` (76) → `build.mts`, `build_proxy.py` (94) → `build_proxy.mts` — ГОТОВО.**
+  Проверено на живой установке: DLL 44 032 б (csc Framework64), прокси 13 824 б (MSVC 14.50).
+- **`deploy.ps1` → `deploy.mts` — ГОТОВО.** План/исполнение, атомарная запись, словарь через
+  `po2dat.mts`. Проверено: `.dat` в `Managed/` совпал по sha256 с `npm run po2dat -- ru`;
+  `--lang en` — native-режим.
+- **Легаси Python удалён 2026-11-21** (все портированные `.py`, включая тесты, и `deploy.ps1`).
+  Остались только `dump_assets.py` + его тест и `package_release.ps1`.
+- **`dump_assets.py` (1334+) — PYTHON-ОСТРОВ.** UnityPy не имеет
   TS-эквивалента. Остаётся Python, тесты держим живыми в CI. Порт — отдельная задача,
   только если появится реальная потребность.
 

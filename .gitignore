@@ -31,3 +31,7 @@ __pycache__/
 nul
 Thumbs.db
 .DS_Store
+
+# Прокси (артефакт сборки build:proxy), в корне репозитория не трекается
+dwmapi.dll
+dwmapi_real.dll

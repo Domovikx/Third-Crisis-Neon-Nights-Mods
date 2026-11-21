@@ -1,91 +1,25 @@
 /**
- * install.mts — инсталлятор мода (заготовка): находит игру, проверяет артефакты,
- * строит план раскладки. Копирование появится вместе с портом `deploy.ps1`.
+ * install.mts — инсталлятор мода: тонкая обёртка над деплоем.
  *
- * Контракт уже окончательный: когда `deploy.mts` будет портирован, этот файл
- * станет тонкой обёрткой над ним (одна реализация копирования, не две).
+ * Вся раскладка (что куда копировать, что сгенерировать) живёт в `deploy.mts` —
+ * здесь только выбор языка, поиск игры и человекочитаемый вывод. Двух реализаций
+ * копирования быть не должно (DRY); раньше этот файл строил собственный план.
  *
  * CLI:
- *   node installer/install.mts                    # план (dry-run по умолчанию)
+ *   node installer/install.mts                    # план (dry-run)
  *   node installer/install.mts --lang de          # конкретный язык
  *   node installer/install.mts --game <путь>      # явный путь к игре
- *   node installer/install.mts --apply            # выполнить (пока не реализовано)
+ *   node installer/install.mts --apply            # выполнить установку
  */
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import process from "node:process";
 
 import { REPO_ROOT, SOURCE_LANG, translateLangs } from "../scripts/languages.mts";
-import { GAME_DATA_FOLDER, checkGameDir, findGameDir } from "../scripts/game_dir.mts";
-
-export interface InstallEntry {
-  what: string;
-  from: string;
-  to: string;
-  optional: boolean;
-  exists: boolean;
-}
-
-export interface InstallPlan {
-  game: string;
-  lang: string;
-  entries: InstallEntry[];
-  missing: string[];
-}
-
-/** План раскладки мода в установку игры. */
-export function planInstall(gameDir: string, lang: string, root: string = REPO_ROOT): InstallPlan {
-  const managed = join(gameDir, GAME_DATA_FOLDER, "Managed");
-  const entries: InstallEntry[] = [
-    {
-      what: "рантайм (C# DLL)",
-      from: join(root, "runtime", "NeonTranslatorRuntime.dll"),
-      to: join(managed, "NeonTranslatorRuntime.dll"),
-      optional: false,
-      exists: false,
-    },
-    {
-      what: "шрифт с кириллицей",
-      from: join(root, "fonts", "RobotoCondensed-Regular.ttf"),
-      to: join(managed, "RobotoCondensed-Regular.ttf"),
-      optional: false,
-      exists: false,
-    },
-    {
-      what: "прокси dwmapi.dll",
-      from: join(root, "dwmapi.dll"),
-      to: join(gameDir, "dwmapi.dll"),
-      optional: true,
-      exists: false,
-    },
-  ];
-
-  // Язык-источник (en) — это native-режим: словарь не ставится.
-  if (lang !== SOURCE_LANG) {
-    entries.push({
-      what: `словарь patch_${lang}.dat`,
-      from: join(root, "runtime", `patch_${lang}.dat`),
-      to: join(managed, `patch_${lang}.dat`),
-      optional: false,
-      exists: false,
-    });
-  }
-
-  entries.push({
-    what: "файл активного языка",
-    from: "(генерируется)",
-    to: join(managed, "active_lang.txt"),
-    optional: false,
-    exists: true,
-  });
-
-  for (const e of entries) {
-    if (e.from === "(генерируется)") continue;
-    e.exists = existsSync(e.from);
-  }
-  const missing = entries.filter((e) => !e.optional && !e.exists).map((e) => e.what);
-  return { game: gameDir, lang, entries, missing };
-}
+import { checkGameDir, findGameDir } from "../scripts/game_dir.mts";
+import {
+  type DeployPlan,
+  executeDeploy,
+  planDeploy,
+} from "../.opencode/skills/deploy-translator/scripts/deploy.mts";
 
 const USAGE = `Установка мода Third Crisis: Neon Nights
 
@@ -94,10 +28,15 @@ const USAGE = `Установка мода Third Crisis: Neon Nights
   --lang <code>  язык из config/language-priority.json (по умолчанию ru);
                  "${SOURCE_LANG}" — native-режим без словаря
   --game <путь>  папка игры (иначе автопоиск по Steam-библиотекам)
-  --apply        выполнить копирование (появится вместе с портом deploy.ps1)
+  --apply        выполнить установку (по умолчанию только план)
 `;
 
-function parseArgs(argv: string[]): { lang: string; game?: string; apply: boolean; help: boolean } {
+export function parseInstallArgs(argv: string[]): {
+  lang: string;
+  game?: string;
+  apply: boolean;
+  help: boolean;
+} {
   const out = { lang: "ru", game: undefined as string | undefined, apply: false, help: false };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
@@ -110,8 +49,25 @@ function parseArgs(argv: string[]): { lang: string; game?: string; apply: boolea
   return out;
 }
 
+/** Человекочитаемый вывод плана (тот же план, что исполнит деплой). */
+export function formatPlan(plan: DeployPlan): string {
+  const lines: string[] = [];
+  lines.push(`Игра:  ${plan.game}`);
+  lines.push(`Язык:  ${plan.lang}${plan.native ? " (native, без словаря)" : ""}`);
+  lines.push("");
+  lines.push("План:");
+  for (const op of plan.ops) {
+    const mark = op.from === null ? "~" : op.exists ? "+" : op.optional ? "·" : "!";
+    lines.push(`  ${mark} ${op.what}`);
+    if (op.from) lines.push(`      ${op.from}`);
+    lines.push(`   -> ${op.to}`);
+  }
+  for (const w of plan.warnings) lines.push(`  ! предупреждение: ${w}`);
+  return lines.join("\n");
+}
+
 function main(argv: string[]): number {
-  const args = parseArgs(argv);
+  const args = parseInstallArgs(argv);
   if (args.help) {
     console.log(USAGE);
     return 0;
@@ -131,31 +87,26 @@ function main(argv: string[]): number {
     return 1;
   }
 
-  const plan = planInstall(check.dir, args.lang);
-  console.log(`Игра:  ${plan.game}`);
-  console.log(`Язык:  ${plan.lang}${plan.lang === SOURCE_LANG ? " (native, без словаря)" : ""}`);
-  console.log("\nПлан:");
-  for (const e of plan.entries) {
-    const mark = e.from === "(генерируется)" ? "~" : e.exists ? "+" : e.optional ? "·" : "!";
-    console.log(`  ${mark} ${e.what}`);
-    if (e.from !== "(генерируется)") console.log(`      ${e.from}`);
-    console.log(`   -> ${e.to}`);
-  }
+  const plan = planDeploy(check.dir, args.lang, REPO_ROOT);
+  console.log(formatPlan(plan));
+
   if (plan.missing.length) {
     console.error("\nНе хватает артефактов:");
     for (const m of plan.missing) console.error("  -", m);
-    console.error("Собрать: npm run po2dat -- <lang> и сборку DLL (см. tasks/).");
+    console.error("Собрать: npm run build && npm run po2dat -- <lang>");
     return 1;
   }
   if (!args.apply) {
     console.log("\nDry-run. Для установки: --apply");
     return 0;
   }
-  console.error(
-    "\nКопирование ещё не портировано: появится вместе с deploy.mts " +
-      "(tasks/2026-11-21-port-build-deploy.md). Сейчас используйте deploy.ps1.",
-  );
-  return 1;
+
+  const res = executeDeploy(plan, REPO_ROOT);
+  console.log(`\nУстановлено файлов: ${res.copied.length}`);
+  for (const w of res.copied) console.log("  +", w);
+  if (res.dat) console.log(`  словарь: ${res.dat.rows} строк -> ${res.dat.installed}`);
+  for (const w of res.warnings) console.log("  !", w);
+  return 0;
 }
 
 if (import.meta.filename === process.argv[1]) {

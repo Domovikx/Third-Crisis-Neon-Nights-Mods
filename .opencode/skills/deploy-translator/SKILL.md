@@ -1,84 +1,80 @@
 ---
 name: deploy-translator
-description: Деплой NeonTranslatorRuntime — сборка DLL, прокси, копирование словаря в Managed/
+description: Деплой NeonTranslatorRuntime в игру — сборка словаря из po/<lang>.po, раскладка DLL/шрифтов/patch_<lang>.dat/active_lang.txt в Managed/ и прокси dwmapi.dll в корень игры. Одна TS-точка входа (deploy.mts), путь к игре — scripts/game_dir.mts.
 license: MIT
 compatibility: opencode
 ---
 
-# deploy-translator — Деплой переводчика в игру
+# deploy-translator — деплой переводчика в игру
 
-> **Статус:** после переезда путь к игре — `TCNN_GAME_DIR` (фолбэк — родитель
-> репозитория), `.dat` собирает `po2dat.mts`. Сборка DLL/прокси пока Python
-> (`build.py`/`build_proxy.py`, тоже читают env); полный `.mts`-порт —
-> `tasks/2026-11-21-port-build-deploy.md`.
-
-## Описание
-
-Деплой рантайм-переводчика в игру. Включает:
-
-1. Компиляцию C# → DLL (через `build-translator/scripts/build.py`)
-2. Компиляцию нативного прокси dwmapi.dll (только при первом запуске или изменении C-кода)
-3. Компиляцию `po/<lang>.po` → `runtime/patch_<lang>.dat` + копирование DLL,
-   шрифта, словаря и `active_lang.txt` в `Managed/`
+Ставит в установку игры четыре вещи: рантайм-DLL, шрифт(ы), словарь и
+прокси-лоадер. Источник переводов — POT-хаб (`po/template.pot` + `po/<lang>.po`),
+словарь собирается тем же `po2dat.mts`, что и `npm run po2dat` (второй
+реализации нет).
 
 ## Команды
 
-Все команды — из корня репозитория (`Third-Crisis-Neon-Nights-Mods`). Единственная точка входа — `deploy.ps1`:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\deploy.ps1              # RU
-powershell -ExecutionPolicy Bypass -File .\deploy.ps1 -Lang de     # любой язык из po/
-powershell -ExecutionPolicy Bypass -File .\deploy.ps1 -Lang en     # native English, без словаря
-powershell -ExecutionPolicy Bypass -File .\deploy.ps1 -Rebuild     # + пересборка C# DLL
-powershell -ExecutionPolicy Bypass -File .\deploy.ps1 -Rebuild -Proxy  # + пересборка dwmapi.dll (нужен MSVC)
-```
-
-Что делает `deploy.ps1`:
-
-1. (опционально) `build.py` → `runtime/NeonTranslatorRuntime.dll` (нужен `TCNN_GAME_DIR`)
-2. (опционально) `build_proxy.py` → `dwmapi.dll` в корень игры + ресинк копии в репо
-3. `po2dat.mts <lang>` → `runtime/patch_<lang>.dat` (один JSON-lines словарь)
-4. DLL + шрифт + `patch_<lang>.dat` + `active_lang.txt` → `Managed/`
-5. Удаляет legacy-зеркало `<игра>/translations/` (YAML в игре больше нет)
-6. `dwmapi.dll` → корень игры (рядом с exe — требование DLL-hijack)
-
-### Проверка после деплоя
+Из корня репозитория; путь к игре — `TCNN_GAME_DIR` или автопоиск по
+Steam-библиотекам (`scripts/game_dir.mts`).
 
 ```bash
-ls -la "Third Crisis Neon Nights_Data/Managed/NeonTranslatorRuntime.dll"
-cat "Third Crisis Neon Nights_Data/Managed/NeonTranslator.log"
+node .opencode/skills/deploy-translator/scripts/deploy.mts --lang ru           # деплой RU
+node .opencode/skills/deploy-translator/scripts/deploy.mts --lang ru --dry-run # только план
+node .opencode/skills/deploy-translator/scripts/deploy.mts --lang en           # native English, без словаря
+node .opencode/skills/deploy-translator/scripts/deploy.mts --lang de --rebuild # + пересборка C# DLL
+node .opencode/skills/deploy-translator/scripts/deploy.mts --lang de --proxy   # + пересборка dwmapi.dll (MSVC)
+node .opencode/skills/deploy-translator/scripts/deploy.mts --help
 ```
 
-## Формат
+Флаги: `--lang <code>` (по умолчанию `ru`; список и порядок — из
+`config/language-priority.json`), `--dry-run`, `--rebuild`, `--proxy`.
+`--rebuild`/`--proxy` зовут функции скилла `build-translator` (не подпроцессы).
 
-Источник переводов — POT-хаб (`po/template.pot` + `po/<lang>.po`, ~33k записей).
-Старое `translations/` YAML-дерево удалено (остался тег `archive/pre-neontranslator`).
+## Что делает деплой (и в каком порядке)
+
+1. `--rebuild`: `runtime/NeonTranslatorRuntime.dll` (нужны `csc.exe` и игра).
+2. `--proxy`: `<игра>/dwmapi.dll` + `<игра>/dwmapi_real.dll` + копия прокси в
+   репозиторий (нужен MSVC).
+3. `po/<lang>.po` → `runtime/patch_<lang>.dat` (`buildDat` + `writeDat` из
+   `po2dat.mts`, запись атомарная) → `Managed/patch_<lang>.dat`.
+4. В `Managed/`: `NeonTranslatorRuntime.dll`, `RobotoCondensed-Regular.ttf`,
+   `NotoSansSC.ttf`/`NotoSansJP.ttf` (если есть), `patch_<lang>.dat`,
+   `active_lang.txt` (без перевода строки — рантайм читает как есть).
+5. `dwmapi.dll` из репозитория → корень игры (рядом с exe: требование
+   DLL-hijack). Если копии в репо нет, но прокси в игре уже стоит — не
+   перезаписываем, печатаем предупреждение (`npm run build:proxy`).
+
+`--lang en` — native-режим: словарь не собирается и не кладётся, в
+`active_lang.txt` пишется `en`.
+
+### Чего деплой НЕ делает
+
+Не удаляет файлы из папки игры: `patch_en.dat` прошлого деплоя и legacy
+`translations/` только перечисляются в предупреждениях. Старые словари других
+языков (`patch_de.dat` и т.п.) остаются — рантайм читает ровно один по
+`active_lang.txt`.
+
+## Проверка после деплоя
+
+```bash
+M="<игра>/Third Crisis Neon Nights_Data/Managed"
+cat "$M/active_lang.txt"                       # ожидаемый код языка
+node .opencode/skills/extract-text/scripts/po2dat.mts ru   # независимая сборка
+sha256sum "$M/patch_ru.dat" runtime/patch_ru.dat           # хэши совпадают
+```
+
+`Managed/patch_ru.dat` обязан совпадать с `runtime/patch_ru.dat` байт-в-байт:
+деплой пишет staging тем же `writeDat`, копия — атомарная.
+
+Затем перезапустить игру и смотреть `Managed/NeonTranslator.log`.
 
 ## Файлы
 
-- `deploy.ps1 [-Lang]` — единственная точка деплоя (см. Команды)
-- `runtime/NeonTranslatorRuntime.dll` — скомпилированная DLL (build.py)
-- `runtime/patch_<lang>.dat` — скомпилированный словарь (po2dat.mts, не трекается)
-- `Managed/NeonTranslatorRuntime.dll` — установленная DLL (деплой)
-- `Managed/patch_<lang>.dat` — установленный словарь (деплой)
-- `Managed/active_lang.txt` — выбранный язык (деплой)
-- `translations/` — удалено (POT-хаб; правки только через PO)
-- `po/template.pot` + `po/<lang>.po` — источник переводов (трекается)
-- `Managed/NeonTranslator.log` — лог рантайма
-- `dwmapi.dll` (в репо) — собранный прокси (трекается)
-- `<игра>/dwmapi.dll` — установленный лоадер (деплой, рядом с exe)
-- `<игра>/dwmapi_real.dll` — форвардер (копия системной dwmapi.dll)
-
-## После деплоя
-
-- Перезапустить игру
-- Проверить лог: `NeonTranslator.log`
-- Лог создаётся в `Third Crisis Neon Nights_Data/Managed/`
-
-## Очистка старых NDJSON
-
-Рантайм больше не читает `*.ndjson`. Удали старые файлы из `Managed/`:
-
-```bash
-rm "Third Crisis Neon Nights_Data/Managed/"*.ndjson
-```
+- `scripts/deploy.mts` — вся логика: `planDeploy` (план, только чтение ФС),
+  `executeDeploy` (исполнение), атомарные `writeAtomic`/`copyAtomic`, разбор CLI.
+- `tests/deploy.test.mts` — `node --test` на фейковой установке в `tmp/`.
+- `runtime/patch_<lang>.dat` — staging словаря (в git не попадает).
+- `<игра>/dwmapi.dll` — лоадер; Steam «verify integrity» его удаляет → просто
+  повторить деплой.
+- `deploy.ps1` в корне репо — **легаси**, заменён этим скриптом; удаление —
+  решение владельца.

@@ -1,46 +1,32 @@
 ---
-description: Deploy patch into the game via deploy.ps1 (Lang, Rebuild, Proxy flags)
+description: Деплой мода в игру — сборка DLL/прокси и раскладка в Managed (--lang, --apply)
 agent: build
 ---
 
-Run from the repository root (`Third-Crisis-Neon-Nights-Mods`). Pass through `$ARGUMENTS` verbatim.
+Всё на TypeScript. Игра находится по `TCNN_GAME_DIR` или автопоиску по Steam-библиотекам
+(`scripts/game_dir.mts`), хардкода путей нет.
 
-> **Статус:** `deploy.ps1` починен после переезда — путь к игре берётся из
-> `TCNN_GAME_DIR` (фолбэк — родитель репозитория), словарь собирает `po2dat.mts`.
-> Сборка DLL/прокси пока Python (`build.py`/`build_proxy.py`, тот же env);
-> полный `.mts`-порт — `tasks/2026-11-21-port-build-deploy.md`.
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\deploy.ps1 $ARGUMENTS
+```bash
+npm run build            # NeonTranslatorRuntime.dll (нужен csc.exe от .NET Framework)
+npm run build:proxy      # dwmapi.dll (нужен MSVC Build Tools)
+npm run deploy -- --dry-run --lang ru   # план без записи
+npm run deploy -- --lang ru             # словарь + DLL + шрифты + active_lang.txt
+npm run deploy -- --lang en             # native-режим: словаря нет
 ```
 
-Flags (see `deploy.ps1` header + skill `deploy-translator`):
+Что делает деплой:
 
-- `-Lang <code>` — language code, default `ru`; `de/es/pt/pl` drafted next.
-  Compiles `po/<lang>.po` → `runtime/patch_<lang>.dat` via `po2dat.mts`.
-- `-Rebuild` — rebuild `NeonTranslatorRuntime.dll` via
-  `.opencode/skills/build-translator/scripts/build.py` before deploying.
-- `-Proxy` — also rebuild `dwmapi.dll` via `build_proxy.py` (needs MSVC);
-  resyncs the repo copy. Only meaningful together with `-Rebuild`.
+- собирает `po/<lang>.po` → `patch_<lang>.dat` через `po2dat.mts` (одна реализация, не копия);
+- кладёт в `<игра>/<Game>_Data/Managed/`: DLL рантайма, шрифты (кириллица + CJK),
+  словарь (кроме `en`), `active_lang.txt` с кодом языка;
+- прокси `dwmapi.dll` — в корень игры (если он там нужен и собран).
 
-What deploy does:
+Особенности, проверенные на живой установке:
 
-1. (optional) rebuild DLL (+ proxy)
-2. `po2dat.mts <lang>` → `runtime/patch_<lang>.dat` (JSON-lines, untracked)
-3. DLL + font (`fonts/RobotoCondensed-Regular.ttf`) + `patch_<lang>.dat` +
-   `active_lang.txt` → `<game>/Third Crisis Neon Nights_Data/Managed/`
-4. Removes legacy `<game>/translations/` YAML mirror
-5. `dwmapi.dll` → game root (next to exe; Steam "verify integrity" removes
-   it — just rerun this script)
+- `active_lang.txt` — ровно код языка, **без перевода строки**;
+- `.dat`, установленный деплоем, байт-в-байт равен `npm run po2dat -- <lang>`;
+- `--dry-run` печатает план и ничего не пишет;
+- при неверном `--lang` печатается список доступных языков (источник — приоритет языков).
 
-Examples:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\deploy.ps1
-powershell -ExecutionPolicy Bypass -File .\deploy.ps1 -Lang de
-powershell -ExecutionPolicy Bypass -File .\deploy.ps1 -Rebuild
-powershell -ExecutionPolicy Bypass -File .\deploy.ps1 -Rebuild -Proxy
-```
-
-After deploy: restart the game, check
-`<game>/Third Crisis Neon Nights_Data/Managed/NeonTranslator.log`.
+Инсталлятор для конечного пользователя — `npm run mod:install` (тонкая обёртка над тем же
+`deploy.mts`).

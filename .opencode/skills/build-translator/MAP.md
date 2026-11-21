@@ -1,32 +1,65 @@
 # MAP — build-translator (факты и грабли)
 
-Сборка C#-рантайма и нативного прокси. Python-скрипты — до `.mts`-порта
-(`tasks/2026-11-21-port-build-deploy.md`). Проверено 2026-11-21.
+Сборка C#-рантайма (csc) и нативного прокси (cl). Порт на `.mts` — 2026-11-21;
+проверено на живой установке (Steam, `Program Files (x86)`), Windows 11,
+RTX-машина разработчика.
 
 ## Готчи
 
-- ⚠️ **После переезда репозитория сборка искала игру не там** → `build.py` и
-  `build_proxy.py` брали `GAME_DIR = PATCH_DIR.parent` (верно только для старой
-  раскладки) → проверено чтением (`build.py:6`, `build_proxy.py:8`) и фиксом:
-  `resolve_game_dir()` читает `TCNN_GAME_DIR`; `py_compile` зелёный → собирать
-  только с `TCNN_GAME_DIR="<Steam>/steamapps/common/Third Crisis Neon Nights"`
-  (или старым деревом).
+- ⚠️ **`cl` получал свой же путь как исходник** → симптом: `LNK1107: недопустимый
+или повреждённый файл … cl.exe` + `warning D9024: используется тип исходного
+файла cl.exe`, код 2. Причина: `proxyArgs` кладёт `layout.cl` в `args[0]`
+  (как список Python), а `spawnSync` ещё раз получал его первым аргументом —
+  компилятор видел второй «cl.exe» среди входных файлов → проверено
+  2026-11-21 (первый прогон упал именно так) → вызывать
+  `spawnSync(args[0], args.slice(1))`, не `spawnSync(cl, args)`.
 
-- ⚠️ **`deploy.ps1` звал удалённый `po2dat.py`** → после порта шаблон собирает
-  `po2dat.mts` → проверено: скрипт переведён на `node …/po2dat.mts`, синтаксис
-  проверен `Parser::ParseFile` → не возвращать `python po2dat.py`.
+- ⚠️ **Ошибки `cl` были нечитаемы (кракозябры)** → cl пишет в OEM-кодировке
+  консоли (cp866), `encoding: "utf8"` превращал текст в мусор → проверено
+  2026-11-21 → читать вывод буфером и декодировать `new TextDecoder("ibm866")`
+  (`decodeOem` в `build_proxy.mts`).
 
-- ⚠️ **`deploy.ps1` удалял legacy `<игра>/translations/`** → это остаток старой
-  YAML-раскладки; на текущей игре такой папки нет, `Remove-Item` с
-  `-ErrorAction SilentlyContinue` не падает → проверено чтением скрипта →
-  не «оптимизировать» без проверки, что папки правда нет.
+- ⚠️ **Хардкод MSVC из `build_proxy.py` (`…/18/BuildTools/…/14.50.35717`) не
+  нужен** → версия 14.50.35717 находится через
+  `vswhere -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64`;
+  фолбэк — перебор `C:\Program Files[(x86)]\Microsoft Visual Studio\*\*\VC\Tools\MSVC` →
+  проверено 2026-11-21 (vswhere вернул `…\18\BuildTools`).
 
-- ⚠️ **Прокси `dwmapi.dll` живёт рядом с exe, а не в `Managed/`** → DLL-hijack
-  требует корень игры; Steam «verify integrity» её удаляет → проверено
-  комментарием в `deploy.ps1` и логикой копирования → после проверки файлов
-  Steam просто перезапустить деплой.
+- ⚠️ **Версия Windows SDK без каталога `Lib` ломает линковку** → в
+  `C:\Program Files (x86)\Windows Kits\10\Include` могут лежать версии, у
+  которых нет `Lib/<версия>` → проверено чтением каталога → выбирается только
+  версия, где есть и `Include`, и `Lib` (`Lib/ucrt/x64`, `Lib/um/x64`).
 
-- ⚠️ **Сборка требует установленную игру** → `build.py` берёт
-  `UnityEngine*.dll`/`netstandard.dll` из `Managed/`, без них «Missing Unity
-  assemblies» → проверено чтением (`REF_DLLS`) → в CI без игры сборку не
-  гонять; для проверки кода хватает `npm run typecheck` (TS-часть).
+- ⚠️ **`cl` пишет `.obj/.lib/.exp` в текущий каталог** → при `cwd = корень репозитория`
+  мусор оказывался рядом с исходниками (в старом Python-скрипте) → проверено
+  2026-11-21 → запуск с `cwd = tmp/build_proxy/`, туда же `/Fo`.
+
+- ⚠️ **`build_proxy.mts` перезаписывает `<игра>/dwmapi_real.dll` текущей системной
+  копией** → это by design (форвардер должен быть живой системной DLL), но при
+  отладке старое содержимое теряется → проверено 2026-11-21: до прогона
+  `dwmapi_real.dll` был от января 2026 (`c322e8…`), после — `db0ad9…` (=
+  `C:\Windows\System32\dwmapi.dll`).
+
+- ⚠️ **В репозитории нет `dwmapi.dll`** (`git ls-files` его не знает; в старом
+  дереве он лежал в корне и «трекался») → `build:proxy` создаёт его как
+  untracked-файл, `deploy` берёт копию оттуда → проверено 2026-11-21 →
+  порядок «сначала `npm run build:proxy`, потом деплой»; если прокси в игре уже
+  стоит, `deploy` не падает, а предупреждает (см. MAP deploy-translator).
+  Добавлять ли `dwmapi.dll` в `.gitignore` — решение владельца.
+
+- ⚠️ **Сборка рантайма требует установленную игру** → `csc` берёт
+  `UnityEngine*.dll`/`netstandard.dll` из `Managed/`; без них «мало сборок
+  Unity» → проверено чтением `REF_DLLS` → в CI (ubuntu) сборку не гоняем, там
+  только `npm run typecheck` и тесты чистых функций.
+
+- ⚠️ **Python-скрипты (`build.py`, `build_proxy.py`) удалены 2026-11-21** после
+  порта и проверки на живой установке (паритет `.dat` по sha256). Если что-то
+  понадобится сверить — история в git, в рабочем дереве их больше нет.
+
+## Проверенные цифры (2026-11-21)
+
+- `node build.mts` → `runtime/NeonTranslatorRuntime.dll`, 43.0 KB (44032 байта),
+  6 исходников, 11 из 11 ссылок Unity.
+- `node build_proxy.mts` → `dwmapi.dll` 13.5 KB (13824 байта) в игре и в репо,
+  `dwmapi_real.dll` 190.5 KB (системная копия), MSVC 14.50.35717 + SDK
+  10.0.26100.0.

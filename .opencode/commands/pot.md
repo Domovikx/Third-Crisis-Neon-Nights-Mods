@@ -8,18 +8,16 @@ Run from the repository root, strictly in order (см. скилл `extract-text`
 
 ```bash
 # 1. Шаблон EN из дампа (единственная команда, меняющая po/)
-node .opencode/skills/extract-text/scripts/potgen.mts --update
+npm run potgen -- --update
 
-# 2. Перенос переводов в новый POT (Python-референс, порт — tasks/2026-11-21-port-po-tools.md)
-#    Пока НЕ запускается: импортирует удалённый potgen.py.
-#    python .opencode/skills/extract-text/scripts/po_update.py
+# 2. Перенос переводов в новый POT
+npm run po:update
 
 # 3. Словарь для игры
 npm run po2dat -- ru
 ```
 
-Что важно про отчёты (историческое описание `prefill_po.py` — для будущего
-`.mts`-порта, сейчас не работает):
+Что важно про отчёты `prefill` (`npm run po:prefill`):
 
 - `exact` — у ключа POT есть точный `(msgid, msgctxt)` перевод (покрытие);
 - `fuzzy` — ключ не совпал, но для голого текста есть ровно один вариант
@@ -35,6 +33,4 @@ npm run po2dat -- ru
 `fuzzy`/`auto-normalized`/`conflicts` требует решения человека. Массовые
 скипы (quest/FSM-метки, которые не показываются игроку) — отдельной группой.
 
-`review_queue.py` (HTML-очередь) сейчас **не работает**: ему нужен
-`output/stable_index.json`, удалённый вместе с `extractor.py`. Замена — в
-`tasks/2026-11-21-port-qa-and-translate.md`.
+Очередь ревью — `npm run qa:review` (HTML), отчёт качества — `npm run qa`.
