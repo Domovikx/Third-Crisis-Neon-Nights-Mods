@@ -11,6 +11,8 @@
   "scripts": {
     "check:game": "node scripts/game_dir.mts --check",
     "check:langs": "node scripts/languages.mts --check",
+    "build:site": "node scripts/build_site.mts",
+    "mod:install": "node installer/install.mts",
     "potgen": "node .opencode/skills/extract-text/scripts/potgen.mts",
     "po2dat": "node .opencode/skills/extract-text/scripts/po2dat.mts",
     "test": "node --test .opencode/skills/pipeline-common/tests/text_filters.test.mts .opencode/skills/extract-text/tests/po_file.test.mts .opencode/skills/extract-text/tests/po2dat.test.mts .opencode/skills/extract-text/tests/inventory.test.mts .opencode/skills/extract-text/tests/potgen.test.mts scripts/languages.test.mts",

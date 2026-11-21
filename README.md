@@ -64,13 +64,27 @@ deploy ──→ <игра>/…/Managed/ (DLL + patch + шрифт + active_lang
 ```bash
 npm install
 npm run check:game     # найти установку игры (или задать TCNN_GAME_DIR)
+npm run check:langs    # языки в po/ совпадают с приоритетом
 npm run po2dat -- ru   # po/ru.po -> runtime/patch_ru.dat
+npm run build:site     # собрать site/index.html (цифры — из po/)
+npm run mod:install    # план установки в игру (dry-run)
 npm test               # тесты (node --test)
-npm run verify         # typecheck + lint + format + tests
+npm run verify         # typecheck + lint + format + langs + tests + e2e
 ```
 
 Путь к игре: переменная `TCNN_GAME_DIR`, иначе автопоиск по Steam-библиотекам
 (`scripts/game_dir.mts`). Репозиторий больше **не** живёт внутри папки игры.
+
+## Сайт и установка
+
+- **Сайт (GitHub Pages).** `site/template.html` + `site/styles.css`; `npm run build:site`
+  собирает `site/index.html`, подставляя языки и **реальное покрытие** из `po/*.po`.
+  Цифры руками не правятся — иначе страница начнёт врать. Публикация — workflow `pages`.
+- **Инсталлятор (заготовка).** `installer/install.mts`: находит игру, сверяет язык с
+  приоритетом, показывает план раскладки и чего не хватает. Копирование появится вместе с
+  портом `deploy.ps1` — двух реализаций быть не должно.
+- **Мод-менеджер** — следующий шаг после деплоя (список языков, переключение, удаление,
+  обновление); см. `installer/README.md`.
 
 ## Структура
 
