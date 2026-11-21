@@ -50,13 +50,16 @@ Steam-обновление, переустановка игры или пере�
   `new 1 318`, `vanished 0`, `triaged 4 293`, `rich 2 490`). Время: Python 30.8 с,
   TS 3.0 с. Тесты: 29 (`inventory` 14 + `potgen` 14 + E2E 1).
   `potgen.py`/`extractor.py` удалены из нового дерева; их Python-тесты тоже.
-- **`po_update.py` (151) — READY.** Перенос переводов в новый POT по ключам.
-- **`prefill_po.py` (221) — READY.** Предзаполнение пустых `msgstr`.
-- **`find_source.py` (62) — READY.** Поиск источника строки (зависит от `potgen`;
-  до порта Python-версия не запускается — `potgen.py` удалён).
-- **`qa_translate.py` (234) — READY.** Офлайн-QA: покрытие, теги, латиница.
-- **`review_queue.py` (192) — READY.** Очередь ревью (HTML).
-- **`translate_local.py` (487) — READY.** Пакетный перевод локальной LLM (OpenAI-compatible).
+- **`po_update.py` (151) → `po_update.mts` — ГОТОВО.** Перенос переводов в новый POT по ключам;
+  паритет на всех 10 языках (байт-в-байт после нормализации EOL).
+- **`prefill_po.py` (221) → `prefill_po.mts` — ГОТОВО.** Предзаполнение пустых `msgstr`;
+  `ru.po` идентичен Python. Корпус `translations/` удалён — источник корпуса решает
+  `tasks/2026-11-21-prefill-corpus-decision.md`.
+- **`find_source.py` (62) → `find_source.mts` — ГОТОВО.** Поиск источника строки по дампу
+  (через `potgen`/`inventory`); проверено на реальном дампе, коды выхода совпадают.
+- **`qa_translate.py` (234) → `qa_translate.mts` — ГОТОВО.** Офлайн-QA: покрытие, теги, латиница.
+- **`review_queue.py` (192) → `review_queue.mts` — ГОТОВО.** Очередь ревью (HTML).
+- **`translate_local.py` (487) → `translate_local.mts` — ГОТОВО.** Пакетный перевод локальной LLM (OpenAI-compatible).
 - **`build.py` (76), `build_proxy.py` (94) — READY.** Обёртки над `csc.exe` / `cl.exe`.
 - **`deploy.ps1` — READY.** Деплой в игру → `.mts` + `scripts/game_dir.mts`.
 - **`dump_assets.py` + `dump_sqlite*.py` (1334+) — PYTHON-ОСТРОВ.** UnityPy не имеет

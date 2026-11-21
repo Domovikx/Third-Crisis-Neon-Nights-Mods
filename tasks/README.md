@@ -38,7 +38,7 @@
   перенос данных, порт `text_filters`/`po_file`/`po2dat`, паритет `.dat`
 - [2026-11-21-port-potgen.md](2026-11-21-port-potgen.md) — **DONE** — POT-хаб: `potgen.mts` +
   `inventory.mts`; паритет на реальном дампе (33 271 запись, diff пуст), E2E `дамп → POT → .dat`
-- [2026-11-21-port-po-tools.md](2026-11-21-port-po-tools.md) — **READY** — `po_update`,
+- [2026-11-21-port-po-tools.md](2026-11-21-port-po-tools.md) — **DONE** — `po_update`,
   `prefill_po`, `find_source`
 - [2026-11-21-port-qa-and-translate.md](2026-11-21-port-qa-and-translate.md) — **DONE** —
   `qa_translate`, `review_queue`, `translate_local`
@@ -71,3 +71,5 @@
   студийные голоса из игры как референсы для Vox (декодер FSB, manifest, отбор ≥10 с на персонажа)
 - [2026-11-21-site-and-installer.md](2026-11-21-site-and-installer.md) — **DONE** — GitHub Pages
   собирается из `site/template.html` с реальным покрытием; инсталлятор-заготовка с планом раскладки
+- [2026-11-21-prefill-corpus-decision.md](2026-11-21-prefill-corpus-decision.md) — **READY** —
+  откуда `prefill` берёт корпус переводов (сами PO / другие языки / легаси / удалить)
