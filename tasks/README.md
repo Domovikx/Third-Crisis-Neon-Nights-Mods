@@ -46,7 +46,7 @@
   `build.py`/`build_proxy.py` + `deploy.ps1` → `.mts`
 - [2026-11-21-dump-assets-island.md](2026-11-21-dump-assets-island.md) — **READY** —
   решение по python-острову (UnityPy) и его CI-гардам
-- [2026-11-21-deprecate-old-repo.md](2026-11-21-deprecate-old-repo.md) — **DOING** —
+- [2026-11-21-deprecate-old-repo.md](2026-11-21-deprecate-old-repo.md) — **DONE** —
   пометить старый `NeonTranslator` как DEPRECATED и не дать в него вернуться
 - [2026-11-21-audit-pipeline-logic.md](2026-11-21-audit-pipeline-logic.md) — **READY** —
   ревизия логики Neon: что нужен для текстового мультиязыка, что упростить, что переписать
