@@ -4,7 +4,7 @@
  */
 import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync, readFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync, readFileSync, existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 
 import { buildDat, loadPotRich, writeDat } from "../scripts/po2dat.mts";
@@ -131,4 +131,35 @@ test("writeDat: один JSON-объект на строку, читается �
   const lines = text.trim().split("\n");
   assert.equal(lines.length, rows.length);
   assert.deepEqual(JSON.parse(lines[0]), rows[0]);
+});
+
+test("writeDat: запись атомарная — .part не остаётся, пустой список даёт пустой файл", () => {
+  const dir = fixture("atomic", HEADER, `${HEADER}\nmsgid "Hi"\nmsgstr "Привет"\n`);
+  const { rows } = buildDat("xx", dir);
+  const out = join(dir, "runtime", "patch_xx.dat");
+
+  writeDat(rows, out);
+  assert.equal(existsSync(`${out}.part`), false, "после успешной записи .part удалён");
+
+  writeDat(rows, out); // перезапись поверх — не должна падать на Windows
+  assert.deepEqual(JSON.parse(readFileSync(out, "utf8").trim()), rows[0]);
+
+  writeDat([], out);
+  assert.equal(readFileSync(out, "utf8"), "", "пустой словарь — пустой файл");
+  assert.equal(existsSync(`${out}.part`), false);
+});
+
+test("buildDat: gated-вариант, победивший сортировку, скрывает текст целиком", () => {
+  // Характеризация поведения Python-версии: гейт смотрит только на
+  // filled[0]. Если есть и ручная, и gated-пара — исход зависит от refKey.
+  // Исправление — tasks/2026-11-21-po2dat-gated-order.md.
+  const dir = fixture(
+    "gated-mixed",
+    HEADER,
+    `${HEADER}\n#: translations/a.yaml\n#, auto-normalized\nmsgid "X"\nmsgstr "Икс"\n\n#: translations/b.yaml\nmsgid "X"\nmsgstr "ИКС"\n`,
+  );
+
+  const { rows, report } = buildDat("xx", dir);
+  assert.deepEqual(rows, []);
+  assert.equal(report.gatedAutoNormalized, 1);
 });

@@ -102,3 +102,32 @@ test("renderPo: завершается ровно одним переводом 
   assert.ok(out.endsWith("\n"));
   assert.ok(!out.endsWith("\n\n"));
 });
+
+test("parsePo: CRLF и CR не ломают разбор", () => {
+  const entries = parsePo('msgid "Hi"\r\nmsgstr "Привет"\r\n\r\nmsgid "Bye"\rmsgstr "Пока"\r');
+  assert.deepEqual(
+    entries.map((e) => [e.msgid, e.msgstr]),
+    [
+      ["Hi", "Привет"],
+      ["Bye", "Пока"],
+    ],
+  );
+});
+
+test("parsePo: пустой ввод и файл только с комментариями — пустой список", () => {
+  assert.deepEqual(parsePo(""), []);
+  // Запись без msgid/msgstr/refs не существует: комментарий-сирота не всплывает.
+  assert.deepEqual(parsePo("#. только комментарий\n"), []);
+});
+
+test("poUnescape: неизвестный escape теряет обратный слэш (поведение po_file.py)", (t) => {
+  // gettext знает \a\b\f\v\ooo; парсер их не поддерживает и отдаёт голый символ.
+  // Фиксируем как есть: на наших данных таких эскейпов нет, но менять молча нельзя.
+  assert.equal(poUnescape("a\\qb"), "aqb");
+  t.diagnostic("если появятся \\a/\\b/\\ooo — расширять ESCAPES вместе с паритетом");
+});
+
+test("poEscape: кавычка и обратный слэш экранируются до round-trip", () => {
+  const src = 'He said "hi" \\ bye';
+  assert.equal(poUnescape(poEscape(src)), src);
+});

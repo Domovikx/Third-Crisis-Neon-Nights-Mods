@@ -22,6 +22,7 @@ from dump_assets import (  # noqa: E402 (needs sys.path above)
     parse_dialogue_from_raw,
     parse_fsm_strings,
     pptr_to_dict,
+    resolve_game_dir,
     scan_raw_strings,
 )
 
@@ -179,6 +180,24 @@ def test_pptr_to_dict_invalid():
 # Tests: discover_asset_files
 # ============================================================
 
+
+def test_resolve_game_dir_env_override():
+    """TCNN_GAME_DIR важнее унаследованного пути: репо больше не в папке игры."""
+    import os
+
+    prev = os.environ.get("TCNN_GAME_DIR")
+    try:
+        os.environ["TCNN_GAME_DIR"] = r"D:\Fake Game Dir"
+        assert str(resolve_game_dir()) == r"D:\Fake Game Dir"
+        del os.environ["TCNN_GAME_DIR"]
+        # Без env — старый фолбэк (родитель репозитория), не падаем.
+        assert resolve_game_dir().name != ""
+    finally:
+        if prev is None:
+            os.environ.pop("TCNN_GAME_DIR", None)
+        else:
+            os.environ["TCNN_GAME_DIR"] = prev
+    print("  PASS test_resolve_game_dir_env_override")
 
 def test_discover_assets_count():
     files = discover_asset_files()
@@ -344,6 +363,7 @@ def main():
         test_format_index_md,
         test_parse_fsm_strings,
         test_parse_fsm_strings_typetree_fail,
+        test_resolve_game_dir_env_override,
     ]
 
     passed = 0

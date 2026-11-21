@@ -62,7 +62,12 @@ const ASSET_SUFFIXES = [
 
 const ASSET_PREFIXES = ["NN", "AMS"] as const;
 
-/** Unity-компонент/скрипт? (NNHsvRenderer, EventSystem, NodeLink2) */
+/** Unity-компонент/скрипт? (NNHsvRenderer, EventSystem, NodeLink2)
+ *
+ * Правило «любая цифра = ассет» действует только на строки БЕЗ пробелов:
+ * «Zone 2» останется текстом, «Zone2» уйдёт в skip. Так же отсекаются
+ * GUID/хэши и имена вида `Text (TMP)` — но не как мусор, а как ассет.
+ */
 export function isAssetName(s: string): boolean {
   if (!s || s.includes(" ") || s.length < 4) return false;
   if (ASSET_PREFIXES.some((p) => s.startsWith(p))) return true;

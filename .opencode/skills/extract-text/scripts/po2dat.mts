@@ -15,7 +15,7 @@
  * CLI: node .opencode/skills/extract-text/scripts/po2dat.mts [lang]
  * Out: runtime/patch_<lang>.dat (артефакт сборки, не трекается)
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, renameSync, rmSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import process from "node:process";
 
@@ -122,6 +122,9 @@ export function buildDat(
       msgstr = filled[0].msgstr;
       // Гейт ревью: авто-нормализованное едет только после подтверждения
       // человеком (снятие флага). До этого строка не попадает в словарь.
+      // Гейт смотрит ТОЛЬКО на победителя сортировки: если у текста есть и
+      // gated-, и ручная пара, победа gated-пары скроет ручной перевод
+      // (поведение Python-версии; исправление — tasks/2026-11-21-po2dat-gated-order.md).
       if (filled[0].flags.includes("auto-normalized")) {
         gated += 1;
         continue;
@@ -161,11 +164,22 @@ export function toJsonLine(row: DatRow): string {
   return `{${parts.join(", ")}}`;
 }
 
-/** Записать строки в .dat (один JSON-объект на строку, UTF-8). */
+/** Записать строки в .dat (один JSON-объект на строку, UTF-8).
+ *
+ * Запись атомарная (`.part` → rename): обрыв не оставит половину словаря.
+ * Байты те же, что у прямой записи (паритет с po2dat.py не страдает).
+ */
 export function writeDat(rows: DatRow[], outPath: string): void {
   mkdirSync(dirname(outPath), { recursive: true });
   const body = rows.map(toJsonLine).join("\n");
-  writeFileSync(outPath, rows.length ? body + "\n" : "", "utf8");
+  const part = `${outPath}.part`;
+  try {
+    writeFileSync(part, rows.length ? body + "\n" : "", "utf8");
+    renameSync(part, outPath);
+  } catch (err) {
+    rmSync(part, { force: true });
+    throw err;
+  }
 }
 
 function main(argv: string[]): number {

@@ -30,6 +30,12 @@ test("isAssetName: обычные подписи и короткие строк�
   assert.equal(isAssetName(""), false);
 });
 
+test("isAssetName: цифра внутри слова = ассет, цифра после пробела = текст", () => {
+  assert.equal(isAssetName("Zone2"), true);
+  assert.equal(isAssetName("Zone 2"), false, "пробел отключает правило");
+  assert.equal(isAssetName("  "), false);
+});
+
 test("isGarbageFragment: бинарный мусор ловится", () => {
   assert.equal(isGarbageFragment("Bff?D"), true);
   assert.equal(isGarbageFragment("S5?d"), true);
@@ -44,6 +50,13 @@ test("isGarbageFragment: легитимная пунктуация и проце
   assert.equal(isGarbageFragment("?!"), false);
   assert.equal(isGarbageFragment("?!?"), false);
   assert.equal(isGarbageFragment(""), false);
+});
+
+test("isGarbageFragment: обратный слэш — всегда мусор, даже с текстом", () => {
+  // Эвристика считает `\` признаком raw-байтов. Диалоги её не проходят
+  // (вызывающий фильтрует только raw/settings), поэтому риск ограничен.
+  assert.equal(isGarbageFragment("C:\\Games"), true);
+  assert.equal(isGarbageFragment("not\\a\\word"), true);
 });
 
 test("autoTriage: пресет только для ассетов и мусора", () => {

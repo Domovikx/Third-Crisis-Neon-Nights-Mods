@@ -87,7 +87,7 @@ TMP_FontAsset `Roboto-Condensed_DialogueUI` через `TryAddCharacters()`.
 ## Формат данных (PO → DAT)
 
 Источник правды — `po/template.pot` + `po/<lang>.po` (POT-хаб, детали в README).
-`po2dat.py` компилирует PO в `runtime/patch_<lang>.dat` — один JSON-объект
+`po2dat.mts` компилирует PO в `runtime/patch_<lang>.dat` — один JSON-объект
 на строку (`t` текст, `x` перевод, `r`/`rt` rich, `sk` legacy-флаг).
 Рантайм (TranslationLoader.cs):
 

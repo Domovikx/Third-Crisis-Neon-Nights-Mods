@@ -7,6 +7,11 @@ compatibility: opencode
 
 # deploy-translator — Деплой переводчика в игру
 
+> **Статус:** после переезда путь к игре — `TCNN_GAME_DIR` (фолбэк — родитель
+> репозитория), `.dat` собирает `po2dat.mts`. Сборка DLL/прокси пока Python
+> (`build.py`/`build_proxy.py`, тоже читают env); полный `.mts`-порт —
+> `tasks/2026-11-21-port-build-deploy.md`.
+
 ## Описание
 
 Деплой рантайм-переводчика в игру. Включает:
@@ -18,7 +23,7 @@ compatibility: opencode
 
 ## Команды
 
-Все команды — из корня репо (`NeonTranslator/`). Единственная точка входа — `deploy.ps1`:
+Все команды — из корня репозитория (`Third-Crisis-Neon-Nights-Mods`). Единственная точка входа — `deploy.ps1`:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\deploy.ps1              # RU
@@ -30,9 +35,9 @@ powershell -ExecutionPolicy Bypass -File .\deploy.ps1 -Rebuild -Proxy  # + пе�
 
 Что делает `deploy.ps1`:
 
-1. (опционально) `build.py` → `runtime/NeonTranslatorRuntime.dll`
+1. (опционально) `build.py` → `runtime/NeonTranslatorRuntime.dll` (нужен `TCNN_GAME_DIR`)
 2. (опционально) `build_proxy.py` → `dwmapi.dll` в корень игры + ресинк копии в репо
-3. `po2dat.py <lang>` → `runtime/patch_<lang>.dat` (один JSON-lines словарь)
+3. `po2dat.mts <lang>` → `runtime/patch_<lang>.dat` (один JSON-lines словарь)
 4. DLL + шрифт + `patch_<lang>.dat` + `active_lang.txt` → `Managed/`
 5. Удаляет legacy-зеркало `<игра>/translations/` (YAML в игре больше нет)
 6. `dwmapi.dll` → корень игры (рядом с exe — требование DLL-hijack)
@@ -53,7 +58,7 @@ cat "Third Crisis Neon Nights_Data/Managed/NeonTranslator.log"
 
 - `deploy.ps1 [-Lang]` — единственная точка деплоя (см. Команды)
 - `runtime/NeonTranslatorRuntime.dll` — скомпилированная DLL (build.py)
-- `runtime/patch_<lang>.dat` — скомпилированный словарь (po2dat.py, не трекается)
+- `runtime/patch_<lang>.dat` — скомпилированный словарь (po2dat.mts, не трекается)
 - `Managed/NeonTranslatorRuntime.dll` — установленная DLL (деплой)
 - `Managed/patch_<lang>.dat` — установленный словарь (деплой)
 - `Managed/active_lang.txt` — выбранный язык (деплой)

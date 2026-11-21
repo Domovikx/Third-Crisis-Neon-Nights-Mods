@@ -5,7 +5,7 @@ Queue: entries with empty msgstr, file order. Each answer is written back
 inplace immediately (crash/Ctrl+C safe, reruns resume by skipping filled).
 Pause: create tmp/translate-local/PAUSE, the loop exits after current entry.
 
-Run from repo root (NeonTranslator/):
+Run from the repository root (Third-Crisis-Neon-Nights-Mods):
   python .opencode/skills/translate-local/scripts/translate_local.py --lang ru --limit 5 --dry-run
   python .opencode/skills/translate-local/scripts/translate_local.py --lang ru --limit 5
 """
@@ -26,7 +26,18 @@ CORE_PATH = PATCH_DIR / ".opencode" / "skills" / "translates" / "core.md"
 sys.path.insert(0, str(PATCH_DIR / ".opencode" / "skills" / "extract-text" / "scripts"))
 import po_file  # noqa: E402
 
-LANG_NAMES = {"ru": "Russian", "de": "German", "pl": "Polish", "fr": "French", "es": "Spanish", "pt": "Portuguese"}
+LANG_NAMES = {
+    "zh": "Simplified Chinese",
+    "ru": "Russian",
+    "es": "Spanish",
+    "pt": "Portuguese",
+    "de": "German",
+    "ja": "Japanese",
+    "fr": "French",
+    "pl": "Polish",
+    "ko": "Korean",
+    "it": "Italian",
+}
 
 # Condensed core of translates/core.md (shared across languages).
 # Fallback if core.md is unreadable (normal path: load_core() from file).
@@ -286,13 +297,15 @@ def parse_response(text: str, n: int) -> list | None:
 
 
 def validate(src: str, tr: str, target: str) -> str | None:
-    """Return problem description or None if OK."""
+    """Return problem description or None if OK.
+
+    Длину НЕ проверяем: по правилу репозитория длина не критерий качества
+    (AGENTS.md). Единственная сверка — смысловая (QA + человек).
+    """
     if not tr:
         return "empty"
     if src.count("<") != tr.count("<") or src.count(">") != tr.count(">"):
         return "tag imbalance"
-    if len(tr) > len(src) * 2.5 + 20:
-        return "too long"
     if target == "ru" and BANNED_RX.search(tr):
         return "banned cluster"
     return None
@@ -356,8 +369,12 @@ def set_msgstr_inplace(path: Path, updates: dict):
                 cur_id = []
             out.append(line)
         i += 1
-    path.write_text("\n".join(out).rstrip("\n") + "\n", encoding="utf-8")
-
+    # Атомарная запись (.part → replace): обрыв посреди записи не должен
+    # обнулять каталог переводов (правило репозитория; один раз уже ловили
+    # пустой .po после убийства процесса).
+    part = path.with_name(path.name + ".part")
+    part.write_text("\n".join(out).rstrip("\n") + "\n", encoding="utf-8")
+    part.replace(path)
 
 def main() -> int:
     ap = argparse.ArgumentParser()

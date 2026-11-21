@@ -1,9 +1,20 @@
+import os
 import subprocess
 import sys
 from pathlib import Path
 
 PATCH_DIR = Path(__file__).parent.parent.parent.parent.parent
-GAME_DIR = PATCH_DIR.parent
+def resolve_game_dir() -> Path:
+    """Папка игры: env `TCNN_GAME_DIR`, иначе сосед репозитория (старая раскладка).
+
+    Репозиторий больше не лежит внутри папки игры; env — основной способ
+    (тот же, что у `scripts/game_dir.mts` и `dump_assets.py`).
+    """
+    override = os.environ.get("TCNN_GAME_DIR")
+    return Path(override) if override else PATCH_DIR.parent
+
+
+GAME_DIR = resolve_game_dir()
 CSC = r"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
 SOURCE_DIR = PATCH_DIR / ".opencode" / "skills" / "build-translator" / "source"
 DATA_DIR = GAME_DIR / "Third Crisis Neon Nights_Data" / "Managed"

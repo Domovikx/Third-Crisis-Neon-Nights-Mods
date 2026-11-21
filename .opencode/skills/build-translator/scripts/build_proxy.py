@@ -5,7 +5,17 @@ import sys
 from pathlib import Path
 
 PATCH_DIR = Path(__file__).parent.parent.parent.parent.parent
-GAME_DIR = PATCH_DIR.parent
+def resolve_game_dir() -> Path:
+    """Папка игры: env `TCNN_GAME_DIR`, иначе сосед репозитория (старая раскладка).
+
+    Репозиторий больше не лежит внутри папки игры; env — основной способ
+    (тот же, что у `scripts/game_dir.mts` и `dump_assets.py`).
+    """
+    override = os.environ.get("TCNN_GAME_DIR")
+    return Path(override) if override else PATCH_DIR.parent
+
+
+GAME_DIR = resolve_game_dir()
 MSVC_TOOLS = r"C:/Program Files (x86)/Microsoft Visual Studio/18/BuildTools/VC/Tools/MSVC/14.50.35717"
 CL = Path(MSVC_TOOLS) / "bin/Hostx64/x64/cl.exe"
 SDK = r"C:/Program Files (x86)/Windows Kits/10"

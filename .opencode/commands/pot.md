@@ -1,40 +1,40 @@
 ---
-description: PO pipeline potgen -> prefill_po -> review_queue with report meanings
+description: POT/PO-пайплайн — обновить шаблон, досинхронизировать переводы, собрать словарь; статусы отчётов
 agent: build
 ---
 
-Run from repo root, strictly in order (see skill `extract-text`,
-`references/PO_WORKFLOW.md`, skill `translate-qa`):
+Run from the repository root, strictly in order (см. скилл `extract-text`,
+`references/PO_WORKFLOW.md`).
 
 ```bash
+# 1. Шаблон EN из дампа (единственная команда, меняющая po/)
 node .opencode/skills/extract-text/scripts/potgen.mts --update
-python .opencode/skills/extract-text/scripts/prefill_po.py
-python .opencode/skills/translate-qa/scripts/review_queue.py
+
+# 2. Перенос переводов в новый POT (Python-референс, порт — tasks/2026-11-21-port-po-tools.md)
+#    Пока НЕ запускается: импортирует удалённый potgen.py.
+#    python .opencode/skills/extract-text/scripts/po_update.py
+
+# 3. Словарь для игры
+npm run po2dat -- ru
 ```
 
-1. `potgen.mts --update` → `po/template.pot` (EN-база, 33 271 запись из дампа;
-   одна запись на уникальную пару `(msgid, msgctxt)`, порядок — сортировка по
-   паре; `#: refs` не пишутся, rich — в `#. rich_text:`).
-2. `prefill_po.py` → `po/ru.po` — **пока Python-легаси и не запускается**
-   (`translations/` удалено, импортирует удалённый `potgen.py`). Порт —
-   задача `tasks/2026-11-21-port-po-tools.md`. Описание отчётов ниже —
-   историческое, для будущего `.mts`-порта:
-   - `exact` — POT key has an exact `(msgid, msgctxt)` RU match (coverage)
-   - `fuzzy` — key missed but exactly one RU variant for the bare text
-     (context drift, flagged for review)
-   - `auto-normalized` — stripped FSM variants inherit RU with an
-     `auto-normalized` flag (~162); gated — `po2dat.mts` does NOT ship them
-     until a human clears the flag
-   - `conflicts` — same key, different RU in different files (human picks one)
-   - `missing` — no RU anywhere (translators' work queue)
-   - `orphans` — RU with no POT entry; acceptance is `orphans == 0`
-     (zero silent loss)
-   - `skipped with translation` — skip flag + real translation (human triage
-     queue; `po2dat.mts` carries them over so the game keeps applying them)
-3. `review_queue.py [--limit 100]` → `tmp/review_queue.html` (untracked; Python,
-   тоже ждёт порта).
-   Set A (top priority): AUTO-normalized awaiting human confirm. Set B:
-   missing grouped by asset (scene) with prev/next neighbor lines from
-   `stable_index` (удалён вместе с `extractor.py`; порт возьмёт дамп).
-   Quest/FSM labels grouped separately (visibility triage: mass-skip if never
-   shown, don't translate).
+Что важно про отчёты (историческое описание `prefill_po.py` — для будущего
+`.mts`-порта, сейчас не работает):
+
+- `exact` — у ключа POT есть точный `(msgid, msgctxt)` перевод (покрытие);
+- `fuzzy` — ключ не совпал, но для голого текста есть ровно один вариант
+  (дрейф контекста; на ревью);
+- `auto-normalized` — урезанные FSM-варианты наследуют перевод с флагом
+  (≈162); `po2dat` их НЕ отдаёт в игру до снятия флага человеком;
+- `conflicts` — один ключ, разные переводы в разных файлах (выбирает человек);
+- `missing` — перевода нет нигде (очередь переводчика);
+- `orphans` — перевод без записи в POT; приёмка `orphans == 0` (ноль тихих потерь);
+- `skipped with translation` — skip-флаг + реальный перевод (ручной триаж;
+  `po2dat` их переносит, чтобы игра продолжала применять).
+
+`fuzzy`/`auto-normalized`/`conflicts` требует решения человека. Массовые
+скипы (quest/FSM-метки, которые не показываются игроку) — отдельной группой.
+
+`review_queue.py` (HTML-очередь) сейчас **не работает**: ему нужен
+`output/stable_index.json`, удалённый вместе с `extractor.py`. Замена — в
+`tasks/2026-11-21-port-qa-and-translate.md`.

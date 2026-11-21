@@ -1,52 +1,64 @@
 ---
 name: pipeline-common
-description: Общие фильтры и авто-триаж пайплайна dump-assets/extract-text (text_filters) — единый источник правды для списков скипов, имён ассетов и мусора
+description: Общие фильтры пайплайна dump-assets/extract-text (text_filters.mts) — единственный источник правды для skip-списков, имён ассетов и бинарного мусора
 license: MIT
 compatibility: opencode
 ---
 
-# pipeline-common — Общий код пайплайна
+# pipeline-common — общий код пайплайна
 
-Единственное исключение из правила «импортов между скиллами нет»
-(AGENTS.md, границы слайсов, правило 2).
+Единственное разрешённое исключение из правила «импортов между скиллами нет»:
+`extract-text` (и python-остров `dump-assets`) берут фильтры **отсюда**.
+Правка списков — только в этом файле, копии запрещены.
 
-## Контракт
+## Что импортировать
 
-**Import shared filters from here, never duplicate lists.**
-`dump-assets` и `extract-text` исторически дублировали одни и те же
-фильтры; теперь обе стороны импортируют их из
-`scripts/text_filters.py`. Любой фикс — только здесь, никогда локальной копией.
-
-Подключение:
-
-```python
-sys.path.insert(0, str(PATCH_DIR / ".opencode" / "skills" / "pipeline-common" / "scripts"))
-from text_filters import SKIP_RAW_PREFIXES, KNOWN_NON_SPEAKERS, _auto_triage, _is_skip_prefix, _strip_rich
+```ts
+import {
+  SKIP_RAW_PREFIXES,
+  KNOWN_NON_SPEAKERS,
+  isSkipPrefix,
+  isAssetName,
+  isGarbageFragment,
+  stripRich,
+  autoTriage,
+  RICH_TAG_RX,
+} from "../../pipeline-common/scripts/text_filters.mts";
 ```
 
-## Экспорты (`scripts/text_filters.py`)
+Python-остров (`dump_assets.py`) импортирует те же значения из
+`scripts/text_filters.py` через `sys.path` — это временный мост, пока дампер
+на Python. Канонический источник — **`.mts`**; `.py` удаляется вместе с портом
+дампа (см. `tasks/2026-11-21-dump-assets-island.md`).
 
-| Экспорт                   | Что это                                                                                                     |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `SKIP_RAW_PREFIXES`       | Кортеж префиксов `raw_strings`, которые не диалоги (`line_`, `expressions/`, `Poses/`, `Char_`, …)          |
-| `KNOWN_NON_SPEAKERS`      | Множество имён, которые не спикеры (`Narrator`, `Confirm`, `Simon`, `GlowingHole`, Dialogue Presets)        |
-| `_is_skip_prefix(s)`      | `True`, если строка начинается с любого `SKIP_RAW_PREFIXES`                                                 |
-| `_RICH_TAG_RX`            | Скомпилированный регекс rich-тегов `<...>` (используется `_strip_rich`)                                     |
-| `_strip_rich(s)`          | Убирает rich-теги и окаймляющие пробелы                                                                     |
-| `_ASSET_SUFFIXES`         | Суффиксы Unity-компонентов (`Renderer`, `System`, `Manager`, …, `UI`)                                       |
-| `_ASSET_PREFIXES`         | Префиксы скриптов игры (`NN`, `AMS`)                                                                        |
-| `_is_asset_name(s)`       | `True` для имён компонентов/скриптов (`NNHsvRenderer`, `EventSystem`, `NodeLink2`)                          |
-| `_PCT_LEGIT_RX`           | Легитимный `%`: trailing percent после цифр (`50%`)                                                         |
-| `_is_garbage_fragment(s)` | `True` для бинарных фрагментов (`Bff?D`, `%IR`, `\`-фрагменты); диалоги исключает вызывающий                |
-| `_auto_triage(text)`      | Возвращает copy-through пресет `{translation: text, skip_translation: True}` для ассетов/мусора, иначе `{}` |
+## Экспорты (`scripts/text_filters.mts`)
 
-Правила применения (не менялись при переезде):
+- `SKIP_RAW_PREFIXES` — префиксы `raw_strings`, которые не диалоги
+  (`line_`, `expressions/`, `Poses/`, `Char_`, `_Preset`, …).
+- `KNOWN_NON_SPEAKERS` — имена, которые не спикеры (`Narrator`, `Confirm`,
+  `Simon`, `GlowingHole`, Dialogue Presets).
+- `isSkipPrefix(s)` — строка начинается с запрещённого префикса.
+- `isAssetName(s)` — Unity-компонент/скрипт (`NNHsvRenderer`, `EventSystem`,
+  `NodeLink2`). Правило «любая цифра = ассет» работает только без пробелов.
+- `isGarbageFragment(s)` — бинарный мусор (`Bff?D`, `%IR`, любые `\`).
+- `autoTriage(text)` — `{translation, skipTranslation}` для ассетов/мусора,
+  иначе `null`. Применять **только** к raw/settings, никогда к диалогам.
+- `stripRich(s)` / `RICH_TAG_RX` — снять TMP-теги и обрезать пробелы.
 
-- Авто-триаж применяется ТОЛЬКО к raw/settings записям, никогда к диалогам.
-- Флаг человека сильнее авто-флага; перевод человека авто-skip не перетирает.
+## Правила применения
+
+- Диалоги (`dialogues`, `fsm_strings`, бандлы PlayMaker) не фильтруются:
+  в истории встречается что угодно, включая цифры и проценты.
+- Человеческий skip сильнее авто-флага: авто-триаж не перетирает перевод.
+- Фильтры — эвристики с известной ценой (см. `MAP.md`: длинные описания,
+  строки с точкой). Меняешь правило — проверяй POT на реальном дампе и
+  сверяй с `po/template.pot` (паритет).
 
 ## Тесты
 
 ```bash
-python .opencode/skills/pipeline-common/tests/text_filters.test.py
+node --test .opencode/skills/pipeline-common/tests/text_filters.test.mts
 ```
+
+Тесты — границы: пустые строки, цифра с пробелом и без, легитимные `?`/`%`,
+обратный слэш.

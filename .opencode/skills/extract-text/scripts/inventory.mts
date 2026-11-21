@@ -225,6 +225,10 @@ const UI_REJECT_NAMES = new Set(["FSM", "FSMs", "GUID", "Data"]);
  */
 export function isUiString(s: string): boolean {
   const len = cpLen(s);
+  // Границы UI-лейбла: 2..50 code points. Верхняя граница — историческая
+  // защита от Steamworks/Unity-шума; цена фиксирована осознанно: описания
+  // предметов и квестов длиннее 50 символов в POT не попадают.
+  // Список пробелов и приёмка — tasks/2026-11-21-pot-coverage-gaps.md.
   if (!s || len < 2 || len > 50) return false;
 
   const chars = [...s];
@@ -238,7 +242,12 @@ export function isUiString(s: string): boolean {
   for (const pat of CODE_PATTERNS) {
     if (lower.includes(pat)) return false;
   }
-  // C#-имена полей с точками.
+  // C#-имена полей с точками (Namespace.Field, Base Layer.Idle).
+  // ВНИМАНИЕ: эвристика срабатывает на ЛЮБУЮ строку с точкой, где среди
+  // первых 5 code points есть заглавная, — то есть и на обычное предложение
+  // («Yeah. Looks like it.»). Диалоги это не задевает (они приходят из
+  // dialogues/fsm_strings), но raw-строки сцен с точками теряются:
+  // ~459 предложений, tasks/2026-11-21-pot-coverage-gaps.md.
   if (s.includes(".") && [...s.split(".")[0]].slice(0, 5).some(pyIsUpperChar)) return false;
   if (s.includes("<") || s.includes(">")) return false;
   if (s.includes("{") || s.includes("}")) return false;
@@ -326,7 +335,12 @@ export class DumpScanner {
     if (entries.length) this.settings.set(stem, entries);
   }
 
-  /** Собрать итоговый инвентарь в порядке `scan_dump()` из potgen.py. */
+  /** Собрать итоговый инвентарь в порядке `scan_dump()` из potgen.py.
+   *
+   * `stats` здесь — заглушка: реальные счётчики файлов проставляет `scanDump`
+   * после обхода (тесты кормят сканер объектами напрямую и статистика им
+   * не нужна). Не читать `stats` у результата `finish()` без `scanDump`.
+   */
   finish(): Inventory {
     const items: InventoryItem[] = [];
 
@@ -446,7 +460,6 @@ export class DumpScanner {
   private collectBundle(obj: DumpRow): void {
     const asset = asString(obj.asset);
     if (!asset.startsWith("bundle_")) return;
-
     let entries = this.bundles.get(asset);
     if (!entries) {
       entries = [];
@@ -456,6 +469,8 @@ export class DumpScanner {
     const all = asArray(obj.raw_strings);
     if (!all.length) return;
     const rs = all.filter((s): s is string => typeof s === "string");
+    // Признак PlayMaker-бандла: в raw есть ключи line_X. Арт/аудио-бандлы
+    // отсекаются здесь, иначе их имена попали бы в POT как диалоги.
     if (!rs.some((s) => s.startsWith("line_"))) return;
 
     const strings = asRecord(obj.strings);
@@ -528,6 +543,9 @@ export class DumpScanner {
       this.chunkUi.set(asset, entries);
     }
 
+    // Дедуп глобальный (на весь дамп): один и тот же лейбл из разных сцен
+    // даёт одну запись. Для перевода это верно (текст один), но `source`
+    // останется первым ассетом, где строка встретилась.
     for (const raw of asArray(obj.raw_strings)) {
       if (typeof raw !== "string") continue;
       const s = pyStrip(raw);
@@ -566,7 +584,13 @@ export class DumpScanner {
 // Файловый слой
 // ---------------------------------------------------------------------------
 
-/** Имена файлов в порядке Python `sorted(Path.glob(...))` (Windows — без регистра). */
+/** Имена файлов в порядке обхода: без регистра (Windows), ничьи — по code points.
+ *
+ * Это НЕ `sorted()` Python для смешанного регистра (`B.jsonl` < `a.jsonl`
+ * в Python), а порядок как у файловой системы Windows. Важно только для
+ * «первое вхождение побеждает» (дедуп бандлов, порядок спикеров); на реальном
+ * дампе POT совпадает с Python-версией байт-в-байт (проверено 2026-11-21).
+ */
 function compareFileNames(a: string, b: string): number {
   const na = a.toLowerCase();
   const nb = b.toLowerCase();

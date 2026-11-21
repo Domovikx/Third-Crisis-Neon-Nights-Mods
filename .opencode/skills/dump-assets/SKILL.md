@@ -19,8 +19,14 @@ description: Дамп всех Unity .assets файлов игры в струк
 
 ```bash
 pip install UnityPy
-python .opencode/skills/dump-assets/scripts/dump_assets.py
+# Путь к игре: env (основной способ — репо больше не лежит внутри игры)
+TCNN_GAME_DIR="<Steam>/steamapps/common/Third Crisis Neon Nights" \
+  python .opencode/skills/dump-assets/scripts/dump_assets.py
 ```
+
+По умолчанию пишет в `tmp/dump/` **этого репозитория** (не в папку игры).
+Если `TCNN_GAME_DIR` не задан, скрипт пробует старую раскладку
+(`родитель репозитория` = папка игры) — это фолбэк, а не рабочий режим.
 
 ## Работа с дампом (смотрим что внутри)
 
@@ -79,9 +85,9 @@ print('rows:', n)
 | `strings`           | строковые поля объекта (m_Name, …)                         |
 | `fields`            | нестроковые поля (int, float, bool, PPtr, Vector3, …)      |
 | `dialogues`         | найденные диалоги Speaker/Text (из raw-скана)              |
-| `raw_strings`       | прочие строки из raw-байт объекта (top 20)                 |
+| `raw_strings`       | прочие строки из raw-байт объекта (до 100 на объект)       |
 | `color_parser_list` | мапа именованных цветов `{name: #HEX}` (ColorParserList)   |
-| `error`             | если объект не читается                                    |
+| `error`             | если объект не читается (`read_failed`/`extract_failed`)   |
 
 ## Примечания
 
@@ -89,6 +95,12 @@ print('rows:', n)
 - PPtr-ссылки сохраняются как `{file_id, path_id}`
 - **Dialogues** извлекаются из raw bytes MonoBehaviour (JSON-паттерн `"Speaker":"…","Text":"…"`)
 - Объекты без текстовых полей всё равно присутствуют в дампе (для навигации по структуре)
+- `read_failed` — 92 652 объекта (19,4 %) на дампе 2026-11-21. Для них есть
+  только `raw_strings` (≤100), поэтому часть диалогов/FSM-текста в POT не
+  попадает — см. `tasks/2026-11-21-pot-coverage-gaps.md`.
+- `summaries.global_strings` (до 500 строк) сейчас **никто не читает**:
+  `inventory.mts` берёт только `settings_keys`. Это тоже потенциальный
+  источник потерянных UI-строк (но шума там много).
 
 ## Тесты
 

@@ -28,7 +28,8 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $PATCH_DIR = Split-Path -Parent $MyInvocation.MyCommand.Path
-$GAME_DIR  = Split-Path -Parent $PATCH_DIR
+# Репозиторий больше не лежит в папке игры: путь — из env, иначе старый фолбэк.
+if ($env:TCNN_GAME_DIR) { $GAME_DIR = $env:TCNN_GAME_DIR } else { $GAME_DIR = Split-Path -Parent $PATCH_DIR }
 $MANAGED   = Join-Path $GAME_DIR 'Third Crisis Neon Nights_Data\Managed'
 
 function Step($msg) { Write-Host "==> $msg" }
@@ -50,10 +51,10 @@ if (-not (Test-Path $MANAGED)) { throw "Managed dir not found: $MANAGED" }
 
 Step "Compiling po/$Lang.po -> patch_$Lang.dat"
 if ($Lang -eq "en") {
-  Step 'Lang en: native English, no dictionary build (skipping po2dat.py)'
+  Step 'Lang en: native English, no dictionary build (skipping po2dat)'
 } else {
-  python (Join-Path $PATCH_DIR ".opencode\skills\extract-text\scripts\po2dat.py") $Lang
-  if ($LASTEXITCODE -ne 0) { throw 'po2dat.py failed' }
+  node (Join-Path $PATCH_DIR ".opencode\skills\extract-text\scripts\po2dat.mts") $Lang
+  if ($LASTEXITCODE -ne 0) { throw 'po2dat.mts failed' }
 }
 
 Step 'Deploying DLL + font + dictionary to Managed/'

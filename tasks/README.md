@@ -54,3 +54,20 @@
 - [2026-11-21-voiceover-spike.md](2026-11-21-voiceover-spike.md) — **READY** — эксперимент:
   пробная озвучка реплик поверх студийной, приглушение оригинала (ducking), регулятор глубины,
   вердикт go/no-go; основной мод остаётся текстовым
+- [2026-11-21-pot-coverage-gaps.md](2026-11-21-pot-coverage-gaps.md) — **READY** — вернуть
+  в POT потерянный текст: ~900 уникальных строк (read_failed объекты, длинные UI-описания,
+  предложения с точкой, global_strings)
+- [2026-11-21-pot-noise-cleanup.md](2026-11-21-pot-noise-cleanup.md) — **READY** — убрать
+  из POT ~4 590 шумных записей (имена ассетов, бинарные фрагменты)
+- [2026-11-21-pot-context-for-translators.md](2026-11-21-pot-context-for-translators.md) —
+  **READY** — вернуть переводчику провенанс (сцена/ассет/соседние строки), порт `find_source`
+- [2026-11-21-po2dat-gated-order.md](2026-11-21-po2dat-gated-order.md) — **READY** — gated
+  `auto-normalized` не должен скрывать ручной перевод того же текста
+- [2026-11-21-translates-language-packs.md](2026-11-21-translates-language-packs.md) — **READY** —
+  языковые правила `translates/<code>.md` для 7 языков без файла
+- [2026-11-21-e2e-on-game-plan.md](2026-11-21-e2e-on-game-plan.md) — **READY** — план E2E на живой
+  игре (сценарии, способы фиксации, критерии падения); запуск только после подтверждения владельцем
+- [2026-11-21-extract-studio-voices.md](2026-11-21-extract-studio-voices.md) — **READY** — извлечь
+  студийные голоса из игры как референсы для Vox (декодер FSB, manifest, отбор ≥10 с на персонажа)
+- [2026-11-21-site-and-installer.md](2026-11-21-site-and-installer.md) — **DONE** — GitHub Pages
+  собирается из `site/template.html` с реальным покрытием; инсталлятор-заготовка с планом раскладки

@@ -293,6 +293,9 @@ export async function runPotgen(options: PotgenOptions = {}): Promise<PotgenResu
     throw new Error(`empty dump: ${dumpDir} — переводимых строк не найдено`);
   }
 
+  // Ключи берём из репозиторного `po/template.pot` ВСЕГДА, даже если пишем
+  // в `--out` другой файл: это только статистика new/vanished, на состав
+  // каталога не влияет.
   const { catalog, stats } = buildCatalog(inventory.items, oldKeysFromPot());
   if (catalogSize(catalog) === 0) {
     throw new Error("empty catalog: нечего записывать (пустой дамп?)");
@@ -357,7 +360,7 @@ export async function main(argv: string[]): Promise<number> {
     console.error(`POT(${mode}): ${res.entries} entries -> ${res.outPath}`);
     const s = res.stats;
     console.error(
-      `  scanned fresh: ${s.scanned}, new: ${s.new}, vanished: ${s.vanished}, ` +
+      `  inventory items: ${s.scanned}, new: ${s.new}, vanished: ${s.vanished}, ` +
         `triaged(classifier only): ${s.triaged}, rich: ${s.rich}, merged twins: ${s.mergedTwins}`,
     );
     return 0;

@@ -288,3 +288,53 @@ test("scanDump: пустой каталог — пустой инвентарь,
   assert.deepEqual(inv.items, []);
   assert.deepEqual(inv.stats, { chunkFiles: 1, summaryFiles: 0 });
 });
+
+test("isUiString: границы длины 2..50 code points", () => {
+  const s50 = `${"a".repeat(25)} ${"b".repeat(24)}`;
+  const s51 = `${"a".repeat(25)} ${"b".repeat(25)}`;
+  assert.equal(s50.length, 50);
+  assert.equal(s51.length, 51);
+  assert.equal(isUiString(s50), true);
+  assert.equal(isUiString(s51), false, "длиннее 50 — уже не UI-лейбл (см. coverage-gaps)");
+  assert.equal(isUiString("a"), false);
+  assert.equal(isUiString("Back"), true);
+});
+
+test("isUiString: предложение с точкой отбрасывается (эвристика C#-полей)", () => {
+  // Характеризация: фильтр видит в «Yeah. Looks…» C#-поле Namespace.Field.
+  // Диалоги приходят другими путями, но raw-строки сцен с точками теряются.
+  assert.equal(isUiString("Yeah. Looks like it."), false);
+  assert.equal(isUiString("Text (TMP)"), false, "скобки = не лейбл");
+  assert.equal(isUiString("value must be set"), false, "отладочный текст");
+});
+
+test("DumpScanner: бандл — objName, line_ и {json} не становятся репликами", () => {
+  const scanner = new DumpScanner();
+  addRow(scanner, {
+    asset: "bundle_y_assets_all_abc",
+    strings: { m_Name: "Tiny" },
+    raw_strings: [
+      "line_0",
+      "Where is the nearest train station, friend?",
+      "Tiny",
+      "line_1",
+      '{"speaker":"X","text":"ignored"}',
+      "line_2",
+      "<color=#fff>Rich text line with markup here</color>",
+      "Zoey",
+    ],
+  });
+
+  const items = only(scanner.finish().items, "bundle");
+  assert.deepEqual(
+    items.map((i) => [i.text, i.speaker, i.richText]),
+    [
+      ["Where is the nearest train station, friend?", "", ""],
+      [
+        "Rich text line with markup here",
+        "Zoey",
+        "<color=#fff>Rich text line with markup here</color>",
+      ],
+    ],
+  );
+});

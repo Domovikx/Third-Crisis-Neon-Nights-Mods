@@ -49,6 +49,8 @@ check(T.validate("Hi", "Привет", "ru") is None, "validate ok")
 check(T.validate("Hi", "", "ru") == "empty", "validate empty")
 check(T.validate("<color=x>Hi</color>", "Привет", "ru") == "tag imbalance", "validate tags")
 check(T.validate("Ahhh", "Фхааа", "ru") == "banned cluster", "validate banned")
+# Длина не критерий (правило AGENTS.md): длинный перевод проходит.
+check(T.validate("Hi", "Привет, " * 10, "ru") is None, "validate no length limit")
 
 # inplace roundtrip: only target msgstr changes, rest byte-identical
 sample = '#: [dlg:1#0]\nmsgctxt "ui"\nmsgid "Hi"\nmsgstr ""\n\n#: [dlg:2#0]\nmsgctxt "ui"\nmsgid "Bye"\nmsgstr "Пока"\n'
@@ -60,6 +62,7 @@ with tempfile.TemporaryDirectory() as d:
     check('msgid "Hi"\nmsgstr "Привет"' in got, "inplace write")
     check('msgid "Bye"\nmsgstr "Пока"' in got, "inplace untouched")
     check(got.count("msgstr") == 2, "inplace no dupes")
+    check(not (Path(d) / "t.po.part").exists(), "inplace atomic, no .part")
 
 # filled entries are never overwritten (same text, other context keeps its own)
 sample2 = 'msgctxt "speaker:Leona"\nmsgid "Yo"\nmsgstr "Йо (ж.)"\n\nmsgctxt "speaker:???"\nmsgid "Yo"\nmsgstr ""\n'

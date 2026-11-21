@@ -9,6 +9,7 @@ dump_assets.py — Dump Unity .assets files to structured JSONL with real object
 """
 
 import json
+import os
 import re
 import struct
 import sys
@@ -18,7 +19,22 @@ from pathlib import Path
 import UnityPy
 
 PATCH_DIR = Path(__file__).resolve().parent.parent.parent.parent.parent
-GAME_DIR = PATCH_DIR.parent
+
+
+def resolve_game_dir() -> Path:
+    """Папка игры: `TCNN_GAME_DIR`, иначе сосед репозитория (старая раскладка).
+
+    Репозиторий больше не лежит внутри папки игры, поэтому наследование пути
+    через `PATCH_DIR.parent` работает только как фолбэк для старого дерева.
+    Правильный способ — env `TCNN_GAME_DIR` (его же использует `scripts/game_dir.mts`).
+    """
+    override = os.environ.get("TCNN_GAME_DIR")
+    if override:
+        return Path(override)
+    return PATCH_DIR.parent
+
+
+GAME_DIR = resolve_game_dir()
 DATA_DIR = GAME_DIR / "Third Crisis Neon Nights_Data"
 
 # NOTE(R2): shared pipeline filters live in pipeline-common (single owner of
