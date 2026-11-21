@@ -40,7 +40,7 @@
   `inventory.mts`; паритет на реальном дампе (33 271 запись, diff пуст), E2E `дамп → POT → .dat`
 - [2026-11-21-port-po-tools.md](2026-11-21-port-po-tools.md) — **READY** — `po_update`,
   `prefill_po`, `find_source`
-- [2026-11-21-port-qa-and-translate.md](2026-11-21-port-qa-and-translate.md) — **READY** —
+- [2026-11-21-port-qa-and-translate.md](2026-11-21-port-qa-and-translate.md) — **DONE** —
   `qa_translate`, `review_queue`, `translate_local`
 - [2026-11-21-port-build-deploy.md](2026-11-21-port-build-deploy.md) — **READY** —
   `build.py`/`build_proxy.py` + `deploy.ps1` → `.mts`

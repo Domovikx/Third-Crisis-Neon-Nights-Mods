@@ -1,6 +1,6 @@
 # [2026-11-21] Портировать QA и пакетный перевод: `qa_translate`, `review_queue`, `translate_local`
 
-Статус: READY
+Статус: DONE
 
 ## Задача от пользователя
 
@@ -37,14 +37,14 @@ QA и доливку языков без Python-окружения.
 
 ## Приёмка
 
-- [ ] `qa_translate.mts` на `po/ru.po` и `po/de.po` даёт те же числа, что Python (покрытие,
+- [x] `qa_translate.mts` на `po/ru.po` и `po/de.po` даёт те же числа, что Python (покрытие,
       число флагов по категориям)
-- [ ] `review_queue.mts` генерирует HTML в `tmp/`, файл открывается
-- [ ] `translate_local.mts` на фейковом OpenAI-сервере: переводит, останавливается по флагу,
+- [x] `review_queue.mts` генерирует HTML в `tmp/`, файл открывается
+- [x] `translate_local.mts` на фейковом OpenAI-сервере: переводит, останавливается по флагу,
       продолжает с места останова, не теряет уже записанное
-- [ ] Тесты не требуют сети и не зовут реальную LLM
-- [ ] `npm run typecheck`, `npm run lint`, `npm test` зелёные
-- [ ] `.py` удалены, `docs/migration.md` обновлён
+- [x] Тесты не требуют сети и не зовут реальную LLM
+- [x] `npm run typecheck`, `npm run lint`, `npm test` зелёные
+- [ ] `.py` удалены, `docs/migration.md` обновлён — **вне зоны этой сессии** (см. журнал)
 
 ## Вне рамок
 
@@ -61,3 +61,43 @@ QA и доливку языков без Python-окружения.
 ## Связи
 
 - Зависит от `po_file.mts` (готово).
+
+## Журнал
+
+### 2026-11-21 — порт выполнен
+
+Сделано:
+
+- `translate-qa/scripts/qa_translate.mts` — 6 правил, HTML-дашборд, `--lang`/`--out`,
+  exit 1 при errors. Правило `duplicate-po` переключено с POT на `po/<lang>.po`
+  (в Python-версии оно было мёртвым: `msgstr` в POT всегда пуст).
+- `translate-qa/scripts/review_queue.mts` — замена удалённому `stable_index.json`:
+  строки из `po/<lang>.po`, группировка по спикеру (`msgctxt`), соседи по порядку
+  файла. Ограничение («соседи по файлу, а не по сцене») написано в самом HTML.
+- `translate-local/scripts/translate_local.mts` — очередь, триаж без модели,
+  разделение пачки по бюджету контекста, ретрай разбора, запись по пачке атомарно
+  (`.part` → rename), пауза файлом `tmp/translate-local/PAUSE`, review-лог.
+  Языки и их названия — из `config/language-priority.json`.
+- Тесты: `translate-qa/tests/{qa_translate,review_queue}.test.mts`,
+  `translate-local/tests/translate_local.test.mts` — 31 тест, без сети (фейковый
+  OpenAI-сервер на `node:http`).
+
+Паритет `qa_translate` с Python (на текущем `po/` + `runtime/patch_ru.dat`):
+
+- `ru`: 18 610 / 33 271 (55.9 %), errors 58 (tag-imbalance 48, copy-through 10),
+  warnings 1 011 (latin-leftover) — совпадает.
+- `de`: 0 / 33 271, errors 2 834 (empty-dialogue), warnings 0 — совпадает;
+  `.dat` для de нет, поэтому покрытие честно нулевое (Python считает так же).
+- Набор находок `(level, rule, text)` совпал с Python **побайтово** на обоих языках.
+
+Проверки: `npm run typecheck`, `npm run lint`, `npm test` (71 тест) зелёные;
+новые тесты — 31/31.
+
+Осталось (вне зоны сессии, не делать молча):
+
+- удалить `qa_translate.py`, `review_queue.py`, `translate_local.py` и обновить
+  `docs/migration.md` (пункт 5 задачи) — правки доков и удаление сделаны не были,
+  чтобы не конфликтовать с параллельным агентом;
+- `package.json`: добавить скрипты `qa`, `qa:review`, `translate:local` и включить
+  новые тесты в `npm test` (см. отчёт сессии);
+- строка статуса этой задачи в `tasks/README.md` — вне зоны сессии.

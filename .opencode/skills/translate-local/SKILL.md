@@ -1,6 +1,6 @@
 ---
 name: translate-local
-description: Пакетный перевод пустых msgstr в po/<lang>.po через локальную LLM (OpenAI-compatible /v1/chat/completions). Пауза/резюм, построчная запись, валидация тегов. Python-легаси до порта (tasks/2026-11-21-port-qa-and-translate.md).
+description: Пакетный перевод пустых msgstr в po/<lang>.po через локальную LLM (OpenAI-compatible /v1/chat/completions). Пауза/резюм, запись по пачке, валидация тегов. Node/TypeScript (.mts).
 license: MIT
 compatibility: opencode
 ---
@@ -12,49 +12,53 @@ compatibility: opencode
 Промпт собирается из скилла `translates`: `core.md` + PROMPT-блок
 `translates/<lang>.md` + глоссарий имён из уже переведённых строк.
 
-**Статус:** инструмент работает, но это Python-легаси. Порт на `.mts` —
-`tasks/2026-11-21-port-qa-and-translate.md`; до порта путь запуска —
-`python .../translate_local.py` (не `.mts`).
+**Статус:** порт на `.mts` выполнен 2026-11-21 (`scripts/translate_local.py` —
+референс до удаления, не править и не звать).
 
 ## Команды (из корня репозитория)
 
 ```bash
 # Что уйдёт в модель (без вызовов LLM)
-python .opencode/skills/translate-local/scripts/translate_local.py --lang ru --limit 5 --dry-run
+node .opencode/skills/translate-local/scripts/translate_local.mts --lang ru --limit 5 --dry-run
 
 # Реальный тест: 5 фраз
-python .opencode/skills/translate-local/scripts/translate_local.py --lang ru --limit 5
+node .opencode/skills/translate-local/scripts/translate_local.mts --lang ru --limit 5
 
 # Продолжить с места (заполненные пропускаются сами)
-python .opencode/skills/translate-local/scripts/translate_local.py --lang ru --batch 8
+node .opencode/skills/translate-local/scripts/translate_local.mts --lang ru --batch 8
 
 # Любой язык из config/language-priority.json, кроме en
-python .opencode/skills/translate-local/scripts/translate_local.py --lang de --batch 8
+node .opencode/skills/translate-local/scripts/translate_local.mts --lang de --batch 8
 
-# Пауза: файл-пауза (цикл допишет текущую фразу и выйдет)
+# Пауза: файл-пауза (цикл допишет текущую пачку и выйдет)
 echo pause > tmp/translate-local/PAUSE
 rm tmp/translate-local/PAUSE
 ```
 
-Модель задаётся `--model` (по умолчанию `trans14` — идентификатор,
-под которым модель загружена в LM Studio). `--url` переключает бэкенд,
-если он OpenAI-совместим. Список названий языков покрывает все 11 из
-`config/language-priority.json`.
+Модель задаётся `--model` (по умолчанию `trans14` — идентификатор, под которым
+модель загружена в LM Studio). `--url` переключает бэкенд, если он
+OpenAI-совместим. Список языков и их названия для промпта берутся из
+`config/language-priority.json` (свой хардкод не заводить); неизвестный код —
+ошибка со списком допустимых.
 
 ## Как устроено
 
 - Очередь: записи с пустым `msgstr` (порядок файла). `--offset N` пропускает
   первые N пустых, `--limit N` — потолок за запуск, `--batch N` — размер пачки.
 - Триаж без модели: код/гибрид/версии/GUID/чистые символы → `msgstr = msgid`
-  (рантайм такие отбрасывает сам: `best == text`).
-- Запись построчно inplace в po (остальное побайтово то же), после каждой пачки
-  → Ctrl+C и пауза безопасны, рестарт продолжает.
+  (рантайм такие отбрасывает сам: `best === text`).
+- Запись в po после каждой пачки, атомарно (`.part` → rename), остальное
+  содержимое файла не меняется → Ctrl+C и пауза безопасны, рестарт продолжает.
+- Заполненный `msgstr` не перезаписывается никогда: одинаковый текст в другом
+  контексте сохраняет свой перевод.
 - Валидация ответа: число строк, баланс `< >`, запрещённые RU-кластеры
   (`фх`, `нгх`, `мгх`). **Длину не проверяем** — по правилу репозитория длина
-  не критерий качества (AGENTS.md).
-- Не прошло — пусто + строка в `tmp/translate-local/<lang>.review`.
-- Пауза: файл `tmp/translate-local/PAUSE`, проверка каждую итерацию.
-- Тесты: `python .opencode/skills/translate-local/tests/translate_local.test.py`.
+  не критерий качества (`AGENTS.md`).
+- Не прошло — строка остаётся пустой + запись в `tmp/translate-local/<lang>.review`.
+- Пауза: файл `tmp/translate-local/PAUSE`, проверка перед каждой пачкой.
+- Сеть: встроенный `fetch` + `AbortSignal.timeout` (`--timeout`, секунды).
+- Тесты: `node --test .opencode/skills/translate-local/tests/translate_local.test.mts`
+  (локальный фейковый OpenAI-сервер на `node:http`, реальная LLM не зовётся).
 
 ## Языки
 
@@ -67,16 +71,13 @@ rm tmp/translate-local/PAUSE
 
 ```bash
 node .opencode/skills/extract-text/scripts/po2dat.mts ru   # или npm run po2dat -- ru
-node .opencode/skills/translate-qa/scripts/qa_translate.py --out tmp/qa.html
+node .opencode/skills/translate-qa/scripts/qa_translate.mts --out tmp/qa.html
 # затем деплой (скилл deploy-translator) и проверка в игре
 ```
 
-QA и очередь ручного ревью пока на Python; `review_queue.py` без
-`output/stable_index.json` не работает (см. `commands/pot.md`).
-
 ## RUNBOOK (исторические замеры 28.09 — железо могло измениться)
 
-Оркестрация: LM Studio (`:1234`) — исполнитель; `translate_local.py` —
+Оркестрация: LM Studio (`:1234`) — исполнитель; `translate_local.mts` —
 оркестратор; `po/*.po` — состояние; `po2dat` + deploy — ввод в игру.
 Старые замеры: RX 6600 XT 8 ГБ, ~2 сек/строка батчами по 5–8.
 Актуальную нагрузку и VRAM проверять перед длинным прогоном; правило
@@ -88,14 +89,14 @@ QA и очередь ручного ревью пока на Python; `review_que
 lms server start                                   # если :1234 молчит
 lms load qwen/qwen3-14b -c 2048 --identifier trans14 -y
 # warmup обязателен: первый вызов может упереться в таймаут — это норма
-python .opencode/skills/translate-local/scripts/translate_local.py --lang ru --batch 8 --limit 200
+node .opencode/skills/translate-local/scripts/translate_local.mts --lang ru --batch 8 --limit 200
 ```
 
 Остановка/пауза/продолжение:
 
 - Пауза: `echo pause > tmp/translate-local/PAUSE` — допишет пачку и встанет.
 - Стоп: Ctrl+C в любой момент — запись идёт после каждой пачки, потерь нет.
-- Обрыв/падение сервера: скрипт выходит сам, прогресс в po сохранён;
+- Обрыв/падение сервера: скрипт выходит с кодом 1, прогресс в po сохранён;
   поднять сервер + модель, warmup, та же команда — продолжит с места.
 
 Мониторинг: `tmp/translate-local/*.log`, `tmp/translate-local/<lang>.review`,
