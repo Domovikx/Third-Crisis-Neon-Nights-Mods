@@ -141,8 +141,19 @@ function inc(map: Map<string, Stat>, key: string, filled: boolean): void {
   map.set(key, stat);
 }
 
+/**
+ * Имена тегов для сравнения вёрстки.
+ *
+ * `<font …>` / `</font>` и `<material …>` / `</material>` исключены намеренно: рантайм
+ * выбирает шрифт и материал сам по месту и языку, поэтому генерация POT их вырезает,
+ * а переводчик может скопировать из старой разметки. Без этого фильтра QA выдаёт ложный
+ * `tag-imbalance` почти на каждой цветной реплике (поймано 2026-11-21: 48 из 58 «ошибок»
+ * ru были именно этим — `<font>` приходил в `rt` из старых `# rich:`-оверрайдов).
+ */
+const RENDER_OWNED_RX = /^<\/?(?:font|material)\b/i;
+
 function firstTagNames(tags: string[]): string[] {
-  return tags.map((t) => t.split(/\s+/)[0]);
+  return tags.map((t) => t.split(/\s+/)[0]).filter((name) => !RENDER_OWNED_RX.test(name));
 }
 
 /**

@@ -159,6 +159,29 @@ msgstr ""
   }
 });
 
+test("check: <font>/<material> не считаются дисбалансом (шрифт выбирает рантайм)", () => {
+  const pot = `msgctxt "speaker:Z"
+msgid "Hi"
+msgstr ""
+`;
+  // Реальный случай: в `rt` остался <font> из старых `# rich:`-оверрайдов, в `r` его нет.
+  const dat =
+    JSON.stringify({
+      t: "Hi",
+      x: "Привет",
+      r: "<i><color=#B867FF>Hi</color></i>",
+      rt: '<i><color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Perversion">Привет</font></color></i>',
+    }) + "\n";
+  const dir = fixture("tags-font", pot, dat);
+  try {
+    const { findings } = check("ru", dir);
+    const tags = findings.filter((f) => f.rule === "tag-imbalance");
+    assert.deepEqual(tags, [], "разница только в <font> не должна флагаться");
+  } finally {
+    cleanup(dir);
+  }
+});
+
 test("check: латиница в RU — warning только для ru и при коротком переводе молчит", () => {
   const pot = `#: [dlg:1#0]
 msgctxt "speaker:Z"
