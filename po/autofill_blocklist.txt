@@ -1,0 +1,19 @@
+# Normalized forms NEVER auto-filled (wrong-twin cases, reviewed by human).
+# Generated with current normalize_text — regenerate if it changes.
+
+dildo # foreign-marker
+impact # foreign-marker
+intro # foreign-marker
+intro # foreign-marker
+intro # foreign-marker
+item # fragment
+npcva fnpc happy m # foreign-marker
+perversion interference # foreign-marker
+sex walla # foreign-marker
+sex walla # foreign-marker
+task # fragment
+vazoey r right # wrong-line
+vazoey what am i doing # foreign-marker
+vazoey r right # wrong-line
+visible # fragment
+wait for interactable # foreign-marker

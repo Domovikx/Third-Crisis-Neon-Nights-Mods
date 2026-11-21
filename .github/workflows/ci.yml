@@ -1,0 +1,54 @@
+# CI: typecheck + lint + format + unit tests.
+# Сборка DLL и деплой в игру здесь НЕ проверяются — им нужны csc.exe и
+# Managed/*.dll установленной игры (только локально, см. AGENTS.md).
+name: ci
+
+on: [push, pull_request]
+
+jobs:
+  ts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Format check
+        run: npm run format:check
+
+      - name: Tests
+        run: npm test
+
+      - name: E2E pipeline (dump -> POT -> DAT)
+        run: npm run test:e2e
+
+  # Python-остров: дампер Unity-ассетов (UnityPy не имеет TS-эквивалента).
+  # Пока модуль не портирован — держим его тесты живыми.
+  py-island:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python deps
+        run: pip install UnityPy PyYAML ruff
+
+      - name: Ruff lint (island only)
+        run: ruff check .opencode/skills/dump-assets
+
+      - name: Dump-assets tests
+        run: python .opencode/skills/dump-assets/tests/dump_assets.test.py

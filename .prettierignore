@@ -1,0 +1,12 @@
+# Каталоги данных и артефакты — не форматируем
+po/
+fonts/
+runtime/
+output/
+tmp/
+node_modules/
+package-lock.json
+*.dat
+*.po
+*.pot
+*.jsonl

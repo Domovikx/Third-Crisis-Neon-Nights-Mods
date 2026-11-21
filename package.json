@@ -1,0 +1,31 @@
+{
+  "name": "third-crisis-neon-nights-mods",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Локализация Third Crisis: Neon Nights — TS-пайплайн (dump → POT/PO → DAT) + C# рантайм scan-and-replace",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check:game": "node scripts/game_dir.mts --check",
+    "check:langs": "node scripts/languages.mts --check",
+    "potgen": "node .opencode/skills/extract-text/scripts/potgen.mts",
+    "po2dat": "node .opencode/skills/extract-text/scripts/po2dat.mts",
+    "test": "node --test .opencode/skills/pipeline-common/tests/text_filters.test.mts .opencode/skills/extract-text/tests/po_file.test.mts .opencode/skills/extract-text/tests/po2dat.test.mts .opencode/skills/extract-text/tests/inventory.test.mts .opencode/skills/extract-text/tests/potgen.test.mts scripts/languages.test.mts",
+    "test:e2e": "node --test .opencode/skills/extract-text/tests/pipeline.e2e.test.mts",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "verify": "npm run typecheck && npm run lint && npm run format:check && npm run check:langs && npm test && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "oxlint": "^1.89.0",
+    "prettier": "^3.9.10",
+    "typescript": "^7.0.2"
+  }
+}

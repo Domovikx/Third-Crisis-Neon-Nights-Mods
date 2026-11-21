@@ -1,0 +1,347 @@
+Activate extra Trigger
+Add Input Restraint
+Aquire UI Trigger
+Bathroom Bin Shadow
+Bathroom Door Shadow
+Bathroom Overlay
+Bathroom Stall Wall Overlay
+Bathroom Stall Wall Shadow
+Bathroom Wall Pole Wall Overlay
+Bathroom Wall Pole Wall Shadow
+Bench Shadow
+Bfd
+Bfff
+Big Wall Ventilator
+Big Wall Ventilator Cable
+Big Wall Ventilator Cable Shadow
+Big Wall Ventilator Shadow
+Bjn
+Black Stick 2 Shadow
+Black Stick Shadow
+Bottle 8Shape Shadow
+Bph
+Brush 2 Shadow
+Brush 3 Shadow
+Brush Holder Shadow
+Brush Shadow
+Byh
+Carpet Shadow
+Cdc
+Character Keys/Did stare at Novas Boobs
+Character Keys/Did stare at Rosies Boobs
+Cnk
+Coffe Cup Shadow
+Coffee_Machine _Shadow
+Deactivate extra Trigger
+Dhb
+Dnk
+Double Lipstick Shadow
+Dressing Blanket6_Shadow
+Dressing Clothing_Shirt_Shadow
+Dressing Underwear4_Shadow
+Empty Room Trigger
+Enter Trigger
+Entered Trigger
+Extra Bathroom Trigger
+Floor Ambient Occlusion
+Folding Chair Shadow
+Food Roll Shadow
+Fvh
+GlowingHoleKeys/103 Peeking Counter
+GlowingHoleKeys/105 Peeking Counter
+GlowingHoleKeys/201 Peeking Counter
+GlowingHoleKeys/Agreed to help Femboy Clean
+GlowingHoleKeys/Bunnysuit Girl DidMove
+GlowingHoleKeys/Can Go Upstairs
+GlowingHoleKeys/Did Conversation 1
+GlowingHoleKeys/Did Conversation 2
+GlowingHoleKeys/Did Conversation 3
+GlowingHoleKeys/Did Conversation 3 1
+GlowingHoleKeys/Did Intro
+GlowingHoleKeys/Did Intro Phonecall
+GlowingHoleKeys/Did Peek into 205
+GlowingHoleKeys/Did receive initial Money
+GlowingHoleKeys/Fade Kitchen
+GlowingHoleKeys/Fade Staffroom
+GlowingHoleKeys/First time trying go up
+GlowingHoleKeys/KlaudiaChoice AskToGoUpstairs
+GlowingHoleKeys/NPC17 Talked
+GlowingHoleKeys/NovaMeet Did Femboy walk out
+GlowingHoleKeys/Opened Room 102
+GlowingHoleKeys/Path is blocked
+GlowingHoleKeys/Peeked room 104 once
+GlowingHoleKeys/Picture Key 1
+GlowingHoleKeys/Picture Key 2
+GlowingHoleKeys/Picture Key 3
+GlowingHoleKeys/Picture Key 4
+GlowingHoleKeys/Picture Key 5
+GlowingHoleKeys/Picture Key 6
+GlowingHoleKeys/Read 101 Note
+GlowingHoleKeys/Rosie Asked About Tags
+GlowingHoleKeys/Rosie Did Intro Dialogue
+GlowingHoleKeys/TookPic Groundfloor Corner Fucking
+Hair/Back Right Bang
+Hair/Front Left Bang
+Hair/Front Right Bang
+Hair/Front Right Bang 2
+Hallway Overlay
+Hand Mirror Shadow
+Hidden/VFX/VFX_WaterDrop/Drop/Output Particle Quad
+Initial Trigger
+Jacuzzi Shadow
+Lios Tshirt Shadow
+Lipstick 2 Shadow
+Lipstick 3 Shadow
+Lipstick Box Shadow
+Lipstick Shadow
+Little Box 2 Shadow
+Little Box 3 Shadow
+Little Box 5 Shadow
+Little Box Shadow
+Locker Corner Top Shadow
+Locker Overlay
+Locker Shadow
+Luggage 7 Shadow
+Main Black Overlay
+Make up Bottle 2 Shadow
+Make up Bottle 3 Shadow
+Make up Bottle 5 Shadow
+Make up Bottle 6 Shadow
+Make up Bottle 7 Shadow
+Make up Bottle Shadow
+MakeUp  Shadow
+MakeUp 3 Shadow
+Makeup Case 2 Shadow
+Makeup Case Shadow
+Mirror Big Shadow
+Mynx
+NC_Z2_Redlight_GlowingHole Bathroom Black Overlay
+NC_Z2_Redlight_GlowingHole Hallway Black Overlay
+NC_Z2_Redlight_GlowingHole Kitchen Black Overlay
+NC_Z2_Redlight_GlowingHole Locker Black Overlay
+NC_Z2_Redlight_GlowingHole StaffRoom Overlay
+New Try to walk up Stairs Trigger
+Perfum Bottle 2 Shadow
+Perfum Bottle Shadow
+Present Box Shadow
+Reset Restraint
+Shirt Shadow
+Shoe Shadow
+Sink Shadow
+Stairs Trigger
+Stall Pole Black Overlay
+Stall Pole Left Shadow
+Stall Pole Right Black Overlay
+Stall Pole Right Shadow
+Terminal Clutter
+Upstairs Trigger
+Upstairs in Room Door Trigger
+Upstairs in Room Trigger
+Upstairs past Room Trigger
+VAZoey - 015 - Are those Bullet holes 1
+VAZoey - 018 - I dont think shes wearing a bra 2
+VAZoey - 020 - Shes definitely not wearing a bra 0
+VAZoey - 021 - Ack Sorry 0
+VAZoey - 025 - Khh Just Just a peek 1
+VAZoey - 027 - Khh I I wasnt 0
+VAZoey - 028 - R right 2
+VAZoey - 029 - W wow 1
+VAZoey - 030 - They look so soft 1
+VAZoey - 031 - Gah I I shouldnt stare like that 0
+VAZoey - 032 - Cutie 4
+VAZoey - 045 - I can see that but 0
+VAZoey - 054 - Sarah Im working 0
+VAZoey - 057 - Promise 2
+VAZoey - 058 - My pleasure 3
+VAZoey - 059 - Alright Ill help you 2
+VAZoey - 061 - Rright 1
+VAZoey - 062 - Ah sorry Im a but busy 2
+VAZoey - 063 - Whew quite the mess 1
+VAZoey - 065 - So 8862 is the code for room 102 1
+VAZoey - 067 - Heh Thats one way to get a code 1
+VAZoey - 068 - Whew yay we did it 2
+VAZoey - 069 - Repay your Debt 2
+VAZoey - 070 - What happened 2
+VAZoey - 071 - Some people just suck 2
+VAZoey - 074 - Yes Its him 0
+VAZoey - 075 - Oh Heh Erm thanks Its all good 0
+VAZoey - 076 - Uh Cal Wait what Whos that 0
+VAZoey - 078 - Is he drunk 1
+VAZoey - 079 - Are you Cal 0
+VAZoey - 083 - Uhh okay Sweet drink huh 0
+VAZoey - 085 - Sweet drinks are the best 2
+VAZoey - 089 - I need to get her proof 0
+VAZoey - 090 - Got it Thatll prove it to Klaudia 0
+VAZoey - 091 - Believe me now 0
+VAZoey - 092 - And theres my opening 2
+VAZoey - 093 - Sorry Cal 1
+VAZoey - 098 - What a subtle name for the place 0
+VAZoey - 099 - These prices are a rip-off 2
+VAZoey - 100 - This thing sells condoms and lube 0
+VAZoey - 101 - Rosie Yeah I have 1
+VAZoey - 104 - Klaudia You think so 1
+VAZoey - 105 - Hm Who knows 0
+VAZoey - 106 - Rosie Hmm I dont think so 0
+VAZoey - 107 - Goddess Alright 0
+VAZoey - 108 - Good luck 0
+VAZoey - 109 - Oh I Sorry Dont mind me 0
+VAZoey - 111 - I I should really go 2
+VAZoey - 112 - I I shouldnt 1
+VAZoey - 113 - H Hi 2
+VAZoey - 114 - What am I doing 0
+VAZoey - 115 - He likes it But 2
+VAZoey - 117 - He He really did it 0
+VAZoey - 118 - Mme Oh I Yyes Mhm 1
+VAZoey - 119 - Hhh 0
+VAZoey - 120 - Why didnt I walk away 1
+VAZoey - 121 - He really Liked it 1
+VAZoey - 122 - Oh heh Thanks 0
+VAZoey - 123 - Yeah Got it 1
+VAZoey - 124 - My fantasies Right 1
+VAZoey - 126 - Should last til Im home 3
+VAZoey - 127 - What happened to your arm 1
+VAZoey - 128 - You Cut it off 0
+VAZoey - 129 - It is shiny 1
+VAZoey - 130 - Sensitive 1
+VAZoey - 131 - R right 2
+VAZoey - 133 - That is expensive 3
+VAZoey - 135 - Right 1
+VAZoey - 137 - I have to pass 0
+VAZoey - 138 - No I Im quite Employed you know 3
+VAZoey - 141 - Ehm upstairs is that a problem 3
+VAZoey - 143 - I have to find another way up 1
+VAZoey - 144 - Oh Right 2
+VAZoey - 150 - Uhhh You doing okay buddy 1
+VAZoey - 153 - You had sex 1
+VAZoey - 156 - Right 1
+VAZoey - 157 - Whats in it for me 1
+VAZoey - 159 - Riiight 1
+VAZoey - 160 - Yeah sure Ill help you out 1
+VAZoey - 161 - Yeah yeah Ill be right back 1
+VAZoey - 163 - That was easy 0
+VAZoey - 166 - You got it 1
+VAZoey - 167 - Relax pal Yeah shes up there 1
+VAZoey - 170 - I dont know maybe write her a 1
+VAZoey - 171 - Yeah that 1
+VAZoey - 172 - Ah you wouldnt get it 2
+VAZoey - 174 - Too fire I get it 2
+VAZoey - 175 - Hmm maybe you could try 0
+VAZoey - 176 - Well maybe try 0
+VAZoey - 178 - Yeah he uh wrote a letter for you 1
+VAZoey - 180 - And that got him thrown out 1
+VAZoey - 181 - Picture of What 1
+VAZoey - 182 - Awoooga 0
+VAZoey - 183 - Phew you got it 0
+VAZoey - 185 - Yeah no worries 1
+VAZoey - 188 - What Shes groping my 2
+VAZoey - 189 - Ah Hey I uh 1
+VAZoey - 192 - What am I getting myself into 0
+VAZoey - 195 - Mhm Great 1
+VAZoey - 197 - Right 1
+VAZoey - 198 - Hey Nova right 1
+VAZoey - 199 - Wait was she in here with him 1
+VAZoey - 200 - Khh She had a tight grip 1
+VAZoey - 201 - I need the code Hmm 1
+VAZoey - 203 - Oh Right Im on it 2
+VAZoey - 204 - A bunnysuit 0
+VAZoey - 206 - The room is locked by a padlock 2
+VAZoey - 207 - A bunnysuit 1
+VAZoey - 209 - Got it 0
+VAZoey - 210 - I guess now I just need to 0
+VAZoey - 211 - Put it on 1
+VAZoey - 212 - This really isnt covering much 2
+VAZoey - 213 - This outfit is way too revealing 1
+VAZoey - 214 - Mmhmm Sooo What uh Now 1
+VAZoey - 215 - What have I gotten myself into 1
+VAZoey - 216 - Khh 1
+VAZoey - 219 - I Hot 1
+VAZoey - 220 - Rright Sorry I Mhm 1
+VAZoey - 221 - Yyah Right 2
+VAZoey - 222 - Yes right 1
+VAZoey - 225 - Ngh Th Thanks 2
+VAZoey - 227 - Ahh It Is 2
+VAZoey - 228 - Her Hands so Warm 1
+VAZoey - 229 - Rright I Khh I will 3
+VAZoey - 230 - I need to stop her Ill loose my 1
+VAZoey - 231 - Mm Mhmm 3
+VAZoey - 236 - At least Im upstairs now 1
+VAZoey - 239 - Hh Yyah 1
+VAZoey - 241 - I see it 0
+VAZoey - 243 - Still going eh Sigh 2
+VAZoey - 244 - Lets see what hes up to 1
+VAZoey - 245 - Just Making sure 2
+VAZoey - 246 - 205 This is the place 1
+VAZoey - 248 - This is so not okay 2
+VAZoey - 251 - Hh 2
+VAZoey - 254 - Hh 1
+VAZoey - 258 - Hhh 0
+VAZoey - 259 - I shouldnt watch 2
+VAZoey - 260 - He wants it I wanna see more 1
+VAZoey - 261 - The vibrator 1
+VAZoey - 262 - Khh I Mnhh Hhh 1
+VAZoey - 263 - Khhh Ill just Quickly 1
+VAZoey - 264 - Khhh I cant think clearly 2
+VAZoey - 265 - Yes 2
+VAZoey - 266 - Wh 2
+VAZoey - 267 - Khh Mnhh So rough 1
+VAZoey - 268 - So meaty 0
+VAZoey - 269 - Hes such a brute 2
+VAZoey - 270 - He has a vibrator inside his ass 0
+VAZoey - 271 - Mnhhh 1
+VAZoey - 272 - So Vulgar Khh I Im Nghh 1
+VAZoey - 273 - Fhhh Im gonna Nhhh 1
+VAZoey - 274 - Unhhh Fhhaaahhh Mhnnhhh 2
+VAZoey - 275 - Hhh Hhh Khh 1
+VAZoey - 276 - I shouldnt Have done That 1
+VAZoey - 278 - It shouldnt have been This hot 0
+VAZoey - 285 - Dang it 2
+VAZoey - 286 - Got it 2
+VAZoey - 288 - Hi 2
+VAZoey - 289 - Oh Sorry Im not here for drinks 0
+VAZoey - 290 - Hehe 1
+VAZoey - 292 - A remote 1
+VAZoey - 293 - Right 2
+VAZoey - 294 - Thats not appropriate 0
+VAZoey - 295 - She really doesnt seem to mind 2
+VAZoey - 298 - That makes sense 2
+VAZoey - 300 - Im glad to hear 6
+VAZoey - 303 - Sorry I I changed my mind 1
+VAZoey - 304 - Wait I dont have enough money 0
+VAZoey - 306 - Thank you Rosie 2
+VAZoey - 309 - Eep 3
+VAZoey - 316 - Oh Er 2
+VAZoey - 317 - UUhuh Ill just uh Go Yeah 2
+VAZoey - 318 - Err Yeah I uh Sorry 0
+VAZoey - 319 - Oh Uh Thanks 2
+VAZoey - 320 - Ah Hey 3
+VAZoey - 321 - Err Yeah My clothes OOops2
+VAZoey - 322 - Ah Err Hi 0
+VAZoey - 324 - Ah Heh I thanks 0
+VAZoey - 325 - Aheh Yeah uh Shame 0
+VAZoey - 326 - Heh 0
+VAZoey - 328 - Ah NNo of course not Heh 0
+VAZoey - 332 - Hmm Lets see 1
+VAZoey - 334 - Goddamnit Lets do that again 1
+VAZoey - 338 - What the fuck is Peitho 3
+VAZoey - 344 - That doesnt sound goo 0
+VAZoey - 346 - Ff So hot 0
+VAZoey - 349 - Hoooo ly shit 0
+VAZoey - 350 - It it worked 1
+VAZoey - 353 - Fuck it 3
+Vertical Toilet Shadow
+Wait for Trigger
+Wait for enter Trigger
+Wait for try to walk up Trigger
+Walk in on Klaudia Trigger
+Walked into bathroom Trigger
+Wall Overlay
+Wall Table Shadow
+Xdf
+default_outfit/B collar
+default_outfit/Bbikini strap
+default_outfit/FU  Sleeve
+default_outfit/Fbikini strap
+default_outfit/bow tie1
+default_outfit/bow tie2
+default_outfit/ear rings
+default_outfit/holster 1

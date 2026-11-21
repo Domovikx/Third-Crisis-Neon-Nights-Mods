@@ -1,0 +1,17 @@
+# Ruff: lint + format for the Python tooling (dump_assets.py, extractor.py, build*.py).
+# Run: ruff check . / ruff format .   (or via pre-commit on every commit)
+target-version = "py311"
+line-length = 120
+
+[lint]
+select = ["E", "F", "W", "I", "UP"]
+ignore = [
+  "E501", # long lines are normal in data-heavy scripts; readability over the limit
+]
+
+[lint.isort]
+force-single-line = false
+combine-as-imports = true
+
+[format]
+quote-style = "double"

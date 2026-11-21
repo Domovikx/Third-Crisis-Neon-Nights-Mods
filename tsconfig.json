@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "target": "es2023",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "allowImportingTsExtensions": true,
+    "skipLibCheck": true,
+    "lib": ["es2023"],
+    "types": ["node"]
+  },
+  "include": [".opencode/skills/**/*.mts", "scripts/**/*.mts"],
+  "exclude": ["node_modules", "**/node_modules", "tmp", "output", "runtime", "fonts", "po"]
+}

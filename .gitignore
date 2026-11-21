@@ -1,0 +1,30 @@
+# Репозиторий — только инструменты и переводы. Игра лежит отдельно и не трекается.
+
+# Зависимости
+node_modules/
+
+# Временное (одна тема = одна подпапка, см. AGENTS.md)
+tmp/
+
+# Артефакты сборки
+output/
+runtime/*.dat
+runtime/*.dll
+*.obj
+*.lib
+*.exp
+*.exe
+
+# Python-остров (dump-assets/UnityPy) — кэши
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Деплой-мусор
+.install_temp/
+
+# ОС
+nul
+Thumbs.db
+.DS_Store
