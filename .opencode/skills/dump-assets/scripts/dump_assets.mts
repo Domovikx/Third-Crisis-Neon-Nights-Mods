@@ -206,19 +206,38 @@ function findBundles(dir: string): string[] {
 }
 
 /**
- * Список файлов игры — ровно как в Python-эталоне (display-имена совпадают,
- * чтобы будущий daмп-parity сравнивал одно и то же).
+ * Все числовые индексы файлов вида `<prefix><N><suffix>` в каталоге, по возрастанию.
+ *
+ * Почему не диапазон `0..15`: Python-эталон жёстко ограничивал обход шестнадцатью
+ * сценами, а в установке их девятнадцать — `level16..18` и `sharedassets16..18`
+ * молча не попадали в дамп (найдено 2026-11-22: ~70 000 объектов, включая цели
+ * квестов). Обход по факту наличия файлов лечит это и не теряет новые сцены
+ * после апдейта игры.
+ */
+export function sceneIndexes(dataDir: string, prefix: string, suffix = ""): number[] {
+  const escaped = suffix.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const rx = new RegExp(`^${prefix}(\\d+)${escaped}$`);
+  const out: number[] = [];
+  for (const name of readdirSync(dataDir)) {
+    const m = rx.exec(name);
+    if (m) out.push(Number(m[1]));
+  }
+  return out.sort((a, b) => a - b);
+}
+
+/**
+ * Список файлов игры: сцены — по факту наличия файлов (не диапазоном),
+ * остальное — как в Python-эталоне (display-имена совпадают, чтобы паритет
+ * сравнивал одно и то же).
  */
 export function discoverGameFiles(gameDir: string): DiscoveredFile[] {
   const dataDir = join(gameDir, GAME_DATA_FOLDER);
   const out: DiscoveredFile[] = [];
-  for (let i = 0; i < 16; i++) {
-    const p = join(dataDir, `level${i}`);
-    if (exists(p)) out.push({ name: `level${i}`, path: p });
+  for (const i of sceneIndexes(dataDir, "level")) {
+    out.push({ name: `level${i}`, path: join(dataDir, `level${i}`) });
   }
-  for (let i = 0; i < 16; i++) {
-    const p = join(dataDir, `sharedassets${i}.assets`);
-    if (exists(p)) out.push({ name: `sharedassets${i}`, path: p });
+  for (const i of sceneIndexes(dataDir, "sharedassets", ".assets")) {
+    out.push({ name: `sharedassets${i}`, path: join(dataDir, `sharedassets${i}.assets`) });
   }
   // Python-эталон даёт обоим globalgamemanagers* одно display-имя и второй
   // файл пропускает (dedupe по display). Повторяем ровно это: иначе паритет
