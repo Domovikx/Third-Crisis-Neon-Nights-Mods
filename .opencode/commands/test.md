@@ -1,23 +1,18 @@
 ---
-description: Прогнать TS-матрицу (node --test) и тесты python-острова
+description: Прогнать тесты TS, дампера и Rust-ядра
 agent: build
 ---
 
 Run from the repository root. По умолчанию — TS-матрица через npm:
 
 ```bash
-npm test          # text_filters, po_file, po2dat, inventory, potgen, languages (71 тест)
+npm test          # юнит-тесты TS: текст, PO/POT, языки, релиз
+npm run test:dump # дампер: контейнеры, SerializedFile, извлечение, паритет TS↔Rust
 npm run test:e2e  # дамп → POT → .dat на мини-фикстуре (без игры и сети)
+npm run rust:test # ядро Rust (юнит + тест на живой игре, если установлена)
 ```
 
-Python-остров (UnityPy; тесты требуют установленную игру —
-`TCNN_GAME_DIR` или старая раскладка):
-
-```bash
-TCNN_GAME_DIR="<Steam>/steamapps/common/Third Crisis Neon Nights" \
-  python .opencode/skills/dump-assets/tests/dump_assets.test.py
-python .opencode/skills/translate-local/tests/translate_local.test.py
-```
+Всё, кроме теста на живой игре, работает без тулчейна Rust и без установленной игры.
 
 Легаси Python-тесты `extract-text` (`po_file.test.py`, `po_update.test.py`,
 `po2dat.test.py`) — референс до удаления; TS-паритет уже в `npm test`.

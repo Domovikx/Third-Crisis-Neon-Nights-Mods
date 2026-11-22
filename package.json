@@ -42,7 +42,9 @@
     "rust:build": "cargo build --release --manifest-path tools/rust-decoder/Cargo.toml",
     "rust:test": "cargo test --manifest-path tools/rust-decoder/Cargo.toml",
     "dump:rust": "node .opencode/skills/dump-assets/scripts/dump_assets.mts dump --decoder rust",
-    "bench:dump": "node scripts/dump_bench.mts --runs 2"
+    "bench:dump": "node scripts/dump_bench.mts --runs 2",
+    "dump": "node .opencode/skills/dump-assets/scripts/dump_assets.mts dump --decoder rust",
+    "dump:ts": "node .opencode/skills/dump-assets/scripts/dump_assets.mts dump --decoder ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

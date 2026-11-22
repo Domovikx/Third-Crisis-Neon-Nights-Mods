@@ -38,24 +38,6 @@ jobs:
 
   # Python-остров: дампер Unity-ассетов (UnityPy не имеет TS-эквивалента).
   # Пока модуль не портирован — держим его тесты живыми.
-  py-island:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Install Python deps (pinned)
-        run: pip install -r requirements.txt ruff
-
-      - name: Ruff lint (island only)
-        run: ruff check .opencode/skills/dump-assets
-
-      - name: Dump-assets tests
-        run: python .opencode/skills/dump-assets/tests/dump_assets.test.py
-
   # Байтовое ядро дампера на Rust (tools/rust-decoder): свой LZ4/LZMA, без правил извлечения.
   # Сравнение с TS-эталоном и цифры — docs/rust-vs-ts.md.
   rust:

@@ -1,5 +1,5 @@
 ---
-description: Извлечь текст из игры: dump_assets.py (UnityPy) → potgen.mts (POT)
+description: Извлечь текст из игры: дамп ассетов (Rust/TS) → potgen.mts (POT)
 agent: build
 ---
 
@@ -7,9 +7,9 @@ Run from the repository root (`Third-Crisis-Neon-Nights-Mods`), strictly in orde
 Дамп живёт вне гита (`tmp/dump/`, регенерируется; ~319 МБ).
 
 ```bash
-# 1. Дамп ассетов (python-остров; UnityPy). Путь к игре — env, не хардкод.
-TCNN_GAME_DIR="<Steam>/steamapps/common/Third Crisis Neon Nights" \
-  python .opencode/skills/dump-assets/scripts/dump_assets.py
+# 1. Дамп ассетов. Рабочий декодер — Rust (в 3× быстрее); TS — эталон.
+npm run dump            # = --decoder rust
+npm run dump:ts         # эталон-образец (работает без Rust-тулчейна)
 
 # 2. Пробный POT в tmp/potgen/ (po/ не трогается)
 npm run potgen
@@ -20,8 +20,9 @@ node .opencode/skills/extract-text/scripts/potgen.mts --update
 
 Что делает каждый шаг (детали — скиллы `dump-assets`, `extract-text`):
 
-1. `dump_assets.py` — JSONL по объектам (`summaries.jsonl` + `<asset>.jsonl`).
-   Медленно, запускать после апдейта игры. Формат — `references/DUMP_FORMAT.md`.
+1. Дамп — JSONL по объектам (`summaries.jsonl` + `<asset>.jsonl`).
+   Запускать после апдейта игры (`npm run check:version` напомнит).
+   Формат — `references/DUMP_FORMAT.md`; сравнение реализаций — `docs/rust-vs-ts.md`.
 2. `potgen.mts` — `inventory.mts` читает дамп потоково и собирает 38 973 строки;
    каталог `(msgid, msgctxt)` → 33 271 запись POT. Отчёт печатает
    `inventory items / new / vanished / triaged / rich / merged twins`.

@@ -23,10 +23,10 @@ description: Дамп Unity-ассетов игры в JSONL — на TypeScript
   `strings`/`fields`/`fsm_strings`.
 - `scripts/pystr.mts`, `scripts/jsonl.mts` — примитивы Python-строк и
   сериализатор JSONL (BigInt-`path_id`, float как `repr`).
-- `scripts/dump_assets.py` — **Python-эталон контракта** (UnityPy 1.25.0).
-  Не удалять, пока не закрыта стадия 4; не править.
+- `scripts/rawdump.mts` — **TS-эталон** контракта `rd1` (байтовый слой): работает без
+  Rust-тулчейна и служит оракулом для `tests/rust_parity.test.mts`.
 - `scripts/dump_parity.mts` (в корне репо, `scripts/`) — харнесс паритета:
-  структура (UnityPy-проба) и построчная сверка каталогов дампа.
+  структура и построчная сверка каталогов дампа.
 
 ## Использование
 

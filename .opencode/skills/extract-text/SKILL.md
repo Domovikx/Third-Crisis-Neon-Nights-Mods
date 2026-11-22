@@ -34,9 +34,9 @@ description: PO-пайплайн текста игры (inventory, potgen, po_up
 ## Команды
 
 ```bash
-# Свежий дамп (python-остров UnityPy); путь к игре — TCNN_GAME_DIR
-TCNN_GAME_DIR="<Steam>/steamapps/common/Third Crisis Neon Nights" \
-  python .opencode/skills/dump-assets/scripts/dump_assets.py
+# Свежий дамп: рабочий декодер — Rust (~3× быстрее), TS — эталон
+npm run dump            # = --decoder rust
+npm run dump:ts         # эталон-образец, без Rust-тулчейна
 
 # Безопасный прогон: отчёт + tmp/potgen/template.pot (po/ не трогается)
 npm run potgen

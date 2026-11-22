@@ -26,10 +26,8 @@ import {
 } from "../../pipeline-common/scripts/text_filters.mts";
 ```
 
-Python-остров (`dump_assets.py`) импортирует те же значения из
-`scripts/text_filters.py` через `sys.path` — это временный мост, пока дампер
-на Python. Канонический источник — **`.mts`**; `.py` удаляется вместе с портом
-дампа (см. `tasks/2026-11-21-dump-assets-island.md`).
+Канонический источник — **`.mts`**. Python-версия (`text_filters.py`) удалена
+2026-11-22 вместе с дампером: импортировать нечего и дублировать не нужно.
 
 ## Экспорты (`scripts/text_filters.mts`)
 
