@@ -14,8 +14,8 @@
     "kaizen": "node ../indie-ops/skills/kaizen/kaizen_check.mts --root .opencode/skills",
     "build:site": "node scripts/build_site.mts",
     "mod:install": "node installer/install.mts",
-    "potgen": "node .opencode/skills/extract-text/scripts/potgen.mts",
-    "po2dat": "node .opencode/skills/extract-text/scripts/po2dat.mts",
+    "potgen": "node scripts/text_cli.mts potgen",
+    "po2dat": "node scripts/text_cli.mts po2dat",
     "po:update": "node .opencode/skills/extract-text/scripts/po_update.mts",
     "po:prefill": "node .opencode/skills/extract-text/scripts/prefill_po.mts",
     "find:source": "node .opencode/skills/extract-text/scripts/find_source.mts",
@@ -23,7 +23,7 @@
     "qa:review": "node .opencode/skills/translate-qa/scripts/review_queue.mts",
     "translate:local": "node .opencode/skills/translate-local/scripts/translate_local.mts",
     "test:qa": "node --test .opencode/skills/translate-qa/tests/qa_translate.test.mts .opencode/skills/translate-qa/tests/review_queue.test.mts .opencode/skills/translate-local/tests/translate_local.test.mts scripts/qa_parity.test.mts",
-    "test": "node --test .opencode/skills/pipeline-common/tests/text_filters.test.mts .opencode/skills/extract-text/tests/po_file.test.mts .opencode/skills/extract-text/tests/po2dat.test.mts .opencode/skills/extract-text/tests/inventory.test.mts .opencode/skills/extract-text/tests/potgen.test.mts .opencode/skills/extract-text/tests/po_update.test.mts .opencode/skills/extract-text/tests/prefill_po.test.mts .opencode/skills/extract-text/tests/find_source.test.mts scripts/languages.test.mts .opencode/skills/build-translator/tests/build.test.mts .opencode/skills/deploy-translator/tests/deploy.test.mts scripts/game_version.test.mts .opencode/skills/dump-assets/tests/unityfs.test.mts .opencode/skills/dump-assets/tests/serialized.test.mts .opencode/skills/dump-assets/tests/lz4.test.mts .opencode/skills/dump-assets/tests/lzma.test.mts .opencode/skills/dump-assets/tests/binary.test.mts scripts/package_release.test.mts",
+    "test": "node --test .opencode/skills/pipeline-common/tests/text_filters.test.mts .opencode/skills/extract-text/tests/po_file.test.mts .opencode/skills/extract-text/tests/po2dat.test.mts .opencode/skills/extract-text/tests/inventory.test.mts .opencode/skills/extract-text/tests/potgen.test.mts .opencode/skills/extract-text/tests/po_update.test.mts .opencode/skills/extract-text/tests/prefill_po.test.mts .opencode/skills/extract-text/tests/find_source.test.mts scripts/languages.test.mts .opencode/skills/build-translator/tests/build.test.mts .opencode/skills/deploy-translator/tests/deploy.test.mts scripts/game_version.test.mts .opencode/skills/dump-assets/tests/unityfs.test.mts .opencode/skills/dump-assets/tests/serialized.test.mts .opencode/skills/dump-assets/tests/lz4.test.mts .opencode/skills/dump-assets/tests/lzma.test.mts .opencode/skills/dump-assets/tests/binary.test.mts scripts/package_release.test.mts scripts/text_parity.test.mts",
     "test:e2e": "node --test .opencode/skills/extract-text/tests/pipeline.e2e.test.mts",
     "typecheck": "tsc --noEmit",
     "lint": "oxlint",
@@ -47,7 +47,11 @@
     "dump:ts": "node .opencode/skills/dump-assets/scripts/dump_assets.mts dump --decoder ts",
     "qa:ts": "node .opencode/skills/translate-qa/scripts/qa_translate.mts",
     "qa:build": "cargo build --release --manifest-path tools/rust-qa/Cargo.toml",
-    "qa:bench": "node scripts/qa_scaling_bench.mts --scales 1,10,100 --runs 2"
+    "qa:bench": "node scripts/qa_scaling_bench.mts --scales 1,10,100 --runs 2",
+    "l10n:build": "cargo build --release --manifest-path tools/rust-l10n/Cargo.toml",
+    "potgen:ts": "node .opencode/skills/extract-text/scripts/potgen.mts",
+    "po2dat:ts": "node .opencode/skills/extract-text/scripts/po2dat.mts",
+    "bench:text": "node scripts/text_bench.mts --scales 1,10 --runs 2"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

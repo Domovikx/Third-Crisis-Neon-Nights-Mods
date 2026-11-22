@@ -88,7 +88,7 @@
 - **`potgen`**: потоковое чтение JSONL, каталог (msgid × msgctxt), cross-source dedup,
   рендер POT через общий `po::render_po`. Строка дампа разбирается в тип с 8 нужными
   полями — `fields`/type trees serde пропускает без аллокаций (первая версия на
-  `serde_json::Value` давала 94 МБ/с, типизированная — 104–120 МБ/с).
+  `serde_json::Value` давала ≈91–94 МБ/с (≈1.5×), типизированная — 105–124 МБ/с).
 - **`po2dat`**: rich из `template.pot`, `# rich:` override, earliest-ref-file-wins,
   гейт `auto-normalized`, `legacy` → `sk`, побайтовый JSONL (`": "`, `", "`), атомарная
   запись `.part` → rename.
@@ -123,3 +123,18 @@
 В `npm test` добавить `scripts/text_parity.test.mts` (в CI без бинаря он пропускается,
 как `qa_parity.test.mts`). CI-джоб `rust` уже расширен: fmt/clippy/test для
 `tools/rust-l10n-core` и `tools/rust-l10n`, сборка release и прогон `text_parity.test.mts`.
+
+## Журнал (2026-11-22)
+
+- Общий крейт `tools/rust-l10n-core` (`po`, `dat`, `json`) вынесен из `rust-qa`;
+  `rust-qa` переключён через `pub use`, его 27 тестов остались зелёными. Парсер PO — один.
+- Один бинарь `tools/rust-l10n` с подкомандами `potgen` и `po2dat` (KISS: одна сборка, один exe).
+- Паритет: `template.pot` побайтово (sha256 `ec2d665f…0041` совпал с TS), `.dat` побайтово на всех
+  10 языках. Гейт — `scripts/text_parity.test.mts` (12 проверок, skip без бинаря).
+- Замер: potgen **2.0×** на реальном дампе (124 против 61 МБ/с), на 10× — 1.74–1.78×;
+  po2dat **4.4×** (81 против 17 МБ/с). Оптимизация по замеру: типизированный разбор строки дампа
+  вместо `serde_json::Value` (91–94 → 105–124 МБ/с).
+- Обвязка: `npm run potgen` / `po2dat` → Rust через `scripts/text_cli.mts`; эталоны —
+  `potgen:ts` / `po2dat:ts`; `l10n:build`, `bench:text`.
+- Оговорка: potgen на 10× даёт 1.74–1.78× — ниже планки «2× ради скорости», но выше порога
+  предложения в ~17 раз; решение зафиксировано в `docs/language-audit.md`.
