@@ -110,3 +110,7 @@
   обрезана top-500: 251 кандидат отрезан, ~20–30 видимых
 - [2026-11-22-voice-clips-without-dialogue.md](2026-11-22-voice-clips-without-dialogue.md) —
   **READY** — 155 имён озвучки без диалога в дампе: проверить в игре, есть ли субтитры
+- [2026-11-22-ru-batch-local-llm.md](2026-11-22-ru-batch-local-llm.md) — **READY** — батч `ru`
+  нашим `index-translate-9b` (batch 5, ретрай с уменьшением), после дампера и POT→PO
+- [2026-11-22-rust-po-update.md](2026-11-22-rust-po-update.md) — **READY** — `po_update` (+ prefill,
+  find_source) на общем Rust-ядре: 381 мс/язык сегодня, ожидаемо ~4×, плюс починка учёта выпавших ключей
