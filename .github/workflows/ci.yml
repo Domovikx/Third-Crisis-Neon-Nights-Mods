@@ -44,8 +44,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install Python deps
-        run: pip install UnityPy PyYAML ruff
+      - name: Install Python deps (pinned)
+        run: pip install -r requirements.txt ruff
 
       - name: Ruff lint (island only)
         run: ruff check .opencode/skills/dump-assets
