@@ -73,3 +73,8 @@
   собирается из `site/template.html` с реальным покрытием; инсталлятор-заготовка с планом раскладки
 - [2026-11-21-prefill-corpus-decision.md](2026-11-21-prefill-corpus-decision.md) — **READY** —
   откуда `prefill` берёт корпус переводов (сами PO / другие языки / легаси / удалить)
+- [2026-11-22-dual-dumper-ts-rust.md](2026-11-22-dual-dumper-ts-rust.md) — **READY** — вторая
+  реализация дампера (Rust-ядро) для честного сравнения с TS: паритет, тесты у обоих, бенчмарк
+  по фазам и памяти, решение по профиту
+- [2026-11-22-port-release-packaging.md](2026-11-22-port-release-packaging.md) — **READY** —
+  упаковка релиза с PowerShell на TypeScript (последний скрипт вне стека TS+Rust)
