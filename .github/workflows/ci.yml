@@ -55,13 +55,28 @@ jobs:
 
       - uses: Swatinem/rust-cache@v2
         with:
-          workspaces: tools/rust-decoder
+          workspaces: |
+            tools/rust-decoder
+            tools/rust-qa
 
-      - name: Format
+      - name: Format (decoder)
         run: cargo fmt --check
 
-      - name: Clippy
+      - name: Clippy (decoder)
         run: cargo clippy --all-targets -- -D warnings
 
-      - name: Tests
+      - name: Tests (decoder)
+        run: cargo test
+
+      # QA-ядро: вычисления здесь, HTML-отчёт остаётся в TS (docs/qa-scaling.md).
+      - name: Format (qa)
+        working-directory: tools/rust-qa
+        run: cargo fmt --check
+
+      - name: Clippy (qa)
+        working-directory: tools/rust-qa
+        run: cargo clippy --all-targets -- -D warnings
+
+      - name: Tests (qa)
+        working-directory: tools/rust-qa
         run: cargo test

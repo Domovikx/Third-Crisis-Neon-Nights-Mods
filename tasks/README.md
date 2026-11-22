@@ -78,5 +78,5 @@
   по фазам и памяти, решение по профиту
 - [2026-11-22-port-release-packaging.md](2026-11-22-port-release-packaging.md) — **READY** —
   упаковка релиза с PowerShell на TypeScript (последний скрипт вне стека TS+Rust)
-- [2026-11-22-rust-qa-spike.md](2026-11-22-rust-qa-spike.md) — **READY** — QA на Rust:
+- [2026-11-22-rust-qa-spike.md](2026-11-22-rust-qa-spike.md) — **DONE** — QA на Rust:
   паритет находок и замер масштабирования (1×/10×/100×), решение по коэффициенту, а не по секундам
