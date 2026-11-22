@@ -1,0 +1,18 @@
+[package]
+name = "rust-l10n-core"
+version = "0.1.0"
+edition = "2021"
+description = "PO/POT parser+renderer, JSONL .dat reader and JSON writer shared by the localization tools"
+license = "MIT"
+
+[lib]
+name = "rust_l10n_core"
+path = "src/lib.rs"
+
+[dependencies]
+# ЕДИНСТВЕННАЯ зависимость крейта, и она обоснована: `.dat` — JSONL, который
+# пишет `po2dat` через `JSON.stringify`, а `rust-qa` читает. Свой парсер JSON со
+# всеми эскейпами (\\uXXXX, суррогатные пары) — не та задача, где ручной код
+# оправдан: ошибка = тихо пропущенная строка и врущий отчёт. PO-парсер остаётся
+# своим (~150 строк): он простой и это ядро паритета.
+serde_json = "1"

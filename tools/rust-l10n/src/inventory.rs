@@ -1,0 +1,889 @@
+//! inventory.rs — инвентарь переводимых строк из JSONL-дампа Unity-ассетов.
+//!
+//! Порт читающей половины `.opencode/skills/extract-text/scripts/inventory.mts`
+//! (поведение 1:1 — иначе POT перестанет совпадать побайтово):
+//!
+//! ```text
+//! kind: dlg (ANToolkit dialogues), bundle (PlayMaker line_X),
+//!       spk (имя персонажа), set (settings_keys.display),
+//!       raw (UI-строки raw_strings), fsm (FSM-переменные)
+//! ```
+//!
+//! Порядок пунктов `finish()` — часть контракта POT: сначала диалоги по
+//! `path_id`, затем бандлы по имени, спикеры по первому появлению, settings,
+//! UI и FSM по имени ассета. Меняется только вместе с TS-эталоном.
+//!
+//! Пути `source`/`idx` в Rust не нужны: они существовали для YAML-писателя,
+//! который удалён, а в POT не попадают (YAGNI — не тащим поля без читателя).
+
+use std::collections::{HashMap, HashSet};
+use std::fs::File;
+use std::io::{BufRead, BufReader};
+use std::path::{Path, PathBuf};
+
+use serde_json::{Map, Value};
+
+use rust_l10n_core::po::js_trim;
+
+use crate::text_filters::{is_known_non_speaker, is_skip_prefix, strip_rich};
+
+/// Вид источника строки.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum ItemKind {
+    Dlg,
+    Bundle,
+    Spk,
+    Set,
+    Raw,
+    Fsm,
+}
+
+impl ItemKind {
+    /// UI-ish виды: к ним применяется авто-триаж (`triageReason`).
+    pub fn is_ui_like(self) -> bool {
+        matches!(self, ItemKind::Set | ItemKind::Raw | ItemKind::Fsm)
+    }
+
+    pub fn as_str(self) -> &'static str {
+        match self {
+            ItemKind::Dlg => "dlg",
+            ItemKind::Bundle => "bundle",
+            ItemKind::Spk => "spk",
+            ItemKind::Set => "set",
+            ItemKind::Raw => "raw",
+            ItemKind::Fsm => "fsm",
+        }
+    }
+}
+
+/// Одна строка инвентаря: ровно то, что читает `ctxtOf`/`buildCatalog`.
+#[derive(Debug, Clone)]
+pub struct InventoryItem {
+    pub text: String,
+    pub speaker: String,
+    pub rich_text: String,
+    pub kind: ItemKind,
+}
+
+#[derive(Debug, Default)]
+pub struct Inventory {
+    pub items: Vec<InventoryItem>,
+}
+
+#[derive(Debug, Clone)]
+struct DialogueEntry {
+    text: String,
+    speaker: String,
+    rich_text: String,
+}
+
+struct PidGroup {
+    pid: i64,
+    entries: Vec<DialogueEntry>,
+}
+
+// ---------------------------------------------------------------------------
+// Python-совместимые строковые примитивы.
+//
+// POT сверяется байт-в-байт, а `str.strip()`/`isupper()`/`isalpha()` в CPython
+// работают по Unicode-свойствам; JS-эквиваленты в TS-эталоне уже подогнаны,
+// здесь повторяем их (BOM не пробел, NEL — пробел, длина — в code points).
+// ---------------------------------------------------------------------------
+
+/// Пробел Python `str.strip()` (Unicode White_Space; BOM сюда НЕ входит).
+pub fn py_ws(c: char) -> bool {
+    matches!(
+        c,
+        '\t'..='\r'
+            | '\u{20}'
+            | '\u{1c}'..='\u{1f}'
+            | '\u{85}'
+            | '\u{a0}'
+            | '\u{1680}'
+            | '\u{2000}'..='\u{200a}'
+            | '\u{2028}'
+            | '\u{2029}'
+            | '\u{202f}'
+            | '\u{205f}'
+            | '\u{3000}'
+    )
+}
+
+/// `str.strip()` без аргументов.
+pub fn py_strip(s: &str) -> &str {
+    s.trim_matches(py_ws)
+}
+
+/// Длина в code points (Python `len`), а не в UTF-16 units.
+fn cp_len(s: &str) -> usize {
+    s.chars().count()
+}
+
+/// Python `str.isalpha()` — свойство Alphabetic.
+fn py_is_alpha(s: &str) -> bool {
+    !s.is_empty() && s.chars().all(char::is_alphabetic)
+}
+
+fn py_is_upper_char(c: char) -> bool {
+    c.is_uppercase()
+}
+
+fn py_is_lower_char(c: char) -> bool {
+    c.is_lowercase()
+}
+
+/// Python `str.isupper()` для строки: есть заглавные, строчных нет.
+fn py_is_upper(s: &str) -> bool {
+    let mut has_upper = false;
+    for c in s.chars() {
+        if py_is_lower_char(c) {
+            return false;
+        }
+        if py_is_upper_char(c) {
+            has_upper = true;
+        }
+    }
+    has_upper
+}
+
+fn as_string(v: Option<&Value>) -> &str {
+    match v {
+        Some(Value::String(s)) => s,
+        _ => "",
+    }
+}
+
+fn as_array(v: Option<&Value>) -> &[Value] {
+    match v {
+        Some(Value::Array(a)) => a,
+        _ => &[],
+    }
+}
+
+fn as_object(v: Option<&Value>) -> Option<&Map<String, Value>> {
+    match v {
+        Some(Value::Object(o)) => Some(o),
+        _ => None,
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Фильтры extractor.py
+// ---------------------------------------------------------------------------
+
+/// `_resolve_named_colors`: `<color=имя>` → `<color=#hex>` из color_parser_list.
+pub fn resolve_named_colors(s: &str, colors: &HashMap<String, String>) -> String {
+    const OPEN: &str = "<color=";
+    if !s.contains(OPEN) {
+        return s.to_string();
+    }
+    let mut out = String::with_capacity(s.len());
+    let mut rest = s;
+    while let Some(pos) = rest.find(OPEN) {
+        out.push_str(&rest[..pos + OPEN.len()]);
+        let after = &rest[pos + OPEN.len()..];
+        let name_len = after
+            .char_indices()
+            .take_while(|(_, c)| c.is_alphanumeric() || *c == '_')
+            .last()
+            .map(|(i, c)| i + c.len_utf8())
+            .unwrap_or(0);
+        if name_len > 0 && after[name_len..].starts_with('>') {
+            let name = &after[..name_len];
+            match colors.get(name) {
+                Some(hex) => {
+                    out.push_str(hex);
+                    out.push('>');
+                    rest = &after[name_len + 1..];
+                    continue;
+                }
+                None => {}
+            }
+        }
+        rest = after;
+    }
+    out.push_str(rest);
+    out
+}
+
+/// `_is_ui_string`: похоже ли `raw_string` на UI-лейбл (1:1).
+///
+/// Границы 2..50 code points — историческая защита от Steamworks/Unity-шума;
+/// цена фиксирована осознанно (см. `tasks/2026-11-21-pot-coverage-gaps.md`).
+pub fn is_ui_string(s: &str) -> bool {
+    let len = cp_len(s);
+    if s.is_empty() || !(2..=50).contains(&len) {
+        return false;
+    }
+    let chars: Vec<char> = s.chars().collect();
+    // Свойства шейдеров/Unity: подчёркивание + заглавная.
+    if s.starts_with('_') && len > 2 && py_is_upper_char(chars[1]) {
+        return false;
+    }
+    // GUID и чистый hex.
+    if is_guid_prefix(s) {
+        return false;
+    }
+    if len > 6 && s.chars().all(|c| c.is_ascii_hexdigit()) {
+        return false;
+    }
+    // Отладочные сообщения.
+    let lower = s.to_lowercase();
+    const CODE_PATTERNS: [&str; 33] = [
+        "must be",
+        "is out of",
+        "is not ",
+        "cannot ",
+        "doesn't",
+        "don't ",
+        "not found",
+        "not initialized",
+        "not null",
+        "is null",
+        "is empty",
+        "must not",
+        "is bigger",
+        "is smaller",
+        "is invalid",
+        "is unknown",
+        "size of",
+        "count is",
+        "range of",
+        "index ",
+        "array",
+        "function ",
+        "parameter",
+        "argument",
+        "exception",
+        "error:",
+        "warning:",
+        "origins",
+        "handles",
+        "properties",
+        "serializ",
+        "deserializ",
+        "callback",
+    ];
+    const CODE_PATTERNS_REST: [&str; 2] = ["steam", "unity "];
+    if CODE_PATTERNS.iter().any(|p| lower.contains(p))
+        || CODE_PATTERNS_REST.iter().any(|p| lower.contains(p))
+    {
+        return false;
+    }
+    // C#-имена полей с точками (Namespace.Field, Base Layer.Idle). Эвристика
+    // срабатывает на любую строку с точкой и заглавной в первых 5 code points.
+    if s.contains('.') {
+        let head: Vec<char> = s.split('.').next().unwrap_or("").chars().take(5).collect();
+        if head.iter().any(|c| py_is_upper_char(*c)) {
+            return false;
+        }
+    }
+    if s.contains('<') || s.contains('>') || s.contains('{') || s.contains('}') {
+        return false;
+    }
+    if s.contains('(') && s.contains(')') {
+        return false;
+    }
+    // Пути и файлы.
+    if s.starts_with("actions/") || s.starts_with("expressions/") || s.starts_with("Textures/") {
+        return false;
+    }
+    if s.contains('/') && s.contains('\\') {
+        return false;
+    }
+    if s.ends_with(".cs") || s.ends_with(".dll") || s.ends_with(".json") {
+        return false;
+    }
+    // Имена состояний анимаций/ассетов.
+    if ["Normal", "Highlighted", "Pressed", "Selected", "Disabled", "Active"].contains(&s) {
+        return false;
+    }
+    // ALL CAPS с гласными = кнопка (BACK, HIDE, SKIP, LOG, OPTIONS).
+    if py_is_upper(s) && (2..=25).contains(&len) {
+        return "AEIOU".chars().any(|v| s.contains(v));
+    }
+    // Многословный лейбл (New Game, Dialogue Log, LOAD GAME).
+    if s.contains(' ') {
+        return true;
+    }
+    // Короткий PascalCase без пробела (Back, Continue, Skip, Resume).
+    if py_is_upper_char(chars[0])
+        && chars[1..].iter().any(|c| py_is_lower_char(*c))
+        && (2..=15).contains(&len)
+    {
+        return !["FSM", "FSMs", "GUID", "Data"].contains(&s);
+    }
+    false
+}
+
+/// `^[0-9a-f]{8}-[0-9a-f]{4}` без учёта регистра.
+fn is_guid_prefix(s: &str) -> bool {
+    let bytes = s.as_bytes();
+    if bytes.len() < 13 {
+        return false;
+    }
+    if !bytes[..8].iter().all(u8::is_ascii_hexdigit) || bytes[8] != b'-' {
+        return false;
+    }
+    bytes[9..13].iter().all(u8::is_ascii_hexdigit)
+}
+
+// ---------------------------------------------------------------------------
+// Аккумулятор: один проход по дампу собирает всё, что нужно potgen.
+// ---------------------------------------------------------------------------
+
+/// Упорядоченная карта «ключ → значение» с семантикой JS `Map`:
+/// первый ключ задаёт порядок, повторная вставка заменяет значение на месте.
+struct OrderedMap<V> {
+    keys: Vec<String>,
+    index: HashMap<String, usize>,
+    values: Vec<V>,
+}
+
+// Ручной Default: derive добавил бы требование `V: Default`, которое для
+// `PidGroup`/`Vec<...>` не нужно (пустые векторы создаются сами).
+impl<V> Default for OrderedMap<V> {
+    fn default() -> Self {
+        Self {
+            keys: Vec::new(),
+            index: HashMap::new(),
+            values: Vec::new(),
+        }
+    }
+}
+
+impl<V> OrderedMap<V> {
+    fn get_or_insert_with(&mut self, key: &str, make: impl FnOnce() -> V) -> &mut V {
+        if let Some(&i) = self.index.get(key) {
+            return &mut self.values[i];
+        }
+        self.index.insert(key.to_string(), self.keys.len());
+        self.keys.push(key.to_string());
+        self.values.push(make());
+        self.values.last_mut().expect("значение добавлено")
+    }
+
+    fn set(&mut self, key: &str, value: V) {
+        if let Some(&i) = self.index.get(key) {
+            self.values[i] = value;
+            return;
+        }
+        self.index.insert(key.to_string(), self.keys.len());
+        self.keys.push(key.to_string());
+        self.values.push(value);
+    }
+
+    fn into_sorted_by_key(
+        self,
+        cmp: impl Fn(&str, &str) -> std::cmp::Ordering,
+    ) -> Vec<(String, V)> {
+        let mut pairs: Vec<(String, V)> = self.keys.into_iter().zip(self.values).collect();
+        pairs.sort_by(|a, b| cmp(&a.0, &b.0));
+        pairs
+    }
+
+    fn into_pairs(self) -> Vec<(String, V)> {
+        self.keys.into_iter().zip(self.values).collect()
+    }
+}
+
+/// Сравнение строк по code points (порядок Python `str`). Для UTF-8 это
+/// совпадает с побайтовым сравнением, то есть с `str::cmp`.
+fn compare_code_points(a: &str, b: &str) -> std::cmp::Ordering {
+    a.cmp(b)
+}
+
+/// Порядок имён файлов как у файловой системы Windows (без регистра, затем
+/// code points). На порядок влияет только «первое вхождение побеждает».
+fn compare_file_names(a: &str, b: &str) -> std::cmp::Ordering {
+    let na = a.to_lowercase();
+    let nb = b.to_lowercase();
+    na.cmp(&nb).then_with(|| compare_code_points(a, b))
+}
+
+/// Верхнеуровневый `"path_id"` из сырой строки (BigInt-точность в TS).
+/// Unity `path_id` — знаковый 64-битный хэш; i64 покрывает его целиком, а
+/// `JSON.parse` терял точность выше 2^53 (22 pid в реальном дампе).
+fn path_id_of(raw_line: &str, obj: &Map<String, Value>) -> Option<i64> {
+    if !obj.contains_key("path_id") {
+        return None;
+    }
+    if let Some(text) = raw_path_id(raw_line) {
+        return text.parse::<i64>().ok();
+    }
+    match obj.get("path_id") {
+        Some(Value::Number(n)) => n.as_i64().or_else(|| n.as_u64().map(|v| v as i64)),
+        _ => None,
+    }
+}
+
+/// `(?<!\\)"path_id"\s*:\s*(-?\d+)` — левое совпадение вне JSON-эскейпа.
+fn raw_path_id(raw_line: &str) -> Option<&str> {
+    const KEY: &str = "\"path_id\"";
+    let bytes = raw_line.as_bytes();
+    let mut from = 0usize;
+    while let Some(pos) = raw_line[from..].find(KEY) {
+        let start = from + pos;
+        let escaped = start > 0 && bytes[start - 1] == b'\\';
+        let after_key = start + KEY.len();
+        let rest = &raw_line[after_key..];
+        let mut it = rest.char_indices().peekable();
+        while it.peek().is_some_and(|(_, c)| rust_l10n_core::po::js_ws(*c)) {
+            it.next();
+        }
+        if let Some((_, ':')) = it.peek().copied() {
+            it.next();
+            while it.peek().is_some_and(|(_, c)| rust_l10n_core::po::js_ws(*c)) {
+                it.next();
+            }
+            let digits_start = after_key + it.peek().map(|(i, _)| *i).unwrap_or(rest.len());
+            let tail = &raw_line[digits_start..];
+            let (sign, body) = match tail.strip_prefix('-') {
+                Some(b) => (1usize, b),
+                None => (0usize, tail),
+            };
+            let len = body.bytes().take_while(u8::is_ascii_digit).count();
+            if !escaped && len > 0 {
+                return Some(&raw_line[digits_start..digits_start + sign + len]);
+            }
+        }
+        from = start + KEY.len();
+    }
+    None
+}
+
+/// Накопитель строк дампа (порт `DumpScanner`).
+#[derive(Default)]
+pub struct DumpScanner {
+    dialogues: OrderedMap<PidGroup>,
+    bundles: OrderedMap<Vec<DialogueEntry>>,
+    bundle_seen: HashSet<(String, String)>,
+    settings: OrderedMap<Vec<String>>,
+    chunk_ui: OrderedMap<Vec<String>>,
+    ui_local_seen: HashMap<String, HashSet<String>>,
+    ui_global_seen: HashSet<String>,
+    fsm: OrderedMap<Vec<String>>,
+    fsm_local_seen: HashMap<String, HashSet<String>>,
+    fsm_global_seen: HashSet<String>,
+    colors: HashMap<String, String>,
+}
+
+impl DumpScanner {
+    /// Одна строка чанка (`level*.jsonl`, `bundle_*.jsonl`, `resources.jsonl`).
+    pub fn add_chunk_row(&mut self, obj: &Map<String, Value>, raw_line: &str) {
+        self.collect_colors(obj);
+        self.collect_dialogues(obj, raw_line);
+        self.collect_bundle(obj);
+        self.collect_chunk_ui(obj);
+        self.collect_fsm(obj);
+    }
+
+    /// Одна строка `summaries.jsonl` (`stem` — имя ассета из строки).
+    pub fn add_summary_row(&mut self, obj: &Map<String, Value>, stem: &str) {
+        let mut seen: HashSet<&str> = HashSet::new();
+        let mut entries: Vec<String> = Vec::new();
+        for raw in as_array(obj.get("settings_keys")) {
+            let Some(sk) = as_object(Some(raw)) else {
+                continue;
+            };
+            // Python: display.strip().strip("\x00") — сначала пробелы, затем NUL.
+            let display = as_string(sk.get("display"));
+            let text = py_strip(display).trim_matches('\u{0}');
+            if text.is_empty() || seen.contains(text) || text.contains('\u{0}') {
+                continue;
+            }
+            seen.insert(text);
+            entries.push(text.to_string());
+        }
+        if !entries.is_empty() {
+            self.settings.set(stem, entries);
+        }
+    }
+
+    /// Собрать итоговый инвентарь в порядке `scan_dump()` из TS-эталона.
+    pub fn finish(self) -> Inventory {
+        let mut items: Vec<InventoryItem> = Vec::new();
+
+        // Диалоги: группы по path_id, отсортированы по числовому значению.
+        let mut groups: Vec<(i64, Vec<DialogueEntry>)> = self
+            .dialogues
+            .into_pairs()
+            .into_iter()
+            .map(|(_, g)| (g.pid, g.entries))
+            .collect();
+        groups.sort_by_key(|(pid, _)| *pid);
+        for (_, entries) in &groups {
+            for e in entries {
+                items.push(InventoryItem {
+                    text: e.text.clone(),
+                    speaker: e.speaker.clone(),
+                    rich_text: resolve_named_colors(&e.rich_text, &self.colors),
+                    kind: ItemKind::Dlg,
+                });
+            }
+        }
+
+        // Бандлы: по имени ассета (code points).
+        let bundles = self.bundles.into_sorted_by_key(compare_code_points);
+        for (_, entries) in &bundles {
+            for e in entries {
+                items.push(InventoryItem {
+                    text: e.text.clone(),
+                    speaker: e.speaker.clone(),
+                    rich_text: resolve_named_colors(&e.rich_text, &self.colors),
+                    kind: ItemKind::Bundle,
+                });
+            }
+        }
+
+        // Спикеры: порядок первого появления среди диалогов, затем бандлов
+        // (порядок вставки, НЕ отсортированный).
+        let mut seen_speakers: HashSet<String> = HashSet::new();
+        let mut speakers: Vec<String> = Vec::new();
+        for entries in groups.iter().map(|(_, e)| e).chain(bundles.iter().map(|(_, e)| e)) {
+            for e in entries {
+                let sp = py_strip(&e.speaker);
+                if !sp.is_empty() && seen_speakers.insert(sp.to_string()) {
+                    speakers.push(sp.to_string());
+                }
+            }
+        }
+        for sp in speakers {
+            items.push(InventoryItem {
+                text: sp,
+                speaker: String::new(),
+                rich_text: String::new(),
+                kind: ItemKind::Spk,
+            });
+        }
+
+        for (_, entries) in self.settings.into_sorted_by_key(compare_code_points) {
+            for text in entries {
+                items.push(InventoryItem {
+                    text,
+                    speaker: String::new(),
+                    rich_text: String::new(),
+                    kind: ItemKind::Set,
+                });
+            }
+        }
+
+        for (_, entries) in self.chunk_ui.into_sorted_by_key(compare_code_points) {
+            for text in entries {
+                items.push(InventoryItem {
+                    text,
+                    speaker: String::new(),
+                    rich_text: String::new(),
+                    kind: ItemKind::Raw,
+                });
+            }
+        }
+
+        for (_, entries) in self.fsm.into_sorted_by_key(compare_code_points) {
+            for text in entries {
+                items.push(InventoryItem {
+                    text,
+                    speaker: String::new(),
+                    rich_text: String::new(),
+                    kind: ItemKind::Fsm,
+                });
+            }
+        }
+
+        Inventory { items }
+    }
+
+    fn collect_colors(&mut self, obj: &Map<String, Value>) {
+        let Some(cpl) = as_object(obj.get("color_parser_list")) else {
+            return;
+        };
+        for (name, hex) in cpl {
+            if let Value::String(hex) = hex {
+                self.colors.insert(name.clone(), hex.clone());
+            }
+        }
+    }
+
+    fn collect_dialogues(&mut self, obj: &Map<String, Value>, raw_line: &str) {
+        let raw = as_array(obj.get("dialogues"));
+        if raw.is_empty() {
+            return;
+        }
+        let Some(pid) = path_id_of(raw_line, obj) else {
+            return;
+        };
+        let key = pid.to_string();
+        let group = self
+            .dialogues
+            .get_or_insert_with(&key, || PidGroup {
+                pid,
+                entries: Vec::new(),
+            });
+
+        // `seen` живёт в пределах ОДНОГО объекта дампа: одинаковые
+        // (text, speaker) в разных строках одного path_id не дедупятся.
+        let mut seen: HashSet<(String, String)> = HashSet::new();
+        for raw_entry in raw {
+            let Some(d) = as_object(Some(raw_entry)) else {
+                continue;
+            };
+            let text = py_strip(as_string(d.get("text")));
+            if text.is_empty() {
+                continue;
+            }
+            let speaker = py_strip(as_string(d.get("speaker")));
+            let key = (text.to_string(), speaker.to_string());
+            if !seen.insert(key) {
+                continue;
+            }
+            group.entries.push(DialogueEntry {
+                text: text.to_string(),
+                speaker: speaker.to_string(),
+                rich_text: py_strip(as_string(d.get("rich_text"))).to_string(),
+            });
+        }
+    }
+
+    fn collect_bundle(&mut self, obj: &Map<String, Value>) {
+        let asset = as_string(obj.get("asset"));
+        if !asset.starts_with("bundle_") {
+            return;
+        }
+        let entries = self
+            .bundles
+            .get_or_insert_with(asset, Vec::<DialogueEntry>::new);
+
+        let all = as_array(obj.get("raw_strings"));
+        if all.is_empty() {
+            return;
+        }
+        let rs: Vec<&str> = all
+            .iter()
+            .filter_map(|s| match s {
+                Value::String(v) => Some(v.as_str()),
+                _ => None,
+            })
+            .collect();
+        // Признак PlayMaker-бандла: в raw есть ключи line_X. Арт/аудио-бандлы
+        // отсекаются здесь, иначе их имена попали бы в POT как диалоги.
+        if !rs.iter().any(|s| s.starts_with("line_")) {
+            return;
+        }
+        let obj_name = as_object(obj.get("strings"))
+            .map(|s| as_string(s.get("m_Name")))
+            .unwrap_or("");
+
+        let mut i = 0usize;
+        while i < rs.len() {
+            let s = py_strip(rs[i]);
+            if is_skip_prefix(s) || s == obj_name {
+                i += 1;
+                continue;
+            }
+            if cp_len(s) <= 3 || !s.contains(' ') {
+                i += 1;
+                continue;
+            }
+            if s.starts_with('{') || s.starts_with('[') {
+                i += 1;
+                continue;
+            }
+            let clean = strip_rich(s);
+            if clean.is_empty() || cp_len(&clean) < 4 {
+                i += 1;
+                continue;
+            }
+            // rich_text — исходная строка с тегами (если отличается от clean).
+            let rich_text = if s != clean { s } else { "" };
+
+            let mut speaker = "";
+            if i + 1 < rs.len() {
+                let ns = py_strip(rs[i + 1]);
+                let first = ns.chars().next().unwrap_or('\0');
+                if !ns.is_empty()
+                    && !is_skip_prefix(ns)
+                    && !ns.starts_with("line_")
+                    && ns != obj_name
+                    && !ns.contains(' ')
+                    && py_is_upper_char(first)
+                    && py_is_alpha(ns)
+                    && !is_known_non_speaker(ns)
+                {
+                    speaker = ns;
+                    i += 1;
+                }
+            }
+
+            if self
+                .bundle_seen
+                .insert((clean.clone(), speaker.to_string()))
+            {
+                entries.push(DialogueEntry {
+                    text: clean,
+                    speaker: speaker.to_string(),
+                    rich_text: rich_text.to_string(),
+                });
+            }
+            i += 1;
+        }
+    }
+
+    fn collect_chunk_ui(&mut self, obj: &Map<String, Value>) {
+        let asset = {
+            let a = as_string(obj.get("asset"));
+            if a.is_empty() {
+                "unknown"
+            } else {
+                a
+            }
+        };
+        let entries = self
+            .chunk_ui
+            .get_or_insert_with(asset, Vec::<String>::new);
+        let local = self
+            .ui_local_seen
+            .entry(asset.to_string())
+            .or_default();
+
+        // Дедуп глобальный (на весь дамп): один и тот же лейбл из разных сцен
+        // даёт одну запись. Для перевода это верно (текст один).
+        for raw in as_array(obj.get("raw_strings")) {
+            let Value::String(raw) = raw else {
+                continue;
+            };
+            let s = py_strip(raw);
+            if s.is_empty()
+                || local.contains(s)
+                || self.ui_global_seen.contains(s)
+                || s.contains('\u{0}')
+            {
+                continue;
+            }
+            if !is_ui_string(s) {
+                continue;
+            }
+            local.insert(s.to_string());
+            self.ui_global_seen.insert(s.to_string());
+            entries.push(s.to_string());
+        }
+    }
+
+    fn collect_fsm(&mut self, obj: &Map<String, Value>) {
+        let asset = {
+            let a = as_string(obj.get("asset"));
+            if a.is_empty() {
+                "unknown"
+            } else {
+                a
+            }
+        };
+        let entries = self.fsm.get_or_insert_with(asset, Vec::<String>::new);
+        let local = self
+            .fsm_local_seen
+            .entry(asset.to_string())
+            .or_default();
+
+        for raw in as_array(obj.get("fsm_strings")) {
+            let s = match raw {
+                Value::String(v) => py_strip(v),
+                _ => "",
+            };
+            if s.is_empty()
+                || local.contains(s)
+                || self.fsm_global_seen.contains(s)
+                || s.contains('\u{0}')
+            {
+                continue;
+            }
+            local.insert(s.to_string());
+            self.fsm_global_seen.insert(s.to_string());
+            entries.push(s.to_string());
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Файловый слой
+// ---------------------------------------------------------------------------
+
+/// Все JSONL-чанки: `<dump>/*.jsonl` без `summaries.jsonl`.
+pub fn find_chunks(dump_dir: &Path) -> std::io::Result<Vec<PathBuf>> {
+    let mut names: Vec<String> = Vec::new();
+    for entry in std::fs::read_dir(dump_dir)? {
+        let entry = entry?;
+        if !entry.file_type()?.is_file() {
+            continue;
+        }
+        let name = entry.file_name().to_string_lossy().into_owned();
+        if name.ends_with(".jsonl") && name != "summaries.jsonl" {
+            names.push(name);
+        }
+    }
+    names.sort_by(|a, b| compare_file_names(a, b));
+    Ok(names.into_iter().map(|n| dump_dir.join(n)).collect())
+}
+
+/// `summaries.jsonl`, если есть.
+pub fn find_summaries(dump_dir: &Path) -> Vec<PathBuf> {
+    let path = dump_dir.join("summaries.jsonl");
+    if path.is_file() {
+        vec![path]
+    } else {
+        Vec::new()
+    }
+}
+
+/// Построчный разбор JSONL: битые строки и не-объекты молча пропускаются
+/// (как `iter_jsonl_objects` в Python и `readJsonl` в TS-эталоне).
+fn for_each_row(path: &Path, mut f: impl FnMut(&Map<String, Value>, &str)) -> std::io::Result<()> {
+    let file = File::open(path)?;
+    let mut reader = BufReader::with_capacity(1 << 20, file);
+    let mut buf: Vec<u8> = Vec::with_capacity(1 << 16);
+    loop {
+        buf.clear();
+        let read = reader.read_until(b'\n', &mut buf)?;
+        if read == 0 {
+            break;
+        }
+        let raw = std::str::from_utf8(&buf).unwrap_or("");
+        let line = js_trim(raw);
+        if line.is_empty() {
+            continue;
+        }
+        let Ok(Value::Object(obj)) = serde_json::from_str::<Value>(line) else {
+            continue;
+        };
+        f(&obj, line);
+    }
+    Ok(())
+}
+
+/// Прочитать дамп целиком (потоково) и собрать инвентарь.
+pub fn scan_dump(dump_dir: &Path) -> Result<Inventory, String> {
+    if !dump_dir.is_dir() {
+        return Err(format!(
+            "dump not found: {} (сначала запусти dump-assets)",
+            dump_dir.display()
+        ));
+    }
+    let chunks = find_chunks(dump_dir).map_err(|e| format!("{}: {e}", dump_dir.display()))?;
+    let summaries = find_summaries(dump_dir);
+    let mut scanner = DumpScanner::default();
+
+    for fp in &chunks {
+        for_each_row(fp, |obj, line| scanner.add_chunk_row(obj, line))
+            .map_err(|e| format!("{}: {e}", fp.display()))?;
+    }
+    for fp in &summaries {
+        for_each_row(fp, |obj, _| {
+            let stem = match obj.get("asset") {
+                Some(Value::String(s)) => s.as_str(),
+                _ => "summaries",
+            };
+            scanner.add_summary_row(obj, stem);
+        })
+        .map_err(|e| format!("{}: {e}", fp.display()))?;
+    }
+
+    Ok(scanner.finish())
+}

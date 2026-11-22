@@ -252,3 +252,59 @@ pub fn parse_po(text: &str) -> Vec<PoEntry> {
     flush(&mut cur, &mut entries);
     entries
 }
+
+/// Закодировать строку для PO (одна строка, детерминированно) — аналог
+/// `poEscape` из TS. Порядок замен не важен при однопроходной реализации:
+/// добавленные обратные слэши не переэкранируются (как и в цепочке `.replace`).
+pub fn escape_po(s: &str) -> String {
+    let mut out = String::with_capacity(s.len());
+    for c in s.chars() {
+        match c {
+            '\\' => out.push_str("\\\\"),
+            '"' => out.push_str("\\\""),
+            '\r' => out.push_str("\\r"),
+            '\n' => out.push_str("\\n"),
+            '\t' => out.push_str("\\t"),
+            c => out.push(c),
+        }
+    }
+    out
+}
+
+/// Отрендерить записи + строки заголовка в PO-текст (один завершающий перевод
+/// строки) — аналог `renderPo` из TS: `join("\n")`, срезать хвостовые `\n`, `+ "\n"`.
+pub fn render_po(entries: &[PoEntry], header_lines: &[String]) -> String {
+    let mut lines: Vec<String> = Vec::with_capacity(header_lines.len() + entries.len() * 5 + 2);
+    lines.extend(header_lines.iter().cloned());
+    lines.push(String::new());
+    for e in entries {
+        for r in &e.refs {
+            lines.push(format!("#: {r}"));
+        }
+        for c in &e.comments {
+            lines.push(format!("#. {c}"));
+        }
+        for t in &e.translator {
+            lines.push(format!("# {t}"));
+        }
+        let flags: Vec<&str> = e
+            .flags
+            .iter()
+            .map(String::as_str)
+            .filter(|f| !f.is_empty())
+            .collect();
+        if !flags.is_empty() {
+            lines.push(format!("#, {}", flags.join(", ")));
+        }
+        if !e.msgctxt.is_empty() {
+            lines.push(format!("msgctxt \"{}\"", escape_po(&e.msgctxt)));
+        }
+        lines.push(format!("msgid \"{}\"", escape_po(&e.msgid)));
+        lines.push(format!("msgstr \"{}\"", escape_po(&e.msgstr)));
+        lines.push(String::new());
+    }
+    let joined = lines.join("\n");
+    let mut out = joined.trim_end_matches('\n').to_string();
+    out.push('\n');
+    out
+}

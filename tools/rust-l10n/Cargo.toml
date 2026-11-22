@@ -1,0 +1,27 @@
+[package]
+name = "rust-l10n"
+version = "0.1.0"
+edition = "2021"
+description = "POT/PO/DAT text pipeline for the Third Crisis localization mod (potgen + po2dat)"
+license = "MIT"
+
+[lib]
+name = "rust_l10n"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rust-l10n"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[dependencies]
+# PO-парсер и JSON-писатель — общий крейт: третий парсер PO не заводим.
+rust-l10n-core = { path = "../rust-l10n-core" }
+# JSONL-дамп и `.dat` — тот же обоснованный serde_json, что в rust-qa:
+# разбор строк дампа с полными эскейпами — не задача для ручного парсера.
+serde_json = "1"

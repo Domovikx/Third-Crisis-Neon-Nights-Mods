@@ -33,10 +33,17 @@ dependencies = [
 ]
 
 [[package]]
-name = "rust-qa"
+name = "rust-l10n-core"
 version = "0.1.0"
 dependencies = [
  "serde_json",
+]
+
+[[package]]
+name = "rust-qa"
+version = "0.1.0"
+dependencies = [
+ "rust-l10n-core",
 ]
 
 [[package]]
