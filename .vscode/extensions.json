@@ -18,6 +18,9 @@
     "eamodio.gitlens",
     "github.vscode-github-actions",
     "silvioprog.file-size-badge",
-    "alexcvzz.vscode-sqlite"
+    "alexcvzz.vscode-sqlite",
+    "rust-lang.rust-analyzer",
+    "tamasfe.even-better-toml",
+    "vadimcn.vscode-lldb"
   ]
 }

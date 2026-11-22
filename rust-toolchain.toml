@@ -1,0 +1,6 @@
+[toolchain]
+# Зафиксировано под сборку tools/rust-decoder: одна версия у всех и в CI.
+# Установка: rustup toolchain install 1.100.0
+channel = "1.100.0"
+components = ["rustfmt", "clippy"]
+profile = "minimal"
