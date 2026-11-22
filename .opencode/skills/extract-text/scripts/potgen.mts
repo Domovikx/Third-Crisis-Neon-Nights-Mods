@@ -16,6 +16,11 @@
  *     удаляется: рантайм ищет по голому тексту, дубль = двойной перевод;
  *   - записи отсортированы по (msgid, msgctxt) — стабильные диффы переводов.
  *
+ * Политика отбора по провенансу (`config/pot-src-policy.json`, см.
+ * `docs/pot-provenance.md`): записи, чья метка `src` исключена политикой,
+ * в POT НЕ пишутся, а складываются в `tmp/pot-excluded.jsonl`
+ * (`{src, msgid, msgctxt, reason}`) — ничего не теряется молча.
+ *
  * Поведение CLI: без флага `--update` пишет только в `tmp/potgen/`
  * (безопасный прогон), с флагом — обновляет `po/template.pot`.
  */
@@ -38,6 +43,10 @@ export const REPO_ROOT = resolve(import.meta.dirname, "../../../..");
 export const DEFAULT_DUMP_DIR = join(REPO_ROOT, "tmp", "dump");
 export const POT_PATH = join(REPO_ROOT, "po", "template.pot");
 export const REPORT_POT_PATH = join(REPO_ROOT, "tmp", "potgen", "template.pot");
+/** Политика отбора по провенансу (данные, не код). */
+export const POLICY_PATH = join(REPO_ROOT, "config", "pot-src-policy.json");
+/** Журнал исключённых записей: ничего не теряется молча. */
+export const EXCLUDED_PATH = join(REPO_ROOT, "tmp", "pot-excluded.jsonl");
 
 /** TMP-теги шрифта/материала: не входят в шаблон (выбор рендерера). */
 const FONT_TAG_RX = /<\/?(?:font|material)[^>]*>/gi;
@@ -93,11 +102,311 @@ export function triageReason(text: string, kind: ItemKind): string {
   return "";
 }
 
+// ---------------------------------------------------------------------------
+// Политика отбора по провенансу (`config/pot-src-policy.json`).
+//
+// Политика — ДАННЫЕ, а не код: `exclude` перечисляет метки `#. src:`, которые
+// не попадают в POT; `include` — что вообще допускается (`*` = всё). Шаблон
+// метки — точная метка или префикс с `*` (`raw:Font`, `raw:Tex*`, `raw:*`).
+// Исключённые записи не теряются: `tmp/pot-excluded.jsonl`.
+// ---------------------------------------------------------------------------
+
+/** Метки без параметра (контракт `#. src:`, инвариант 14). */
+const FIXED_SRC_LABELS: readonly string[] = ["dialog", "bundle", "settings", "us", "global"];
+
+/**
+ * Классы Unity, которыми дамп помечает объект (`type` → `raw:<Class>`).
+ *
+ * Источник истины — `.opencode/skills/dump-assets/scripts/unity_classes.mts`
+ * (`CLASS_NAMES`); список здесь нужен, чтобы опечатка в политике
+ * (`raw:Fontt`) была ошибкой, а не молчаливым «ничего не исключено».
+ * Рассинхрон стережёт тест `knownRawClasses` в `potgen.test.mts`.
+ */
+export const KNOWN_RAW_CLASSES: readonly string[] = [
+  "GameObject",
+  "Transform",
+  "Camera",
+  "Material",
+  "MeshRenderer",
+  "Texture2D",
+  "MeshFilter",
+  "Mesh",
+  "Shader",
+  "TextAsset",
+  "Rigidbody",
+  "MeshCollider",
+  "BoxCollider",
+  "ComputeShader",
+  "AnimationClip",
+  "AudioListener",
+  "AudioSource",
+  "AudioClip",
+  "RenderTexture",
+  "CustomRenderTexture",
+  "AnimatorController",
+  "Animator",
+  "RenderSettings",
+  "MonoBehaviour",
+  "MonoScript",
+  "LineRenderer",
+  "FlareLayer",
+  "Font",
+  "PhysicMaterial",
+  "SphereCollider",
+  "CapsuleCollider",
+  "SkinnedMeshRenderer",
+  "AssetBundle",
+  "CharacterController",
+  "PreloadData",
+  "LightmapSettings",
+  "AudioReverbFilter",
+  "AudioHighPassFilter",
+  "AudioReverbZone",
+  "AudioLowPassFilter",
+  "NavMeshSettings",
+  "ParticleSystem",
+  "ParticleSystemRenderer",
+  "ShaderVariantCollection",
+  "SpriteRenderer",
+  "Sprite",
+  "AnimatorOverrideController",
+  "CanvasRenderer",
+  "Canvas",
+  "RectTransform",
+  "CanvasGroup",
+  "AudioMixerController",
+  "AudioMixerGroupController",
+  "AudioMixerSnapshotController",
+  "PlayableDirector",
+  "VideoPlayer",
+  "VideoClip",
+  "SpriteMask",
+  "VFXRenderer",
+  "SpriteAtlas",
+  "LightingSettings",
+  "SpriteShapeRenderer",
+  "VisualEffectAsset",
+  "VisualEffect",
+  // Дамп без поля `type` (редкий случай) помечает метку как `raw:unknown`.
+  "unknown",
+];
+
+/** C#-идентификатор: та же грамматика, что у `isValidSrc` в inventory. */
+const CS_ID_RX = /^[A-Za-z_][A-Za-z0-9_]*$/;
+/** `ClassID<digits>` — имя класса, которого нет в таблице дампа. */
+const CLASS_ID_RX = /^ClassID\d+$/;
+
+/** Политика отбора: шаблоны `exclude`/`include` + путь, откуда прочитана. */
+export interface SrcPolicy {
+  path: string;
+  exclude: string[];
+  include: string[];
+}
+
+/** Почему запись не попала в POT (или "" — попала). */
+export interface PolicyDecision {
+  excluded: boolean;
+  reason: string;
+}
+
+/** Запись, выброшенная политикой: ровно строка журнала `tmp/pot-excluded.jsonl`. */
+export interface ExcludedEntry {
+  src: string;
+  msgid: string;
+  msgctxt: string;
+  reason: string;
+}
+
+/** Итог политики для отчёта прогона. */
+export interface PolicyReport {
+  path: string;
+  excluded: number;
+  kept: number;
+  /** Сколько исключено по каждой метке (по убыванию, затем по метке). */
+  bySrc: Array<{ src: string; count: number }>;
+}
+
+/** Проверить шаблон метки; `null` — валиден, иначе текст ошибки. */
+export function validatePolicyPattern(pattern: string): string | null {
+  if (!pattern) return 'пустая метка (шаблон не может быть "")';
+
+  if (pattern === "*") return null;
+  const prefix = pattern.endsWith("*");
+  const label = prefix ? pattern.slice(0, -1) : pattern;
+  if (!label) return `неизвестная метка "${pattern}"`;
+
+  if (FIXED_SRC_LABELS.includes(label)) return null;
+  if (prefix && FIXED_SRC_LABELS.some((x) => x.startsWith(label))) return null;
+
+  if (label === "raw:" || label === "field:") {
+    // `raw:*` / `field:*` — «все raw-классы» / «все типизированные поля».
+    return prefix ? null : `неизвестная метка "${pattern}" (нужен шаблон "${label}*")`;
+  }
+
+  if (label.startsWith("raw:")) {
+    const name = label.slice("raw:".length);
+    if (!CS_ID_RX.test(name) && !CLASS_ID_RX.test(name)) {
+      return `неизвестная метка "${pattern}": ожидается raw:<Класс> или raw:<Класс>*`;
+    }
+    if (prefix) {
+      const ok = KNOWN_RAW_CLASSES.some((x) => x.startsWith(name)) || name.startsWith("ClassID");
+      return ok ? null : `неизвестная метка "${pattern}": нет класса с префиксом "${name}"`;
+    }
+    if (KNOWN_RAW_CLASSES.includes(name) || CLASS_ID_RX.test(name)) return null;
+    return `неизвестная метка "${pattern}": класс "${name}" не встречается в дампе`;
+  }
+
+  if (label.startsWith("field:")) {
+    const name = label.slice("field:".length);
+    if (CS_ID_RX.test(name)) return null;
+    return `неизвестная метка "${pattern}": ожидается field:<ИмяПоля> ([A-Za-z_][A-Za-z0-9_]*)`;
+  }
+
+  return `неизвестная метка "${pattern}" (допустимо: dialog, bundle, settings, us, global, field:<Поле>, raw:<Класс>, «*»)`;
+}
+
+function readPolicyPatterns(value: unknown, field: string, source: string): string[] {
+  if (!Array.isArray(value)) {
+    throw new Error(`политика ${source}: поле "${field}" должно быть массивом строк`);
+  }
+  const out: string[] = [];
+  for (const raw of value) {
+    if (typeof raw !== "string") {
+      throw new Error(`политика ${source}: в "${field}" не строка: ${JSON.stringify(raw)}`);
+    }
+    const err = validatePolicyPattern(raw);
+    if (err) throw new Error(`политика ${source}: ${err}`);
+    out.push(raw);
+  }
+  return out;
+}
+
+/** Разобрать политику (JSON-текст) с понятными ошибками. */
+export function parseSrcPolicy(text: string, source = "<policy>"): SrcPolicy {
+  let value: unknown;
+  try {
+    value = JSON.parse(text);
+  } catch (err) {
+    throw new Error(`невалидный JSON политики ${source}: ${(err as Error).message}`);
+  }
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    throw new Error(`политика ${source}: ожидался объект {"exclude": [...], "include": [...]}`);
+  }
+  const obj = value as Record<string, unknown>;
+  for (const key of Object.keys(obj)) {
+    // `_`-поля — комментарии данных (их не исполняем, но и не ругаемся).
+    if (key !== "exclude" && key !== "include" && !key.startsWith("_")) {
+      throw new Error(
+        `политика ${source}: неизвестное поле "${key}" (допустимы exclude, include и _комментарии)`,
+      );
+    }
+  }
+  const exclude =
+    obj.exclude === undefined ? [] : readPolicyPatterns(obj.exclude, "exclude", source);
+  const include =
+    obj.include === undefined ? ["*"] : readPolicyPatterns(obj.include, "include", source);
+  if (include.length === 0) {
+    throw new Error(
+      `политика ${source}: "include" пуст — POT вышел бы пустым (для «всё» укажите ["*"])`,
+    );
+  }
+  return { path: source, exclude, include };
+}
+
+/** Прочитать политику с диска; `required` — отсутствие файла это ошибка. */
+export function loadSrcPolicy(path: string, opts: { required?: boolean } = {}): SrcPolicy | null {
+  let text: string;
+  try {
+    text = readFileSync(path, "utf8");
+  } catch (err) {
+    if (!opts.required && (err as NodeJS.ErrnoException).code === "ENOENT") return null;
+    throw new Error(`политика не читается ${path}: ${(err as Error).message}`);
+  }
+  return parseSrcPolicy(text, path);
+}
+
+/** Найти `config/pot-src-policy.json` в `start` или выше (как .editorconfig). */
+export function discoverPolicyPath(start: string = REPO_ROOT): string | null {
+  let dir = resolve(start);
+  for (;;) {
+    const candidate = join(dir, "config", "pot-src-policy.json");
+    if (existsSync(candidate)) return candidate;
+    const parent = dirname(dir);
+    if (parent === dir) return null;
+    dir = parent;
+  }
+}
+
+/** Совпадает ли метка с шаблоном политики (точная метка или префикс `*`). */
+export function srcMatchesPattern(pattern: string, src: string): boolean {
+  if (pattern === "*") return true;
+  if (pattern.endsWith("*")) return src.startsWith(pattern.slice(0, -1));
+  return src === pattern;
+}
+
+/** Решение политики по одной метке: исключать или нет (и почему). */
+export function policyDecision(policy: SrcPolicy, src: string): PolicyDecision {
+  if (!policy.include.some((p) => srcMatchesPattern(p, src))) {
+    return { excluded: true, reason: "not-included" };
+  }
+  const hit = policy.exclude.find((p) => srcMatchesPattern(p, src));
+  if (hit) return { excluded: true, reason: `exclude:${hit}` };
+  return { excluded: false, reason: "" };
+}
+
+/** Применить политику к каталогу: исключённые записи уходят в журнал. */
+export function applySrcPolicy(
+  catalog: Catalog,
+  policy: SrcPolicy,
+): { catalog: Catalog; excluded: ExcludedEntry[]; bySrc: PolicyReport["bySrc"] } {
+  const kept: Catalog = new Map();
+  const excluded: ExcludedEntry[] = [];
+  const counts = new Map<string, number>();
+
+  for (const [text, byCtxt] of catalog) {
+    let keptCtxt: Map<string, PotSlot> | null = null;
+    for (const [ctxt, slot] of byCtxt) {
+      const decision = policyDecision(policy, slot.src);
+      if (decision.excluded) {
+        excluded.push({ src: slot.src, msgid: text, msgctxt: ctxt, reason: decision.reason });
+        counts.set(slot.src, (counts.get(slot.src) ?? 0) + 1);
+        continue;
+      }
+      keptCtxt ??= new Map();
+      keptCtxt.set(ctxt, slot);
+    }
+    if (keptCtxt) kept.set(text, keptCtxt);
+  }
+
+  excluded.sort(
+    (a, b) => compareCodePoints(a.msgid, b.msgid) || compareCodePoints(a.msgctxt, b.msgctxt),
+  );
+  const bySrc = [...counts.entries()]
+    .map(([src, count]) => ({ src, count }))
+    .sort((a, b) => b.count - a.count || compareCodePoints(a.src, b.src));
+  return { catalog: kept, excluded, bySrc };
+}
+
+/** Журнал исключённых как JSONL (по строке на запись, порядок POT). */
+export function renderExcludedJsonl(entries: readonly ExcludedEntry[]): string {
+  if (entries.length === 0) return "";
+  return (
+    entries
+      .map((e) =>
+        JSON.stringify({ src: e.src, msgid: e.msgid, msgctxt: e.msgctxt, reason: e.reason }),
+      )
+      .join("\n") + "\n"
+  );
+}
+
 export interface PotSlot {
   /** Провенанс записи: `dialog`/`bundle`/`field:*`/`settings`/`us`/`raw:*`/`global`. */
   src: string;
   comments: string[];
 }
+
+/** Каталог: msgid → msgctxt → слот. */
+export type Catalog = Map<string, Map<string, PotSlot>>;
 
 export interface PotStats {
   scanned: number;
@@ -110,7 +419,7 @@ export interface PotStats {
 
 export interface PotCatalog {
   /** msgid → msgctxt → запись каталога. */
-  catalog: Map<string, Map<string, PotSlot>>;
+  catalog: Catalog;
   stats: PotStats;
 }
 
@@ -118,7 +427,7 @@ function catalogKey(text: string, ctxt: string): string {
   return JSON.stringify([text, ctxt]);
 }
 
-function slotOf(catalog: Map<string, Map<string, PotSlot>>, text: string, ctxt: string): PotSlot {
+function slotOf(catalog: Catalog, text: string, ctxt: string): PotSlot {
   let byCtxt = catalog.get(text);
   if (!byCtxt) {
     byCtxt = new Map();
@@ -142,7 +451,7 @@ export function buildCatalog(
   items: InventoryItem[],
   oldKeys: ReadonlySet<string> = new Set(),
 ): PotCatalog {
-  const catalog = new Map<string, Map<string, PotSlot>>();
+  const catalog: Catalog = new Map();
   const seen = new Set<string>();
   const stats: PotStats = {
     scanned: 0,
@@ -218,7 +527,7 @@ export function buildCatalog(
 }
 
 /** Число записей каталога (msgid × msgctxt). */
-export function catalogSize(catalog: Map<string, Map<string, PotSlot>>): number {
+export function catalogSize(catalog: Catalog): number {
   let n = 0;
   for (const byCtxt of catalog.values()) n += byCtxt.size;
   return n;
@@ -226,7 +535,7 @@ export function catalogSize(catalog: Map<string, Map<string, PotSlot>>): number 
 
 /** Отрендерить каталог в POT (сортировка по msgid, затем msgctxt). */
 export function renderPot(
-  catalog: Map<string, Map<string, PotSlot>>,
+  catalog: Catalog,
   created: string = formatPotDate(),
   opts: { includeSrc?: boolean } = {},
 ): string {
@@ -255,7 +564,7 @@ export function renderPot(
 }
 
 /** Провенанс записей каталога: ключ `(msgid, msgctxt)` → метка `src`. */
-export function srcOf(catalog: Map<string, Map<string, PotSlot>>): Map<string, string> {
+export function srcOf(catalog: Catalog): Map<string, string> {
   const out = new Map<string, string>();
   for (const [text, byCtxt] of catalog) {
     for (const [ctxt, slot] of byCtxt) out.set(catalogKey(text, ctxt), slot.src);
@@ -286,23 +595,55 @@ export function writeAtomic(path: string, text: string): void {
   }
 }
 
+/**
+ * Запись журнала исключённых: временный файл с PID в имени.
+ *
+ * Отдельно от `writeAtomic`, потому что журнал пишут параллельные прогоны
+ * (тесты) — общий `.part` они бы перемешали, а полный уникальный файл,
+ * переименованный поверх, всегда валиден (побеждает последний писатель).
+ */
+export function writeExcludedAtomic(path: string, text: string): void {
+  mkdirSync(dirname(path), { recursive: true });
+  const part = `${path}.${process.pid}.part`;
+  try {
+    writeFileSync(part, text, "utf8");
+    renameSync(part, path);
+  } catch (err) {
+    rmSync(part, { force: true });
+    throw err;
+  }
+}
+
 export interface PotgenOptions {
   dumpDir?: string;
   outPath?: string;
   update?: boolean;
   /** Фиксированная дата заголовка (тесты/паритет); по умолчанию — сейчас. */
   created?: string;
+  /**
+   * Политика отбора: `undefined` — найти `config/pot-src-policy.json`
+   * (репозиторий); `null` — выключить; строка — явный путь (обязан быть).
+   */
+  policyPath?: string | null;
+  /** Куда писать журнал исключённых (по умолчанию `tmp/pot-excluded.jsonl`). */
+  excludedPath?: string;
 }
 
 export interface PotgenResult {
   outPath: string;
   entries: number;
+  /** Размер POT в байтах (UTF-8). */
+  bytes: number;
   stats: PotStats;
   dumpDir: string;
+  /** `null` — политика не применялась. */
+  policy: PolicyReport | null;
+  /** Путь журнала исключённых (`null`, если политика не применялась). */
+  excludedPath: string | null;
 }
 
 /**
- * Полный прогон: дамп → инвентарь → каталог → POT.
+ * Полный прогон: дамп → инвентарь → каталог → политика → POT.
  *
  * Без `outPath` и без `update` пишет в `tmp/potgen/template.pot`;
  * `update: true` — в `po/template.pot`.
@@ -322,23 +663,66 @@ export async function runPotgen(options: PotgenOptions = {}): Promise<PotgenResu
     throw new Error("empty catalog: нечего записывать (пустой дамп?)");
   }
 
-  const outPath = options.outPath ?? (options.update ? POT_PATH : REPORT_POT_PATH);
-  writeAtomic(outPath, renderPot(catalog, options.created));
+  // Политика отбора по провенансу — данные (`config/pot-src-policy.json`).
+  let policy: SrcPolicy | null = null;
+  if (options.policyPath !== null) {
+    const policyPath = options.policyPath ?? discoverPolicyPath();
+    if (policyPath) policy = loadSrcPolicy(policyPath, { required: true });
+  }
+  const applied = policy ? applySrcPolicy(catalog, policy) : null;
+  const finalCatalog = applied?.catalog ?? catalog;
+  if (catalogSize(finalCatalog) === 0) {
+    throw new Error(`empty catalog after policy: политика исключила все записи (${policy?.path})`);
+  }
 
-  return { outPath, entries: catalogSize(catalog), stats, dumpDir };
+  const outPath = options.outPath ?? (options.update ? POT_PATH : REPORT_POT_PATH);
+  const text = renderPot(finalCatalog, options.created);
+  writeAtomic(outPath, text);
+
+  let policyReport: PolicyReport | null = null;
+  let excludedPath: string | null = null;
+  if (applied && policy) {
+    excludedPath = options.excludedPath ?? EXCLUDED_PATH;
+    writeExcludedAtomic(excludedPath, renderExcludedJsonl(applied.excluded));
+    policyReport = {
+      path: policy.path,
+      excluded: applied.excluded.length,
+      kept: catalogSize(finalCatalog),
+      bySrc: applied.bySrc,
+    };
+  }
+
+  return {
+    outPath,
+    entries: catalogSize(finalCatalog),
+    bytes: Buffer.byteLength(text, "utf8"),
+    stats,
+    dumpDir,
+    policy: policyReport,
+    excludedPath,
+  };
 }
 
 const USAGE = `Usage: node potgen.mts [--update] [--dump <dir>] [--out <path>]
+                       [--policy <path> | --no-policy] [--excluded <path>]
+                       [--created <date>]
 
   --update        записать po/template.pot (без флага — только tmp/potgen/)
   --dump <dir>    каталог JSONL-дампа (по умолчанию tmp/dump)
   --out <path>    явный путь результата (перебивает --update)
+  --policy <path> политика отбора (по умолчанию config/pot-src-policy.json)
+  --no-policy     выключить политику (POT как до неё)
+  --excluded <p>  журнал исключённых (по умолчанию tmp/pot-excluded.jsonl)
+  --created <d>   фиксированная дата заголовка (тесты/паритет)
   -h, --help      эта справка`;
 
 interface Cli {
   update: boolean;
   dumpDir?: string;
   outPath?: string;
+  policyPath?: string | null;
+  excludedPath?: string;
+  created?: string;
   help: boolean;
 }
 
@@ -347,18 +731,45 @@ function parseArgs(argv: string[]): Cli {
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
     if (arg === "--update") cli.update = true;
+    else if (arg === "--no-policy") cli.policyPath = null;
     else if (arg === "--help" || arg === "-h") cli.help = true;
-    else if (arg === "--dump" || arg === "--out") {
+    else if (
+      arg === "--dump" ||
+      arg === "--out" ||
+      arg === "--policy" ||
+      arg === "--excluded" ||
+      arg === "--created"
+    ) {
       const value = argv[i + 1];
-      if (!value) throw new Error(`${arg} требует путь`);
+      if (!value) throw new Error(`${arg} требует значение`);
       i += 1;
       if (arg === "--dump") cli.dumpDir = value;
-      else cli.outPath = value;
+      else if (arg === "--out") cli.outPath = value;
+      else if (arg === "--policy") cli.policyPath = value;
+      else if (arg === "--excluded") cli.excludedPath = value;
+      else cli.created = value;
     } else if (arg.startsWith("--dump=")) cli.dumpDir = arg.slice("--dump=".length);
     else if (arg.startsWith("--out=")) cli.outPath = arg.slice("--out=".length);
+    else if (arg.startsWith("--policy=")) cli.policyPath = arg.slice("--policy=".length);
+    else if (arg.startsWith("--excluded=")) cli.excludedPath = arg.slice("--excluded=".length);
+    else if (arg.startsWith("--created=")) cli.created = arg.slice("--created=".length);
     else throw new Error(`неизвестный аргумент: ${arg}`);
   }
   return cli;
+}
+
+/** Человеческий отчёт о политике (строки для stderr). */
+export function formatPolicyReport(report: PolicyReport | null, disabled = false): string[] {
+  if (!report) {
+    return [
+      disabled
+        ? "  policy: выключена (--no-policy)"
+        : "  policy: не найдена (config/pot-src-policy.json) — POT без отбора",
+    ];
+  }
+  const lines = [`  policy: ${report.path} — excluded ${report.excluded}, kept ${report.kept}`];
+  for (const { src, count } of report.bySrc) lines.push(`    ${src}: ${count}`);
+  return lines;
 }
 
 /** CLI: 0 — успех, 1 — ошибка обработки, 2 — ошибка аргументов/дампа. */
@@ -378,12 +789,19 @@ export async function main(argv: string[]): Promise<number> {
   try {
     const res = await runPotgen(cli);
     const mode = cli.update ? "update" : "dry";
-    console.error(`POT(${mode}): ${res.entries} entries -> ${res.outPath}`);
+    const mib = (res.bytes / (1024 * 1024)).toFixed(2);
+    console.error(`POT(${mode}): ${res.entries} entries, ${mib} MiB -> ${res.outPath}`);
     const s = res.stats;
     console.error(
       `  inventory items: ${s.scanned}, new: ${s.new}, vanished: ${s.vanished}, ` +
         `triaged(classifier only): ${s.triaged}, rich: ${s.rich}, merged twins: ${s.mergedTwins}`,
     );
+    for (const line of formatPolicyReport(res.policy, cli.policyPath === null)) {
+      console.error(line);
+    }
+    if (res.excludedPath) {
+      console.error(`  excluded log: ${res.excludedPath} (${res.policy?.excluded ?? 0} rows)`);
+    }
     return 0;
   } catch (err) {
     console.error(`ERROR: ${(err as Error).message}`);

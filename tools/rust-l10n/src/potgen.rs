@@ -15,6 +15,9 @@ use std::collections::{HashMap, HashSet};
 use std::path::{Path, PathBuf};
 use std::time::{SystemTime, UNIX_EPOCH};
 
+use serde::Serialize;
+use serde_json::Value;
+
 use rust_l10n_core::po::{parse_po, render_po, PoEntry};
 
 use crate::inventory::{py_strip, scan_dump, InventoryItem, ItemKind};
@@ -130,6 +133,401 @@ pub fn triage_reason(text: &str, kind: ItemKind) -> &'static str {
         return "binary-garbage";
     }
     ""
+}
+
+// ---------------------------------------------------------------------------
+// Политика отбора по провенансу (`config/pot-src-policy.json`).
+//
+// Политика — ДАННЫЕ, а не код: `exclude` перечисляет метки `#. src:`, которые
+// не попадают в POT; `include` — что вообще допускается (`*` = всё). Шаблон
+// метки — точная метка или префикс с `*` (`raw:Font`, `raw:Tex*`, `raw:*`).
+// Исключённые записи не теряются: `tmp/pot-excluded.jsonl` (1:1 с TS).
+// ---------------------------------------------------------------------------
+
+/// Метки без параметра (контракт `#. src:`, инвариант 14).
+pub const FIXED_SRC_LABELS: [&str; 5] = ["dialog", "bundle", "settings", "us", "global"];
+
+/// Классы Unity, которыми дамп помечает объект (`type` → `raw:<Class>`).
+///
+/// Источник истины — `.opencode/skills/dump-assets/scripts/unity_classes.mts`
+/// (`CLASS_NAMES`); список здесь нужен, чтобы опечатка в политике
+/// (`raw:Fontt`) была ошибкой, а не молчаливым «ничего не исключено».
+/// Синхронность стерегут тесты (`known_raw_classes` в `tests/potgen.rs`).
+pub const KNOWN_RAW_CLASSES: [&str; 65] = [
+    "GameObject",
+    "Transform",
+    "Camera",
+    "Material",
+    "MeshRenderer",
+    "Texture2D",
+    "MeshFilter",
+    "Mesh",
+    "Shader",
+    "TextAsset",
+    "Rigidbody",
+    "MeshCollider",
+    "BoxCollider",
+    "ComputeShader",
+    "AnimationClip",
+    "AudioListener",
+    "AudioSource",
+    "AudioClip",
+    "RenderTexture",
+    "CustomRenderTexture",
+    "AnimatorController",
+    "Animator",
+    "RenderSettings",
+    "MonoBehaviour",
+    "MonoScript",
+    "LineRenderer",
+    "FlareLayer",
+    "Font",
+    "PhysicMaterial",
+    "SphereCollider",
+    "CapsuleCollider",
+    "SkinnedMeshRenderer",
+    "AssetBundle",
+    "CharacterController",
+    "PreloadData",
+    "LightmapSettings",
+    "AudioReverbFilter",
+    "AudioHighPassFilter",
+    "AudioReverbZone",
+    "AudioLowPassFilter",
+    "NavMeshSettings",
+    "ParticleSystem",
+    "ParticleSystemRenderer",
+    "ShaderVariantCollection",
+    "SpriteRenderer",
+    "Sprite",
+    "AnimatorOverrideController",
+    "CanvasRenderer",
+    "Canvas",
+    "RectTransform",
+    "CanvasGroup",
+    "AudioMixerController",
+    "AudioMixerGroupController",
+    "AudioMixerSnapshotController",
+    "PlayableDirector",
+    "VideoPlayer",
+    "VideoClip",
+    "SpriteMask",
+    "VFXRenderer",
+    "SpriteAtlas",
+    "LightingSettings",
+    "SpriteShapeRenderer",
+    "VisualEffectAsset",
+    "VisualEffect",
+    // Дамп без поля `type` (редкий случай) помечает метку как `raw:unknown`.
+    "unknown",
+];
+
+/// Политика отбора: шаблоны `exclude`/`include` + путь, откуда прочитана.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct SrcPolicy {
+    pub path: String,
+    pub exclude: Vec<String>,
+    pub include: Vec<String>,
+}
+
+/// Запись, выброшенная политикой: ровно строка журнала `tmp/pot-excluded.jsonl`.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+pub struct ExcludedEntry {
+    pub src: String,
+    pub msgid: String,
+    pub msgctxt: String,
+    pub reason: String,
+}
+
+/// Итог политики для отчёта прогона.
+#[derive(Debug, Clone, Default, PartialEq, Eq)]
+pub struct PolicyReport {
+    pub path: String,
+    pub excluded: usize,
+    pub kept: usize,
+    /// Сколько исключено по каждой метке (по убыванию, затем по метке).
+    pub by_src: Vec<(String, usize)>,
+}
+
+/// C#-идентификатор: та же грамматика, что у `is_valid_src` в inventory.
+fn is_cs_id(s: &str) -> bool {
+    let mut chars = s.chars();
+    match chars.next() {
+        Some(c) if c.is_ascii_alphabetic() || c == '_' => {}
+        _ => return false,
+    }
+    chars.all(|c| c.is_ascii_alphanumeric() || c == '_')
+}
+
+/// `ClassID<digits>` — имя класса, которого нет в таблице дампа.
+fn is_class_id(s: &str) -> bool {
+    match s.strip_prefix("ClassID") {
+        Some(rest) => !rest.is_empty() && rest.bytes().all(|b| b.is_ascii_digit()),
+        None => false,
+    }
+}
+
+/// Проверить шаблон метки (`Ok` — валиден, `Err` — текст ошибки).
+pub fn validate_policy_pattern(pattern: &str) -> Result<(), String> {
+    if pattern.is_empty() {
+        return Err("пустая метка (шаблон не может быть \"\")".to_string());
+    }
+    if pattern == "*" {
+        return Ok(());
+    }
+    let prefix = pattern.ends_with('*');
+    let label = if prefix {
+        &pattern[..pattern.len() - 1]
+    } else {
+        pattern
+    };
+    if label.is_empty() {
+        return Err(format!("неизвестная метка \"{pattern}\""));
+    }
+
+    if FIXED_SRC_LABELS.contains(&label) {
+        return Ok(());
+    }
+    if prefix && FIXED_SRC_LABELS.iter().any(|x| x.starts_with(label)) {
+        return Ok(());
+    }
+
+    if label == "raw:" || label == "field:" {
+        // `raw:*` / `field:*` — «все raw-классы» / «все типизированные поля».
+        return if prefix {
+            Ok(())
+        } else {
+            Err(format!(
+                "неизвестная метка \"{pattern}\" (нужен шаблон \"{label}*\")"
+            ))
+        };
+    }
+
+    if let Some(name) = label.strip_prefix("raw:") {
+        if !is_cs_id(name) && !is_class_id(name) {
+            return Err(format!(
+                "неизвестная метка \"{pattern}\": ожидается raw:<Класс> или raw:<Класс>*"
+            ));
+        }
+        if prefix {
+            let ok = KNOWN_RAW_CLASSES.iter().any(|x| x.starts_with(name))
+                || name.starts_with("ClassID");
+            return if ok {
+                Ok(())
+            } else {
+                Err(format!(
+                    "неизвестная метка \"{pattern}\": нет класса с префиксом \"{name}\""
+                ))
+            };
+        }
+        if KNOWN_RAW_CLASSES.contains(&name) || is_class_id(name) {
+            return Ok(());
+        }
+        return Err(format!(
+            "неизвестная метка \"{pattern}\": класс \"{name}\" не встречается в дампе"
+        ));
+    }
+
+    if let Some(name) = label.strip_prefix("field:") {
+        return if is_cs_id(name) {
+            Ok(())
+        } else {
+            Err(format!(
+                "неизвестная метка \"{pattern}\": ожидается field:<ИмяПоля> ([A-Za-z_][A-Za-z0-9_]*)"
+            ))
+        };
+    }
+
+    Err(format!(
+        "неизвестная метка \"{pattern}\" (допустимо: dialog, bundle, settings, us, global, field:<Поле>, raw:<Класс>, «*»)"
+    ))
+}
+
+fn read_policy_patterns(value: &Value, field: &str, source: &str) -> Result<Vec<String>, String> {
+    let Value::Array(items) = value else {
+        return Err(format!(
+            "политика {source}: поле \"{field}\" должно быть массивом строк"
+        ));
+    };
+    let mut out = Vec::with_capacity(items.len());
+    for item in items {
+        let Value::String(raw) = item else {
+            return Err(format!(
+                "политика {source}: в \"{field}\" не строка: {item}"
+            ));
+        };
+        validate_policy_pattern(raw).map_err(|e| format!("политика {source}: {e}"))?;
+        out.push(raw.clone());
+    }
+    Ok(out)
+}
+
+/// Разобрать политику (JSON-текст) с понятными ошибками.
+pub fn parse_src_policy(text: &str, source: &str) -> Result<SrcPolicy, String> {
+    let value: Value = serde_json::from_str(text)
+        .map_err(|e| format!("невалидный JSON политики {source}: {e}"))?;
+    let Value::Object(map) = value else {
+        return Err(format!(
+            "политика {source}: ожидался объект {{\"exclude\": [...], \"include\": [...]}}"
+        ));
+    };
+    for key in map.keys() {
+        // `_`-поля — комментарии данных (их не исполняем, но и не ругаемся).
+        if key != "exclude" && key != "include" && !key.starts_with('_') {
+            return Err(format!(
+                "политика {source}: неизвестное поле \"{key}\" (допустимы exclude, include и _комментарии)"
+            ));
+        }
+    }
+    let exclude = match map.get("exclude") {
+        Some(value) => read_policy_patterns(value, "exclude", source)?,
+        None => Vec::new(),
+    };
+    let include = match map.get("include") {
+        Some(value) => read_policy_patterns(value, "include", source)?,
+        None => vec!["*".to_string()],
+    };
+    if include.is_empty() {
+        return Err(format!(
+            "политика {source}: \"include\" пуст — POT вышел бы пустым (для «всё» укажите [\"*\"])"
+        ));
+    }
+    Ok(SrcPolicy {
+        path: source.to_string(),
+        exclude,
+        include,
+    })
+}
+
+/// Прочитать политику с диска; `required` — отсутствие файла это ошибка.
+pub fn load_src_policy(path: &Path, required: bool) -> Result<Option<SrcPolicy>, String> {
+    match std::fs::read_to_string(path) {
+        Ok(text) => Ok(Some(parse_src_policy(&text, &path.display().to_string())?)),
+        Err(err) if !required && err.kind() == std::io::ErrorKind::NotFound => Ok(None),
+        Err(err) => Err(format!("политика не читается {}: {err}", path.display())),
+    }
+}
+
+/// Найти `config/pot-src-policy.json` в `start` или выше (как .editorconfig).
+pub fn discover_policy_path(start: &Path) -> Option<PathBuf> {
+    let mut dir = std::fs::canonicalize(start).unwrap_or_else(|_| {
+        std::env::current_dir()
+            .map(|cwd| cwd.join(start))
+            .unwrap_or_else(|_| start.to_path_buf())
+    });
+    loop {
+        let candidate = dir.join("config").join("pot-src-policy.json");
+        if candidate.is_file() {
+            // canonicalize на Windows даёт `\\?\C:\...`: в отчётах и тестах
+            // этот префикс — шум, снимаем (stdlib-путь с ним работает).
+            let text = candidate.to_string_lossy();
+            return Some(match text.strip_prefix(r"\\?\") {
+                Some(rest) => PathBuf::from(rest),
+                None => candidate,
+            });
+        }
+        if !dir.pop() {
+            return None;
+        }
+    }
+}
+
+/// Совпадает ли метка с шаблоном политики (точная метка или префикс `*`).
+pub fn src_matches_pattern(pattern: &str, src: &str) -> bool {
+    if pattern == "*" {
+        return true;
+    }
+    match pattern.strip_suffix('*') {
+        Some(prefix) => src.starts_with(prefix),
+        None => src == pattern,
+    }
+}
+
+/// Решение политики по одной метке: `Some(reason)` — исключить.
+pub fn policy_decision(policy: &SrcPolicy, src: &str) -> Option<String> {
+    if !policy.include.iter().any(|p| src_matches_pattern(p, src)) {
+        return Some("not-included".to_string());
+    }
+    policy
+        .exclude
+        .iter()
+        .find(|p| src_matches_pattern(p, src))
+        .map(|hit| format!("exclude:{hit}"))
+}
+
+/// Применить политику к каталогу: исключённые записи уходят в журнал.
+pub fn apply_src_policy(
+    catalog: Catalog,
+    policy: &SrcPolicy,
+) -> (Catalog, Vec<ExcludedEntry>, Vec<(String, usize)>) {
+    let mut kept: Catalog = HashMap::new();
+    let mut excluded: Vec<ExcludedEntry> = Vec::new();
+    let mut counts: HashMap<String, usize> = HashMap::new();
+
+    for (text, by_ctxt) in catalog {
+        let mut kept_ctxt: HashMap<String, Slot> = HashMap::new();
+        for (ctxt, slot) in by_ctxt {
+            match policy_decision(policy, &slot.src) {
+                Some(reason) => {
+                    *counts.entry(slot.src.clone()).or_insert(0) += 1;
+                    excluded.push(ExcludedEntry {
+                        src: slot.src,
+                        msgid: text.clone(),
+                        msgctxt: ctxt,
+                        reason,
+                    });
+                }
+                None => {
+                    kept_ctxt.insert(ctxt, slot);
+                }
+            }
+        }
+        if !kept_ctxt.is_empty() {
+            kept.insert(text, kept_ctxt);
+        }
+    }
+
+    excluded.sort_by(|a, b| {
+        a.msgid
+            .cmp(&b.msgid)
+            .then_with(|| a.msgctxt.cmp(&b.msgctxt))
+    });
+    let mut by_src: Vec<(String, usize)> = counts.into_iter().collect();
+    by_src.sort_by(|a, b| b.1.cmp(&a.1).then_with(|| a.0.cmp(&b.0)));
+    (kept, excluded, by_src)
+}
+
+/// Журнал исключённых как JSONL (по строке на запись, порядок POT).
+pub fn render_excluded_jsonl(entries: &[ExcludedEntry]) -> Result<String, String> {
+    let mut out = String::new();
+    for entry in entries {
+        let line = serde_json::to_string(entry).map_err(|e| format!("журнал исключённых: {e}"))?;
+        out.push_str(&line);
+        out.push('\n');
+    }
+    Ok(out)
+}
+
+/// Запись журнала исключённых: `.part` с PID → rename.
+///
+/// Отдельно от `write_atomic`, потому что журнал пишут параллельные прогоны
+/// (тесты) — общий `.part` они бы перемешали, а полный уникальный файл,
+/// переименованный поверх, всегда валиден (побеждает последний писатель).
+pub fn write_excluded(path: &Path, entries: &[ExcludedEntry]) -> Result<(), String> {
+    let text = render_excluded_jsonl(entries)?;
+    if let Some(parent) = path.parent() {
+        std::fs::create_dir_all(parent).map_err(|e| format!("{}: {e}", parent.display()))?;
+    }
+    let part = PathBuf::from(format!("{}.{}.part", path.display(), std::process::id()));
+    let write = std::fs::write(&part, text).map_err(|e| format!("{}: {e}", part.display()));
+    if let Err(err) = write {
+        let _ = std::fs::remove_file(&part);
+        return Err(err);
+    }
+    std::fs::rename(&part, path).map_err(|e| {
+        let _ = std::fs::remove_file(&part);
+        format!("{}: {e}", path.display())
+    })
 }
 
 /// Слот каталога: провенанс и комментарии будущей записи.
@@ -318,6 +716,17 @@ pub fn write_atomic(path: &Path, text: &str) -> Result<(), String> {
     })
 }
 
+#[derive(Debug, Clone, Default)]
+pub enum PolicySource {
+    /// Найти `config/pot-src-policy.json` рядом с корнем (или выше).
+    #[default]
+    Default,
+    /// Политика выключена: POT как до неё.
+    Disabled,
+    /// Явный путь (файл обязан существовать).
+    Path(PathBuf),
+}
+
 #[derive(Debug, Clone)]
 pub struct PotgenOptions {
     pub root: PathBuf,
@@ -326,13 +735,22 @@ pub struct PotgenOptions {
     pub update: bool,
     /// Фиксированная дата заголовка (тесты/паритет); по умолчанию — сейчас.
     pub created: Option<String>,
+    pub policy: PolicySource,
+    /// Куда писать журнал исключённых (по умолчанию `<корень политики>/tmp/pot-excluded.jsonl`).
+    pub excluded_path: Option<PathBuf>,
 }
 
 #[derive(Debug)]
 pub struct PotgenResult {
     pub out_path: PathBuf,
     pub entries: usize,
+    /// Размер POT в байтах (UTF-8).
+    pub bytes: usize,
     pub stats: PotStats,
+    /// `None` — политика не применялась.
+    pub policy: Option<PolicyReport>,
+    /// Путь журнала исключённых (`None`, если политика не применялась).
+    pub excluded_path: Option<PathBuf>,
 }
 
 impl PotgenOptions {
@@ -343,11 +761,13 @@ impl PotgenOptions {
             out_path: None,
             update: false,
             created: None,
+            policy: PolicySource::Default,
+            excluded_path: None,
         }
     }
 }
 
-/// Полный прогон: дамп → инвентарь → каталог → POT.
+/// Полный прогон: дамп → инвентарь → каталог → политика → POT.
 ///
 /// Без `out_path` и без `update` пишет в `tmp/potgen/template.pot`;
 /// `update: true` — в `po/template.pot`.
@@ -369,9 +789,40 @@ pub fn run(options: &PotgenOptions) -> Result<PotgenResult, String> {
     // в другой файл: это только статистика new/vanished.
     let old_keys = old_keys_from_pot(&options.root.join("po").join("template.pot"));
     let (catalog, stats) = build_catalog(&inventory.items, &old_keys);
+    if catalog_size(&catalog) == 0 {
+        return Err("empty catalog: нечего записывать (пустой дамп?)".to_string());
+    }
+
+    // Политика отбора по провенансу — данные (`config/pot-src-policy.json`).
+    let policy = match &options.policy {
+        PolicySource::Disabled => None,
+        PolicySource::Path(path) => load_src_policy(path, true)?,
+        PolicySource::Default => {
+            let start = if options.root.as_os_str().is_empty() {
+                PathBuf::from(".")
+            } else {
+                options.root.clone()
+            };
+            match discover_policy_path(&start) {
+                Some(path) => load_src_policy(&path, true)?,
+                None => None,
+            }
+        }
+    };
+
+    let (catalog, excluded, by_src) = match &policy {
+        Some(policy) => {
+            let (kept, excluded, by_src) = apply_src_policy(catalog, policy);
+            (kept, excluded, by_src)
+        }
+        None => (catalog, Vec::new(), Vec::new()),
+    };
     let entries = catalog_size(&catalog);
     if entries == 0 {
-        return Err("empty catalog: нечего записывать (пустой дамп?)".to_string());
+        return Err(format!(
+            "empty catalog after policy: политика исключила все записи ({})",
+            policy.as_ref().map(|p| p.path.clone()).unwrap_or_default()
+        ));
     }
 
     let out_path = options.out_path.clone().unwrap_or_else(|| {
@@ -385,11 +836,38 @@ pub fn run(options: &PotgenOptions) -> Result<PotgenResult, String> {
         .created
         .clone()
         .unwrap_or_else(|| format_pot_date(SystemTime::now()));
-    write_atomic(&out_path, &render_pot(&catalog, &created))?;
+    let text = render_pot(&catalog, &created);
+    write_atomic(&out_path, &text)?;
+
+    let mut report: Option<PolicyReport> = None;
+    let mut excluded_path: Option<PathBuf> = None;
+    if let Some(policy) = &policy {
+        // Журнал живёт в корне репозитория политики (`<...>/config/..`/tmp).
+        let repo_root = Path::new(&policy.path)
+            .parent()
+            .and_then(|p| p.parent())
+            .map(Path::to_path_buf)
+            .unwrap_or_else(|| options.root.clone());
+        let path = options
+            .excluded_path
+            .clone()
+            .unwrap_or_else(|| repo_root.join("tmp").join("pot-excluded.jsonl"));
+        write_excluded(&path, &excluded)?;
+        excluded_path = Some(path);
+        report = Some(PolicyReport {
+            path: policy.path.clone(),
+            excluded: excluded.len(),
+            kept: entries,
+            by_src,
+        });
+    }
 
     Ok(PotgenResult {
         out_path,
         entries,
+        bytes: text.len(),
         stats,
+        policy: report,
+        excluded_path,
     })
 }

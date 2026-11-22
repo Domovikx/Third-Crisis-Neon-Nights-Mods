@@ -1,0 +1,5 @@
+{
+  "_comment": "Политика отбора POT по провенансу: exclude — метки #. src:, не попадающие в POT (точные или префикс с *), include — что допускается (* = всё). Исключённые записи уходят в tmp/pot-excluded.jsonl. Обоснование и цифры — docs/pot-provenance.md.",
+  "exclude": ["raw:Font", "raw:Mesh", "raw:MonoScript", "raw:Texture2D", "raw:Sprite"],
+  "include": ["*"]
+}

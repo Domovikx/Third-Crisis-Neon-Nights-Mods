@@ -2,6 +2,7 @@
 //!
 //! Подкоманды:
 //!   rust-l10n potgen [--update] [--dump <dir>] [--out <path>] [--created <date>]
+//!                    [--policy <path> | --no-policy] [--excluded <path>]
 //!                    [--root <dir>]
 //!   rust-l10n po2dat [lang] [--root <dir>] [--out <path>]
 //!
@@ -27,11 +28,14 @@ rust-l10n — текстовый пайплайн локализации (POT/PO
 
 Использование:
   rust-l10n potgen [--update] [--dump <dir>] [--out <path>] [--created <date>]
-                   [--root <dir>]
+                   [--policy <path> | --no-policy] [--excluded <path>] [--root <dir>]
       --update        записать <root>/po/template.pot (без флага — только tmp/potgen/)
       --dump <dir>    каталог JSONL-дампа (по умолчанию <root>/tmp/dump)
       --out <path>    явный путь результата (перебивает --update)
       --created <s>   фиксированная дата заголовка (тесты/паритет)
+      --policy <p>    политика отбора (по умолчанию config/pot-src-policy.json)
+      --no-policy     выключить политику (POT как до неё)
+      --excluded <p>  журнал исключённых (по умолчанию <корень политики>/tmp/pot-excluded.jsonl)
       --root <dir>    корень репозитория (по умолчанию текущий каталог)
 
   rust-l10n po2dat [lang] [--root <dir>] [--out <path>]
@@ -109,6 +113,7 @@ fn potgen_cli(argv: &[String]) -> u8 {
     let mut help = false;
     let mut dump: Option<PathBuf> = None;
     let mut out: Option<PathBuf> = None;
+    let mut excluded: Option<PathBuf> = None;
 
     let mut i = 0usize;
     while i < argv.len() {
@@ -122,25 +127,35 @@ fn potgen_cli(argv: &[String]) -> u8 {
                 help = true;
                 Ok(())
             }
-            "--dump" | "--out" | "--created" | "--root" => {
+            "--no-policy" => {
+                options.policy = potgen::PolicySource::Disabled;
+                Ok(())
+            }
+            "--dump" | "--out" | "--created" | "--root" | "--policy" | "--excluded" => {
                 let value = flag_value(argv, &mut i, arg);
                 value.map(|value| match arg {
                     "--dump" => dump = Some(PathBuf::from(value)),
                     "--out" => out = Some(PathBuf::from(value)),
                     "--created" => options.created = Some(value),
+                    "--policy" => options.policy = potgen::PolicySource::Path(PathBuf::from(value)),
+                    "--excluded" => excluded = Some(PathBuf::from(value)),
                     _ => options.root = PathBuf::from(value),
                 })
             }
             _ if arg.starts_with("--dump=")
                 || arg.starts_with("--out=")
                 || arg.starts_with("--created=")
-                || arg.starts_with("--root=") =>
+                || arg.starts_with("--root=")
+                || arg.starts_with("--policy=")
+                || arg.starts_with("--excluded=") =>
             {
                 let name = arg.split('=').next().unwrap_or(arg);
                 flag_value(argv, &mut i, name).map(|value| match name {
                     "--dump" => dump = Some(PathBuf::from(value)),
                     "--out" => out = Some(PathBuf::from(value)),
                     "--created" => options.created = Some(value),
+                    "--policy" => options.policy = potgen::PolicySource::Path(PathBuf::from(value)),
+                    "--excluded" => excluded = Some(PathBuf::from(value)),
                     _ => options.root = PathBuf::from(value),
                 })
             }
@@ -158,13 +173,15 @@ fn potgen_cli(argv: &[String]) -> u8 {
     }
     options.dump_dir = dump.unwrap_or_default();
     options.out_path = out;
+    options.excluded_path = excluded;
 
     match potgen::run(&options) {
         Ok(res) => {
             let mode = if options.update { "update" } else { "dry" };
             eprintln!(
-                "POT({mode}): {} entries -> {}",
+                "POT({mode}): {} entries, {:.2} MiB -> {}",
                 res.entries,
+                res.bytes as f64 / (1024.0 * 1024.0),
                 res.out_path.display()
             );
             let s = &res.stats;
@@ -172,6 +189,33 @@ fn potgen_cli(argv: &[String]) -> u8 {
                 "  inventory items: {}, new: {}, vanished: {}, triaged(classifier only): {}, rich: {}, merged twins: {}",
                 s.scanned, s.new, s.vanished, s.triaged, s.rich, s.merged_twins
             );
+            match &res.policy {
+                Some(report) => {
+                    eprintln!(
+                        "  policy: {} — excluded {}, kept {}",
+                        report.path, report.excluded, report.kept
+                    );
+                    for (src, count) in &report.by_src {
+                        eprintln!("    {src}: {count}");
+                    }
+                }
+                None => {
+                    if matches!(options.policy, potgen::PolicySource::Disabled) {
+                        eprintln!("  policy: выключена (--no-policy)");
+                    } else {
+                        eprintln!(
+                            "  policy: не найдена (config/pot-src-policy.json) — POT без отбора"
+                        );
+                    }
+                }
+            }
+            if let Some(path) = &res.excluded_path {
+                eprintln!(
+                    "  excluded log: {} ({} rows)",
+                    path.display(),
+                    res.policy.as_ref().map(|p| p.excluded).unwrap_or(0)
+                );
+            }
             0
         }
         Err(message) => {

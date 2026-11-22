@@ -5,7 +5,8 @@
  */
 import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 
 import type { InventoryItem, ItemKind } from "../scripts/inventory.mts";
@@ -16,15 +17,22 @@ import {
   looksLikeProse,
 } from "../../../../scripts/pot_provenance_report.mts";
 import {
+  applySrcPolicy,
   buildCatalog,
   catalogSize,
   ctxtOf,
   formatPotDate,
+  KNOWN_RAW_CLASSES,
   main,
+  parseSrcPolicy,
+  policyDecision,
+  renderExcludedJsonl,
   renderPot,
   runPotgen,
+  srcMatchesPattern,
   stripFontTags,
   triageReason,
+  validatePolicyPattern,
   writeAtomic,
 } from "../scripts/potgen.mts";
 
@@ -298,3 +306,284 @@ test("formatReport: таблица и примеры содержат все и�
   assert.ok(md.includes("### `dialog` — 1 в POT"));
   assert.ok(md.includes("`global` — кандидаты"));
 });
+
+// ---------------------------------------------------------------------------
+// Политика отбора по провенансу (`config/pot-src-policy.json`).
+// ---------------------------------------------------------------------------
+
+test("parseSrcPolicy: пустая политика = как раньше (exclude [], include ['*'])", () => {
+  const policy = parseSrcPolicy("{}", "empty.json");
+  assert.deepEqual(policy.exclude, []);
+  assert.deepEqual(policy.include, ["*"]);
+});
+
+test("parseSrcPolicy: невалидный JSON — понятная ошибка с путём", () => {
+  assert.throws(
+    () => parseSrcPolicy('{"exclude": ["raw:Font"}', "bad.json"),
+    /невалидный JSON политики bad\.json/,
+  );
+});
+
+test("parseSrcPolicy: неизвестное поле — ошибка (опечатка не игнорируется)", () => {
+  assert.throws(
+    () => parseSrcPolicy('{"exlude": ["raw:Font"]}', "p.json"),
+    /неизвестное поле "exlude"/,
+  );
+});
+
+test("parseSrcPolicy: неизвестная метка и пустой include — ошибки, а не молчание", () => {
+  assert.throws(
+    () => parseSrcPolicy('{"exclude": ["raw:Fontt"]}', "p.json"),
+    /неизвестная метка "raw:Fontt"/,
+  );
+  assert.throws(
+    () => parseSrcPolicy('{"exclude": ["dilog"]}', "p.json"),
+    /неизвестная метка "dilog"/,
+  );
+  assert.throws(() => parseSrcPolicy('{"include": []}', "p.json"), /include.*пуст/);
+});
+
+test("validatePolicyPattern: точные метки, префиксы и wildcard", () => {
+  for (const ok of [
+    "*",
+    "dialog",
+    "raw:Font",
+    "raw:Tex*",
+    "raw:*",
+    "field:m_Name",
+    "field:*",
+    "dialog*",
+    "raw:ClassID0*",
+  ]) {
+    assert.equal(validatePolicyPattern(ok), null, `должно быть валидно: ${ok}`);
+  }
+  for (const bad of ["", "raw:", "dilog", "raw:Fontt", "raw:Zzz*", "field:1bad"]) {
+    assert.ok(validatePolicyPattern(bad), `должно быть ошибкой: ${bad}`);
+  }
+});
+
+test("policyDecision: exclude — точная метка или префикс, include — допуск", () => {
+  const policy = parseSrcPolicy('{"exclude":["raw:Font","raw:Tex*"],"include":["*"]}', "p");
+  assert.equal(srcMatchesPattern("raw:Font", "raw:Font"), true);
+  assert.equal(srcMatchesPattern("raw:Font", "raw:FontX"), false, "точная метка не префикс");
+  assert.equal(srcMatchesPattern("raw:Tex*", "raw:Texture2D"), true);
+  assert.deepEqual(policyDecision(policy, "raw:Font"), {
+    excluded: true,
+    reason: "exclude:raw:Font",
+  });
+  assert.deepEqual(policyDecision(policy, "raw:Texture2D"), {
+    excluded: true,
+    reason: "exclude:raw:Tex*",
+  });
+  assert.deepEqual(policyDecision(policy, "raw:MonoBehaviour"), { excluded: false, reason: "" });
+
+  const whitelist = parseSrcPolicy('{"include":["dialog","raw:*"]}', "p");
+  assert.equal(policyDecision(whitelist, "settings").reason, "not-included");
+  assert.equal(policyDecision(whitelist, "raw:Font").excluded, false);
+});
+
+test("applySrcPolicy: исключённые уходят в журнал, POT их не видит", () => {
+  const items = [
+    item({ text: "Hi", kind: "dlg", speaker: "Zoey", src: "dialog" }),
+    item({ text: "Arial", kind: "raw", src: "raw:Font" }),
+    item({ text: "Body", kind: "raw", src: "raw:Texture2D" }),
+    item({ text: "Keep me", kind: "raw", src: "raw:TextAsset" }),
+  ];
+  const { catalog } = buildCatalog(items);
+  const policy = parseSrcPolicy('{"exclude":["raw:Font","raw:Texture*"]}', "p");
+  const applied = applySrcPolicy(catalog, policy);
+
+  assert.equal(catalogSize(applied.catalog), 2, "dialog + TextAsset остались");
+  assert.deepEqual(
+    applied.excluded.map((e) => e.msgid),
+    ["Arial", "Body"],
+    "журнал отсортирован по (msgid, msgctxt)",
+  );
+  assert.deepEqual(applied.excluded[0], {
+    src: "raw:Font",
+    msgid: "Arial",
+    msgctxt: "ui",
+    reason: "exclude:raw:Font",
+  });
+  assert.deepEqual(applied.bySrc, [
+    { src: "raw:Font", count: 1 },
+    { src: "raw:Texture2D", count: 1 },
+  ]);
+});
+
+test("renderExcludedJsonl: строка JSONL на запись, валидный JSON", () => {
+  const entries = [
+    { src: "raw:Font", msgid: "B\nB", msgctxt: "ui", reason: "exclude:raw:Font" },
+    { src: "dialog", msgid: "A", msgctxt: "speaker:Zoey", reason: "not-included" },
+  ];
+  const text = renderExcludedJsonl(entries);
+  assert.ok(text.endsWith("\n"));
+  const rows = text
+    .trim()
+    .split("\n")
+    .map((line) => JSON.parse(line) as Record<string, string>);
+  assert.deepEqual(rows[0], {
+    src: "raw:Font",
+    msgid: "B\nB",
+    msgctxt: "ui",
+    reason: "exclude:raw:Font",
+  });
+  assert.deepEqual(rows[1], {
+    src: "dialog",
+    msgid: "A",
+    msgctxt: "speaker:Zoey",
+    reason: "not-included",
+  });
+  assert.equal(renderExcludedJsonl([]), "");
+});
+
+test("runPotgen: политика выкидывает из POT и пишет журнал; пустая = как раньше", async () => {
+  const dir = join(root, "policy");
+  mkdirSync(dir, { recursive: true });
+  const policyPath = join(dir, "policy.json");
+  writeFileSync(policyPath, '{"exclude":["raw:MonoBehaviour"]}', "utf8");
+
+  const out = join(dir, "with-policy.pot");
+  const excludedPath = join(dir, "excluded.jsonl");
+  const res = await runPotgen({
+    dumpDir: FIXTURE,
+    outPath: out,
+    created: "2026-01-02 03:04+0000",
+    policyPath,
+    excludedPath,
+  });
+
+  assert.equal(res.entries, 7, "10 записей минус 3 из raw:MonoBehaviour");
+  assert.equal(res.policy?.excluded, 3);
+  assert.deepEqual(res.policy?.bySrc, [{ src: "raw:MonoBehaviour", count: 3 }]);
+  assert.ok(res.bytes > 0);
+  const pot = readFileSync(out, "utf8");
+  assert.ok(!pot.includes('msgid "BACK"'), "исключённой записи в POT нет");
+  assert.ok(pot.includes('msgid "New Game"'), "остальные записи на месте");
+
+  const rows = readFileSync(excludedPath, "utf8")
+    .trim()
+    .split("\n")
+    .map((line) => JSON.parse(line) as { src: string; msgid: string; reason: string });
+  assert.equal(rows.length, 3);
+  assert.ok(rows.every((r) => r.src === "raw:MonoBehaviour"));
+  assert.ok(rows.every((r) => r.reason === "exclude:raw:MonoBehaviour"));
+  assert.ok(rows.some((r) => r.msgid === "BACK"));
+  assert.equal(existsSync(`${excludedPath}.part`), false);
+
+  // Пустая политика: POT побайтово как при выключенной, журнал пуст.
+  writeFileSync(policyPath, '{"exclude":[],"include":["*"]}', "utf8");
+  const emptyOut = join(dir, "empty-policy.pot");
+  const emptyExcluded = join(dir, "empty-excluded.jsonl");
+  const empty = await runPotgen({
+    dumpDir: FIXTURE,
+    outPath: emptyOut,
+    created: "2026-01-02 03:04+0000",
+    policyPath,
+    excludedPath: emptyExcluded,
+  });
+  const noPolicyOut = join(dir, "no-policy.pot");
+  const none = await runPotgen({
+    dumpDir: FIXTURE,
+    outPath: noPolicyOut,
+    created: "2026-01-02 03:04+0000",
+    policyPath: null,
+  });
+  assert.equal(readFileSync(emptyOut, "utf8"), readFileSync(noPolicyOut, "utf8"));
+  assert.equal(empty.policy?.excluded, 0);
+  assert.equal(none.policy, null);
+  assert.equal(readFileSync(emptyExcluded, "utf8"), "");
+});
+
+test("runPotgen: невалидная политика — ошибка, POT не пишется", async () => {
+  const dir = join(root, "bad-policy");
+  mkdirSync(dir, { recursive: true });
+  const policyPath = join(dir, "policy.json");
+  writeFileSync(policyPath, '{"exclude":["raw:Fontt"]}', "utf8");
+  const out = join(dir, "out.pot");
+  await assert.rejects(
+    runPotgen({ dumpDir: FIXTURE, outPath: out, policyPath }),
+    /неизвестная метка "raw:Fontt"/,
+  );
+  assert.equal(existsSync(out), false);
+});
+
+test("knownRawClasses: TS-список = unity_classes.mts = Rust-список", () => {
+  const unity = readFileSync(
+    join(REPO, ".opencode/skills/dump-assets/scripts/unity_classes.mts"),
+    "utf8",
+  );
+  const fromDumper = [...unity.matchAll(/^\s+\d+: "([^"]+)",$/gm)].map((m) => m[1]);
+  const ours = KNOWN_RAW_CLASSES.filter((name) => name !== "unknown");
+  assert.deepEqual([...ours].sort(), [...fromDumper].sort());
+
+  const rs = readFileSync(join(REPO, "tools/rust-l10n/src/potgen.rs"), "utf8");
+  const start = rs.indexOf("pub const KNOWN_RAW_CLASSES");
+  assert.ok(start >= 0, "в potgen.rs есть KNOWN_RAW_CLASSES");
+  const block = rs.slice(start, rs.indexOf("];", start));
+  const fromRust = [...block.matchAll(/"([^"]+)"/g)].map((m) => m[1]);
+  assert.deepEqual([...KNOWN_RAW_CLASSES].sort(), [...fromRust].sort());
+});
+
+// --- паритет TS ↔ Rust с политикой и без (нужен собранный бинарь и дамп) ---
+const RUST_BIN = [
+  join(REPO, "tools/rust-l10n/target/release/rust-l10n.exe"),
+  join(REPO, "tools/rust-l10n/target/release/rust-l10n"),
+].find((p) => existsSync(p));
+const parityDump =
+  process.env.TCNN_DUMP_DIR ??
+  ["tmp/dump-after", "tmp/dump-new", "tmp/dump"]
+    .map((rel) => join(REPO, rel))
+    .find((dir) => existsSync(dir));
+const paritySkip = RUST_BIN && parityDump ? false : "нужен rust-l10n (npm run l10n:build) и дамп";
+
+test(
+  "паритет TS ↔ Rust: POT и журнал байт-в-байт (с политикой и без)",
+  { skip: paritySkip },
+  async () => {
+    const dir = join(root, "parity");
+    mkdirSync(dir, { recursive: true });
+    const policyPath = join(REPO, "config", "pot-src-policy.json");
+    for (const mode of ["with", "without"] as const) {
+      const tsPot = join(dir, `${mode}-ts.pot`);
+      const rustPot = join(dir, `${mode}-rust.pot`);
+      const tsExcluded = join(dir, `${mode}-ts.jsonl`);
+      const rustExcluded = join(dir, `${mode}-rust.jsonl`);
+      const policyArg = mode === "with" ? policyPath : null;
+
+      const res = await runPotgen({
+        dumpDir: parityDump as string,
+        outPath: tsPot,
+        created: "2026-01-02 03:04+0000",
+        policyPath: policyArg,
+        excludedPath: tsExcluded,
+      });
+      const args = [
+        "potgen",
+        "--root",
+        REPO,
+        "--dump",
+        parityDump as string,
+        "--out",
+        rustPot,
+        "--created",
+        "2026-01-02 03:04+0000",
+        "--excluded",
+        rustExcluded,
+        ...(policyArg ? ["--policy", policyArg] : ["--no-policy"]),
+      ];
+      const run = spawnSync(RUST_BIN as string, args, { encoding: "utf8" });
+      assert.equal(run.status, 0, `rust-l10n ${args.join(" ")}: ${run.stderr}`);
+
+      assert.equal(readFileSync(rustPot, "utf8"), readFileSync(tsPot, "utf8"), `${mode}: POT`);
+      if (policyArg) {
+        assert.equal(res.policy?.excluded, 65394, "политика действительно исключает");
+        assert.equal(
+          readFileSync(rustExcluded, "utf8"),
+          readFileSync(tsExcluded, "utf8"),
+          `${mode}: журнал`,
+        );
+      }
+    }
+  },
+);

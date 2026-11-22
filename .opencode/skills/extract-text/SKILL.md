@@ -45,6 +45,12 @@ npm run potgen
 node .opencode/skills/extract-text/scripts/potgen.mts \
   --dump "<Steam>/…/NeonTranslator/tmp/dump" --out tmp/check.pot
 
+# Политика отбора по провенансу (данные): по умолчанию config/pot-src-policy.json
+node .opencode/skills/extract-text/scripts/potgen.mts --no-policy         # POT как до политики
+node .opencode/skills/extract-text/scripts/potgen.mts --policy <path>     # другая политика
+node .opencode/skills/extract-text/scripts/potgen.mts --excluded <path>   # свой журнал
+#   исключённые → tmp/pot-excluded.jsonl, состав обоснован в docs/pot-provenance.md
+
 # Обновление EN-шаблона (единственный флаг, меняющий po/)
 node .opencode/skills/extract-text/scripts/potgen.mts --update
 
@@ -85,6 +91,30 @@ npm run po2dat -- ru
 - по контексту: `ui` 30 352, `speaker:<Имя>` 2 834, `speaker-name` 85;
 - `#. rich_text` есть у 2 490 записей; ui-двойников диалогов удалено 1 318.
 
+> Числа выше — дамп ДО снятия лимита `raw_strings`; на `tmp/dump-after`
+> (2026-11-22) POT — 143 871 запись без политики и 78 477 с политикой
+> (см. `docs/pot-provenance.md`).
+
+### Политика отбора по провенансу
+
+`config/pot-src-policy.json` — **данные**, а не код: `exclude` перечисляет
+метки `#. src:`, которые не попадают в POT (точная метка или префикс с `*`:
+`raw:Font`, `raw:Tex*`, `raw:*`, `field:*`), `include: ["*"]` — «всё
+остальное». По умолчанию исключены 5 идентификаторных raw-классов
+(`Font`, `Mesh`, `MonoScript`, `Texture2D`, `Sprite`): −45,5 % записей ценой
+1,4 % «прозы».
+
+- Исключённые записи не теряются: `tmp/pot-excluded.jsonl`
+  (`{src, msgid, msgctxt, reason}`), порядок POT, запись атомарная.
+- Отчёт прогона: `policy: excluded N, kept M` + разбивка по меткам + размер POT
+  в MiB.
+- Ошибка (а не молчание): битый JSON, неизвестное поле, пустой `include`,
+  неизвестная метка (`raw:Fontt`, `dilog`).
+- Флаги: `--policy <path>`, `--no-policy` (POT как до политики),
+  `--excluded <path>`. У Rust те же.
+- Обоснование, полный замер и список меток «на решение владельцу» (`TextAsset`,
+  `AudioClip`, `Material`…) — `docs/pot-provenance.md`, раздел «Политика».
+
 ## Формат POT
 
 ```po
@@ -108,6 +138,11 @@ msgstr ""
 - ui-двойник строки с диалоговым контекстом удаляется: рантайм ищет по голому
   тексту, иначе один текст переводится дважды;
 - `msgstr ""` → не переведено.
+
+Записи, чья метка `#. src:` исключена политикой
+(`config/pot-src-policy.json`), в POT не пишутся — они лежат в
+`tmp/pot-excluded.jsonl` (`{src, msgid, msgctxt, reason}`), чтобы отбор не был
+потерей данных.
 
 Дубликаты одного `msgid` в `.dat` — earliest-ref-file-wins (как C# лоадер).
 Рантайм-fallback: `rich_translation` > `translation` > `rich_text` > `text`.
@@ -157,6 +192,13 @@ npm run test:e2e
   orphans 8) совпал текстом после нормализации EOL;
 - `find_source`: 5 строк на реальном дампе (включая многовхождения и срез
   120 code points) — вывод идентичен после `CRLF`→`LF`.
+
+Политика (2026-11-22): `potgen.test.mts` проверяет разбор/валидацию политики
+(битый JSON, неизвестное поле, неизвестная метка — ошибки), применение
+(исключённые не в POT, а в журнале; пустая политика = POT как раньше) и
+паритет TS ↔ Rust побайтово **с политикой и без** (POT + `tmp/pot-excluded.jsonl`).
+`tools/rust-l10n/tests/potgen.rs` — то же со стороны Rust плюс сверка списка
+`KNOWN_RAW_CLASSES` с `unity_classes.mts` и с TS.
 
 ## Устаревшее
 
