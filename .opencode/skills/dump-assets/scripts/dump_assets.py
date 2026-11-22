@@ -1,5 +1,16 @@
 #!/usr/bin/env python3
 """
+DEPRECATED — заменён на TypeScript (2026-11-22).
+
+Не менять и не использовать для новых прогонов: актуальный дампер —
+`dump_assets.mts` (+ `unityfs.mts`, `serialized.mts`, `rawscan.mts`, `extract.mts`).
+Паритет доказан: из TS-дампа получается тот же POT (0 потерянных записей;
+надмножество +1 537 записей — имена аудио/текстур, на которых Python падал).
+
+Файл оставлен только как эталон паритета и как ссылка на историю формата
+(запустить его в этом репозитории нельзя: `text_filters.py` удалён при порте).
+Удаление — решение владельца.
+
 dump_assets.py — Dump Unity .assets files to structured JSONL with real objects.
 
 Использует UnityPy для чтения реальных Unity-объектов (Object Table + Type Tree + typed fields).

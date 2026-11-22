@@ -3,16 +3,22 @@
  *
  * В CI игры нет — тесты помечены skip, пока `TCNN_GAME_DIR` (или Steam) не
  * указывает на установленную Third Crisis Neon Nights. Файлы игры только
- * читаются, ничего не пишется.
+ * читаются; дамп пишется во временный каталог репозитория (`tmp/`) и удаляется.
  */
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, statSync } from "node:fs";
 
 import { checkGameDir, findGameDir, GAME_DATA_FOLDER } from "../../../../scripts/game_dir.mts";
-import { describeAssetFile, discoverGameFiles } from "../scripts/dump_assets.mts";
+import {
+  describeAssetFile,
+  discoverGameFiles,
+  dumpAssets,
+  REPO_ROOT,
+} from "../scripts/dump_assets.mts";
 import { readObjectRaw, readSerializedFile } from "../scripts/serialized.mts";
 import { readUnityFs } from "../scripts/unityfs.mts";
+import { scanDump } from "../../extract-text/scripts/inventory.mts";
 import { join } from "node:path";
 
 const gameDir = findGameDir();
@@ -69,4 +75,29 @@ test("интеграция: describeAssetFile даёт отчёт по level0 б
   assert.equal(report.files.length, 1);
   assert.ok(report.files[0].objectCount > 0);
   assert.equal(report.files[0].typeTreeEnabled, false);
+});
+
+test("интеграция: дамп реальных файлов даёт JSONL и POT-строки", { skip }, async () => {
+  const discovered = discoverGameFiles(gameDir as string);
+  const level1 = discovered.find((item) => item.name === "level1");
+  assert.ok(level1, "в установке должен быть level1");
+  const bundles = discovered
+    .filter((item) => item.name.startsWith("bundle_"))
+    .sort((a, b) => statSync(a.path).size - statSync(b.path).size);
+  assert.ok(bundles.length > 0, "в StreamingAssets должны быть бандлы");
+
+  mkdirSync(join(REPO_ROOT, "tmp"), { recursive: true });
+  const workDir = mkdtempSync(join(REPO_ROOT, "tmp", "integration-dump-"));
+  try {
+    const stats = dumpAssets([level1, bundles[0]], workDir);
+    assert.equal(stats.failed, 0);
+    assert.equal(stats.assets, 2);
+    assert.ok(stats.objects > 0);
+
+    const inventory = await scanDump(workDir);
+    assert.ok(inventory.items.length > 0, "из реального дампа должны быть строки");
+    assert.equal(inventory.stats.chunkFiles, 2);
+  } finally {
+    rmSync(workDir, { recursive: true, force: true });
+  }
 });

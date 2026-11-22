@@ -30,6 +30,9 @@ jobs:
       - name: Tests
         run: npm test
 
+      - name: Dump tests (container, serialized, extraction)
+        run: npm run test:dump
+
       - name: E2E pipeline (dump -> POT -> DAT)
         run: npm run test:e2e
 
@@ -52,3 +55,31 @@ jobs:
 
       - name: Dump-assets tests
         run: python .opencode/skills/dump-assets/tests/dump_assets.test.py
+
+  # Байтовое ядро дампера на Rust (tools/rust-decoder): свой LZ4/LZMA, без правил извлечения.
+  # Сравнение с TS-эталоном и цифры — docs/rust-vs-ts.md.
+  rust:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/rust-decoder
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: "1.100.0"
+          components: rustfmt, clippy
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: tools/rust-decoder
+
+      - name: Format
+        run: cargo fmt --check
+
+      - name: Clippy
+        run: cargo clippy --all-targets -- -D warnings
+
+      - name: Tests
+        run: cargo test

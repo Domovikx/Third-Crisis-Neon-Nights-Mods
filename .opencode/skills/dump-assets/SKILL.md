@@ -1,89 +1,99 @@
 ---
 name: dump-assets
-description: Дамп Unity-ассетов игры в JSONL (Python-эталон UnityPy) + TS-парсер контейнера UnityFS и SerializedFile с тестами и харнессом паритета
+description: Дамп Unity-ассетов игры в JSONL — на TypeScript (контейнер UnityFS, SerializedFile, объекты, raw-сканеры, type tree из бандлов) с тестами и паритетом против Python-эталона
 ---
 
 # dump-assets — дамп Unity-ассетов и TS-парсер формата
 
 ## Где что
 
-- `scripts/dump_assets.py` — **эталон контракта**: UnityPy 1.25.0, пишет
-  `summaries.jsonl` + `<asset>.jsonl` (формат — `references/DUMP_FORMAT.md`).
-  Пока именно он делает полный дамп; удалять его нельзя, пока TS не закроет
-  стадии 3–4.
-- `scripts/dump_assets.mts` — TS-дампер, **стадии 0–2**: контейнер UnityFS,
-  SerializedFile, отчёт «entry + таблица объектов». Генерации JSONL ещё нет.
-- `scripts/unityfs.mts` — UnityFS: заголовок, блоки, свой LZ4-декодер
-  (`lz4.mts`), LZMA-фолбэк (`lzma.mts`).
-- `scripts/serialized.mts` — SerializedFile v22: header, type table, object
-  table, externals; чтение объекта по `path_id` сырыми байтами.
-- `scripts/binary.mts` — общий курсор по байтам (LE/BE, cstring, align,
-  `BinaryFormatError` с позицией).
-- `scripts/dump_parity.mts` (в корне репо, `scripts/`) — харнесс паритета с
-  UnityPy: структура (entry + объекты) и построчное сравнение JSONL-каталогов.
+- `scripts/dump_assets.mts` — CLI и полный дамп: `structure` (контейнер +
+  таблица объектов), `dump` (JSONL: `summaries.jsonl` + `<asset>.jsonl`).
+- `scripts/unityfs.mts` — UnityFS: заголовок, блоки, список entry;
+  `lz4.mts` — свой LZ4/LZ4HC-декодер; `lzma.mts` — LZMA-фолбэк на чистом TS.
+- `scripts/serialized.mts` — SerializedFile v22: header, type table,
+  object table, externals, сырые байты объекта по `path_id`.
+- `scripts/typetree.mts` — type tree из бандла (узлы + общие строки Unity) и
+  generic-чтение объекта.
+- `scripts/rawscan.mts` — сырые сканеры: `raw_strings`, JSON-диалоги,
+  PlayMaker `line_X`, `ColorParserList`, `Settings.*`, global strings.
+- `scripts/dotnet.mts` — `Assembly-CSharp.dll`: куча `#US`, ключи настроек и
+  UI-строки.
+- `scripts/extract.mts` — сборка строки JSONL: raw-часть + типизированные
+  `strings`/`fields`/`fsm_strings`.
+- `scripts/pystr.mts`, `scripts/jsonl.mts` — примитивы Python-строк и
+  сериализатор JSONL (BigInt-`path_id`, float как `repr`).
+- `scripts/dump_assets.py` — **Python-эталон контракта** (UnityPy 1.25.0).
+  Не удалять, пока не закрыта стадия 4; не править.
+- `scripts/dump_parity.mts` (в корне репо, `scripts/`) — харнесс паритета:
+  структура (UnityPy-проба) и построчная сверка каталогов дампа.
 
-## Использование (TS, стадии 0–2)
+## Использование
 
 ```bash
-# отчёт по структуре (человеческий вид)
+# полный дамп в tmp/dump (нужен TCNN_GAME_DIR или установленная игра)
+node .opencode/skills/dump-assets/scripts/dump_assets.mts dump
+
+# дамп на подмножество файлов (быстрая проверка)
+node .opencode/skills/dump-assets/scripts/dump_assets.mts dump \
+  --files level0,bundle_sexscene-chairsaloncg_assets_all_... --out tmp/dump-ts
+
+# структура: entry бандла + таблица объектов
 node .opencode/skills/dump-assets/scripts/dump_assets.mts structure --all
-
-# конкретные файлы: имя из установки или путь
-node .opencode/skills/dump-assets/scripts/dump_assets.mts structure \
-  --files level0,sharedassets1,0.2pinup-rosiesspecial_assets_all_ca47de7d23c78d171b98b2fdfa5aa400.bundle
-
-# машинный JSONL (по объекту на файл) — для харнесса
-node .opencode/skills/dump-assets/scripts/dump_assets.mts structure --all --json --no-objects
 ```
 
 Путь к игре — только через `scripts/game_dir.mts` (env `TCNN_GAME_DIR` или
 Steam). В папку игры ничего не пишется.
 
-## Паритет с Python (обязательный шаг перед стадиями 3–4)
+## Паритет с Python
 
 ```bash
-# по умолчанию: level0, sharedassets1, первый бандл
+# структура (стадии 1–2): level0, sharedassets1, первый бандл
 node scripts/dump_parity.mts
-# произвольный набор (имена или пути)
-node scripts/dump_parity.mts --files level0,resources.assets,bundle_...
-# позже, когда появится TS-дамп JSONL:
+# JSONL: пот-релевантные поля (настоящая приёмка стадии 3)
+node scripts/dump_parity.mts --jsonl --expect tmp/dump-py --actual tmp/dump-ts --pot-fields
+# JSONL целиком (стадия 4)
 node scripts/dump_parity.mts --jsonl --expect tmp/dump-py --actual tmp/dump-ts
 ```
 
-Structure-режим запускает пробу на **том же UnityPy**, которым работает
-эталон, и сравнивает: список entry (path/offset/size), `unityVersion`,
-версию заголовка, наличие type tree и таблицу `(path_id, typeID)`.
-
-## Полный дамп (пока Python-эталон)
-
-```bash
-pip install UnityPy
-TCNN_GAME_DIR="<Steam>/steamapps/common/Third Crisis Neon Nights" \
-  python .opencode/skills/dump-assets/scripts/dump_assets.py
-```
-
-По умолчанию пишет в `tmp/dump/` **этого репозитория**. Схема JSONL —
-`references/DUMP_FORMAT.md`; потребители — `inventory.mts`, `potgen.mts`.
+Эталонный дамп можно снять только с `PYTHONPATH` на `text_filters.py` старого
+репозитория (в этом репо он уже `.mts`), см. `MAP.md`. Дамп в старом репо
+устарел (игра обновлялась) — сверять только свежие прогоны.
 
 ## Тесты
 
 ```bash
+npm run test:dump                                        # все TS-тесты скилла
 node --test .opencode/skills/dump-assets/tests/*.test.mts
-python .opencode/skills/dump-assets/tests/dump_assets.test.py   # эталон (нужна игра)
 ```
 
-TS-тесты: LZ4 (векторы), LZMA (синтетический поток), заголовок UnityFS
-(битые/усечённые данные), SerializedFile (type tree on/off, пустая таблица,
-64-битные `path_id`), ByteReader. Фикстуры — **только синтетические**: файлы
-игры в git не кладём (перераспространение контента). `integration.test.mts`
-работает на реальной установке и пропускается, если игры нет (CI).
+Юнит: LZ4/LZMA, заголовок UnityFS, SerializedFile (type tree on/off, 64-битные
+`path_id`), raw-сканеры (границы, `<color>`, `\n`-причуда), диалоги, PlayMaker,
+`#US`-куча, type tree (общие строки, выравнивания), поля/FSM, JSONL-формат.
+E2E: синтетические UnityFS/SerializedFile → JSONL → инвентарь → POT
+(`dump_e2e.test.mts`), без файлов игры. Фикстуры — только синтетические:
+контент игры в git не кладём.
 
-## Что осталось (стадии 3–4)
+## Статус
 
-- Стадия 3: разбор нужных типов без type tree (MonoBehaviour/TextAsset/
-  GameObject/…), `raw_strings`, диалоги, `fsm_strings`, `color_parser_list` —
-  генерация `<asset>.jsonl` с паритетом против Python.
-- Стадия 4: полный прогон `summaries.jsonl` + все чанки, замер времени/памяти;
-  только после этого `dump_assets.py` можно удалять.
+- Стадии 0–3 закрыты: POT из TS-дампа совпадает с POT из Python-дампа
+  (37 663 = 37 663 после учёта крашей эталона, подробности — `MAP.md`).
+- Стадия 4: полный JSONL-паритет требует типизированных полей `.assets`
+  (в эталоне — база typetree UnityPy) — на POT не влияет. Полный разбор,
+  цифры и что осталось — `MAP.md` и `tasks/2026-11-21-dump-assets-island.md`.
 
-Подробности и грабли — `MAP.md`.
+## Две реализации: `--decoder ts|rust`
+
+Байтовый уровень (контейнер, декомпрессия, SerializedFile, raw-сканы) имеет две реализации,
+семантика (что попадает в JSONL/POT) — одна, на TS. Переключение:
+
+```bash
+node .opencode/skills/dump-assets/scripts/dump_assets.mts dump --decoder ts    # эталон/пример
+node .opencode/skills/dump-assets/scripts/dump_assets.mts dump --decoder rust  # быстрее
+npm run bench:dump                                                             # замер по фазам
+```
+
+- **Rust** — `tools/rust-decoder/` (свой LZ4/LZMA, без правил извлечения): отдаёт промежуточный
+  `rd1`-JSONL с байтами и blob'ами type tree.
+- **TS** — `rawdump.mts` (эталон того же контракта) + чтение `rd1` тем же кодом, что и в TS-пути.
+- Паритет стережёт `tests/rust_parity.test.mts`; цифры и методика — `docs/rust-vs-ts.md`.

@@ -121,6 +121,13 @@ export class ByteReader {
     return v;
   }
 
+  f64(endian: Endian = this.endian): number {
+    this.need(8);
+    const v = this.view.getFloat64(this.pos, endian === "le");
+    this.pos += 8;
+    return v;
+  }
+
   bytes(n: number): Uint8Array {
     this.need(n);
     const out = this.data.subarray(this.pos, this.pos + n);

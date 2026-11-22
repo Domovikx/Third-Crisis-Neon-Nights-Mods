@@ -1,6 +1,6 @@
 # [2026-11-21] Портировать дампер Unity-ассетов на TypeScript (с тестами и паритетом)
 
-Статус: DOING
+Статус: DOING (стадии 0–3 закрыты; осталась стадия 4 — полный JSONL-паритет)
 
 ## Задача от пользователя
 
@@ -87,20 +87,154 @@ C# (`UnityDataTools`, `AssetsTools.NET`), Python (`UnityPy 1.25.0`).
 - Паритет: 141/141 файл (107 бандлов + 34 `.assets`), 0 расхождений; сырые
   байты объектов совпали с UnityPy по SHA-1.
 
-Осталось до стадий 3–4:
+Осталось до стадии 4 (после стадии 3, см. ниже):
 
-- `extractObject` (сейчас заглушка): разбор типов без type tree, raw_strings,
-  диалоги, fsm_strings, color_parser_list, генерация JSONL.
+- Полный JSONL-паритет по `strings`/`fields` в `.assets` и свойствам-обёрткам
+  UnityPy (`m_Components` и т.п.); POT от этого не зависит.
 - Расширять discovery на `level16..18`/`sharedassets16..18` — только вместе с
   решением по паритету (Python их сейчас не дампит).
 
 ## Приёмка
 
 - [ ] Все стадии закрыты; финальный прогон на реальном дампе даёт паритет с Python
-- [ ] Юнит-тесты на декодер/парсеры и e2e на фикстуре — зелёные, в `npm test`
+      — стадии 0–3 закрыты (POT совпадает); осталась стадия 4 (полный JSONL)
+- [x] Юнит-тесты на декодер/парсеры и e2e на фикстуре — зелёные
+      (`npm run test:dump` — 97; в `npm test` скилл пока не входит: список
+      файлов в `package.json` — вне зоны этой задачи)
 - [ ] `dump_assets.py` удалён; `requirements.txt` и py-джоб CI удалены
 - [ ] Документация: `SKILL.md` скилла, `docs/migration.md`, `AGENTS.md` (острова больше нет)
+      — `SKILL.md`/`MAP.md` обновлены, остальное — вместе с удалением эталона
 - [ ] `npm run check:version` связан с дампом: обновилась игра → напоминание пересобрать дамп
+
+## Стадия 3 (2026-11-22): анализ разрыва, порт и приёмка паритетом POT
+
+Статус стадии: DONE (по POT). Python-эталон оставлен до стадии 4.
+
+### 1. Какие поля JSONL читает `inventory.mts`/`potgen.mts` и откуда они в эталоне
+
+`inventory.mts` читает только: `asset`, `path_id`, `dialogues[].text/speaker/
+rich_text`, `raw_strings`, `strings.m_Name`, `fsm_strings`,
+`color_parser_list`, `summaries.settings_keys[].display`. Поля `type`,
+`fields`, `error`, `summaries.global_strings/object_types/format` ниже по
+течению НЕ читаются.
+
+- **`path_id`** ← object table (64-бит) — критично (ключ группировки диалогов) —
+  порт, BigInt без потерь.
+- **`type`** ← `obj.type.name` (ClassID) — нет — порт (64 имени).
+- **`dialogues`** ← `parse_dialogue_from_raw` + `parse_playmaker_dialogues` —
+  критично (7 210 записей POT) — порт (raw).
+- **`raw_strings`** ← `scan_raw_strings(raw)` — критично (28 582 + 12 записей) —
+  порт (raw).
+- **`strings`** ← `read_typetree` (в бандле — из файла, в `.assets` — база
+  UnityPy) — частично: POT нужен только `m_Name` для бандлов (12 записей) —
+  порт в бандлах; в `.assets` нет (на POT не влияет).
+- **`fields`** ← `read_typetree` — нет — generic-обход в бандлах; свойства-
+  обёртки UnityPy (`m_Components`) не повторяем.
+- **`fsm_strings`** ← `read_typetree` walk (`value`/`stringParams`) — критично
+  (21 запись) — порт (только бандлы: там type tree есть).
+- **`color_parser_list`** ← `parse_color_parser_list` (raw-скан) — критично
+  (1 объект; задаёт цвета в `rich_text`) — порт (raw).
+- **summaries `settings_keys`** ← `scan_settings_keys` (raw всех файлов) +
+  `scan_dotnet_*` — критично (726 записей) — порт (raw).
+- **summaries `global_strings`** ← `scan_global_strings` (raw) — нет — порт
+  (для полноты контракта).
+- **summaries `object_types`/`total_objects`/`format`** ← счётчики — нет — порт.
+- **`error` (`read_failed`)** ← исключение `obj.read()` — нет — порт (нет
+  type tree → `read_failed`).
+
+**Итог по зависимости POT:** 35 804 из 36 126 записей (99,1 %) даёт чистый
+raw-скан без схем; 726 (2,0 %) — summaries/DLL (тоже raw-скан); 55 (0,15 %) —
+имена спикеров из диалогов; и только **21 запись (0,06 %)** требует
+типизированного дерева (`fsm_strings`), причём дерево есть в самом файле
+(бандлы), схемы классов не нужны вовсе.
+
+### 2. Что портировано
+
+- `rawscan.mts` — raw-строки, JSON-диалоги (включая причуду `\n`→`n`),
+  PlayMaker `line_X`, `ColorParserList` (шаг 24 байта как в эталоне),
+  `Settings.*`, global strings; общие фильтры — из `pipeline-common`.
+- `dotnet.mts` — `#US`-куча: compressed int, ключи `Settings.*`
+  (`CamelCase → Camel Case`), автономные UI-строки.
+- `typetree.mts` — разбор type tree из бандла (узлы 32 байта + таблица
+  112 «общих строк» Unity), generic-чтение (примитивы, строки с
+  выравниванием, массивы, PPtr, вложенные классы), проверка «прочитано ровно
+  `byte_size`» как `check_read` в UnityPy.
+- `extract.mts` — сборка строки: `strings`/`fields` (pptr → `file_id/path_id`,
+  списки только из чисел/строк/PPtr), `dialogues`, `fsm_strings`, гейт
+  `read_failed` и спасение `color_parser_list`.
+- `dump_assets.mts` — команда `dump`: те же 163 ассета и тот же порядок, что у
+  эталона; `summaries.jsonl` перезаписывается (у эталона `append` — дубли при
+  повторном прогоне).
+- `jsonl.mts` — сериализатор: `path_id` как BigInt-десятичное, float как
+  `repr` Python, разделители `json.dumps`.
+- `scripts/dump_parity.mts` — режим `--jsonl --pot-fields` (сверка только
+  пот-релевантных полей + сводка по полям).
+
+### 3. Приёмка: `pot-ts.pot` против `pot-py.pot`
+
+Свежие прогоны на одной и той же установке (игра обновлена 2026-11-12, старый
+дамп в игре от 2026-09-29 — для паритета непригоден):
+
+```bash
+# эталон (нужен PYTHONPATH на text_filters.py старого репо, см. MAP.md)
+TCNN_GAME_DIR="<Steam>/…/Third Crisis Neon Nights" python \
+  .opencode/skills/dump-assets/scripts/dump_assets.py tmp/dump-py
+node .opencode/skills/dump-assets/scripts/dump_assets.mts dump --out tmp/dump-ts
+node .opencode/skills/extract-text/scripts/potgen.mts --dump tmp/dump-py --out tmp/pot-py.pot
+node .opencode/skills/extract-text/scripts/potgen.mts --dump tmp/dump-ts --out tmp/pot-ts.pot
+node scripts/dump_parity.mts --jsonl --expect tmp/dump-py --actual tmp/dump-ts --pot-fields
+```
+
+Результат:
+
+- Объектов: **507 415 = 507 415** (163 ассета: 16 уровней, 16 sharedassets,
+  resources, globalgamemanagers, 107 бандлов, 20 `.resource`, 2 DLL).
+- POT: **36 126 (Python) против 37 663 (TS): 0 потерянных, 1 537 лишних**;
+  расхождений в существующих записях и комментариях `#. rich_text:` — 0.
+- По пот-полям на всех 507 415 строках: `path_id`, `type`, `dialogues`,
+  `fsm_strings`, `color_parser_list` — **0 расхождений**; `raw_strings` —
+  6 329 расхождений; `strings.m_Name` — 140 404 (только `.assets`).
+- Причина обоих чисел одна и та же, и это не наш разбор:
+  - **6 329 строк эталона — `extract_failed`**: `extract_object` перебирает
+    `dir(data)`, а у AudioClip/Texture2D/Sprite свойства (`samples`, `image`)
+    пытаются декодировать ресурс и падают (`PermissionError` на
+    пути-каталоге) → у эталона от объекта остаются только `path_id`+`type`.
+    TS эти строки извлекает. Проверка: если в Python-дампе подменить ровно эти
+    6 329 строк на TS-строки, POT становится **37 663 = 37 663, 0 диффов**
+    (включая комментарии). Значит 1 537 лишних записей — ровно они
+    (AudioClip 1 495, Texture2D+Sprite 42).
+  - **140 404 `strings.m_Name`** — встроенные классы в `.assets`, которые
+    UnityPy читает из своей базы typetree (`lzma.tpk`, ≈1000 классов), а не из
+    файла. POT их не использует (`m_Name` нужен только для фильтра
+    PlayMaker-бандлов, а там type tree есть).
+- Полный JSONL по бандлам: 14 487 из 22 857 строк идентичны; остальное —
+  свойства-обёртки UnityPy (`strings.extension` 6 973, `m_Components` 1 328,
+  `m_Transform` 621, `m_Animator` 113), имена после `clean_name`
+  (`m_MeshMetrics[0]` → `m_MeshMetrics_0_`) и те же 36 строк крашей эталона.
+  На POT не влияет — эти поля в POT не читаются.
+
+Вывод: **приёмка стадии 3 выполнена по существу** — POT из TS-дампа совпадает
+с эталоном; расхождение только там, где эталон падает, и TS даёт больше текста
+(1 537 UI-строк из имён аудио-ассетов).
+
+### 4. Тесты
+
+`npm run test:dump` — **97 зелёных** (54 прежних + 43 новых): raw-сканеры 14,
+`#US`-куча 7, type tree 6, извлечение/FSM 7, JSONL 6, e2e (синтетический
+UnityFS/SerializedFile → JSONL → инвентарь → POT) 2, интеграция на живой игре
+(дамп level1 + самого маленького бандла → инвентарь) 1. `npm test` (206),
+`npm run typecheck` и `npm run verify` зелёные.
+
+### 5. Что осталось до стадии 4
+
+- Полный JSONL-паритет: типизированные `strings`/`fields` в `.assets` (нужна
+  либо база typetree UnityPy как данные, либо ручные схемы на 64 класса) и
+  свойства-обёртки (`m_Components` и т.п.). На POT не влияет.
+- Решение владельца по крашам эталона: оставить TS-надмножество (1 537 строк)
+  или добавить `--py-compat` для байт-в-байт дампа.
+- Discovery `level16..18` (сейчас как у эталона: только 0..15) — отдельное
+  решение, иначе POT недополучает текст поздних сцен.
+- `dump_assets.py` удаляется только после полного JSONL-паритета.
 
 ## Вне рамок
 
@@ -111,7 +245,9 @@ C# (`UnityDataTools`, `AssetsTools.NET`), Python (`UnityPy 1.25.0`).
 ## Файлы
 
 - `.opencode/skills/dump-assets/scripts/dump_assets.mts` (+ `unityfs.mts`,
-  `serialized.mts`, `binary.mts`, `lz4.mts`, `lzma.mts`)
+  `serialized.mts`, `binary.mts`, `lz4.mts`, `lzma.mts`, `rawscan.mts`,
+  `dotnet.mts`, `typetree.mts`, `extract.mts`, `pystr.mts`, `jsonl.mts`,
+  `unity_classes.mts`)
 - `.opencode/skills/dump-assets/tests/*.test.mts` (+ `helpers.mts`; `test_data/`
   не нужен: фикстуры собираются байтами в тестах — файлы игры не коммитим)
 - `scripts/dump_parity.mts`

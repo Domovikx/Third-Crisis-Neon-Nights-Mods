@@ -38,7 +38,11 @@
     "dump:structure": "node .opencode/skills/dump-assets/scripts/dump_assets.mts structure --all",
     "dump:parity": "node scripts/dump_parity.mts",
     "test:dump": "node --test .opencode/skills/dump-assets/tests/*.test.mts",
-    "release": "node scripts/package_release.mts"
+    "release": "node scripts/package_release.mts",
+    "rust:build": "cargo build --release --manifest-path tools/rust-decoder/Cargo.toml",
+    "rust:test": "cargo test --manifest-path tools/rust-decoder/Cargo.toml",
+    "dump:rust": "node .opencode/skills/dump-assets/scripts/dump_assets.mts dump --decoder rust",
+    "bench:dump": "node scripts/dump_bench.mts --runs 2"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

@@ -1,0 +1,34 @@
+[package]
+name = "rust-decoder"
+version = "0.1.0"
+edition = "2021"
+description = "UnityFS/SerializedFile decoder for the Third Crisis localization pipeline"
+license = "MIT"
+
+[lib]
+name = "rust_decoder"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rust-decoder"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[dependencies]
+# ЕДИНСТВЕННАЯ зависимость проекта, и она обоснована:
+#   - `tools/rust-decoder` — байтовый уровень: UnityFS, SerializedFile, raw-скан,
+#     .NET-куча `#US` и JSONL написаны здесь своим кодом (без serde и base64-крейтов);
+#   - LZ4 — свой декодер (`src/lz4.rs`), потому что это ~90 строк и весь корпус
+#     игры именно LZ4HC: важно видеть этот код, а не прятать за крейтом;
+#   - LZMA — единственное исключение: ~300 строк арифметического декодера,
+#     которые невозможно отревьюить «на глаз», а ошибка в них = тихий мусор.
+#     `lzma-rs` — чистый Rust (без unsafe и C), используется только raw-режим
+#     (`raw_decoder`): Unity кладёт поток как «props + dictSize + данные».
+#     В игре LZMA-блоков нет (все бандлы LZ4HC), ветка проверяется синтетическим
+#     вектором эталонного xz — как и в TS-версии.
+lzma-rs = { version = "0.3", features = ["raw_decoder"] }

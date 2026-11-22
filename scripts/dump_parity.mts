@@ -2,9 +2,7 @@
  * dump_parity.mts — харнесс паритета TS-дампера против Python-эталона (UnityPy).
  *
  * Зачем: контракт дампера — JSONL, который ниже по течению читают
- * `inventory.mts`/`potgen.mts`. Пока стадии 3–4 не готовы, сверяется то, что
- * уже реализовано (стадии 1–2): список entry бандлов и таблица объектов
- * `(path_id, typeID)` каждого SerializedFile.
+ * `inventory.mts`/`potgen.mts`.
  *
  * Два режима:
  *
@@ -15,13 +13,14 @@
  *     всем файлам, а нам нужен тот же РАЗБОР на выбранном наборе. Пробу делает
  *     тот же UnityPy, что и в эталоне.
  *
- *   --jsonl --expect <dir> [--actual <dir>]
- *     Построчное сравнение двух каталогов дампа с нормализацией порядка ключей
- *     (готово к стадии 4: `--expect tmp/dump-py`, `--actual tmp/dump-ts`).
+ *   --jsonl --expect <dir> --actual <dir> [--pot-fields | --only-fields a,b]
+ *     Построчное сравнение двух каталогов дампа с нормализацией порядка ключей.
+ *     `--pot-fields` сужает сравнение до полей, из которых собирается POT
+ *     (это и есть настоящая приёмка стадии 3); без него — полная строка.
  *
  * CLI:
  *   node scripts/dump_parity.mts [--files a,b,c | --all]
- *   node scripts/dump_parity.mts --jsonl --expect <dir> [--actual <dir>]
+ *   node scripts/dump_parity.mts --jsonl --expect <dir> --actual <dir> [--pot-fields]
  *
  * Выход: 0 — всё совпало, 1 — есть расхождения, 2 — не смог запуститься.
  */
@@ -280,7 +279,35 @@ function canonical(value: unknown): unknown {
   return value;
 }
 
-function compareJsonlDirs(expectDir: string, actualDir: string): number {
+/**
+ * Проекция строки на выбранные поля (точечные пути: `strings.m_Name`).
+ * `null` — без проекции, сравниваем строку целиком.
+ */
+function projectRow(row: unknown, fields: string[] | null): unknown {
+  if (!fields) return canonical(row);
+  if (!row || typeof row !== "object") return row;
+  const source = row as Record<string, unknown>;
+  const out: Record<string, unknown> = {};
+  for (const path of fields) {
+    const parts = path.split(".");
+    let value: unknown = source;
+    for (const part of parts) {
+      if (!value || typeof value !== "object") {
+        value = undefined;
+        break;
+      }
+      value = (value as Record<string, unknown>)[part];
+    }
+    if (value !== undefined) out[path] = canonical(value);
+  }
+  return out;
+}
+
+function compareJsonlDirs(
+  expectDir: string,
+  actualDir: string,
+  onlyFields: string[] | null,
+): number {
   const files = readdirSync(expectDir)
     .filter((f) => f.endsWith(".jsonl"))
     .sort();
@@ -289,6 +316,8 @@ function compareJsonlDirs(expectDir: string, actualDir: string): number {
     return 2;
   }
   let differing = 0;
+  let rowsCompared = 0;
+  const diffByField = new Map<string, number>();
   for (const name of files) {
     const actualPath = join(actualDir, name);
     if (!existsSync(actualPath)) {
@@ -303,13 +332,18 @@ function compareJsonlDirs(expectDir: string, actualDir: string): number {
       differing += 1;
       continue;
     }
+    rowsCompared += expected.length;
     let shown = 0;
     for (let i = 0; i < expected.length; i++) {
       let a: unknown;
       let b: unknown;
+      let pyRow: unknown;
+      let tsRow: unknown;
       try {
-        a = canonical(JSON.parse(expected[i]));
-        b = canonical(JSON.parse(actual[i]));
+        pyRow = JSON.parse(expected[i]);
+        tsRow = JSON.parse(actual[i]);
+        a = projectRow(pyRow, onlyFields);
+        b = projectRow(tsRow, onlyFields);
       } catch {
         console.log(`DIFF ${name}:${i + 1}: строка не JSON`);
         shown += 1;
@@ -317,19 +351,51 @@ function compareJsonlDirs(expectDir: string, actualDir: string): number {
         continue;
       }
       if (JSON.stringify(a) !== JSON.stringify(b)) {
-        console.log(
-          `DIFF ${name}:${i + 1}\n  Python: ${JSON.stringify(a)}\n  TS    : ${JSON.stringify(b)}`,
-        );
+        // При проекции показываем, какие именно поля разошлись.
+        if (onlyFields) {
+          for (const path of onlyFields) {
+            const av = projectRow(pyRow, [path]);
+            const bv = projectRow(tsRow, [path]);
+            if (JSON.stringify(av) !== JSON.stringify(bv)) {
+              diffByField.set(path, (diffByField.get(path) ?? 0) + 1);
+              if (shown < 5) {
+                console.log(
+                  `DIFF ${name}:${i + 1} ${path}\n  Python: ${JSON.stringify(av)}\n  TS    : ${JSON.stringify(bv)}`,
+                );
+              }
+            }
+          }
+        } else if (shown < 5) {
+          console.log(
+            `DIFF ${name}:${i + 1}\n  Python: ${JSON.stringify(a)}\n  TS    : ${JSON.stringify(b)}`,
+          );
+        }
         shown += 1;
-        if (shown >= 5) break;
       }
     }
     if (shown === 0) console.log(`OK   ${name} (${expected.length} строк)`);
     else differing += 1;
   }
-  console.log(`\nИтог: файлов ${files.length}, разошлось ${differing}`);
+  console.log(`\nИтог: файлов ${files.length}, строк ${rowsCompared}, разошлось ${differing}`);
+  if (diffByField.size > 0) {
+    const parts = [...diffByField.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .map(([field, count]) => `${field}=${count}`);
+    console.log(`Расхождения по полям: ${parts.join(", ")}`);
+  }
   return differing === 0 ? 0 : 1;
 }
+
+/** Пот-релевантные поля: из них собирается `po/template.pot`. */
+const POT_FIELDS = [
+  "path_id",
+  "type",
+  "raw_strings",
+  "dialogues",
+  "fsm_strings",
+  "color_parser_list",
+  "strings.m_Name",
+];
 
 function argValue(argv: string[], name: string): string | null {
   for (let i = 0; i < argv.length; i++) {
@@ -360,10 +426,13 @@ function main(argv: string[]): number {
     console.log(
       [
         "node scripts/dump_parity.mts [--files a,b,c | --all]",
-        "node scripts/dump_parity.mts --jsonl --expect <dir> [--actual <dir>]",
+        "node scripts/dump_parity.mts --jsonl --expect <dir> --actual <dir> [--pot-fields | --only-fields a,b]",
         "",
-        "structure — сверка entry и таблицы объектов с UnityPy (стадии 1–2);",
-        "jsonl     — построчная сверка каталогов дампа (стадия 4).",
+        "structure  — сверка entry и таблицы объектов с UnityPy (стадии 1–2);",
+        "jsonl      — построчная сверка каталогов дампа целиком;",
+        "--pot-fields — сверять только поля, из которых собирается POT",
+        "             (path_id, type, raw_strings, dialogues, fsm_strings,",
+        "              color_parser_list, strings.m_Name).",
       ].join("\n"),
     );
     return 0;
@@ -374,12 +443,20 @@ function main(argv: string[]): number {
     const actualDir = argValue(argv, "--actual");
     if (!expectDir || !actualDir) {
       console.error(
-        "--jsonl требует --expect <каталог Python-дампа> и --actual <каталог TS-дампа>\n" +
-          "(стадии 3–4 ещё не реализованы — каталог TS-дампа появится позже)",
+        "--jsonl требует --expect <каталог Python-дампа> и --actual <каталог TS-дампа>",
       );
       return 2;
     }
-    return compareJsonlDirs(resolve(expectDir), resolve(actualDir));
+    let onlyFields: string[] | null = null;
+    if (argv.includes("--pot-fields")) onlyFields = POT_FIELDS;
+    const fieldsArg = argValue(argv, "--only-fields");
+    if (fieldsArg) {
+      onlyFields = fieldsArg
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean);
+    }
+    return compareJsonlDirs(resolve(expectDir), resolve(actualDir), onlyFields);
   }
 
   let targets: Array<{ name: string; path: string }>;
