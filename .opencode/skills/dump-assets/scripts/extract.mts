@@ -26,6 +26,7 @@ import {
   scanRawStrings,
 } from "./rawscan.mts";
 import type { SerializedObject } from "./serialized.mts";
+import { capList, type TruncationBucket, type TruncationReport } from "./truncation.mts";
 
 /** Поля обёрток UnityPy, которые эталон пропускает (`SKIP_ATTRS`). */
 const SKIP_ATTRS = new Set([
@@ -43,6 +44,24 @@ const SKIP_ATTRS = new Set([
 ]);
 
 const MAX_STRING_LEN = 500;
+
+/** Бакет-заглушка: прямой вызов `extractObject` без общего отчёта прогона. */
+const THROWAWAY_BUCKET: TruncationBucket = { units: 0, dropped: 0, limit: null };
+
+/**
+ * Ограничения извлечения.
+ *
+ * `rawStringLimit` — необязательный лимит строк `raw_strings` на объект.
+ * По умолчанию `null` (без лимита): хвост raw-скана нужен инвентарю, иначе
+ * текст теряется ДО фильтров (аудит POT 2026-11-22 — 2.94 млн отброшенных
+ * строк у 1 768 объектов). Если лимит задан, обрезка считается в
+ * `truncation.rawStrings` и печатается в конце прогона.
+ */
+export interface ExtractOptions {
+  rawStringLimit?: number | null;
+  /** Общий счётчик прогона (нужен, только если задан лимит). */
+  truncation?: TruncationReport;
+}
 
 /**
  * Готовые сырые сканы объекта (от другого исполнителя, например Rust).
@@ -108,9 +127,12 @@ export function collectTypedFields(typed: Record<string, unknown>): {
   strings: Record<string, string>;
   fields: Record<string, unknown>;
   isFsm: boolean;
+  /** Сколько строковых значений срезано по `MAX_STRING_LEN` (для отчёта). */
+  cutValues: number;
 } {
   const strings: Record<string, string> = {};
   const fields: Record<string, unknown> = {};
+  let cutValues = 0;
 
   const keys = Object.keys(typed).sort();
   for (const key of keys) {
@@ -119,7 +141,9 @@ export function collectTypedFields(typed: Record<string, unknown>): {
     if (value === undefined || value === null) continue;
 
     if (typeof value === "string") {
-      if (value) strings[key] = pySlice(value, MAX_STRING_LEN);
+      if (!value) continue;
+      if (cpLen(value) > MAX_STRING_LEN) cutValues += 1;
+      strings[key] = pySlice(value, MAX_STRING_LEN);
       continue;
     }
     if (isPptrDict(value)) {
@@ -142,7 +166,7 @@ export function collectTypedFields(typed: Record<string, unknown>): {
     // Вложенные структуры и сырые байты эталон в JSONL не пишет.
   }
 
-  return { strings, fields, isFsm: Object.hasOwn(typed, "fsm") };
+  return { strings, fields, isFsm: Object.hasOwn(typed, "fsm"), cutValues };
 }
 
 /**
@@ -151,6 +175,9 @@ export function collectTypedFields(typed: Record<string, unknown>): {
  * Ходим по всему дереву объекта: берём строки из `value` (если у узла нет
  * `useVariable`) и из `stringParams`. Имена стейтов, slash-пути переменных
  * и `line_*` отбрасываются — это идентификаторы, а не текст.
+ *
+ * Лимита на количество нет: по корпусу максимум — 11 строк на объект, а
+ * исторический обрез `[:500]` был ещё одним тихим местом потери.
  */
 export function parseFsmStrings(typed: Record<string, unknown>): string[] {
   const out: string[] = [];
@@ -167,7 +194,6 @@ export function parseFsmStrings(typed: Record<string, unknown>): string[] {
   };
 
   const walk = (node: unknown): void => {
-    if (out.length >= 500) return;
     if (Array.isArray(node)) {
       for (const item of node) walk(item);
       return;
@@ -201,6 +227,7 @@ export function extractObject(
   tree: TypeTreeNode | null,
   endian: Endian = "le",
   scans?: RawScans,
+  options: ExtractOptions = {},
 ): DumpObjectRow {
   const row: DumpObjectRow = {
     path_id: obj.pathId,
@@ -221,9 +248,13 @@ export function extractObject(
       }
     }
   } else {
-    const { strings, fields, isFsm: fsmFlag } = collectTypedFields(typed);
+    const { strings, fields, isFsm: fsmFlag, cutValues } = collectTypedFields(typed);
     if (Object.keys(strings).length > 0) row.strings = strings;
     if (Object.keys(fields).length > 0) row.fields = fields;
+    if (cutValues > 0 && options.truncation) {
+      options.truncation.stringLength.units += 1;
+      options.truncation.stringLength.dropped += cutValues;
+    }
     isFsm = fsmFlag;
   }
 
@@ -239,7 +270,11 @@ export function extractObject(
     if (fsmStrings.length > 0) row.fsm_strings = fsmStrings;
   }
 
-  if (allTexts.length > 0) row.raw_strings = allTexts.slice(0, 100);
+  if (allTexts.length > 0) {
+    // Счётчик обрезки: без отчёта (прямые вызовы в тестах) — во временный бакет.
+    const target = options.truncation?.rawStrings ?? THROWAWAY_BUCKET;
+    row.raw_strings = capList(allTexts, options.rawStringLimit ?? null, target);
+  }
 
   return row;
 }

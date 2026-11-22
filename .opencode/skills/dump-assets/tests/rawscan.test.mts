@@ -194,7 +194,7 @@ test("isGlobalStringCandidate: лейблы проходят, пути и сим
   assert.equal(isGlobalStringCandidate("{}"), false);
 });
 
-test("scanGlobalStrings: сортировка по приоритету и лимит 500", () => {
+test("scanGlobalStrings: сортировка по приоритету (лимит 500 по умолчанию не мешает)", () => {
   const raw = ascii("New Game\u0000MENU\u0000Resolution\u0000_gloss");
   const found = scanGlobalStrings(raw);
   assert.deepEqual(found, ["New Game", "MENU", "Resolution"]);

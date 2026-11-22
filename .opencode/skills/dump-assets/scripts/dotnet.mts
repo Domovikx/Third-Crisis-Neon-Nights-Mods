@@ -18,6 +18,10 @@ import {
   pyStrip,
 } from "./pystr.mts";
 import { decodeUtf16le, type SettingKey, utf16leBytes } from "./rawscan.mts";
+import { capList, type TruncationBucket } from "./truncation.mts";
+
+/** Бакет-заглушка: прямой вызов без общего отчёта прогона. */
+const THROWAWAY_BUCKET: TruncationBucket = { units: 0, dropped: 0, limit: null };
 
 /** Прочитать .NET compressed integer (1, 2 или 4 байта). */
 export function readCompressedInt(data: Uint8Array, offset: number): [number, number] {
@@ -197,8 +201,18 @@ export function looksLikeDisplayText(s: string): boolean {
  *
  * `heapRange` — границы кучи, если она уже вырезана из сборки (декодер отдал
  * только её): тогда заголовок `BSJB` не ищется, а сканируется ровно диапазон.
+ *
+ * `limit` — лимит строк на сборку (`null` — без лимита, значение по умолчанию).
+ * Исторический `[:500]` молча терял 251 UI-кандидат из 751 на корпусе (в том
+ * числе видимые строки Lovense/сохранений). Если лимит задан, отбрасывание
+ * считается в `truncation` и печатается в конце прогона.
  */
-export function scanDotnetUiStrings(data: Uint8Array, heapRange?: [number, number]): string[] {
+export function scanDotnetUiStrings(
+  data: Uint8Array,
+  heapRange?: [number, number],
+  limit: number | null = null,
+  truncation?: TruncationBucket,
+): string[] {
   const heap = heapRange ?? findDotnetUsHeap(data);
   if (!heap) return [];
   const usStart = heap[0];
@@ -254,11 +268,11 @@ export function scanDotnetUiStrings(data: Uint8Array, heapRange?: [number, numbe
     results.push(s);
   }
 
-  return results
+  const ordered = results
     .map((text, index) => ({ text, index, priority: dotnetUiPriority(text) }))
     .sort((a, b) => b.priority - a.priority || a.index - b.index)
-    .slice(0, 500)
     .map((item) => item.text);
+  return capList(ordered, limit, truncation ?? THROWAWAY_BUCKET);
 }
 
 function stripNulEnds(s: string): string {

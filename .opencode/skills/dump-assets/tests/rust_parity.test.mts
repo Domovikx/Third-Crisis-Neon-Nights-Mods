@@ -24,7 +24,12 @@ import { join } from "node:path";
 import process from "node:process";
 import test from "node:test";
 
-import { dumpAssets, dumpAssetsFromRaw, REPO_ROOT } from "../scripts/dump_assets.mts";
+import {
+  defaultDumpOptions,
+  dumpAssets,
+  dumpAssetsFromRaw,
+  REPO_ROOT,
+} from "../scripts/dump_assets.mts";
 import { findRustBinary, runRustDecoder, writeRawDumpTs } from "../scripts/rawdump.mts";
 import { buildBlocksInfo, buildSerializedFile, buildUnityFs, testTreeNode } from "./helpers.mts";
 
@@ -144,6 +149,15 @@ function buildColorParserList(entries: Array<[string, number, number, number]>):
 }
 
 /** Набор фикстур: ассет без type tree, бандл с ним, .resource и DLL. */
+function manyRawStrings(count: number): Uint8Array {
+  const bytes: number[] = [];
+  for (let i = 0; i < count; i++) {
+    for (const b of encoder.encode(`Long tail line ${i}`)) bytes.push(b);
+    bytes.push(0);
+  }
+  return new Uint8Array(bytes);
+}
+
 function buildFixtures(workDir: string): Array<{ name: string; path: string }> {
   const targets: Array<{ name: string; path: string }> = [];
 
@@ -164,6 +178,7 @@ function buildFixtures(workDir: string): Array<{ name: string; path: string }> {
       objects: [
         { pathId: 42n, data: dialogue, typeId: 0 },
         { pathId: -9007199254740993n, data: colors, typeId: 0 },
+        { pathId: 43n, data: manyRawStrings(150), typeId: 0 },
       ],
     }),
   );
@@ -302,6 +317,30 @@ test("паритет дампа: dumpAssets(TS) == dumpAssetsFromRaw(rd1 из Ru
         `файл дампа ${name} разошёлся`,
       );
     }
+
+    // Без лимита хвост raw_strings (150 строк в одном объекте) сохранён целиком.
+    const rows = readFileSync(join(tsDir, "level_parity.jsonl"), "utf8")
+      .split("\n")
+      .filter(Boolean)
+      .map((line) => JSON.parse(line) as { path_id: number; raw_strings?: string[] });
+    const long = rows.find((row) => String(row.path_id) === "43");
+    assert.equal(long?.raw_strings?.length, 150, "хвост raw_strings должен быть в дампе");
+
+    // Лимит применяется одинаково в обоих путях (паритет счётчиков и выхода).
+    const tsLimited = defaultDumpOptions();
+    tsLimited.rawStringLimit = 100;
+    const rustLimited = defaultDumpOptions();
+    rustLimited.rawStringLimit = 100;
+    dumpAssets(targets, join(workDir, "dump-ts-limited"), tsLimited);
+    dumpAssetsFromRaw(rustRaw, join(workDir, "dump-rust-limited"), rustLimited);
+    assert.deepEqual(rustLimited.truncation, tsLimited.truncation);
+    assert.deepEqual(
+      readFileSync(join(workDir, "dump-rust-limited", "level_parity.jsonl")),
+      readFileSync(join(workDir, "dump-ts-limited", "level_parity.jsonl")),
+      "выход с лимитом разошёлся между TS и Rust",
+    );
+    assert.equal(tsLimited.truncation.rawStrings.units, 1);
+    assert.equal(tsLimited.truncation.rawStrings.dropped, 50);
   } finally {
     if (process.env.RUST_PARITY_KEEP) console.error(`каталог сохранён: ${workDir}`);
     else rmSync(workDir, { recursive: true, force: true });

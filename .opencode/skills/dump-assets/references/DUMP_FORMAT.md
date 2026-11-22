@@ -11,7 +11,8 @@
 - `summaries.jsonl` — по строке на ассет: `{asset, total_objects,
 object_types{...}, settings_keys[{key, display}]?, global_strings[]?, format?}`
   - `settings_keys[]` — только `dll_*` (.NET US-heap)
-  - `global_strings[]` — до 500 строк UI-кандидатов на ассет
+  - `global_strings[]` — UI-кандидаты на ассет, лимит 500 по умолчанию
+    (`--global-string-limit`, счётчик обрезки печатается; поле в POT не читается)
   - `format` — `raw_binary` / `dotnet_us_heap`, если не Unity-объекты
 - `<asset>.jsonl` — по строке на объект: `{asset, path_id, type,
 strings{m_Name}, fields{...}, raw_strings[], dialogues[{speaker, text,

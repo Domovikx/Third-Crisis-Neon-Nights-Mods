@@ -26,6 +26,7 @@ import {
   pySlice,
   pyStrip,
 } from "./pystr.mts";
+import { capList, type TruncationBucket } from "./truncation.mts";
 
 export const MAX_STRING_LEN = 500;
 export const MIN_RAW_LEN = 3;
@@ -477,10 +478,25 @@ export function uiPriority(s: string): number {
   return 0;
 }
 
-const GLOBAL_STRING_LIMIT = 500;
+/** Лимит по умолчанию: поле `global_strings` в POT не читается, только дамп. */
+export const GLOBAL_STRING_LIMIT = 500;
 
-/** Кандидаты в UI-строки из не-объектных байтов (сортировка по приоритету). */
-export function scanGlobalStrings(data: Uint8Array): string[] {
+/** Бакет-заглушка: прямой вызов без общего отчёта прогона. */
+const THROWAWAY_BUCKET: TruncationBucket = { units: 0, dropped: 0, limit: null };
+
+/**
+ * Кандидаты в UI-строки из не-объектных байтов (сортировка по приоритету).
+ *
+ * `limit` — лимит на ассет. Значение по умолчанию — исторические 500: это
+ * поле никто не читает (ни POT, ни инвентарь), а без лимита кандидатов
+ * 2 061 610 на корпусе (из них в дамп шло 75 795) — это мусор, а не текст.
+ * Лимит обязателен к отчёту: см. `truncation`.
+ */
+export function scanGlobalStrings(
+  data: Uint8Array,
+  limit: number | null = GLOBAL_STRING_LIMIT,
+  truncation?: TruncationBucket,
+): string[] {
   const candidates: string[] = [];
   const seen = new Set<string>();
   const n = data.length;
@@ -500,11 +516,11 @@ export function scanGlobalStrings(data: Uint8Array): string[] {
     }
   }
   // Сортировка стабильная: как `sort(key=..., reverse=True)` в Python.
-  return candidates
+  const ordered = candidates
     .map((text, index) => ({ text, index, priority: uiPriority(text) }))
     .sort((a, b) => b.priority - a.priority || a.index - b.index)
-    .slice(0, GLOBAL_STRING_LIMIT)
     .map((c) => c.text);
+  return capList(ordered, limit, truncation ?? THROWAWAY_BUCKET);
 }
 
 /** Декодировать UTF-16LE (для .NET-сканов). */

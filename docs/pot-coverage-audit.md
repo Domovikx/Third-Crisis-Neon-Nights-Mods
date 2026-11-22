@@ -8,6 +8,12 @@
 summary-строк, 19 сцен), `po/template.pot` (40 256 записей), игра
 `C:\Program Files (x86)\Steam\steamapps\common\Third Crisis Neon Nights` (DLL `#US`-куча).
 
+> Обновление 2026-11-22: обрезки дампера из этого аудита (пункты 4–6 короткого ответа:
+> `raw_strings[:100]`, top-500 `#US`, `fsm_strings[:500]`) сняты, обрезки `global_strings`
+> и `MAX_STRING_LEN` теперь считаются и печатаются. Замер и следствия для POT —
+> `docs/dump-losses.md`. Остаток (фильтр `isUiString`, отбор `strings.*`) — по-прежнему
+> здесь и остаётся задачей для `extract-text`.
+
 ## Короткий ответ
 
 **Да, видимый игроку текст за пределами POT есть.** По замеру и выборкам — около

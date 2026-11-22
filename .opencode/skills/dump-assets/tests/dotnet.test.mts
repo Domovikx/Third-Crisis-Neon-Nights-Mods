@@ -17,6 +17,7 @@ import {
   scanDotnetUiStrings,
 } from "../scripts/dotnet.mts";
 import { Buf } from "./helpers.mts";
+import { createTruncationReport } from "../scripts/truncation.mts";
 
 /** Одна строка кучи #US: compressed length + UTF-16LE + терминатор. */
 function usEntry(text: string, terminal = 0): Uint8Array {
@@ -102,4 +103,18 @@ test("scanDotnetUiStrings: автономные UI-строки, без ключ
 test("scanDotnetSettings: без метадаты — пусто, без падения", () => {
   assert.deepEqual(scanDotnetSettings(new TextEncoder().encode("plain")), []);
   assert.deepEqual(scanDotnetUiStrings(new TextEncoder().encode("plain")), []);
+});
+
+test("scanDotnetUiStrings: больше 500 строк — без лимита ничего не режется", () => {
+  const entries = Array.from({ length: 620 }, (_, i) => `Label ${i}`);
+  const found = scanDotnetUiStrings(buildDotnet(entries));
+  assert.equal(found.length, 620);
+});
+
+test("scanDotnetUiStrings: заданный лимит режет И считается в отчёте", () => {
+  const entries = Array.from({ length: 620 }, (_, i) => `Label ${i}`);
+  const truncation = createTruncationReport();
+  const found = scanDotnetUiStrings(buildDotnet(entries), undefined, 500, truncation.dotnetUi);
+  assert.equal(found.length, 500);
+  assert.deepEqual(truncation.dotnetUi, { units: 1, dropped: 120, limit: 500 });
 });

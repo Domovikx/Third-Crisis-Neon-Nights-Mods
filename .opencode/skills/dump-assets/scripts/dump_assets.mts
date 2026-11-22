@@ -36,11 +36,22 @@ import { scanDotnetSettings, scanDotnetUiStrings } from "./dotnet.mts";
 import { extractObject, type RawScans } from "./extract.mts";
 import { JsonlWriter } from "./jsonl.mts";
 import {
+  GLOBAL_STRING_LIMIT,
   isGlobalStringCandidate,
   scanGlobalStrings,
   scanSettingsKeys,
   uiPriority,
 } from "./rawscan.mts";
+import {
+  capList,
+  createTruncationReport,
+  formatLimits,
+  formatTruncations,
+  hasTruncations,
+  parseLimit,
+  type TruncationBucket,
+  type TruncationReport,
+} from "./truncation.mts";
 import { cpLen, pyStrip } from "./pystr.mts";
 import { runRustDecoder, type RawTarget } from "./rawdump.mts";
 import type { Endian } from "./binary.mts";
@@ -372,8 +383,44 @@ export interface SettingsEntry {
   display: string;
 }
 
+/**
+ * Ограничения дампа — все «крутилки» в одном месте.
+ *
+ * Смысл: дамп — ИСТОЧНИК данных, поэтому по умолчанию он ничего не режет
+ * (`null` = без лимита). Лимит нужен только там, где данные заведомо мусорные
+ * и не имеют потребителей (`global_strings`). Каждая обрезка обязана попасть
+ * в `truncation` и быть напечатанной в конце прогона — тихая обрезка была
+ * дефектом (аудит покрытия POT 2026-11-22: 100 raw_strings/объект и top-500
+ * #US-UИ теряли видимый игроку текст).
+ */
+export interface DumpOptions {
+  /** Лимит `raw_strings` на объект; `null` — без лимита (по умолчанию). */
+  rawStringLimit: number | null;
+  /** Лимит кандидатов `global_strings` на ассет. */
+  globalStringLimit: number | null;
+  /** Лимит UI-строк из кучи `#US` на сборку; `null` — без лимита. */
+  dotnetUiLimit: number | null;
+  /** Счётчик обрезок: наполняется по ходу прогона. */
+  truncation: TruncationReport;
+}
+
+/** Пределы по умолчанию: ничего не режем, кроме `global_strings`. */
+export function defaultDumpOptions(): DumpOptions {
+  const truncation = createTruncationReport();
+  truncation.globalStrings.limit = GLOBAL_STRING_LIMIT;
+  return {
+    rawStringLimit: null,
+    globalStringLimit: GLOBAL_STRING_LIMIT,
+    dotnetUiLimit: null,
+    truncation,
+  };
+}
+
 /** settings_keys + global_strings из сырых байтов ассета (порт эталона). */
-export function scanFileStrings(rawData: Uint8Array): {
+export function scanFileStrings(
+  rawData: Uint8Array,
+  options: DumpOptions = defaultDumpOptions(),
+): {
   settings: SettingsEntry[];
   globalStrings: string[];
 } {
@@ -383,7 +430,11 @@ export function scanFileStrings(rawData: Uint8Array): {
     found.add(item.key);
     found.add(item.display);
   }
-  const globalStrings = scanGlobalStrings(rawData).filter((text) => !found.has(text));
+  const globalStrings = scanGlobalStrings(
+    rawData,
+    options.globalStringLimit,
+    options.truncation.globalStrings,
+  ).filter((text) => !found.has(text));
   return { settings, globalStrings };
 }
 
@@ -395,9 +446,15 @@ export function scanFileStrings(rawData: Uint8Array): {
 export function scanDotnetStrings(
   rawData: Uint8Array,
   heapRange?: [number, number],
+  options: DumpOptions = defaultDumpOptions(),
 ): SettingsEntry[] {
   const settings = scanDotnetSettings(rawData);
-  const uiStrings = scanDotnetUiStrings(rawData, heapRange);
+  const uiStrings = scanDotnetUiStrings(
+    rawData,
+    heapRange,
+    options.dotnetUiLimit,
+    options.truncation.dotnetUi,
+  );
   const displays = new Set(settings.map((item) => item.display));
   for (const text of uiStrings) {
     if (!displays.has(text)) settings.push({ key: text, display: text });
@@ -418,7 +475,11 @@ export interface DumpStats {
  * Порядок и имена файлов — те же, что у Python-эталона: уровень/шенный
  * ассет → бандлы → `.resource` → DLL. `index.md` — человеческий индекс.
  */
-export function dumpAssets(targets: DiscoveredFile[], outDir: string): DumpStats {
+export function dumpAssets(
+  targets: DiscoveredFile[],
+  outDir: string,
+  options: DumpOptions = defaultDumpOptions(),
+): DumpStats {
   mkdirSync(outDir, { recursive: true });
   const summariesPath = join(outDir, "summaries.jsonl");
   const summaries = new JsonlWriter(summariesPath);
@@ -438,7 +499,7 @@ export function dumpAssets(targets: DiscoveredFile[], outDir: string): DumpStats
       try {
         const lower = target.path.toLowerCase();
         if (lower.endsWith(".dll")) {
-          const settings = scanDotnetStrings(bytes);
+          const settings = scanDotnetStrings(bytes, undefined, options);
           summaries.write({
             schema_version: "3",
             asset: target.name,
@@ -452,7 +513,7 @@ export function dumpAssets(targets: DiscoveredFile[], outDir: string): DumpStats
           continue;
         }
         if (lower.endsWith(".resource")) {
-          const { settings, globalStrings } = scanFileStrings(bytes);
+          const { settings, globalStrings } = scanFileStrings(bytes, options);
           summaries.write({
             schema_version: "3",
             asset: target.name,
@@ -469,7 +530,7 @@ export function dumpAssets(targets: DiscoveredFile[], outDir: string): DumpStats
 
         const objects = collectAssetObjects(bytes);
         const objectTypes = countObjectTypes(objects);
-        const { settings, globalStrings } = scanFileStrings(bytes);
+        const { settings, globalStrings } = scanFileStrings(bytes, options);
         summaries.write({
           schema_version: "3",
           asset: target.name,
@@ -484,7 +545,10 @@ export function dumpAssets(targets: DiscoveredFile[], outDir: string): DumpStats
           for (const item of objects) {
             writer.write({
               asset: target.name,
-              ...extractObject(item.obj, item.raw, item.tree, item.endian),
+              ...extractObject(item.obj, item.raw, item.tree, item.endian, undefined, {
+                rawStringLimit: options.rawStringLimit,
+                truncation: options.truncation,
+              }),
             });
           }
         } finally {
@@ -659,7 +723,11 @@ export function rawDumpPath(outDir: string): string {
  * фильтры UI-строк, порядок, дедуп, имена) выполняется здесь, теми же
  * функциями, что и в TS-пути. Rust поставляет только факты из байтов.
  */
-export function dumpAssetsFromRaw(rawPath: string, outDir: string): DumpStats {
+export function dumpAssetsFromRaw(
+  rawPath: string,
+  outDir: string,
+  options: DumpOptions = defaultDumpOptions(),
+): DumpStats {
   mkdirSync(outDir, { recursive: true });
   const summariesPath = join(outDir, "summaries.jsonl");
   const summaries = new JsonlWriter(summariesPath);
@@ -697,7 +765,11 @@ export function dumpAssetsFromRaw(rawPath: string, outDir: string): DumpStats {
         found.add(item.key);
         found.add(item.display);
       }
-      const globalStrings = selectGlobalStrings(ctx.runs).filter((text) => !found.has(text));
+      const globalStrings = selectGlobalStrings(
+        ctx.runs,
+        options.globalStringLimit,
+        options.truncation.globalStrings,
+      ).filter((text) => !found.has(text));
       if (globalStrings.length > 0) row.global_strings = globalStrings;
     }
     summaries.write(row);
@@ -789,7 +861,10 @@ export function dumpAssetsFromRaw(rawPath: string, outDir: string): DumpStats {
           const tree = file.trees.get(record.typeId) ?? null;
           ctx.writer.write({
             asset: ctx.asset.asset,
-            ...extractObject(obj, raw, tree, file.endian, scans),
+            ...extractObject(obj, raw, tree, file.endian, scans, {
+              rawStringLimit: options.rawStringLimit,
+              truncation: options.truncation,
+            }),
           });
           ctx.classNames.push(unityClassName(record.classId));
           ctx.objects += 1;
@@ -806,7 +881,7 @@ export function dumpAssetsFromRaw(rawPath: string, outDir: string): DumpStats {
           break;
         case "us": {
           const heap = new Uint8Array(Buffer.from(record.heap, "base64"));
-          ctx.dotnetSettings = scanDotnetStrings(heap, [0, heap.length]);
+          ctx.dotnetSettings = scanDotnetStrings(heap, [0, heap.length], options);
           break;
         }
         default:
@@ -831,19 +906,25 @@ export function dumpAssetsFromRaw(rawPath: string, outDir: string): DumpStats {
  * без сканирования байтов: строки уже дал декодер, уникальные по тексту).
  *
  * Правила «это UI-текст?» и приоритеты — здесь, в TS: декодер их не знает.
+ * Лимит — тот же, что у `scanGlobalStrings` (по умолчанию 500 на ассет),
+ * с обязательным учётом обрезки: два пути дампа обязаны совпадать.
  */
-export function selectGlobalStrings(texts: string[]): string[] {
+export function selectGlobalStrings(
+  texts: string[],
+  limit: number | null = GLOBAL_STRING_LIMIT,
+  truncation?: TruncationBucket,
+): string[] {
   const candidates: string[] = [];
   for (const raw of texts) {
     const text = pyStrip(raw);
     const length = cpLen(text);
     if (length >= 3 && length <= 120 && isGlobalStringCandidate(text)) candidates.push(text);
   }
-  return candidates
+  const ordered = candidates
     .map((text, index) => ({ text, index, priority: uiPriority(text) }))
     .sort((a, b) => b.priority - a.priority || a.index - b.index)
-    .slice(0, 500)
     .map((item) => item.text);
+  return capList(ordered, limit, truncation ?? { units: 0, dropped: 0, limit: null });
 }
 
 /** Отчёты `structure` из rd1 (паритет стадий 1–2 без второго прохода по игре). */
@@ -949,9 +1030,56 @@ function usage(): void {
       "  --files a,b    конкретные файлы (пути или имена из установки)",
       "  --out <dir>    каталог дампа (по умолчанию tmp/dump в корне репозитория)",
       "  --raw <файл>   путь rd1-промежутка (по умолчанию tmp/raw/<dump>.rd1.jsonl)",
+      "  --raw-string-limit <N|all>  строк raw_strings на объект (по умолчанию all)",
+      "  --global-string-limit <N|all>  кандидатов global_strings на ассет (по умолчанию 500)",
+      "  --dotnet-ui-limit <N|all>   UI-строк из #US-кучи на сборку (по умолчанию all)",
       "  --json         structure: машинный отчёт (один JSON на файл)",
       "  --no-objects   structure: без списка объектов (только счётчики)",
     ].join("\n"),
+  );
+}
+
+/**
+ * Лимиты из флагов `--*limit`.
+ *
+ * Возвращает `DumpOptions` с общим отчётом об обрезках; при кривом значении —
+ * сообщение об ошибке в stderr и `null` (прогон не начинается).
+ */
+const BUCKET_OF = {
+  rawStringLimit: "rawStrings",
+  globalStringLimit: "globalStrings",
+  dotnetUiLimit: "dotnetUi",
+} as const;
+
+function dumpOptionsFromArgv(argv: string[]): DumpOptions | null {
+  const options = defaultDumpOptions();
+  const limits: Array<[string, "rawStringLimit" | "globalStringLimit" | "dotnetUiLimit", string]> =
+    [
+      ["--raw-string-limit", "rawStringLimit", "raw_strings"],
+      ["--global-string-limit", "globalStringLimit", "global_strings"],
+      ["--dotnet-ui-limit", "dotnetUiLimit", "UI-строки #US"],
+    ];
+  for (const [flag, key, label] of limits) {
+    const value = argValue(argv, flag);
+    if (value === null) continue;
+    const parsed = parseLimit(value);
+    if (parsed === undefined) {
+      console.error(`${flag}: ожидалось число или all, получено "${value}" (${label})`);
+      return null;
+    }
+    options[key] = parsed;
+    options.truncation[BUCKET_OF[key]].limit = parsed;
+  }
+  return options;
+}
+
+/** Итоговый отчёт об обрезках: всегда в stderr, если резать пришлось. */
+function reportTruncations(options: DumpOptions): void {
+  if (!hasTruncations(options.truncation)) return;
+  console.error("\nВНИМАНИЕ: при извлечении отброшены строки (это не тихо):");
+  for (const line of formatTruncations(options.truncation)) console.error(line);
+  console.error(
+    "  поднять/снять лимит: --raw-string-limit / --global-string-limit / --dotnet-ui-limit",
   );
 }
 
@@ -1017,7 +1145,10 @@ function main(argv: string[]): number {
 
   if (command === "dump") {
     const outDir = resolve(argValue(argv, "--out") ?? join(REPO_ROOT, "tmp", "dump"));
+    const options = dumpOptionsFromArgv(argv);
+    if (options === null) return 2;
     const started = Date.now();
+    console.error(`  пределы: ${formatLimits(options.truncation)}`);
     let stats: DumpStats;
     if (decoder === "rust") {
       const rawPath = resolveRawPath(outDir, argValue(argv, "--raw"));
@@ -1028,14 +1159,15 @@ function main(argv: string[]): number {
         return 2;
       }
       console.error(`  байтовый уровень: rust → ${rawPath}`);
-      stats = dumpAssetsFromRaw(rawPath, outDir);
+      stats = dumpAssetsFromRaw(rawPath, outDir, options);
     } else {
-      stats = dumpAssets(targets, outDir);
+      stats = dumpAssets(targets, outDir, options);
     }
     const seconds = ((Date.now() - started) / 1000).toFixed(1);
     console.error(
       `\nГотово: ${stats.assets} ассетов, ${stats.objects} объектов → ${outDir} (${seconds} с)`,
     );
+    reportTruncations(options);
     return stats.failed === 0 ? 0 : 1;
   }
 
