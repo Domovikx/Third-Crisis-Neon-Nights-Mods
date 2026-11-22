@@ -72,6 +72,28 @@ C# (`UnityDataTools`, `AssetsTools.NET`), Python (`UnityPy 1.25.0`).
   TS-дампера → сверка с ожидаемым JSONL, сгенерированным Python и закоммиченным.
 - **Гард:** `npm run dump:parity` на реальной установке (локально, не в CI).
 
+## Прогресс: стадии 0–2 (2026-11-22)
+
+Сделано (TS, без зависимостей):
+
+- Стадия 0 — `scripts/dump_parity.mts`: режим `structure` (entry + таблица
+  объектов против UnityPy) и режим `--jsonl --expect/--actual` (построчная
+  сверка дампов, готов к стадии 4).
+- Стадия 1 — `unityfs.mts`: заголовок, блоки, свой LZ4-декодер (`lz4.mts`),
+  LZMA-фолбэк на чистом TS (`lzma.mts`), список entry.
+- Стадия 2 — `serialized.mts`: header v22, type table (с пропуском type tree),
+  object table, externals; чтение объекта сырыми байтами по `path_id`.
+- Тесты: 54 зелёных (`tests/*.test.mts`), фикстуры синтетические.
+- Паритет: 141/141 файл (107 бандлов + 34 `.assets`), 0 расхождений; сырые
+  байты объектов совпали с UnityPy по SHA-1.
+
+Осталось до стадий 3–4:
+
+- `extractObject` (сейчас заглушка): разбор типов без type tree, raw_strings,
+  диалоги, fsm_strings, color_parser_list, генерация JSONL.
+- Расширять discovery на `level16..18`/`sharedassets16..18` — только вместе с
+  решением по паритету (Python их сейчас не дампит).
+
 ## Приёмка
 
 - [ ] Все стадии закрыты; финальный прогон на реальном дампе даёт паритет с Python
@@ -86,10 +108,12 @@ C# (`UnityDataTools`, `AssetsTools.NET`), Python (`UnityPy 1.25.0`).
 - Поддержка всех версий Unity — только 2022.3, как в игре.
 - Ускорение ради ускорения: цель — корректность и паритет.
 
-## Файлы (ожидаемые)
+## Файлы
 
-- `.opencode/skills/dump-assets/scripts/dump_assets.mts` (+ модули `unityfs.mts`, `serialized.mts`)
-- `.opencode/skills/dump-assets/tests/*.test.mts`, `test_data/` (фикстура)
+- `.opencode/skills/dump-assets/scripts/dump_assets.mts` (+ `unityfs.mts`,
+  `serialized.mts`, `binary.mts`, `lz4.mts`, `lzma.mts`)
+- `.opencode/skills/dump-assets/tests/*.test.mts` (+ `helpers.mts`; `test_data/`
+  не нужен: фикстуры собираются байтами в тестах — файлы игры не коммитим)
 - `scripts/dump_parity.mts`
 - `package.json`, `SKILL.md`, `MAP.md`, `docs/migration.md`, `AGENTS.md`
 

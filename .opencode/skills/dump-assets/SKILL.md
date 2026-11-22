@@ -1,111 +1,89 @@
 ---
 name: dump-assets
-description: Дамп всех Unity .assets файлов игры в структурированный JSON с реальными объектами (UnityPy)
+description: Дамп Unity-ассетов игры в JSONL (Python-эталон UnityPy) + TS-парсер контейнера UnityFS и SerializedFile с тестами и харнессом паритета
 ---
 
-# dump-assets — Дамп Unity asset-ов в JSON
+# dump-assets — дамп Unity-ассетов и TS-парсер формата
 
-## Описание
+## Где что
 
-Использует [UnityPy](https://pypi.org/project/UnityPy/) для чтения настоящих Unity-объектов
-(Object Table + Type Tree + typed fields). Каждый `.assets` превращается в строки JSONL:
+- `scripts/dump_assets.py` — **эталон контракта**: UnityPy 1.25.0, пишет
+  `summaries.jsonl` + `<asset>.jsonl` (формат — `references/DUMP_FORMAT.md`).
+  Пока именно он делает полный дамп; удалять его нельзя, пока TS не закроет
+  стадии 3–4.
+- `scripts/dump_assets.mts` — TS-дампер, **стадии 0–2**: контейнер UnityFS,
+  SerializedFile, отчёт «entry + таблица объектов». Генерации JSONL ещё нет.
+- `scripts/unityfs.mts` — UnityFS: заголовок, блоки, свой LZ4-декодер
+  (`lz4.mts`), LZMA-фолбэк (`lzma.mts`).
+- `scripts/serialized.mts` — SerializedFile v22: header, type table, object
+  table, externals; чтение объекта по `path_id` сырыми байтами.
+- `scripts/binary.mts` — общий курсор по байтам (LE/BE, cstring, align,
+  `BinaryFormatError` с позицией).
+- `scripts/dump_parity.mts` (в корне репо, `scripts/`) — харнесс паритета с
+  UnityPy: структура (entry + объекты) и построчное сравнение JSONL-каталогов.
 
-- `summaries.jsonl` — по строке на ассет (статистика + settings/UI-строки)
-- `tmp/dump/<name>.jsonl` — по строке на объект (глядется через `jq`, стримится)
+## Использование (TS, стадии 0–2)
 
-Никаких чанков (были костылём от нестримимого JSON). Формат: `references/DUMP_FORMAT.md`.
+```bash
+# отчёт по структуре (человеческий вид)
+node .opencode/skills/dump-assets/scripts/dump_assets.mts structure --all
 
-## Использование
+# конкретные файлы: имя из установки или путь
+node .opencode/skills/dump-assets/scripts/dump_assets.mts structure \
+  --files level0,sharedassets1,0.2pinup-rosiesspecial_assets_all_ca47de7d23c78d171b98b2fdfa5aa400.bundle
+
+# машинный JSONL (по объекту на файл) — для харнесса
+node .opencode/skills/dump-assets/scripts/dump_assets.mts structure --all --json --no-objects
+```
+
+Путь к игре — только через `scripts/game_dir.mts` (env `TCNN_GAME_DIR` или
+Steam). В папку игры ничего не пишется.
+
+## Паритет с Python (обязательный шаг перед стадиями 3–4)
+
+```bash
+# по умолчанию: level0, sharedassets1, первый бандл
+node scripts/dump_parity.mts
+# произвольный набор (имена или пути)
+node scripts/dump_parity.mts --files level0,resources.assets,bundle_...
+# позже, когда появится TS-дамп JSONL:
+node scripts/dump_parity.mts --jsonl --expect tmp/dump-py --actual tmp/dump-ts
+```
+
+Structure-режим запускает пробу на **том же UnityPy**, которым работает
+эталон, и сравнивает: список entry (path/offset/size), `unityVersion`,
+версию заголовка, наличие type tree и таблицу `(path_id, typeID)`.
+
+## Полный дамп (пока Python-эталон)
 
 ```bash
 pip install UnityPy
-# Путь к игре: env (основной способ — репо больше не лежит внутри игры)
 TCNN_GAME_DIR="<Steam>/steamapps/common/Third Crisis Neon Nights" \
   python .opencode/skills/dump-assets/scripts/dump_assets.py
 ```
 
-По умолчанию пишет в `tmp/dump/` **этого репозитория** (не в папку игры).
-Если `TCNN_GAME_DIR` не задан, скрипт пробует старую раскладку
-(`родитель репозитория` = папка игры) — это фолбэк, а не рабочий режим.
-
-## Работа с дампом (смотрим что внутри)
-
-Файлы: `tmp/dump/*.jsonl` + `tmp/dump/summaries.jsonl` (вне гита, регенерируются).
-Схема: `references/DUMP_FORMAT.md`. Смотреть — построчно, без загрузки целиком:
-
-```bash
-# сколько объектов/диалогов
-wc -l tmp/dump/resources.jsonl
-# поиск по тексту (rg вместо SQL)
-rg -l "beef" tmp/dump/*.jsonl
-# первые диалоги ассета
-head -n 3 tmp/dump/level0.jsonl
-# все summary одним взглядом
-cat tmp/dump/summaries.jsonl
-# то же через Python (стриминг)
-python -c "
-import json
-n = sum(1 for ln in open('tmp/dump/resources.jsonl', encoding='utf-8') if ln.strip())
-print('rows:', n)
-"
-```
-
-Главное: `path_id` неуникален между типами (PreloadData#1 vs GameObject#1),
-поэтому связка — всегда `(asset, path_id, type)`, не голый path_id.
-
-## Формат JSONL (детали: `references/DUMP_FORMAT.md`)
-
-### Summary (строка `summaries.jsonl`)
-
-```json
-{
-  "asset": "resources",
-  "schema_version": "3",
-  "total_objects": 100776,
-  "object_types": { "MonoBehaviour": 28475, "GameObject": 21251 }
-}
-```
-
-### Object (строка `<asset>.jsonl`)
-
-```json
-{"asset": "resources", "path_id": 1, "type": "Material",
- "strings": {"m_Name": "Orbitron-Bold Atlas Material"},
- "fields": {"m_CustomRenderQueue": -1, "m_DoubleSidedGI": false}}
-{"asset": "resources", "path_id": 73203, "type": "MonoBehaviour",
- "strings": {"m_Enabled": 1}}
-```
-
-## Поля объекта
-
-| Поле                | Описание                                                   |
-| ------------------- | ---------------------------------------------------------- |
-| `path_id`           | уникальный ID объекта в файле                              |
-| `type`              | Unity class name (GameObject, MonoBehaviour, Texture2D, …) |
-| `strings`           | строковые поля объекта (m_Name, …)                         |
-| `fields`            | нестроковые поля (int, float, bool, PPtr, Vector3, …)      |
-| `dialogues`         | найденные диалоги Speaker/Text (из raw-скана)              |
-| `raw_strings`       | прочие строки из raw-байт объекта (до 100 на объект)       |
-| `color_parser_list` | мапа именованных цветов `{name: #HEX}` (ColorParserList)   |
-| `error`             | если объект не читается (`read_failed`/`extract_failed`)   |
-
-## Примечания
-
-- Texture2D, AudioClip, Shader и другие бинарные типы — только meta, без пикселей/сэмплов
-- PPtr-ссылки сохраняются как `{file_id, path_id}`
-- **Dialogues** извлекаются из raw bytes MonoBehaviour (JSON-паттерн `"Speaker":"…","Text":"…"`)
-- Объекты без текстовых полей всё равно присутствуют в дампе (для навигации по структуре)
-- `read_failed` — 92 652 объекта (19,4 %) на дампе 2026-11-21. Для них есть
-  только `raw_strings` (≤100), поэтому часть диалогов/FSM-текста в POT не
-  попадает — см. `tasks/2026-11-21-pot-coverage-gaps.md`.
-- `summaries.global_strings` (до 500 строк) сейчас **никто не читает**:
-  `inventory.mts` берёт только `settings_keys`. Это тоже потенциальный
-  источник потерянных UI-строк (но шума там много).
+По умолчанию пишет в `tmp/dump/` **этого репозитория**. Схема JSONL —
+`references/DUMP_FORMAT.md`; потребители — `inventory.mts`, `potgen.mts`.
 
 ## Тесты
 
 ```bash
-python .opencode/skills/dump-assets/tests/dump_assets.test.py
+node --test .opencode/skills/dump-assets/tests/*.test.mts
+python .opencode/skills/dump-assets/tests/dump_assets.test.py   # эталон (нужна игра)
 ```
 
-23 теста: raw-скан, JSON-парсинг, диалоги, PPtr, discover, интеграция с UnityPy, формат индекса.
+TS-тесты: LZ4 (векторы), LZMA (синтетический поток), заголовок UnityFS
+(битые/усечённые данные), SerializedFile (type tree on/off, пустая таблица,
+64-битные `path_id`), ByteReader. Фикстуры — **только синтетические**: файлы
+игры в git не кладём (перераспространение контента). `integration.test.mts`
+работает на реальной установке и пропускается, если игры нет (CI).
+
+## Что осталось (стадии 3–4)
+
+- Стадия 3: разбор нужных типов без type tree (MonoBehaviour/TextAsset/
+  GameObject/…), `raw_strings`, диалоги, `fsm_strings`, `color_parser_list` —
+  генерация `<asset>.jsonl` с паритетом против Python.
+- Стадия 4: полный прогон `summaries.jsonl` + все чанки, замер времени/памяти;
+  только после этого `dump_assets.py` можно удалять.
+
+Подробности и грабли — `MAP.md`.
