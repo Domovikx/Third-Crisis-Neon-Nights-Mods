@@ -1,12 +1,14 @@
 /**
- * text_cli.mts — обёртка над `rust-l10n` (рабочий текстовый пайплайн: potgen, po2dat).
+ * text_cli.mts — обёртка над `rust-l10n` (рабочий текстовый пайплайн:
+ * potgen, po2dat, po_update).
  *
  * Считает Rust (`tools/rust-l10n`), эталоны остаются на TS (`npm run potgen:ts`,
- * `po2dat:ts`) и стерегут паритет в `scripts/text_parity.test.mts`.
+ * `po2dat:ts`, `po:update:ts`) и стерегут паритет в `scripts/text_parity.test.mts`.
  *
- * Замер (2026-11-22): potgen 2.0× на реальном дампе (124 МБ/с против 61), po2dat 4.4×.
+ * Замер (2026-11-22): potgen 2.0× на реальном дампе (124 МБ/с против 61),
+ * po2dat 4.4×, po_update 4.2×, prefill ~4× на реальных po/
  *
- * CLI: node scripts/text_cli.mts <potgen|po2dat> [аргументы]
+ * CLI: node scripts/text_cli.mts <potgen|po2dat|po_update|prefill|find_source> [аргументы]
  */
 import { existsSync } from "node:fs";
 import { join } from "node:path";
@@ -24,12 +26,24 @@ export function l10nBinary(root: string = REPO_ROOT): string | null {
   return candidates.find((p) => existsSync(p)) ?? null;
 }
 
+/** Подкоманды, у которых корень передаётся флагом `--root`. */
+const COMMANDS = new Set(["potgen", "po2dat", "po_update", "prefill", "find_source"]);
+/** Флаги, которые сами задают пути (тогда `--root` не подставляется). */
+const PATH_FLAGS = new Set(["--root", "--po-dir", "--corpus", "--out", "--dump"]);
+
 const USAGE = `rust-l10n (обёртка)
 
   node scripts/text_cli.mts potgen [--update] [--dump <dir>] [--out <path>]
   node scripts/text_cli.mts po2dat [lang]
+  node scripts/text_cli.mts po_update [lang] [--po-dir <dir>] [--dup-rule <r>]
+                        [--json <path>] [--no-backup]
+  node scripts/text_cli.mts prefill [lang] [--po-dir <dir>] [--corpus <dir>]
+                        [--json <path>]
+  node scripts/text_cli.mts find_source "<msgid text>" [--first] [--dump <dir>]
 
-Эталонные TS-реализации: npm run potgen:ts / npm run po2dat:ts.
+Дамп для find_source сканируется тем же Rust-инвентарём, что у potgen.
+Эталонные TS-реализации: npm run potgen:ts / npm run po2dat:ts / npm run po:update:ts /
+npm run po:prefill:ts.
 Сборка: npm run l10n:build.`;
 
 function main(argv: string[]): number {
@@ -38,7 +52,7 @@ function main(argv: string[]): number {
     console.log(USAGE);
     return cmd ? 0 : 1;
   }
-  if (cmd !== "potgen" && cmd !== "po2dat") {
+  if (!COMMANDS.has(cmd)) {
     console.error(`неизвестная подкоманда: ${cmd}`);
     console.log(USAGE);
     return 1;
@@ -47,11 +61,18 @@ function main(argv: string[]): number {
   const bin = l10nBinary();
   if (!bin) {
     console.error("rust-l10n не собран. Соберите: npm run l10n:build");
-    console.error("Эталон без Rust: npm run potgen:ts / npm run po2dat:ts");
+    console.error(
+      "Эталоны без Rust: npm run potgen:ts / npm run po2dat:ts / npm run po:update:ts / " +
+        "npm run po:prefill:ts",
+    );
     return 2;
   }
 
-  const args = rest.includes("--root") ? [cmd, ...rest] : [cmd, "--root", REPO_ROOT, ...rest];
+  const hasPath = rest.some((a) => {
+    const name = a.split("=")[0];
+    return PATH_FLAGS.has(name);
+  });
+  const args = hasPath ? [cmd, ...rest] : [cmd, "--root", REPO_ROOT, ...rest];
   const run = spawnSync(bin, args, { stdio: "inherit" });
   return run.status ?? 1;
 }

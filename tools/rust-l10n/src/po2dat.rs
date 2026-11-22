@@ -14,6 +14,8 @@ use std::path::{Path, PathBuf};
 use rust_l10n_core::json::quoted;
 use rust_l10n_core::po::{js_trim, parse_po, PoEntry};
 
+use crate::refs::ref_sort_key;
+
 /// Строка словаря. Поля опциональны: пустые в JSON не пишутся.
 #[derive(Debug, Default, Clone, PartialEq, Eq)]
 pub struct DatRow {
@@ -67,30 +69,6 @@ pub fn rt_override(entry: Option<&PoEntry>) -> String {
         }
     }
     String::new()
-}
-
-/// Порядковый ключ для разрешения дубликатов: сначала legacy-ссылки
-/// `translations/...`, затем стабильные `[spk:...]`, иначе `~`.
-fn ref_key(e: &PoEntry) -> String {
-    let mut files: Vec<&str> = e
-        .refs
-        .iter()
-        .filter(|r| r.starts_with("translations/"))
-        .map(String::as_str)
-        .collect();
-    files.sort_by(|a, b| a.encode_utf16().cmp(b.encode_utf16()));
-    let mut stable: Vec<&str> = e
-        .refs
-        .iter()
-        .filter(|r| r.starts_with('['))
-        .map(String::as_str)
-        .collect();
-    stable.sort_by(|a, b| a.encode_utf16().cmp(b.encode_utf16()));
-    files.extend(stable);
-    files
-        .first()
-        .map(|s| s.to_string())
-        .unwrap_or_else(|| "~".to_string())
 }
 
 /// `String.prototype.slice(0, n)` в UTF-16 code units (для отчёта о дублях).
@@ -149,7 +127,7 @@ pub fn build_dat(lang: &str, root: &Path) -> Result<(Vec<DatRow>, DatReport), St
         if !filled.is_empty() {
             // Earliest-ref-file-wins: повторяет first-wins загрузчика C# по
             // отсортированным файлам. Сортировка стабильная (как в JS).
-            filled.sort_by_key(|a| ref_key(a));
+            filled.sort_by_key(|a| ref_sort_key(a));
             let variants: HashSet<&str> = filled.iter().map(|e| e.msgstr.as_str()).collect();
             if variants.len() > 1 {
                 report.dupes.push((

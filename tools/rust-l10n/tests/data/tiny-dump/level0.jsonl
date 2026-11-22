@@ -1,0 +1,4 @@
+{"asset": "resources", "path_id": 72357, "type": "MonoBehaviour", "color_parser_list": {"money": "#F0BE23", "perversion": "#EB83FF"}, "raw_strings": ["ColorParserList", "money", "perversion"]}
+{"asset": "resources", "path_id": 900, "type": "MonoBehaviour", "dialogues": [{"speaker": "Zoey", "text": "Welcome back, Sarah.", "rich_text": "<color=perversion>Welcome back, Sarah.</color>"}, {"speaker": "Zoey", "text": "Welcome back, Sarah.", "rich_text": ""}, {"speaker": "", "text": "   ", "rich_text": ""}]}
+{"asset": "level0", "path_id": 901, "type": "MonoBehaviour", "raw_strings": ["Dialogue Log", "BACK", "actions/open", "value must be set"]}
+{"asset": "level0", "path_id": 902, "type": "MonoBehaviour", "fsm_strings": ["Ask about her Arm", "Ask about her Arm", ""]}

@@ -1,8 +1,9 @@
 /**
  * text_bench.mts — замер текстового пайплайна «TS-эталон против Rust».
  *
- * Точки: `potgen` и `po2dat`, объёмы 1× (реальные файлы) и 10× (синтетика в
- * `tmp/text-bench/`, уникальные ключи). Порог миграции — `AGENTS.md` («Языки»),
+ * Точки: `potgen`, `po2dat`, `po_update`, `prefill` и `find_source`, объёмы
+ * 1× (реальные файлы) и 10×
+ * (синтетика в `tmp/text-bench/`, уникальные ключи). Порог миграции — `AGENTS.md` («Языки»),
  * методика — `docs/rust-vs-ts.md`, запись — `docs/language-audit.md`.
  *
  * Замер: каждый инструмент — ОТДЕЛЬНЫМ процессом (иначе старт Node смешается с
@@ -12,14 +13,23 @@
  * Гейт: выходы TS и Rust на каждой точке сравниваются ПОБАЙТОВО (POT пишется с
  * фиксированной датой `--created`).
  *
+ * `po_update`/`prefill` пишут PO на месте, поэтому обе реализации работают в
+ * СВОЕЙ копии каталога `po/` (сбрасывается перед каждым прогоном, вне замера):
+ * реальные `po/` не перезаписываются, а прогоны идемпотентны — это и есть
+ * рабочая нагрузка инструментов. `find_source` сканирует дамп (1×: реальный).
+ *
  * CLI:
  *   node scripts/text_bench.mts [--scales 1,10] [--runs 2] [--regen]
  *        [--dump <dir>]
  *   node scripts/text_bench.mts --worker potgen --dump <dir> --out <pot>
  *   node scripts/text_bench.mts --worker po2dat --root <dir> --lang ru --out <dat>
+ *   node scripts/text_bench.mts --worker po_update --po-dir <dir> --lang ru
+ *   node scripts/text_bench.mts --worker prefill --po-dir <dir> --lang ru
+ *   node scripts/text_bench.mts --worker find_source --dump <dir> --query "<text>"
  */
 import { spawnSync } from "node:child_process";
 import {
+  copyFileSync,
   existsSync,
   mkdirSync,
   readFileSync,
@@ -38,6 +48,12 @@ import {
   type PoEntry,
 } from "../.opencode/skills/extract-text/scripts/po_file.mts";
 import { buildDat, writeDat } from "../.opencode/skills/extract-text/scripts/po2dat.mts";
+import { runPoUpdate } from "../.opencode/skills/extract-text/scripts/po_update.mts";
+import { runPrefill } from "../.opencode/skills/extract-text/scripts/prefill_po.mts";
+import {
+  find as findSource,
+  fmt as fmtSource,
+} from "../.opencode/skills/extract-text/scripts/find_source.mts";
 import { runPotgen } from "../.opencode/skills/extract-text/scripts/potgen.mts";
 
 export const REPO_ROOT = resolve(import.meta.dirname, "..");
@@ -75,6 +91,30 @@ function argValue(argv: string[], name: string): string | null {
 
 async function worker(argv: string[]): Promise<number> {
   const mode = argValue(argv, "--worker");
+  // `po_update` пишет PO на месте, поэтому `--out` ему не нужен.
+  if (mode === "po_update") {
+    const poDir = argValue(argv, "--po-dir");
+    if (!poDir) throw new Error("--worker po_update требует --po-dir");
+    const lang = argValue(argv, "--lang") ?? "ru";
+    runPoUpdate({ lang, poDir });
+    return 0;
+  }
+  if (mode === "prefill") {
+    const poDir = argValue(argv, "--po-dir");
+    if (!poDir) throw new Error("--worker prefill требует --po-dir");
+    const lang = argValue(argv, "--lang") ?? "ru";
+    // Фиксированная дата: паритет с Rust (`--created PREFILL_CREATED`).
+    runPrefill({ lang, poDir, now: new Date(Date.UTC(2026, 0, 2, 3, 4)) });
+    return 0;
+  }
+  if (mode === "find_source") {
+    const dump = argValue(argv, "--dump");
+    const query = argValue(argv, "--query");
+    if (!dump || !query) throw new Error("--worker find_source требует --dump и --query");
+    const hits = await findSource(query, { dumpDir: dump });
+    for (const hit of hits) process.stdout.write(`${fmtSource(hit)}\n`);
+    return hits.length > 0 ? 0 : 1;
+  }
   const out = argValue(argv, "--out");
   if (!out) throw new Error("--worker требует --out");
   if (mode === "potgen") {
@@ -213,6 +253,47 @@ function ensurePo2dat10x(): string {
   return root;
 }
 
+/**
+ * Каталог `po/` для замера `po_update`: копия входа, чтобы реальные `po/` не
+ * трогались. Инструмент пишет PO на месте, поэтому у TS и Rust — свои копии.
+ */
+function poUpdateDir(label: string, potSource: string, poSource: string): string {
+  const dir = join(BENCH_ROOT, `po-update-${label}`);
+  rmSync(dir, { recursive: true, force: true });
+  mkdirSync(join(dir, "po"), { recursive: true });
+  copyFileSync(potSource, join(dir, "po", "template.pot"));
+  copyFileSync(poSource, join(dir, "po", "ru.po"));
+  return dir;
+}
+
+/** То же для `prefill`: инструмент тоже пишет PO на месте. */
+function prefillDir(label: string, potSource: string, poSource: string): string {
+  const dir = join(BENCH_ROOT, `prefill-${label}`);
+  rmSync(dir, { recursive: true, force: true });
+  mkdirSync(join(dir, "po"), { recursive: true });
+  copyFileSync(potSource, join(dir, "po", "template.pot"));
+  copyFileSync(poSource, join(dir, "po", "ru.po"));
+  copyFileSync(
+    join(REPO_ROOT, "po", "autofill_blocklist.txt"),
+    join(dir, "po", "autofill_blocklist.txt"),
+  );
+  return dir;
+}
+
+/** Строка из POT, которая точно есть в дампе (для замера `find_source`). */
+function dumpQuery(dumpDir: string): string {
+  const pot = readFileSync(join(REPO_ROOT, "po", "template.pot"), "utf8").split("\n");
+  for (const line of pot.filter((l) => l.startsWith('msgid "') && l.length > 30).slice(0, 40)) {
+    const candidate = JSON.parse(line.slice("msgid ".length)) as string;
+    for (const name of readdirSync(dumpDir).filter((f) => f.endsWith(".jsonl"))) {
+      if (readFileSync(join(dumpDir, name), "utf8").includes(candidate.slice(0, 40))) {
+        return candidate;
+      }
+    }
+  }
+  throw new Error("в дампе не нашлось строки из POT для замера find_source");
+}
+
 // ---------------------------------------------------------------------------
 // Замер
 // ---------------------------------------------------------------------------
@@ -249,10 +330,13 @@ function measurePoint(
   ts: () => void,
   rust: () => void,
   parityOut: [string, string],
+  /** Подготовка входа ВНЕ замера (например, сброс каталога под запись на месте). */
+  prepare: () => void = () => {},
 ): Measurement {
   const tsMs: number[] = [];
   const rustMs: number[] = [];
   for (let i = 0; i < runs; i++) {
+    prepare();
     tsMs.push(timeIt(ts));
     rustMs.push(timeIt(rust));
   }
@@ -349,6 +433,34 @@ async function main(argv: string[]): Promise<number> {
   const rustPo2dat = (root: string, out: string): void => {
     runOnce(RUST_BIN, ["po2dat", "ru", "--root", root, "--out", out]);
   };
+  const tsPoUpdate = (dir: string): void => {
+    runOnce(process.execPath, [
+      self,
+      "--worker",
+      "po_update",
+      "--po-dir",
+      join(dir, "po"),
+      "--lang",
+      "ru",
+    ]);
+  };
+  const rustPoUpdate = (dir: string): void => {
+    runOnce(RUST_BIN, ["po_update", "ru", "--po-dir", join(dir, "po")]);
+  };
+  const tsPrefill = (dir: string): void => {
+    runOnce(process.execPath, [
+      self,
+      "--worker",
+      "prefill",
+      "--po-dir",
+      join(dir, "po"),
+      "--lang",
+      "ru",
+    ]);
+  };
+  const rustPrefill = (dir: string): void => {
+    runOnce(RUST_BIN, ["prefill", "ru", "--po-dir", join(dir, "po"), "--created", CREATED]);
+  };
 
   const rows: Measurement[] = [];
   for (const scale of scales) {
@@ -383,6 +495,75 @@ async function main(argv: string[]): Promise<number> {
           [tsOut, rustOut],
         ),
       );
+
+      const pot1 = join(REPO_ROOT, "po", "template.pot");
+      const po1 = join(REPO_ROOT, "po", "ru.po");
+      const tsPrefillDir = prefillDir("1x-ts", pot1, po1);
+      const rustPrefillDir = prefillDir("1x-rust", pot1, po1);
+      rows.push(
+        measurePoint(
+          "prefill 1× (ru)",
+          1,
+          inputBytes([pot1, po1]),
+          runs,
+          () => tsPrefill(tsPrefillDir),
+          () => rustPrefill(rustPrefillDir),
+          [join(tsPrefillDir, "po", "ru.po"), join(rustPrefillDir, "po", "ru.po")],
+          () => {
+            prefillDir("1x-ts", pot1, po1);
+            prefillDir("1x-rust", pot1, po1);
+          },
+        ),
+      );
+
+      if (existsSync(sourceDump)) {
+        // find_source: скан дампа, вывод сравнивается побайтово.
+        const query = dumpQuery(sourceDump);
+        const tsOutPath = join(BENCH_ROOT, "out", "find-source-1x-ts.txt");
+        const rustOutPath = join(BENCH_ROOT, "out", "find-source-1x-rust.txt");
+        const tsFind = (): void => {
+          const run = spawnSync(
+            process.execPath,
+            [self, "--worker", "find_source", "--dump", sourceDump, "--query", query],
+            { encoding: "utf8" },
+          );
+          if (run.status !== 0) throw new Error(`find_source(ts): ${run.stderr}`);
+          writeFileSync(tsOutPath, run.stdout, "utf8");
+        };
+        const rustFind = (): void => {
+          const run = spawnSync(RUST_BIN, ["find_source", query, "--dump", sourceDump], {
+            encoding: "utf8",
+          });
+          if (run.status !== 0) throw new Error(`find_source(rust): ${run.stderr}`);
+          writeFileSync(rustOutPath, run.stdout, "utf8");
+        };
+        rows.push(
+          measurePoint("find_source 1× (дамп)", 1, dumpBytes(sourceDump), runs, tsFind, rustFind, [
+            tsOutPath,
+            rustOutPath,
+          ]),
+        );
+      } else {
+        console.error(`[bench] нет дампа ${sourceDump} — точка find_source 1× пропущена`);
+      }
+
+      const tsPoDir = poUpdateDir("1x-ts", pot1, po1);
+      const rustPoDir = poUpdateDir("1x-rust", pot1, po1);
+      rows.push(
+        measurePoint(
+          "po_update 1× (ru)",
+          1,
+          inputBytes([pot1, po1]),
+          runs,
+          () => tsPoUpdate(tsPoDir),
+          () => rustPoUpdate(rustPoDir),
+          [join(tsPoDir, "po", "ru.po"), join(rustPoDir, "po", "ru.po")],
+          () => {
+            poUpdateDir("1x-ts", pot1, po1);
+            poUpdateDir("1x-rust", pot1, po1);
+          },
+        ),
+      );
       continue;
     }
 
@@ -413,6 +594,46 @@ async function main(argv: string[]): Promise<number> {
         () => tsPo2dat(root10, tsDat),
         () => rustPo2dat(root10, rustDat),
         [tsDat, rustDat],
+      ),
+    );
+
+    // po_update пишет PO на месте: у каждой реализации своя копия входа,
+    // которая сбрасывается перед каждым прогоном (вне замера).
+    const pot10 = join(root10, "po", "template.pot");
+    const po10 = join(root10, "po", "ru.po");
+    const tsPoDir10 = poUpdateDir(`10x-ts-${scale}`, pot10, po10);
+    const rustPoDir10 = poUpdateDir(`10x-rust-${scale}`, pot10, po10);
+    rows.push(
+      measurePoint(
+        `po_update ${scale}× (ru)`,
+        scale,
+        inputBytes([pot10, po10]),
+        runs,
+        () => tsPoUpdate(tsPoDir10),
+        () => rustPoUpdate(rustPoDir10),
+        [join(tsPoDir10, "po", "ru.po"), join(rustPoDir10, "po", "ru.po")],
+        () => {
+          poUpdateDir(`10x-ts-${scale}`, pot10, po10);
+          poUpdateDir(`10x-rust-${scale}`, pot10, po10);
+        },
+      ),
+    );
+
+    const tsPrefillDir10 = prefillDir(`10x-ts-${scale}`, pot10, po10);
+    const rustPrefillDir10 = prefillDir(`10x-rust-${scale}`, pot10, po10);
+    rows.push(
+      measurePoint(
+        `prefill ${scale}× (ru)`,
+        scale,
+        inputBytes([pot10, po10]),
+        runs,
+        () => tsPrefill(tsPrefillDir10),
+        () => rustPrefill(rustPrefillDir10),
+        [join(tsPrefillDir10, "po", "ru.po"), join(rustPrefillDir10, "po", "ru.po")],
+        () => {
+          prefillDir(`10x-ts-${scale}`, pot10, po10);
+          prefillDir(`10x-rust-${scale}`, pot10, po10);
+        },
       ),
     );
   }

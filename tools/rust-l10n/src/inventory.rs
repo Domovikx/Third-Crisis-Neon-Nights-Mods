@@ -58,12 +58,19 @@ impl ItemKind {
 }
 
 /// Одна строка инвентаря: ровно то, что читает `ctxtOf`/`buildCatalog`.
+///
+/// `source`/`idx` — провенанс для `find_source` (`[kind:source#idx]`): `pid`
+/// диалога, короткое имя бандла, имя ассета UI/FSM, текст спикера. В POT они
+/// не попадают (refs там не пишутся), но стоят одну ссылку на строку.
 #[derive(Debug, Clone)]
 pub struct InventoryItem {
     pub text: String,
     pub speaker: String,
     pub rich_text: String,
     pub kind: ItemKind,
+    pub source: String,
+    /// Номер строки внутри источника (`null` у имён спикеров).
+    pub idx: Option<usize>,
 }
 
 #[derive(Debug, Default)]
@@ -431,6 +438,25 @@ fn compare_file_names(a: &str, b: &str) -> std::cmp::Ordering {
     na.cmp(&nb).then_with(|| compare_code_points(a, b))
 }
 
+/// `_BUNDLE_HASH_RX` (`_(assets|scenes)_all_[a-f0-9]+$`): убрать хвост-хэш
+/// имени бандла — стабильное короткое имя для `#:`-провенанса.
+pub fn bundle_short_name(asset_name: &str) -> String {
+    let tail = |marker: &str| asset_name.rfind(marker).map(|i| (i, marker.len()));
+    for marker in ["_assets_all_", "_scenes_all_"] {
+        if let Some((pos, len)) = tail(marker) {
+            let hash = &asset_name[pos + len..];
+            if !hash.is_empty()
+                && hash
+                    .chars()
+                    .all(|c| c.is_ascii_digit() || ('a'..='f').contains(&c))
+            {
+                return asset_name[..pos].to_string();
+            }
+        }
+    }
+    asset_name.to_string()
+}
+
 /// Верхнеуровневый `"path_id"` из сырой строки (BigInt-точность в TS).
 /// Unity `path_id` — знаковый 64-битный хэш; i64 покрывает его целиком, а
 /// `JSON.parse` терял точность выше 2^53 (22 pid в реальном дампе).
@@ -546,26 +572,30 @@ impl DumpScanner {
             .map(|(_, g)| (g.pid, g.entries))
             .collect();
         groups.sort_by_key(|(pid, _)| *pid);
-        for (_, entries) in &groups {
-            for e in entries {
+        for (pid, entries) in &groups {
+            for (idx, e) in entries.iter().enumerate() {
                 items.push(InventoryItem {
                     text: e.text.clone(),
                     speaker: e.speaker.clone(),
                     rich_text: resolve_named_colors(&e.rich_text, &self.colors),
                     kind: ItemKind::Dlg,
+                    source: pid.to_string(),
+                    idx: Some(idx),
                 });
             }
         }
 
         // Бандлы: по имени ассета (code points).
         let bundles = self.bundles.into_sorted_by_key(compare_code_points);
-        for (_, entries) in &bundles {
-            for e in entries {
+        for (asset, entries) in &bundles {
+            for (idx, e) in entries.iter().enumerate() {
                 items.push(InventoryItem {
                     text: e.text.clone(),
                     speaker: e.speaker.clone(),
                     rich_text: resolve_named_colors(&e.rich_text, &self.colors),
                     kind: ItemKind::Bundle,
+                    source: bundle_short_name(asset),
+                    idx: Some(idx),
                 });
             }
         }
@@ -588,42 +618,50 @@ impl DumpScanner {
         }
         for sp in speakers {
             items.push(InventoryItem {
-                text: sp,
+                text: sp.clone(),
                 speaker: String::new(),
                 rich_text: String::new(),
                 kind: ItemKind::Spk,
+                source: sp,
+                idx: None,
             });
         }
 
-        for (_, entries) in self.settings.into_sorted_by_key(compare_code_points) {
-            for text in entries {
+        for (source, entries) in self.settings.into_sorted_by_key(compare_code_points) {
+            for (idx, text) in entries.into_iter().enumerate() {
                 items.push(InventoryItem {
                     text,
                     speaker: String::new(),
                     rich_text: String::new(),
                     kind: ItemKind::Set,
+                    source: source.clone(),
+                    idx: Some(idx),
                 });
             }
         }
 
-        for (_, entries) in self.chunk_ui.into_sorted_by_key(compare_code_points) {
-            for text in entries {
+        for (source, entries) in self.chunk_ui.into_sorted_by_key(compare_code_points) {
+            for (idx, text) in entries.into_iter().enumerate() {
                 items.push(InventoryItem {
                     text,
                     speaker: String::new(),
                     rich_text: String::new(),
                     kind: ItemKind::Raw,
+                    source: source.clone(),
+                    idx: Some(idx),
                 });
             }
         }
 
-        for (_, entries) in self.fsm.into_sorted_by_key(compare_code_points) {
-            for text in entries {
+        for (source, entries) in self.fsm.into_sorted_by_key(compare_code_points) {
+            for (idx, text) in entries.into_iter().enumerate() {
                 items.push(InventoryItem {
                     text,
                     speaker: String::new(),
                     rich_text: String::new(),
                     kind: ItemKind::Fsm,
+                    source: source.clone(),
+                    idx: Some(idx),
                 });
             }
         }
