@@ -94,3 +94,19 @@
   формирования POT: всё ли видимое игроку попадает в шаблон, с доказательствами и причинами
 - [2026-11-22-pot-formation-contract.md](2026-11-22-pot-formation-contract.md) — **READY** — контракт
   формирования POT (13 инвариантов) + максимум тестов: юнит, e2e на синтетике и реальном дампе
+- [2026-11-22-pot-coverage-audit.md](2026-11-22-pot-coverage-audit.md) — **DONE** — аудит
+  формирования POT: ~1 000 видимых игроку строк вне шаблона, матрица по источникам и причины
+- [2026-11-22-pot-read-failed-typetree.md](2026-11-22-pot-read-failed-typetree.md) — **READY** —
+  96 % объектов `read_failed` (нет type tree в .assets): типизированные поля не читаются
+- [2026-11-22-pot-typed-ui-fields.md](2026-11-22-pot-typed-ui-fields.md) — **READY** — не
+  извлекаются UI-поля `strings.*` (Description, DisplayName, UnlockHint, m_text)
+- [2026-11-22-pot-ui-filter-narrowing.md](2026-11-22-pot-ui-filter-narrowing.md) — **READY** —
+  фильтры `isUiString` режут живую прозу (dot+upper 737, len>50 467, parens 220)
+- [2026-11-22-pot-raw-strings-cap.md](2026-11-22-pot-raw-strings-cap.md) — **READY** — обрезка
+  `raw_strings` 100 строками на объект (1 790 объектов, 276 с диалогами)
+- [2026-11-22-pot-global-strings-triage.md](2026-11-22-pot-global-strings-triage.md) — **READY** —
+  `global_strings` не читаются (57 539 уникальных, ~891 проза, нужен триаж)
+- [2026-11-22-pot-us-heap-cap.md](2026-11-22-pot-us-heap-cap.md) — **READY** — `#US`-куча
+  обрезана top-500: 251 кандидат отрезан, ~20–30 видимых
+- [2026-11-22-voice-clips-without-dialogue.md](2026-11-22-voice-clips-without-dialogue.md) —
+  **READY** — 155 имён озвучки без диалога в дампе: проверить в игре, есть ли субтитры
