@@ -35,3 +35,9 @@ Thumbs.db
 # Прокси (артефакт сборки build:proxy), в корне репозитория не трекается
 dwmapi.dll
 dwmapi_real.dll
+
+# Rust (tools/rust-decoder)
+target/
+
+# Релизные архивы
+dist/
