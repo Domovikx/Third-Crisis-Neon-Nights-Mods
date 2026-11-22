@@ -15,7 +15,15 @@ import { find, fmt, main } from "../scripts/find_source.mts";
 const DUMP = join(import.meta.dirname, "..", "test_data", "tiny-dump");
 
 function item(partial: Partial<InventoryItem> & { text: string }): InventoryItem {
-  return { speaker: "", richText: "", kind: "raw", source: "x", idx: null, ...partial };
+  return {
+    speaker: "",
+    richText: "",
+    kind: "raw",
+    source: "x",
+    idx: null,
+    src: "raw:test",
+    ...partial,
+  };
 }
 
 /** Тихая обёртка CLI: ожидаемые ошибки не должны шуметь в выводе тестов. */

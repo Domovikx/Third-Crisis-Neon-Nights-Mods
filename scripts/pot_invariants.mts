@@ -1,5 +1,5 @@
 /**
- * pot_invariants.mts — контракт `po/template.pot` (13 инвариантов).
+ * pot_invariants.mts — контракт `po/template.pot` (14 инвариантов).
  *
  * POT — корень пайплайна: его ошибки попадают во все языки (`po/<lang>.po` →
  * `.dat` → игра). Поэтому проверки собраны в одну функцию
@@ -7,12 +7,13 @@
  *
  * Что проверяется без дампа (структура и формат):
  *   5 уникальность `(msgid, msgctxt)`, 6 порядок, 7 rich-разметка (форма),
- *   8 экранирование/round-trip, 10 кодировка, 11 заголовок и шаблонность.
+ *   8 экранирование/round-trip, 10 кодировка, 11 заголовок и шаблонность,
+ *   14 провенанс (`#. src:` из фиксированного списка).
  *
  * Что включается, когда передан `dumpPath` (сверка с источником):
  *   1 детерминизм (порядок элементов не влияет), 2 идемпотентность
  *   (POT = перегенерация), 3 полнота, 4 «нет выдуманного», 7 rich-значения,
- *   9 сходимость счётчиков/триажа, 13 битые строки дампа.
+ *   9 сходимость счётчиков/триажа, 13 битые строки дампа, 14 src = источник.
  *
  * 12 (паритет TS↔Rust) — единственный инвариант, который НЕ реализован здесь:
  * он уже покрыт `scripts/text_parity.test.mts` (мини-дамп + реальный дамп).
@@ -32,6 +33,7 @@ import {
 } from "../.opencode/skills/pipeline-common/scripts/text_filters.mts";
 import {
   compareCodePoints,
+  isValidSrc,
   scanDump,
   type InventoryItem,
 } from "../.opencode/skills/extract-text/scripts/inventory.mts";
@@ -41,6 +43,7 @@ import {
   ctxtOf,
   POT_PATH,
   renderPot,
+  srcOf,
   type PotCatalog,
   type PotStats,
 } from "../.opencode/skills/extract-text/scripts/potgen.mts";
@@ -69,6 +72,7 @@ export const INVARIANTS: Readonly<Record<number, string>> = {
   11: "заголовок",
   12: "паритет реализаций",
   13: "устойчивость",
+  14: "провенанс",
 };
 
 /** `error` — POT испорчен (пострадают все языки); `warn` — дефект генерации. */
@@ -94,6 +98,14 @@ export interface PotCheckOptions {
   limit?: number;
   /** Дата для перегенерации при сверке (по умолчанию фиксированная). */
   created?: string;
+  /**
+   * Требовать `#. src:` у каждой записи (по умолчанию да).
+   *
+   * `false` — только для POT, сгенерированного ДО провенанса
+   * (`po/template.pot` на 2026-11-22): перегенерация меняет файл, а это
+   * отдельный шаг политики. Новый POT без `src` контракт не пропускает.
+   */
+  requireSrc?: boolean;
 }
 
 /** Дата, используемая во всех сверках: сам POT меняет только `POT-Creation-Date`. */
@@ -253,6 +265,8 @@ interface Expected {
   twinKeys: Set<string>;
   /** Ожидаемый rich_text по ключу. */
   rich: Map<string, string>;
+  /** Ожидаемый провенанс по ключу. */
+  src: Map<string, string>;
   duplicates: number;
 }
 
@@ -287,7 +301,16 @@ async function buildExpected(dumpPath: string, items?: InventoryItem[]): Promise
     if (!byCtxt || !byCtxt.has("ui")) twinKeys.add(key);
   }
 
-  return { items: list, keys, catalog, stats, twinKeys, rich: richOf(catalog), duplicates };
+  return {
+    items: list,
+    keys,
+    catalog,
+    stats,
+    twinKeys,
+    rich: richOf(catalog),
+    src: srcOf(catalog),
+    duplicates,
+  };
 }
 
 /** Строки дампа, которые `readJsonl` молча пропускает (битые/не-объекты). */
@@ -720,6 +743,68 @@ function checkRichFormat(
   return actual;
 }
 
+/**
+ * Провенанс записи (`#. src: <метка>`) — инвариант 14.
+ *
+ * Метка обязательна и должна быть из фиксированного списка: `dialog`,
+ * `bundle`, `settings`, `us`, `global`, `field:<ИмяПоля>`, `raw:<TypeName>`.
+ * Список и смысл — `docs/pot-provenance.md`; произвольная метка запрещена,
+ * иначе отчёт по провенансу перестаёт быть машинно-однозначным.
+ */
+function checkSrc(
+  entries: RawEntry[],
+  requireSrc: boolean,
+  add: (
+    invariant: number,
+    code: string,
+    severity: ViolationSeverity,
+    where: string,
+    detail: string,
+  ) => void,
+): Map<string, string> {
+  const actual = new Map<string, string>();
+  for (const entry of entries) {
+    const id = entry.fields.msgid?.value;
+    if (id === undefined) continue;
+    const comments = entry.comments.filter((c) => c.text.startsWith("src"));
+    const key = potKey(id, entry.fields.msgctxt?.value ?? "");
+    if (comments.length > 1) {
+      add(14, "src-duplicate", "error", address(entry), `несколько src: ${comments.length}`);
+    }
+    const found = comments.length > 0;
+    if (!found) {
+      if (requireSrc) {
+        add(14, "src-missing", "error", address(entry), "нет `#. src:` (провенанс обязателен)");
+      }
+      continue;
+    }
+    const c = comments[0];
+    if (!c.text.startsWith("src: ")) {
+      add(
+        14,
+        "src-syntax",
+        "error",
+        `строка ${c.line}`,
+        `ожидалось "#. src: …", получено ${JSON.stringify(c.text.slice(0, 60))}`,
+      );
+      continue;
+    }
+    const value = c.text.slice("src: ".length);
+    if (!isValidSrc(value)) {
+      add(
+        14,
+        "src-unknown",
+        "error",
+        `строка ${c.line}`,
+        `метка вне фиксированного списка: ${JSON.stringify(value.slice(0, 60))}`,
+      );
+      continue;
+    }
+    actual.set(key, value);
+  }
+  return actual;
+}
+
 function checkEncoding(
   parsed: ParsedPot,
   sourceChars: Set<string> | null,
@@ -784,6 +869,7 @@ function checkAgainstDump(
   parsed: ParsedPot,
   potEntries: RawEntry[],
   actualRich: Map<string, string>,
+  actualSrc: Map<string, string>,
   expected: Expected,
   opts: PotCheckOptions,
   add: (
@@ -806,21 +892,33 @@ function checkAgainstDump(
   // Единственное, что от него зависит, — выбор rich_text при конфликте
   // вариантов у одного ключа («первое вхождение побеждает»).
   const created = opts.created ?? CHECK_DATE;
-  const forward = renderPot(expected.catalog, created);
+  const includeSrc = opts.requireSrc !== false;
+  const forward = renderPot(expected.catalog, created, { includeSrc });
   const { catalog: reversedCatalog } = buildCatalog([...expected.items].reverse());
-  const backward = renderPot(reversedCatalog, created);
+  const backward = renderPot(reversedCatalog, created, { includeSrc });
   if (forward !== backward) {
     const reversedRich = richOf(reversedCatalog);
-    const diff = [...expected.rich.keys()].filter(
+    const richDiff = [...expected.rich.keys()].filter(
       (k) => reversedRich.get(k) !== expected.rich.get(k),
     );
-    const sample = diff.slice(0, 3).map((k) => JSON.parse(k)[0]);
+    // Метка `src` тоже «первое вхождение побеждает»: у строк, пришедших из
+    // двух источников (dialog и bundle/raw), обратный порядок меняет метку.
+    const reversedSrc = srcOf(reversedCatalog);
+    const srcDiff = [...expected.src.keys()].filter(
+      (k) => reversedSrc.get(k) !== expected.src.get(k),
+    );
+    const sample = richDiff
+      .concat(srcDiff)
+      .slice(0, 3)
+      .map((k) => JSON.parse(k)[0]);
     add(
       1,
       "order-dependent",
       "warn",
       "дамп",
-      `POT зависит от порядка элементов (${diff.length} записей): ${sample.map((s) => JSON.stringify(s)).join(", ")}`,
+      `POT зависит от порядка элементов (rich ${richDiff.length}, src ${srcDiff.length}): ${sample
+        .map((s) => JSON.stringify(s))
+        .join(", ")}`,
     );
   }
 
@@ -903,6 +1001,20 @@ function checkAgainstDump(
         "error",
         addressOf(potKeys.get(key)),
         `rich_text без источника: ${JSON.stringify(value.slice(0, 60))}`,
+      );
+    }
+  }
+
+  // 14. Провенанс: метка в POT равна метке генератора (путь доставки строки).
+  for (const [key, want] of expected.src) {
+    const have = actualSrc.get(key);
+    if (have !== undefined && have !== want) {
+      add(
+        14,
+        "src-mismatch",
+        "error",
+        addressOf(potKeys.get(key)),
+        `src ${JSON.stringify(have)} ≠ источник ${JSON.stringify(want)}`,
       );
     }
   }
@@ -1001,6 +1113,7 @@ export async function checkPotText(text: string, opts: PotCheckOptions = {}): Pr
   checkUniqueness(entries, push);
   checkOrder(entries, push);
   const actualRich = checkRichFormat(entries, push);
+  const actualSrc = checkSrc(entries, opts.requireSrc !== false, push);
 
   let sourceChars: Set<string> | null = null;
   if (opts.dumpPath) {
@@ -1015,7 +1128,7 @@ export async function checkPotText(text: string, opts: PotCheckOptions = {}): Pr
       }
     }
     checkEncoding(parsed, sourceChars, push);
-    checkAgainstDump(parsed, entries, actualRich, expected, opts, push);
+    checkAgainstDump(parsed, entries, actualRich, actualSrc, expected, opts, push);
 
     const ignored = await countIgnoredDumpLines(opts.dumpPath);
     if (ignored.ignored) {

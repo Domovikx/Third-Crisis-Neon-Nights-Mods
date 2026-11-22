@@ -39,6 +39,8 @@ interface PotSeed {
   ctx?: string;
   str?: string;
   rich?: string;
+  /** `null` — записи без провенанса (негатив инварианта 14). */
+  src?: string | null;
 }
 
 /** Канонический POT из перечня записей (порядок как дан). */
@@ -48,7 +50,8 @@ function pot(entries: PotSeed[], header: string[] = potHeaderLines(CREATED)): st
     e.msgid = seed.id;
     e.msgctxt = seed.ctx ?? "ui";
     e.msgstr = seed.str ?? "";
-    if (seed.rich !== undefined) e.comments = [`rich_text: ${seed.rich}`];
+    if (seed.src !== null) e.comments.push(`src: ${seed.src ?? "dialog"}`);
+    if (seed.rich !== undefined) e.comments.push(`rich_text: ${seed.rich}`);
     return e;
   });
   return renderPo(poEntries, header);
@@ -145,10 +148,10 @@ async function generate(
 
 // ---------------------------------------------------------------------------
 
-test("набор инвариантов: 1–13 объявлены", () => {
+test("набор инвариантов: 1–14 объявлены", () => {
   assert.deepEqual(
     Object.keys(INVARIANTS).map(Number),
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
   );
 });
 
@@ -446,6 +449,52 @@ test("CLI-обвязка: пустой POT, нет файла POT, нет дам
   expectCaught(violations, 9, "entry-count");
 });
 
+test("инвариант 14: провенанс обязателен и только из фиксированного списка", async () => {
+  // Негатив: POT без `#. src:` не проходит контракт.
+  const noSrc = pot([{ id: "Hello", src: null }]);
+  expectCaught(await checkPotText(noSrc), 14, "src-missing");
+
+  // Переходный POT (сгенерирован до провенанса): проверка явно отключена.
+  assert.deepEqual(await checkPotText(noSrc, { requireSrc: false }), []);
+
+  // Произвольная метка запрещена: отчёт по провенансу должен быть однозначным.
+  expectCaught(await checkPotText(pot([{ id: "Hello", src: "garbage" }])), 14, "src-unknown");
+  expectCaught(await checkPotText(pot([{ id: "Hello", src: "field:" }])), 14, "src-unknown");
+
+  // Весь фиксированный список проходит.
+  for (const src of [
+    "dialog",
+    "bundle",
+    "settings",
+    "us",
+    "global",
+    "field:m_Name",
+    "raw:Texture2D",
+  ]) {
+    assert.deepEqual(await checkPotText(pot([{ id: "Hello", src }])), [], src);
+  }
+  // Две метки у записи — дефект.
+  const a = newEntry();
+  a.msgid = "Hello";
+  a.msgctxt = "ui";
+  a.comments = ["src: dialog", "src: bundle"];
+  expectCaught(await checkPotText(renderPo([a], potHeaderLines(CREATED))), 14, "src-duplicate");
+});
+
+test("инвариант 14: метка POT сверяется с генератором (с дампом)", async () => {
+  const files = cleanDumpFiles();
+  const run = await generate("provenance", files);
+  const violations = await checkPot(run.path, { dumpPath: run.dir });
+  expectNoCode(violations, 14, "src-mismatch");
+  assert.ok(run.text.includes("#. src: "), "генератор обязан писать метку");
+
+  // Подмена метки у одной записи ловится сверкой с дампом.
+  const wrong = run.text.replace("#. src: dialog", "#. src: bundle");
+  const wrongPath = join(root, "provenance", "wrong.pot");
+  writeFileSync(wrongPath, wrong, "utf8");
+  expectCaught(await checkPot(wrongPath, { dumpPath: run.dir }), 14, "src-mismatch");
+});
+
 test("вспомогательное: дата и сводка", () => {
   assert.equal(isValidPotDate("2026-01-02 03:04+0000"), true);
   assert.equal(isValidPotDate("2024-02-29 00:00+0000"), true);
@@ -470,7 +519,10 @@ test("вспомогательное: дата и сводка", () => {
 test("реальный POT в репозитории: структурные инварианты без дампа (если файл есть)", async () => {
   const path = join(REPO, "po", "template.pot");
   if (!existsSync(path)) return;
-  const violations = await checkPot(path);
+  // po/template.pot сгенерирован ДО провенанса: метки `#. src:` появятся при
+  // перегенерации (шаг политики отбора). Структуру и остальной контракт —
+  // проверяем; новый POT без src контракт не пропустит (инвариант 14).
+  const violations = await checkPot(path, { requireSrc: false });
   const errors = violations.filter((v) => v.severity === "error");
 
   // Известные дефекты данных (найдены 2026-11-22, чистка — отдельная задача).

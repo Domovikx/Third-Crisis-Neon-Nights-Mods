@@ -28,6 +28,7 @@ fn item(
         kind,
         source: source.to_string(),
         idx,
+        src: "raw:test".to_string(),
     }
 }
 

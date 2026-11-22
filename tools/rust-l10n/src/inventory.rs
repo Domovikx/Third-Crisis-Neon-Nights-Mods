@@ -62,6 +62,9 @@ impl ItemKind {
 /// `source`/`idx` — провенанс для `find_source` (`[kind:source#idx]`): `pid`
 /// диалога, короткое имя бандла, имя ассета UI/FSM, текст спикера. В POT они
 /// не попадают (refs там не пишутся), но стоят одну ссылку на строку.
+///
+/// `src` — метка провенанса для POT (`#. src:`): путь, которым строка
+/// ДОСТАВЛЕНА в каталог. Список фиксирован, см. `SRC_KINDS`.
 #[derive(Debug, Clone)]
 pub struct InventoryItem {
     pub text: String,
@@ -71,6 +74,29 @@ pub struct InventoryItem {
     pub source: String,
     /// Номер строки внутри источника (`null` у имён спикеров).
     pub idx: Option<usize>,
+    pub src: String,
+}
+
+/// Метки провенанса без параметра (`src_labels()` — их же список для тестов).
+pub const SRC_KINDS: [&str; 5] = ["dialog", "bundle", "settings", "us", "global"];
+
+/// `field:<ИмяПоля>` / `raw:<TypeName>`: параметр — C#-идентификатор.
+pub fn is_valid_src(src: &str) -> bool {
+    if SRC_KINDS.contains(&src) {
+        return true;
+    }
+    let Some(param) = src
+        .strip_prefix("field:")
+        .or_else(|| src.strip_prefix("raw:"))
+    else {
+        return false;
+    };
+    let mut chars = param.chars();
+    match chars.next() {
+        Some(c) if c.is_ascii_alphabetic() || c == '_' => {}
+        _ => return false,
+    }
+    chars.all(|c| c.is_ascii_alphanumeric() || c == '_')
 }
 
 #[derive(Debug, Default)]
@@ -185,6 +211,10 @@ pub struct DumpRow {
     #[serde(default)]
     path_id: Option<Value>,
     #[serde(default)]
+    r#type: Option<Value>,
+    #[serde(default)]
+    format: Option<Value>,
+    #[serde(default)]
     dialogues: Option<Value>,
     #[serde(default)]
     raw_strings: Option<Value>,
@@ -196,6 +226,8 @@ pub struct DumpRow {
     color_parser_list: Option<Value>,
     #[serde(default)]
     strings: Option<Value>,
+    #[serde(default)]
+    fields: Option<Value>,
 }
 
 // ---------------------------------------------------------------------------
@@ -512,14 +544,47 @@ fn raw_path_id(raw_line: &str) -> Option<&str> {
     None
 }
 
+/// Индекс «значение → имя типизированного поля» для одной строки дампа.
+///
+/// `strings` — скалярные строковые поля (m_Name, DisplayName, m_text…),
+/// `fields` — прочие поля, включая массивы строк. Ключи в дампе уже
+/// отсортированы генератором, а `serde_json::Map` по умолчанию — `BTreeMap`,
+/// поэтому порядок тот же, что в TS (явная сортировка там); при совпадении
+/// значения в двух полях побеждает первое по имени.
+fn typed_field_index(row: &DumpRow) -> HashMap<String, String> {
+    fn add(index: &mut HashMap<String, String>, name: &str, value: &Value) {
+        if let Value::String(s) = value {
+            index
+                .entry(s.clone())
+                .or_insert_with(|| format!("field:{name}"));
+        }
+    }
+    let mut index: HashMap<String, String> = HashMap::new();
+    if let Some(Value::Object(strings)) = row.strings.as_ref() {
+        for (name, value) in strings {
+            add(&mut index, name, value);
+        }
+    }
+    if let Some(Value::Object(fields)) = row.fields.as_ref() {
+        for (name, value) in fields {
+            if let Value::Array(items) = value {
+                for item in items {
+                    add(&mut index, name, item);
+                }
+            }
+        }
+    }
+    index
+}
+
 /// Накопитель строк дампа (порт `DumpScanner`).
 #[derive(Default)]
 pub struct DumpScanner {
     dialogues: OrderedMap<PidGroup>,
     bundles: OrderedMap<Vec<DialogueEntry>>,
     bundle_seen: HashSet<(String, String)>,
-    settings: OrderedMap<Vec<String>>,
-    chunk_ui: OrderedMap<Vec<String>>,
+    settings: OrderedMap<Vec<(String, String)>>,
+    chunk_ui: OrderedMap<Vec<(String, String)>>,
     ui_local_seen: HashMap<String, HashSet<String>>,
     ui_global_seen: HashSet<String>,
     fsm: OrderedMap<Vec<String>>,
@@ -541,7 +606,11 @@ impl DumpScanner {
     /// Одна строка `summaries.jsonl` (`stem` — имя ассета из строки).
     pub fn add_summary_row(&mut self, row: &DumpRow, stem: &str) {
         let mut seen: HashSet<&str> = HashSet::new();
-        let mut entries: Vec<String> = Vec::new();
+        let mut entries: Vec<(String, String)> = Vec::new();
+        // DLL-строка несёт два потока в одном `settings_keys`: ключи
+        // `Settings.*` (подпись синтезирована из имени) и автономные UI-строки
+        // из кучи `#US` (там `key == display`). Различаем по ключу.
+        let dotnet = as_string(row.format.as_ref()) == "dotnet_us_heap";
         for raw in as_array(row.settings_keys.as_ref()) {
             let Some(sk) = as_object(Some(raw)) else {
                 continue;
@@ -553,7 +622,13 @@ impl DumpScanner {
                 continue;
             }
             seen.insert(text);
-            entries.push(text.to_string());
+            let key = as_string(sk.get("key"));
+            let src = if dotnet && !key.starts_with("Settings.") {
+                "us"
+            } else {
+                "settings"
+            };
+            entries.push((text.to_string(), src.to_string()));
         }
         if !entries.is_empty() {
             self.settings.set(stem, entries);
@@ -581,6 +656,7 @@ impl DumpScanner {
                     kind: ItemKind::Dlg,
                     source: pid.to_string(),
                     idx: Some(idx),
+                    src: "dialog".to_string(),
                 });
             }
         }
@@ -596,23 +672,27 @@ impl DumpScanner {
                     kind: ItemKind::Bundle,
                     source: bundle_short_name(asset),
                     idx: Some(idx),
+                    src: "bundle".to_string(),
                 });
             }
         }
 
         // Спикеры: порядок первого появления среди диалогов, затем бандлов
-        // (порядок вставки, НЕ отсортированный).
+        // (порядок вставки, НЕ отсортированный). Провенанс имени — источник
+        // первого появления.
         let mut seen_speakers: HashSet<String> = HashSet::new();
         let mut speakers: Vec<String> = Vec::new();
-        for entries in groups
+        let mut speaker_src: HashMap<String, &'static str> = HashMap::new();
+        let sources = groups
             .iter()
-            .map(|(_, e)| e)
-            .chain(bundles.iter().map(|(_, e)| e))
-        {
+            .map(|(_, e)| (e, "dialog"))
+            .chain(bundles.iter().map(|(_, e)| (e, "bundle")));
+        for (entries, src) in sources {
             for e in entries {
                 let sp = py_strip(&e.speaker);
                 if !sp.is_empty() && seen_speakers.insert(sp.to_string()) {
                     speakers.push(sp.to_string());
+                    speaker_src.insert(sp.to_string(), src);
                 }
             }
         }
@@ -622,13 +702,18 @@ impl DumpScanner {
                 speaker: String::new(),
                 rich_text: String::new(),
                 kind: ItemKind::Spk,
-                source: sp,
+                source: sp.clone(),
                 idx: None,
+                src: speaker_src
+                    .get(&sp)
+                    .copied()
+                    .unwrap_or("dialog")
+                    .to_string(),
             });
         }
 
         for (source, entries) in self.settings.into_sorted_by_key(compare_code_points) {
-            for (idx, text) in entries.into_iter().enumerate() {
+            for (idx, (text, src)) in entries.into_iter().enumerate() {
                 items.push(InventoryItem {
                     text,
                     speaker: String::new(),
@@ -636,12 +721,13 @@ impl DumpScanner {
                     kind: ItemKind::Set,
                     source: source.clone(),
                     idx: Some(idx),
+                    src,
                 });
             }
         }
 
         for (source, entries) in self.chunk_ui.into_sorted_by_key(compare_code_points) {
-            for (idx, text) in entries.into_iter().enumerate() {
+            for (idx, (text, src)) in entries.into_iter().enumerate() {
                 items.push(InventoryItem {
                     text,
                     speaker: String::new(),
@@ -649,6 +735,7 @@ impl DumpScanner {
                     kind: ItemKind::Raw,
                     source: source.clone(),
                     idx: Some(idx),
+                    src,
                 });
             }
         }
@@ -662,6 +749,8 @@ impl DumpScanner {
                     kind: ItemKind::Fsm,
                     source: source.clone(),
                     idx: Some(idx),
+                    // FSM-строки — значения типизированного поля `fsm`.
+                    src: "field:fsm".to_string(),
                 });
             }
         }
@@ -811,8 +900,22 @@ impl DumpScanner {
                 a
             }
         };
-        let entries = self.chunk_ui.get_or_insert_with(asset, Vec::<String>::new);
+        let entries = self
+            .chunk_ui
+            .get_or_insert_with(asset, Vec::<(String, String)>::new);
         let local = self.ui_local_seen.entry(asset.to_string()).or_default();
+
+        let type_name = {
+            let t = as_string(row.r#type.as_ref());
+            if t.is_empty() {
+                "unknown"
+            } else {
+                t
+            }
+        };
+        // Индекс типизированных полей — только если строка прошла фильтр
+        // (на реальном дампе это экономит разбор `fields` у 99 % объектов).
+        let mut typed: Option<HashMap<String, String>> = None;
 
         // Дедуп глобальный (на весь дамп): один и тот же лейбл из разных сцен
         // даёт одну запись. Для перевода это верно (текст один).
@@ -833,7 +936,12 @@ impl DumpScanner {
             }
             local.insert(s.to_string());
             self.ui_global_seen.insert(s.to_string());
-            entries.push(s.to_string());
+            let index = typed.get_or_insert_with(|| typed_field_index(row));
+            let src = index
+                .get(s)
+                .cloned()
+                .unwrap_or_else(|| format!("raw:{type_name}"));
+            entries.push((s.to_string(), src));
         }
     }
 

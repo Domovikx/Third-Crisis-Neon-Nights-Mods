@@ -5,6 +5,7 @@
 //! - одна запись на уникальную пару (msgid, msgctxt);
 //! - msgctxt: `speaker:<Имя>` / `speaker-name` / `ui`;
 //! - `#:` refs не пишутся вовсе;
+//! - `#. src: <метка>` — провенанс записи (путь доставки в POT);
 //! - `#. rich_text: <разметка>` — исходная TMP-строка, `<font>`/`<material>`
 //!   вырезаются (шрифт выбирает рантайм);
 //! - ui-двойник строки с диалоговым/спикерским контекстом удаляется;
@@ -131,9 +132,11 @@ pub fn triage_reason(text: &str, kind: ItemKind) -> &'static str {
     ""
 }
 
-/// Слот каталога: комментарии будущей записи.
+/// Слот каталога: провенанс и комментарии будущей записи.
 #[derive(Debug, Default)]
 pub struct Slot {
+    /// `dialog`/`bundle`/`field:*`/`settings`/`us`/`raw:*`/`global`.
+    pub src: String,
     pub comments: Vec<String>,
 }
 
@@ -195,6 +198,11 @@ pub fn build_catalog(
             .or_default()
             .entry(ctxt)
             .or_default();
+        // src — первого вхождения: при дедупе это и есть путь доставки строки
+        // в POT (как правило «первое вхождение побеждает» у rich_text).
+        if slot.src.is_empty() {
+            slot.src = item.src.clone();
+        }
         if !rich.is_empty() {
             let comment = format!("rich_text: {rich}");
             if !slot.comments.contains(&comment) {
@@ -259,11 +267,20 @@ pub fn render_pot(catalog: &Catalog, created: &str) -> String {
 
     let entries: Vec<PoEntry> = keys
         .into_iter()
-        .map(|(text, ctxt)| PoEntry {
-            msgid: text.to_string(),
-            msgctxt: ctxt.to_string(),
-            comments: catalog[text][ctxt].comments.clone(),
-            ..PoEntry::default()
+        .map(|(text, ctxt)| {
+            let slot = &catalog[text][ctxt];
+            let mut comments = Vec::with_capacity(slot.comments.len() + 1);
+            if !slot.src.is_empty() {
+                // Провенанс — первым комментарием (рядом с rich_text).
+                comments.push(format!("src: {}", slot.src));
+            }
+            comments.extend(slot.comments.iter().cloned());
+            PoEntry {
+                msgid: text.to_string(),
+                msgctxt: ctxt.to_string(),
+                comments,
+                ..PoEntry::default()
+            }
         })
         .collect();
 

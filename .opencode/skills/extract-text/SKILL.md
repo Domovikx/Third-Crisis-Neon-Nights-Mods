@@ -88,6 +88,7 @@ npm run po2dat -- ru
 ## Формат POT
 
 ```po
+#. src: dialog
 #. rich_text: <color=#B867FF>...</color>
 msgctxt "speaker:Zoey"
 msgid "Yesss...!~"
@@ -98,6 +99,10 @@ msgstr ""
   `(msgid, msgctxt)` (порядок code points, как Python);
 - `msgctxt`: `speaker:<Имя>` (реплика), `speaker-name` (имя персонажа), `ui`;
 - `#:` refs **не пишутся**; провенанс ищется по дампу (`find_source.mts`);
+- `#. src:` — провенанс записи: `dialog`, `bundle`, `field:<ИмяПоля>`,
+  `settings`, `us`, `raw:<TypeName>`, `global` (метка = путь доставки в POT,
+  первое вхождение побеждает; список фиксирован — инвариант 14 контракта,
+  смысл и распределение — `docs/pot-provenance.md`);
 - `#. rich_text:` — исходная TMP-разметка; `<font>`/`<material>` вырезаны
   (шрифт выбирает рантайм), цвет остаётся;
 - ui-двойник строки с диалоговым контекстом удаляется: рантайм ищет по голому

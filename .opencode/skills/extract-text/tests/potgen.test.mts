@@ -11,6 +11,11 @@ import { join, resolve } from "node:path";
 import type { InventoryItem, ItemKind } from "../scripts/inventory.mts";
 import { parsePo } from "../scripts/po_file.mts";
 import {
+  distribution,
+  formatReport,
+  looksLikeProse,
+} from "../../../../scripts/pot_provenance_report.mts";
+import {
   buildCatalog,
   catalogSize,
   ctxtOf,
@@ -35,7 +40,7 @@ before(() => {
 after(() => rmSync(root, { recursive: true, force: true }));
 
 function item(partial: Partial<InventoryItem> & { text: string; kind: ItemKind }): InventoryItem {
-  return { speaker: "", richText: "", source: "test", idx: 0, ...partial };
+  return { speaker: "", richText: "", source: "test", idx: 0, src: "raw:test", ...partial };
 }
 
 /** Тихая обёртка CLI (ожидаемые ошибки не должны шуметь в выводе тестов). */
@@ -217,4 +222,79 @@ test("writeAtomic: .part не остаётся после записи", () => {
   assert.equal(existsSync(`${out}.part`), false);
   writeAtomic(out, "second\n");
   assert.equal(readFileSync(out, "utf8"), "second\n");
+});
+
+test("buildCatalog: src пишется первым комментарием и не перетирается дублем", () => {
+  const items = [
+    item({ text: "Hi", speaker: "Zoey", kind: "dlg", src: "dialog", richText: "<i>Hi</i>" }),
+    item({ text: "Hi", speaker: "Zoey", kind: "dlg", src: "raw:Other" }),
+  ];
+  const { catalog } = buildCatalog(items);
+  const slot = catalog.get("Hi")?.get("speaker:Zoey");
+  assert.equal(slot?.src, "dialog", "метка первого вхождения");
+  const text = renderPot(catalog, "2026-01-02 03:04+0000");
+  assert.ok(text.includes("#. src: dialog\n#. rich_text: <i>Hi</i>"), text);
+  // `includeSrc: false` — только для POT до провенанса.
+  assert.ok(!renderPot(catalog, "2026-01-02 03:04+0000", { includeSrc: false }).includes("src:"));
+});
+
+test("renderPot: метки не меняют записи — добавляется только комментарий src", () => {
+  const items = [
+    item({ text: "Hi", speaker: "Zoey", kind: "dlg", src: "dialog", richText: "<i>Hi</i>" }),
+    item({ text: "BACK", kind: "raw", src: "raw:MonoBehaviour" }),
+    item({ text: "New Game", kind: "set", src: "settings" }),
+  ];
+  const { catalog } = buildCatalog(items);
+  const withSrc = renderPot(catalog, "2026-01-02 03:04+0000");
+  const without = renderPot(catalog, "2026-01-02 03:04+0000", { includeSrc: false });
+  assert.equal(withSrc.replace(/^#\. src: .*\n/gm, ""), without);
+  assert.equal(parsePo(withSrc).filter((e) => e.msgid).length, 3);
+});
+
+test("distribution: инвентарь → ключи → POT и мягкий тест прозы (синтетика)", () => {
+  const items = [
+    item({ text: "Hi there friend", kind: "dlg", speaker: "Zoey", src: "dialog" }),
+    item({ text: "Hi there friend", kind: "raw", src: "raw:Other" }),
+    item({ text: "Back", kind: "set", src: "settings" }),
+    item({ text: "Back", kind: "raw", src: "raw:MonoBehaviour" }),
+    item({ text: "Where is my mind?", kind: "raw", src: "field:m_text" }),
+    item({ text: "+5?GNRSSS", kind: "raw", src: "raw:Font" }),
+  ];
+  const { catalog } = buildCatalog(items);
+  const stats = distribution(items, catalog);
+  const bySrc = new Map(stats.map((s) => [s.src, s]));
+  assert.equal(bySrc.get("dialog")?.items, 1);
+  assert.equal(bySrc.get("dialog")?.pot, 1);
+  assert.equal(bySrc.get("settings")?.pot, 1);
+  // "Back" из settings стал ui-двойником? Нет: у него нет диалогового ключа,
+  // но второй "Back" — raw с тем же ctxt "ui", значит один POT-ключ.
+  assert.equal((bySrc.get("settings")?.pot ?? 0) + (bySrc.get("raw:MonoBehaviour")?.pot ?? 0), 1);
+  assert.equal(bySrc.get("field:m_text")?.prose, 1);
+  assert.equal(bySrc.get("raw:Font")?.prose, 0);
+  // Порядок меток стабилен: dialog → ... → settings → ... → raw:*.
+  assert.deepEqual(
+    stats.map((s) => s.src),
+    ["dialog", "field:m_text", "settings", "raw:Font", "raw:MonoBehaviour", "raw:Other"],
+  );
+  const totalPot = stats.reduce((n, s) => n + s.pot, 0);
+  assert.equal(totalPot, 4, "dialog + Back + Where + +5?GNRSSS");
+  assert.equal(looksLikeProse("+5?GNRSSS"), false);
+  assert.equal(looksLikeProse("Hi there friend"), true);
+  assert.equal(looksLikeProse("Where is my mind?"), true);
+  assert.equal(looksLikeProse("A dick."), false, "меньше 3 слов");
+});
+
+test("formatReport: таблица и примеры содержат все источники", () => {
+  const items = [item({ text: "Hi there friend", kind: "dlg", speaker: "Zoey", src: "dialog" })];
+  const { catalog } = buildCatalog(items);
+  const md = formatReport(distribution(items, catalog), {
+    candidates: 0,
+    inPot: 0,
+    prose: 0,
+    examples: [],
+  });
+  assert.ok(md.includes("| `src` | в инвентаре | ключей | в POT |"));
+  assert.ok(md.includes("| `dialog` | 1 | 1 | 1 |"));
+  assert.ok(md.includes("### `dialog` — 1 в POT"));
+  assert.ok(md.includes("`global` — кандидаты"));
 });

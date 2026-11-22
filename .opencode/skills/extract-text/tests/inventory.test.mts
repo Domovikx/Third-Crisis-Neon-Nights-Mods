@@ -12,6 +12,7 @@ import {
   DumpScanner,
   bundleShortName,
   isUiString,
+  isValidSrc,
   pyStrip,
   resolveNamedColors,
   scanDump,
@@ -273,6 +274,136 @@ test("scanDump: реальный мини-фикстур-дамп собирае
     ["Ask about her Arm"],
   );
   assert.ok(only(inv.items, "raw").some((i) => i.text === "Dialogue Log"));
+});
+
+test("DumpScanner: провенанс — settings и us различаются по строке DLL", () => {
+  const scanner = new DumpScanner();
+  scanner.addSummaryRow(
+    {
+      asset: "Assembly-CSharp.dll",
+      format: "dotnet_us_heap",
+      settings_keys: [
+        { key: "Settings.EnableVSync", display: "Enable VSync" },
+        { key: "Load Game", display: "Load Game" },
+      ],
+    },
+    "Assembly-CSharp.dll",
+  );
+  scanner.addSummaryRow(
+    {
+      asset: "resources.assets",
+      settings_keys: [{ key: "Settings.Volume", display: "Volume" }],
+    },
+    "resources.assets",
+  );
+  const items = only(scanner.finish().items, "set");
+  assert.deepEqual(
+    items.map((i) => [i.text, i.src]),
+    [
+      ["Enable VSync", "settings"],
+      ["Load Game", "us"],
+      ["Volume", "settings"],
+    ],
+  );
+});
+
+test("DumpScanner: провенанс raw — значение типизированного поля точнее raw:<Type>", () => {
+  const scanner = new DumpScanner();
+  addRow(scanner, {
+    asset: "level0",
+    type: "MonoBehaviour",
+    strings: { m_Name: "Panel" },
+    fields: { m_Labels: ["Start Game", "Continue"] },
+    raw_strings: ["Panel", "Start Game", "Continue", "Raw Only Label"],
+  });
+  const items = only(scanner.finish().items, "raw");
+  assert.deepEqual(
+    items.map((i) => [i.text, i.src]),
+    [
+      ["Panel", "field:m_Name"],
+      ["Start Game", "field:m_Labels"],
+      ["Continue", "field:m_Labels"],
+      ["Raw Only Label", "raw:MonoBehaviour"],
+    ],
+  );
+});
+
+test("DumpScanner: провенанс спикера — источник первого появления", () => {
+  const scanner = new DumpScanner();
+  addRow(scanner, {
+    asset: "resources",
+    path_id: 1,
+    dialogues: [{ speaker: "Zoey", text: "one", rich_text: "" }],
+  });
+  addRow(scanner, {
+    asset: "bundle_x_assets_all_abc",
+    type: "MonoBehaviour",
+    strings: { m_Name: "N" },
+    raw_strings: ["line_0", "Where is my mind, my dear friend?", "Clerk"],
+  });
+  const items = only(scanner.finish().items, "spk");
+  assert.deepEqual(
+    items.map((i) => [i.text, i.src]),
+    [
+      ["Zoey", "dialog"],
+      ["Clerk", "bundle"],
+    ],
+  );
+});
+
+test("DumpScanner: FSM-строки — field:fsm, диалоги и бандлы — свои метки", () => {
+  const scanner = new DumpScanner();
+  addRow(scanner, {
+    asset: "resources",
+    path_id: 5,
+    dialogues: [{ speaker: "Zoey", text: "Hi there", rich_text: "" }],
+  });
+  addRow(scanner, {
+    asset: "bundle_z_assets_all_abc",
+    type: "MonoBehaviour",
+    strings: { m_Name: "P" },
+    raw_strings: ["line_0", "Hello there friend"],
+  });
+  addRow(scanner, { asset: "level0", fsm_strings: ["Ask about her Arm"] });
+
+  const inv = scanner.finish().items;
+  assert.deepEqual(
+    inv.filter((i) => i.kind === "dlg" || i.kind === "bundle").map((i) => [i.text, i.src]),
+    [
+      ["Hi there", "dialog"],
+      ["Hello there friend", "bundle"],
+    ],
+  );
+  assert.deepEqual(
+    inv.filter((i) => i.kind === "fsm").map((i) => [i.text, i.src]),
+    [["Ask about her Arm", "field:fsm"]],
+  );
+});
+
+test("isValidSrc: фиксированный список и параметры field/raw", () => {
+  for (const ok of [
+    "dialog",
+    "bundle",
+    "settings",
+    "us",
+    "global",
+    "field:m_Name",
+    "field:fsm",
+    "raw:Texture2D",
+  ]) {
+    assert.equal(isValidSrc(ok), true, ok);
+  }
+  for (const bad of ["", "dialog:", "field:", "raw:", "field:1x", "raw:Two Words", "other"]) {
+    assert.equal(isValidSrc(bad), false, bad);
+  }
+});
+
+test("scanDump: метка есть у каждой строки инвентаря", async () => {
+  const inv = await scanDump(FIXTURE);
+  assert.ok(inv.items.length > 0);
+  for (const item of inv.items) {
+    assert.equal(isValidSrc(item.src), true, `${item.kind}: ${item.text}`);
+  }
 });
 
 test("scanDump: отсутствующий дамп — понятная ошибка", async () => {

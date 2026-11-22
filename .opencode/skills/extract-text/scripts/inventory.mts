@@ -6,11 +6,12 @@
  * НЕ портируется (дерево `translations/` удалено), поэтому `_auto_triage` тоже
  * не нужен: он влиял только на YAML и статистику, а не на состав POT.
  *
- * Контракт элемента повторяет `scan_dump()` из `potgen.py`:
- *   {text, speaker, richText, kind, source, idx}
+ * Контракт элемента повторяет `scan_dump()` из `potgen.py` плюс провенанс:
+ *   {text, speaker, richText, kind, source, idx, src}
  * kind: dlg (ANToolkit dialogues), bundle (PlayMaker line_X),
  *       spk (имя персонажа), set (settings_keys.display),
  *       raw (UI-строки raw_strings), fsm (FSM-переменные).
+ * src: метка источника для POT (`#. src:`), см. `ItemSrc`.
  *
  * Дамп читается потоково (createReadStream + readline): 319 МБ в память
  * не грузятся. Разбор строки — `JSON.parse`, битые строки пропускаются
@@ -33,6 +34,35 @@ import {
 /** Виды источника строки (совпадают с kind из potgen.py). */
 export type ItemKind = "dlg" | "bundle" | "spk" | "set" | "raw" | "fsm";
 
+/**
+ * Провенанс строки: откуда она пришла в инвентарь (пишется в POT как
+ * `#. src: <метка>`). Список фиксирован — это контракт, а не подсказка:
+ *
+ *   dialog           — структура диалогов ANToolkit (`dialogues[]`);
+ *   bundle           — PlayMaker-бандл (`raw_strings` с `line_X`);
+ *   field:<ИмяПоля>  — значение типизированного поля объекта (type tree);
+ *   settings         — `settings_keys[].display` (ключи `Settings.*`);
+ *   us               — автономная UI-строка из кучи `#US` .NET-сборки;
+ *   raw:<TypeName>   — raw-скан объекта (Texture2D, AudioClip, …);
+ *   global           — глобальные строки (сегодня инвентарь их НЕ читает).
+ *
+ * Метка описывает путь, которым строка ДОСТАВЛЕНА в POT, а не «где ещё она
+ * встречается»: при дедупе побеждает первое вхождение (как у rich_text).
+ * Политика отбора по провенансу — `docs/pot-provenance.md`.
+ */
+export type ItemSrc = "dialog" | "bundle" | "settings" | "us" | "global";
+
+/** Метки без параметра (параметр — у `field:`/`raw:`). */
+export const SRC_LABELS: readonly ItemSrc[] = ["dialog", "bundle", "settings", "us", "global"];
+
+/** `field:<ИмяПоля>` / `raw:<TypeName>`: параметр — C#-идентификатор. */
+const SRC_PARAM_RX = /^(?:field|raw):[A-Za-z_][A-Za-z0-9_]*$/;
+
+/** Метка провенанса из фиксированного списка (с непустым параметром). */
+export function isValidSrc(src: string): boolean {
+  return SRC_LABELS.includes(src as ItemSrc) || SRC_PARAM_RX.test(src);
+}
+
 /** Одна строка инвентаря: ровно то, что читает `ctxt_of`/`render` в potgen. */
 export interface InventoryItem {
   text: string;
@@ -41,6 +71,8 @@ export interface InventoryItem {
   kind: ItemKind;
   source: string;
   idx: number | null;
+  /** Провенанс: путь, которым строка дошла до инвентаря. */
+  src: string;
 }
 
 export interface InventoryStats {
@@ -65,6 +97,12 @@ interface DialogueEntry {
 interface PidGroup {
   pid: bigint;
   entries: DialogueEntry[];
+}
+
+/** Текст инвентаря вместе с провенансом (settings/raw-коллекции). */
+interface SrcText {
+  text: string;
+  src: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -295,13 +333,42 @@ function dedupeKey(text: string, speaker: string): string {
   return JSON.stringify([text, speaker]);
 }
 
+/**
+ * Индекс «значение → имя типизированного поля» для одной строки дампа.
+ *
+ * `strings` — скалярные строковые поля объекта (m_Name, DisplayName, m_text…),
+ * `fields` — остальные поля, включая массивы строк (`m_AtlasTags`, списки).
+ * Ключи сортируются (в дампе они уже отсортированы генератором): при
+ * совпадении значения в двух полях побеждает первое по имени — так метка
+ * стабильна и совпадает в TS и Rust.
+ */
+function typedFieldIndex(obj: DumpRow): Map<string, string> {
+  const index = new Map<string, string>();
+  const add = (name: string, value: unknown): void => {
+    if (typeof value !== "string" || index.has(value)) return;
+    index.set(value, `field:${name}`);
+  };
+  const strings = asRecord(obj.strings);
+  if (strings) {
+    for (const name of Object.keys(strings).sort(compareCodePoints)) add(name, strings[name]);
+  }
+  const fields = asRecord(obj.fields);
+  if (fields) {
+    for (const name of Object.keys(fields).sort(compareCodePoints)) {
+      const value = fields[name];
+      if (Array.isArray(value)) for (const item of value) add(name, item);
+    }
+  }
+  return index;
+}
+
 /** Накопитель строк дампа. Тесты кормят его объектами напрямую. */
 export class DumpScanner {
   private readonly dialogues = new Map<string, PidGroup>();
   private readonly bundles = new Map<string, DialogueEntry[]>();
   private readonly bundleSeen = new Set<string>();
-  private readonly settings = new Map<string, string[]>();
-  private readonly chunkUi = new Map<string, string[]>();
+  private readonly settings = new Map<string, SrcText[]>();
+  private readonly chunkUi = new Map<string, SrcText[]>();
   private readonly uiLocalSeen = new Map<string, Set<string>>();
   private readonly uiGlobalSeen = new Set<string>();
   private readonly fsm = new Map<string, string[]>();
@@ -321,7 +388,11 @@ export class DumpScanner {
   /** Одна строка `summaries.jsonl` (`stem` — имя ассета из строки). */
   addSummaryRow(obj: DumpRow, stem: string): void {
     const seen = new Set<string>();
-    const entries: string[] = [];
+    const entries: SrcText[] = [];
+    // DLL-строка несёт два разных потока в одном `settings_keys`:
+    // ключи `Settings.*` (подпись синтезирована из имени) и автономные
+    // UI-строки из кучи `#US` (там `key === display`). Различаем по ключу.
+    const dotnet = asString(obj.format) === "dotnet_us_heap";
     for (const raw of asArray(obj.settings_keys)) {
       const sk = asRecord(raw);
       if (!sk) continue;
@@ -330,7 +401,8 @@ export class DumpScanner {
       const text = pyStrip(asString(sk.display)).replace(/^\u0000+|\u0000+$/g, "");
       if (!text || seen.has(text) || text.includes("\u0000")) continue;
       seen.add(text);
-      entries.push(text);
+      const key = asString(sk.key);
+      entries.push({ text, src: dotnet && !key.startsWith("Settings.") ? "us" : "settings" });
     }
     if (entries.length) this.settings.set(stem, entries);
   }
@@ -356,6 +428,7 @@ export class DumpScanner {
           kind: "dlg",
           source: group.pid.toString(),
           idx,
+          src: "dialog",
         });
       });
     }
@@ -370,20 +443,28 @@ export class DumpScanner {
           kind: "bundle",
           source: bundleShortName(asset),
           idx,
+          src: "bundle",
         });
       });
     }
 
     // Спикеры: порядок первого появления среди диалогов, затем бандлов.
+    // Провенанс имени — источник первого появления (dialog или bundle).
     const seenSpeakers = new Set<string>();
     const speakers: string[] = [];
-    const groups: DialogueEntry[][] = [...this.dialogues.values()].map((g) => g.entries);
-    for (const group of [...groups, ...this.bundles.values()]) {
+    const speakerSrc = new Map<string, string>();
+    const groups = [...this.dialogues.values()].map((g) => g.entries);
+    const sources: Array<[DialogueEntry[], string]> = [
+      ...groups.map((g): [DialogueEntry[], string] => [g, "dialog"]),
+      ...[...this.bundles.values()].map((g): [DialogueEntry[], string] => [g, "bundle"]),
+    ];
+    for (const [group, src] of sources) {
       for (const e of group) {
         const sp = pyStrip(e.speaker);
         if (sp && !seenSpeakers.has(sp)) {
           seenSpeakers.add(sp);
           speakers.push(sp);
+          speakerSrc.set(sp, src);
         }
       }
     }
@@ -395,26 +476,52 @@ export class DumpScanner {
         kind: "spk",
         source: sp,
         idx: null,
+        src: speakerSrc.get(sp) ?? "dialog",
       });
     }
 
     for (const source of [...this.settings.keys()].sort(compareCodePoints)) {
-      (this.settings.get(source) as string[]).forEach((text, idx) => {
-        items.push({ text, speaker: "", richText: "", kind: "set", source, idx });
+      (this.settings.get(source) as SrcText[]).forEach((entry, idx) => {
+        items.push({
+          text: entry.text,
+          speaker: "",
+          richText: "",
+          kind: "set",
+          source,
+          idx,
+          src: entry.src,
+        });
       });
     }
 
     for (const asset of [...this.chunkUi.keys()].sort(compareCodePoints)) {
-      const entries = this.chunkUi.get(asset) as string[];
-      entries.forEach((text, idx) => {
-        items.push({ text, speaker: "", richText: "", kind: "raw", source: asset, idx });
+      const entries = this.chunkUi.get(asset) as SrcText[];
+      entries.forEach((entry, idx) => {
+        items.push({
+          text: entry.text,
+          speaker: "",
+          richText: "",
+          kind: "raw",
+          source: asset,
+          idx,
+          src: entry.src,
+        });
       });
     }
 
     for (const asset of [...this.fsm.keys()].sort(compareCodePoints)) {
       const entries = this.fsm.get(asset) as string[];
       entries.forEach((text, idx) => {
-        items.push({ text, speaker: "", richText: "", kind: "fsm", source: asset, idx });
+        // FSM-строки — значения типизированного поля `fsm` (type tree).
+        items.push({
+          text,
+          speaker: "",
+          richText: "",
+          kind: "fsm",
+          source: asset,
+          idx,
+          src: "field:fsm",
+        });
       });
     }
 
@@ -543,6 +650,16 @@ export class DumpScanner {
       this.chunkUi.set(asset, entries);
     }
 
+    // Типизированные поля объекта: если raw-скан нашёл значение поля
+    // (type tree), провенанс точнее — `field:<ИмяПоля>`, а не `raw:<Type>`.
+    // Индекс строится лениво: он нужен только для прошедших фильтр строк.
+    const typeName = asString(obj.type) || "unknown";
+    let typedFields: Map<string, string> | null = null;
+    const labelOf = (text: string): string => {
+      typedFields ??= typedFieldIndex(obj);
+      return typedFields.get(text) ?? `raw:${typeName}`;
+    };
+
     // Дедуп глобальный (на весь дамп): один и тот же лейбл из разных сцен
     // даёт одну запись. Для перевода это верно (текст один), но `source`
     // останется первым ассетом, где строка встретилась.
@@ -553,7 +670,7 @@ export class DumpScanner {
       if (!isUiString(s)) continue;
       local.add(s);
       this.uiGlobalSeen.add(s);
-      entries.push(s);
+      entries.push({ text: s, src: labelOf(s) });
     }
   }
 

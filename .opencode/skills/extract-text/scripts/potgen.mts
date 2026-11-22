@@ -9,6 +9,7 @@
  *   - одна запись на уникальную пару (msgid, msgctxt); дубли схлопываются;
  *   - msgctxt: `speaker:<Имя>` / `speaker-name` (имя персонажа) / `ui`;
  *   - `#:` refs НЕ пишутся вовсе (provenance ищется в дампе через find_source);
+ *   - `#. src: <метка>` — провенанс записи (путь доставки в POT);
  *   - `#. rich_text: <разметка>` — исходная TMP-строка с тегами; `<font>` и
  *     `<material>` вырезаются (шрифт выбирает рантайм);
  *   - ui-двойник строки, у которой есть диалоговый/спикерский контекст,
@@ -93,6 +94,8 @@ export function triageReason(text: string, kind: ItemKind): string {
 }
 
 export interface PotSlot {
+  /** Провенанс записи: `dialog`/`bundle`/`field:*`/`settings`/`us`/`raw:*`/`global`. */
+  src: string;
   comments: string[];
 }
 
@@ -123,7 +126,7 @@ function slotOf(catalog: Map<string, Map<string, PotSlot>>, text: string, ctxt: 
   }
   let slot = byCtxt.get(ctxt);
   if (!slot) {
-    slot = { comments: [] };
+    slot = { src: "", comments: [] };
     byCtxt.set(ctxt, slot);
   }
   return slot;
@@ -173,6 +176,9 @@ export function buildCatalog(
     seen.add(key);
 
     const slot = slotOf(catalog, item.text, ctxt);
+    // src — первого вхождения: при дедупе это и есть путь доставки строки
+    // в POT (как правило «первое вхождение побеждает» у rich_text).
+    if (!slot.src) slot.src = item.src;
     if (rich) {
       const comment = `rich_text: ${rich}`;
       if (!slot.comments.includes(comment)) {
@@ -222,7 +228,9 @@ export function catalogSize(catalog: Map<string, Map<string, PotSlot>>): number 
 export function renderPot(
   catalog: Map<string, Map<string, PotSlot>>,
   created: string = formatPotDate(),
+  opts: { includeSrc?: boolean } = {},
 ): string {
+  const includeSrc = opts.includeSrc !== false;
   const keys: Array<[string, string]> = [];
   for (const [text, byCtxt] of catalog) {
     for (const ctxt of byCtxt.keys()) keys.push([text, ctxt]);
@@ -235,11 +243,24 @@ export function renderPot(
     e.msgctxt = ctxt;
     e.msgid = text;
     e.msgstr = "";
-    e.comments = [...slot.comments];
+    // Провенанс — первым комментарием (рядом с rich_text): по нему строится
+    // политика отбора, см. docs/pot-provenance.md. `includeSrc: false` нужен
+    // только для сверки POT, сгенерированного ДО провенанса.
+    e.comments =
+      includeSrc && slot.src ? [`src: ${slot.src}`, ...slot.comments] : [...slot.comments];
     return e;
   });
 
   return renderPo(entries, potHeaderLines(created));
+}
+
+/** Провенанс записей каталога: ключ `(msgid, msgctxt)` → метка `src`. */
+export function srcOf(catalog: Map<string, Map<string, PotSlot>>): Map<string, string> {
+  const out = new Map<string, string>();
+  for (const [text, byCtxt] of catalog) {
+    for (const [ctxt, slot] of byCtxt) out.set(catalogKey(text, ctxt), slot.src);
+  }
+  return out;
 }
 
 /** Ключи (msgid, msgctxt) существующего POT — для статистики. */
