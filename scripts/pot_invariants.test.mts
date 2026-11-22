@@ -527,17 +527,20 @@ test("реальный POT в репозитории: структурные и�
 
   // Известные дефекты данных (найдены 2026-11-22, чистка — отдельная задача).
   // Фиксируем их код и потолок, чтобы НОВЫЕ классы и рост падали тестом.
-  const KNOWN: Record<string, number> = { "rich-nesting": 21 };
+  // rich-nesting — дефект данных игры (TMP закрывает неявно), поэтому warn с потолком.
+  const KNOWN_WARN: Record<string, number> = { "rich-nesting": 21 };
+  const warns = violations.filter((v) => v.severity === "warn");
   const byCode = new Map<string, number>();
-  for (const v of errors) byCode.set(v.code, (byCode.get(v.code) ?? 0) + 1);
+  for (const v of warns) byCode.set(v.code, (byCode.get(v.code) ?? 0) + 1);
 
   for (const [code, count] of byCode) {
-    assert.ok(KNOWN[code] !== undefined, `новый класс ошибок в po/template.pot: ${code}`);
+    if (KNOWN_WARN[code] === undefined) continue; // прочие warn не нормируем
     assert.ok(
-      count <= KNOWN[code],
-      `ошибок ${code} стало больше: ${count} > известных ${KNOWN[code]}`,
+      count <= KNOWN_WARN[code],
+      `${code} стало больше: ${count} > известных ${KNOWN_WARN[code]}`,
     );
   }
+  assert.deepEqual(errors, [], `в po/template.pot не должно быть ошибок контракта`);
 });
 
 test("вложенность rich_text: перекрещенные теги ловятся, правильные — нет", () => {

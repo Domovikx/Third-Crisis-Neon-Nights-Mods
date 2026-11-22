@@ -97,7 +97,13 @@ test("E2E устойчивость: битая JSONL-строка не роня�
   );
 });
 
-const dumpDir = process.env.TCNN_DUMP_DIR ?? join(REPO, "tmp", "dump-new");
+// Дамп, из которого собран текущий po/template.pot: сначала актуальный (после снятия
+// лимитов и политики), затем прежний. Переопределяется TCNN_DUMP_DIR.
+const dumpDir =
+  process.env.TCNN_DUMP_DIR ??
+  (existsSync(join(REPO, "tmp", "dump-after"))
+    ? join(REPO, "tmp", "dump-after")
+    : join(REPO, "tmp", "dump-new"));
 const potPath = join(REPO, "po", "template.pot");
 const realSkip =
   existsSync(dumpDir) && existsSync(potPath)
@@ -108,9 +114,8 @@ test(
   "E2E реальный дамп: po/template.pot проходит контракт (opt-in)",
   { skip: realSkip },
   async (t) => {
-    // po/template.pot сгенерирован до провенанса: `#. src:` появится при
-    // перегенерации на шаге политики (задача pot-ui-filter-narrowing).
-    const violations = await checkPot(potPath, { dumpPath: dumpDir, requireSrc: false });
+    // POT перегенерирован с провенансом (2026-11-22), поэтому src обязателен.
+    const violations = await checkPot(potPath, { dumpPath: dumpDir });
     const errors = violations.filter((v) => v.severity === "error");
     const warns = violations.filter((v) => v.severity === "warn");
     t.diagnostic(
@@ -120,7 +125,7 @@ test(
     // Известные дефекты ДАННЫХ (2026-11-22): перекрещенные теги в rich_text, чистка —
     // отдельная задача. Фиксируем класс и потолок, чтобы новые классы падали тестом,
     // а не «нормализовались» как фон.
-    const knownErrors: Record<string, number> = { "rich-nesting": 21 };
+    const knownErrors: Record<string, number> = {};
     const byCode = new Map<string, number>();
     for (const v of errors) byCode.set(v.code, (byCode.get(v.code) ?? 0) + 1);
     for (const [code, count] of byCode) {
@@ -129,7 +134,12 @@ test(
     }
     // Предупреждения — известные дефекты генерации (задачи pot-noise-cleanup и
     // отчёт 2026-11-22); новые коды должны появляться осознанно.
-    const known = new Set(["order-dependent", "rich-counter", "noise-entries"]);
+    const known = new Set([
+      "order-dependent",
+      "rich-counter",
+      "noise-entries",
+      "rich-nesting", // данные игры: незакрытые/перекрещенные теги в самом rich_text
+    ]);
     const unexpected = warns.filter((v) => !known.has(v.code));
     assert.deepEqual(
       unexpected,

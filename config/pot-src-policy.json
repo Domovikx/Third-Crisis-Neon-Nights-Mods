@@ -1,5 +1,12 @@
 {
-  "_comment": "Политика отбора POT по провенансу: exclude — метки #. src:, не попадающие в POT (точные или префикс с *), include — что допускается (* = всё). Исключённые записи уходят в tmp/pot-excluded.jsonl. Обоснование и цифры — docs/pot-provenance.md.",
-  "exclude": ["raw:Font", "raw:Mesh", "raw:MonoScript", "raw:Texture2D", "raw:Sprite"],
+  "_comment": "Политика отбора POT по провенансу: exclude — метки #. src:, не попадающие в POT (точные или префикс с *), include — что допускается (* = всё). Исключённые записи уходят в tmp/pot-excluded.jsonl. Обоснование и цифры — docs/pot-provenance.md. raw:TextAsset добавлен 2026-11-22: 45 030 записей, «проза» — имена ассетов (CalliachBunnySuit/Left Foot Stockings, Hair/Front Right Bang), не текст для игрока.",
+  "exclude": [
+    "raw:Font",
+    "raw:Mesh",
+    "raw:MonoScript",
+    "raw:Texture2D",
+    "raw:Sprite",
+    "raw:TextAsset"
+  ],
   "include": ["*"]
 }

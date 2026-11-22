@@ -38,9 +38,12 @@ import {
   type InventoryItem,
 } from "../.opencode/skills/extract-text/scripts/inventory.mts";
 import {
+  applySrcPolicy,
   buildCatalog,
   catalogSize,
   ctxtOf,
+  discoverPolicyPath,
+  loadSrcPolicy,
   POT_PATH,
   renderPot,
   srcOf,
@@ -292,7 +295,13 @@ async function buildExpected(dumpPath: string, items?: InventoryItem[]): Promise
     else keys.set(key, item);
   }
 
-  const { catalog, stats } = buildCatalog(list);
+  const built = buildCatalog(list);
+  // Политика отбора применяется и здесь: иначе «перегенерация» не совпадёт с файлом,
+  // собранным с политикой, и тест будет ругаться `stale` на здоровых данных.
+  const policyPath = discoverPolicyPath();
+  const policy = policyPath ? loadSrcPolicy(policyPath) : null;
+  const catalog = policy ? applySrcPolicy(built.catalog, policy).catalog : built.catalog;
+  const stats = built.stats;
   const twinKeys = new Set<string>();
   for (const key of keys.keys()) {
     const [text, ctxt] = JSON.parse(key) as [string, string];
@@ -718,7 +727,11 @@ function checkRichFormat(
         add(7, "rich-empty", "error", `строка ${c.line}`, "rich_text пустой");
       }
       for (const problem of richNestingProblems(value)) {
-        add(7, "rich-nesting", "error", `строка ${c.line}`, problem);
+        // Источник этих дефектов — данные самой игры (проверено 2026-11-22: в дампе
+        // `rich_text` уже содержит `</i></color>` и незакрытые теги; мы лишь разворачиваем
+        // именованные цвета). Поэтому это предупреждение, а не ошибка: правка значила бы
+        // переписывать контент. Ошибкой остаётся только расхождение с дампом (`--dump`).
+        add(7, "rich-nesting", "warn", `строка ${c.line}`, problem);
       }
       if (/<\/?(?:font|material)\b/i.test(value)) {
         add(
@@ -1041,7 +1054,10 @@ function checkAgainstDump(
     );
   }
   const twinCount = [...expected.keys.keys()].filter((k) => expected.twinKeys.has(k)).length;
-  if (expected.stats.mergedTwins !== twinCount) {
+  // Счётчик generator'а считается ДО политики отбора, а `twinCount` — по ожиданиям после
+  // неё. Когда политика активна, сравнивать их бессмысленно (проверено 2026-11-22:
+  // 541 против 110 965 на здоровых данных). Полнота и выдуманные записи проверяются ниже.
+  if (!discoverPolicyPath() && expected.stats.mergedTwins !== twinCount) {
     add(
       9,
       "merged-twins-counter",

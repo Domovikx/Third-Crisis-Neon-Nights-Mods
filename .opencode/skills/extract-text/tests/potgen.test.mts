@@ -577,7 +577,15 @@ test(
 
       assert.equal(readFileSync(rustPot, "utf8"), readFileSync(tsPot, "utf8"), `${mode}: POT`);
       if (policyArg) {
-        assert.equal(res.policy?.excluded, 65394, "политика действительно исключает");
+        // Число исключённых зависит от данных политики (меняется вместе с config/),
+        // поэтому проверяем инвариант, а не магическое число: журнал = исключённые.
+        const excludedCount = res.policy?.excluded ?? 0;
+        assert.ok(excludedCount > 0, "политика действительно исключает");
+        assert.equal(
+          excludedCount,
+          readFileSync(tsExcluded, "utf8").split(/\r?\n/).filter(Boolean).length,
+          "журнал содержит ровно исключённые записи",
+        );
         assert.equal(
           readFileSync(rustExcluded, "utf8"),
           readFileSync(tsExcluded, "utf8"),
