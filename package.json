@@ -51,7 +51,10 @@
     "l10n:build": "cargo build --release --manifest-path tools/rust-l10n/Cargo.toml",
     "potgen:ts": "node .opencode/skills/extract-text/scripts/potgen.mts",
     "po2dat:ts": "node .opencode/skills/extract-text/scripts/po2dat.mts",
-    "bench:text": "node scripts/text_bench.mts --scales 1,10 --runs 2"
+    "bench:text": "node scripts/text_bench.mts --scales 1,10 --runs 2",
+    "rust:lint:build": "cargo build --release --manifest-path tools/rust-lint/Cargo.toml",
+    "test:rust:lint": "cargo test --manifest-path tools/rust-lint/Cargo.toml",
+    "lint:data": "cargo run --release --quiet --manifest-path tools/rust-lint/Cargo.toml -- --root . --json-dir tmp --report tmp/lint-report.md"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

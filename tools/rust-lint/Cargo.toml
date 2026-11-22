@@ -1,0 +1,28 @@
+[package]
+name = "rust-lint"
+version = "0.1.0"
+edition = "2021"
+description = "Independent read-only integrity audit of POT/PO/DAT (structure, escaping, encoding, tags, anchors)"
+license = "MIT"
+
+[lib]
+name = "rust_lint"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rust-lint"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[dependencies]
+# PO-парсер — общий с QA и генераторами (`tools/rust-l10n-core`): у аудита
+# должен быть тот же взгляд на файл, что у пайплайна, иначе находки бессмысленны.
+rust-l10n-core = { path = "../rust-l10n-core" }
+# JSON-вывод (`tmp/lint-<lang>.json`) и чтение `.dat`: ручной JSON-экранировщик
+# здесь был бы вторым источником истины для тех же байтов.
+serde_json = "1"

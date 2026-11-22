@@ -83,6 +83,19 @@ jobs:
         working-directory: tools/rust-qa
         run: cargo test
 
+      # Аудит целостности данных: POT/PO/DAT (только чтение).
+      - name: Format (lint)
+        working-directory: tools/rust-lint
+        run: cargo fmt --check
+
+      - name: Clippy (lint)
+        working-directory: tools/rust-lint
+        run: cargo clippy --all-targets -- -D warnings
+
+      - name: Tests (lint)
+        working-directory: tools/rust-lint
+        run: cargo test
+
       # Текстовый пайплайн: общий PO-крейт + POT/DAT-генераторы (docs/language-audit.md).
       - name: Format (l10n core)
         working-directory: tools/rust-l10n-core
