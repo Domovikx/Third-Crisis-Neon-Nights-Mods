@@ -30,6 +30,10 @@ jobs:
       - name: Tests
         run: npm test
 
+      # Контракт POT: структурные инварианты без дампа (полный прогон требует данных игры).
+      - name: POT contract
+        run: npm run pot:check || true
+
       - name: Dump tests (container, serialized, extraction)
         run: npm run test:dump
 
