@@ -90,10 +90,7 @@ fn pct_legit(s: &str) -> bool {
     if i > 0 && rust_l10n_core::po::js_ws(chars[i - 1]) {
         i -= 1;
     }
-    if i == 0 || !chars[i - 1].is_ascii_digit() {
-        return false;
-    }
-    true
+    i > 0 && chars[i - 1].is_ascii_digit()
 }
 
 /// Бинарный мусор? (`Bff?D`, `H\?d`, `%IR`, `S5?d`)

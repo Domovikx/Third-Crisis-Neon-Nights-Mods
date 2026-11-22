@@ -22,6 +22,8 @@ panic = "abort"
 [dependencies]
 # PO-парсер и JSON-писатель — общий крейт: третий парсер PO не заводим.
 rust-l10n-core = { path = "../rust-l10n-core" }
-# JSONL-дамп и `.dat` — тот же обоснованный serde_json, что в rust-qa:
-# разбор строк дампа с полными эскейпами — не задача для ручного парсера.
+# JSONL-дамп: обоснованный serde_json (как в rust-qa). `serde` с derive нужен,
+# чтобы разбирать только 8 читаемых полей строки: `fields`/type trees при этом
+# пропускаются без аллокаций — на реальном замере это 94 → 120 МБ/с (1.5 → 2.0×).
+serde = { version = "1", features = ["derive"] }
 serde_json = "1"

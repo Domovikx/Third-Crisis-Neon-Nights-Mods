@@ -58,6 +58,8 @@ jobs:
           workspaces: |
             tools/rust-decoder
             tools/rust-qa
+            tools/rust-l10n-core
+            tools/rust-l10n
 
       - name: Format (decoder)
         run: cargo fmt --check
@@ -80,3 +82,42 @@ jobs:
       - name: Tests (qa)
         working-directory: tools/rust-qa
         run: cargo test
+
+      # Текстовый пайплайн: общий PO-крейт + POT/DAT-генераторы (docs/language-audit.md).
+      - name: Format (l10n core)
+        working-directory: tools/rust-l10n-core
+        run: cargo fmt --check
+
+      - name: Clippy (l10n core)
+        working-directory: tools/rust-l10n-core
+        run: cargo clippy --all-targets -- -D warnings
+
+      - name: Tests (l10n core)
+        working-directory: tools/rust-l10n-core
+        run: cargo test
+
+      - name: Format (l10n)
+        working-directory: tools/rust-l10n
+        run: cargo fmt --check
+
+      - name: Clippy (l10n)
+        working-directory: tools/rust-l10n
+        run: cargo clippy --all-targets -- -D warnings
+
+      - name: Tests (l10n)
+        working-directory: tools/rust-l10n
+        run: cargo test
+
+      # Паритет с TS-эталоном: POT мини-дампа и .dat всех языков репозитория.
+      # Реальный дамп в CI отсутствует — тест на нём пропускается.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Build release (l10n)
+        working-directory: tools/rust-l10n
+        run: cargo build --release
+
+      - name: Parity (TS oracle vs Rust)
+        working-directory: .
+        run: node --test scripts/text_parity.test.mts

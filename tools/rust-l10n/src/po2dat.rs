@@ -87,7 +87,10 @@ fn ref_key(e: &PoEntry) -> String {
         .collect();
     stable.sort_by(|a, b| a.encode_utf16().cmp(b.encode_utf16()));
     files.extend(stable);
-    files.first().map(|s| s.to_string()).unwrap_or_else(|| "~".to_string())
+    files
+        .first()
+        .map(|s| s.to_string())
+        .unwrap_or_else(|| "~".to_string())
 }
 
 /// `String.prototype.slice(0, n)` в UTF-16 code units (для отчёта о дублях).
@@ -105,8 +108,8 @@ fn js_slice_utf16(s: &str, n: usize) -> String {
 /// Скомпилировать `po/<lang>.po` (+ rich из template.pot) в строки `.dat`.
 pub fn build_dat(lang: &str, root: &Path) -> Result<(Vec<DatRow>, DatReport), String> {
     let po_path = root.join("po").join(format!("{lang}.po"));
-    let raw = std::fs::read_to_string(&po_path)
-        .map_err(|_| format!("missing {}", po_path.display()))?;
+    let raw =
+        std::fs::read_to_string(&po_path).map_err(|_| format!("missing {}", po_path.display()))?;
 
     let entries: Vec<PoEntry> = parse_po(&raw)
         .into_iter()
@@ -136,13 +139,17 @@ pub fn build_dat(lang: &str, root: &Path) -> Result<(Vec<DatRow>, DatReport), St
     let mut seen_texts: HashSet<&str> = HashSet::new();
     for text in &order {
         let group: Vec<&PoEntry> = by_text[text].iter().map(|&i| &entries[i]).collect();
-        let mut filled: Vec<&PoEntry> = group.iter().copied().filter(|e| !e.msgstr.is_empty()).collect();
+        let mut filled: Vec<&PoEntry> = group
+            .iter()
+            .copied()
+            .filter(|e| !e.msgstr.is_empty())
+            .collect();
         let mut msgstr = String::new();
 
         if !filled.is_empty() {
             // Earliest-ref-file-wins: повторяет first-wins загрузчика C# по
             // отсортированным файлам. Сортировка стабильная (как в JS).
-            filled.sort_by(|a, b| ref_key(a).cmp(&ref_key(b)));
+            filled.sort_by_key(|a| ref_key(a));
             let variants: HashSet<&str> = filled.iter().map(|e| e.msgstr.as_str()).collect();
             if variants.len() > 1 {
                 report.dupes.push((

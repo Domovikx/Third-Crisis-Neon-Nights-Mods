@@ -1,8 +1,6 @@
 //! Фильтры пайплайна: зеркало `text_filters.mts` (авто-триаж и rich-снятие).
 
-use rust_l10n::text_filters::{
-    is_asset_name, is_garbage_fragment, is_skip_prefix, strip_rich,
-};
+use rust_l10n::text_filters::{is_asset_name, is_garbage_fragment, is_skip_prefix, strip_rich};
 
 #[test]
 fn имена_ассетов() {

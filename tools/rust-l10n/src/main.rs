@@ -76,7 +76,8 @@ fn main() -> ExitCode {
 
 /// potgen: 0 — успех, 1 — ошибка обработки, 2 — ошибка аргументов.
 fn potgen_cli(argv: &[String]) -> u8 {
-    let mut options = PotgenOptions::new(std::env::current_dir().unwrap_or_else(|_| PathBuf::from(".")));
+    let mut options =
+        PotgenOptions::new(std::env::current_dir().unwrap_or_else(|_| PathBuf::from(".")));
     let mut help = false;
     let mut dump: Option<PathBuf> = None;
     let mut out: Option<PathBuf> = None;
@@ -133,7 +134,11 @@ fn potgen_cli(argv: &[String]) -> u8 {
     match potgen::run(&options) {
         Ok(res) => {
             let mode = if options.update { "update" } else { "dry" };
-            eprintln!("POT({mode}): {} entries -> {}", res.entries, res.out_path.display());
+            eprintln!(
+                "POT({mode}): {} entries -> {}",
+                res.entries,
+                res.out_path.display()
+            );
             let s = &res.stats;
             eprintln!(
                 "  inventory items: {}, new: {}, vanished: {}, triaged(classifier only): {}, rich: {}, merged twins: {}",
@@ -191,9 +196,11 @@ fn po2dat_cli(argv: &[String]) -> u8 {
             }
         };
         if let Err(message) = parsed {
-            eprintln!("rust-l10n po2dat: {message}
+            eprintln!(
+                "rust-l10n po2dat: {message}
 
-{USAGE}");
+{USAGE}"
+            );
             return 2;
         }
         i += 1;

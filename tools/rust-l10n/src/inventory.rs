@@ -21,7 +21,8 @@ use std::fs::File;
 use std::io::{BufRead, BufReader};
 use std::path::{Path, PathBuf};
 
-use serde_json::{Map, Value};
+use serde::Deserialize;
+use serde_json::Value;
 
 use rust_l10n_core::po::js_trim;
 
@@ -160,11 +161,34 @@ fn as_array(v: Option<&Value>) -> &[Value] {
     }
 }
 
-fn as_object(v: Option<&Value>) -> Option<&Map<String, Value>> {
+fn as_object(v: Option<&Value>) -> Option<&serde_json::Map<String, Value>> {
     match v {
         Some(Value::Object(o)) => Some(o),
         _ => None,
     }
+}
+
+/// Строка дампа: только поля, которые читает инвентарь. Всё остальное
+/// (`fields`, `type`, `summaries` и пр.) serde пропускает без аллокаций —
+/// именно на этом Rust и выигрывает у `JSON.parse` на 95 МБ дампа.
+#[derive(Debug, Default, Deserialize)]
+pub struct DumpRow {
+    #[serde(default)]
+    asset: Option<Value>,
+    #[serde(default)]
+    path_id: Option<Value>,
+    #[serde(default)]
+    dialogues: Option<Value>,
+    #[serde(default)]
+    raw_strings: Option<Value>,
+    #[serde(default)]
+    fsm_strings: Option<Value>,
+    #[serde(default)]
+    settings_keys: Option<Value>,
+    #[serde(default)]
+    color_parser_list: Option<Value>,
+    #[serde(default)]
+    strings: Option<Value>,
 }
 
 // ---------------------------------------------------------------------------
@@ -190,14 +214,11 @@ pub fn resolve_named_colors(s: &str, colors: &HashMap<String, String>) -> String
             .unwrap_or(0);
         if name_len > 0 && after[name_len..].starts_with('>') {
             let name = &after[..name_len];
-            match colors.get(name) {
-                Some(hex) => {
-                    out.push_str(hex);
-                    out.push('>');
-                    rest = &after[name_len + 1..];
-                    continue;
-                }
-                None => {}
+            if let Some(hex) = colors.get(name) {
+                out.push_str(hex);
+                out.push('>');
+                rest = &after[name_len + 1..];
+                continue;
             }
         }
         rest = after;
@@ -295,7 +316,16 @@ pub fn is_ui_string(s: &str) -> bool {
         return false;
     }
     // Имена состояний анимаций/ассетов.
-    if ["Normal", "Highlighted", "Pressed", "Selected", "Disabled", "Active"].contains(&s) {
+    if [
+        "Normal",
+        "Highlighted",
+        "Pressed",
+        "Selected",
+        "Disabled",
+        "Active",
+    ]
+    .contains(&s)
+    {
         return false;
     }
     // ALL CAPS с гласными = кнопка (BACK, HIDE, SKIP, LOG, OPTIONS).
@@ -404,14 +434,12 @@ fn compare_file_names(a: &str, b: &str) -> std::cmp::Ordering {
 /// Верхнеуровневый `"path_id"` из сырой строки (BigInt-точность в TS).
 /// Unity `path_id` — знаковый 64-битный хэш; i64 покрывает его целиком, а
 /// `JSON.parse` терял точность выше 2^53 (22 pid в реальном дампе).
-fn path_id_of(raw_line: &str, obj: &Map<String, Value>) -> Option<i64> {
-    if !obj.contains_key("path_id") {
-        return None;
-    }
+fn path_id_of(raw_line: &str, row: &DumpRow) -> Option<i64> {
+    row.path_id.as_ref()?;
     if let Some(text) = raw_path_id(raw_line) {
         return text.parse::<i64>().ok();
     }
-    match obj.get("path_id") {
+    match row.path_id.as_ref() {
         Some(Value::Number(n)) => n.as_i64().or_else(|| n.as_u64().map(|v| v as i64)),
         _ => None,
     }
@@ -428,12 +456,18 @@ fn raw_path_id(raw_line: &str) -> Option<&str> {
         let after_key = start + KEY.len();
         let rest = &raw_line[after_key..];
         let mut it = rest.char_indices().peekable();
-        while it.peek().is_some_and(|(_, c)| rust_l10n_core::po::js_ws(*c)) {
+        while it
+            .peek()
+            .is_some_and(|(_, c)| rust_l10n_core::po::js_ws(*c))
+        {
             it.next();
         }
         if let Some((_, ':')) = it.peek().copied() {
             it.next();
-            while it.peek().is_some_and(|(_, c)| rust_l10n_core::po::js_ws(*c)) {
+            while it
+                .peek()
+                .is_some_and(|(_, c)| rust_l10n_core::po::js_ws(*c))
+            {
                 it.next();
             }
             let digits_start = after_key + it.peek().map(|(i, _)| *i).unwrap_or(rest.len());
@@ -470,19 +504,19 @@ pub struct DumpScanner {
 
 impl DumpScanner {
     /// Одна строка чанка (`level*.jsonl`, `bundle_*.jsonl`, `resources.jsonl`).
-    pub fn add_chunk_row(&mut self, obj: &Map<String, Value>, raw_line: &str) {
-        self.collect_colors(obj);
-        self.collect_dialogues(obj, raw_line);
-        self.collect_bundle(obj);
-        self.collect_chunk_ui(obj);
-        self.collect_fsm(obj);
+    pub fn add_chunk_row(&mut self, row: &DumpRow, raw_line: &str) {
+        self.collect_colors(row);
+        self.collect_dialogues(row, raw_line);
+        self.collect_bundle(row);
+        self.collect_chunk_ui(row);
+        self.collect_fsm(row);
     }
 
     /// Одна строка `summaries.jsonl` (`stem` — имя ассета из строки).
-    pub fn add_summary_row(&mut self, obj: &Map<String, Value>, stem: &str) {
+    pub fn add_summary_row(&mut self, row: &DumpRow, stem: &str) {
         let mut seen: HashSet<&str> = HashSet::new();
         let mut entries: Vec<String> = Vec::new();
-        for raw in as_array(obj.get("settings_keys")) {
+        for raw in as_array(row.settings_keys.as_ref()) {
             let Some(sk) = as_object(Some(raw)) else {
                 continue;
             };
@@ -540,7 +574,11 @@ impl DumpScanner {
         // (порядок вставки, НЕ отсортированный).
         let mut seen_speakers: HashSet<String> = HashSet::new();
         let mut speakers: Vec<String> = Vec::new();
-        for entries in groups.iter().map(|(_, e)| e).chain(bundles.iter().map(|(_, e)| e)) {
+        for entries in groups
+            .iter()
+            .map(|(_, e)| e)
+            .chain(bundles.iter().map(|(_, e)| e))
+        {
             for e in entries {
                 let sp = py_strip(&e.speaker);
                 if !sp.is_empty() && seen_speakers.insert(sp.to_string()) {
@@ -593,8 +631,8 @@ impl DumpScanner {
         Inventory { items }
     }
 
-    fn collect_colors(&mut self, obj: &Map<String, Value>) {
-        let Some(cpl) = as_object(obj.get("color_parser_list")) else {
+    fn collect_colors(&mut self, row: &DumpRow) {
+        let Some(cpl) = as_object(row.color_parser_list.as_ref()) else {
             return;
         };
         for (name, hex) in cpl {
@@ -604,21 +642,19 @@ impl DumpScanner {
         }
     }
 
-    fn collect_dialogues(&mut self, obj: &Map<String, Value>, raw_line: &str) {
-        let raw = as_array(obj.get("dialogues"));
+    fn collect_dialogues(&mut self, row: &DumpRow, raw_line: &str) {
+        let raw = as_array(row.dialogues.as_ref());
         if raw.is_empty() {
             return;
         }
-        let Some(pid) = path_id_of(raw_line, obj) else {
+        let Some(pid) = path_id_of(raw_line, row) else {
             return;
         };
         let key = pid.to_string();
-        let group = self
-            .dialogues
-            .get_or_insert_with(&key, || PidGroup {
-                pid,
-                entries: Vec::new(),
-            });
+        let group = self.dialogues.get_or_insert_with(&key, || PidGroup {
+            pid,
+            entries: Vec::new(),
+        });
 
         // `seen` живёт в пределах ОДНОГО объекта дампа: одинаковые
         // (text, speaker) в разных строках одного path_id не дедупятся.
@@ -644,8 +680,8 @@ impl DumpScanner {
         }
     }
 
-    fn collect_bundle(&mut self, obj: &Map<String, Value>) {
-        let asset = as_string(obj.get("asset"));
+    fn collect_bundle(&mut self, row: &DumpRow) {
+        let asset = as_string(row.asset.as_ref());
         if !asset.starts_with("bundle_") {
             return;
         }
@@ -653,7 +689,7 @@ impl DumpScanner {
             .bundles
             .get_or_insert_with(asset, Vec::<DialogueEntry>::new);
 
-        let all = as_array(obj.get("raw_strings"));
+        let all = as_array(row.raw_strings.as_ref());
         if all.is_empty() {
             return;
         }
@@ -669,7 +705,7 @@ impl DumpScanner {
         if !rs.iter().any(|s| s.starts_with("line_")) {
             return;
         }
-        let obj_name = as_object(obj.get("strings"))
+        let obj_name = as_object(row.strings.as_ref())
             .map(|s| as_string(s.get("m_Name")))
             .unwrap_or("");
 
@@ -728,26 +764,21 @@ impl DumpScanner {
         }
     }
 
-    fn collect_chunk_ui(&mut self, obj: &Map<String, Value>) {
+    fn collect_chunk_ui(&mut self, row: &DumpRow) {
         let asset = {
-            let a = as_string(obj.get("asset"));
+            let a = as_string(row.asset.as_ref());
             if a.is_empty() {
                 "unknown"
             } else {
                 a
             }
         };
-        let entries = self
-            .chunk_ui
-            .get_or_insert_with(asset, Vec::<String>::new);
-        let local = self
-            .ui_local_seen
-            .entry(asset.to_string())
-            .or_default();
+        let entries = self.chunk_ui.get_or_insert_with(asset, Vec::<String>::new);
+        let local = self.ui_local_seen.entry(asset.to_string()).or_default();
 
         // Дедуп глобальный (на весь дамп): один и тот же лейбл из разных сцен
         // даёт одну запись. Для перевода это верно (текст один).
-        for raw in as_array(obj.get("raw_strings")) {
+        for raw in as_array(row.raw_strings.as_ref()) {
             let Value::String(raw) = raw else {
                 continue;
             };
@@ -768,9 +799,9 @@ impl DumpScanner {
         }
     }
 
-    fn collect_fsm(&mut self, obj: &Map<String, Value>) {
+    fn collect_fsm(&mut self, row: &DumpRow) {
         let asset = {
-            let a = as_string(obj.get("asset"));
+            let a = as_string(row.asset.as_ref());
             if a.is_empty() {
                 "unknown"
             } else {
@@ -778,12 +809,9 @@ impl DumpScanner {
             }
         };
         let entries = self.fsm.get_or_insert_with(asset, Vec::<String>::new);
-        let local = self
-            .fsm_local_seen
-            .entry(asset.to_string())
-            .or_default();
+        let local = self.fsm_local_seen.entry(asset.to_string()).or_default();
 
-        for raw in as_array(obj.get("fsm_strings")) {
+        for raw in as_array(row.fsm_strings.as_ref()) {
             let s = match raw {
                 Value::String(v) => py_strip(v),
                 _ => "",
@@ -835,7 +863,7 @@ pub fn find_summaries(dump_dir: &Path) -> Vec<PathBuf> {
 
 /// Построчный разбор JSONL: битые строки и не-объекты молча пропускаются
 /// (как `iter_jsonl_objects` в Python и `readJsonl` в TS-эталоне).
-fn for_each_row(path: &Path, mut f: impl FnMut(&Map<String, Value>, &str)) -> std::io::Result<()> {
+fn for_each_row(path: &Path, mut f: impl FnMut(&DumpRow, &str)) -> std::io::Result<()> {
     let file = File::open(path)?;
     let mut reader = BufReader::with_capacity(1 << 20, file);
     let mut buf: Vec<u8> = Vec::with_capacity(1 << 16);
@@ -850,10 +878,10 @@ fn for_each_row(path: &Path, mut f: impl FnMut(&Map<String, Value>, &str)) -> st
         if line.is_empty() {
             continue;
         }
-        let Ok(Value::Object(obj)) = serde_json::from_str::<Value>(line) else {
+        let Ok(row) = serde_json::from_str::<DumpRow>(line) else {
             continue;
         };
-        f(&obj, line);
+        f(&row, line);
     }
     Ok(())
 }
@@ -875,12 +903,12 @@ pub fn scan_dump(dump_dir: &Path) -> Result<Inventory, String> {
             .map_err(|e| format!("{}: {e}", fp.display()))?;
     }
     for fp in &summaries {
-        for_each_row(fp, |obj, _| {
-            let stem = match obj.get("asset") {
+        for_each_row(fp, |row, _| {
+            let stem = match row.asset.as_ref() {
                 Some(Value::String(s)) => s.as_str(),
                 _ => "summaries",
             };
-            scanner.add_summary_row(obj, stem);
+            scanner.add_summary_row(row, stem);
         })
         .map_err(|e| format!("{}: {e}", fp.display()))?;
     }
