@@ -660,6 +660,7 @@ interface CliArgs {
   timeout: number;
   ctxLimit: number;
   maxTokens: number;
+  help: boolean;
 }
 
 function parseArgs(argv: string[]): CliArgs {
@@ -671,10 +672,11 @@ function parseArgs(argv: string[]): CliArgs {
     include: [],
     dryRun: false,
     url: "http://127.0.0.1:1234",
-    model: "trans14",
+    model: "index-translate-9b",
     timeout: 180,
     ctxLimit: 1900,
     maxTokens: 1200,
+    help: false,
   };
   for (let i = 0; i < argv.length; i += 1) {
     const [flag, inline] = argv[i].split(/=(.*)/s) as [string, string | undefined];
@@ -717,15 +719,45 @@ function parseArgs(argv: string[]): CliArgs {
       case "--max-tokens":
         args.maxTokens = Number(value());
         break;
+      case "--help":
+      case "-h":
+        args.help = true;
+        break;
       default:
+        if (flag.startsWith("-")) throw new Error(`неизвестная опция: ${flag}`);
         break;
     }
   }
   return args;
 }
 
+const USAGE = `translate_local — батч-перевод пустых msgstr через локальную LLM
+
+  node translate_local.mts --lang <код> [--limit N] [--offset N] [--batch N]
+                           [--url URL] [--model ИМЯ] [--dry-run]
+
+  --lang      язык из config/language-priority.json (по умолчанию ru)
+  --limit     сколько строк перевести за прогон (0 = все пустые)
+  --offset    пропустить N пустых строк (для порций)
+  --batch     строк в одном запросе к модели (по умолчанию 5)
+  --url       OpenAI-compatible endpoint (по умолчанию http://127.0.0.1:1234)
+  --model     имя модели (по умолчанию index-translate-9b)
+  --dry-run   показать план без вызовов LLM
+`;
+
 async function main(argv: string[]): Promise<number> {
-  const a = parseArgs(argv);
+  let a: CliArgs;
+  try {
+    a = parseArgs(argv);
+  } catch (e) {
+    console.error(e instanceof Error ? e.message : String(e));
+    console.error(USAGE);
+    return 1;
+  }
+  if (a.help) {
+    console.log(USAGE);
+    return 0;
+  }
   const langs = translateLangs();
   if (!langs.includes(a.lang)) {
     console.error(`неизвестный язык "${a.lang}"; допустимые: ${langs.join(", ")}`);
