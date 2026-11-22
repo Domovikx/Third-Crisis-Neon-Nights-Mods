@@ -44,7 +44,7 @@
   `qa_translate`, `review_queue`, `translate_local`
 - [2026-11-21-port-build-deploy.md](2026-11-21-port-build-deploy.md) — **DONE** —
   `build.py`/`build_proxy.py` + `deploy.ps1` → `.mts`
-- [2026-11-21-dump-assets-island.md](2026-11-21-dump-assets-island.md) — **READY** —
+- [2026-11-21-dump-assets-island.md](2026-11-21-dump-assets-island.md) — **DOING** —
   решение по python-острову (UnityPy) и его CI-гардам
 - [2026-11-21-deprecate-old-repo.md](2026-11-21-deprecate-old-repo.md) — **DONE** —
   пометить старый `NeonTranslator` как DEPRECATED и не дать в него вернуться
