@@ -416,7 +416,59 @@ test("runQueue: banned cluster исправляется точечным рет�
     assert.equal(s.failed, 0);
     assert.equal(llm.requests.length, 2, "основной запрос + один исправляющий");
     assert.match(llm.requests[1], /ВАЖНО: Не используй сочетания/, "подсказка ушла в промпт");
-    assert.match(msgstrOf(w.poPath, "Ghh... What am I... Doing... "), /^Фф/);
+    assert.match(msgstrOf(w.poPath, "Ghh... What am I... Doing... ") ?? "", /^Фф/);
+  } finally {
+    await llm.close();
+    cleanup(w);
+  }
+});
+
+test("runQueue --repair: переводит заново строку, потерявшую ведущий маркер", async () => {
+  const w = work([entry("! Rosie said it", "ui", "Ах, Рози сказала это")]);
+  const llm = await fakeLlm(() => "! Рози сказала это");
+  try {
+    const s = await runQueue({
+      lang: "ru",
+      root: w.root,
+      poPath: w.poPath,
+      tmpDir: w.tmpDir,
+      url: llm.url,
+      batch: 1,
+      repair: true,
+      log: () => {},
+    });
+    assert.equal(s.queued, 1, "defective translation попал в очередь починки");
+    assert.equal(s.done, 1);
+    assert.equal(
+      msgstrOf(w.poPath, "! Rosie said it"),
+      "! Рози сказала это",
+      "маркер вернулся, перевод перезаписан",
+    );
+  } finally {
+    await llm.close();
+    cleanup(w);
+  }
+});
+
+test("runQueue: без --repair переведённая строка не перезаписывается", async () => {
+  const w = work([entry("! Rosie said it", "ui", "Ах, Рози сказала это")]);
+  const llm = await fakeLlm(() => "! Рози сказала это");
+  try {
+    const s = await runQueue({
+      lang: "ru",
+      root: w.root,
+      poPath: w.poPath,
+      tmpDir: w.tmpDir,
+      url: llm.url,
+      batch: 1,
+      log: () => {},
+    });
+    assert.equal(s.queued, 0, "обычная очередь пуста: строка переведена");
+    assert.equal(
+      msgstrOf(w.poPath, "! Rosie said it"),
+      "Ах, Рози сказала это",
+      "старый перевод не тронут",
+    );
   } finally {
     await llm.close();
     cleanup(w);

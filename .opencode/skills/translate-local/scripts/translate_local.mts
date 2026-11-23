@@ -369,7 +369,26 @@ export function validate(src: string, tr: string, lang: string): string | null {
   if (count(src, "<") !== count(tr, "<") || count(src, ">") !== count(tr, ">"))
     return "tag imbalance";
   if (lang === "ru" && BANNED_RX.test(tr)) return "banned cluster";
+  if (!keepsMarker(src, tr)) return "marker";
   return null;
+}
+
+/**
+ * Ведущий маркер реплики (`!`, `?`, `→`, `►`, `★`, `☆`, `•`) — часть текста,
+ * а не оформление: в игре это значок/пункт, и потеря «!» меняет смысл
+ * (`! Rosie said it` — про реплику Рози). Замер 2026-11-23: старый перевод
+ * потерял «!» и дописал «Ах,» — валидатор такое теперь ловит.
+ *
+ * Пары `!`/`¡` и `?`/`¿` считаются сохранением маркера (испанский набор).
+ */
+export function keepsMarker(src: string, tr: string): boolean {
+  const m = /^[!?¡¿→►★☆•]/u.exec(src);
+  if (!m) return true;
+  const mark = m[0];
+  if (tr.startsWith(mark)) return true;
+  const pair: Record<string, string> = { "!": "¡", "?": "¿" };
+  const alt = pair[mark];
+  return alt !== undefined && tr.startsWith(alt);
 }
 
 // --- запись po --------------------------------------------------------------
@@ -377,13 +396,18 @@ export function validate(src: string, tr: string, lang: string): string | null {
 /**
  * Заменить `msgstr` у записей с ключами из `updates`.
  *
- * Пишется ТОЛЬКО пустой `msgstr`: заполненный перевод не перезаписывается
- * никогда (одинаковый текст в другом контексте сохраняет свой перевод).
+ * По умолчанию пишется ТОЛЬКО пустой `msgstr`. `overwrite` включается режимом
+ * `--repair`: там перезаписываются записи, которые не прошли `validate` (потеря
+ * маркера, дисбаланс тегов) — без этого старый дефект не исправить никогда.
  * Остальное содержимое файла остаётся как было (побайтово, кроме переводов
  * строк: файл нормализуется в LF — как в Python-версии).
  * Запись атомарная: `.part` → rename (обрыв не обнулит каталог переводов).
  */
-export function applyMsgstrInPlace(path: string, updates: Map<string, string>): void {
+export function applyMsgstrInPlace(
+  path: string,
+  updates: Map<string, string>,
+  overwrite = false,
+): void {
   const lines = readFileSync(path, "utf8").split(/\r\n|\r|\n/);
   const out: string[] = [];
   let curCtxt = "";
@@ -419,7 +443,7 @@ export function applyMsgstrInPlace(path: string, updates: Map<string, string>): 
       }
       const oldEmpty = !poUnescape(oldVal.join(""));
       const next = updates.get(key);
-      if (next !== undefined && oldEmpty) out.push(`msgstr "${poEscape(next)}"`);
+      if (next !== undefined && (oldEmpty || overwrite)) out.push(`msgstr "${poEscape(next)}"`);
       else out.push(...lines.slice(i, j));
       i = j;
       curId = [];
@@ -498,6 +522,8 @@ export interface RunOptions {
   timeoutMs?: number;
   ctxLimit?: number;
   maxTokens?: number;
+  /** Режим починки: очередь — переведённые строки, не прошедшие `validate`. */
+  repair?: boolean;
   /** Куда писать отчёты (по умолчанию console.log; тесты глушат). */
   log?: (line: string) => void;
 }
@@ -588,7 +614,15 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
     keyCounts.set(k, (keyCounts.get(k) ?? 0) + 1);
   }
 
-  let todo = offset ? empty.slice(offset) : empty;
+  // --repair: очередь — не пустые, а ПЕРЕВЕДЁННЫЕ строки, которые не проходят
+  // validate (потеря маркера, дисбаланс тегов). Обычный прогон их не трогает.
+  let todo = opts.repair
+    ? entries.filter(
+        (e) => e.msgstr && !e.flags.includes("skip") && validate(e.msgid, e.msgstr, lang),
+      )
+    : empty;
+  if (opts.repair) log(`repair: ${todo.length} строк не проходят validate`);
+  todo = offset ? todo.slice(offset) : todo;
   if (limit) todo = todo.slice(0, limit);
   summary.queued = todo.length;
 
@@ -726,7 +760,7 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
           note(`DUPE key=${ctxt.slice(0, 30)}|${text.slice(0, 60)} x${count} (same text to all)`);
         }
       }
-      applyMsgstrInPlace(poPath, updates);
+      applyMsgstrInPlace(poPath, updates, opts.repair === true);
     }
     i += chunk.length;
     log(
@@ -748,6 +782,7 @@ interface CliArgs {
   batch: number;
   include: string[];
   dryRun: boolean;
+  repair: boolean;
   url: string;
   model: string;
   timeout: number;
@@ -764,6 +799,7 @@ function parseArgs(argv: string[]): CliArgs {
     batch: DEFAULT_BATCH,
     include: [],
     dryRun: false,
+    repair: false,
     url: "http://127.0.0.1:1234",
     model: DEFAULT_TRANSLATE_MODEL,
     timeout: 180,
@@ -796,6 +832,9 @@ function parseArgs(argv: string[]): CliArgs {
         break;
       case "--dry-run":
         args.dryRun = true;
+        break;
+      case "--repair":
+        args.repair = true;
         break;
       case "--url":
         args.url = value();
@@ -836,6 +875,8 @@ const USAGE = `translate_local — батч-перевод пустых msgstr �
   --url       OpenAI-compatible endpoint (по умолчанию http://127.0.0.1:1234)
   --model     имя модели (по умолчанию index-translate-9b)
   --dry-run   показать план без вызовов LLM
+  --repair    починить уже переведённые строки, не прошедшие validate
+              (маркер, дисбаланс тегов) — перезаписывает их
 `;
 
 async function main(argv: string[]): Promise<number> {
@@ -865,6 +906,7 @@ async function main(argv: string[]): Promise<number> {
     batch: a.batch,
     include: a.include,
     dryRun: a.dryRun,
+    repair: a.repair,
     url: a.url,
     model: a.model,
     timeoutMs: a.timeout * 1000,
