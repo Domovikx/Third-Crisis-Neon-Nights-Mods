@@ -39,3 +39,30 @@ test("softenedHits: падежи и синонимы считаются сохр
   assert.deepEqual(softenedHits("She spread her pussy.", "Она раздвинула киску."), []);
   assert.deepEqual(softenedHits("Fuck me!", "Трахни меня!"), []);
 });
+
+test("softenedHits: междометия и идиомы — не смягчение", () => {
+  // «Fuck!» как выкрик переводится «Чёрт/Бля» — это норма, а не потеря.
+  assert.deepEqual(
+    softenedHits("Fuck! That sound slipped out...", "Чёрт! Этот звук вырвался..."),
+    [],
+  );
+  assert.deepEqual(softenedHits("Fuck you're so wet", "Ох, бля, ты такая мокрая"), []);
+  // «snatch a pic» — про фото, а не про тело.
+  assert.deepEqual(softenedHits("let me snatch a pic of you", "дай сделать фото"), []);
+});
+
+test("softenedHits: падежи и приставки считаются сохранением", () => {
+  assert.deepEqual(softenedHits("a pair of boobs", "пара сисек"), []);
+  assert.deepEqual(softenedHits("in her ass", "в попе"), []);
+  assert.deepEqual(softenedHits("massive ass", "огромного зада"), []);
+  assert.deepEqual(softenedHits("Pocket Pussy Vendor", "Продавец карманных кисок"), []);
+  assert.deepEqual(softenedHits("I'd love to fuck your ass", "Я бы оттрахал твою задницу"), []);
+});
+
+test("softenedHits: реальная потеря откровенности ловится", () => {
+  assert.deepEqual(
+    softenedHits("I'd love to fuck your ass in my room", "затолкал тебя в комнату"),
+    ["ass", "fuck (sexual)"],
+  );
+  assert.deepEqual(softenedHits("make me cum", "доведёшь меня до конька"), ["cum/semen"]);
+});

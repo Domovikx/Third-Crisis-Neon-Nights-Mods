@@ -313,7 +313,7 @@ async function main(argv: string[]): Promise<number> {
       m: e.msgid,
       ru: e.msgstr,
       verdict: v,
-      clinical: clinicalHits(e.msgstr),
+      clinical: clinicalHits(e.msgstr, undefined, e.msgid),
       softened: softenedHits(e.msgid, e.msgstr),
       leak: leakHits(e.msgstr),
       script: LATIN_CYRILLIC_LANGS.has(cli.lang) ? foreignScriptHits(e.msgstr) : [],

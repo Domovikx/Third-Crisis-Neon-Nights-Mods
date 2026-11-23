@@ -19329,7 +19329,7 @@ msgstr "Кончить-... Пожа-алуйста... Н-н-н...!"
 #. rich_text: <color=#EB83FF>Cum-... please...!</color>
 msgctxt "ui"
 msgid "Cum-... please...!"
-msgstr "Ах... пожалуйста...!"
+msgstr "Кончить... пожалуйста...!"
 
 #. src: dialog
 msgctxt "ui"
@@ -20541,7 +20541,7 @@ msgstr "Член"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Dick - 10%"
-msgstr "Пенис - 10%"
+msgstr "Член - 10%"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -20566,7 +20566,7 @@ msgstr "Спермозорвь"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Dick grinding pussy"
-msgstr "Пенис, теребящий вагину"
+msgstr "Хуй, трущийся о киску"
 
 #. src: dialog
 msgctxt "ui"
@@ -25289,7 +25289,7 @@ msgstr "Чувствуя стыд."
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Feisty, heh. I'd love to fuck your ass in my room, bitch."
-msgstr "Дерзкая, хех. Я бы с удовольствием затолкал тебя в свою комнату, сука."
+msgstr "Дерзкая, хех. Я бы с удовольствием оттрахал твою задницу у себя в комнате, сука."
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -25817,7 +25817,7 @@ msgstr "Импланты в пальцах?"
 #. rich_text: <color=#EB83FF>Finger won't- nghh... fuck! Hhh... Cum, please- I have to- Hahh...</color>
 msgctxt "speaker:Zoey"
 msgid "Finger won't- nghh... fuck! Hhh... Cum, please- I have to- Hahh..."
-msgstr "Палец не может... М-м... Чёрт! Х-х-х... Ах, пожалуйста — я должна... Хаах..."
+msgstr "Палец не может... М-м... Чёрт! Х-х-х... Кончи, пожалуйста — я должна... Хаах..."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -44899,7 +44899,7 @@ msgstr "Нова держит Джея"
 #. src: dialog
 msgctxt "ui"
 msgid "Nova moves her fingers inside Zoeys Pussy, shifting Zoeys Focus back to pleasure forcibly"
-msgstr "Нова вводит пальцы во влагалище Зои, насильно возвращая её внимание к удовольствию."
+msgstr "Нова вводит пальцы в киску Зои, насильно возвращая её внимание к удовольствию."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50569,7 +50569,7 @@ msgstr "Открыть диалог фото"
 #. src: us
 msgctxt "ui"
 msgid "Pulled Flaps"
-msgstr "Оттянутые половые губы"
+msgstr "Оттянутые губы"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -62172,7 +62172,7 @@ msgstr "Тогда пора за кассу."
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Time to enjoy my drink while watching your ass walking around, eheheh..."
-msgstr "Настало время насладиться моим напитком, наблюдая, как ты ходишь вокруг, eheheh..."
+msgstr "Настало время насладиться напитком, наблюдая, как твоя попка ходит вокруг, эхех..."
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -72529,7 +72529,7 @@ msgstr "Зои: бедро-работа"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Zoey Cum Animation"
-msgstr "Анимация эякуляции Зои"
+msgstr "Анимация, где Зои кончает"
 
 #. src: dialog
 msgctxt "ui"

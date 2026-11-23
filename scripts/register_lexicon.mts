@@ -70,9 +70,56 @@ export const CLINICAL_RU: ClinicalTerm[] = [
   { name: "лобок", re: /(?<![\p{L}])лоб(?:ок|ка|ком|ке)(?![\p{L}])/iu, weak: true },
 ];
 
-/** Что считается клиничным в переводе. Пустой список — регистр чист. */
-export function clinicalHits(text: string, terms: ClinicalTerm[] = CLINICAL_RU): string[] {
-  return terms.filter((t) => !t.weak && t.re.test(text)).map((t) => t.name);
+/**
+ * Английское слово, которым оригинал называет ту же анатомию/действие.
+ *
+ * Нужно, чтобы не флагать перевод за клинику, которой полно в источнике:
+ * «Vaginal Sex» в статистике игры — не наша вина, и переводить её
+ * «киска»/«секс» означало бы врать против оригинала (замер 2026-11-23:
+ * из 19 «клинических» строк 17 были такими).
+ */
+const EN_CLINICAL: Record<string, RegExp> = {
+  вагина: /vagina|vaginal/i,
+  пенис: /penis|phallus/i,
+  "половые органы": /genital|sex organ/i,
+  "половой акт": /sexual intercourse|intercourse/i,
+  "анальный секс": /anal/i,
+  "оральный секс": /oral sex/i,
+  эякуляция: /ejaculat/i,
+  эрекция: /erection/i,
+  анус: /anus/i,
+  "задний проход": /anus/i,
+  клитор: /clitor/i,
+  матка: /uterus|womb/i,
+  гениталии: /genital/i,
+  мошонка: /scrotum/i,
+  "прямая кишка": /rectum/i,
+  промежность: /perineum/i,
+  мастурбация: /masturbat/i,
+  онанизм: /masturbat/i,
+  совокупление: /copulat/i,
+  копуляция: /copulat/i,
+  семяизвержение: /ejaculat/i,
+};
+
+/**
+ * Клинические термины в переводе, которых НЕТ в оригинале.
+ *
+ * Если источник сам называет орган клинически, перевод не виноват: это не
+ * смягчение и не «наша» стилистика. Пусто — регистр чист.
+ */
+export function clinicalHits(
+  text: string,
+  terms: ClinicalTerm[] = CLINICAL_RU,
+  source = "",
+): string[] {
+  return terms
+    .filter((t) => !t.weak && t.re.test(text))
+    .filter((t) => {
+      const en = EN_CLINICAL[t.name];
+      return !(en && source && en.test(source));
+    })
+    .map((t) => t.name);
 }
 
 /**
@@ -98,38 +145,44 @@ export const EXPLICIT_RU: ExplicitTerm[] = [
   },
   {
     name: "pussy/cunt",
-    en: /\b(?:pussy|cunt|snatch|quim)s?\b/iu,
-    ru: /(?<![\p{L}])(?:киск|пизд|вагин|щёлк|щелк|дыр[кч])/iu,
+    en: /\b(?:pussy|cunt|quim)s?\b|\bsnatch(?!\s+(?:a|the|up|it)\b)\b/iu,
+    ru: /(?<![\p{L}])(?:киск|кисок|пизд|вагин|щёлк|щелк|дыр[кч])/iu,
   },
   {
     name: "cum/semen",
     en: /\b(?:cum|semen|jizz|spunk)s?\b/iu,
-    ru: /(?<![\p{L}])(?:сперм|сем[яею]|конч|кончил|излил)/iu,
+    ru: /(?<![\p{L}])(?:сперм|сем[яею]|конч|кончил|излил|оргазм)/iu,
   },
   {
     name: "tits/boobs",
     en: /\b(?:tits?|titties|boobs?|breasts?)\b/iu,
-    ru: /(?<![\p{L}])(?:сиськ|титек|титеч|груд|буфер)/iu,
+    ru: /(?<![\p{L}])(?:сиськ|сисек|сис[ье]к|титьк|титек|титеч|груд|буфер)/iu,
   },
   {
     name: "ass",
-    en: /\b(?:ass|arse|butt)\b/iu,
-    ru: /(?<![\p{L}])(?:задниц|жоп|попк|поп[ауы]|жёп|жеп)/iu,
+    // Идиомы-усилители («big ass letters») — не про тело: они идут с существительным.
+    en: /\b(?:ass|arse|butt)\b(?!\s+(?:letters|words|joke|question|car|thing|of))/iu,
+    ru: /(?<![\p{L}])(?:задниц|зад[уыеома]?(?![\p{L}])|жоп|попк|поп[аеуы]|жёп|жеп|ягодиц|булк)/iu,
   },
   {
     name: "clit",
+    // CLIT — ещё и аббревиатура корпорации в игре, её и оставляют латиницей.
     en: /\b(?:clit|clitoris)\b/iu,
-    ru: /(?<![\p{L}])клитор/iu,
+    ru: /(?<![\p{L}])(?:клитор|CLIT)/iu,
   },
   {
     name: "nipple",
     en: /\b(?:nipples?)\b/iu,
-    ru: /(?<![\p{L}])сос(?:ок|к[аиу]|ками|ков)/iu,
+    ru: /(?<![\p{L}])сос(?:ок|к[аиуе]|ками|ков|ках|ки)/iu,
   },
   {
-    name: "fuck",
-    en: /\b(?:fuck|fucked|fucking)\b/iu,
-    ru: /(?<![\p{L}])(?:трах|еб[аеёуи]|ёб|йоб|сноша|секс)/iu,
+    // Только СЕКСУАЛЬНЫЙ fuck: «Fuck!», «fucking sink», «fuck it» — междометия и
+    // усилители, их нормально переводят как «чёрт/бля/грёбаный». Раньше правило
+    // требовало «трах/еб» и давало 223 ложных «смягчения» из 287 (замер 2026-11-23).
+    name: "fuck (sexual)",
+    en: /\b(?:fuck|fucked|fucking)\s+(?:me|him|her|them|us)\b|\bto\s+fuck\b|\bfuck(?:s|ing)?\b(?=[^.!?]{0,20}\b(?:pussy|ass|cunt|mouth)\b)/iu,
+    // «оттрахать» — трах с приставкой, поэтому границы слова перед ним нет.
+    ru: /(?:трах|еб[аеёуи]|ёб|йоб|сноша|секс|име[ею]т|киск|пизд)/iu,
   },
 ];
 
