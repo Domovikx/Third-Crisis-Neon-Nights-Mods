@@ -56,6 +56,56 @@ fn rich_text_из_шаблона_подставляется() {
 }
 
 #[test]
+fn rich_translation_из_комментария_переводчика_идёт_в_rt() {
+    // Основное имя — `rich_translation:`; `rich:` — старый алиас.
+    let pot = format!(
+        "{HEADER}
+#. rich_text: Hehe- That sounds- <color=#EB83FF>fun...</color>
+msgid \"Hehe- That sounds- fun...\"
+msgstr \"\"
+"
+    );
+    for (comment, expected) in [
+        (
+            "# rich_translation: Хе-хе- Звучит- <color=#EB83FF>весело...</color>",
+            "Хе-хе- Звучит- <color=#EB83FF>весело...</color>",
+        ),
+        (
+            "# rich: Хе-хе- Звучит- <color=#EB83FF>весело...</color>",
+            "Хе-хе- Звучит- <color=#EB83FF>весело...</color>",
+        ),
+        (
+            "# rich: старый
+# rich_translation: новый",
+            "новый",
+        ),
+    ] {
+        let fx = Fixture::new(
+            "rt",
+            &pot,
+            &format!(
+                "{HEADER}
+{comment}
+msgid \"Hehe- That sounds- fun...\"
+msgstr \"Хе-хе- Звучит- весело...\"
+"
+            ),
+        );
+        let (rows, _) = build_dat("xx", &fx.root).expect("сборка");
+        assert_eq!(rows.len(), 1);
+        assert_eq!(
+            rows[0].rt.as_deref(),
+            Some(expected),
+            "комментарий {comment:?}"
+        );
+        assert_eq!(
+            rows[0].r.as_deref(),
+            Some("Hehe- That sounds- <color=#EB83FF>fun...</color>")
+        );
+    }
+}
+
+#[test]
 fn без_перевода_и_без_rich_строки_нет() {
     let fx = Fixture::new(
         "empty",

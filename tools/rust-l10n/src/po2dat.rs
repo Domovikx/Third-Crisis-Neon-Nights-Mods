@@ -5,7 +5,7 @@
 //! `{"t": text, "x": translation, "r": rich_text?, "rt": rich_translation?, "sk": true?}`
 //!
 //! rich_text берётся из `#. rich_text:` комментариев `po/template.pot`,
-//! явный rich_translation — из `# rich: ...` в PO. Дубликаты текста решаются
+//! явный rich_translation — из `# rich_translation: ...` (алиас `# rich: ...`) в PO. Дубликаты текста решаются
 //! «earliest-ref-file-wins» (повторяет first-wins загрузчика C#).
 
 use std::collections::{HashMap, HashSet};
@@ -58,17 +58,30 @@ pub fn load_pot_rich(root: &Path) -> HashMap<String, String> {
     rich_map
 }
 
-/// Явный rich_translation из `# rich: ...` комментариев переводчика.
+/// Явный `rich_translation` из комментариев переводчика.
+///
+/// Основное имя — `# rich_translation: …` (совпадает с полем `rt`, которое
+/// читает рантайм). `# rich: …` остаётся алиасом: старые PO писались так.
+/// Если есть оба, побеждает `rich_translation:`.
 pub fn rt_override(entry: Option<&PoEntry>) -> String {
     let Some(entry) = entry else {
         return String::new();
     };
+    let mut legacy = "";
     for c in &entry.translator {
-        if let Some(rest) = c.strip_prefix("rich:") {
-            return js_trim(rest).to_string();
+        if let Some(rest) = c.strip_prefix("rich_translation:") {
+            let value = js_trim(rest);
+            if !value.is_empty() {
+                return value.to_string();
+            }
+        }
+        if legacy.is_empty() {
+            if let Some(rest) = c.strip_prefix("rich:") {
+                legacy = rest;
+            }
         }
     }
-    String::new()
+    js_trim(legacy).to_string()
 }
 
 /// `String.prototype.slice(0, n)` в UTF-16 code units (для отчёта о дублях).
