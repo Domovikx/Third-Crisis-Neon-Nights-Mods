@@ -536,14 +536,38 @@ export function person2Gender(text: string): "fem" | "masc" | null {
 }
 
 /**
+ * Вернуть рамку и маркер, которые модель потеряла.
+ *
+ * EN `> Text` и `(Text)` — часть строки: рантайм её показывает. Модель регулярно
+ * выбрасывает `>` и скобки, и ретрай не помогает (2026-11-23: 7 строк zh так и
+ * остались пустыми). Восстанавливаем детерминированно, до валидации.
+ */
+export function restoreFraming(src: string, tr: string, lang: string): string {
+  let out = tr.trim();
+  const s = src.trim();
+  if (s.startsWith(">") && !out.startsWith(">")) out = `> ${out}`;
+  if (s.endsWith(">") && !out.endsWith(">")) out = `${out} >`;
+  const openQuote = lang === "ru" ? "«" : "“";
+  const closeQuote = lang === "ru" ? "»" : "”";
+  if (/^[(（]/.test(s) && !/^[(（]/.test(out)) out = `（${out}`;
+  if (/[)）]$/.test(s) && !/[)）]$/.test(out)) out = `${out}）`;
+  if (/^["“]/.test(s) && !/^["“«]/.test(out) && !/^[(（]/.test(out)) out = `${openQuote}${out}`;
+  if (/["”]$/.test(s) && !/["”»]$/.test(out) && !/[)）]$/.test(out)) out = `${out}${closeQuote}`;
+  return out;
+}
+
+/**
  * Проверка ответа. `null` — ок; строка — причина отказа.
  * Длину НЕ проверяем (AGENTS.md): единственная сверка — смысловая (QA + человек).
  */
 export function validate(src: string, tr: string, lang: string): string | null {
   if (!tr) return "empty";
+  // Ведущий «>» — маркер реплики, а не тег: вырезаем его до сверки скобок.
+  const stripMarker = (x: string): string => x.replace(/^>\s?/, "");
+  const a = stripMarker(src);
+  const b = stripMarker(tr);
   const count = (s: string, ch: string): number => s.split(ch).length - 1;
-  if (count(src, "<") !== count(tr, "<") || count(src, ">") !== count(tr, ">"))
-    return "tag imbalance";
+  if (count(a, "<") !== count(b, "<") || count(a, ">") !== count(b, ">")) return "tag imbalance";
   if (lang === "ru" && BANNED_RX.test(tr)) return "banned cluster";
   if (!keepsMarker(src, tr)) return "marker";
   if (!keepsTokens(src, tr)) return "token";
@@ -594,7 +618,7 @@ export function keepsTokens(src: string, tr: string): boolean {
  * Пары `!`/`¡` и `?`/`¿` считаются сохранением маркера (испанский набор).
  */
 export function keepsMarker(src: string, tr: string): boolean {
-  const m = /^[!?¡¿→►★☆•]/u.exec(src);
+  const m = /^[!?¡¿→►★☆•>]/u.exec(src);
   if (!m) return true;
   const mark = m[0];
   if (tr.startsWith(mark)) return true;
@@ -602,6 +626,7 @@ export function keepsMarker(src: string, tr: string): boolean {
   const pair: Record<string, string[]> = {
     "!": ["¡", "！"],
     "?": ["¿", "？"],
+    ">": [">", "＞"],
   };
   return (pair[mark] ?? []).some((alt) => tr.startsWith(alt));
 }
@@ -1024,7 +1049,8 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
           const e = sub[k];
           const leak = stripSpeakerLeak(parsed[k]);
           if (leak.leaked) note(`LEAK src=${e.msgid.slice(0, 80)}`);
-          const problem = validate(e.msgid, leak.clean, lang);
+          const framed = restoreFraming(e.msgid, leak.clean, lang);
+          const problem = validate(e.msgid, framed, lang);
           if (problem) {
             note(
               `${problem.toUpperCase()} src=${e.msgid.slice(0, 80)} tr=${leak.clean.slice(0, 80)}`,
@@ -1051,7 +1077,7 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
               summary.failed += 0;
             }
           } else {
-            updates.set(entryKey(e), leak.clean);
+            updates.set(entryKey(e), framed);
             translatedKeys.push(entryKey(e));
             summary.done += 1;
           }

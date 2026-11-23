@@ -255,7 +255,7 @@ msgstr "（205？等等……那不是我应该进的房间吗！）"
 #. rich_text: <color=#EB83FF><i>("Klaudia's bunny bitch"...?! Wh-)</i></color>
 msgctxt "speaker:Zoey"
 msgid "(\"Klaudia's bunny bitch\"...?! Wh-)"
-msgstr ""
+msgstr "（“克劳迪娅的兔女郎婊子”……？！什——）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(... ! )</i></color>
@@ -9011,7 +9011,7 @@ msgstr "（等我回到家，就赶紧把这点……痒痒的解决了……然
 #. rich_text: <i>(Where did they even get these sea shells?)</i>
 msgctxt "ui"
 msgid "(Where did they even get these sea shells?)"
-msgstr ""
+msgstr "（他们到底从哪儿弄来这些贝壳的？）"
 
 #. src: dialog
 #. rich_text: <i>(Where the hell is she?)</i>
@@ -10313,7 +10313,7 @@ msgstr "> 你唯一能做的，就是把你的肉棒交给我随意摆布。不�
 #. rich_text: <i>> Alright then. You know the rules, right? It's "Ma'am" for you today.
 msgctxt "ui"
 msgid "> Alright then. You know the rules, right? It's \"Ma'am\" for you today."
-msgstr ""
+msgstr "> 好吧。你知道规矩吧？今天你得叫我“夫人”。"
 
 #. src: dialog
 #. rich_text: <i>> Alright, don't worry, you're in good hands, hun. Just relax and let me do my magic.
@@ -10459,7 +10459,7 @@ msgstr "> 为了你，我会破个例的，亲爱的。"
 #. rich_text: > <i>French Kiss?
 msgctxt "speaker:Leona"
 msgid "> French Kiss?"
-msgstr ""
+msgstr "> 法式接吻？"
 
 #. src: dialog
 #. rich_text: <i>> Fuck, I-... can barely... th-think-...
@@ -10616,7 +10616,7 @@ msgstr "> 我……我……！"
 #. rich_text: <i>> I-... d-don't worry, it's-... It's just... new to me, I think... >
 msgctxt "ui"
 msgid "> I-... d-don't worry, it's-... It's just... new to me, I think... >"
-msgstr ""
+msgstr "> 我……不……别担心，这……这只是……对我来说有点新，我想…… >"
 
 #. src: dialog
 #. rich_text: <i>> I-... fhhh... you are so fucking hot, Max... I-... mnhhh...
@@ -10946,13 +10946,13 @@ msgstr "> 是，夫人……！感觉好多了……！"
 #. rich_text: <i> > You'll get anything you ask for from my andro parts, hun.
 msgctxt "ui"
 msgid "> You'll get anything you ask for from my andro parts, hun."
-msgstr ""
+msgstr "> 从我的男性部件上，你随便要什么都行，亲爱的。"
 
 #. src: dialog
 #. rich_text: <i> > You're <b>such</b> a good girl, Val.
 msgctxt "ui"
 msgid "> You're such a good girl, Val."
-msgstr ""
+msgstr "> 你真是个乖女孩啊，瓦尔。"
 
 #. src: dialog
 #. rich_text: <i>> Your andro pussy. I want it. I want it now! I want it on my cock, gahhh!
@@ -13267,7 +13267,7 @@ msgstr "好了，够了。这是你的电池，亲爱的。替我向我们那个
 #. rich_text: <i>Alright, that's the second key. Time to get this back to Lio.)</i>
 msgctxt "speaker:Zoey"
 msgid "Alright, that's the second key. Time to get this back to Lio.)"
-msgstr "好了，这是第二把钥匙。该把它还给Lio了。"
+msgstr "好了，这是第二把钥匙。该把它还给Lio了。）"
 
 #. src: dialog
 msgctxt "ui"
@@ -15842,7 +15842,7 @@ msgstr "开始从窗户掉落的过场动画时间线"
 #. src: dialog
 msgctxt "ui"
 msgid "Begins rubbing her pussy\""
-msgstr "开始摩擦自己的小穴"
+msgstr "开始摩擦自己的小穴”"
 
 #. src: us
 msgctxt "ui"
@@ -16864,7 +16864,7 @@ msgstr "卡特尔的家伙"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CG 1 - fingering cum\""
-msgstr "CG 1 - 用手指刺激高潮"
+msgstr "CG 1 - 用手指刺激高潮”"
 
 #. src: us
 msgctxt "ui"
@@ -18834,7 +18834,7 @@ msgstr "无法找到 FSM："
 #. src: us
 msgctxt "ui"
 msgid "Could not find GameObject with name \""
-msgstr "无法找到名为“”的游戏对象。"
+msgstr "无法找到名为“”的游戏对象。”"
 
 #. src: us
 msgctxt "ui"
@@ -20582,7 +20582,7 @@ msgstr "告密了吗？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did rat out?)"
-msgstr "把……供出来了？"
+msgstr "把……供出来了？）"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25744,7 +25744,7 @@ msgstr "被性感熟女狠狠干了一顿后，他满脸通红。"
 #. src: dialog
 msgctxt "ui"
 msgid "Flustered by the \"compliment\""
-msgstr "被这“赞美”弄得心跳加速"
+msgstr "被这“赞美”弄得心跳加速”"
 
 #. src: dialog
 msgctxt "ui"
@@ -34675,7 +34675,7 @@ msgstr "互动"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Interactable\""
-msgstr "可交互"
+msgstr "可交互”"
 
 #. src: us
 msgctxt "ui"
@@ -38643,7 +38643,7 @@ msgstr "像……这样……？"
 #. src: us
 msgctxt "ui"
 msgid "Limb Effect \""
-msgstr "肢体效果"
+msgstr "肢体效果”"
 
 #. src: us
 msgctxt "ui"
@@ -38728,7 +38728,7 @@ msgstr "链接"
 #. src: us
 msgctxt "ui"
 msgid "Link ID: \""
-msgstr "链接ID："
+msgstr "链接ID：”"
 
 #. src: us
 msgctxt "ui"
@@ -41106,7 +41106,7 @@ msgstr "缺少组件："
 #. src: us
 msgctxt "ui"
 msgid "Missing skin \""
-msgstr "缺少皮肤"
+msgstr "缺少皮肤”"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59902,7 +59902,7 @@ msgstr "这听起来可不健康。"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "That dream must be messing with my head. )"
-msgstr "那个梦肯定把我脑子搞乱了。"
+msgstr "那个梦肯定把我脑子搞乱了。）"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60742,7 +60742,7 @@ msgstr "卡特尔……？"
 #. rich_text: Then again this blocker could be huge. I wonder how much the Cartel knows about this. )</i>
 msgctxt "speaker:Zoey"
 msgid "Then again this blocker could be huge. I wonder how much the Cartel knows about this. )"
-msgstr "话说回来，这个障碍物可能相当严重。我很好奇卡特尔对此了解多少。"
+msgstr "话说回来，这个障碍物可能相当严重。我很好奇卡特尔对此了解多少。）"
 
 #. src: dialog
 msgctxt "ui"
@@ -71872,7 +71872,7 @@ msgstr "ZenDots-Regular SDF"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Zero\""
-msgstr "零"
+msgstr "零”"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -72322,7 +72322,7 @@ msgstr "添加色情内容"
 #. src: dialog
 msgctxt "ui"
 msgid "as in acknowleging its about sex. Like \"right...\""
-msgstr "嗯……对，这事儿跟性有关。"
+msgstr "嗯……对，这事儿跟性有关。”"
 
 #. src: dialog
 msgctxt "ui"
@@ -73092,7 +73092,7 @@ msgstr "按摩椅"
 #. src: dialog
 msgctxt "ui"
 msgid "mad at yourself, struggling to get out the word skank (trauma moment)"
-msgstr "你气得对自己发火，却怎么也说不出口那个“贱人”——这是创伤时刻。"
+msgstr "你气得对自己发火，却怎么也说不出口那个“贱人”——这是创伤时刻。）"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -73489,7 +73489,7 @@ msgstr "准备修复"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "really that simple...?)"
-msgstr "真的就这么简单吗……？"
+msgstr "真的就这么简单吗……？）"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -73966,7 +73966,7 @@ msgstr "我已漂泊远方，如今孤身一人"
 #. src: dialog
 msgctxt "ui"
 msgid "vibrator still going)"
-msgstr "振动器还在响……"
+msgstr "振动器还在响……）"
 
 #. src: dialog
 msgctxt "ui"
@@ -74111,7 +74111,7 @@ msgstr "我早就知道这个梗了。"
 #. src: dialog
 msgctxt "ui"
 msgid "you just watched someone die because you couldn't save them.\""
-msgstr "你刚刚眼睁睁看着一个人死掉，只因为你没能救下他们。"
+msgstr "你刚刚眼睁睁看着一个人死掉，只因为你没能救下他们。”"
 
 #. src: dialog
 msgctxt "ui"

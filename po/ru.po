@@ -15,7 +15,7 @@ msgstr "! Был ли ScriptableObject задачи удалён или изме
 #. src: us
 msgctxt "ui"
 msgid "\"   Link Text: \""
-msgstr "Текст ссылки:"
+msgstr "«Текст ссылки:»"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -15950,7 +15950,7 @@ msgstr "Таймлайн: начало падения из окна"
 #. src: dialog
 msgctxt "ui"
 msgid "Begins rubbing her pussy\""
-msgstr "Начинает ласкать её киску."
+msgstr "Начинает ласкать её киску.»"
 
 #. src: us
 msgctxt "ui"
@@ -16972,7 +16972,7 @@ msgstr "ЧЛЕН КАРТЕЛИ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CG 1 - fingering cum\""
-msgstr "CG 1 - Оргазм от пальцев"
+msgstr "CG 1 - Оргазм от пальцев»"
 
 #. src: us
 msgctxt "ui"
@@ -18943,7 +18943,7 @@ msgstr "Не удалось найти FSM:"
 #. src: us
 msgctxt "ui"
 msgid "Could not find GameObject with name \""
-msgstr "Не удалось найти GameObject с именем"
+msgstr "Не удалось найти GameObject с именем»"
 
 #. src: us
 msgctxt "ui"
@@ -18958,7 +18958,7 @@ msgstr "Не удалось найти пустой слот для кнопки
 #. src: us
 msgctxt "ui"
 msgid "Could not find equipmentskin \""
-msgstr "Не удалось найти equipmentskin"
+msgstr "Не удалось найти equipmentskin»"
 
 #. src: us
 msgctxt "ui"
@@ -20696,7 +20696,7 @@ msgstr "Предатель?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did rat out?)"
-msgstr "Обличал ли крыс?"
+msgstr "Обличал ли крыс?）"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -34807,7 +34807,7 @@ msgstr "Взаимодействовать"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Interactable\""
-msgstr "Взаимодействие"
+msgstr "Взаимодействие»"
 
 #. src: us
 msgctxt "ui"
@@ -54393,7 +54393,7 @@ msgstr "Установите масштаб 2"
 #. src: us
 msgctxt "ui"
 msgid "SetObject second parameter was neither \"1\", nor \"9\""
-msgstr "Второй параметр SetObject не был ни «1», ни «9»."
+msgstr "Второй параметр SetObject не был ни «1», ни «9».»"
 
 #. src: us
 msgctxt "ui"
@@ -63523,7 +63523,7 @@ msgstr "Ультра-Лорд"
 #. src: dialog
 msgctxt "ui"
 msgid "Ultra Lube? \"Everything is a dildo, if you're wet enough.\""
-msgstr "Ультра-лубрикант? «Всё — дилдо, если ты достаточно влажная»."
+msgstr "Ультра-лубрикант? «Всё — дилдо, если ты достаточно влажная».»"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -71857,7 +71857,7 @@ msgstr "Твои ногти действительно вышли отлично
 # rich_translation: <i>Ваш новый счёт Neon-Trust Reserve открыт! Ваш пин-код: <<color=yellow>7192</color>.</i>
 msgctxt "ui"
 msgid "Your new Neon-Trust Reserve account is now open! Your new pin number is as follows... 7192>"
-msgstr "Ваш новый счёт Neon-Trust Reserve открыт! Ваш пин-код: 7192."
+msgstr "Ваш новый счёт Neon-Trust Reserve открыт! Ваш пин-код: 7192. >"
 
 #. src: dialog
 msgctxt "ui"
@@ -72044,7 +72044,7 @@ msgstr "ZenDots-Regular SDF"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Zero\""
-msgstr "Ноль"
+msgstr "Ноль»"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -74138,7 +74138,7 @@ msgstr "уплыли далеко, я стою один"
 #. src: dialog
 msgctxt "ui"
 msgid "vibrator still going)"
-msgstr "Вибратор всё ещё работает..."
+msgstr "Вибратор всё ещё работает...）"
 
 #. src: dialog
 msgctxt "ui"
