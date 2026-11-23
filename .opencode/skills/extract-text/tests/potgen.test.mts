@@ -757,6 +757,25 @@ test("условия правил: noLetters / shortToken / noWord / fragment", 
   for (const id of ["24/7 Kiosk", "Annoyed / Angry", "AMS/UI SoftMask", "Keys of the city"]) {
     assert.ok(!skipConditionMatches("saveKey", { msgid: id, rich: "" }), `не save-key: ${id}`);
   }
+  // snakeCase: имена ассетов/состояний/отладка Unity, а не текст для игрока.
+  for (const id of [
+    "CC_Option_Outfit_Futereswear Skintight Suit Dark",
+    "Apl_Female_Carte_Suit2 Grey",
+    "PMA_ClearPathfindingTarget: FollowerEntity is disabled!",
+    "Inspection_Lio_Crotch",
+  ]) {
+    assert.ok(skipConditionMatches("snakeCase", { msgid: id, rich: "" }), `snake: ${id}`);
+  }
+  for (const id of ["Change", "24/7 Kiosk", "Annoyed / Angry", "Alpha: N/A", "Neon-Trust"]) {
+    assert.ok(!skipConditionMatches("snakeCase", { msgid: id, rich: "" }), `не snake: ${id}`);
+  }
+  // fsmLabel: метка машины состояний Unity, а не текст для игрока.
+  for (const id of ["FSM Lio Printer", "FSM Nova Moving In", "Fsm Nova Move"]) {
+    assert.ok(skipConditionMatches("fsmLabel", { msgid: id, rich: "" }), `fsm: ${id}`);
+  }
+  for (const id of ["FSMatic", "The FSM is broken", "FSM"]) {
+    assert.ok(!skipConditionMatches("fsmLabel", { msgid: id, rich: "" }), `не fsm: ${id}`);
+  }
   assert.ok(
     skipConditionMatches("fragment", { msgid: "you request them. >", rich: REAL_FRAGMENT }),
   );
@@ -777,7 +796,7 @@ test("parseSkipPolicy: валидная политика и понятные о�
 
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:*","when":"nope"}]}', "p.json"),
-    /неизвестное условие "nope".*noLetters, shortToken, noWord, identifier, tokens, hexColor, assetPath, saveKey, fragment/,
+    /неизвестное условие "nope".*noLetters, shortToken, noWord, identifier, tokens, hexColor, assetPath, saveKey, snakeCase, fsmLabel, fragment/,
   );
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:Fontt","when":"noLetters"}]}', "p.json"),

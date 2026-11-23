@@ -143,6 +143,8 @@ export type SkipCondition =
   | "hexColor"
   | "assetPath"
   | "saveKey"
+  | "snakeCase"
+  | "fsmLabel"
   | "fragment";
 
 /** Все допустимые условия; неизвестное — ошибка политики, не тихий игнор. */
@@ -155,6 +157,8 @@ export const SKIP_CONDITIONS: readonly SkipCondition[] = [
   "hexColor",
   "assetPath",
   "saveKey",
+  "snakeCase",
+  "fsmLabel",
   "fragment",
 ];
 
@@ -164,6 +168,30 @@ const HAS_LETTER_RX = /\p{L}/u;
 /** «Нет ни одной буквы» — символы, цифры, пунктуация, пустота. */
 export function hasLetters(s: string): boolean {
   return HAS_LETTER_RX.test(s);
+}
+
+/**
+ * Метка FSM: ключ начинается со слова `FSM`.
+ *
+ * `FSM Lio Printer`, `FSM Nova Moving In`, `FSM Sex XP` — имена машин состояний
+ * Unity, которые игрок не видит. Замер 2026-11-23: 12 живых записей.
+ */
+export function isFsmLabel(s: string): boolean {
+  // Одинокое «FSM» — слово, а не метка: нужен текст после него.
+  return /^fsm\b\s*\S/iu.test(s.trim());
+}
+
+/**
+ * Snake_case-токен внутри ключа: `CC_Option_Outfit_…`, `Apl_Female_Carte_Suit2`,
+ * `PMA_IsNude`.
+ *
+ * Это имена ассетов, состояний FSM и отладочные сообщения Unity — игрок их не
+ * видит как текст, а перевод даёт смешной гибрид («Апл_Женский_Карточный_Формат2»).
+ * Признак структурный: буква + `_` + буква внутри одного слова. Замер
+ * 2026-11-23: 415 живых записей, из них в диалогах — 1 (и это путь к ассету).
+ */
+export function isSnakeCase(s: string): boolean {
+  return /\p{L}_\p{L}/u.test(s);
 }
 
 /**
@@ -299,6 +327,10 @@ export function skipConditionMatches(when: SkipCondition, ctx: SkipContext): boo
     case "assetPath":
       // Путь к ассету (`Assets/.../blackTex 1.png`) — это ссылка, не текст.
       return looksLikeAssetPath(ctx.msgid);
+    case "snakeCase":
+      return isSnakeCase(ctx.msgid);
+    case "fsmLabel":
+      return isFsmLabel(ctx.msgid);
     case "saveKey":
       // Save-ключ игры (`GlowingHoleKeys/103 Peeking Counter`) — идентификатор
       // состояния, а не реплика. Замер 2026-11-23: 85 живых записей.

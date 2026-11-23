@@ -1,0 +1,83 @@
+/**
+ * qa_judge.test.mts — детерминированная часть судьи (без модели).
+ *
+ * Проверяем: разбор бинарного вердикта (включая rubric-форму и болтливый
+ * ответ), равномерную выборку с фазой, фильтр кандидатов и список ключей.
+ */
+import { test } from "node:test";
+import assert from "node:assert/strict";
+
+import { candidates, parseConfirm, parseVerdict, sampleIndexes } from "./qa_judge.mts";
+import { inKeys, readKeys } from "../.opencode/skills/pipeline-common/scripts/qa_keys.mts";
+import { parsePo } from "../.opencode/skills/extract-text/scripts/po_file.mts";
+
+test("parseVerdict: бинарная форма и rubric-форма", () => {
+  assert.deepEqual(parseVerdict('{"verdict":"ok","reason":"same meaning"}'), {
+    score: 10,
+    bad: false,
+    reason: "same meaning",
+    dims: { content: undefined, grammar: undefined, gender: undefined },
+  });
+  const bad = parseVerdict(
+    'Вот:\n```json\n{"content":"bad","grammar":"ok","gender":"ok","verdict":"bad","reason":"wrong line"}\n```',
+  );
+  assert.equal(bad?.bad, true);
+  assert.equal(bad?.score, 2);
+  assert.equal(bad?.dims?.content, "bad");
+});
+
+test("parseVerdict: без вердикта — null, а не «всё хорошо»", () => {
+  assert.equal(parseVerdict("нет json"), null);
+  assert.equal(parseVerdict('{"reason":"нет вердикта"}'), null);
+});
+
+test("parseVerdict: rubric без verdict считается по размерностям", () => {
+  assert.equal(parseVerdict('{"content":"ok","grammar":"bad"}')?.bad, true);
+  assert.equal(parseVerdict('{"content":"ok","grammar":"ok"}')?.bad, false);
+});
+
+test("parseConfirm: вторая ступень снимает придирки", () => {
+  assert.equal(parseConfirm('{"verdict":"confirmed","reason":"wrong line"}'), true);
+  assert.equal(parseConfirm('{"verdict":"dismissed","reason":"paraphrase"}'), false);
+  assert.equal(parseConfirm('{"reason":"нет вердикта"}'), null);
+  assert.equal(parseConfirm("нет json"), null);
+});
+
+test("sampleIndexes: размер соблюдается, фаза сдвигает окно", () => {
+  const a = sampleIndexes(300, 10, 0);
+  const b = sampleIndexes(300, 10, 1);
+  assert.equal(a.length, 10);
+  assert.notDeepEqual(a, b, "вторая волна берёт другие строки");
+  assert.equal(sampleIndexes(5, 0).length, 0);
+});
+
+test("candidates: skip, пустые и числовой мусор не судим", () => {
+  const po = [
+    'msgid ""',
+    'msgstr ""',
+    "",
+    "#, skip",
+    'msgid "Bark 2"',
+    'msgstr "Гав 2"',
+    "",
+    'msgid "Hello there, friend."',
+    'msgstr "Привет, друг."',
+    "",
+    'msgid "12345"',
+    'msgstr "12345"',
+    "",
+  ].join("\n");
+  const got = candidates(parsePo(po).filter((e) => e.msgid)).map((e) => e.msgid);
+  assert.deepEqual(got, ["Hello there, friend."]);
+});
+
+test("readKeys: JSONL с контекстом и простые строки", () => {
+  const keys = readKeys('{"c":"speaker:Zoey","m":"Hello"}\nПривет, мир\n');
+  assert.equal(inKeys({ msgctxt: "speaker:Zoey", msgid: "Hello" }, keys), true);
+  assert.equal(inKeys({ msgctxt: "ui", msgid: "Hello" }, keys), false, "контекст различается");
+  assert.equal(
+    inKeys({ msgctxt: "ui", msgid: "Привет, мир" }, keys),
+    true,
+    "простая строка — любой контекст",
+  );
+});

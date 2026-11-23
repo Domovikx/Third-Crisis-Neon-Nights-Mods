@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NeonTranslator 1.0\n"
-"POT-Creation-Date: 2026-11-23 12:29+0000\n"
+"POT-Creation-Date: 2026-11-23 13:44+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -10773,6 +10773,8 @@ msgid "0.5 - Main Story - Buy Parts from Nova.MeetNova"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "0.5 - Main Story - Buy Parts from Nova.PayForParts"
 msgstr ""
@@ -10783,6 +10785,8 @@ msgid "0.5 - Main Story - Get Lio Parts"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "0.5 - Main Story - Get Lio Parts.GetPartsToLio"
 msgstr ""
@@ -10798,6 +10802,8 @@ msgid "0.6 - Main Story - Meet The Boss"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "0.6 - Main Story - Meet The Boss.GoToUpperRLD"
 msgstr ""
@@ -14534,6 +14540,8 @@ msgid "AIE"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "AIInteractable_AnimPoint: No anims to use! Check AnimsToPlay in:"
 msgstr ""
@@ -15574,6 +15582,8 @@ msgid "Acting up against our great new government. Every day we are briefed of a
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Action PMA_IsNude"
 msgstr ""
@@ -18828,36 +18838,50 @@ msgid "Apl_Anduo_Vils"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Apl_FatGuy Construction Helmet"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Apl_FatGuy Construction bottom"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Apl_FatGuy Construction top"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Apl_Female_Carte_Suit2 Grey"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Apl_Female_Carte_Suit2 Red"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Apl_Female_Torn Stockings_Light1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Apl_Female_shorts_leoprint 1"
 msgstr ""
@@ -18891,21 +18915,29 @@ msgid "Apl_Jenna_Suit"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Apl_NeckChip_Chapter3_FreeLio_Fake 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Apl_NeckChip_Chapter3_FreeLio_Fake 1_ItemLogicFsm"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Apl_NeckChip_Chapter3_FreeLio_Fake 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Apl_NeckChip_Chapter3_FreeLio_Fake 2_ItemLogicFsm"
 msgstr ""
@@ -18946,6 +18978,8 @@ msgid "Apl_Sarah_Top"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Apl_Sarah_Working Clothes"
 msgstr ""
@@ -20072,6 +20106,8 @@ msgid "Assembly Per Frame"
 msgstr ""
 
 #. src: dialog
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Assets/AssetPacks/NeonNights/Sequences/Optional/Sarah_Missions/SarahFlashback/Resources/blackTex 1.png"
 msgstr ""
@@ -23895,176 +23931,246 @@ msgid "CA~"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Hair_Color_Light Brown"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Hair_Color_Platinum Blond"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_OptionType_Base Skin"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_OptionType_Breast Size"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_OptionType_Dick Size"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_OptionType_Facial Hair"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_OptionType_Limb Effects"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Aviator Glasses"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Blue Chipset"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Business glasses"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Futereswear Gloves"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Futereswear Gloves 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Futereswear Skintightv2 Gloves"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Green Chipset"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Nipple Chain"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Nipple Chain Piercings"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Nipple Cow Bells"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Nipple Piercings"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Nipple Rings Large"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Nipple Rings Medium"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Nipple Rings Small"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Nose Piercing"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Red Chipset"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Accessory_Worn Gloves"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Bodywriting - SLUT"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Bodywriting - Tallymark"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Bodywriting - Tallymark Back Thigh\""
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Bodywriting - Tallymark Front Thigh"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Bottoms_Construction Worker Bottom"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Bottoms_Electrician Pants"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Bottoms_Suit pants"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Bottoms_Tracksuit Pants"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Bottoms_Tracksuit Pants V2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Bottoms_Wide Track Pants"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Bottoms_Wide Track Pants V2"
 msgstr ""
@@ -24077,21 +24183,29 @@ msgid "CC_Option_Bunny"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Cum Covered"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Cum Leaking"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Dick grinding pussy"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Drenched Pussy"
 msgstr ""
@@ -24104,6 +24218,8 @@ msgid "CC_Option_Drunk"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Hard Nipples"
 msgstr ""
@@ -24116,126 +24232,176 @@ msgid "CC_Option_Hazed"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Headgear_Construction Worker Helmet"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Headgear_Dark Beanie"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Headgear_Dark Beanie Damaged"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Headgear_Dark Beanie With Holes"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Headgear_Dark Beanie With Holes And Pin"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Headgear_Dark Beanie With Metal Spikes"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Headgear_Dark Beanie With Rivets"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Headgear_Electrician Helmet"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Headgear_Grey Beanie"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Headgear_Grey Beanie With Metal Spikes"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Headgear_Grey Beanie With Rivets"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Headgear_White Beanie"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Headgear_White Beanie With Metal Spikes"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Headgear_White Beanie With Rivets"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Messy Hair"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Outfit_Cartel_Suit_Grey 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Outfit_Enforcer Suit Pink"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Outfit_Futereswear Skintight Suit Dark"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Outfit_Futereswear Skintight Suit Light"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Outfit_Futereswear Skintightv2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Outfit_Futereswear Skintightv2 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Ruffled Hair"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Ruined Makeup"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Sticky Thighs"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Swollen Pussy"
 msgstr ""
@@ -24248,81 +24414,113 @@ msgid "CC_Option_Tipsy"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_Black Hoodie"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_Black Hoodie Up"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_Black Hoodie with Horns"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_Black suit shirt"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_Construction Worker Top"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_Electrician Top"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_Hoodie Ragged"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_Hoodie Ragged 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_Light Hoodie"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_Light Hoodie Up"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_Light Hoodie Up Horns"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_Suit top with black shirt"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_Suit top with white shirt"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_White suit shirt"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Tops_Zipper Hoodie"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "CC_Option_Wet Pussy"
 msgstr ""
@@ -25646,41 +25844,57 @@ msgid "Char_FatGuy_1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Char_Femboy_Andro_Hair_2_3 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Char_Femboy_Citizen_Caretaker Ryan"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Char_Femboy_Citizen_Hair_2_4 Cody"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Char_Femboy_Citizen_Hair_2_8 Roof Guy"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Char_Femboy_Citizen_Hobo 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Char_Femboy_Citizen_PokerPlayer Terrell"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Char_Femboy_Customer Room 203"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Char_GlowingHole_Man 1"
 msgstr ""
@@ -26687,71 +26901,99 @@ msgid "Closer...? O-okay..."
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Closet_Cypher 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Closet_Cypher 1_loop"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Closet_Cypher 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Closet_Cypher 3 - come live with me"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Closet_Cypher 3 - help her find a place to stay"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Closet_Cypher 3 - hope things get better"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Closet_Cypher 4"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Closet_Cypher 5"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Closet_Cypher 5_loop"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Closet_Cypher 6"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Closet_Cypher 7"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Closet_Cypher_cant leave"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Closet_JBox 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Closet_JBox 2"
 msgstr ""
@@ -26795,6 +27037,8 @@ msgid "Cnsm_Beer"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Cnsm_Neon Bliss"
 msgstr ""
@@ -26865,26 +27109,36 @@ msgid "CollectibleManager: Could not find collectible type '"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Collectibles_Kitty_Collect 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Collectibles_Kitty_Collect 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Collectibles_Kitty_Collect 3"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Collectibles_Kitty_Collect 4"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Collectibles_Kitty_Collect 5"
 msgstr ""
@@ -27163,6 +27417,8 @@ msgid "Completed in any save?"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Completely Dead PMA_SetPosition"
 msgstr ""
@@ -27946,6 +28202,8 @@ msgid "Cute. You aren't exactly in a position to make demands. I've got the mark
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "Cutscene - Klaudia comes inTimeline"
 msgstr ""
@@ -28285,6 +28543,8 @@ msgid "D-Rex"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "D-Rex - @d_rex_too"
 msgstr ""
@@ -28723,6 +28983,8 @@ msgid "Dani Susatyo - Guitarist"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Danja - @Typue_kartinki"
 msgstr ""
@@ -32719,6 +32981,8 @@ msgid "Drunk?"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Drunk_In_Love CutsceneTimeline"
 msgstr ""
@@ -35208,51 +35472,71 @@ msgid "FPS Limit"
 msgstr ""
 
 #. src: us
+#. skip: fsm-label
+#, skip
 msgctxt "ui"
 msgid "FSM AttachPrefabToOverworldCharacter"
 msgstr ""
 
 #. src: us
+#. skip: fsm-label
+#, skip
 msgctxt "ui"
 msgid "FSM AttachPrefabToOverworldCharacterFeet"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: fsm-label
+#, skip
 msgctxt "ui"
 msgid "FSM Cypher ManaFactory Machine"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: fsm-label
+#, skip
 msgctxt "ui"
 msgid "FSM Interactable for Get Lever"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: fsm-label
+#, skip
 msgctxt "ui"
 msgid "FSM Intro"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: fsm-label
+#, skip
 msgctxt "ui"
 msgid "FSM Leaving Seating"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: fsm-label
+#, skip
 msgctxt "ui"
 msgid "FSM Lio Printer"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: fsm-label
+#, skip
 msgctxt "ui"
 msgid "FSM Nova Moving In"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: fsm-label
+#, skip
 msgctxt "ui"
 msgid "FSM Sex XP"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: fsm-label
+#, skip
 msgctxt "ui"
 msgid "FSM Sit next to Felicia"
 msgstr ""
@@ -35937,6 +36221,8 @@ msgid "Female Enforcer #1112"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "Female Enforcer 1112"
 msgstr ""
@@ -35967,116 +36253,162 @@ msgid "Female Outside Guard 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "FemaleBunnygirl_Hair1_Light - Silhouette"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "FemaleBunnygirl_Hair2_Light Nude"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "FemaleBunnygirl_Hair4 - Showering"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "FemaleBunnygirl_Hair4 - Silhouette"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "FemaleBunnygirl_Hair4 - Silhouette Outside"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "FemaleBunnygirl_Hair5_Dark2 Outside BlueSilhouette"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "FemaleBunnygirl_Hair5_Dark2 Silhouette"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "FemaleBunnygirl_Hair6_Light Silhouette"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Cartel_Female Outside Guard 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Cartel_Female Outside Guard 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Citizen_Cartel Girl"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Citizen_Cartel Girl 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Citizen_Drunk Girl"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Citizen_Hair12 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Citizen_Hair3_3_Ashley 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Citizen_Hair4 BunnyChaser"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Citizen_Hair4 BunnyChaser _Test"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Citizen_Hair4_3 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Citizen_Hair7 SexCopy"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Citizen_Hair7 Upstairs Lewding"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Citizen_Hair7_Anne 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Citizen_Hair8 Sex Copy"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Citizen_Hair9 SexCopy"
 msgstr ""
@@ -36089,31 +36421,43 @@ msgid "Female_Enforcer"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Enforcer #1112"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Enforcer #1112_Train_Groper"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Enforcer #1392"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Enforcer #1520_Salon"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Enforcer #2103"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Female_Enforcer #4194"
 msgstr ""
@@ -36873,6 +37217,8 @@ msgid "FlashTop"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:Idle"
 msgid "Flashback Zoey Dialogue Presets"
 msgstr ""
@@ -37572,11 +37918,15 @@ msgid "Front Bangs"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: fsm-label
+#, skip
 msgctxt "ui"
 msgid "Fsm Nova Move"
 msgstr ""
 
 #. src: us
+#. skip: fsm-label
+#, skip
 msgctxt "ui"
 msgid "Fsm will not respond to Event:"
 msgstr ""
@@ -39877,51 +40227,71 @@ msgid "GlowingHole_205"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "GlowingHole_LoveLetters_4_LetterToJasmine 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "GlowingHole_Phonecall_AfterHangup 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "GlowingHole_Suitcase_Finale_1 - 1 Numbers Entered"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "GlowingHole_Suitcase_Finale_1 - 2 After Latches"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "GlowingHole_Suitcase_Finale_1 - 3 Opened Case"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "GlowingHole_Suitcase_Finale_2 - Redo - 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "GlowingHole_Suitcase_Finale_2 - Redo - 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "GlowingHole_Suitcase_Finale_4 - 2nd Overwhelm"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "GlowingHole_Suitcase_Finale_4 - 3rd Overwhelm"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "GlowingHole_Suitcase_Finale_4 - 4th Overwhelm"
 msgstr ""
@@ -40780,6 +41150,8 @@ msgid "Ground_Roof"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Ground_Roof with Outline"
 msgstr ""
@@ -41842,21 +42214,29 @@ msgid "Halloween_JOL"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Hallway_Neighbors 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Hallway_Neighbors 1_loop"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Hallway_Neighbors 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Hallway_Neighbors 2_loop"
 msgstr ""
@@ -44649,6 +45029,8 @@ msgid "Horny"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Horny Gain Intro_Cutscene_Dialogue_line_1-FSM"
 msgstr ""
@@ -48577,6 +48959,8 @@ msgid "Inspection Done"
 msgstr ""
 
 #. src: field:fsm
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Inspection_Lio_Crotch"
 msgstr ""
@@ -48766,11 +49150,15 @@ msgid "Intro_FromBar"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Intro_NailSalon_1_Salon_5_Chair_2 Choice Cancel"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Intro_NailSalon_1_Salon_5_Chair_2 Choice Continue"
 msgstr ""
@@ -51501,11 +51889,15 @@ msgid "K6A"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "K9 #243 - male_tan"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "K9 #399 - female_light"
 msgstr ""
@@ -53379,6 +53771,8 @@ msgid "Leggings"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Leila_Pub_03_Dildo Sex"
 msgstr ""
@@ -54264,36 +54658,50 @@ msgid "Limb EffectsZ"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "LimbEffect_Bodywriting - Klaudias Bunny"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "LimbEffect_Cum on Hair"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "LimbEffect_Groping_Female_Finger In Mouth"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "LimbEffect_Groping_Male - Engagement Ring"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "LimbEffect_Groping_Male_Choking - Engagement Ring"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "LimbEffect_Groping_Male_Finger In Mouth"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "LimbEffect_Groping_Male_Hairpull - Engagement Ring"
 msgstr ""
@@ -54329,6 +54737,8 @@ msgid "Line 4"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "Line 5"
 msgstr ""
@@ -54339,6 +54749,8 @@ msgid "Line 6"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "Line 7"
 msgstr ""
@@ -54470,6 +54882,8 @@ msgid "Lio? Is that your drone?"
 msgstr ""
 
 #. src: field:fsm
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "LioInspection_Penis"
 msgstr ""
@@ -54582,6 +54996,8 @@ msgid "Loading Pinup"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Lobby_masturbating_girl B"
 msgstr ""
@@ -55740,6 +56156,8 @@ msgid "MENU - SCROLL UP"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "MENU_CHIP BEAR G10-7"
 msgstr ""
@@ -56026,6 +56444,8 @@ msgid "Male Electrician Top"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "Male Enforcer 1025"
 msgstr ""
@@ -56062,11 +56482,15 @@ msgid "Male_Cartel_3"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Male_Cartel_3 Variant"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Male_Cartel_3 Variant 2"
 msgstr ""
@@ -56079,6 +56503,8 @@ msgid "Male_Cartel_4"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Male_Cartel_6_Tida Range"
 msgstr ""
@@ -56091,21 +56517,29 @@ msgid "Male_Enforcer"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Male_Enforcer #1025"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Male_Enforcer #1100"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Male_Enforcer #1483_Salon"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Male_Enforcer #5329"
 msgstr ""
@@ -56388,11 +56822,15 @@ msgid "Match"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Material 'reflectionMat' doesn't exist in path : Materials/reflection_mat"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Material 'reflectorMat' doesn't exist in path : Materials/reflector_mat"
 msgstr ""
@@ -59451,16 +59889,22 @@ msgid "NNTabMenuRemoteControl instance is null."
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "NN_UpgradeEntryUI, Assembly-CSharp"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "NN_UpgradeUI, Assembly-CSharp"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "NN_WaitressingMinigame_Customer, Assembly-CSharp"
 msgstr ""
@@ -59960,6 +60404,8 @@ msgid "Neon Nights - Gameplay Post Process Profile"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Neon Nights InputSystem_Actions"
 msgstr ""
@@ -60512,16 +60958,22 @@ msgid "Nidus"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "NidusFailCutscene_dialogue 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "NidusFailCutscene_dialogue 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "NidusFailCutscene_dialogue 3"
 msgstr ""
@@ -61574,11 +62026,15 @@ msgid "Nova - 11 Nova gropes Zoey in Breakroom"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Nova - 11 Nova gropes Zoey in Breakroom_line_5-FSM"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Nova - 11 Nova gropes Zoey in Breakroom_line_7-FSM"
 msgstr ""
@@ -61609,6 +62065,8 @@ msgid "Nova - 3 - Decline"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Nova - 3 - Decline_line_2-FSM"
 msgstr ""
@@ -61629,6 +62087,8 @@ msgid "Nova - 4 After Nova walks away"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Nova - 4 After Nova walks away_line_0-FSM"
 msgstr ""
@@ -61694,11 +62154,15 @@ msgid "Nova - 7 Grope Downstairs"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Nova - 7 Grope Downstairs_line_0-FSM"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Nova - 7 Grope Downstairs_line_9-FSM"
 msgstr ""
@@ -65022,6 +65486,8 @@ msgid "OnSwitched"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "OnTaskSet fired in PMA_CheckTaskStatus, but _Task or _MissionToCheck is null."
 msgstr ""
@@ -66400,21 +66866,29 @@ msgid "PMA SetCanShowBubble"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "PMA_AddHorny("
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "PMA_AddHorny*"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "PMA_AddHorny+"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "PMA_AddHorny-"
 msgstr ""
@@ -66434,11 +66908,15 @@ msgid "PMA_AddHorny4"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "PMA_ClearPathfindingTarget: FollowerEntity is disabled!"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "PMA_ClearSpineCharacterAnimation: '"
 msgstr ""
@@ -66451,16 +66929,22 @@ msgid "PMA_Down"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "PMA_Fade2DLight: no Light set in"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "PMA_FadeVolume is missing AudioSource Reference:"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "PMA_SetExpressionFromDialogueLine: line \""
 msgstr ""
@@ -67463,16 +67947,22 @@ msgid "Pinup_Klaudia"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Pinup_Zoey Bunny thighjob"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Pinup_Zoey drunk with Klaudia"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Pinup_Zoey drunk with Klaudia 2"
 msgstr ""
@@ -67844,6 +68334,8 @@ msgid "Play Yes cutscene"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "Play Zoey flustered dialogue"
 msgstr ""
@@ -68749,6 +69241,8 @@ msgid "Play-Regular SDFBg"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Play-Regular SDF_Outline"
 msgstr ""
@@ -68897,21 +69391,29 @@ msgid "Player walked past the door where Nova is waiting"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Player walks up stairs without paying_first_time_1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Player walks up stairs without paying_first_time_2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Player walks up stairs without paying_first_time_3"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Player walks up stairs without paying_repeat"
 msgstr ""
@@ -72145,31 +72647,43 @@ msgid "Requires"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Brad_Missiongive 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Brad_Missiongive 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_DealerCondom 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_DealerCondom 2_no"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_DealerCondom 2_yes"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_DealerCondom 3_yes"
 msgstr ""
@@ -72182,111 +72696,155 @@ msgid "Res_FindCondom"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Lio_Cypher_Gadget 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Lio_Cypher_Gadget 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Lio_Cypher_Gadget 3"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Lio_Cypher_Gadget 4"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Lio_Cypher_Gadget 5"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Lio_Cypher_Gadget 6"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Lio_Cypher_Gadget 6_lie"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Lio_Cypher_Gadget 7"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Lio_Jan 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Manafactory_machine 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Manafactory_machine 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Manafactory_machine 3"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Nidus_Laundry Room Key"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Nidus_RustyDoor 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Nidus_RustyDoor 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Nidus_RustyDoor 3"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Nidus_RustyDoor Lube Loop"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Nidus_RustyDoor door loop"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Nidus_RustyDoor door opens"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Nidus_RustyDoor tool fail"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Nidus_RustyDoor tool get"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_Nidus_RustyDoor tool inspect"
 msgstr ""
@@ -72299,61 +72857,85 @@ msgid "Res_Nidus_Vent"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_StumbleCutscene 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_StumbleCutscene 1_line_8-FSM"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_StumbleCutscene 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_StumbleCutscene 3"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_StumbleCutscene 4"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_StumbleCutscene 4 lick it off"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_StumbleCutscene 4 lick it off 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_StumbleCutscene 4 lick it off_line_5-FSM"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_StumbleCutscene 4 wipe off"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_StumbleCutscene 4 wipe off 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_StumbleCutscene 4 wipe off 3"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Res_StumbleCutscene 4 wipe off 3_line_5-FSM"
 msgstr ""
@@ -72592,6 +73174,8 @@ msgid "Resistance?"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Resitendial_SouthEastGuards_3_Alone - Get Involved"
 msgstr ""
@@ -72914,6 +73498,8 @@ msgid "Right GAG Bark"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "Right GAG Bark 2"
 msgstr ""
@@ -75156,16 +75742,22 @@ msgid "Sentinel Type - BigNoodleTooOblique SDF"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Sentinel Type - BigNoodleTooOblique SDF_DropShadow"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Sentinel Type - BigNoodleTooOblique SDF_NoOutline"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Sentinel Type - BigNoodleTooOblique SDF_Outline"
 msgstr ""
@@ -80613,6 +81205,8 @@ msgid "Suitcase bad End 1 Intro CutsceneTimeline"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "Suitcase bad End 2 CutsceneTimeline"
 msgstr ""
@@ -80738,6 +81332,8 @@ msgid "SuitcaseBadend - CartelHideout - 16"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 16_line_2-FSM"
 msgstr ""
@@ -80768,6 +81364,8 @@ msgid "SuitcaseBadend - CartelHideout - 17_line_15-FSM"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 17_line_4-FSM"
 msgstr ""
@@ -81185,6 +81783,8 @@ msgid "SuitcaseMission"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "SuitcaseUI CanvasTimeline"
 msgstr ""
@@ -81592,6 +82192,8 @@ msgid "TCNN DEV TEAM"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "TCNN Universal Render Pipeline Asset_Renderer"
 msgstr ""
@@ -85768,26 +86370,36 @@ msgid "Transit_Max_0"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Transit_SexScene_2_Yes 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Transit_SexScene_2_Yes 1_line_20-FSM"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Transit_SexScene_2_Yes 1_line_9-FSM"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Transit_SexScene_2_Yes 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Transit_SexScene_3_Yes 1\""
 msgstr ""
@@ -85910,6 +86522,8 @@ msgid "Trigger Events 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "Trigger to highlight doorTimeline"
 msgstr ""
@@ -87143,6 +87757,8 @@ msgid "UNLOCK ALL entries"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "URP Spine Renderer Asset_Renderer"
 msgstr ""
@@ -88443,6 +89059,8 @@ msgid "UpdateTooltip"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Updating Clothing DO NOT USE_Zoey"
 msgstr ""
@@ -89360,6 +89978,8 @@ msgid "Virtual Mouse Cursor"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "VirtualAddict_2_0_Ready_Alive 1"
 msgstr ""
@@ -89811,6 +90431,8 @@ msgid "WAC"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "WARNING: PMA_WaitForHornyQuest is deprecated"
 msgstr ""
@@ -91400,6 +92022,8 @@ msgid "Waitressing - Mira Order 2"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "Waitressing - NN_UpgradesContainer"
 msgstr ""
@@ -99621,16 +100245,22 @@ msgid "gyslain le blanc"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "handlesOut must be the same size as Constants.STEAM_CONTROLLER_MAX_COUNT!"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "handlesOut must be the same size as Constants.STEAM_INPUT_MAX_ACTIVE_LAYERS!"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "handlesOut must be the same size as Constants.STEAM_INPUT_MAX_COUNT!"
 msgstr ""
@@ -99827,6 +100457,8 @@ msgid "know... *hic* fuckin"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "lady_turkiz - Producer"
 msgstr ""
@@ -100077,11 +100709,15 @@ msgid "mad at yourself, struggling to get out the word skank (trauma moment)"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "masturbationStyle_Blocker not set"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "masturbationStyle_RubPussy not set"
 msgstr ""
@@ -100097,46 +100733,64 @@ msgid "message attached"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "messy_Blong strands1\"w"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "messy_Blong strands1]l"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "messy_Blong strands2\"w"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "messy_Blong strands2]l"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "messy_Blong strands3\"w"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "messy_Blong strands3]l"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "messy_Blong strands4\"w"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "messy_Blong strands4]l"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "messy_Blong strands5"
 msgstr ""
@@ -100215,6 +100869,8 @@ msgid "neB z"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "ni_kanojo - @ni_kanojo"
 msgstr ""
@@ -100315,6 +100971,8 @@ msgid "oh my god what have i gotten myself into?"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "ohm_ena - Animator"
 msgstr ""
@@ -100340,11 +100998,15 @@ msgid "open"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "originsOut must be the same size as Constants.STEAM_CONTROLLER_MAX_ORIGINS!"
 msgstr ""
 
 #. src: us
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "originsOut must be the same size as Constants.STEAM_INPUT_MAX_ORIGINS!"
 msgstr ""
@@ -100402,11 +101064,15 @@ msgid "penis Up2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "petplay sprite only_Atlas"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "petplay sprite only_SkeletonData"
 msgstr ""
@@ -100427,6 +101093,8 @@ msgid "picture mode"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "piper - @piper_vates"
 msgstr ""
@@ -100452,6 +101120,8 @@ msgid "play dialogue 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "play dialogue 2"
 msgstr ""
@@ -100507,36 +101177,50 @@ msgid "pull out phone"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "pussy_lick 0"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "pussy_lick_clit 0"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "pussy_lick_deep 0"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "pussy_lick_deep 1_5x speed"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "pussy_lick_deep 1_5x speed 0"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "pussy_suck_clit 0"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "pussy_tongue_fuck 0"
 msgstr ""
@@ -100842,6 +101526,8 @@ msgid "start cutscene"
 msgstr ""
 
 #. src: field:fsm
+#. skip: snake-case
+#, skip
 msgctxt "ui"
 msgid "stat_perversion"
 msgstr ""

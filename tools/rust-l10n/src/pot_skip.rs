@@ -200,6 +200,8 @@ pub enum SkipCondition {
     HexColor,
     AssetPath,
     SaveKey,
+    SnakeCase,
+    FsmLabel,
     Fragment,
 }
 
@@ -215,6 +217,8 @@ impl SkipCondition {
             "hexColor" => Some(SkipCondition::HexColor),
             "assetPath" => Some(SkipCondition::AssetPath),
             "saveKey" => Some(SkipCondition::SaveKey),
+            "snakeCase" => Some(SkipCondition::SnakeCase),
+            "fsmLabel" => Some(SkipCondition::FsmLabel),
             "fragment" => Some(SkipCondition::Fragment),
             _ => None,
         }
@@ -230,6 +234,8 @@ impl SkipCondition {
             SkipCondition::HexColor => "hexColor",
             SkipCondition::AssetPath => "assetPath",
             SkipCondition::SaveKey => "saveKey",
+            SkipCondition::SnakeCase => "snakeCase",
+            SkipCondition::FsmLabel => "fsmLabel",
             SkipCondition::Fragment => "fragment",
         }
     }
@@ -344,6 +350,8 @@ pub fn skip_condition_matches(when: SkipCondition, msgid: &str, rich: &str) -> b
         SkipCondition::HexColor => is_hex_color(msgid),
         SkipCondition::AssetPath => looks_like_asset_path(msgid),
         SkipCondition::SaveKey => is_save_key(msgid),
+        SkipCondition::SnakeCase => is_snake_case(msgid),
+        SkipCondition::FsmLabel => is_fsm_label(msgid),
         SkipCondition::Fragment => classify_rich(msgid, rich).relation == RichRelation::Suffix,
     }
 }
@@ -406,6 +414,33 @@ pub fn looks_like_asset_path(s: &str) -> bool {
         ]
         .iter()
         .any(|ext| lower.contains(&format!(".{ext}")))
+}
+
+/// Метка FSM: ключ начинается со слова `FSM` (1:1 с TS `isFsmLabel`).
+///
+/// `FSM Lio Printer`, `FSM Nova Moving In` — имена машин состояний Unity,
+/// игрок их не видит. Замер 2026-11-23: 12 живых записей.
+pub fn is_fsm_label(s: &str) -> bool {
+    let t = s.trim();
+    if t.len() < 4 || !t[..3].eq_ignore_ascii_case("fsm") {
+        return false;
+    }
+    let mut rest = t[3..].chars();
+    // Одинокое «FSM» — слово, а не метка: нужен текст после него.
+    matches!(rest.next(), Some(c) if !is_letter(c)) && rest.any(|c| !c.is_whitespace())
+}
+
+/// Snake_case-токен внутри ключа: `CC_Option_Outfit_…`, `PMA_IsNude`.
+///
+/// 1:1 с TS (`isSnakeCase`). Имена ассетов, состояний FSM и отладочные
+/// сообщения Unity: игрок их не видит как текст, а перевод даёт гибрид
+/// («Апл_Женский_Карточный_Формат2»). Признак — буква, `_`, буква в одном
+/// слове. Замер 2026-11-23: 415 живых записей, в диалогах — одна (путь).
+pub fn is_snake_case(s: &str) -> bool {
+    let chars: Vec<char> = s.chars().collect();
+    chars
+        .windows(3)
+        .any(|w| is_letter(w[0]) && w[1] == '_' && is_letter(w[2]))
 }
 
 /// Save-ключ игры: префикс до первого `/` оканчивается на `Keys`/`Key`.

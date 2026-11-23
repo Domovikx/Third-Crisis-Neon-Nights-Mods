@@ -36,13 +36,16 @@ import { join, resolve } from "node:path";
 import process from "node:process";
 
 import { scanDump } from "../../extract-text/scripts/inventory.mts";
+import { inKeys, readKeys } from "../../pipeline-common/scripts/qa_keys.mts";
+import { isPromptLeak } from "../../../../scripts/leak_guard.mts";
+import { LATIN_CYRILLIC_LANGS, hasForeignScript } from "../../../../scripts/script_guard.mts";
 import {
   parsePo,
   poEscape,
   poUnescape,
   type PoEntry,
 } from "../../extract-text/scripts/po_file.mts";
-import { hasSubstToken, substTokens } from "../../pipeline-common/scripts/text_filters.mts";
+import { substTokens } from "../../pipeline-common/scripts/text_filters.mts";
 import { loadLanguagePriority, translateLangs } from "../../../../scripts/languages.mts";
 
 export const REPO_ROOT = resolve(import.meta.dirname, "../../../..");
@@ -388,10 +391,40 @@ export function batchPrompt(items: PoEntry[], context?: ReadonlyMap<string, stri
   );
 }
 
-// --- ответ модели -----------------------------------------------------------
+/**
+ * Промпт улучшения: у нас уже есть перевод, надо сделать его лучше.
+ *
+ * Отличие от обычного перевода — модель видит текущий вариант и правит его,
+ * а не переводит заново: так меньше дрейфа смысла (TSSR делает то же).
+ */
+export function improvePrompt(items: PoEntry[], context?: ReadonlyMap<string, string[]>): string {
+  const ctxLines: string[] = [];
+  items.forEach((e, i) => {
+    for (const line of context?.get(e.msgid) ?? []) ctxLines.push(`// ${i + 1} ${line}`);
+  });
+  const lines = items.map((e, i) => {
+    const sp = speakerOf(e);
+    return `${i + 1}. EN: ${e.msgid}${sp ? ` (speaker: ${sp})` : ""}\n   RU: ${e.msgstr}`;
+  });
+  const contextBlock = ctxLines.length
+    ? `Context for meaning (lines starting with // are NOT translated):\n${ctxLines.join("\n")}\n`
+    : "";
+  return (
+    contextBlock +
+    `Improve each Russian translation: keep the same meaning and facts, keep the adult register exactly as explicit as the English source (no softening, no clinical terms), ` +
+    `make the language natural, preserve markup tags. Reply with exactly ${items.length} lines in format "N. improved translation".\n` +
+    lines.join("\n")
+  );
+}
+
+// --- ответ модели ---
 
 const RESP_RX = /^\s*(\d+)\s*[.)]\s?(.*)$/;
-const SPEAKER_LEAK_RX = /\s*\(speaker:[^)]*\)\s*$/i;
+// Утечка метаданных промпта в текст: английская и русская формы. Модель
+// переводит «(speaker: Zoey)» и оставляет «(говорящий: Зои)» / «(эмоция: …)» —
+// в игре это видно как часть реплики (проверено 2026-11-23: 42 строки в ru).
+const SPEAKER_LEAK_RX =
+  /\s*\((?:speaker|emotion|говорящ[а-яё]*|говорит|эмоци[а-яё]*)\s*:[^)]*\)\s*$/iu;
 
 /** Убрать эхо `(speaker: X)`, которое модель копирует из промпта. */
 export function stripSpeakerLeak(tr: string): { clean: string; leaked: boolean } {
@@ -424,11 +457,43 @@ export function parseResponse(text: string, n: number): string[] | null {
       .map((line) => line.trim())
       .filter(Boolean);
     if (lines.length === 1) {
-      const bare = lines[0].replace(/^N\s*[.)]\s*/i, "").trim();
+      const bare = stripEchoLabel(lines[0].replace(/^N\s*[.)]\s*/i, ""));
       if (bare) return [bare];
     }
   }
   return null;
+}
+
+/**
+ * Срезать эхо метки из ответа модели.
+ *
+ * В improve-режиме промпт показывает пару `EN: …` / `RU: …`, и модель иногда
+ * копирует `RU: ` в начало перевода — в игре это видно как часть реплики
+ * (проверено 2026-11-23: 6 строк из 10). Метка срезается только в начале.
+ */
+export function stripEchoLabel(text: string): string {
+  return text.replace(/^(?:RU|EN|RUS|ENG)\s*:\s*/iu, "").trim();
+}
+
+/**
+ * Рамка реплики: кавычки/скобки по краям — часть текста.
+ *
+ * EN `"…"` → RU `«…»` — допустимая смена стиля, поэтому проверяем не символ,
+ * а НАЛИЧИЕ открывающей и закрывающей рамки. Потеря кавычки превращает реплику
+ * в повествование (проверено 2026-11-23: improve уронил `"Я искренне…`).
+ */
+export function keepsFraming(src: string, tr: string): boolean {
+  const s = src.trim();
+  const t = tr.trim();
+  const opens = (x: string): string => (/^["«„“]/.test(x) ? "q" : /^[([]/.test(x) ? "b" : "");
+  const closes = (x: string): string => (/["»“”]$/.test(x) ? "q" : /[)\]]$/.test(x) ? "b" : "");
+  // Проверяем только ПАРНУЮ рамку: у обрезанных ключей дампа (`Did rat out?)`,
+  // `... pussy"`) рамка односторонняя, и требовать её от перевода бессмысленно.
+  const a = opens(s);
+  if (a && a === closes(s) && a !== opens(t)) return false;
+  const c = closes(s);
+  if (c && c === opens(s) && c !== closes(t)) return false;
+  return true;
 }
 
 /**
@@ -444,6 +509,13 @@ export function validate(src: string, tr: string, lang: string): string | null {
   if (!keepsMarker(src, tr)) return "marker";
   if (!keepsTokens(src, tr)) return "token";
   if (!keepsNumbering(src, tr)) return "numbering";
+  if (!keepsFraming(src, tr)) return "framing";
+  // Модель иногда возвращает не перевод, а собственный промпт (4 строки в ru,
+  // 2026-11-23). Такое в игре видно как текст реплики, поэтому не пишем.
+  if (isPromptLeak(tr)) return "prompt leak";
+  // Гомоглифы: имя Lio превращалось в «Лิโอ» (тайский) и «Лيو» (арабский) в 13
+  // строках ru. Для иероглифических языков проверка не применяется.
+  if (LATIN_CYRILLIC_LANGS.has(lang) && hasForeignScript(tr)) return "foreign script";
   return null;
 }
 
@@ -601,27 +673,34 @@ async function callLm(
   timeoutMs: number,
   maxTokens: number,
 ): Promise<string> {
-  const res = await fetch(`${url.replace(/\/+$/, "")}/v1/chat/completions`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      model,
-      messages: [
-        { role: "system", content: system },
-        { role: "user", content: `/no_think ${user}` },
-      ],
-      temperature: 0.3,
-      max_tokens: maxTokens,
-      // Гасим «размышления» модели: с ними токены уходят в reasoning_content,
-      // ответ пустеет/обрезается, а скорость падает. Работает ТОЛЬКО это поле
-      // (проверено 2026-11-23 по логам LM Studio: /no_think не помогает).
-      reasoning_effort: "none",
-    }),
-    signal: AbortSignal.timeout(timeoutMs),
-  });
+  let res: Response;
+  try {
+    res = await fetch(`${url.replace(/\/+$/, "")}/v1/chat/completions`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model,
+        messages: [
+          { role: "system", content: system },
+          { role: "user", content: `/no_think ${user}` },
+        ],
+        temperature: 0.3,
+        max_tokens: maxTokens,
+        // Гасим «размышления» модели: с ними токены уходят в reasoning_content,
+        // ответ пустеет/обрезается. LM Studio понимает reasoning_effort,
+        // llama.cpp — только chat_template_kwargs (проверено 2026-11-23).
+        reasoning_effort: "none",
+        chat_template_kwargs: { enable_thinking: false },
+      }),
+      signal: AbortSignal.timeout(timeoutMs),
+    });
+  } catch (err) {
+    // Node прячет причину в `cause`: без неё «fetch failed» бесполезен.
+    const cause = (err as { cause?: { message?: string } }).cause?.message ?? "";
+    throw new Error(`fetch failed: ${(err as Error).message}${cause ? ` (${cause})` : ""}`);
+  }
   if (!res.ok) {
-    // Тело ответа обязательно: LM Studio на 400 объясняет причину
-    // (контекст, шаблон, размер), без него диагностика — гадание.
+    // Тело ответа обязательно: сервер объясняет причину (контекст, шаблон).
     const body = await res.text().catch(() => "");
     throw new Error(`HTTP ${res.status} ${res.statusText}: ${body.slice(0, 300)}`);
   }
@@ -655,6 +734,10 @@ export interface RunOptions {
   repair?: boolean;
   /** Каталог дампа для контекста сцены (без него контекст не передаётся). */
   dumpDir?: string;
+  /** Режим улучшения: переписывать УЖЕ переведённые строки. */
+  improve?: boolean;
+  /** Ограничить очередь строками из списка `qa_judge --out` (ключи). */
+  keys?: ReadonlySet<string>;
   /** Пауза между повторами запроса, мс (тесты ставят 0). */
   retryDelayMs?: number;
   /** Куда писать отчёты (по умолчанию console.log; тесты глушат). */
@@ -749,12 +832,20 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
 
   // --repair: очередь — не пустые, а ПЕРЕВЕДЁННЫЕ строки, которые не проходят
   // validate (потеря маркера, дисбаланс тегов). Обычный прогон их не трогает.
-  let todo = opts.repair
-    ? entries.filter(
-        (e) => e.msgstr && !e.flags.includes("skip") && validate(e.msgid, e.msgstr, lang),
-      )
-    : empty;
+  let todo = opts.improve
+    ? entries.filter((e) => e.msgstr && !e.flags.includes("skip"))
+    : opts.repair
+      ? entries.filter(
+          (e) => e.msgstr && !e.flags.includes("skip") && validate(e.msgid, e.msgstr, lang),
+        )
+      : empty;
+  if (opts.keys) {
+    const before = todo.length;
+    todo = todo.filter((e) => inKeys(e, opts.keys as ReadonlySet<string>));
+    log(`keys: ${todo.length} из ${before} строк попали в список`);
+  }
   if (opts.repair) log(`repair: ${todo.length} строк не проходят validate`);
+  if (opts.improve) log(`improve: ${todo.length} переведённых строк к улучшению`);
   todo = offset ? todo.slice(offset) : todo;
   if (limit) todo = todo.slice(0, limit);
   summary.queued = todo.length;
@@ -819,7 +910,9 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
               url,
               model,
               formatPromptN(system, sub.length),
-              batchPrompt(sub, sceneContext),
+              opts.improve
+                ? improvePrompt(summary ? sub : sub, sceneContext)
+                : batchPrompt(sub, sceneContext),
               timeoutMs,
               maxTokens,
             );
@@ -898,6 +991,15 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
             } else {
               summary.failed += 1;
             }
+          } else if (opts.improve) {
+            // В improve пустая/такая же строка — не улучшение, не пишем.
+            if (leak.clean && leak.clean.trim() !== e.msgstr.trim()) {
+              updates.set(entryKey(e), leak.clean);
+              translatedKeys.push(entryKey(e));
+              summary.done += 1;
+            } else {
+              summary.failed += 0;
+            }
           } else {
             updates.set(entryKey(e), leak.clean);
             translatedKeys.push(entryKey(e));
@@ -918,7 +1020,7 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
           note(`DUPE key=${ctxt.slice(0, 30)}|${text.slice(0, 60)} x${count} (same text to all)`);
         }
       }
-      applyMsgstrInPlace(poPath, updates, opts.repair === true);
+      applyMsgstrInPlace(poPath, updates, opts.repair === true || opts.improve === true);
     }
     i += chunk.length;
     log(
@@ -941,6 +1043,9 @@ interface CliArgs {
   include: string[];
   dryRun: boolean;
   repair: boolean;
+  improve: boolean;
+  /** Файл со списком строк на вычитку (`qa_judge` → `.bad.jsonl`). */
+  keys?: string;
   dumpDir?: string;
   url: string;
   model: string;
@@ -959,6 +1064,7 @@ function parseArgs(argv: string[]): CliArgs {
     include: [],
     dryRun: false,
     repair: false,
+    improve: false,
     url: "http://127.0.0.1:1234",
     model: DEFAULT_TRANSLATE_MODEL,
     timeout: 180,
@@ -994,6 +1100,12 @@ function parseArgs(argv: string[]): CliArgs {
         break;
       case "--repair":
         args.repair = true;
+        break;
+      case "--improve":
+        args.improve = true;
+        break;
+      case "--keys":
+        args.keys = value();
         break;
       case "--dump":
         args.dumpDir = value();
@@ -1038,6 +1150,8 @@ const USAGE = `translate_local — батч-перевод пустых msgstr �
   --model     имя модели (по умолчанию index-translate-9b)
   --dry-run   показать план без вызовов LLM
   --dump <d>  каталог дампа: передавать модели соседние реплики сцены
+  --improve   улучшать уже переведённые строки (повторные пассы качества)
+  --keys <f>  ограничить улучшение строками из списка (.bad.jsonl судьи)
   --repair    починить уже переведённые строки, не прошедшие validate
               (маркер, дисбаланс тегов) — перезаписывает их
 `;
@@ -1070,6 +1184,8 @@ async function main(argv: string[]): Promise<number> {
     include: a.include,
     dryRun: a.dryRun,
     repair: a.repair,
+    improve: a.improve,
+    keys: a.keys ? readKeys(readFileSync(resolve(REPO_ROOT, a.keys), "utf8")) : undefined,
     dumpDir: a.dumpDir,
     url: a.url,
     model: a.model,

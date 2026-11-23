@@ -182,6 +182,41 @@ fn условия_правил() {
             "не save-key: {id:?}"
         );
     }
+    for id in [
+        "CC_Option_Outfit_Futereswear Skintight Suit Dark",
+        "Apl_Female_Carte_Suit2 Grey",
+        "PMA_ClearPathfindingTarget: FollowerEntity is disabled!",
+        "Inspection_Lio_Crotch",
+    ] {
+        assert!(
+            skip_condition_matches(SkipCondition::SnakeCase, id, ""),
+            "snake: {id:?}"
+        );
+    }
+    for id in [
+        "Change",
+        "24/7 Kiosk",
+        "Annoyed / Angry",
+        "Alpha: N/A",
+        "Neon-Trust",
+    ] {
+        assert!(
+            !skip_condition_matches(SkipCondition::SnakeCase, id, ""),
+            "не snake: {id:?}"
+        );
+    }
+    for id in ["FSM Lio Printer", "FSM Nova Moving In", "Fsm Nova Move"] {
+        assert!(
+            skip_condition_matches(SkipCondition::FsmLabel, id, ""),
+            "fsm: {id:?}"
+        );
+    }
+    for id in ["FSMatic", "The FSM is broken", "FSM"] {
+        assert!(
+            !skip_condition_matches(SkipCondition::FsmLabel, id, ""),
+            "не fsm: {id:?}"
+        );
+    }
     // Настоящие подписи остаются: у них есть слово.
     for real in ["ACCESS", "ACHIEVEMENTS", "SAVEFILENAME", "x y ZZZ"] {
         assert!(
