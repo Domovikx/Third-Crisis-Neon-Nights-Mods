@@ -424,6 +424,13 @@ export interface SkipRule {
   id: string;
   /** Шаблон метки `#. src:` (точная метка или префикс `*`). */
   src: string;
+  /**
+   * Метки, которые правило НЕ трогает, даже если они совпали с `src`
+   * (та же грамматика). Нужно, чтобы сузить правило по данным: например,
+   * `shortToken` для всего `raw:*`, кроме `raw:MonoBehaviour`, где лежат
+   * настоящие подписи (`ACCESS`, `ACHIEVEMENTS`).
+   */
+  srcExclude: string[];
   /** Условие из `pot_skip.mts`. */
   when: SkipCondition;
   /** `false` — правило остаётся в политике для ревью, но не действует. */
@@ -485,7 +492,13 @@ export function parseSkipPolicy(text: string, source = "<skip-policy>"): SkipPol
     }
     const rule = raw as Record<string, unknown>;
     for (const key of Object.keys(rule)) {
-      if (key !== "id" && key !== "src" && key !== "when" && key !== "enabled") {
+      if (
+        key !== "id" &&
+        key !== "src" &&
+        key !== "srcExclude" &&
+        key !== "when" &&
+        key !== "enabled"
+      ) {
         throw new Error(
           `skip-политика ${source}: правило #${index + 1} — неизвестное поле "${key}"`,
         );
@@ -507,6 +520,27 @@ export function parseSkipPolicy(text: string, source = "<skip-policy>"): SkipPol
     }
     const srcError = validatePolicyPattern(src);
     if (srcError) throw new Error(`skip-политика ${source}: правило "${id}" — ${srcError}`);
+    const srcExclude: string[] = [];
+    if (rule.srcExclude !== undefined) {
+      if (!Array.isArray(rule.srcExclude)) {
+        throw new Error(
+          `skip-политика ${source}: правило "${id}" — srcExclude должен быть массивом меток`,
+        );
+      }
+      for (const pattern of rule.srcExclude) {
+        if (typeof pattern !== "string") {
+          throw new Error(
+            `skip-политика ${source}: правило "${id}" — srcExclude: ожидалась строка, ` +
+              `получено ${typeof pattern}`,
+          );
+        }
+        const patternError = validatePolicyPattern(pattern);
+        if (patternError) {
+          throw new Error(`skip-политика ${source}: правило "${id}" — srcExclude: ${patternError}`);
+        }
+        srcExclude.push(pattern);
+      }
+    }
     const when = rule.when;
     if (typeof when !== "string" || !SKIP_CONDITIONS.includes(when as SkipCondition)) {
       throw new Error(
@@ -517,7 +551,13 @@ export function parseSkipPolicy(text: string, source = "<skip-policy>"): SkipPol
     if (rule.enabled !== undefined && typeof rule.enabled !== "boolean") {
       throw new Error(`skip-политика ${source}: правило "${id}" — enabled должен быть boolean`);
     }
-    rules.push({ id, src, when: when as SkipCondition, enabled: rule.enabled !== false });
+    rules.push({
+      id,
+      src,
+      srcExclude,
+      when: when as SkipCondition,
+      enabled: rule.enabled !== false,
+    });
   });
 
   return { path: source, rules };
@@ -713,7 +753,9 @@ export function applySkipPolicy(
       slot.comments.find((c) => c.startsWith("rich_text: "))?.slice("rich_text: ".length) ?? "";
     const rule = active.find(
       (r) =>
-        srcMatchesPattern(r.src, slot.src) && skipConditionMatches(r.when, { msgid: text, rich }),
+        srcMatchesPattern(r.src, slot.src) &&
+        !r.srcExclude.some((pattern) => srcMatchesPattern(pattern, slot.src)) &&
+        skipConditionMatches(r.when, { msgid: text, rich }),
     );
     if (!rule) continue;
     slot.skip = rule.id;

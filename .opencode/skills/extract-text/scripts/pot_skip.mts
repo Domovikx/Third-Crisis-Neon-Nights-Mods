@@ -133,10 +133,15 @@ export function classifyRich(msgid: string, rich: string): RichCheck {
 }
 
 /** Условия правил skip-политики (имена — контракт JSON, менять нельзя молча). */
-export type SkipCondition = "noLetters" | "shortToken" | "fragment";
+export type SkipCondition = "noLetters" | "shortToken" | "noWord" | "fragment";
 
 /** Все допустимые условия; неизвестное — ошибка политики, не тихий игнор. */
-export const SKIP_CONDITIONS: readonly SkipCondition[] = ["noLetters", "shortToken", "fragment"];
+export const SKIP_CONDITIONS: readonly SkipCondition[] = [
+  "noLetters",
+  "shortToken",
+  "noWord",
+  "fragment",
+];
 
 /** Есть ли в строке хоть одна буква (`\p{L}`). */
 const HAS_LETTER_RX = /\p{L}/u;
@@ -149,6 +154,36 @@ export function hasLetters(s: string): boolean {
 /** Максимальная длина «короткого токена» в code points. */
 export const SHORT_TOKEN_MAX_CHARS = 12;
 
+/** Сколько букв должно быть в токене, чтобы он считался словом. */
+export const WORD_MIN_LETTERS = 3;
+
+/** Символ внутри токена: буква или цифра (`\p{L}`/`\p{N}`). */
+const WORD_CHAR_RX = /[\p{L}\p{N}]/u;
+
+/**
+ * Есть ли в строке хотя бы одно «слово» — токен из ≥3 букв.
+ *
+ * Токен — максимальный отрезок букв/цифр; цифры в нём разрешены (иначе
+ * `B33`, `5A?` и подобное считались бы словами), но считаются только буквы.
+ * Замер 2026-11-23: на `raw:*` условие совпадает с 3 138 записями, из них
+ * 2 961 — токены без пробелов, которые уже закрывает `shortToken`, а 177 —
+ * ровно бинарный шум с пробелом (`wK Ax`, `j A`, `w? |b`), который иначе не
+ * ловится ничем. Настоящие подписи (`ACCESS`, `ACHIEVEMENTS`, `SAVEFILENAME`)
+ * не трогает: у них есть слово.
+ */
+export function hasWord(text: string): boolean {
+  let letters = 0;
+  for (const ch of text) {
+    if (WORD_CHAR_RX.test(ch)) {
+      if (HAS_LETTER_RX.test(ch)) letters += 1;
+      continue;
+    }
+    if (letters >= WORD_MIN_LETTERS) return true;
+    letters = 0;
+  }
+  return letters >= WORD_MIN_LETTERS;
+}
+
 /** Контекст проверки условия: ключ, rich_text и провенанс записи. */
 export interface SkipContext {
   msgid: string;
@@ -159,6 +194,7 @@ export interface SkipContext {
  * Сработало ли условие правила на записи.
  *
  * `noLetters` — в ключе нет букв; `shortToken` — нет пробелов и ≤12 символов;
+ * `noWord` — нет ни одного токена из ≥3 букв (бинарный шум raw-скана);
  * `fragment` — ключ это хвост `rich_text` (та же чистка, что у инварианта).
  * Провенанс (`src`) проверяет вызывающий: условие о тексте, не о метке.
  */
@@ -168,6 +204,9 @@ export function skipConditionMatches(when: SkipCondition, ctx: SkipContext): boo
       return !hasLetters(ctx.msgid);
     case "shortToken":
       return !/\s/.test(ctx.msgid) && cpLength(ctx.msgid) <= SHORT_TOKEN_MAX_CHARS;
+    case "noWord":
+      // Бинарный шум raw-скана (`wK Ax`, `w? |b`): ни одного токена из ≥3 букв.
+      return !hasWord(ctx.msgid);
     case "fragment":
       return classifyRich(ctx.msgid, ctx.rich).relation === "suffix";
     default:

@@ -112,6 +112,20 @@ fn условия_правил() {
         "«123»",
         ""
     ));
+    // noWord: нет ни одного токена из >=3 букв (примеры владельца + шум).
+    for noisy in ["w? |b", "wK Ax", "j A", "v 0.5.7-pr", "UI"] {
+        assert!(
+            skip_condition_matches(SkipCondition::NoWord, noisy, ""),
+            "noWord должен ловить {noisy:?}"
+        );
+    }
+    // Настоящие подписи остаются: у них есть слово.
+    for real in ["ACCESS", "ACHIEVEMENTS", "SAVEFILENAME", "x y ZZZ"] {
+        assert!(
+            !skip_condition_matches(SkipCondition::NoWord, real, ""),
+            "noWord не должен трогать {real:?}"
+        );
+    }
     assert!(skip_condition_matches(
         SkipCondition::Fragment,
         "you request them. >",

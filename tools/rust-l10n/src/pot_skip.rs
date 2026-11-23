@@ -194,6 +194,7 @@ pub fn classify_rich(msgid: &str, rich: &str) -> RichCheck {
 pub enum SkipCondition {
     NoLetters,
     ShortToken,
+    NoWord,
     Fragment,
 }
 
@@ -203,6 +204,7 @@ impl SkipCondition {
         match value {
             "noLetters" => Some(SkipCondition::NoLetters),
             "shortToken" => Some(SkipCondition::ShortToken),
+            "noWord" => Some(SkipCondition::NoWord),
             "fragment" => Some(SkipCondition::Fragment),
             _ => None,
         }
@@ -212,6 +214,7 @@ impl SkipCondition {
         match self {
             SkipCondition::NoLetters => "noLetters",
             SkipCondition::ShortToken => "shortToken",
+            SkipCondition::NoWord => "noWord",
             SkipCondition::Fragment => "fragment",
         }
     }
@@ -227,8 +230,44 @@ fn is_combining_mark(c: char) -> bool {
 
 /// Есть ли в строке хоть одна буква (JS `\p{L}`: Alphabetic без M*).
 pub fn has_letters(s: &str) -> bool {
-    s.chars()
-        .any(|c| c.is_alphabetic() && !is_combining_mark(c))
+    s.chars().any(is_letter)
+}
+
+/// Буква по правилу TS `\p{L}`: Alphabetic без комбинирующих знаков.
+fn is_letter(c: char) -> bool {
+    c.is_alphabetic() && !is_combining_mark(c)
+}
+
+/// Символ внутри токена: буква или цифра (TS `[\p{L}\p{N}]`).
+fn is_word_char(c: char) -> bool {
+    c.is_alphanumeric()
+}
+
+/// Сколько букв должно быть в токене, чтобы он считался словом.
+pub const WORD_MIN_LETTERS: usize = 3;
+
+/// Есть ли в строке хотя бы одно «слово» — токен из ≥3 букв.
+///
+/// Токен — максимальный отрезок букв/цифр; цифры в нём разрешены, но считаются
+/// только буквы (как в TS-эталоне). На `raw:*` совпадает с 3 138 записями:
+/// 2 961 — токены без пробелов (их уже закрывает `shortToken`), 177 — шум с
+/// пробелом (`wK Ax`, `j A`, `w? |b`). Настоящие подписи (`ACCESS`,
+/// `SAVEFILENAME`) не трогает: у них есть слово.
+pub fn has_word(text: &str) -> bool {
+    let mut letters = 0usize;
+    for c in text.chars() {
+        if is_word_char(c) {
+            if is_letter(c) {
+                letters += 1;
+            }
+            continue;
+        }
+        if letters >= WORD_MIN_LETTERS {
+            return true;
+        }
+        letters = 0;
+    }
+    letters >= WORD_MIN_LETTERS
 }
 
 /// Сработало ли условие правила на записи (провенанс проверяет вызывающий).
@@ -238,6 +277,7 @@ pub fn skip_condition_matches(when: SkipCondition, msgid: &str, rich: &str) -> b
         SkipCondition::ShortToken => {
             !msgid.chars().any(js_ws) && cp_len(msgid) <= SHORT_TOKEN_MAX_CHARS
         }
+        SkipCondition::NoWord => !has_word(msgid),
         SkipCondition::Fragment => classify_rich(msgid, rich).relation == RichRelation::Suffix,
     }
 }

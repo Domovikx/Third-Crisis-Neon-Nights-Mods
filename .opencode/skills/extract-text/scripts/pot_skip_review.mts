@@ -15,7 +15,7 @@
  *        [--examples 20]
  */
 import { existsSync, readFileSync, readdirSync } from "node:fs";
-import { join, resolve } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import process from "node:process";
 
 import { readJsonl } from "./inventory.mts";
@@ -65,6 +65,7 @@ export function matchRule(policy: SkipPolicy, row: Row): SkipRule | null {
     if (!rule.enabled) continue;
     if (
       srcMatchesPattern(rule.src, row.src) &&
+      !rule.srcExclude.some((pattern) => srcMatchesPattern(pattern, row.src)) &&
       skipConditionMatches(rule.when, { msgid: row.msgid, rich: row.rich })
     ) {
       return rule;
@@ -90,6 +91,37 @@ export function review(
     byRule: policy.rules.map((rule) => ({ rule, rows: byRule.get(rule.id) ?? [] })),
     fragment,
   };
+}
+
+/**
+ * Записи, которые правило ПРОПУСТИЛО бы, но политика их не трогает
+ * (`srcExclude` или отсутствие правила). Это список на ревью человеку:
+ * `short-token` намеренно исключает `raw:MonoBehaviour`, поэтому его короткие
+ * токены остаются переводимыми, пока их не подтвердят построчно.
+ */
+export function deferredReview(rows: Row[], policy: SkipPolicy): Row[] {
+  // Список = записи, которые правило пометило бы, если бы не `srcExclude`.
+  // Провенанс правила учитывается: `dialog`/`field:`/`settings` в него не
+  // попадают, потому что `short-token` объявлен для `raw:*`. Исключение
+  // (`srcExclude`) намеренно игнорируется — именно оно и создаёт список.
+  const out: Row[] = [];
+  for (const row of rows) {
+    if (matchRule(policy, row)) continue;
+    const wouldMatch = policy.rules.some(
+      (rule) =>
+        rule.enabled &&
+        rule.when === "shortToken" &&
+        srcMatchesPattern(rule.src, row.src) &&
+        skipConditionMatches(rule.when, { msgid: row.msgid, rich: row.rich }),
+    );
+    if (wouldMatch) out.push(row);
+  }
+  return out;
+}
+
+/** Текст списка на ревью: метка и ключ по строке, порядок POT. */
+export function renderDeferredReview(rows: Row[]): string {
+  return rows.map((row) => `${row.src}\t${row.msgid}`).join("\n") + (rows.length ? "\n" : "");
 }
 
 /** Ключ провенанса: ключ + полный текст без тегов (разные «>» не сливаются). */
@@ -223,15 +255,39 @@ export function renderReview(opts: ReviewOptions): string {
     lines.push("");
   }
 
+  const deferred = deferredReview(rows, opts.policy);
+  if (deferred.length) {
+    const bySrc = new Map<string, Row[]>();
+    for (const row of deferred) bySrc.set(row.src, [...(bySrc.get(row.src) ?? []), row]);
+    lines.push(
+      `## Отложено на ревью — ${deferred.length} (правило пропустило, политика не трогает)`,
+      "",
+      "Это записи, которые `short-token` пометил бы, но `srcExclude` их защищает.",
+      "Полный список (метка + ключ) — `tmp/review-skip-deferred.txt`; порядок — как в POT.",
+      "",
+      "| src | записей |",
+      "| --- | --- |",
+      ...[...bySrc]
+        .sort((a, b) => b[1].length - a[1].length)
+        .map(([src, list]) => `| \`${src}\` | ${list.length} |`),
+      "",
+      `Примеры (${Math.min(limit, deferred.length)}):`,
+      "",
+      ...deferred.slice(0, limit).map((row) => `- ${mdCell(row.msgid)} — \`src: ${row.src}\``),
+      "",
+    );
+  }
+
   lines.push(
     "## Что осталось решить владельцу",
     "",
-    "- Подтвердить или выключить `short-token`: это самый широкий фильтр (raw-скан),",
-    "  в него попадают и настоящие короткие UI-слова без пробела.",
+    "- `short-token` сужен решением владельца 2026-11-23: `raw:MonoBehaviour` исключён",
+    "  (`srcExclude`), потому что там лежат настоящие подписи (`ACCESS`, `ACHIEVEMENTS`).",
+    "  Остаток — раздел «Отложено на ревью»: его надо вычитать и решить, что мусор.",
     "- `fragment` помечает только `suffix` (ключ = хвост полного текста). `mismatch` —",
     "  отдельный класс (расхождение на символы), он в POT остаётся и переводится.",
-    "- Примеры владельца `w? |b` и `wK Ax` правилами НЕ ловятся: в обоих есть пробел.",
-    "  Нужно новое правило (например, «нет словарных слов») — это отдельное решение.",
+    "- Примеры владельца `w? |b` и `wK Ax` закрыты правилом `no-word` (нет ни одного",
+    "  токена из ≥3 букв); настоящие подписи оно не трогает — у них есть слово.",
     "- `suffix` найдено два, а не один: `your comfort, hon. …` тоже хвост — из текста",
     "  пропало начало «It's all about». Оба живут в одном объекте `sharedassets7.jsonl`,",
     "  `path_id=1205` (idx 1 и 3).",
@@ -316,8 +372,12 @@ export async function main(argv: string[]): Promise<number> {
     writeAtomic(cli.out, text);
     const rows = readRows(readFileSync(cli.pot, "utf8"));
     const { byRule } = review(rows, policy);
+    const deferred = deferredReview(rows, policy);
+    const deferredPath = join(dirname(cli.out), "review-skip-deferred.txt");
+    writeAtomic(deferredPath, renderDeferredReview(deferred));
     console.log(`отчёт: ${cli.out}`);
     for (const { rule, rows: hits } of byRule) console.log(`  ${rule.id}: ${hits.length}`);
+    console.log(`  отложено на ревью: ${deferred.length} -> ${deferredPath}`);
     return 0;
   } catch (err) {
     console.error(`ERROR: ${(err as Error).message}`);

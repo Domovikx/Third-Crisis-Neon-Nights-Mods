@@ -397,6 +397,33 @@ fn skip_политика_разбирается_и_ошибки_не_молча�
     let bad_key = parse_skip_policy(r#"{"rules":[],"rulez":[]}"#, "p.json").expect_err("поле");
     assert!(bad_key.contains("неизвестное поле \"rulez\""), "{bad_key}");
 
+    let excluded = parse_skip_policy(
+        r#"{"rules":[{"id":"short-token","src":"raw:*","srcExclude":["raw:MonoBehaviour"],"when":"shortToken"}]}"#,
+        "p.json",
+    )
+    .expect("srcExclude");
+    assert_eq!(excluded.rules[0].src_exclude, vec!["raw:MonoBehaviour"]);
+
+    let bad_exclude = parse_skip_policy(
+        r#"{"rules":[{"id":"x","src":"*","srcExclude":"raw:*","when":"fragment"}]}"#,
+        "p.json",
+    )
+    .expect_err("srcExclude не массив");
+    assert!(
+        bad_exclude.contains("srcExclude должен быть массивом"),
+        "{bad_exclude}"
+    );
+
+    let bad_exclude_label = parse_skip_policy(
+        r#"{"rules":[{"id":"x","src":"*","srcExclude":["raw:Fontt"],"when":"fragment"}]}"#,
+        "p.json",
+    )
+    .expect_err("опечатка метки в srcExclude");
+    assert!(
+        bad_exclude_label.contains("srcExclude: неизвестная метка"),
+        "{bad_exclude_label}"
+    );
+
     let disabled = parse_skip_policy(
         r#"{"rules":[{"id":"x","src":"*","when":"fragment","enabled":false}]}"#,
         "p",

@@ -551,6 +551,10 @@ pub struct SkipRule {
     pub id: String,
     /// Шаблон метки `#. src:` (точная метка или префикс `*`).
     pub src: String,
+    /// Метки, которые правило НЕ трогает, даже если совпали с `src` (та же
+    /// грамматика): так `shortToken` сужается до всего `raw:*`, кроме
+    /// `raw:MonoBehaviour`, где лежат настоящие подписи.
+    pub src_exclude: Vec<String>,
     /// Условие из `pot_skip`.
     pub when: SkipCondition,
     /// `false` — правило остаётся в политике для ревью, но не действует.
@@ -622,7 +626,12 @@ pub fn parse_skip_policy(text: &str, source: &str) -> Result<SkipPolicy, String>
             return Err(format!("skip-политика {source}: правило #{n} — не объект"));
         };
         for key in rule.keys() {
-            if key != "id" && key != "src" && key != "when" && key != "enabled" {
+            if key != "id"
+                && key != "src"
+                && key != "srcExclude"
+                && key != "when"
+                && key != "enabled"
+            {
                 return Err(format!(
                     "skip-политика {source}: правило #{n} — неизвестное поле \"{key}\""
                 ));
@@ -650,6 +659,28 @@ pub fn parse_skip_policy(text: &str, source: &str) -> Result<SkipPolicy, String>
         };
         validate_policy_pattern(src)
             .map_err(|e| format!("skip-политика {source}: правило \"{id}\" — {e}"))?;
+        let mut src_exclude: Vec<String> = Vec::new();
+        match rule.get("srcExclude") {
+            None => {}
+            Some(Value::Array(items)) => {
+                for pattern in items {
+                    let Value::String(pattern) = pattern else {
+                        return Err(format!(
+                            "skip-политика {source}: правило \"{id}\" — srcExclude: ожидалась строка"
+                        ));
+                    };
+                    validate_policy_pattern(pattern).map_err(|e| {
+                        format!("skip-политика {source}: правило \"{id}\" — srcExclude: {e}")
+                    })?;
+                    src_exclude.push(pattern.clone());
+                }
+            }
+            Some(other) => {
+                return Err(format!(
+                    "skip-политика {source}: правило \"{id}\" — srcExclude должен быть массивом меток: {other}"
+                ));
+            }
+        }
         let Some(Value::String(when_raw)) = rule.get("when") else {
             return Err(format!(
                 "skip-политика {source}: правило \"{id}\" — when обязателен"
@@ -658,7 +689,7 @@ pub fn parse_skip_policy(text: &str, source: &str) -> Result<SkipPolicy, String>
         let Some(when) = SkipCondition::parse(when_raw) else {
             return Err(format!(
                 "skip-политика {source}: правило \"{id}\" — неизвестное условие \"{when_raw}\" \
-                 (допустимо: noLetters, shortToken, fragment)"
+                 (допустимо: noLetters, shortToken, noWord, fragment)"
             ));
         };
         let enabled = match rule.get("enabled") {
@@ -674,6 +705,7 @@ pub fn parse_skip_policy(text: &str, source: &str) -> Result<SkipPolicy, String>
         rules.push(SkipRule {
             id: id.clone(),
             src: src.clone(),
+            src_exclude,
             when,
             enabled,
         });
@@ -751,6 +783,10 @@ pub fn apply_skip_policy(
             .unwrap_or("");
         let Some(index) = active.iter().position(|rule| {
             src_matches_pattern(&rule.src, &slot.src)
+                && !rule
+                    .src_exclude
+                    .iter()
+                    .any(|pattern| src_matches_pattern(pattern, &slot.src))
                 && skip_condition_matches(rule.when, &text, rich)
         }) else {
             continue;

@@ -692,15 +692,28 @@ test("classifyRich: обрывок — хвост полного текста, �
   }
 });
 
-test("условия правил: noLetters / shortToken / fragment", () => {
+test("условия правил: noLetters / shortToken / noWord / fragment", () => {
   assert.ok(hasLetters("!AL7"), "буквы A и L есть");
   assert.ok(!hasLetters("«123»"));
   assert.ok(skipConditionMatches("noLetters", { msgid: "«123»", rich: "" }));
   assert.ok(skipConditionMatches("shortToken", { msgid: "?|b", rich: "" }));
-  // Примеры владельца оба С ПРОБЕЛОМ — shortToken их не ловит (см. отчёт).
+  // Примеры владельца оба С ПРОБЕЛОМ — shortToken их не ловит, ловит noWord.
   assert.ok(!skipConditionMatches("shortToken", { msgid: "w? |b", rich: "" }));
   assert.ok(!skipConditionMatches("shortToken", { msgid: "wK Ax", rich: "" }));
   assert.ok(!skipConditionMatches("shortToken", { msgid: "abcdefghijklm", rich: "" }));
+  // noWord: нет ни одного токена из >=3 букв.
+  assert.ok(skipConditionMatches("noWord", { msgid: "w? |b", rich: "" }));
+  assert.ok(skipConditionMatches("noWord", { msgid: "wK Ax", rich: "" }));
+  assert.ok(skipConditionMatches("noWord", { msgid: "j A", rich: "" }));
+  assert.ok(skipConditionMatches("noWord", { msgid: "v 0.5.7-pr", rich: "" }), "pr — 2 буквы");
+  // Настоящие подписи остаются: в них есть слово.
+  assert.ok(!skipConditionMatches("noWord", { msgid: "ACCESS", rich: "" }));
+  assert.ok(!skipConditionMatches("noWord", { msgid: "SAVEFILENAME", rich: "" }));
+  assert.ok(
+    skipConditionMatches("noWord", { msgid: "UI", rich: "" }),
+    "две буквы — не слово (в POT такой записи нет, но правило обязано быть точным)",
+  );
+  assert.ok(!skipConditionMatches("noWord", { msgid: "x y ZZZ", rich: "" }), "ZZZ — слово");
   assert.ok(
     skipConditionMatches("fragment", { msgid: "you request them. >", rich: REAL_FRAGMENT }),
   );
@@ -721,7 +734,7 @@ test("parseSkipPolicy: валидная политика и понятные о�
 
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:*","when":"nope"}]}', "p.json"),
-    /неизвестное условие "nope".*noLetters, shortToken, fragment/,
+    /неизвестное условие "nope".*noLetters, shortToken, noWord, fragment/,
   );
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:Fontt","when":"noLetters"}]}', "p.json"),
@@ -841,4 +854,61 @@ test("skip-политика находится от корня репозито�
   const found = discoverSkipPolicyPath(REPO);
   assert.ok(found, "config/pot-skip-policy.json");
   assert.ok(found?.endsWith("pot-skip-policy.json"));
+});
+
+test("applySkipPolicy: srcExclude сужает правило, не ломая остальные метки", () => {
+  const items = [
+    item({ text: "wK Ax", kind: "raw", src: "raw:MonoBehaviour" }),
+    item({ text: "LAST MINUTE", kind: "raw", src: "raw:MonoBehaviour" }),
+    item({ text: "CurtainsLeft", kind: "raw", src: "raw:GameObject" }),
+    item({ text: "ZoeyBlink", kind: "raw", src: "raw:AnimatorController" }),
+  ];
+  const { catalog } = buildCatalog(items);
+  const policy: SkipPolicy = parseSkipPolicy(
+    JSON.stringify({
+      rules: [
+        {
+          id: "short-token",
+          src: "raw:*",
+          srcExclude: ["raw:MonoBehaviour"],
+          when: "shortToken",
+        },
+        { id: "no-word", src: "raw:*", when: "noWord" },
+      ],
+    }),
+    "p.json",
+  );
+  const applied = applySkipPolicy(catalog, policy);
+  assert.deepEqual(applied.byRule, [
+    { rule: "short-token", count: 2 },
+    { rule: "no-word", count: 1 },
+  ]);
+  assert.equal(
+    catalog.get("wK Ax")?.get("ui")?.skip,
+    "no-word",
+    "MonoBehaviour исключён из short-token, но noWord его ловит",
+  );
+  assert.equal(
+    catalog.get("LAST MINUTE")?.get("ui")?.skip,
+    undefined,
+    "в MonoBehaviour есть слово",
+  );
+  assert.equal(catalog.get("CurtainsLeft")?.get("ui")?.skip, "short-token");
+
+  assert.throws(
+    () =>
+      parseSkipPolicy(
+        '{"rules":[{"id":"x","src":"*","srcExclude":"raw:*","when":"fragment"}]}',
+        "p.json",
+      ),
+    /srcExclude должен быть массивом/,
+  );
+  assert.throws(
+    () =>
+      parseSkipPolicy(
+        '{"rules":[{"id":"x","src":"*","srcExclude":["raw:Fontt"],"when":"fragment"}]}',
+        "p.json",
+      ),
+    /srcExclude: неизвестная метка/,
+  );
 });
