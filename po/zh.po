@@ -27,220 +27,220 @@ msgstr ""
 #. src: us
 msgctxt "ui"
 msgid "\"   Link Text: \""
-msgstr ""
+msgstr "\"   链接文本： \""
 
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "\"COCK\", hmm. Let's see."
-msgstr ""
+msgstr "“鸡巴”，嗯……看看再说吧。"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "\"COCK\"...? Really...?"
-msgstr ""
+msgstr "“鸡巴”……？真的吗……？"
 
 #. src: dialog
 #. rich_text: <i>"However, the Blocker can deliver an infinite number of injections. Just needs a day to recharge between each dose."
 msgctxt "ui"
 msgid "\"However, the Blocker can deliver an infinite number of injections. Just needs a day to recharge between each dose.\""
-msgstr ""
+msgstr "“不过，Blocker 可以无限次注射，只是每次注射之间需要一天时间充能。”"
 
 #. src: dialog
 #. rich_text: <i>"However, the Blocker can deliver an infinite number of injections. Just needs to recharge between each dose."
 msgctxt "ui"
 msgid "\"However, the Blocker can deliver an infinite number of injections. Just needs to recharge between each dose.\""
-msgstr ""
+msgstr "“不过，Blocker 可以无限次注射，只是每次注射之间需要重新充能。”"
 
 #. src: dialog
 #. rich_text: <i>"I just... couldn't perfect the antidote, so it's temporary. It only heals Crush buildup... or in layman's terms... reverses arousal."
 msgctxt "ui"
 msgid "\"I just... couldn't perfect the antidote, so it's temporary. It only heals Crush buildup... or in layman's terms... reverses arousal.\""
-msgstr ""
+msgstr "“我只是……没能把解药做到完美，所以这只是临时的。它只能清除‘Crush’的累积……或者用通俗的话说……就是消除兴奋状态。”"
 
 #. src: dialog
 #. rich_text: <i>"I truly believed my work would make the world a better place. That if people were just <b>compelled</b> to cooperate together..."</i>
 msgctxt "ui"
 msgid "\"I truly believed my work would make the world a better place. That if people were just compelled to cooperate together...\""
-msgstr ""
+msgstr "“我曾真的相信，自己的工作能让世界变得更好。只要人们被迫团结合作……”"
 
 #. src: dialog
 #. rich_text: <i>"It worked... too well. The ramifications are horrifying. My coworkers are now discussing mass emission methods."</i>
 msgctxt "ui"
 msgid "\"It worked... too well. The ramifications are horrifying. My coworkers are now discussing mass emission methods.\""
-msgstr ""
+msgstr "“奏效了……而且效果太好了。后果简直令人毛骨悚然。我的同事现在都在讨论大规模释放的方法。”"
 
 #. src: dialog
 msgctxt "ui"
 msgid "\"It's not a toy, mom!!\" That sorta vibe.X"
-msgstr ""
+msgstr "“这不是玩具，妈妈！！”就是那种感觉。"
 
 #. src: dialog
 msgctxt "ui"
 msgid "\"Me\"... Hmm."
-msgstr ""
+msgstr "“我”……嗯。"
 
 #. src: dialog
 #. rich_text: <i>"Now I'm sure you have many questions... like "What even is Peitho?"-</i>
 msgctxt "ui"
 msgid "\"Now I'm sure you have many questions... like \"What even is Peitho?\"-"
-msgstr ""
+msgstr "“现在，我敢肯定你有很多问题……比如‘Peitho 到底是个什么鬼？’”"
 
 #. src: dialog
 #. rich_text: <i>"So... I've created an antidote. The 'Crush Blocker' in this suitcase should innoculate someone against my poison."</i>
 msgctxt "ui"
 msgid "\"So... I've created an antidote. The 'Crush Blocker' in this suitcase should innoculate someone against my poison.\""
-msgstr ""
+msgstr "“所以……我已经研制出了解药。这个手提箱里的‘Crush Blocker’应该能让别人免受我毒药的影响。”"
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
 msgid "\"Sorry\" won't cut it! Come with me!"
-msgstr ""
+msgstr "“抱歉”可不够！跟我来！"
 
 #. src: dialog
 msgctxt "ui"
 msgid "\"That's a good girl.\" But your voice trails off as you drift in for a kiss."
-msgstr ""
+msgstr "“真乖啊。”但你的声音逐渐消失，同时缓缓靠近，想要亲吻她。"
 
 #. src: dialog
 #. rich_text: <i>"This is Dr. Lozenge. Lead Scientist of Project Crush in the R&D Department of Peitho..."
 msgctxt "ui"
 msgid "\"This is Dr. Lozenge. Lead Scientist of Project Crush in the R&D Department of Peitho...\""
-msgstr ""
+msgstr "“我是洛津博士。Peitho研发部‘粉碎计划’的首席科学家……”"
 
 #. src: dialog
 msgctxt "ui"
 msgid "\"This one\"? That is a curious speech pattern they gave you..."
-msgstr ""
+msgstr "“This one”？他们给你用的这种说话方式可真奇怪……"
 
 #. src: dialog
 #. rich_text: <i>"To use the blocker, first give it a squeeze to release the protrusion plug. Then inject it into your neck port."</i>
 msgctxt "ui"
 msgid "\"To use the blocker, first give it a squeeze to release the protrusion plug. Then inject it into your neck port.\""
-msgstr ""
+msgstr "“要使用这个阻隔器，先捏一捏它，让凸起插头弹出来，然后把它注入你的颈部端口。”"
 
 #. src: dialog
 #. rich_text: <i>"We recently conducted a successful test of Crush Waves... a true method of mind control... with a side effect of arousal."</i>
 msgctxt "ui"
 msgid "\"We recently conducted a successful test of Crush Waves... a true method of mind control... with a side effect of arousal.\""
-msgstr ""
+msgstr "“我们最近成功测试了‘压碎波’……一种真正的精神控制方法……附带一个令人兴奋的副作用。”"
 
 #. src: dialog
 #. rich_text: <i>"Well... time has shown me just how wrong I was. I just hope the world doesn't need to suffer because of my mistakes."</i>
 msgctxt "ui"
 msgid "\"Well... time has shown me just how wrong I was. I just hope the world doesn't need to suffer because of my mistakes.\""
-msgstr ""
+msgstr "“嗯……时间让我看清了自己究竟错得有多离谱。我只希望，世界不必因我的错误而承受痛苦。”"
 
 #. src: dialog
 msgctxt "ui"
 msgid "\"What if something happened to her\" You were going to say before getting cut off. You're really worried about your cat."
-msgstr ""
+msgstr "“要是她出了什么事怎么办”——你刚要这么说，却被打断了。你真的非常担心你的猫。"
 
 #. src: dialog
 msgctxt "ui"
 msgid "\"because of you.\" You blame Zoey for what happened."
-msgstr ""
+msgstr "“都怪你。”你把发生的一切都归咎于佐伊。"
 
 #. src: dialog
 msgctxt "ui"
 msgid "\"can't imagine what I'd do without her.\" You're very anxious about finding your lost cat."
-msgstr ""
+msgstr "“真不敢想要是没有她，我该怎么办。”你正为找不到走失的猫而焦虑不已。"
 
 #. src: dialog
 msgctxt "ui"
 msgid "\"enjoy your meal!\" \"you too!\" instant suffering..."
-msgstr ""
+msgstr "“祝你好胃口！”“你也是！”瞬间的折磨……"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "# Vaginal Sex"
-msgstr ""
+msgstr "# 阴道性交"
 
 #. src: us
 msgctxt "ui"
 msgid "$ Visible"
-msgstr ""
+msgstr "$ 可见"
 
 #. src: raw:RectTransform
 msgctxt "ui"
 msgid "' D=JpD"
-msgstr ""
+msgstr "D=JpD"
 
 #. src: us
 msgctxt "ui"
 msgid "' in animMap!"
-msgstr ""
+msgstr "在 animMap 中！"
 
 #. src: us
 msgctxt "ui"
 msgid "' in the roomset! This is not good!"
-msgstr ""
+msgstr "房间设置里！这可不好！"
 
 #. src: us
 msgctxt "ui"
 msgid "' is not a Point light - only point lights can be clipped."
-msgstr ""
+msgstr "'不是点光源——只有点光源才能被裁剪。"
 
 #. src: us
 msgctxt "ui"
 msgid "' is not a Sound Category on '"
-msgstr ""
+msgstr "这不是一个声音类别。"
 
 #. src: us
 msgctxt "ui"
 msgid "' is not in resources! It can't be loaded!"
-msgstr ""
+msgstr "“不在资源中！无法加载！”"
 
 #. src: us
 msgctxt "ui"
 msgid "' is not in resources! It won't be able to load in a build!"
-msgstr ""
+msgstr "不在资源里！构建时无法加载！"
 
 #. src: us
 msgctxt "ui"
 msgid "' not found on Skeleton."
-msgstr ""
+msgstr "未在骨架上找到。"
 
 #. src: us
 msgctxt "ui"
 msgid "'! Create a new save!"
-msgstr ""
+msgstr "创建新存档！"
 
 #. src: us
 msgctxt "ui"
 msgid "'! Use another name!"
-msgstr ""
+msgstr "“别用这个名字！”"
 
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "'Coursee... Here."
-msgstr ""
+msgstr "“来这儿……。”"
 
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "'Ey waitress... Come keep me som' company with ya' hot bodyy, ehhh? *hic*"
-msgstr ""
+msgstr "喂，女服务员……来用你那火辣的身体陪陪我呗，嗯？*hic*"
 
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "'Ey waitresss... I been watchin' your tits bounce around all night..."
-msgstr ""
+msgstr "嘿，服务员……我整晚都在看你那对奶子晃来晃去……"
 
 #. src: dialog
 #. rich_text: 'Means using your body is what really pays in here. Don't worry, you don't <b>have</b> to spread out your little 'vayvay-... Uh-... not that you're allowed to-!! But... you know...
 msgctxt "speaker:Rosie"
 msgid "'Means using your body is what really pays in here. Don't worry, you don't have to spread out your little 'vayvay-... Uh-... not that you're allowed to-!! But... you know..."
-msgstr ""
+msgstr "在这里，用身体赚钱才是真的划算。别担心，你不用非得把小……小……小阴部什么的都亮出来！！不过……你懂的……"
 
 #. src: dialog
 #. rich_text: 'Was <b>desperate</b> for cashh, so... Didn't say no, ehehe... Pr'tty hot too, buuuthh... Fuck, look a yahh...
 msgctxt "speaker:Customer"
 msgid "'Was desperate for cashh, so... Didn't say no, ehehe... Pr'tty hot too, buuuthh... Fuck, look a yahh..."
-msgstr ""
+msgstr "“当时急需用钱，所以……就没拒绝，嘿嘿……而且也挺性感的，但……该死，看看你……”"
 
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "'Yer way hotter than 'er..."
-msgstr ""
+msgstr "你比她可性感多了……"
 
 #. src: dialog
 #. rich_text: <i>( 205? Wait.. That's the room I'm supposed to get into! )</i>
@@ -258,13 +258,13 @@ msgstr ""
 #. rich_text: <color=#EB83FF><i>(... ! )</i></color>
 msgctxt "ui"
 msgid "(... ! )"
-msgstr ""
+msgstr "(... ! )"
 
 #. src: dialog
 #. rich_text: <i>(... )</i>
 msgctxt "speaker:Zoey"
 msgid "(... )"
-msgstr ""
+msgstr "(... )"
 
 #. src: dialog
 #. rich_text: <i>(... Agh... Should I tell her what happened...? )</i>
