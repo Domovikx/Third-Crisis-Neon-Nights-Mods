@@ -48,6 +48,7 @@ import {
   loadSkipPolicy,
   loadSrcPolicy,
   POT_PATH,
+  repairItemText,
   renderPot,
   srcMatchesPattern,
   srcOf,
@@ -317,7 +318,8 @@ async function buildExpected(
   const keys = new Map<string, InventoryItem>();
   let duplicates = 0;
   for (const item of list) {
-    const key = potKey(item.text, ctxtOf(item));
+    // Ключ — с учётом починки фрагмента (тот же расчёт, что в генераторе).
+    const key = potKey(repairItemText(item.text, item.richText ?? ""), ctxtOf(item));
     if (keys.has(key)) duplicates += 1;
     else keys.set(key, item);
   }

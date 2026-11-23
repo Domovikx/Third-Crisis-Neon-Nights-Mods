@@ -21,7 +21,7 @@ use serde_json::Value;
 use rust_l10n_core::po::{parse_po, render_po, PoEntry};
 
 use crate::inventory::{py_strip, scan_dump, InventoryItem, ItemKind};
-use crate::pot_skip::{skip_condition_matches, SkipCondition};
+use crate::pot_skip::{is_meaningful_text, skip_condition_matches, strip_tmp_tags, SkipCondition};
 use crate::text_filters::{is_asset_name, is_garbage_fragment};
 
 /// `</?(?:font|material)[^>]*>` с флагом `i`: вырезать теги шрифта/материала.
@@ -957,6 +957,28 @@ pub struct PotStats {
 /// Предикат «метка исключена политикой» (для дедупа).
 pub type ExcludeFn<'a> = Box<dyn Fn(&str) -> bool + 'a>;
 
+/// Починить «фрагмент»: игра (AN) получила `text` наивной чисткой `<[^>]+>`,
+/// поэтому авторские кавычки `< … >` съедаются вместе с началом фразы, а в
+/// `text` остаётся хвост. Полная фраза жива в `rich_text`.
+///
+/// 1:1 с TS (`repairFragment`): возвращаем полный текст, если `text` — его
+/// строгий хвост и перед ним есть буквы.
+pub fn repair_fragment(text: &str, rich_plain: &str) -> Option<(String, String)> {
+    let full = rich_plain.trim();
+    if full.is_empty() || text.is_empty() || full == text || !full.ends_with(text) {
+        return None;
+    }
+    // Чиним только осмысленный хвост: одиночный «>» — шум разметки.
+    if !is_meaningful_text(text) {
+        return None;
+    }
+    let prefix = &full[..full.len() - text.len()];
+    if !prefix.chars().any(char::is_alphabetic) {
+        return None;
+    }
+    Some((full.to_string(), text.to_string()))
+}
+
 pub fn build_catalog(
     items: &[InventoryItem],
     old_keys: &HashSet<(String, String)>,
@@ -974,11 +996,23 @@ pub fn build_catalog(
         let ctxt = ctxt_of(item);
 
         let mut rich = py_strip(&strip_font_tags(&item.rich_text)).to_string();
-        if rich == item.text {
+
+        // Фрагмент из данных игры: `text` — хвост полной фразы из `rich_text`.
+        // Ключом делаем полную фразу, исходный хвост сохраняем комментарием.
+        let mut text = item.text.clone();
+        let mut repaired_from = String::new();
+        if !rich.is_empty() {
+            if let Some((full, original)) = repair_fragment(&text, py_strip(&strip_tmp_tags(&rich)))
+            {
+                text = full;
+                repaired_from = original;
+            }
+        }
+        if rich == text {
             // Форматирования нет, просто копия текста.
             rich.clear();
         }
-        let key = (item.text.clone(), ctxt.clone());
+        let key = (text.clone(), ctxt.clone());
         if seen.contains(&key) {
             // Двойник: один перевод на все вхождения. rich обновляем, только
             // если у первого вхождения его не было.
@@ -987,7 +1021,7 @@ pub fn build_catalog(
             // переключаем метку на живой: иначе строка выпадет вместе с ассетом.
             if let Some(is_excluded) = is_excluded {
                 if let Some(slot) = catalog
-                    .get_mut(&item.text)
+                    .get_mut(&text)
                     .and_then(|by_ctxt| by_ctxt.get_mut(&ctxt))
                 {
                     if !slot.src.is_empty() && is_excluded(&slot.src) && !is_excluded(&item.src) {
@@ -997,7 +1031,7 @@ pub fn build_catalog(
             }
             if !rich.is_empty() {
                 if let Some(slot) = catalog
-                    .get_mut(&item.text)
+                    .get_mut(&text)
                     .and_then(|by_ctxt| by_ctxt.get_mut(&ctxt))
                 {
                     if !slot.comments.iter().any(|c| c.starts_with("rich_text:")) {
@@ -1011,7 +1045,7 @@ pub fn build_catalog(
         seen.insert(key.clone());
 
         let slot = catalog
-            .entry(item.text.clone())
+            .entry(text.clone())
             .or_default()
             .entry(ctxt)
             .or_default();
@@ -1027,10 +1061,16 @@ pub fn build_catalog(
                 stats.rich += 1;
             }
         }
+        if !repaired_from.is_empty() {
+            let comment = format!("repaired: {repaired_from}");
+            if !slot.comments.contains(&comment) {
+                slot.comments.push(comment);
+            }
+        }
         if !old_keys.contains(&key) {
             stats.new += 1;
         }
-        if !triage_reason(&item.text, item.kind).is_empty() {
+        if !triage_reason(&text, item.kind).is_empty() {
             stats.triaged += 1;
         }
     }

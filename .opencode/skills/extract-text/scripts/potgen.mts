@@ -42,7 +42,13 @@ import {
   type ItemKind,
 } from "./inventory.mts";
 import { newEntry, parsePo, renderPo, type PoEntry } from "./po_file.mts";
-import { SKIP_CONDITIONS, skipConditionMatches, type SkipCondition } from "./pot_skip.mts";
+import {
+  SKIP_CONDITIONS,
+  skipConditionMatches,
+  isMeaningfulText,
+  stripTmpTags,
+  type SkipCondition,
+} from "./pot_skip.mts";
 
 /** Корень репозитория: .../extract-text/scripts → вверх 4 уровня. */
 export const REPO_ROOT = resolve(import.meta.dirname, "../../../..");
@@ -640,6 +646,42 @@ function slotOf(catalog: Catalog, text: string, ctxt: string): PotSlot {
  * `oldKeys` — пары (msgid, msgctxt) из прежнего POT: нужны только для
  * статистики new/vanished, на содержимое не влияют.
  */
+/**
+ * Починить «фрагмент»: игра (AN) получила `text` наивной чисткой `<[^>]+>`,
+ * поэтому авторские кавычки `< … >` съедаются вместе с началом фразы, а в
+ * `text` остаётся хвост. Полная фраза при этом жива в `rich_text`.
+ *
+ * Возвращаем полный текст, если `text` — его строгий хвост и перед ним есть
+ * буквы. Ключом становится полная фраза: тогда перевод полный, а рантайм
+ * (`richText.Replace(plain, translation)`) собирает строку целиком.
+ */
+export function repairFragment(
+  text: string,
+  richPlain: string,
+): { text: string; original: string } | null {
+  const full = richPlain.trim();
+  if (!full || !text || full === text || !full.endsWith(text)) return null;
+  // Чиним только осмысленный хвост: одиночный «>» — шум разметки, а не фраза
+  // (порог тот же, что у инварианта `rich-fragment`).
+  if (!isMeaningfulText(text)) return null;
+  const prefix = full.slice(0, full.length - text.length);
+  if (!/\p{L}/u.test(prefix)) return null;
+  return { text: full, original: text };
+}
+
+/**
+ * Ключ записи с учётом починки фрагмента: если `text` — хвост полной фразы из
+ * `rich_text`, ключом становится полная фраза. Одна функция на генератор и на
+ * чекер контракта: иначе «полнота» сверяла бы POT с обрезанными ключами.
+ */
+export function repairItemText(text: string, richText: string): string {
+  if (!richText) return text;
+  const rich = pyStrip(stripFontTags(richText));
+  if (!rich) return text;
+  const fix = repairFragment(text, pyStrip(stripTmpTags(rich)));
+  return fix ? fix.text : text;
+}
+
 export function buildCatalog(
   items: InventoryItem[],
   oldKeys: ReadonlySet<string> = new Set(),
@@ -667,9 +709,21 @@ export function buildCatalog(
     const ctxt = ctxtOf(item);
 
     let rich = pyStrip(stripFontTags(item.richText ?? ""));
-    if (rich === item.text) rich = ""; // форматирования нет, просто копия текста
 
-    const key = catalogKey(item.text, ctxt);
+    // Фрагмент из данных игры: `text` — хвост полной фразы из `rich_text`.
+    // Ключом делаем полную фразу, исходный хвост сохраняем комментарием.
+    let text = item.text;
+    let repairedFrom = "";
+    if (rich) {
+      const fix = repairFragment(text, pyStrip(stripTmpTags(rich)));
+      if (fix) {
+        text = fix.text;
+        repairedFrom = fix.original;
+      }
+    }
+    if (rich === text) rich = ""; // форматирования нет, просто копия текста
+
+    const key = catalogKey(text, ctxt);
     if (seen.has(key)) {
       // Двойник: один перевод на все вхождения. rich обновляем, только если
       // у первого вхождения его не было (стиль не зависит от порядка дампа).
@@ -677,13 +731,13 @@ export function buildCatalog(
       // Если слот занял исключённый источник, а сейчас пришёл живой —
       // переключаем метку на живой: иначе строка выпадет вместе с ассетом.
       if (isExcluded) {
-        const slot = slotOf(catalog, item.text, ctxt);
+        const slot = slotOf(catalog, text, ctxt);
         if (slot.src && isExcluded(slot.src) && !isExcluded(item.src)) {
           slot.src = item.src;
         }
       }
       if (rich) {
-        const slot = slotOf(catalog, item.text, ctxt);
+        const slot = slotOf(catalog, text, ctxt);
         if (!slot.comments.some((c) => c.startsWith("rich_text:"))) {
           slot.comments.push(`rich_text: ${rich}`);
           stats.rich += 1;
@@ -693,7 +747,7 @@ export function buildCatalog(
     }
     seen.add(key);
 
-    const slot = slotOf(catalog, item.text, ctxt);
+    const slot = slotOf(catalog, text, ctxt);
     // src — первого вхождения: при дедупе это и есть путь доставки строки
     // в POT (как правило «первое вхождение побеждает» у rich_text).
     if (!slot.src) slot.src = item.src;
@@ -704,8 +758,11 @@ export function buildCatalog(
         stats.rich += 1;
       }
     }
+    if (repairedFrom && !slot.comments.some((c) => c.startsWith("repaired: "))) {
+      slot.comments.push(`repaired: ${repairedFrom}`);
+    }
     if (!oldKeys.has(key)) stats.new += 1;
-    if (triageReason(item.text, item.kind)) stats.triaged += 1;
+    if (triageReason(text, item.kind)) stats.triaged += 1;
   }
 
   // Cross-source dedup: ui-двойник диалоговой/спикерской строки удаляем —

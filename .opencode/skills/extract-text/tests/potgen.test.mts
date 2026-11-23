@@ -33,6 +33,7 @@ import {
   parseSrcPolicy,
   policyDecision,
   renderExcludedJsonl,
+  repairFragment,
   renderPot,
   renderSkipJournalJsonl,
   runPotgen,
@@ -810,27 +811,27 @@ test("applySkipPolicy: помечает, не удаляет, журнал в п
   );
   const applied = applySkipPolicy(catalog, policy);
   assert.equal(catalogSize(catalog), 4, "записи не удалены");
-  assert.equal(applied.marked, 2, "?|b (short-token) + обрывок (fragment)");
+  // Обрывок больше НЕ помечается: он починен полной фразой из rich_text,
+  // поэтому правило `fragment` к нему не применимо.
+  assert.equal(applied.marked, 1, "только ?|b (short-token)");
   assert.deepEqual(applied.byRule, [
     { rule: "short-token", count: 1 },
-    { rule: "fragment", count: 1 },
+    { rule: "fragment", count: 0 },
   ]);
   assert.deepEqual(
     applied.journal.map((j) => [j.rule, j.msgid]),
-    [
-      ["short-token", "?|b"],
-      ["fragment", "you request them. >"],
-    ],
-    "порядок POT (msgid, msgctxt)",
+    [["short-token", "?|b"]],
+    "в журнале только структурная метка",
   );
   assert.equal(catalog.get("?|b")?.get("ui")?.skip, "short-token");
   assert.equal(catalog.get("wK Ax")?.get("ui")?.skip, undefined, "пробел = не короткий токен");
 
   const pot = renderPot(catalog, "2026-01-02 03:04+0000");
   assert.ok(pot.includes('#, skip\nmsgctxt "ui"\nmsgid "?|b"'), pot);
-  assert.ok(pot.includes("#. skip: fragment"), pot);
+  assert.ok(!pot.includes("#. skip: fragment"), pot);
+  assert.ok(pot.includes("#. repaired: you request them. >"), pot);
   const jsonl = renderSkipJournalJsonl(applied.journal);
-  assert.equal(jsonl.trim().split("\n").length, 2);
+  assert.equal(jsonl.trim().split("\n").length, 1);
 });
 
 test("runPotgen: skip-метки в POT, журнал и выключатель политики", async () => {
@@ -885,6 +886,43 @@ test("skip-политика находится от корня репозито�
   const found = discoverSkipPolicyPath(REPO);
   assert.ok(found, "config/pot-skip-policy.json");
   assert.ok(found?.endsWith("pot-skip-policy.json"));
+});
+
+test("repairFragment: хвост полной фразы чинится, нормальный текст — нет", () => {
+  const plain = "< It's all about your comfort, hon. I'll be anything you want me to be. >";
+  assert.deepEqual(
+    repairFragment("your comfort, hon. I'll be anything you want me to be. >", plain),
+    {
+      text: plain,
+      original: "your comfort, hon. I'll be anything you want me to be. >",
+    },
+  );
+  assert.equal(repairFragment(plain, plain), null, "уже полный — не трогаем");
+  assert.equal(repairFragment("Hello", "Hello there"), null, "не хвост");
+  assert.equal(repairFragment("123", "< 123"), null, "перед хвостом нет букв");
+});
+
+test("buildCatalog: обрывок становится полной фразой, старый хвост — в комментарии", () => {
+  const tail = "you request them. >";
+  const full =
+    "< Like this, hmmm...? I love these nice big tits. Especially when adorable customers like you request them. >";
+  const { catalog } = buildCatalog([
+    item({ text: tail, kind: "dlg", src: "dialog", richText: `<i>${full}</i>` }),
+  ]);
+  assert.equal(catalog.has(tail), false, "обрезанного ключа больше нет");
+  const slot = catalog.get(full)?.get("ui");
+  assert.ok(slot, "ключом стала полная фраза");
+  assert.deepEqual(
+    slot.comments.find((c) => c.startsWith("repaired: ")),
+    `repaired: ${tail}`,
+    "исходный хвост сохранён для аудита",
+  );
+
+  // Не-обрывок не меняется.
+  const { catalog: plainCatalog } = buildCatalog([
+    item({ text: "Just a line", kind: "dlg", src: "dialog" }),
+  ]);
+  assert.ok(plainCatalog.has("Just a line"));
 });
 
 test("buildCatalog: при дубле побеждает живой источник, а не исключённый ассет", () => {
