@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NeonTranslator 1.0\n"
-"POT-Creation-Date: 2026-11-23 13:44+0000\n"
+"POT-Creation-Date: 2026-11-23 16:55+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -25098,21 +25098,29 @@ msgid "Calliach Outfit"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:Angry"
 msgid "Calliach Presets"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:Grin"
 msgid "Calliach Presets"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:Horny"
 msgid "Calliach Presets"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:Laugh"
 msgid "Calliach Presets"
 msgstr ""
@@ -73116,11 +73124,15 @@ msgid "Residential / Maintenance"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:Anne"
 msgid "Residential Dialogue Presets"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:Ashley"
 msgid "Residential Dialogue Presets"
 msgstr ""
@@ -74876,26 +74888,36 @@ msgid "Sarah Default"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:Confused"
 msgid "Sarah Dialogue Preset"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:Horny"
 msgid "Sarah Dialogue Preset"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:Laughing"
 msgid "Sarah Dialogue Preset"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:Pouting"
 msgid "Sarah Dialogue Preset"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:Sad"
 msgid "Sarah Dialogue Preset"
 msgstr ""
@@ -82054,21 +82076,29 @@ msgid "System Performance"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:MusicToPlay"
 msgid "System.Collections.Generic.List`1[[Asuna.Dialogues.DialogueLineLogic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:OnChoiceSelected"
 msgid "System.Collections.Generic.List`1[[Asuna.Dialogues.DialogueLineLogic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:Remove"
 msgid "System.Collections.Generic.List`1[[Asuna.Dialogues.DialogueLineLogic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
 msgstr ""
 
 #. src: dialog
+#. skip: reviewed
+#, skip
 msgctxt "speaker:SaveKey"
 msgid "System.Collections.Generic.List`1[[Asuna.Dialogues.DialogueLineLogic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
 msgstr ""

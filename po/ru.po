@@ -8972,7 +8972,7 @@ msgstr "(Какой, чёрт, происходит? Она делает это,
 #. rich_text: <i>(What the fuck is this? Just some little cylinder device thing in here... The suitcase must be the bulk of all the fuckin' weight. )</i>
 msgctxt "speaker:Zoey"
 msgid "(What the fuck is this? Just some little cylinder device thing in here... The suitcase must be the bulk of all the fuckin' weight. )"
-msgstr "(Что за хрень? Какое-то маленькое цилиндрическое устройство... Чемодан, наверное, весит из-за своей брони.)"
+msgstr "(Какого хрена это такое? Просто какое-то маленькое цилиндрическое приспособление... Чемодан, должно быть, весит из-за своей броне.)"
 
 #. src: dialog
 #. rich_text: <i>(What the fuck was that?! Is someone watching us?)</i>
@@ -11420,7 +11420,7 @@ msgstr "АААААУУУУУГАА!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ACCESS"
-msgstr "ACCESS"
+msgstr "ДОСТУП"
 
 #. src: us
 msgctxt "ui"
@@ -11516,12 +11516,12 @@ msgstr "ПРИЛОЖЕНИЕ НЕ НАЙДЕНО"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ARRIVAL"
-msgstr "ARRIVAL"
+msgstr "ПРИБЫТИЕ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ARRIVING"
-msgstr "ARRIVING"
+msgstr "ПРИБЫВАЕТ"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Aaaahhh!! Fghhaaahhh! Hghhh...!</color>
@@ -15530,7 +15530,7 @@ msgstr "Н-но я думала... Нам же не разрешено..."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "BACK"
-msgstr "BACK"
+msgstr "НАЗАД"
 
 #. src: raw:RectTransform
 msgctxt "ui"
@@ -15550,7 +15550,7 @@ msgstr "БИО Аугменты"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "BOARDING"
-msgstr "BOARDING"
+msgstr "ПОСАДКА"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17278,26 +17278,6 @@ msgstr "Каллиах Недоступен (Голосовой файл)"
 msgctxt "ui"
 msgid "Calliach Outfit"
 msgstr "Набор Calliach"
-
-#. src: dialog
-msgctxt "speaker:Angry"
-msgid "Calliach Presets"
-msgstr "Пресеты Каллиах"
-
-#. src: dialog
-msgctxt "speaker:Grin"
-msgid "Calliach Presets"
-msgstr "Пресеты Каллиах"
-
-#. src: dialog
-msgctxt "speaker:Horny"
-msgid "Calliach Presets"
-msgstr "Предустановки Калиач"
-
-#. src: dialog
-msgctxt "speaker:Laugh"
-msgid "Calliach Presets"
-msgstr "Пресеты Каллиах"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19713,7 +19693,7 @@ msgstr "D13... Он в... D13-... Кххх... Я не могу-... нгххх...
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DEFEAT"
-msgstr "DEFEAT"
+msgstr "ПОРАЖЕНИЕ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19748,12 +19728,12 @@ msgstr "ЖУРНАЛ ДИАЛОГОВ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DISABLE"
-msgstr "DISABLE"
+msgstr "ОТКЛЮЧИТЬ"
 
 #. src: us
 msgctxt "ui"
 msgid "DISABLED"
-msgstr "DISABLED"
+msgstr "ОТКЛЮЧЕНО"
 
 #. src: us
 msgctxt "ui"
@@ -19778,7 +19758,7 @@ msgstr "НЕ ЗАБУДЬ ЧТО-ТО ТАМ ПОЛОЖИТЬ!!!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DRESSED"
-msgstr "DRESSED"
+msgstr "ОДЕТА"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23280,7 +23260,7 @@ msgstr "КОНЕЦ ДЕМО"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ENTERING"
-msgstr "ENTERING"
+msgstr "ВХОД"
 
 #. src: us
 msgctxt "ui"
@@ -26829,7 +26809,7 @@ msgstr "Г-Глоу...? Но-"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GAG"
-msgstr "GAG"
+msgstr "КЛЯП"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -26860,12 +26840,12 @@ msgstr "Проклятье! Неужели моя истинная любовь 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GALLERY"
-msgstr "GALLERY"
+msgstr "ГАЛЕРЕЯ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GAME"
-msgstr "GAME"
+msgstr "ИГРА"
 
 #. src: us
 msgctxt "ui"
@@ -26885,7 +26865,7 @@ msgstr "GAUSSIAN9X9"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GET"
-msgstr "GET"
+msgstr "ВЗЯТЬ"
 
 #. src: us
 msgctxt "ui"
@@ -28751,7 +28731,7 @@ msgstr "ДЕРЖИ, ЧТОБЫ ПРОПУСТИТЬ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "HORNY"
-msgstr "HORNY"
+msgstr "ВОЗБУЖДЕНА"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -28761,7 +28741,7 @@ msgstr "HORNY:"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "HUNK"
-msgstr "HUNK"
+msgstr "КРАСАВЧИК"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -31958,7 +31938,7 @@ msgstr "А? Чего ждать?"
 #. src: dialog
 msgctxt "speaker:Lio"
 msgid "Huh? What the hell is a crush?"
-msgstr "А? Что ещё за похоть?"
+msgstr "А? Что это за хрень — влюблённость?"
 
 #. src: dialog
 msgctxt "ui"
@@ -34479,7 +34459,7 @@ msgstr "НЕВЕРНЫЙ СТИЛЬ ВЫБРАН//СТИЛЬ НЕ НАЙДЕН"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ITEMS"
-msgstr "ITEMS"
+msgstr "ПРЕДМЕТЫ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -36486,7 +36466,7 @@ msgstr "ПРИСОЕДИНЯЙТЕСЬ К РАННИМ ДОСТУПУ СЕЙЧА
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "JOURNAL"
-msgstr "JOURNAL"
+msgstr "ЖУРНАЛ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -37861,7 +37841,7 @@ msgstr "СОДЕРЖИМОЕ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "LEAVE"
-msgstr "LEAVE"
+msgstr "УЙТИ"
 
 #. src: us
 msgctxt "ui"
@@ -39573,7 +39553,7 @@ msgstr "Посмотри налево"
 #. src: dialog
 msgctxt "speaker:Look"
 msgid "Look perversion"
-msgstr "Осмотреть разврат"
+msgstr "Осмотрись, извращенец"
 
 #. src: dialog
 msgctxt "speaker:Rugnar"
@@ -40165,7 +40145,7 @@ msgstr "КАРТА ПАМЯТИ: ПРЕВЫШЕНО МАКСИМАЛЬНОЕ К�
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "MENU"
-msgstr "MENU"
+msgstr "МЕНЮ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -40180,7 +40160,7 @@ msgstr "МЕНЮ — ПРОКРАТЬ ВВЕРХ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "MISSIONS"
-msgstr "MISSIONS"
+msgstr "МИССИИ"
 
 #. src: us
 msgctxt "ui"
@@ -43157,7 +43137,7 @@ msgstr "ЕЩЕ НЕ РЕАЛИЗОВАНО"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "NOVA"
-msgstr "NOVA"
+msgstr "НОВА"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -43167,7 +43147,7 @@ msgstr "Пресеты диалогов NPC Зои"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "NUDITY"
-msgstr "NUDITY"
+msgstr "НАГОТА"
 
 #. src: us
 msgctxt "ui"
@@ -45294,7 +45274,7 @@ msgstr "К-кое-что... другое...?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "OFF"
-msgstr "OFF"
+msgstr "ВЫКЛ"
 
 #. src: dialog
 #. rich_text: <size=25>OOOH~ FUUCK~</size>
@@ -45325,7 +45305,7 @@ msgstr "ОС: Версия ОС [Платформа]"
 #. src: field:m_text
 msgctxt "ui"
 msgid "OTHER"
-msgstr "OTHER"
+msgstr "ДРУГОЕ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -47757,7 +47737,7 @@ msgstr "ПРОТОТИП"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "PUB"
-msgstr "PUB"
+msgstr "БАР"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -47767,7 +47747,7 @@ msgstr "КУПИТЬ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "PUSSY"
-msgstr "PUSSY"
+msgstr "КИСКА"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49907,7 +49887,7 @@ msgstr "Пожалуйста, введите имя персонажа вот т
 #. src: dialog
 msgctxt "speaker:Machine"
 msgid "Please insert the semen-filled preservatives."
-msgstr "Пожалуйста, вставьте наполненные спермой консерванты."
+msgstr "Пожалуйста, вставьте консерванты, наполненные спермой."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Please put your- um- cock between Rosies- boobs, s-sir...</color>
@@ -50947,7 +50927,7 @@ msgstr "КВАРТАЛ КРАСНЫХ ФОНАРЕЙ"
 #. src: us
 msgctxt "ui"
 msgid "REDRESS"
-msgstr "REDRESS"
+msgstr "ПЕРЕОДЕТЬСЯ"
 
 #. src: dialog
 msgctxt "ui"
@@ -50973,7 +50953,7 @@ msgstr "ЗАМЕНИ МЕНЯ!!!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "REQUIRED"
-msgstr "REQUIRED"
+msgstr "ТРЕБУЕТСЯ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50993,12 +50973,12 @@ msgstr "ПРОДОЛЖИТЬ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "RETRY"
-msgstr "RETRY"
+msgstr "ПОВТОРИТЬ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ROSIE"
-msgstr "ROSIE"
+msgstr "РОЗИ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -52008,16 +51988,6 @@ msgstr "Жилой"
 msgctxt "ui"
 msgid "Residential / Maintenance"
 msgstr "Жилой сектор / Обслуживание"
-
-#. src: dialog
-msgctxt "speaker:Anne"
-msgid "Residential Dialogue Presets"
-msgstr "Жиловые диалоговые пресеты"
-
-#. src: dialog
-msgctxt "speaker:Ashley"
-msgid "Residential Dialogue Presets"
-msgstr "Жилой диалог — предустановки"
 
 #. src: dialog
 msgctxt "ui"
@@ -53166,12 +53136,12 @@ msgstr "СОСЕДНИЙ ПОРТ УЖЕ ПРИСОЕДИНЁН К"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SKANK"
-msgstr "SKANK"
+msgstr "ШЛЮХА"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SKIP"
-msgstr "SKIP"
+msgstr "ПРОПУСТИТЬ"
 
 #. src: dialog
 #. rich_text: <i>SLUT (Sexual Logistics and Utility Transport) Service
@@ -53187,7 +53157,7 @@ msgstr "SOA 5"
 #. src: us
 msgctxt "ui"
 msgid "SPEED"
-msgstr "SPEED"
+msgstr "СКОРОСТЬ"
 
 #. src: us
 msgctxt "ui"
@@ -53197,12 +53167,12 @@ msgstr "SPEEEEED!"
 #. src: us
 msgctxt "ui"
 msgid "START"
-msgstr "START"
+msgstr "СТАРТ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "STATS"
-msgstr "STATS"
+msgstr "СТАТИСТИКА"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -53293,31 +53263,6 @@ msgstr "Сара кончает"
 msgctxt "ui"
 msgid "Sarah Default"
 msgstr "Сара по умолчанию"
-
-#. src: dialog
-msgctxt "speaker:Confused"
-msgid "Sarah Dialogue Preset"
-msgstr "Пресет диалога Сары"
-
-#. src: dialog
-msgctxt "speaker:Horny"
-msgid "Sarah Dialogue Preset"
-msgstr "Пресет диалога Сары"
-
-#. src: dialog
-msgctxt "speaker:Laughing"
-msgid "Sarah Dialogue Preset"
-msgstr "Пресет диалога Сары"
-
-#. src: dialog
-msgctxt "speaker:Pouting"
-msgid "Sarah Dialogue Preset"
-msgstr "Предустановка диалога Сары"
-
-#. src: dialog
-msgctxt "speaker:Sad"
-msgid "Sarah Dialogue Preset"
-msgstr "Сара Диалог Предустановка"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59336,26 +59281,6 @@ msgid "System Performance"
 msgstr "Производительность системы"
 
 #. src: dialog
-msgctxt "speaker:MusicToPlay"
-msgid "System.Collections.Generic.List`1[[Asuna.Dialogues.DialogueLineLogic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-msgstr "System.Collections.Generic.List`1[[Asuna.Dialogues.DialogueLineLogic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-
-#. src: dialog
-msgctxt "speaker:OnChoiceSelected"
-msgid "System.Collections.Generic.List`1[[Asuna.Dialogues.DialogueLineLogic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-msgstr "(выбор сделан)"
-
-#. src: dialog
-msgctxt "speaker:Remove"
-msgid "System.Collections.Generic.List`1[[Asuna.Dialogues.DialogueLineLogic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-msgstr "System.Collections.Generic.List`1[[Asuna.Dialogues.DialogueLineLogic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-
-#. src: dialog
-msgctxt "speaker:SaveKey"
-msgid "System.Collections.Generic.List`1[[Asuna.Dialogues.DialogueLineLogic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-msgstr "System.Collections.Generic.List`1[[Asuna.Dialogues.DialogueLineLogic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-
-#. src: dialog
 msgctxt "ui"
 msgid "T'was a night of pleasantry and shared romance. Our love had no equal, nay the stars above could not match the depth of our passion!"
 msgstr "Это была ночь наслаждения и общей романтики. Нашей любви не было равных — и даже звёзды на небесах не могли сравниться с глубиной нашей страсти!"
@@ -59405,7 +59330,7 @@ msgstr "TCNNTabMenuCategoryButtonUI, Assembly-CSharp"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "TEST"
-msgstr "TEST"
+msgstr "ТЕСТ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59450,7 +59375,7 @@ msgstr "ИНСТРУМЕНТ — ТРЕТИЧНОЕ ДЕЙСТВИЕ"
 #. src: us
 msgctxt "ui"
 msgid "TRADE"
-msgstr "TRADE"
+msgstr "ОБМЕН"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59836,7 +59761,7 @@ msgstr "TaskProgressor: Задача '"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Teach her to give a tip show."
-msgstr "Научи её шоу за чаевые."
+msgstr "Научи её показывать, как давать чаевые."
 
 #. src: dialog
 msgctxt "ui"
@@ -63522,7 +63447,7 @@ msgstr "Навигация: Вверх"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "UNDRESS"
-msgstr "UNDRESS"
+msgstr "РАЗДЕТЬСЯ"
 
 #. src: us
 msgctxt "ui"
@@ -64889,7 +64814,7 @@ msgstr "ОЧЕНЬ ДОЛГОЕ НАЗВАНИЕ АНИМАЦИИ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "VICTORY"
-msgstr "VICTORY"
+msgstr "ПОБЕДА"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -65386,7 +65311,7 @@ msgstr "ТОЧНО! Я НАПИШУ ЕЙ ПИСЬМО!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "WIP"
-msgstr "WIP"
+msgstr "В РАЗРАБОТКЕ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -69829,7 +69754,7 @@ msgstr "Т-ты достаточно увидел!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "YAH"
-msgstr "YAH"
+msgstr "АГА"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -69839,7 +69764,7 @@ msgstr "Я И ТАК ЗНАЮ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "YES"
-msgstr "YES"
+msgstr "ДА"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -70325,7 +70250,7 @@ msgstr "Да..."
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Yeah..."
-msgstr "Ага..."
+msgstr "Да..."
 
 #. src: dialog
 #. rich_text: Yeah... Draws attention from the-... <i>less</i> fun kind sometimes.
@@ -70862,7 +70787,7 @@ msgstr "Да-а-а... Х-х-х, так хорошо, маленькая офиц
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "Yesss... I want you to mark this loyal citizen with your android cum, K12. Cum in her outfit, ehehe!"
-msgstr "Да-а-а... Я хочу, чтобы ты пометил эту преданную гражданку своей андроидной спермой, К12. Сперми её в этом наряде, эхе-хе!"
+msgstr "ДА-А-А... Я ХОЧУ, ЧТОБЫ ТЫ ПОМЕТИЛ ЭТУ ПРЕДАННУЮ ГРАЖДАНИНКУ СВОЕЙ АНДРОИДНОЙ СПЕРМОЙ, К12. СПЕРМИ ЕЁ В ЭТОМ НАРИДЕ, ЭХЕ-ХЕ!"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -71902,7 +71827,7 @@ msgstr "Ты сдерживаешься~"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "You're hotter than the service ones today."
-msgstr "Ты сегодня горячее, чем кролики."
+msgstr "Ты сегодня горячее, чем официантки."
 
 #. src: dialog
 #. rich_text: You're just... so... like... <size=25>hot</size>...
@@ -72176,7 +72101,7 @@ msgstr "Ты... с ней переспал?"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "You... lost your key?"
-msgstr "Ты... потерял ключ?"
+msgstr "Ты... потеряла ключ?"
 
 #. src: dialog
 #. rich_text: You?! What are <b>you</b> doing here?!
@@ -72285,7 +72210,7 @@ msgstr "Твоя потеря."
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "Your loss."
-msgstr "Это твои потери."
+msgstr "Твоя потеря."
 
 #. src: dialog
 msgctxt "speaker:Zoey"
