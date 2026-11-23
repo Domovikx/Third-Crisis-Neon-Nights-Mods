@@ -169,11 +169,6 @@ msgctxt "ui"
 msgid "#FFD24A"
 msgstr ""
 
-#. src: dialog
-msgctxt "ui"
-msgid "#TakenFromInventoryText# #ItemName#."
-msgstr ""
-
 #. src: us
 msgctxt "ui"
 msgid "$ Visible"
@@ -81687,11 +81682,6 @@ msgid "Receive Vibe's outfit."
 msgstr ""
 
 #. src: dialog
-msgctxt "ui"
-msgid "Received #ItemName#."
-msgstr ""
-
-#. src: dialog
 #. rich_text: Received <color=#00ffffff>Crush Blocker</color>.
 msgctxt "ui"
 msgid "Received Crush Blocker."
@@ -85901,11 +85891,6 @@ msgstr ""
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Screen Sex Walla"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Screen: ####x####@##Hz"
 msgstr ""
 
 #. src: dialog
@@ -110605,11 +110590,6 @@ msgstr ""
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Window strip"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Window: ####x####@##Hz[###dpi]"
 msgstr ""
 
 #. src: raw:GameObject

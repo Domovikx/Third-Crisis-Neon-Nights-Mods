@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NeonTranslator 1.0\n"
-"POT-Creation-Date: 2026-11-23 06:08+0000\n"
+"POT-Creation-Date: 2026-11-23 08:40+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -631,6 +631,8 @@ msgid "#OHIGH"
 msgstr ""
 
 #. src: dialog
+#. skip: tokens
+#, skip
 msgctxt "ui"
 msgid "#TakenFromInventoryText# #ItemName#."
 msgstr ""
@@ -133724,6 +133726,8 @@ msgid "Receive Vibe's outfit."
 msgstr ""
 
 #. src: dialog
+#. skip: tokens
+#, skip
 msgctxt "ui"
 msgid "Received #ItemName#."
 msgstr ""
@@ -141000,6 +141004,8 @@ msgid "Screen Sex Walla"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: tokens
+#, skip
 msgctxt "ui"
 msgid "Screen: ####x####@##Hz"
 msgstr ""
@@ -177135,6 +177141,8 @@ msgid "Window strip"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: tokens
+#, skip
 msgctxt "ui"
 msgid "Window: ####x####@##Hz[###dpi]"
 msgstr ""
