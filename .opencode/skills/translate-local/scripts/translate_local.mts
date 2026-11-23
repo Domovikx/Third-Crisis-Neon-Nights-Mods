@@ -85,6 +85,7 @@ const FIX_HINT: Record<string, string> = {
   "banned cluster":
     "Не используй сочетания «фх», «гх», «нгх», «мгх». Для вздохов и стонов пиши «Фф», «Ффф», «Мхм», «Ах», «Ох».",
   "tag imbalance": "Сохрани все теги (<i>, </i>, <color=...>) ровно как в оригинале.",
+  token: "Сохрани токены подстановки (#...#, {…}, %s) буква в букву, переводи только текст вокруг.",
   empty: "Ответ не должен быть пустым: переведи строку.",
 };
 const COPY_PURE_RX = /^[^A-Za-zА-Яа-яЁё]+$/u;
@@ -370,7 +371,25 @@ export function validate(src: string, tr: string, lang: string): string | null {
     return "tag imbalance";
   if (lang === "ru" && BANNED_RX.test(tr)) return "banned cluster";
   if (!keepsMarker(src, tr)) return "marker";
+  if (!keepsTokens(src, tr)) return "token";
   return null;
+}
+
+/**
+ * Токены подстановки обязаны пережить перевод БУКВА В БУКВУ.
+ *
+ * В диалогах ANToolkit встречаются пресеты вида
+ * `#TakenFromInventoryText# #ItemName#.` — игра заменяет `#...#` значениями
+ * (имя предмета и т. п.). Переименованный токен ломает подстановку молча,
+ * поэтому проверка жёсткая: набор токенов в переводе должен совпасть с
+ * исходным. Также закрываем `{Имя}` и printf-стиль `%s`, `%1$d`.
+ */
+export function keepsTokens(src: string, tr: string): boolean {
+  const rx = /#[\p{L}\p{N}_]+#|\{[\p{L}\p{N}_]+\}|%(?:\d+\$)?[sdif]/gu;
+  const tokens = (s: string): string[] => (s.match(rx) ?? []).slice().sort();
+  const a = tokens(src);
+  const b = tokens(tr);
+  return a.length === b.length && a.every((t, i) => t === b[i]);
 }
 
 /**

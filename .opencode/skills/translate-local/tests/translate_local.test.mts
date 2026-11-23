@@ -23,6 +23,7 @@ import {
   loadCore,
   loadLangSkill,
   loadSkillRules,
+  keepsTokens,
   parseResponse,
   runQueue,
   speakerOf,
@@ -150,6 +151,21 @@ test("triage: код/мусор копируются, живой текст ух
   assert.equal(triage("handlesOut must be same", "ru"), null, "mixed to LLM");
   // уже русский текст не копируем для не-ru языков
   assert.equal(triage("Привет", "de"), null);
+});
+
+test("keepsTokens: токены подстановки не переводятся и не теряются", () => {
+  assert.ok(
+    keepsTokens("#TakenFromInventoryText# #ItemName#.", "#TakenFromInventoryText# #ItemName#."),
+  );
+  assert.ok(
+    keepsTokens("#TakenFromInventoryText# #ItemName#.", "#TakenFromInventoryText#: #ItemName#."),
+    "текст между токенами можно менять",
+  );
+  assert.ok(!keepsTokens("#ItemName#.", "#ИмяПредмета#."), "переименованный токен — отказ");
+  assert.ok(!keepsTokens("#ItemName#.", "."), "потерянный токен — отказ");
+  assert.ok(keepsTokens("Hi %s, you have {Count} items", "Привет, %s, у тебя {Count} предметов"));
+  assert.ok(!keepsTokens("Hi %s", "Привет, %d"), "другой printf-тип — отказ");
+  assert.equal(validate("#ItemName#.", "#ИмяПредмета#.", "ru"), "token");
 });
 
 test("parseResponse: ровно n строк в формате N., а для n=1 — и без нумерации", () => {
