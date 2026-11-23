@@ -161,6 +161,27 @@ fn условия_правил() {
             "не hex: {id:?}"
         );
     }
+    for id in [
+        "GlowingHoleKeys/103 Peeking Counter",
+        "CartelHideoutBadendKeys/Did get naked",
+        "Character Keys/Did stare at Lios Dick",
+    ] {
+        assert!(
+            skip_condition_matches(SkipCondition::SaveKey, id, ""),
+            "save-key: {id:?}"
+        );
+    }
+    for id in [
+        "24/7 Kiosk",
+        "Annoyed / Angry",
+        "AMS/UI SoftMask",
+        "Keys of the city",
+    ] {
+        assert!(
+            !skip_condition_matches(SkipCondition::SaveKey, id, ""),
+            "не save-key: {id:?}"
+        );
+    }
     // Настоящие подписи остаются: у них есть слово.
     for real in ["ACCESS", "ACHIEVEMENTS", "SAVEFILENAME", "x y ZZZ"] {
         assert!(

@@ -199,6 +199,7 @@ pub enum SkipCondition {
     Tokens,
     HexColor,
     AssetPath,
+    SaveKey,
     Fragment,
 }
 
@@ -213,6 +214,7 @@ impl SkipCondition {
             "tokens" => Some(SkipCondition::Tokens),
             "hexColor" => Some(SkipCondition::HexColor),
             "assetPath" => Some(SkipCondition::AssetPath),
+            "saveKey" => Some(SkipCondition::SaveKey),
             "fragment" => Some(SkipCondition::Fragment),
             _ => None,
         }
@@ -227,6 +229,7 @@ impl SkipCondition {
             SkipCondition::Tokens => "tokens",
             SkipCondition::HexColor => "hexColor",
             SkipCondition::AssetPath => "assetPath",
+            SkipCondition::SaveKey => "saveKey",
             SkipCondition::Fragment => "fragment",
         }
     }
@@ -340,6 +343,7 @@ pub fn skip_condition_matches(when: SkipCondition, msgid: &str, rich: &str) -> b
         SkipCondition::Tokens => crate::text_filters::has_subst_token(msgid),
         SkipCondition::HexColor => is_hex_color(msgid),
         SkipCondition::AssetPath => looks_like_asset_path(msgid),
+        SkipCondition::SaveKey => is_save_key(msgid),
         SkipCondition::Fragment => classify_rich(msgid, rich).relation == RichRelation::Suffix,
     }
 }
@@ -402,4 +406,20 @@ pub fn looks_like_asset_path(s: &str) -> bool {
         ]
         .iter()
         .any(|ext| lower.contains(&format!(".{ext}")))
+}
+
+/// Save-ключ игры: префикс до первого `/` оканчивается на `Keys`/`Key`.
+///
+/// 1:1 с TS (`isSaveKey`). Примеры: `GlowingHoleKeys/103 Peeking Counter`,
+/// `CartelHideoutBadendKeys/Did get naked`. Игрок их не видит.
+pub fn is_save_key(s: &str) -> bool {
+    let t = py_strip(s);
+    let Some(pos) = t.find('/') else {
+        return false;
+    };
+    if pos == 0 {
+        return false;
+    }
+    let prefix = t[..pos].trim().to_lowercase();
+    prefix.ends_with("key") || prefix.ends_with("keys")
 }

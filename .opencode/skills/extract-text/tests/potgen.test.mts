@@ -746,6 +746,17 @@ test("условия правил: noLetters / shortToken / noWord / fragment", 
   for (const id of ["ADDDDD", "EDDDDD", "#FFD24G", "Color #FFF", "FFD24A"]) {
     assert.ok(!skipConditionMatches("hexColor", { msgid: id, rich: "" }), `не hex: ${id}`);
   }
+  // saveKey: идентификатор сохранения, а не реплика.
+  for (const id of [
+    "GlowingHoleKeys/103 Peeking Counter",
+    "CartelHideoutBadendKeys/Did get naked",
+    "Character Keys/Did stare at Lios Dick",
+  ]) {
+    assert.ok(skipConditionMatches("saveKey", { msgid: id, rich: "" }), `save-key: ${id}`);
+  }
+  for (const id of ["24/7 Kiosk", "Annoyed / Angry", "AMS/UI SoftMask", "Keys of the city"]) {
+    assert.ok(!skipConditionMatches("saveKey", { msgid: id, rich: "" }), `не save-key: ${id}`);
+  }
   assert.ok(
     skipConditionMatches("fragment", { msgid: "you request them. >", rich: REAL_FRAGMENT }),
   );
@@ -766,7 +777,7 @@ test("parseSkipPolicy: валидная политика и понятные о�
 
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:*","when":"nope"}]}', "p.json"),
-    /неизвестное условие "nope".*noLetters, shortToken, noWord, identifier, tokens, hexColor, assetPath, fragment/,
+    /неизвестное условие "nope".*noLetters, shortToken, noWord, identifier, tokens, hexColor, assetPath, saveKey, fragment/,
   );
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:Fontt","when":"noLetters"}]}', "p.json"),

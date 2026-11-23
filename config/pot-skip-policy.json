@@ -7,7 +7,8 @@
     "fragment": "ключ — хвост rich_text (дефект дампа: text обрезан). Чистка только известных TMP-тегов, порог ≥10 символов и ≥2 слов.",
     "identifier": "программный идентификатор: CamelCase из ≥2 горбов, snake_case или CONST_CASE (AbilityName, Camera_Flash, DEFAULT_KEY). Структурный признак, не «по виду»: слова с заглавной (Accept), аббревиатуры (ACCESS) и дефисы (Neon-Trust) остаются переводимыми.",
     "tokens": "шаблон с подстановкой: есть токен #Имя#, {Имя} или printf-стиль %s. Игра собирает из такого пресета строку (Received #ItemName#. → Received Iron Dagger.), поэтому переводить сам шаблон бессмысленно: рантайм ищет точное совпадение и его никогда не увидит. 2026-11-23: 5 записей.",
-    "hex-color": "Явный цвет #RRGGBB (3–8 hex-цифр) из кучи #US: константа, а не текст. 2026-11-23: 3 записи (#FFD24A, #8A8F98, #A64141). Без # не срабатывает намеренно: ADDDDD/EDDDDD — имена Timeline-треков."
+    "hex-color": "Явный цвет #RRGGBB (3–8 hex-цифр) из кучи #US: константа, а не текст. 2026-11-23: 3 записи (#FFD24A, #8A8F98, #A64141). Без # не срабатывает намеренно: ADDDDD/EDDDDD — имена Timeline-треков.",
+    "save-key": "save-ключ игры: до первого / стоит ...Keys или ...Key (GlowingHoleKeys/103 Peeking Counter, CartelHideoutBadendKeys/Did get naked). Идентификатор состояния, игрок его не видит. 2026-11-23: 85 записей."
   },
   "rules": [
     {
@@ -40,6 +41,11 @@
       "id": "hex-color",
       "src": "*",
       "when": "hexColor"
+    },
+    {
+      "id": "save-key",
+      "src": "*",
+      "when": "saveKey"
     },
     {
       "id": "fragment",

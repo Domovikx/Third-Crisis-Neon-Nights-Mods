@@ -142,6 +142,7 @@ export type SkipCondition =
   | "tokens"
   | "hexColor"
   | "assetPath"
+  | "saveKey"
   | "fragment";
 
 /** Все допустимые условия; неизвестное — ошибка политики, не тихий игнор. */
@@ -153,6 +154,7 @@ export const SKIP_CONDITIONS: readonly SkipCondition[] = [
   "tokens",
   "hexColor",
   "assetPath",
+  "saveKey",
   "fragment",
 ];
 
@@ -162,6 +164,21 @@ const HAS_LETTER_RX = /\p{L}/u;
 /** «Нет ни одной буквы» — символы, цифры, пунктуация, пустота. */
 export function hasLetters(s: string): boolean {
   return HAS_LETTER_RX.test(s);
+}
+
+/**
+ * Save-ключ игры: префикс до первого `/` оканчивается на `Keys`/`Key`.
+ *
+ * Примеры: `GlowingHoleKeys/103 Peeking Counter`, `CartelHideoutBadendKeys/Did
+ * get naked`, `Character Keys/Did stare at ...`. Это идентификаторы состояния
+ * для сохранений, игрок их не видит. Замер 2026-11-23: 85 живых записей.
+ */
+export function isSaveKey(s: string): boolean {
+  const text = pyStrip(s);
+  const slash = text.indexOf("/");
+  if (slash <= 0) return false;
+  const prefix = text.slice(0, slash).trim();
+  return /(?:keys?)$/i.test(prefix);
 }
 
 /** Расширения файлов, которые встречаются в строках игры как ссылки. */
@@ -257,6 +274,7 @@ export interface SkipContext {
  * `tokens` — шаблон подстановки (`#Имя#`, `{Имя}`, `%s`), не текст для игрока;
  * `hexColor` — `#RRGGBB` (константа цвета, встречается в куче `#US`);
  * `assetPath` — путь к ассету (`Assets/…`, `…/Resources/…`, файл с расширением);
+ * `saveKey` — save-ключ (`…Keys/…`, `…Key/…`) из `raw:MonoBehaviour`;
  * `fragment` — ключ это хвост `rich_text` (та же чистка, что у инварианта).
  * Провенанс (`src`) проверяет вызывающий: условие о тексте, не о метке.
  */
@@ -281,6 +299,10 @@ export function skipConditionMatches(when: SkipCondition, ctx: SkipContext): boo
     case "assetPath":
       // Путь к ассету (`Assets/.../blackTex 1.png`) — это ссылка, не текст.
       return looksLikeAssetPath(ctx.msgid);
+    case "saveKey":
+      // Save-ключ игры (`GlowingHoleKeys/103 Peeking Counter`) — идентификатор
+      // состояния, а не реплика. Замер 2026-11-23: 85 живых записей.
+      return isSaveKey(ctx.msgid);
     case "fragment":
       return classifyRich(ctx.msgid, ctx.rich).relation === "suffix";
     default:
