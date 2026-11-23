@@ -135,7 +135,7 @@ export function classifyRich(msgid: string, rich: string): RichCheck {
 
 /** Условия правил skip-политики (имена — контракт JSON, менять нельзя молча). */
 export type SkipCondition =
-  "noLetters" | "shortToken" | "noWord" | "identifier" | "tokens" | "fragment";
+  "noLetters" | "shortToken" | "noWord" | "identifier" | "tokens" | "hexColor" | "fragment";
 
 /** Все допустимые условия; неизвестное — ошибка политики, не тихий игнор. */
 export const SKIP_CONDITIONS: readonly SkipCondition[] = [
@@ -144,6 +144,7 @@ export const SKIP_CONDITIONS: readonly SkipCondition[] = [
   "noWord",
   "identifier",
   "tokens",
+  "hexColor",
   "fragment",
 ];
 
@@ -227,6 +228,7 @@ export interface SkipContext {
  * `noWord` — нет ни одного токена из ≥3 букв (бинарный шум raw-скана);
  * `identifier` — программный идентификатор (CamelCase/snake_case/CONST_CASE);
  * `tokens` — шаблон подстановки (`#Имя#`, `{Имя}`, `%s`), не текст для игрока;
+ * `hexColor` — `#RRGGBB` (константа цвета, встречается в куче `#US`);
  * `fragment` — ключ это хвост `rich_text` (та же чистка, что у инварианта).
  * Провенанс (`src`) проверяет вызывающий: условие о тексте, не о метке.
  */
@@ -245,6 +247,9 @@ export function skipConditionMatches(when: SkipCondition, ctx: SkipContext): boo
       // Шаблон с подстановкой (`Received #ItemName#.`) — формат, не текст:
       // игра собирает из него строку и нашего перевода там не будет.
       return hasSubstToken(ctx.msgid);
+    case "hexColor":
+      // `#FFD24A` из кучи `#US` — константа цвета, а не строка для игрока.
+      return /^#[0-9A-Fa-f]{3,8}$/u.test(pyStrip(ctx.msgid));
     case "fragment":
       return classifyRich(ctx.msgid, ctx.rich).relation === "suffix";
     default:

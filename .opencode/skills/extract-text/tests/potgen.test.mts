@@ -736,6 +736,13 @@ test("условия правил: noLetters / shortToken / noWord / fragment", 
   for (const id of ["Received the item.", "100% sure", "Hi there"]) {
     assert.ok(!skipConditionMatches("tokens", { msgid: id, rich: "" }), `не tokens: ${id}`);
   }
+  // hexColor: явный #RRGGBB — константа; без # не срабатывает.
+  for (const id of ["#FFD24A", "#8A8F98", "#FFF", "#A64141"]) {
+    assert.ok(skipConditionMatches("hexColor", { msgid: id, rich: "" }), `hex: ${id}`);
+  }
+  for (const id of ["ADDDDD", "EDDDDD", "#FFD24G", "Color #FFF", "FFD24A"]) {
+    assert.ok(!skipConditionMatches("hexColor", { msgid: id, rich: "" }), `не hex: ${id}`);
+  }
   assert.ok(
     skipConditionMatches("fragment", { msgid: "you request them. >", rich: REAL_FRAGMENT }),
   );
@@ -756,7 +763,7 @@ test("parseSkipPolicy: валидная политика и понятные о�
 
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:*","when":"nope"}]}', "p.json"),
-    /неизвестное условие "nope".*noLetters, shortToken, noWord, identifier, tokens, fragment/,
+    /неизвестное условие "nope".*noLetters, shortToken, noWord, identifier, tokens, hexColor, fragment/,
   );
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:Fontt","when":"noLetters"}]}', "p.json"),

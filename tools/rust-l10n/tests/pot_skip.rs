@@ -149,6 +149,18 @@ fn условия_правил() {
             "не tokens: {id:?}"
         );
     }
+    for id in ["#FFD24A", "#8A8F98", "#FFF", "#A64141"] {
+        assert!(
+            skip_condition_matches(SkipCondition::HexColor, id, ""),
+            "hex: {id:?}"
+        );
+    }
+    for id in ["ADDDDD", "EDDDDD", "#FFD24G", "Color #FFF", "FFD24A"] {
+        assert!(
+            !skip_condition_matches(SkipCondition::HexColor, id, ""),
+            "не hex: {id:?}"
+        );
+    }
     // Настоящие подписи остаются: у них есть слово.
     for real in ["ACCESS", "ACHIEVEMENTS", "SAVEFILENAME", "x y ZZZ"] {
         assert!(

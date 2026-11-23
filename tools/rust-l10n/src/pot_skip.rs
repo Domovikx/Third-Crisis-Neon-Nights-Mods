@@ -197,6 +197,7 @@ pub enum SkipCondition {
     NoWord,
     Identifier,
     Tokens,
+    HexColor,
     Fragment,
 }
 
@@ -209,6 +210,7 @@ impl SkipCondition {
             "noWord" => Some(SkipCondition::NoWord),
             "identifier" => Some(SkipCondition::Identifier),
             "tokens" => Some(SkipCondition::Tokens),
+            "hexColor" => Some(SkipCondition::HexColor),
             "fragment" => Some(SkipCondition::Fragment),
             _ => None,
         }
@@ -221,6 +223,7 @@ impl SkipCondition {
             SkipCondition::NoWord => "noWord",
             SkipCondition::Identifier => "identifier",
             SkipCondition::Tokens => "tokens",
+            SkipCondition::HexColor => "hexColor",
             SkipCondition::Fragment => "fragment",
         }
     }
@@ -332,6 +335,20 @@ pub fn skip_condition_matches(when: SkipCondition, msgid: &str, rich: &str) -> b
         SkipCondition::NoWord => !has_word(msgid),
         SkipCondition::Identifier => looks_like_identifier(msgid),
         SkipCondition::Tokens => crate::text_filters::has_subst_token(msgid),
+        SkipCondition::HexColor => is_hex_color(msgid),
         SkipCondition::Fragment => classify_rich(msgid, rich).relation == RichRelation::Suffix,
     }
+}
+
+/// `#RRGGBB` (3–8 hex-цифр) — константа цвета, а не текст для игрока.
+///
+/// 1:1 с TS (`hexColor` в `pot_skip.mts`). Без `#` не срабатывает: `ADDDDD`
+/// и `EDDDDD` в дампе — имена Timeline-треков (`Playable Track`), а не цвета,
+/// и гадать по внешнему виду мы не будем.
+pub fn is_hex_color(s: &str) -> bool {
+    let t = s.trim();
+    let Some(rest) = t.strip_prefix('#') else {
+        return false;
+    };
+    (3..=8).contains(&rest.chars().count()) && rest.chars().all(|c| c.is_ascii_hexdigit())
 }
