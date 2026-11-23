@@ -114,11 +114,10 @@ test(
   "E2E реальный дамп: po/template.pot проходит контракт (opt-in)",
   { skip: realSkip },
   async (t) => {
-    // POT перегенерирован с провенансом (2026-11-22), но ДО skip-политики:
-    // `#, skip` появятся при следующем `potgen --update`, поэтому сверку с
-    // перегенерацией здесь выключаем (skipPolicy: null) — иначе каждый
-    // будущий тег был бы `stale` на легаси-файле.
-    const violations = await checkPot(potPath, { dumpPath: dumpDir, skipPolicy: null });
+    // POT перегенерирован вместе с skip-политикой (2026-11-23), поэтому
+    // проверка берёт политику по умолчанию: `#, skip` обязаны совпадать с
+    // правилами, а перегенерация — с файлом.
+    const violations = await checkPot(potPath, { dumpPath: dumpDir });
     const errors = violations.filter((v) => v.severity === "error");
     const warns = violations.filter((v) => v.severity === "warn");
     t.diagnostic(

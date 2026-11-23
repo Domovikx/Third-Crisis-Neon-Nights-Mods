@@ -530,10 +530,10 @@ test("вспомогательное: дата и сводка", () => {
 test("реальный POT в репозитории: структурные инварианты без дампа (если файл есть)", async () => {
   const path = join(REPO, "po", "template.pot");
   if (!existsSync(path)) return;
-  // po/template.pot сгенерирован ДО провенанса и ДО skip-политики: метки
-  // `#. src:` и `#, skip` появятся при перегенерации (шаги политик). Структуру
-  // и остальной контракт — проверяем; новый POT без src контракт не пропустит.
-  const violations = await checkPot(path, { requireSrc: false, skipPolicy: null });
+  // POT перегенерирован вместе с провенансом и skip-политикой (2026-11-23):
+  // `#. src:` и `#, skip` в файле есть, поэтому проверка идёт со значениями по
+  // умолчанию (src обязателен, политика читается из config/).
+  const violations = await checkPot(path);
   const errors = violations.filter((v) => v.severity === "error");
 
   // Известные дефекты данных (найдены 2026-11-22, чистка — отдельная задача).
