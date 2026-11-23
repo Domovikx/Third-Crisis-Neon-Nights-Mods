@@ -57,7 +57,8 @@
     "pot:check:full": "node scripts/pot_invariants.mts po/template.pot --dump tmp/dump-new",
     "po:update:ts": "node .opencode/skills/extract-text/scripts/po_update.mts",
     "test:golden": "node --test scripts/text_golden.test.mts",
-    "rich:audit": "node .opencode/skills/extract-text/scripts/rich_audit.mts"
+    "rich:audit": "node .opencode/skills/extract-text/scripts/rich_audit.mts",
+    "dash": "node .opencode/skills/local-dash/dashboard.mts"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",
