@@ -133,13 +133,14 @@ export function classifyRich(msgid: string, rich: string): RichCheck {
 }
 
 /** Условия правил skip-политики (имена — контракт JSON, менять нельзя молча). */
-export type SkipCondition = "noLetters" | "shortToken" | "noWord" | "fragment";
+export type SkipCondition = "noLetters" | "shortToken" | "noWord" | "identifier" | "fragment";
 
 /** Все допустимые условия; неизвестное — ошибка политики, не тихий игнор. */
 export const SKIP_CONDITIONS: readonly SkipCondition[] = [
   "noLetters",
   "shortToken",
   "noWord",
+  "identifier",
   "fragment",
 ];
 
@@ -156,6 +157,32 @@ export const SHORT_TOKEN_MAX_CHARS = 12;
 
 /** Сколько букв должно быть в токене, чтобы он считался словом. */
 export const WORD_MIN_LETTERS = 3;
+
+/** CamelCase-идентификатор: только латиница/цифры, не ALLCAPS, ≥2 горба. */
+const CAMEL_RX = /^[A-Za-z][A-Za-z0-9]*$/;
+const ALL_CAPS_RX = /^[A-Z][A-Z0-9]*$/;
+/** `snake_case` / `CONST_CASE`: латиница/цифры, разделённые `_`. */
+const SNAKE_RX = /^[A-Za-z0-9]+(?:_[A-Za-z0-9]+)+$/;
+
+/**
+ * Похоже ли на программный идентификатор, а не на текст.
+ *
+ * Признак структурный, а не «по виду»: имя переменной/ассета/поля. Два класса:
+ * CamelCase из ≥2 горбов (`AbilityName`, `Camera_Flash` — нет, это snake) и
+ * `snake_case`/`CONST_CASE` (`DEFAULT_KEY`, `Char_Klaudia`). Слова с заглавной
+ * (`Accept`), аббревиатуры (`ACCESS`, `ARRIVAL`) и дефисы (`Neon-Trust`) НЕ
+ * считаются идентификаторами: их можно показывать игроку.
+ *
+ * Замер 2026-11-23: на `raw:*` это 2 242 записи, которых не закрывают
+ * предыдущие правила; в них нет ни одного совпадения с `dialog`/`us`/
+ * `settings`/`field:` (проверено по POT).
+ */
+export function looksLikeIdentifier(text: string): boolean {
+  if (SNAKE_RX.test(text)) return true;
+  if (!CAMEL_RX.test(text) || ALL_CAPS_RX.test(text)) return false;
+  const humps = text.match(/[A-Z]/g)?.length ?? 0;
+  return humps >= 2 || /^[a-z]+[A-Z]/.test(text);
+}
 
 /** Символ внутри токена: буква или цифра (`\p{L}`/`\p{N}`). */
 const WORD_CHAR_RX = /[\p{L}\p{N}]/u;
@@ -195,6 +222,7 @@ export interface SkipContext {
  *
  * `noLetters` — в ключе нет букв; `shortToken` — нет пробелов и ≤12 символов;
  * `noWord` — нет ни одного токена из ≥3 букв (бинарный шум raw-скана);
+ * `identifier` — программный идентификатор (CamelCase/snake_case/CONST_CASE);
  * `fragment` — ключ это хвост `rich_text` (та же чистка, что у инварианта).
  * Провенанс (`src`) проверяет вызывающий: условие о тексте, не о метке.
  */
@@ -207,6 +235,8 @@ export function skipConditionMatches(when: SkipCondition, ctx: SkipContext): boo
     case "noWord":
       // Бинарный шум raw-скана (`wK Ax`, `w? |b`): ни одного токена из ≥3 букв.
       return !hasWord(ctx.msgid);
+    case "identifier":
+      return looksLikeIdentifier(ctx.msgid);
     case "fragment":
       return classifyRich(ctx.msgid, ctx.rich).relation === "suffix";
     default:

@@ -195,6 +195,7 @@ pub enum SkipCondition {
     NoLetters,
     ShortToken,
     NoWord,
+    Identifier,
     Fragment,
 }
 
@@ -205,6 +206,7 @@ impl SkipCondition {
             "noLetters" => Some(SkipCondition::NoLetters),
             "shortToken" => Some(SkipCondition::ShortToken),
             "noWord" => Some(SkipCondition::NoWord),
+            "identifier" => Some(SkipCondition::Identifier),
             "fragment" => Some(SkipCondition::Fragment),
             _ => None,
         }
@@ -215,6 +217,7 @@ impl SkipCondition {
             SkipCondition::NoLetters => "noLetters",
             SkipCondition::ShortToken => "shortToken",
             SkipCondition::NoWord => "noWord",
+            SkipCondition::Identifier => "identifier",
             SkipCondition::Fragment => "fragment",
         }
     }
@@ -270,6 +273,52 @@ pub fn has_word(text: &str) -> bool {
     letters >= WORD_MIN_LETTERS
 }
 
+/// Похоже ли на программный идентификатор, а не на текст (1:1 с TS).
+///
+/// Структурный признак, а не «по виду»: CamelCase из ≥2 горбов (не ALLCAPS)
+/// либо `snake_case`/`CONST_CASE`. Слова с заглавной (`Accept`), аббревиатуры
+/// (`ACCESS`) и дефисы (`Neon-Trust`) идентификаторами НЕ считаются — их
+/// можно показывать игроку.
+pub fn looks_like_identifier(text: &str) -> bool {
+    // snake_case / CONST_CASE: только латиница/цифры, разделённые `_`.
+    let parts: Vec<&str> = text.split('_').collect();
+    if parts.len() >= 2
+        && parts
+            .iter()
+            .all(|p| !p.is_empty() && p.chars().all(|c| c.is_ascii_alphanumeric()))
+    {
+        return true;
+    }
+    if text.is_empty() || !text.chars().all(|c| c.is_ascii_alphanumeric()) {
+        return false;
+    }
+    if !text.starts_with(|c: char| c.is_ascii_alphabetic()) {
+        return false;
+    }
+    // ALLCAPS — не идентификатор.
+    if text
+        .chars()
+        .all(|c| c.is_ascii_uppercase() || c.is_ascii_digit())
+    {
+        return false;
+    }
+    let humps = text.chars().filter(|c| c.is_ascii_uppercase()).count();
+    if humps >= 2 {
+        return true;
+    }
+    // `/^[a-z]+[A-Z]/`
+    let mut lower = 0usize;
+    let mut chars = text.chars();
+    for c in chars.by_ref() {
+        if c.is_ascii_lowercase() {
+            lower += 1;
+        } else {
+            return lower > 0 && c.is_ascii_uppercase();
+        }
+    }
+    false
+}
+
 /// Сработало ли условие правила на записи (провенанс проверяет вызывающий).
 pub fn skip_condition_matches(when: SkipCondition, msgid: &str, rich: &str) -> bool {
     match when {
@@ -278,6 +327,7 @@ pub fn skip_condition_matches(when: SkipCondition, msgid: &str, rich: &str) -> b
             !msgid.chars().any(js_ws) && cp_len(msgid) <= SHORT_TOKEN_MAX_CHARS
         }
         SkipCondition::NoWord => !has_word(msgid),
+        SkipCondition::Identifier => looks_like_identifier(msgid),
         SkipCondition::Fragment => classify_rich(msgid, rich).relation == RichRelation::Suffix,
     }
 }

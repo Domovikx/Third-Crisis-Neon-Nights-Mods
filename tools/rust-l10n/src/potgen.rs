@@ -689,7 +689,7 @@ pub fn parse_skip_policy(text: &str, source: &str) -> Result<SkipPolicy, String>
         let Some(when) = SkipCondition::parse(when_raw) else {
             return Err(format!(
                 "skip-политика {source}: правило \"{id}\" — неизвестное условие \"{when_raw}\" \
-                 (допустимо: noLetters, shortToken, noWord, fragment)"
+                 (допустимо: noLetters, shortToken, noWord, identifier, fragment)"
             ));
         };
         let enabled = match rule.get("enabled") {

@@ -4,17 +4,35 @@
     "no-letters": "в ключе нет ни одной буквы (только цифры/пунктуация/пробелы). На POT 2026-11-23 совпадений 0 — правило оставлено как дешёвая страховка.",
     "short-token": "нет пробелов и ≤12 символов. Основной фильтр бинарного мусора raw-скана (94% попаданий — символы, а не слова). Исключён raw:MonoBehaviour (srcExclude): там лежат настоящие подписи ACCESS, ACHIEVEMENTS, SAVEFILENAME — они остаются переводимыми.",
     "no-word": "в ключе нет ни одного токена из ≥3 букв. Закрывает шум с пробелом (`wK Ax`, `w? |b`, `j A`), который не ловит short-token; настоящие подписи (ACCESS) не трогает — у них есть слово.",
-    "fragment": "ключ — хвост rich_text (дефект дампа: text обрезан). Чистка только известных TMP-тегов, порог ≥10 символов и ≥2 слов."
+    "fragment": "ключ — хвост rich_text (дефект дампа: text обрезан). Чистка только известных TMP-тегов, порог ≥10 символов и ≥2 слов.",
+    "identifier": "программный идентификатор: CamelCase из ≥2 горбов, snake_case или CONST_CASE (AbilityName, Camera_Flash, DEFAULT_KEY). Структурный признак, не «по виду»: слова с заглавной (Accept), аббревиатуры (ACCESS) и дефисы (Neon-Trust) остаются переводимыми."
   },
   "rules": [
-    { "id": "no-letters", "src": "raw:*", "when": "noLetters" },
+    {
+      "id": "no-letters",
+      "src": "raw:*",
+      "when": "noLetters"
+    },
     {
       "id": "short-token",
       "src": "raw:*",
       "srcExclude": ["raw:MonoBehaviour"],
       "when": "shortToken"
     },
-    { "id": "no-word", "src": "raw:*", "when": "noWord" },
-    { "id": "fragment", "src": "*", "when": "fragment" }
+    {
+      "id": "no-word",
+      "src": "raw:*",
+      "when": "noWord"
+    },
+    {
+      "id": "identifier",
+      "src": "raw:*",
+      "when": "identifier"
+    },
+    {
+      "id": "fragment",
+      "src": "*",
+      "when": "fragment"
+    }
   ]
 }

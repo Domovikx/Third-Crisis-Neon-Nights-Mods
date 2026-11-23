@@ -119,6 +119,24 @@ fn условия_правил() {
             "noWord должен ловить {noisy:?}"
         );
     }
+    for id in [
+        "AbilityName",
+        "Camera_Flash",
+        "DEFAULT_KEY",
+        "Char_Klaudia",
+        "MainUI",
+    ] {
+        assert!(
+            skip_condition_matches(SkipCondition::Identifier, id, ""),
+            "identifier: {id:?}"
+        );
+    }
+    for id in ["ACCESS", "Accept", "ARRIVAL", "Aaron", "Neon-Trust"] {
+        assert!(
+            !skip_condition_matches(SkipCondition::Identifier, id, ""),
+            "не identifier: {id:?}"
+        );
+    }
     // Настоящие подписи остаются: у них есть слово.
     for real in ["ACCESS", "ACHIEVEMENTS", "SAVEFILENAME", "x y ZZZ"] {
         assert!(

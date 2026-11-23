@@ -714,6 +714,13 @@ test("условия правил: noLetters / shortToken / noWord / fragment", 
     "две буквы — не слово (в POT такой записи нет, но правило обязано быть точным)",
   );
   assert.ok(!skipConditionMatches("noWord", { msgid: "x y ZZZ", rich: "" }), "ZZZ — слово");
+  // identifier: структура имени, а не «вид».
+  for (const id of ["AbilityName", "Camera_Flash", "DEFAULT_KEY", "Char_Klaudia", "MainUI"]) {
+    assert.ok(skipConditionMatches("identifier", { msgid: id, rich: "" }), `identifier: ${id}`);
+  }
+  for (const id of ["ACCESS", "Accept", "ARRIVAL", "Aaron", "Neon-Trust", "AC/DС"]) {
+    assert.ok(!skipConditionMatches("identifier", { msgid: id, rich: "" }), `не identifier: ${id}`);
+  }
   assert.ok(
     skipConditionMatches("fragment", { msgid: "you request them. >", rich: REAL_FRAGMENT }),
   );
@@ -734,7 +741,7 @@ test("parseSkipPolicy: валидная политика и понятные о�
 
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:*","when":"nope"}]}', "p.json"),
-    /неизвестное условие "nope".*noLetters, shortToken, noWord, fragment/,
+    /неизвестное условие "nope".*noLetters, shortToken, noWord, identifier, fragment/,
   );
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:Fontt","when":"noLetters"}]}', "p.json"),

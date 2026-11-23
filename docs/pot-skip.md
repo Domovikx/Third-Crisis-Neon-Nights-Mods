@@ -33,6 +33,7 @@ msgstr ""
       "when": "shortToken"
     },
     { "id": "no-word", "src": "raw:*", "when": "noWord" },
+    { "id": "identifier", "src": "raw:*", "when": "identifier" },
     { "id": "fragment", "src": "*", "when": "fragment" }
   ]
 }
@@ -49,7 +50,7 @@ msgstr ""
   `ACHIEVEMENTS`, `SAVEFILENAME`), и терять их нельзя. Опечатка в
   `srcExclude` — тоже ошибка.
 - `when` — условие из `pot_skip.mts`: `noLetters`, `shortToken`, `noWord`,
-  `fragment`. Неизвестное условие — ошибка.
+  `identifier`, `fragment`. Неизвестное условие — ошибка.
 - `enabled: false` — правило остаётся в файле для ревью, но не действует.
 - `_`-поля — комментарии данных (не исполняются).
 - Побеждает ПЕРВОЕ подходящее правило в порядке массива.
@@ -69,6 +70,14 @@ msgstr ""
   Настоящие подписи не трогает — у `ACCESS` и `SAVEFILENAME` есть слово.
   Замер 2026-11-23: на `raw:*` совпадает с 3 138 записями, из них 2 961 —
   токены без пробелов (их уже закрывает `shortToken`), а 177 — шум с пробелом.
+- **`identifier`** — программный идентификатор, а не текст: CamelCase из ≥2
+  горбов (`AbilityName`, `Cypher_Timer` — нет, это snake), `snake_case` /
+  `CONST_CASE` (`DEFAULT_KEY`, `Char_Klaudia`). Признак **структурный**, а не
+  «по виду»: слова с заглавной (`Accept`), аббревиатуры (`ACCESS`, `ARRIVAL`)
+  и дефисы (`Neon-Trust`) идентификаторами НЕ считаются и остаются
+  переводимыми. Замер 2026-11-23: 2 242 записи `raw:*`, которых не закрывают
+  предыдущие правила; ни одна из них не встречается в `dialog`/`us`/
+  `settings`/`field:`.
 - **`fragment`** — ключ это **хвост** `rich_text`: дамп сохранил `text`
   обрезанным, а полный текст — в `rich_text`.
 
