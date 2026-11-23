@@ -202,6 +202,7 @@ pub enum SkipCondition {
     SaveKey,
     SnakeCase,
     FsmLabel,
+    StateName,
     Fragment,
 }
 
@@ -219,6 +220,7 @@ impl SkipCondition {
             "saveKey" => Some(SkipCondition::SaveKey),
             "snakeCase" => Some(SkipCondition::SnakeCase),
             "fsmLabel" => Some(SkipCondition::FsmLabel),
+            "stateName" => Some(SkipCondition::StateName),
             "fragment" => Some(SkipCondition::Fragment),
             _ => None,
         }
@@ -236,6 +238,7 @@ impl SkipCondition {
             SkipCondition::SaveKey => "saveKey",
             SkipCondition::SnakeCase => "snakeCase",
             SkipCondition::FsmLabel => "fsmLabel",
+            SkipCondition::StateName => "stateName",
             SkipCondition::Fragment => "fragment",
         }
     }
@@ -352,6 +355,7 @@ pub fn skip_condition_matches(when: SkipCondition, msgid: &str, rich: &str) -> b
         SkipCondition::SaveKey => is_save_key(msgid),
         SkipCondition::SnakeCase => is_snake_case(msgid),
         SkipCondition::FsmLabel => is_fsm_label(msgid),
+        SkipCondition::StateName => is_state_name(msgid),
         SkipCondition::Fragment => classify_rich(msgid, rich).relation == RichRelation::Suffix,
     }
 }
@@ -414,6 +418,27 @@ pub fn looks_like_asset_path(s: &str) -> bool {
         ]
         .iter()
         .any(|ext| lower.contains(&format!(".{ext}")))
+}
+
+/// Имя состояния/действия (`Bark 12`, `Choice1`, `Agree2`) — 1:1 с TS `isStateName`.
+///
+/// Метки веток диалога, игроку не показываются; самый крупный остаток
+/// «перевод = оригинал» (130 записей, 2026-11-23).
+pub fn is_state_name(s: &str) -> bool {
+    let t = s.trim();
+    let lower = t.to_lowercase();
+    let stem = [
+        "bark", "choice", "agree", "decline", "disable", "enable", "check",
+    ]
+    .iter()
+    .find(|w| lower.starts_with(*w));
+    let Some(w) = stem else { return false };
+    let rest = &t[w.len()..];
+    // Цифра обязательна: «Leave»/«Agree» без номера — кнопки меню, их переводим.
+    rest.chars().any(|c| c.is_ascii_digit())
+        && rest
+            .chars()
+            .all(|c| c.is_ascii_digit() || c.is_whitespace())
 }
 
 /// Метка FSM: ключ начинается со слова `FSM` (1:1 с TS `isFsmLabel`).

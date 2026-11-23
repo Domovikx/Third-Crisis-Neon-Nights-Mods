@@ -10,7 +10,8 @@
     "hex-color": "Явный цвет #RRGGBB (3–8 hex-цифр) из кучи #US: константа, а не текст. 2026-11-23: 3 записи (#FFD24A, #8A8F98, #A64141). Без # не срабатывает намеренно: ADDDDD/EDDDDD — имена Timeline-треков.",
     "save-key": "save-ключ игры: до первого / стоит ...Keys или ...Key (GlowingHoleKeys/103 Peeking Counter, CartelHideoutBadendKeys/Did get naked). Идентификатор состояния, игрок его не видит. 2026-11-23: 85 записей.",
     "snake-case": "snake_case-токен внутри ключа (CC_Option_Outfit_*, Apl_Female_*, PMA_IsNude): имя ассета/состояния/отладочное сообщение Unity, а не текст для игрока. 2026-11-23: 415 живых записей, в диалогах — одна (путь к ассету).",
-    "fsm-label": "метка FSM (ключ начинается со слова FSM: `FSM Lio Printer`, `FSM Nova Moving In`): имя машины состояний Unity, игрок его не видит. 2026-11-23: 12 живых записей."
+    "fsm-label": "метка FSM (ключ начинается со слова FSM: `FSM Lio Printer`, `FSM Nova Moving In`): имя машины состояний Unity, игрок его не видит. 2026-11-23: 12 живых записей.",
+    "state-name": "метка состояния/действия (`Bark 12`, `Choice1`, `Agree2`, `Disable2`): ветка диалога, а не текст для игрока. 2026-11-23: 130 живых записей — крупнейший остаток «перевод = оригинал»."
   },
   "rules": [
     {
@@ -58,6 +59,11 @@
       "id": "fsm-label",
       "src": "*",
       "when": "fsmLabel"
+    },
+    {
+      "id": "state-name",
+      "src": "*",
+      "when": "stateName"
     },
     {
       "id": "fragment",

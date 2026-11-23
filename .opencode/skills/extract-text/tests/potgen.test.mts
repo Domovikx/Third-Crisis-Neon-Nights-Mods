@@ -769,6 +769,14 @@ test("условия правил: noLetters / shortToken / noWord / fragment", 
   for (const id of ["Change", "24/7 Kiosk", "Annoyed / Angry", "Alpha: N/A", "Neon-Trust"]) {
     assert.ok(!skipConditionMatches("snakeCase", { msgid: id, rich: "" }), `не snake: ${id}`);
   }
+  // stateName: метки веток диалога (Bark 12, Choice1) — не текст для игрока.
+  for (const id of ["Bark 12", "Bark2 3", "Choice1", "Agree2", "Disable2"]) {
+    assert.ok(skipConditionMatches("stateName", { msgid: id, rich: "" }), `state: ${id}`);
+  }
+  for (const id of ["Leave", "Agree", "Check", "Look at that", "Check 2nd Save Key"]) {
+    assert.ok(!skipConditionMatches("stateName", { msgid: id, rich: "" }), `не state: ${id}`);
+  }
+
   // fsmLabel: метка машины состояний Unity, а не текст для игрока.
   for (const id of ["FSM Lio Printer", "FSM Nova Moving In", "Fsm Nova Move"]) {
     assert.ok(skipConditionMatches("fsmLabel", { msgid: id, rich: "" }), `fsm: ${id}`);
@@ -796,7 +804,7 @@ test("parseSkipPolicy: валидная политика и понятные о�
 
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:*","when":"nope"}]}', "p.json"),
-    /неизвестное условие "nope".*noLetters, shortToken, noWord, identifier, tokens, hexColor, assetPath, saveKey, snakeCase, fsmLabel, fragment/,
+    /неизвестное условие "nope".*noLetters, shortToken, noWord, identifier, tokens, hexColor, assetPath, saveKey, snakeCase, fsmLabel, stateName, fragment/,
   );
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:Fontt","when":"noLetters"}]}', "p.json"),

@@ -145,6 +145,7 @@ export type SkipCondition =
   | "saveKey"
   | "snakeCase"
   | "fsmLabel"
+  | "stateName"
   | "fragment";
 
 /** Все допустимые условия; неизвестное — ошибка политики, не тихий игнор. */
@@ -159,6 +160,7 @@ export const SKIP_CONDITIONS: readonly SkipCondition[] = [
   "saveKey",
   "snakeCase",
   "fsmLabel",
+  "stateName",
   "fragment",
 ];
 
@@ -168,6 +170,19 @@ const HAS_LETTER_RX = /\p{L}/u;
 /** «Нет ни одной буквы» — символы, цифры, пунктуация, пустота. */
 export function hasLetters(s: string): boolean {
   return HAS_LETTER_RX.test(s);
+}
+
+/**
+ * Имя состояния/действия из списка: `Bark 12`, `Choice1`, `Agree2`, `Disable2`.
+ *
+ * Это метки веток диалога (bark — короткая реплика-реакция), а не текст для
+ * игрока: перевод такой строки никому не показывается. Замер 2026-11-23:
+ * 130 живых записей — самый крупный остаток «перевод = оригинал».
+ */
+export function isStateName(s: string): boolean {
+  // Цифра обязательна: «Leave»/«Agree» без номера — это кнопки меню, их переводим.
+  // «Bark2 3» — два числа через пробел, поэтому цифры идут группами.
+  return /^(?:bark|choice|agree|decline|disable|enable|check)(?:\s*\d+)+\s*$/iu.test(s.trim());
 }
 
 /**
@@ -331,6 +346,8 @@ export function skipConditionMatches(when: SkipCondition, ctx: SkipContext): boo
       return isSnakeCase(ctx.msgid);
     case "fsmLabel":
       return isFsmLabel(ctx.msgid);
+    case "stateName":
+      return isStateName(ctx.msgid);
     case "saveKey":
       // Save-ключ игры (`GlowingHoleKeys/103 Peeking Counter`) — идентификатор
       // состояния, а не реплика. Замер 2026-11-23: 85 живых записей.

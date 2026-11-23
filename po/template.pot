@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NeonTranslator 1.0\n"
-"POT-Creation-Date: 2026-11-23 17:03+0000\n"
+"POT-Creation-Date: 2026-11-23 17:16+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -16653,11 +16653,15 @@ msgid "Agree"
 msgstr ""
 
 #. src: dialog
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Agree 1"
 msgstr ""
 
 #. src: dialog
+#. skip: state-name
+#, skip
 msgctxt "speaker:Decline"
 msgid "Agree 2"
 msgstr ""
@@ -16703,11 +16707,15 @@ msgid "Agree again Dialogue"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Agree2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Agree3"
 msgstr ""
@@ -21681,91 +21689,127 @@ msgid "Bare your Soul"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 10"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 11"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 12"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 13"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 14"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 15"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 16"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 17"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 18"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 19"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 3"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 4"
 msgstr ""
 
 #. src: dialog
+#. skip: state-name
+#, skip
 msgctxt "speaker:FINISHED"
 msgid "Bark 5"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 6"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 7"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 8"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark 9"
 msgstr ""
@@ -21801,43 +21845,49 @@ msgid "Bark like a slut, you were so yappy earlier."
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: state-name
 #, skip
 msgctxt "ui"
 msgid "Bark2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark2 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark2 3"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Bark2 4"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: state-name
 #, skip
 msgctxt "ui"
 msgid "Bark3"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: state-name
 #, skip
 msgctxt "ui"
 msgid "Bark4"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: state-name
 #, skip
 msgctxt "ui"
 msgid "Bark5"
@@ -26450,21 +26500,29 @@ msgid "Choice to tell her?"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Choice1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Choice2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Choice3"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Choice4"
 msgstr ""
@@ -29320,11 +29378,15 @@ msgid "Decline"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Decline 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Decline 3"
 msgstr ""
@@ -29360,6 +29422,8 @@ msgid "Decline to help Femboy Clean"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Decline2"
 msgstr ""
@@ -31200,6 +31264,8 @@ msgid "Disable"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Disable 2"
 msgstr ""
@@ -31502,6 +31568,8 @@ msgid "Disable tunnel guy"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "Disable2"
 msgstr ""
@@ -99904,21 +99972,29 @@ msgid "baby voice. kibby."
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "bark 2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "bark 3"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "bark 4"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: state-name
+#, skip
 msgctxt "ui"
 msgid "bark 5"
 msgstr ""

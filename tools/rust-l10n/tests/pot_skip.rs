@@ -205,6 +205,24 @@ fn условия_правил() {
             "не snake: {id:?}"
         );
     }
+    for id in ["Bark 12", "Bark2 3", "Choice1", "Agree2", "Disable2"] {
+        assert!(
+            skip_condition_matches(SkipCondition::StateName, id, ""),
+            "state: {id:?}"
+        );
+    }
+    for id in [
+        "Leave",
+        "Agree",
+        "Check",
+        "Look at that",
+        "Check 2nd Save Key",
+    ] {
+        assert!(
+            !skip_condition_matches(SkipCondition::StateName, id, ""),
+            "не state: {id:?}"
+        );
+    }
     for id in ["FSM Lio Printer", "FSM Nova Moving In", "Fsm Nova Move"] {
         assert!(
             skip_condition_matches(SkipCondition::FsmLabel, id, ""),

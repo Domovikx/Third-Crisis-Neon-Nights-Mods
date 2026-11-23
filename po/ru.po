@@ -12453,16 +12453,6 @@ msgctxt "speaker-name"
 msgid "Agree"
 msgstr "Согласиться"
 
-#. src: dialog
-msgctxt "ui"
-msgid "Agree 1"
-msgstr "Согласиться 1"
-
-#. src: dialog
-msgctxt "speaker:Decline"
-msgid "Agree 2"
-msgstr "Согласиться 2"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Agree 3rd time"
@@ -12502,16 +12492,6 @@ msgstr "Согласись. Палец в киску 2"
 msgctxt "ui"
 msgid "Agree again Dialogue"
 msgstr "Согласись ещё раз — Диалог"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Agree2"
-msgstr "Agree2"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Agree3"
-msgstr "Agree3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -15724,96 +15704,6 @@ msgstr "Раскрой свою душу"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
-msgid "Bark 10"
-msgstr "Голос 10"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 11"
-msgstr "Лай 11"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 12"
-msgstr "Bark 12"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 13"
-msgstr "Гав!"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 14"
-msgstr "Гав! 14"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 15"
-msgstr "Бак 15"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 16"
-msgstr "Лай 16"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 17"
-msgstr "Барк семнадцать"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 18"
-msgstr "Барк 18"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 19"
-msgstr "Лай 19"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 2"
-msgstr "Гав 2"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 3"
-msgstr "Гав 3"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 4"
-msgstr "Гав 4"
-
-#. src: dialog
-msgctxt "speaker:FINISHED"
-msgid "Bark 5"
-msgstr "Реплика 5"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 6"
-msgstr "Гав 6"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 7"
-msgstr "Гав 7"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 8"
-msgstr "Гав 8"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark 9"
-msgstr "Гав 9"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
 msgid "Bark Done"
 msgstr "Выкрик завершён"
 
@@ -15841,21 +15731,6 @@ msgstr "Лаей же для неё!"
 msgctxt "ui"
 msgid "Bark like a slut, you were so yappy earlier."
 msgstr "Лай как шлюха — ты же была такой болтливой раньше."
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark2 2"
-msgstr "Лай 2"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark2 3"
-msgstr "Bark2 3"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Bark2 4"
-msgstr "Bark2 4"
 
 #. src: us
 msgctxt "ui"
@@ -18164,26 +18039,6 @@ msgctxt "ui"
 msgid "Choice to tell her?"
 msgstr "Сказать ли ей?"
 
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Choice1"
-msgstr "Choice1"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Choice2"
-msgstr "Choice2"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Choice3"
-msgstr "Choice3"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Choice4"
-msgstr "Choice4"
-
 #. src: us
 msgctxt "ui"
 msgid "Choose a memory card to insert..."
@@ -20047,16 +19902,6 @@ msgstr "Отказаться"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
-msgid "Decline 2"
-msgstr "Отклонить 2"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Decline 3"
-msgstr "Отклонить 3"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
 msgid "Decline Dialogue"
 msgstr "Диалог отказа"
 
@@ -20084,11 +19929,6 @@ msgstr "Отклонить массаж"
 msgctxt "ui"
 msgid "Decline to help Femboy Clean"
 msgstr "Отказаться помогать фембою с уборкой"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Decline2"
-msgstr "Decline2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21505,11 +21345,6 @@ msgstr "Отключить"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
-msgid "Disable 2"
-msgstr "Отключить 2"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
 msgid "Disable Animations"
 msgstr "Отключить анимации"
 
@@ -21797,11 +21632,6 @@ msgstr "Отключить триггер"
 msgctxt "ui"
 msgid "Disable tunnel guy"
 msgstr "Отключить парня в туннеле"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Disable2"
-msgstr "Disable2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -72850,26 +72680,6 @@ msgstr "АСМР-шепот (не полноценный шёпот, а скор
 msgctxt "ui"
 msgid "baby voice. kibby."
 msgstr "детским голосом. кис-кис."
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "bark 2"
-msgstr "Бах!"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "bark 3"
-msgstr "Лает три раза."
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "bark 4"
-msgstr "Лай!"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "bark 5"
-msgstr "Лай!"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
