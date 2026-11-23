@@ -34,6 +34,7 @@ import {
 import { join, resolve } from "node:path";
 import process from "node:process";
 
+import { scanDump } from "../../extract-text/scripts/inventory.mts";
 import {
   parsePo,
   poEscape,
@@ -295,23 +296,74 @@ export function splitForCtx(
   need: PoEntry[],
   maxTokens: number,
   budget: number,
+  context?: ReadonlyMap<string, string[]>,
 ): PoEntry[][] {
   if (need.length <= 1) return [need];
-  if (estTokens(system, batchPrompt(need), maxTokens) <= budget) return [need];
+  if (estTokens(system, batchPrompt(need, context), maxTokens) <= budget) return [need];
   const mid = Math.floor(need.length / 2);
   return [
-    ...splitForCtx(system, need.slice(0, mid), maxTokens, budget),
-    ...splitForCtx(system, need.slice(mid), maxTokens, budget),
+    ...splitForCtx(system, need.slice(0, mid), maxTokens, budget, context),
+    ...splitForCtx(system, need.slice(mid), maxTokens, budget, context),
   ];
 }
 
-/** Пользовательский промпт пачки: нумерованные строки + тег спикера. */
-export function batchPrompt(items: PoEntry[]): string {
+/**
+ * Контекст сцены: соседние реплики того же диалогового объекта в дампе.
+ *
+ * Без него модель видит одну строку и выбирает неверный смысл. Реальный случай
+ * 2026-11-23: «Aww shucks~! Well, come on in! Give it a try!» переведено как
+ * «Ах, черт! Ну же, заходи!», хотя перед этим в сцене «Oh- Wow! The bed!» и
+ * речь о том, чтобы залезть в постель. Системный промпт требовал контекст, а
+ * код его не передавал — теперь передаёт.
+ */
+export async function buildSceneContext(dumpDir: string): Promise<Map<string, string[]>> {
+  const { items } = await scanDump(dumpDir);
+  const scenes = new Map<string, { idx: number; speaker: string; text: string }[]>();
+  for (const it of items) {
+    if (it.kind !== "dlg" || it.idx === null) continue;
+    const list = scenes.get(it.source) ?? [];
+    list.push({ idx: it.idx, speaker: it.speaker, text: it.text });
+    scenes.set(it.source, list);
+  }
+  const out = new Map<string, string[]>();
+  const cut = (t: string): string => (t.length > 160 ? `${t.slice(0, 157)}…` : t);
+  for (const list of scenes.values()) {
+    list.sort((a, b) => a.idx - b.idx);
+    list.forEach((cur, i) => {
+      if (out.has(cur.text)) return; // первое вхождение побеждает
+      const ctx: string[] = [];
+      for (const j of [i - 2, i - 1]) {
+        const p = list[j];
+        if (p) ctx.push(`prev: [${p.speaker || "—"}] ${cut(p.text)}`);
+      }
+      const n = list[i + 1];
+      if (n) ctx.push(`next: [${n.speaker || "—"}] ${cut(n.text)}`);
+      if (ctx.length) out.set(cur.text, ctx);
+    });
+  }
+  return out;
+}
+
+/**
+ * Пользовательский промпт пачки: контекст (`// …`, не переводить) +
+ * нумерованные строки с тегом спикера.
+ */
+export function batchPrompt(items: PoEntry[], context?: ReadonlyMap<string, string[]>): string {
+  const ctxLines: string[] = [];
+  items.forEach((e, i) => {
+    const ctx = context?.get(e.msgid);
+    if (!ctx?.length) return;
+    for (const line of ctx) ctxLines.push(`// ${i + 1} ${line}`);
+  });
   const lines = items.map((e, i) => {
     const sp = speakerOf(e);
     return `${i + 1}. ${e.msgid}${sp ? ` (speaker: ${sp})` : ""}`;
   });
+  const contextBlock = ctxLines.length
+    ? `Context for meaning (lines starting with // are NOT translated):\n${ctxLines.join("\n")}\n`
+    : "";
   return (
+    contextBlock +
     `Translate each line. Reply with exactly ${items.length} lines ` +
     `in format "N. translation". Never repeat the speaker tag ` +
     `in translations.\n${lines.join("\n")}`
@@ -542,6 +594,8 @@ export interface RunOptions {
   maxTokens?: number;
   /** Режим починки: очередь — переведённые строки, не прошедшие `validate`. */
   repair?: boolean;
+  /** Каталог дампа для контекста сцены (без него контекст не передаётся). */
+  dumpDir?: string;
   /** Куда писать отчёты (по умолчанию console.log; тесты глушат). */
   log?: (line: string) => void;
 }
@@ -644,6 +698,15 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
   if (limit) todo = todo.slice(0, limit);
   summary.queued = todo.length;
 
+  let sceneContext: Map<string, string[]> = new Map();
+  if (opts.dumpDir) {
+    const started = Date.now();
+    sceneContext = await buildSceneContext(opts.dumpDir);
+    log(
+      `scene context: ${sceneContext.size} строк с соседями ` +
+        `из ${opts.dumpDir} (${Math.round((Date.now() - started) / 100) / 10} с)`,
+    );
+  }
   const glossary = buildGlossary(entries);
   const system = buildSystemPrompt(lang, target, glossary, root);
   mkdirSync(tmpDir, { recursive: true });
@@ -686,7 +749,7 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
     }
     if (need.length) {
       let stopAll = false;
-      for (const sub of splitForCtx(system, need, maxTokens, ctxLimit)) {
+      for (const sub of splitForCtx(system, need, maxTokens, ctxLimit, sceneContext)) {
         let parsed: string[] | null = null;
         let resp = "";
         for (let attempt = 1; attempt <= 2; attempt += 1) {
@@ -695,7 +758,7 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
               url,
               model,
               formatPromptN(system, sub.length),
-              batchPrompt(sub),
+              batchPrompt(sub, sceneContext),
               timeoutMs,
               maxTokens,
             );
@@ -725,10 +788,8 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
               url,
               model,
               formatPromptN(system, 1),
-              `${batchPrompt([e])}
-
-ВАЖНО: ${hint}
-` + "Ответь РОВНО одной строкой: только перевод, без нумерации, без кавычек и пояснений.",
+              `${batchPrompt([e], sceneContext)}\n\nВАЖНО: ${hint}\n` +
+                "Ответь РОВНО одной строкой: только перевод, без нумерации, без кавычек и пояснений.",
               timeoutMs,
               maxTokens,
             );
@@ -801,6 +862,7 @@ interface CliArgs {
   include: string[];
   dryRun: boolean;
   repair: boolean;
+  dumpDir?: string;
   url: string;
   model: string;
   timeout: number;
@@ -854,6 +916,9 @@ function parseArgs(argv: string[]): CliArgs {
       case "--repair":
         args.repair = true;
         break;
+      case "--dump":
+        args.dumpDir = value();
+        break;
       case "--url":
         args.url = value();
         break;
@@ -893,6 +958,7 @@ const USAGE = `translate_local — батч-перевод пустых msgstr �
   --url       OpenAI-compatible endpoint (по умолчанию http://127.0.0.1:1234)
   --model     имя модели (по умолчанию index-translate-9b)
   --dry-run   показать план без вызовов LLM
+  --dump <d>  каталог дампа: передавать модели соседние реплики сцены
   --repair    починить уже переведённые строки, не прошедшие validate
               (маркер, дисбаланс тегов) — перезаписывает их
 `;
@@ -925,6 +991,7 @@ async function main(argv: string[]): Promise<number> {
     include: a.include,
     dryRun: a.dryRun,
     repair: a.repair,
+    dumpDir: a.dumpDir,
     url: a.url,
     model: a.model,
     timeoutMs: a.timeout * 1000,

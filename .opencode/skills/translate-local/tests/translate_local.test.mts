@@ -24,6 +24,7 @@ import {
   loadLangSkill,
   loadSkillRules,
   keepsTokens,
+  buildSceneContext,
   parseResponse,
   runQueue,
   speakerOf,
@@ -166,6 +167,44 @@ test("keepsTokens: токены подстановки не переводятс
   assert.ok(keepsTokens("Hi %s, you have {Count} items", "Привет, %s, у тебя {Count} предметов"));
   assert.ok(!keepsTokens("Hi %s", "Привет, %d"), "другой printf-тип — отказ");
   assert.equal(validate("#ItemName#.", "#ИмяПредмета#.", "ru"), "token");
+});
+
+test("batchPrompt: контекст сцены идёт отдельным блоком и не мешает нумерации", () => {
+  const items = [entry("Aww shucks~! Well, come on in!"), entry("Second line")];
+  const ctx = new Map([
+    ["Aww shucks~! Well, come on in!", ["prev: [—] Oh- Wow! The bed!", "next: [—] Y-You sure?"]],
+  ]);
+  const withCtx = batchPrompt(items, ctx);
+  assert.match(withCtx, /^Context for meaning/);
+  assert.match(withCtx, /\/\/ 1 prev: \[—\] Oh- Wow! The bed!/);
+  assert.match(withCtx, /\/\/ 1 next: \[—\] Y-You sure\?/);
+  assert.match(withCtx, /1\. Aww shucks~! Well, come on in!/);
+  assert.doesNotMatch(batchPrompt(items), /Context for meaning/, "без карты — прежний промпт");
+});
+
+test("buildSceneContext: соседи берутся из диалогового объекта, порядок по idx", async () => {
+  // Своя мини-сцена: три реплики в одном объекте, проверяем и prev, и next.
+  const dir = join(REPO, "tmp", "ctx-fixture-test");
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(
+    join(dir, "level_test.jsonl"),
+    `${JSON.stringify({
+      asset: "level_test",
+      path_id: 1,
+      type: "MonoBehaviour",
+      dialogues: [
+        { speaker: "Zoey", text: "One line", rich_text: "" },
+        { speaker: "", text: "Two line", rich_text: "" },
+        { speaker: "Sarah", text: "Three line", rich_text: "" },
+      ],
+    })}
+`,
+    "utf8",
+  );
+  const map = await buildSceneContext(dir);
+  assert.deepEqual(map.get("Two line"), ["prev: [Zoey] One line", "next: [Sarah] Three line"]);
+  assert.deepEqual(map.get("One line"), ["next: [—] Two line"]);
+  rmSync(dir, { recursive: true, force: true });
 });
 
 test("parseResponse: ровно n строк в формате N., а для n=1 — и без нумерации", () => {
