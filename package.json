@@ -23,7 +23,7 @@
     "qa:review": "node .opencode/skills/translate-qa/scripts/review_queue.mts",
     "translate:local": "node .opencode/skills/translate-local/scripts/translate_local.mts",
     "test:qa": "node --test .opencode/skills/translate-qa/tests/qa_translate.test.mts .opencode/skills/translate-qa/tests/review_queue.test.mts .opencode/skills/translate-local/tests/translate_local.test.mts scripts/qa_parity.test.mts",
-    "test": "node --test .opencode/skills/pipeline-common/tests/text_filters.test.mts .opencode/skills/extract-text/tests/po_file.test.mts .opencode/skills/extract-text/tests/inventory.test.mts .opencode/skills/extract-text/tests/rich_audit.test.mts .opencode/skills/extract-text/tests/potgen.test.mts .opencode/skills/extract-text/tests/po_update.test.mts scripts/languages.test.mts .opencode/skills/build-translator/tests/build.test.mts .opencode/skills/deploy-translator/tests/deploy.test.mts scripts/game_version.test.mts .opencode/skills/dump-assets/tests/unityfs.test.mts .opencode/skills/dump-assets/tests/serialized.test.mts .opencode/skills/dump-assets/tests/lz4.test.mts .opencode/skills/dump-assets/tests/lzma.test.mts .opencode/skills/dump-assets/tests/binary.test.mts scripts/package_release.test.mts scripts/text_parity.test.mts scripts/rich_roundtrip.test.mts scripts/text_golden.test.mts scripts/rt_audit.test.mts scripts/pot_invariants.test.mts scripts/fragment_repair.test.mts .opencode/skills/extract-text/tests/pot_contract.test.mts scripts/no_python.test.mts",
+    "test": "node --test .opencode/skills/pipeline-common/tests/text_filters.test.mts .opencode/skills/extract-text/tests/po_file.test.mts .opencode/skills/extract-text/tests/inventory.test.mts .opencode/skills/extract-text/tests/rich_audit.test.mts .opencode/skills/extract-text/tests/potgen.test.mts .opencode/skills/extract-text/tests/po_update.test.mts scripts/languages.test.mts .opencode/skills/build-translator/tests/build.test.mts .opencode/skills/deploy-translator/tests/deploy.test.mts scripts/game_version.test.mts .opencode/skills/dump-assets/tests/unityfs.test.mts .opencode/skills/dump-assets/tests/serialized.test.mts .opencode/skills/dump-assets/tests/lz4.test.mts .opencode/skills/dump-assets/tests/lzma.test.mts .opencode/skills/dump-assets/tests/binary.test.mts scripts/package_release.test.mts scripts/text_parity.test.mts scripts/rich_roundtrip.test.mts scripts/text_golden.test.mts scripts/rich_pass.test.mts scripts/rt_audit.test.mts scripts/pot_invariants.test.mts scripts/fragment_repair.test.mts .opencode/skills/extract-text/tests/pot_contract.test.mts scripts/no_python.test.mts",
     "test:e2e": "node --test .opencode/skills/extract-text/tests/pipeline.e2e.test.mts",
     "typecheck": "tsc --noEmit",
     "lint": "oxlint",
@@ -59,7 +59,8 @@
     "test:golden": "node --test scripts/text_golden.test.mts",
     "rich:audit": "node .opencode/skills/extract-text/scripts/rich_audit.mts",
     "dash": "node .opencode/skills/local-dash/dashboard.mts",
-    "rt:audit": "node scripts/rt_audit.mts"
+    "rt:audit": "node scripts/rt_audit.mts",
+    "rt:pass": "node scripts/rich_pass.mts"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",
