@@ -483,6 +483,18 @@ export interface RunSummary {
   aborted: boolean;
 }
 
+/**
+ * Модель перевода по умолчанию — ОДНО место для CLI и `runQueue`.
+ *
+ * Владелец закрепил `index-translate-9b` (LM Studio, `127.0.0.1:1234`):
+ * общий пульт бэкендов (`scripts/llm_backend.mts`) на перевод не влияет,
+ * иначе языки уезжают на другой модели. Раньше здесь стоял `trans14` —
+ * второй дефолт, который разошёлся с CLI; поймано 2026-11-23.
+ */
+export const DEFAULT_TRANSLATE_MODEL = "index-translate-9b";
+/** Батч по умолчанию: замер 2026-11-22 — 5 строк быстрее и стабильнее 10. */
+export const DEFAULT_BATCH = 5;
+
 /** Прогнать очередь перевода. Не бросает на сетевых ошибках — пишет прогресс и выходит. */
 export async function runQueue(opts: RunOptions): Promise<RunSummary> {
   const root = opts.root ?? REPO_ROOT;
@@ -493,8 +505,8 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
   const pauseFile = join(tmpDir, "PAUSE");
   const reviewLog = join(tmpDir, `${lang}.review`);
   const url = opts.url ?? "http://127.0.0.1:1234";
-  const model = opts.model ?? "trans14";
-  const batch = Math.max(1, opts.batch ?? 5);
+  const model = opts.model ?? DEFAULT_TRANSLATE_MODEL;
+  const batch = Math.max(1, opts.batch ?? DEFAULT_BATCH);
   const offset = Math.max(0, opts.offset ?? 0);
   const limit = Math.max(0, opts.limit ?? 0);
   const timeoutMs = opts.timeoutMs ?? 180_000;
@@ -682,11 +694,11 @@ function parseArgs(argv: string[]): CliArgs {
     lang: "ru",
     limit: 0,
     offset: 0,
-    batch: 5,
+    batch: DEFAULT_BATCH,
     include: [],
     dryRun: false,
     url: "http://127.0.0.1:1234",
-    model: "index-translate-9b",
+    model: DEFAULT_TRANSLATE_MODEL,
     timeout: 180,
     ctxLimit: 1900,
     maxTokens: 1200,
