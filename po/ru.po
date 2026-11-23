@@ -2473,7 +2473,7 @@ msgstr "(Её язык-... Скользит... Трётся... Так... Хор�
 #. rich_text: <i>(Here's one of the pumpkins that Calliach wanted. )</i>
 msgctxt "ui"
 msgid "(Here's one of the pumpkins that Calliach wanted. )"
-msgstr "(Вот одна из тыкв, которые хотел Каллиях.)"
+msgstr "(Вот одна из тыкв, которые хотел Каллиах.)"
 
 #. src: dialog
 #. rich_text: <i>(Hh.. )</i>
@@ -9873,11 +9873,6 @@ msgstr "0.3 Жилищный силовиков: Прикосновения 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
-msgid "0.4 - GlowingHoleBartending - Nova - 2 - 1"
-msgstr "0.4 - GlowingHoleBartending - Nova - 2 - 1"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
 msgid "0.4 - GlowingHoleBartending - Nova - 2 - 2"
 msgstr "0.4 - Бар в светящейся дыре - Нова - 2 - 2"
 
@@ -9888,11 +9883,6 @@ msgstr "0.4 - GlowingHoleBartending - Нова - 2 - 3 - Да"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
-msgid "0.4 - GlowingHoleBartending - Nova - 2 - 4"
-msgstr "0.4 - GlowingHoleBartending - Nova - 2 - 4"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
 msgid "0.4 - GlowingHoleBartending - Nova - 2 - 5"
 msgstr "0.4 - GlowingHoleBartending - Нова - 2 - 5"
 
@@ -9900,11 +9890,6 @@ msgstr "0.4 - GlowingHoleBartending - Нова - 2 - 5"
 msgctxt "ui"
 msgid "0.4 - GlowingHoleBartending - Nova - 2 - 6"
 msgstr "0.4 - GlowingHoleBartending - Нова - 2 - 6"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "0.4 - GlowingHoleBartending - Nova - 2 - 7"
-msgstr "0.4 - GlowingHoleBartending - Nova - 2 - 7"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -10040,11 +10025,6 @@ msgstr "translation: 0.5 - Основная история - 1 - Поговор�
 msgctxt "ui"
 msgid "0.5 - Main Story - Buy Parts from Nova"
 msgstr "0.5 - Основная история - Купить запчасти у Нова"
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "0.5 - Main Story - Buy Parts from Nova.MeetNova"
-msgstr "0.5 - Основная история - Купить детали от Nova.MeetNova"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11693,7 +11673,7 @@ msgstr "Активировать 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Activate Calliach"
-msgstr "Активировать Калиач"
+msgstr "Активировать Каллиах"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17277,17 +17257,17 @@ msgstr "Каллиах Недоступен (Голосовой файл)"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Calliach Outfit"
-msgstr "Набор Calliach"
+msgstr "Набор Каллиах"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Calliach's Offer"
-msgstr "Предложение Calliach"
+msgstr "Предложение Каллиах"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Calliach's card"
-msgstr "Карты Calliach"
+msgstr "Карты Каллиах"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -17986,7 +17966,7 @@ msgstr "Проверь за этим... что бы эта игрушка ни �
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for Cypher mission"
-msgstr "Проверь миссию Cypher?"
+msgstr "Проверь миссию Сайфер?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19614,11 +19594,6 @@ msgstr "Разрыв Сайфера"
 msgctxt "ui"
 msgid "Cypher, it's probably best if you wait here. You know, with the guards looking for you."
 msgstr "Сайфер, пожалуй, лучше тебе подождать здесь. Знаешь, охранники всё ещё ищут тебя."
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Cypher3"
-msgstr "Cypher3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -40345,7 +40320,7 @@ msgstr "Мужчина - Нет Спрайта"
 #. src: dialog
 msgctxt "ui"
 msgid "Man begins to tug zoeys skirt up."
-msgstr "Мужчина начинает задирать юбку Зои"
+msgstr "Мужчина начинает задирать юбку Зои."
 
 #. src: dialog
 msgctxt "ui"

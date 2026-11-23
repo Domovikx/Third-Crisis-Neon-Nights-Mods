@@ -107,17 +107,47 @@ export function candidates(entries: PoEntry[]): PoEntry[] {
   );
 }
 
+/** Название языка для промпта (судья должен знать, что проверяет). */
+const TARGET_NAME: Record<string, string> = {
+  ru: "Russian",
+  en: "English",
+  de: "German",
+  es: "Spanish",
+  pt: "Portuguese",
+  fr: "French",
+  it: "Italian",
+  pl: "Polish",
+  zh: "Chinese",
+  ja: "Japanese",
+  ko: "Korean",
+};
+
+/** Языки, у которых нет артиклей: для них «потерян артикль» — не ошибка. */
+const NO_ARTICLES = new Set(["ru", "zh", "ja", "ko", "pl"]);
+
 /**
  * SYSTEM судьи: только грубые ошибки (перенос промпта TSSR v10, проверен
  * E2E на 64 эталонных дефектах). Регистр и стиль исключены намеренно.
+ *
+ * Язык — параметр: до 2026-11-23 промпт был жёстко «Russian», и на zh он
+ * проверял бы китайский перевод как русский.
  */
-export const JUDGE_SYS = `You are a strict translation QA checker for a game. You get an English SOURCE line, its Russian TRANSLATION, and the SPEAKER (game data; "narration" means an inner thought or description).
+export function judgeSystem(lang = "ru"): string {
+  const target = TARGET_NAME[lang] ?? "target-language";
+  const articles = NO_ARTICLES.has(lang)
+    ? ` ${target} has NO articles — article differences are never an error.`
+    : "";
+  return `You are a strict translation QA checker for a game. You get an English SOURCE line, its ${target} TRANSLATION, and the SPEAKER (game data; "narration" means an inner thought or description).
 Judge three dimensions separately, then set verdict:
 - content: "bad" if the translation is about DIFFERENT content than the source (wrong line, or text from a neighbouring line glued in), inverted meaning, or missing/invented key information. Idioms count with their contextual meaning (in erotic scenes "come" = orgasm); a plausible reading of an odd/ambiguous SOURCE is correct.
-- grammar: "bad" only if grammar is broken so it distorts the text. Russian has NO articles — article differences are never an error. Never style, word choice, register, literalness, tone, punctuation, minor awkwardness that keeps the meaning.
+- grammar: "bad" only if grammar is broken so it distorts the text.${articles} Never style, word choice, register, literalness, tone, punctuation, minor awkwardness that keeps the meaning.
 - gender: "bad" only if forms contradict the SPEAKER or the person ADDRESSED (2nd-person past follows the addressee, not the speaker).
 verdict = "bad" if ANY dimension is "bad", else "ok".
 Answer ONLY JSON {"content":"ok|bad","grammar":"ok|bad","gender":"ok|bad","verdict":"ok|bad","reason":"max8 words"}.`;
+}
+
+/** Прод-значение для ru — оставлено, чтобы не ломать импорты и тесты. */
+export const JUDGE_SYS = judgeSystem("ru");
 
 /**
  * SYSTEM второй ступени: проверить ОДНО обвинение.
@@ -128,10 +158,15 @@ Answer ONLY JSON {"content":"ok|bad","grammar":"ok|bad","gender":"ok|bad","verdi
  * примерами отказов снимает большую часть ложных (приём TSSR, E2E-итерация
  * v10+verify).
  */
-export const VERIFY_SYS = `You verify ONE accusation against a Russian translation of a game. You get the English SOURCE line, the TRANSLATION, and the ACCUSED ERROR.
+export function verifySystem(lang = "ru"): string {
+  const target = TARGET_NAME[lang] ?? "target-language";
+  return `You verify ONE accusation against a ${target} translation of a game. You get the English SOURCE line, the TRANSLATION, and the ACCUSED ERROR.
 Confirm if a reader would misunderstand the scene: a different ACTION or OBJECT than the source, opposite meaning, a dropped or invented FACT, broken grammar, or wrong gender forms.
 Dismiss if the translation says the same thing in other words: synonyms, a pronoun instead of a name, register, literalness, punctuation, idioms in context, garbled SOURCE, asset names and UI labels.
 Answer ONLY JSON {"verdict":"confirmed"|"dismissed","reason":"max8 words"}.`;
+}
+
+export const VERIFY_SYS = verifySystem("ru");
 
 /** Вердикт второй ступени. */
 export function parseConfirm(text: string): boolean | null {
@@ -154,6 +189,7 @@ async function verify(
   ru: string,
   speaker: string,
   accusation: string,
+  lang = "ru",
 ): Promise<boolean | null> {
   const res = await fetch(`${url.replace(/\/+$/, "")}/v1/chat/completions`, {
     method: "POST",
@@ -161,7 +197,7 @@ async function verify(
     body: JSON.stringify({
       model,
       messages: [
-        { role: "system", content: VERIFY_SYS },
+        { role: "system", content: verifySystem(lang) },
         {
           role: "user",
           content: `SPEAKER: ${speaker}
@@ -188,6 +224,7 @@ async function judge(
   en: string,
   ru: string,
   speaker: string,
+  lang = "ru",
 ): Promise<Verdict | null> {
   const res = await fetch(`${url.replace(/\/+$/, "")}/v1/chat/completions`, {
     method: "POST",
@@ -195,7 +232,7 @@ async function judge(
     body: JSON.stringify({
       model,
       messages: [
-        { role: "system", content: JUDGE_SYS },
+        { role: "system", content: judgeSystem(lang) },
         { role: "user", content: `SPEAKER: ${speaker}\nSOURCE: ${en}\nTRANSLATION: ${ru}` },
       ],
       temperature: 0,
@@ -297,7 +334,7 @@ async function main(argv: string[]): Promise<number> {
     let v: Verdict | null = null;
     for (let attempt = 1; attempt <= 2 && !v; attempt += 1) {
       try {
-        v = await judge(cli.url, cli.model, e.msgid, e.msgstr, speakerLine);
+        v = await judge(cli.url, cli.model, e.msgid, e.msgstr, speakerLine, cli.lang);
       } catch (err) {
         if (attempt === 2) console.error(`LLM: ${(err as Error).message}`);
       }
@@ -318,8 +355,10 @@ async function main(argv: string[]): Promise<number> {
       m: e.msgid,
       ru: e.msgstr,
       verdict: v,
-      clinical: clinicalHits(e.msgstr, undefined, e.msgid),
-      softened: softenedHits(e.msgid, e.msgstr),
+      // Лексикон регистра пока русский: для других языков классы не считаем,
+      // иначе получим мусорные флаги на иероглифах/латинице.
+      clinical: cli.lang === "ru" ? clinicalHits(e.msgstr, undefined, e.msgid) : [],
+      softened: cli.lang === "ru" ? softenedHits(e.msgid, e.msgstr) : [],
       leak: leakHits(e.msgstr),
       script: LATIN_CYRILLIC_LANGS.has(cli.lang) ? foreignScriptHits(e.msgstr) : [],
     });

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NeonTranslator 1.0\n"
-"POT-Creation-Date: 2026-11-23 16:55+0000\n"
+"POT-Creation-Date: 2026-11-23 17:03+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -10598,6 +10598,8 @@ msgid "0.3 Residential Enforcer Groping 1"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "0.4 - GlowingHoleBartending - Nova - 2 - 1"
 msgstr ""
@@ -10613,6 +10615,8 @@ msgid "0.4 - GlowingHoleBartending - Nova - 2 - 3 - Agree"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "0.4 - GlowingHoleBartending - Nova - 2 - 4"
 msgstr ""
@@ -10628,6 +10632,8 @@ msgid "0.4 - GlowingHoleBartending - Nova - 2 - 6"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "0.4 - GlowingHoleBartending - Nova - 2 - 7"
 msgstr ""
@@ -10768,6 +10774,8 @@ msgid "0.5 - Main Story - Buy Parts from Nova"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "0.5 - Main Story - Buy Parts from Nova.MeetNova"
 msgstr ""
@@ -28428,6 +28436,8 @@ msgid "Cypher2_Condoms"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "Cypher3"
 msgstr ""

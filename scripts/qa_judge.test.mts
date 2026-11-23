@@ -7,7 +7,14 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { candidates, parseConfirm, parseVerdict, sampleIndexes } from "./qa_judge.mts";
+import {
+  candidates,
+  judgeSystem,
+  parseConfirm,
+  parseVerdict,
+  sampleIndexes,
+  verifySystem,
+} from "./qa_judge.mts";
 import { inKeys, readKeys } from "../.opencode/skills/pipeline-common/scripts/qa_keys.mts";
 import { parsePo } from "../.opencode/skills/extract-text/scripts/po_file.mts";
 
@@ -80,4 +87,19 @@ test("readKeys: JSONL с контекстом и простые строки", (
     true,
     "простая строка — любой контекст",
   );
+});
+
+test("judgeSystem: язык — параметр, а не хардкод «Russian»", () => {
+  // До 2026-11-23 промпт был жёстко русским, и на zh судья проверял бы
+  // китайский текст по русским правилам.
+  assert.match(judgeSystem("ru"), /its Russian TRANSLATION/);
+  assert.match(judgeSystem("zh"), /its Chinese TRANSLATION/);
+  assert.doesNotMatch(judgeSystem("zh"), /Russian/);
+  assert.match(judgeSystem("zh"), /NO articles/, "в китайском артиклей нет");
+  assert.doesNotMatch(judgeSystem("de"), /NO articles/, "в немецком артикли есть");
+});
+
+test("verifySystem: вторая ступень тоже знает язык", () => {
+  assert.match(verifySystem("zh"), /against a Chinese translation/);
+  assert.match(verifySystem("ru"), /against a Russian translation/);
 });
