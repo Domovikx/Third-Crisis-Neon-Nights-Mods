@@ -89,6 +89,7 @@ const FIX_HINT: Record<string, string> = {
     "Не используй сочетания «фх», «гх», «нгх», «мгх». Для вздохов и стонов пиши «Фф», «Ффф», «Мхм», «Ах», «Ох».",
   "tag imbalance": "Сохрани все теги (<i>, </i>, <color=...>) ровно как в оригинале.",
   token: "Сохрани токены подстановки (#...#, {…}, %s) буква в букву, переводи только текст вокруг.",
+  numbering: "Не добавляй номер строки (например «2. ») в перевод: ответ — только сам текст.",
   empty: "Ответ не должен быть пустым: переведи строку.",
 };
 const COPY_PURE_RX = /^[^A-Za-zА-Яа-яЁё]+$/u;
@@ -426,7 +427,20 @@ export function validate(src: string, tr: string, lang: string): string | null {
   if (lang === "ru" && BANNED_RX.test(tr)) return "banned cluster";
   if (!keepsMarker(src, tr)) return "marker";
   if (!keepsTokens(src, tr)) return "token";
+  if (!keepsNumbering(src, tr)) return "numbering";
   return null;
+}
+
+/**
+ * В перевод не должен протекать номер строки промпта.
+ *
+ * Протокол ответа — «N. перевод», и модель иногда оставляет `2.` в самом
+ * тексте: в ru таких строк нашлось 30 (2026-11-23). Если оригинал не начинается
+ * с числа, перевод с `N.` — дефект: в игре он покажется как «2. Но как ты...?».
+ */
+export function keepsNumbering(src: string, tr: string): boolean {
+  if (!/^\d+\s*[.)]\s/.test(tr)) return true;
+  return /^\d+\s*[.)]\s/.test(src);
 }
 
 /**

@@ -23,6 +23,7 @@ import {
   loadCore,
   loadLangSkill,
   loadSkillRules,
+  keepsNumbering,
   keepsTokens,
   buildSceneContext,
   parseResponse,
@@ -152,6 +153,15 @@ test("triage: код/мусор копируются, живой текст ух
   assert.equal(triage("handlesOut must be same", "ru"), null, "mixed to LLM");
   // уже русский текст не копируем для не-ru языков
   assert.equal(triage("Привет", "de"), null);
+});
+
+test("keepsNumbering: номер строки промпта не протекает в перевод", () => {
+  assert.equal(keepsNumbering("But how are you...?", "2. Но как ты...?"), false);
+  assert.equal(keepsNumbering("But how are you...?", "Но как ты...?"), true);
+  assert.equal(keepsNumbering("But how are you...?", "1) Но как ты?"), false);
+  // Оригинал сам начинается с числа — тогда префикс законен.
+  assert.equal(keepsNumbering("2. Something", "2. Что-то"), true);
+  assert.equal(validate("But how are you...?", "2. Но как ты...?", "ru"), "numbering");
 });
 
 test("keepsTokens: токены подстановки не переводятся и не теряются", () => {
