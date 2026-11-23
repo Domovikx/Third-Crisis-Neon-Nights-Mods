@@ -5,9 +5,9 @@ use std::path::{Path, PathBuf};
 
 use rust_l10n::inventory::{InventoryItem, ItemKind};
 use rust_l10n::potgen::{
-    apply_src_policy, build_catalog, discover_policy_path, parse_src_policy, policy_decision,
-    render_excluded_jsonl, run, src_matches_pattern, validate_policy_pattern, PolicySource,
-    PotgenOptions, SrcPolicy, KNOWN_RAW_CLASSES,
+    apply_skip_ids, apply_src_policy, build_catalog, discover_policy_path, parse_skip_ids,
+    parse_src_policy, policy_decision, render_excluded_jsonl, run, src_matches_pattern,
+    validate_policy_pattern, PolicySource, PotgenOptions, SrcPolicy, KNOWN_RAW_CLASSES,
 };
 
 fn repo() -> PathBuf {
@@ -576,4 +576,48 @@ fn дедуп_предпочитает_живой_источник_исключ�
     let (kept, excluded, _) = apply_src_policy(catalog, &policy);
     assert!(kept.is_empty(), "ассетная строка исключена");
     assert_eq!(excluded[0].src, "raw:GameObject");
+}
+
+#[test]
+fn список_skip_id_разбирается_и_помечает_только_новые() {
+    let ids = parse_skip_ids(r#"{"skip":["BUUYC","ACCESS"]}"#, "ids").expect("список");
+    let (catalog, _) = build_catalog(
+        &[
+            inv_item("BUUYC", ItemKind::Raw, "raw:MonoBehaviour"),
+            inv_item("ACCESS", ItemKind::Raw, "raw:MonoBehaviour"),
+        ],
+        &HashSet::new(),
+        None,
+    );
+    let mut catalog = catalog;
+    let (marked, journal, unused) = apply_skip_ids(&mut catalog, &ids);
+    assert_eq!(marked, 2);
+    assert_eq!(unused, 0);
+    assert_eq!(journal.len(), 2);
+    assert_eq!(
+        journal[0].rule, "reviewed",
+        "id правила — общий контракт с TS"
+    );
+
+    // Только новые: уже помеченное правило не перезаписывается.
+    let (marked2, journal2, _) = apply_skip_ids(&mut catalog, &ids);
+    assert_eq!(marked2, 0);
+    assert!(journal2.is_empty());
+
+    // Неиспользованные записи видны (данные устарели).
+    let extra = parse_skip_ids(r#"{"skip":["NOPE"]}"#, "ids").expect("список");
+    assert_eq!(apply_skip_ids(&mut catalog, &extra).2, 1);
+}
+
+#[test]
+fn список_skip_id_ошибки_не_молчат() {
+    assert!(parse_skip_ids(r#"{"skip":"A"}"#, "ids")
+        .expect_err("массив")
+        .contains("массив"));
+    assert!(parse_skip_ids(r#"{"skips":[]}"#, "ids")
+        .expect_err("поле")
+        .contains("неизвестное поле"));
+    assert!(parse_skip_ids("[]", "ids")
+        .expect_err("объект")
+        .contains("объект"));
 }

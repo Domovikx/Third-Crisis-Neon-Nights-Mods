@@ -141,6 +141,10 @@ fn potgen_cli(argv: &[String]) -> u8 {
                 options.skip_policy = potgen::PolicySource::Disabled;
                 Ok(())
             }
+            "--no-skip-ids" => {
+                options.skip_ids = potgen::PolicySource::Disabled;
+                Ok(())
+            }
             "--dump" | "--out" | "--created" | "--root" | "--policy" | "--excluded"
             | "--skip-policy" | "--skip-journal" => {
                 let value = flag_value(argv, &mut i, arg);
@@ -154,6 +158,9 @@ fn potgen_cli(argv: &[String]) -> u8 {
                         options.skip_policy = potgen::PolicySource::Path(PathBuf::from(value))
                     }
                     "--skip-journal" => skip_journal = Some(PathBuf::from(value)),
+                    "--skip-ids" => {
+                        options.skip_ids = potgen::PolicySource::Path(PathBuf::from(value))
+                    }
                     _ => options.root = PathBuf::from(value),
                 })
             }
@@ -164,7 +171,8 @@ fn potgen_cli(argv: &[String]) -> u8 {
                 || arg.starts_with("--policy=")
                 || arg.starts_with("--excluded=")
                 || arg.starts_with("--skip-policy=")
-                || arg.starts_with("--skip-journal=") =>
+                || arg.starts_with("--skip-journal=")
+                || arg.starts_with("--skip-ids=") =>
             {
                 let name = arg.split('=').next().unwrap_or(arg);
                 flag_value(argv, &mut i, name).map(|value| match name {

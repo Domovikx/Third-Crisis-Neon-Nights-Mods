@@ -18,7 +18,9 @@ import {
 } from "../../../../scripts/pot_provenance_report.mts";
 import {
   applySrcPolicy,
+  applySkipIds,
   applySkipPolicy,
+  parseSkipIds,
   buildCatalog,
   catalogSize,
   ctxtOf,
@@ -763,7 +765,7 @@ test("parseSkipPolicy: валидная политика и понятные о�
 
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:*","when":"nope"}]}', "p.json"),
-    /неизвестное условие "nope".*noLetters, shortToken, noWord, identifier, tokens, hexColor, fragment/,
+    /неизвестное условие "nope".*noLetters, shortToken, noWord, identifier, tokens, hexColor, assetPath, fragment/,
   );
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:Fontt","when":"noLetters"}]}', "p.json"),
@@ -912,6 +914,39 @@ test("buildCatalog: при дубле побеждает живой источн
   const applied = applySrcPolicy(onlyAsset.catalog, policy);
   assert.equal(applied.catalog.size, 0, "ассетная строка исключена");
   assert.equal(applied.excluded[0]?.src, "raw:GameObject");
+});
+
+test("parseSkipIds: валидный список и понятные ошибки", () => {
+  assert.deepEqual([...parseSkipIds('{"skip":["A","B"]}')], ["A", "B"]);
+  assert.throws(() => parseSkipIds('{"skip":"A"}'), /должно быть массивом строк/);
+  assert.throws(() => parseSkipIds('{"skip":[1]}'), /ожидалась непустая строка/);
+  assert.throws(() => parseSkipIds('{"skips":[]}'), /неизвестное поле/);
+  assert.throws(() => parseSkipIds("[]"), /ожидался объект/);
+});
+
+test("applySkipIds: помечает только новые, считает неиспользованные", () => {
+  const items = [
+    item({ text: "BUUYC", kind: "raw", src: "raw:MonoBehaviour" }),
+    item({ text: "ACCESS", kind: "raw", src: "raw:MonoBehaviour" }),
+    item({ text: "junk-structural", kind: "raw", src: "raw:MonoBehaviour" }),
+  ];
+  const { catalog } = buildCatalog(items);
+  const structural = applySkipPolicy(catalog, parseSkipPolicy('{"rules":[]}', "p"));
+  assert.equal(structural.marked, 0);
+
+  const applied = applySkipIds(catalog, new Set(["BUUYC", "junk-structural", "not-in-pot"]));
+  assert.equal(applied.marked, 2, "две записи помечены");
+  assert.equal(applied.unused, 1, "остаток списка виден");
+  assert.equal(catalog.get("BUUYC")?.get("ui")?.skip, "reviewed");
+  assert.equal(catalog.get("ACCESS")?.get("ui")?.skip, undefined, "текст не тронут");
+  assert.deepEqual(
+    applied.journal.map((j) => [j.rule, j.msgid]),
+    [
+      ["reviewed", "BUUYC"],
+      ["reviewed", "junk-structural"],
+    ],
+    "порядок POT",
+  );
 });
 
 test("applySkipPolicy: srcExclude сужает правило, не ломая остальные метки", () => {

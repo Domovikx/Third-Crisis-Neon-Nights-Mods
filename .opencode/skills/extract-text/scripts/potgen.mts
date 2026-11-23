@@ -786,6 +786,91 @@ export function applySkipPolicy(
   };
 }
 
+/** Путь к подтверждённым точечным skip-решениям (данные, не код). */
+export const SKIP_IDS_PATH = join(REPO_ROOT, "config", "pot-skip-ids.json");
+/** id правила для записей из списка `config/pot-skip-ids.json`. */
+export const REVIEWED_RULE_ID = "reviewed";
+
+/**
+ * Разобрать `config/pot-skip-ids.json`: `{"skip": ["msgid", …]}`.
+ *
+ * Это данные, подтверждённые человеком (например, вердикты LLM-классификатора
+ * `pot_llm_skip.mts`). Неизвестные поля — ошибка, а не тихий игнор: опечатка в
+ * ключе иначе выглядела бы как «список не применился».
+ */
+export function parseSkipIds(text: string, source = "<skip-ids>"): Set<string> {
+  let value: unknown;
+  try {
+    value = JSON.parse(text);
+  } catch (err) {
+    throw new Error(`невалидный JSON списка skip-id ${source}: ${(err as Error).message}`);
+  }
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    throw new Error(`список skip-id ${source}: ожидался объект {"skip": [...]}`);
+  }
+  const obj = value as Record<string, unknown>;
+  for (const key of Object.keys(obj)) {
+    if (key !== "skip" && !key.startsWith("_")) {
+      throw new Error(`список skip-id ${source}: неизвестное поле "${key}"`);
+    }
+  }
+  if (!Array.isArray(obj.skip)) {
+    throw new Error(`список skip-id ${source}: поле "skip" должно быть массивом строк`);
+  }
+  const out = new Set<string>();
+  for (const item of obj.skip) {
+    if (typeof item !== "string" || !item) {
+      throw new Error(
+        `список skip-id ${source}: ожидалась непустая строка, получено ${typeof item}`,
+      );
+    }
+    out.add(item);
+  }
+  return out;
+}
+
+/** Найти `config/pot-skip-ids.json` в `start` или выше (как у политик). */
+export function discoverSkipIdsPath(start: string = REPO_ROOT): string | null {
+  let dir = resolve(start);
+  for (;;) {
+    const candidate = join(dir, "config", "pot-skip-ids.json");
+    if (existsSync(candidate)) return candidate;
+    const parent = dirname(dir);
+    if (parent === dir) return null;
+    dir = parent;
+  }
+}
+
+/** Прочитать список skip-id с диска (нет файла — пустой список). */
+export function loadSkipIds(path: string = SKIP_IDS_PATH): Set<string> | null {
+  if (!existsSync(path)) return null;
+  return parseSkipIds(readFileSync(path, "utf8"), path);
+}
+
+/**
+ * Пометить записи из подтверждённого списка. Уже помеченные структурным
+ * правилом сохраняют свою причину (она точнее), счётчик считает только новые.
+ */
+export function applySkipIds(
+  catalog: Catalog,
+  ids: ReadonlySet<string>,
+): { marked: number; unused: number; journal: SkipJournalEntry[] } {
+  let marked = 0;
+  const used = new Set<string>();
+  const journal: SkipJournalEntry[] = [];
+  for (const [text, byCtxt] of catalog) {
+    if (!ids.has(text)) continue;
+    used.add(text);
+    for (const [ctxt, slot] of byCtxt) {
+      if (slot.skip) continue;
+      slot.skip = REVIEWED_RULE_ID;
+      marked += 1;
+      journal.push({ rule: REVIEWED_RULE_ID, src: slot.src, msgid: text, msgctxt: ctxt });
+    }
+  }
+  return { marked, unused: ids.size - used.size, journal };
+}
+
 /** Журнал skip как JSONL (по строке на запись, порядок POT). */
 export function renderSkipJournalJsonl(entries: readonly SkipJournalEntry[]): string {
   if (entries.length === 0) return "";
@@ -934,6 +1019,11 @@ export interface PotgenOptions {
   skipPolicyPath?: string | null;
   /** Куда писать журнал skip (по умолчанию `tmp/pot-skip.jsonl`). */
   skipJournalPath?: string;
+  /**
+   * Подтверждённые точечные skip-решения: `undefined` — взять
+   * `config/pot-skip-ids.json` (если есть); `null` — выключить; строка — путь.
+   */
+  skipIdsPath?: string | null;
 }
 
 export interface PotgenResult {
@@ -951,6 +1041,8 @@ export interface PotgenResult {
   skip: SkipReport | null;
   /** Путь журнала skip (`null`, если skip-политика не применялась). */
   skipJournalPath: string | null;
+  /** Сколько записей списка skip-id не нашлось в POT (устаревшие данные). */
+  skipIdsUnused: number;
 }
 
 /**
@@ -1001,6 +1093,19 @@ export async function runPotgen(options: PotgenOptions = {}): Promise<PotgenResu
   }
   const skipApplied = skipPolicy ? applySkipPolicy(finalCatalog, skipPolicy) : null;
 
+  // Подтверждённые человеком точечные skip-решения (например, вердикты
+  // LLM-классификатора). Применяются ПОСЛЕ правил: структурная причина точнее.
+  const skipIds = options.skipIdsPath === null ? null : loadSkipIds(options.skipIdsPath);
+  const idsApplied = skipIds ? applySkipIds(finalCatalog, skipIds) : null;
+  const skipJournal = [...(skipApplied?.journal ?? []), ...(idsApplied?.journal ?? [])].sort(
+    (a, b) => compareCodePoints(a.msgid, b.msgid) || compareCodePoints(a.msgctxt, b.msgctxt),
+  );
+  const skipByRule = [
+    ...(skipApplied?.byRule ?? []),
+    ...(idsApplied ? [{ rule: REVIEWED_RULE_ID, count: idsApplied.marked }] : []),
+  ];
+  const skipMarked = (skipApplied?.marked ?? 0) + (idsApplied?.marked ?? 0);
+
   const outPath = options.outPath ?? (options.update ? POT_PATH : REPORT_POT_PATH);
   const text = renderPot(finalCatalog, options.created);
   writeAtomic(outPath, text);
@@ -1020,13 +1125,13 @@ export async function runPotgen(options: PotgenOptions = {}): Promise<PotgenResu
 
   let skipReport: SkipReport | null = null;
   let skipJournalPath: string | null = null;
-  if (skipApplied && skipPolicy) {
+  if (skipMarked > 0) {
     skipJournalPath = options.skipJournalPath ?? SKIP_JOURNAL_PATH;
-    writeSkipJournalAtomic(skipJournalPath, skipApplied.journal);
+    writeSkipJournalAtomic(skipJournalPath, skipJournal);
     skipReport = {
-      path: skipPolicy.path,
-      marked: skipApplied.marked,
-      byRule: skipApplied.byRule,
+      path: [skipPolicy?.path, skipIds && SKIP_IDS_PATH].filter(Boolean).join(" + "),
+      marked: skipMarked,
+      byRule: skipByRule,
     };
   }
 
@@ -1040,12 +1145,14 @@ export async function runPotgen(options: PotgenOptions = {}): Promise<PotgenResu
     excludedPath,
     skip: skipReport,
     skipJournalPath,
+    skipIdsUnused: idsApplied?.unused ?? 0,
   };
 }
 
 const USAGE = `Usage: node potgen.mts [--update] [--dump <dir>] [--out <path>]
                        [--policy <path> | --no-policy] [--excluded <path>]
                        [--skip-policy <path> | --no-skip-policy] [--skip-journal <path>]
+                       [--skip-ids <path> | --no-skip-ids]
                        [--created <date>]
 
   --update          записать po/template.pot (без флага — только tmp/potgen/)
@@ -1068,6 +1175,7 @@ interface Cli {
   excludedPath?: string;
   skipPolicyPath?: string | null;
   skipJournalPath?: string;
+  skipIdsPath?: string | null;
   created?: string;
   help: boolean;
 }
@@ -1079,6 +1187,7 @@ function parseArgs(argv: string[]): Cli {
     if (arg === "--update") cli.update = true;
     else if (arg === "--no-policy") cli.policyPath = null;
     else if (arg === "--no-skip-policy") cli.skipPolicyPath = null;
+    else if (arg === "--no-skip-ids") cli.skipIdsPath = null;
     else if (arg === "--help" || arg === "-h") cli.help = true;
     else if (
       arg === "--dump" ||
@@ -1087,6 +1196,7 @@ function parseArgs(argv: string[]): Cli {
       arg === "--excluded" ||
       arg === "--skip-policy" ||
       arg === "--skip-journal" ||
+      arg === "--skip-ids" ||
       arg === "--created"
     ) {
       const value = argv[i + 1];
@@ -1098,6 +1208,7 @@ function parseArgs(argv: string[]): Cli {
       else if (arg === "--excluded") cli.excludedPath = value;
       else if (arg === "--skip-policy") cli.skipPolicyPath = value;
       else if (arg === "--skip-journal") cli.skipJournalPath = value;
+      else if (arg === "--skip-ids") cli.skipIdsPath = value;
       else cli.created = value;
     } else if (arg.startsWith("--dump=")) cli.dumpDir = arg.slice("--dump=".length);
     else if (arg.startsWith("--out=")) cli.outPath = arg.slice("--out=".length);
@@ -1107,6 +1218,7 @@ function parseArgs(argv: string[]): Cli {
       cli.skipPolicyPath = arg.slice("--skip-policy=".length);
     else if (arg.startsWith("--skip-journal="))
       cli.skipJournalPath = arg.slice("--skip-journal=".length);
+    else if (arg.startsWith("--skip-ids=")) cli.skipIdsPath = arg.slice("--skip-ids=".length);
     else if (arg.startsWith("--created=")) cli.created = arg.slice("--created=".length);
     else throw new Error(`неизвестный аргумент: ${arg}`);
   }
@@ -1173,6 +1285,12 @@ export async function main(argv: string[]): Promise<number> {
     }
     for (const line of formatSkipReport(res.skip, cli.skipPolicyPath === null)) {
       console.error(line);
+    }
+    if (res.skipIdsUnused > 0 && cli.skipIdsPath !== null) {
+      console.error(
+        `  skip-ids: ${res.skipIdsUnused} записей из config/pot-skip-ids.json не найдены в POT ` +
+          `(устаревшие? удали их из файла)`,
+      );
     }
     if (res.skipJournalPath) {
       console.error(`  skip journal: ${res.skipJournalPath} (${res.skip?.marked ?? 0} rows)`);

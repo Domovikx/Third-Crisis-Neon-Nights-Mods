@@ -51,7 +51,11 @@ import {
   renderPot,
   srcMatchesPattern,
   srcOf,
+  applySkipIds,
   applySkipPolicy,
+  discoverSkipIdsPath,
+  loadSkipIds,
+  REVIEWED_RULE_ID,
   type PotCatalog,
   type PotStats,
   type SkipPolicy,
@@ -328,6 +332,10 @@ async function buildExpected(
   // перегенерация» видела бы каждый `#, skip` как расхождение.
   const catalogWithSkip = catalog;
   if (skipPolicy) applySkipPolicy(catalogWithSkip, skipPolicy);
+  // Подтверждённые точечные skip-решения — тоже часть перегенерации.
+  const idsPath = discoverSkipIdsPath();
+  const skipIds = idsPath ? loadSkipIds(idsPath) : null;
+  if (skipIds) applySkipIds(catalogWithSkip, skipIds);
   const stats = built.stats;
   const twinKeys = new Set<string>();
   for (const key of keys.keys()) {
@@ -935,6 +943,11 @@ function checkSkipTags(
       continue;
     }
     const rule = rules.get(ruleId);
+    const idsPath = discoverSkipIdsPath();
+    const skipIds = ruleId === REVIEWED_RULE_ID && idsPath ? loadSkipIds(idsPath) : null;
+    if (ruleId === REVIEWED_RULE_ID && skipIds?.has(id)) {
+      continue; // точечное решение принято человеком, политика тут ни при чём
+    }
     if (!rule) {
       add(
         15,
