@@ -16779,7 +16779,7 @@ msgstr "Заячьи уши - 200%"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Bunny Rank D"
-msgstr ""
+msgstr "Зайка ранг D"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17550,67 +17550,67 @@ msgstr "CC_Option_Чёрное Худи: Вверх"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CC_Option_Tops_Black Hoodie with Horns"
-msgstr ""
+msgstr "CC_Option_Tops: Черный худи с рогами"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CC_Option_Tops_Black suit shirt"
-msgstr ""
+msgstr "CC_Option_Tops_Black suit shirt"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CC_Option_Tops_Construction Worker Top"
-msgstr ""
+msgstr "CC_Option_Tops_Топ строителя"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CC_Option_Tops_Electrician Top"
-msgstr ""
+msgstr "CC_Option_Tops_Электрик Топ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CC_Option_Tops_Hoodie Ragged"
-msgstr ""
+msgstr "CC_Option_Tops_Hoodie Рваная"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CC_Option_Tops_Hoodie Ragged 1"
-msgstr ""
+msgstr "CC_Option_Tops_Hoodie Рваный 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CC_Option_Tops_Light Hoodie"
-msgstr ""
+msgstr "CC_Option_Tops_Лёгкий свитшот"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CC_Option_Tops_Light Hoodie Up"
-msgstr ""
+msgstr "CC_Option_Tops_Light Худи Вкл."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CC_Option_Tops_Light Hoodie Up Horns"
-msgstr ""
+msgstr "CC_Option_Tops_Light Худи с поднятыми рогом"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CC_Option_Tops_Suit top with black shirt"
-msgstr ""
+msgstr "CC_Option_Tops_Suit Верх с черной рубашкой"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CC_Option_Tops_Suit top with white shirt"
-msgstr ""
+msgstr "Топ с белой рубашкой"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CC_Option_Tops_White suit shirt"
-msgstr ""
+msgstr "CC_Option_Tops_Белая рубашка для костюма"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CC_Option_Tops_Zipper Hoodie"
-msgstr ""
+msgstr "CC_Option_Tops_Zipper Худи"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17620,7 +17620,7 @@ msgstr "CC_Опция_Влажная_Горячка"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CG 1 - fingering cum\""
-msgstr ""
+msgstr "CG 1 - Оргазм от пальцев"
 
 #. src: us
 msgctxt "ui"
@@ -17635,7 +17635,7 @@ msgstr "Художник по иллюстрациям"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CG dialogue 2"
-msgstr ""
+msgstr "2. CG dialogue 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17645,7 +17645,7 @@ msgstr "Сменить позу бездействия"
 #. src: us
 msgctxt "ui"
 msgid "CONNECTED"
-msgstr ""
+msgstr "ПОДКЛЮЧЕНО"
 
 #. src: us
 # legacy: text vanished from POT, kept for runtime lookup
@@ -17662,7 +17662,7 @@ msgstr "Процессор: Модель процессора [# ядер]"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CREATE NEW SAVE"
-msgstr ""
+msgstr "Создать новый файл сохранения"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17672,12 +17672,12 @@ msgstr "Кабель 1"
 #. src: us
 msgctxt "ui"
 msgid "CableEvents: no Cable component found."
-msgstr ""
+msgstr "CableEvents: не найден компонент Cable."
 
 #. src: us
 msgctxt "ui"
 msgid "CableSocketEvents: no CableSocket component found."
-msgstr ""
+msgstr "Нет компонента CableSocket."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17729,17 +17729,17 @@ msgstr "Позвонить снова"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Call her"
-msgstr ""
+msgstr "Назови её"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Call her whatever you want. Just get her out."
-msgstr ""
+msgstr "Называй её как хочешь. Просто выведи её отсюда."
 
 #. src: us
 msgctxt "ui"
 msgid "CallTimelineTrigger '"
-msgstr ""
+msgstr "CallTimelineTrigger '"
 
 #. src: us
 msgctxt "ui"
@@ -17804,7 +17804,7 @@ msgstr "Называют себя \"сопротивлением\", ха! Не �
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Camera Closed"
-msgstr ""
+msgstr "Камера выключена"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17814,22 +17814,22 @@ msgstr "Катсцена с камеры"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Camera Opened"
-msgstr ""
+msgstr "Камера включена"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Camera POP"
-msgstr ""
+msgstr "Камера ЧМОК"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Camera Pop"
-msgstr ""
+msgstr "Щелк!"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Camera Shutter"
-msgstr ""
+msgstr "Затвор камеры"
 
 #. src: us
 msgctxt "ui"
@@ -17839,7 +17839,7 @@ msgstr "Цель камеры"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Camera move"
-msgstr ""
+msgstr "Камера двигается."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17849,13 +17849,13 @@ msgstr "Можно просто попробовать снова?"
 #. src: dialog
 msgctxt "ui"
 msgid "Can I see the picture again, Leona?"
-msgstr ""
+msgstr "Можно я снова посмотрю на картинку, Леона?"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Can I- have the marker, please...?</color>
 msgctxt "speaker:Zoey"
 msgid "Can I- have the marker, please...?"
-msgstr ""
+msgstr "2. Можно я... возьму маркер, пожалуйста...?"
 
 #. src: dialog
 msgctxt "ui"
@@ -17865,12 +17865,12 @@ msgstr "Почти ничего не вижу, не то что в VR зайти
 #. src: dialog
 msgctxt "ui"
 msgid "Can do..."
-msgstr ""
+msgstr "Могу..."
 
 #. src: us
 msgctxt "ui"
 msgid "Can not show item subcategory,"
-msgstr ""
+msgstr "Не может показывать подкатегорию предмета,"
 
 #. src: us
 # legacy: text vanished from POT, kept for runtime lookup
@@ -17887,12 +17887,12 @@ msgstr "Можем ли мы быть свободны?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Can we get the quest?"
-msgstr ""
+msgstr "Можем ли мы взять это задание?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Can we see upgrades?"
-msgstr ""
+msgstr "Можем ли мы увидеть апгрейды?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17902,7 +17902,7 @@ msgstr "Мы можем пропустить?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Can we start the mission?"
-msgstr ""
+msgstr "Можем ли мы начать миссию?"
 
 #. src: dialog
 msgctxt "ui"
@@ -17912,7 +17912,7 @@ msgstr "Можешь что-нибудь сделать?"
 #. src: dialog
 msgctxt "ui"
 msgid "Can you show me the picture again?"
-msgstr ""
+msgstr "Можешь показать мне картинку ещё раз?"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -17982,7 +17982,7 @@ msgstr "Не бросать же его девушку-андро, верно?"
 #. src: us
 msgctxt "ui"
 msgid "Can't load Addressable Sprite. It's probably not assigned."
-msgstr ""
+msgstr "Не удалось загрузить Addressable Sprite. Вероятно, он не назначен."
 
 #. src: dialog
 msgctxt "ui"
@@ -18007,7 +18007,7 @@ msgstr "Не могу представить зайку для услуг, ко�
 #. src: dialog
 msgctxt "ui"
 msgid "Can't wait to get back to that. What do you want?"
-msgstr ""
+msgstr "Не терпится продолжить. Чего хочешь?"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -18043,12 +18043,12 @@ msgstr "Отменено"
 #. rich_text: <color=#EB83FF>Candidate f-for-... ngh... what...?</color>
 msgctxt "speaker:Zoey"
 msgid "Candidate f-for-... ngh... what...?"
-msgstr ""
+msgstr "Кандидат... Н-н-н... что...?"
 
 #. src: us
 msgctxt "ui"
 msgid "Cannot Use!"
-msgstr ""
+msgstr "Нельзя использовать!"
 
 #. src: us
 msgctxt "ui"
@@ -18110,22 +18110,22 @@ msgstr "Карсен присоединился к Сопротивлению"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Carlos"
-msgstr ""
+msgstr "Карлос"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Cartel Dialoguepresets"
-msgstr ""
+msgstr "Шаблоны диалогов картеля"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Cartel Female"
-msgstr ""
+msgstr "Картельная женщина"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Cartel Guard"
-msgstr ""
+msgstr "Охрана картеля"
 
 #. src: dialog
 msgctxt "speaker-name"
@@ -18170,7 +18170,7 @@ msgstr "Картель, значит? Мне на работе приходит�
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "CartelBadEnd - 1 - 4 - Use Inside Apartment"
-msgstr ""
+msgstr "CartelBadEnd - 1 - 4 - Используй внутри апартаментов"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18190,7 +18190,7 @@ msgstr "КлючиСкрытыеМестаКартеля/Жду презерва
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Caseman"
-msgstr ""
+msgstr "Кейзмен"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18205,7 +18205,7 @@ msgstr "Перехвачено исключение при закрытии ди
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Censorskin"
-msgstr ""
+msgstr "Цензорскин"
 
 #. src: us
 msgctxt "ui"
@@ -18242,7 +18242,7 @@ msgstr "Сменить уровень"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Change Light Color"
-msgstr ""
+msgstr "Изменить цвет света"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18262,7 +18262,7 @@ msgstr "Изменить настройки подсказок, поиска и 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Changed"
-msgstr ""
+msgstr "Изменено"
 
 #. src: dialog
 msgctxt "ui"
@@ -18287,12 +18287,12 @@ msgstr "Передумала?"
 #. src: us
 msgctxt "ui"
 msgid "Changes to seasonal events take effect when the next area is loaded."
-msgstr ""
+msgstr "Изменения в сезонных событиях вступают в силу при загрузке следующей области."
 
 #. src: us
 msgctxt "ui"
 msgid "Changing to another event won't be visible until another level is loaded!"
-msgstr ""
+msgstr "Переключение на другое событие не будет видно, пока не загрузится следующий уровень!"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18341,7 +18341,7 @@ msgstr "Персонаж_Фембой_Андроид_Волосы_2_3 1"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Char_Femboy_Citizen_Caretaker Ryan"
-msgstr ""
+msgstr "Персонаж: женский парень, гражданин, опекун — Райан"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18351,22 +18351,22 @@ msgstr "Персонаж_Фембой_Гражданин_Волосы_2_4 Код
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Char_Femboy_Citizen_Hair_2_8 Roof Guy"
-msgstr ""
+msgstr "Char_Femboy_Citizen_Hair_2_8 Roof Guy"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Char_Femboy_Citizen_Hobo 2"
-msgstr ""
+msgstr "Персонаж: Фембой — Житель, бродяга 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Char_Femboy_Citizen_PokerPlayer Terrell"
-msgstr ""
+msgstr "Фембой-гражданин и игрок в покер — Террелл"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Char_Femboy_Customer Room 203"
-msgstr ""
+msgstr "Char_Femboy_Customer Комната 203"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18411,7 +18411,7 @@ msgstr "Ключи персонажей/Смотрел на грудь Роуз"
 #. src: us
 msgctxt "ui"
 msgid "Character Silhouette IDs"
-msgstr ""
+msgstr "Идентификаторы силуэтов персонажей"
 
 #. src: us
 msgctxt "ui"
@@ -18436,7 +18436,7 @@ msgstr "Заряды"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Charismatic Insanity"
-msgstr ""
+msgstr "Чарующее безумие"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18526,12 +18526,12 @@ msgstr "Проверить ключ сохранения 5"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Save Key Arm"
-msgstr ""
+msgstr "Проверьте ключевой механизм сохранения"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Save Key Fem"
-msgstr ""
+msgstr "Проверьте женский ключ сохранения"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18571,7 +18571,7 @@ msgstr "Проверить статус задания 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Task find lever"
-msgstr ""
+msgstr "Проверь задание: найди рычаг"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18581,17 +18581,17 @@ msgstr "Проверить задачи"
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Check behind this... whatever this toy is, Lio."
-msgstr ""
+msgstr "Проверь за этим... что бы эта игрушка ни была, Лео."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for Cypher mission"
-msgstr ""
+msgstr "Проверь миссию Cypher?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for Lio mission"
-msgstr ""
+msgstr "Проверь миссию Лео"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
