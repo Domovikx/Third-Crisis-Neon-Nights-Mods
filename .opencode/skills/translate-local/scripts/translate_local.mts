@@ -436,10 +436,13 @@ const RESP_RX = /^\s*(\d+)\s*[.)]\s?(.*)$/;
 // переводит «(speaker: Zoey)» и оставляет «(говорящий: Зои)» / «(эмоция: …)» —
 // в игре это видно как часть реплики (проверено 2026-11-23: 42 строки в ru).
 const SPEAKER_LEAK_RX =
-  /\s*[（(](?:speaker|emotion|говорящ[а-яё]*|говорит|голос[а-яё]*|эмоци[а-яё]*|说话人|说话者|发言者|语气|情感|角色)\s*[:：][^)）]*[)）]\s*$/iu;
+  /\s*[（(](?:speaker|emotion|говорящ[а-яё]*|говорит|голос[а-яё]*|эмоци[а-яё]*|说话人|说话者|发言者|扬声器|喇叭|旁白|语气|情感|角色)\s*[:：][^)）]*[)）]\s*$/iu;
 // Второй вариант без метки: «（Zoey，女）» / «（Zoey，female）» в конце строки.
 const SPEAKER_LEAK_NO_LABEL_RX =
   /\s*[（(][^（()）]{1,20}[，,]\s*(?:女性|男性|女|男|female|male)[)）]\s*$/iu;
+// Голое «（扬声器）» / «(speaker)» без двоеточия и значения.
+const SPEAKER_LABEL_RX =
+  /\s*[（(](?:扬声器|说话人|说话者|发言者|旁白|speaker|narration)[)）]\s*$/iu;
 // Второй вид утечки — без двоеточия: «(голос Зои)» в конце реплики
 // (проверено 2026-11-23: одна такая строка в ru). Узко: только в конце и коротко,
 // иначе задели бы реплики вроде «(Голосовой файл)».
@@ -450,6 +453,7 @@ export function stripSpeakerLeak(tr: string): { clean: string; leaked: boolean }
   const clean = tr
     .replace(SPEAKER_LEAK_RX, "")
     .replace(SPEAKER_LEAK_NO_LABEL_RX, "")
+    .replace(SPEAKER_LABEL_RX, "")
     .replace(VOICE_TAIL_RX, "")
     .trim();
   return { clean, leaked: clean !== tr.trim() };

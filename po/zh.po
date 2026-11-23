@@ -6565,7 +6565,7 @@ msgstr "（罗茜居然也这么做了……？）"
 #. rich_text: <i>(Rosie said the other bunnies make him pay extra too... So... If they do it... )</i>
 msgctxt "speaker:Zoey"
 msgid "(Rosie said the other bunnies make him pay extra too... So... If they do it... )"
-msgstr "（罗西说其他兔子也让他付了额外费用……所以……如果她们也这么做了……）"
+msgstr "（罗茜说其他兔子也让他付了额外费用……所以……如果她们也这么做了……）"
 
 #. src: dialog
 #. rich_text: <i>(Rosie seems really sweet... Glad she's here, makes me feel a bit better at least. )</i>
@@ -9632,27 +9632,27 @@ msgstr "0.2 版本更新说明"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Bartending - 1 - TalkToKlaudia - 1"
-msgstr "0.3 - 调酒 - 1 - 与Klaudia对话 - 1"
+msgstr "0.3 - 调酒 - 1 - 与克劳迪娅对话 - 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Bartending - 1 - TalkToKlaudia - 1_Agree"
-msgstr "0.3 - 调酒 - 1 - 与Klaudia对话 - 1_同意"
+msgstr "0.3 - 调酒 - 1 - 与克劳迪娅对话 - 1_同意"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Bartending - 1 - TalkToKlaudia - 2"
-msgstr "0.3 - 调酒 - 1 - 与Klaudia对话 - 2"
+msgstr "0.3 - 调酒 - 1 - 与克劳迪娅对话 - 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Bartending - 1 - TalkToKlaudia - 2_1"
-msgstr "0.3 - 调酒 - 1 - 与Klaudia对话 - 2_1"
+msgstr "0.3 - 调酒 - 1 - 与克劳迪娅对话 - 2_1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Bartending - 1 - TalkToKlaudia - 3"
-msgstr "0.3 - 调酒 - 1 - 与Klaudia对话 - 3"
+msgstr "0.3 - 调酒 - 1 - 与克劳迪娅对话 - 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -9747,7 +9747,7 @@ msgstr "0.3 - 美甲沙龙色情片 - 1 - 8"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - NailSalon - Backroom - 1 - Initial Max Talk"
-msgstr "0.3 - 美甲沙龙 - 后室 - 1 - Max 初始对话"
+msgstr "0.3 - 美甲沙龙 - 后室 - 1 - 马克斯 初始对话"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -10198,7 +10198,7 @@ msgstr "指定的组件不是 SkeletonRenderer 或 SkeletonGraphic。"
 #. src: dialog
 msgctxt "ui"
 msgid ":: EZMail v1.1.3 :: Retrieving mail for 'Zoey Madison'..."
-msgstr ":: EZMail v1.1.3 :: 正在获取“Zoey Madison”的邮件……"
+msgstr ":: EZMail v1.1.3 :: 正在获取“佐伊 Madison”的邮件……"
 
 #. src: dialog
 #. rich_text: <i>:: Error... Stay on the designated route... Recalculating... Error... Too many clothes detected... ::</i>
@@ -11793,7 +11793,7 @@ msgstr "对莎拉进行自慰"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Activate mission Jaime"
-msgstr "激活任务：Jaime"
+msgstr "激活任务：杰米"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -13705,7 +13705,7 @@ msgstr "我们还没看过他们呢？"
 #. src: dialog
 msgctxt "ui"
 msgid "And we just wanted to get a closer look at your little kitty here, Leona. What was her name? Felicia?"
-msgstr "我们只是想更近距离地看看你的这只小猫咪，莱昂娜。她叫什么来着？费莉西娅？"
+msgstr "我们只是想更近距离地看看你的这只小猫咪，莉昂娜。她叫什么来着？费莉西娅？"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -14104,7 +14104,7 @@ msgstr "话说，如果你有兴趣参加 Xhibition Run，就尽管来找我吧�
 #. rich_text: Anyway, once you're in the building, find Leona. Code phrase is <b>French Kiss</b>. That was her idea.
 msgctxt "ui"
 msgid "Anyway, once you're in the building, find Leona. Code phrase is French Kiss. That was her idea."
-msgstr "总之，进了大楼之后，去找莱昂娜。暗号是“法式热吻”。这主意是她出的。"
+msgstr "总之，进了大楼之后，去找莉昂娜。暗号是“法式热吻”。这主意是她出的。"
 
 #. src: dialog
 msgctxt "ui"
@@ -14664,7 +14664,7 @@ msgstr "再问一次关于Femboy的事。"
 #. src: dialog
 msgctxt "ui"
 msgid "Ask about Jaime's broken headset."
-msgstr "问问Jaime的耳机坏了怎么回事。"
+msgstr "问问杰米的耳机坏了怎么回事。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17743,7 +17743,7 @@ msgstr "检查物品"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for jaime alive"
-msgstr "检查Jaime是否还活着"
+msgstr "检查杰米是否还活着"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18354,7 +18354,7 @@ msgstr "进来……帮帮我……求你了！"
 #. src: dialog
 msgctxt "speaker:Intercom"
 msgid "Come in and-... let me cum to it... please-... I will finally be free...!"
-msgstr "进来……让我享受它……求你了……我终于能自由了……！（扬声器：Intercom）"
+msgstr "进来……让我享受它……求你了……我终于能自由了……！"
 
 #. src: dialog
 msgctxt "ui"
@@ -19135,7 +19135,7 @@ msgstr "切入画布UI"
 #. src: dialog
 msgctxt "ui"
 msgid "Cut off by Leona beginning to make out with her"
-msgstr "被莱昂娜突然吻住，话都说不出口了"
+msgstr "被莉昂娜突然吻住，话都说不出口了"
 
 #. src: dialog
 msgctxt "ui"
@@ -19342,7 +19342,7 @@ msgstr "哇哦，看看你发光的样子！你可爱死了！"
 #. src: dialog
 msgctxt "ui"
 msgid "D'aww, flustered clients are the cutest! Will you be a darling, find Cal and send him to Klaudia for me? I will make it up to you next time, I promise, hehe!~"
-msgstr "哎呀，害羞的客户最可爱啦！你能当个乖宝宝，找到Cal然后把他送到Klaudia那里吗？下次我一定补偿你，我保证哦，嘿嘿！~"
+msgstr "哎呀，害羞的客户最可爱啦！你能当个乖宝宝，找到Cal然后把他送到克劳迪娅那里吗？下次我一定补偿你，我保证哦，嘿嘿！~"
 
 #. src: dialog
 msgctxt "ui"
@@ -19387,7 +19387,7 @@ msgstr "D-rex"
 #. src: dialog
 msgctxt "speaker:Intercom"
 msgid "D13... It's in... D13-... Khhh... I can't-... nghhh..."
-msgstr "D13……它在……D13……呃……我……不……行……嗯……（扬声器：Intercom）"
+msgstr "D13……它在……D13……呃……我……不……行……嗯……"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19627,7 +19627,7 @@ msgstr "停用互动"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Deactivate Jaime call"
-msgstr "停用Jaime的呼叫"
+msgstr "停用杰米的呼叫"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -20352,7 +20352,7 @@ msgstr "诺瓦摸了佐伊吗？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did Nova route"
-msgstr "Nova的路线完成了吗？"
+msgstr "诺瓦的路线完成了吗？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -20977,7 +20977,7 @@ msgstr "两张照片都拍好了吗？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did we take the Cypher picture?"
-msgstr "我们拍了Cypher的照片吗？"
+msgstr "我们拍了赛弗的照片吗？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22427,7 +22427,7 @@ msgstr "别——别那么说啊……！"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Don't mention it, Jaime. I'll be right next door if you ever need me."
-msgstr "别客气，Jaime。如果你需要我，我随时都在隔壁。"
+msgstr "别客气，杰米。如果你需要我，我随时都在隔壁。"
 
 #. src: dialog
 msgctxt "ui"
@@ -23037,7 +23037,7 @@ msgstr "用力地抚摸"
 #. src: dialog
 msgctxt "ui"
 msgid "Effort of thrusting rosies boobs0"
-msgstr "用力顶动罗西的乳房。"
+msgstr "用力顶动罗茜的乳房。"
 
 #. src: dialog
 msgctxt "ui"
@@ -23822,7 +23822,7 @@ msgstr "确保佐伊穿着兔女郎装"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Ensure cypher is off"
-msgstr "确保Cypher已关闭"
+msgstr "确保赛弗已关闭"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -28310,7 +28310,7 @@ msgstr "呵……对，好吧……"
 #. src: dialog
 msgctxt "speaker:Intercom"
 msgid "H-hello...? C-can you hear me...? Please... Khh..."
-msgstr "喂……？你听得到吗……？求你了……咳咳……（扬声器：对讲机）"
+msgstr "喂……？你听得到吗……？求你了……咳咳……"
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -28834,7 +28834,7 @@ msgstr "这个机体是从一台……失同步的安德罗身上回收的，还
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Has Bodywriting from Klaudia?"
-msgstr "有来自Klaudia的身体文字吗？"
+msgstr "有来自克劳迪娅的身体文字吗？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -30032,7 +30032,7 @@ msgstr "嘿，杰米。很高兴看到你。"
 #. src: dialog
 msgctxt "ui"
 msgid "Hey Lio!  This is my friend, Cypher. She's got that chip I told you about."
-msgstr "嘿，Lio！这位是我的朋友 Cypher。她身上有我跟你说过的芯片。"
+msgstr "嘿，Lio！这位是我的朋友 赛弗。她身上有我跟你说过的芯片。"
 
 #. src: dialog
 msgctxt "ui"
@@ -34400,7 +34400,7 @@ msgstr "换句话说，它能感知到你。"
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "In recent past, some waitresses have more freedom than others. Nova is the one you want to talk to, if you want to do your job here... properly."
-msgstr "最近，有些女服务生的自由度比其他人大。如果你想在这里……好好干你的活儿，那Nova就是你想找的人。"
+msgstr "最近，有些女服务生的自由度比其他人大。如果你想在这里……好好干你的活儿，那诺瓦就是你想找的人。"
 
 #. src: dialog
 msgctxt "ui"
@@ -34565,7 +34565,7 @@ msgstr "不安地喘息着，终于接受了她的命运。"
 #. src: dialog
 msgctxt "ui"
 msgid "Insecure sound about being squirted on while eating nova out like crazy"
-msgstr "被Nova的汁液喷满全身时，那种不安的呻吟，伴随着疯狂舔舐她的声音。"
+msgstr "被诺瓦的汁液喷满全身时，那种不安的呻吟，伴随着疯狂舔舐她的声音。"
 
 #. src: dialog
 msgctxt "ui"
@@ -35250,7 +35250,7 @@ msgstr "她没穿衣服吗？"
 #. src: dialog
 msgctxt "ui"
 msgid "Is she yours? Your little pet yapping again, Leona?"
-msgstr "她是你的吗？你的小宠物又在那儿叫唤了，Leona？"
+msgstr "她是你的吗？你的小宠物又在那儿叫唤了，莉昂娜？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -37015,7 +37015,7 @@ msgstr "呃……真的……在拉扯我……"
 #. src: dialog
 msgctxt "speaker:Femboy"
 msgid "Khh-.. Mnh.. M-mhmm.."
-msgstr "嗯.. 嗯.. 嗯嗯.. (Femboy)"
+msgstr "嗯.. 嗯.. 嗯嗯.."
 
 #. src: dialog
 msgctxt "speaker:Femboy"
@@ -38164,7 +38164,7 @@ msgstr "这么说吧……我遇到过一些客户，他们可能对这种……
 #. src: dialog
 msgctxt "ui"
 msgid "Let's just say... Rosie made quite sure you wouldn't get into trouble for what you did... Love those huge milkers, ehehe."
-msgstr "这么说吧……罗西可真是费了心思，确保你因为自己做的事而不会惹上麻烦……真喜欢那对大奶子，嘿嘿。"
+msgstr "这么说吧……罗茜可真是费了心思，确保你因为自己做的事而不会惹上麻烦……真喜欢那对大奶子，嘿嘿。"
 
 #. src: dialog
 msgctxt "ui"
@@ -39835,7 +39835,7 @@ msgstr "机器之光"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Madam Leona"
-msgstr "莱昂娜夫人"
+msgstr "莉昂娜夫人"
 
 #. src: us
 msgctxt "ui"
@@ -40866,7 +40866,7 @@ msgstr "迈克尔·迈尔斯"
 #. src: dialog
 msgctxt "ui"
 msgid "Might've let it slip to see how you'd do. Sweet little Rosie was so worried you'd get... disciplined."
-msgstr "也许我忍不住想看看你的表现。小罗西可担心你会被……惩罚呢。"
+msgstr "也许我忍不住想看看你的表现。小罗茜可担心你会被……惩罚呢。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -47491,7 +47491,7 @@ msgstr "引导女伪娘前往最终地点"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Pathfind Klaudia and Cal"
-msgstr "寻找 Klaudia 和 Cal 的路线"
+msgstr "寻找 克劳迪娅 和 Cal 的路线"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -48307,7 +48307,7 @@ msgstr "播放开场对话"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play Klaudia Agree Dialogue"
-msgstr "开始与Klaudia的同意对话"
+msgstr "开始与克劳迪娅的同意对话"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51061,7 +51061,7 @@ msgstr "移除"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Remove  Jaime"
-msgstr "删除 Jaime"
+msgstr "删除 杰米"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57328,7 +57328,7 @@ msgstr "开始任务"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start mission + add jaime to party"
-msgstr "开始任务 + 将Jaime加入队伍"
+msgstr "开始任务 + 将杰米加入队伍"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59073,7 +59073,7 @@ msgstr "把这个拿给他。他……可是个很棒的……伴侣。告诉他
 #. src: dialog
 msgctxt "ui"
 msgid "Take those filled condoms to the ManaFactory machine outside, for now. I'll keep Cypher company."
-msgstr "先把那些装满避孕套的带到外面的 ManaFactory 机器那儿去。我陪着 Cypher 就行。"
+msgstr "先把那些装满避孕套的带到外面的 ManaFactory 机器那儿去。我陪着 赛弗 就行。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60650,7 +60650,7 @@ msgstr "便宜的唯一理由，不就是因为我这个保镖格外宽宏大量
 #. src: dialog
 msgctxt "speaker:Intercom"
 msgid "The outfit-... please... put it on...! The black net, please!"
-msgstr "那套服装……拜托……穿上它……！黑色的网眼装，拜托了！（扬声器：对讲机）"
+msgstr "那套服装……拜托……穿上它……！黑色的网眼装，拜托了！"
 
 #. src: us
 msgctxt "ui"
@@ -68195,7 +68195,7 @@ msgstr "我上次去发光洞是什么时候来着？"
 #. rich_text: When you're  <b><i>done</i></b> in here, go talk to Klaudia. Maybe she already has a client lined up for you, hehe..~
 msgctxt "ui"
 msgid "When you're  done in here, go talk to Klaudia. Maybe she already has a client lined up for you, hehe..~"
-msgstr "你这里忙完了就去跟Klaudia聊聊吧。说不定她早就给你安排好了客户呢，嘿嘿～"
+msgstr "你这里忙完了就去跟克劳迪娅聊聊吧。说不定她早就给你安排好了客户呢，嘿嘿～"
 
 #. src: dialog
 msgctxt "ui"
@@ -70877,7 +70877,7 @@ msgstr "你刚才那一下真把他给干趴下了。"
 #. src: dialog
 msgctxt "ui"
 msgid "You really need us to keep directing you? Do what you usually do, Leona. Have some fun with your pet."
-msgstr "你真需要我们一直指挥你吗？照你平时那样做不就行了，莱昂娜。跟你的宠物好好玩吧。"
+msgstr "你真需要我们一直指挥你吗？照你平时那样做不就行了，莉昂娜。跟你的宠物好好玩吧。"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>You really want me to-... Spit in your drink... Right?</color>
@@ -71540,7 +71540,7 @@ msgstr "你……把它切断了？！"
 #. src: dialog
 msgctxt "speaker:Intercom"
 msgid "You-... You are... Come closer, please...!"
-msgstr "你……你是……请靠近一点……！（扬声器）"
+msgstr "你……你是……请靠近一点……！"
 
 #. src: dialog
 msgctxt "ui"
@@ -73641,7 +73641,7 @@ msgstr "保存"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "saved jaime"
-msgstr "已保存 Jaime"
+msgstr "已保存 杰米"
 
 #. src: dialog
 msgctxt "ui"
