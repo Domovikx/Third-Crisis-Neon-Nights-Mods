@@ -23,6 +23,7 @@ import { join } from "node:path";
 import process from "node:process";
 
 import { parsePo } from "../extract-text/scripts/po_file.mts";
+import { auditLang } from "../../../scripts/rt_audit.mts";
 
 export const REPO = join(import.meta.dirname, "..", "..", "..");
 const PORT = (() => {
@@ -261,6 +262,21 @@ ${langs
   )
   .join("")}
 </table></div>
+
+<h2>Оформление (rich_translation)</h2>
+<div class="card">${(() => {
+    const rt = langs
+      .filter((l) => l.translated > 0)
+      .map((l) => {
+        try {
+          const s = auditLang(l.lang, readFileSync(join(PO_DIR, `${l.lang}.po`), "utf8"));
+          return `${l.lang}: ${s.inlineWithRt}/${s.inlineTranslated}`;
+        } catch {
+          return `${l.lang}: —`;
+        }
+      });
+    return `<span class="muted">с rt / переведённых inline:</span> <b>${rt.join(" · ") || "—"}</b>`;
+  })()}</div>
 
 <h2>POT</h2>
 <div class="card"><div class="row">
