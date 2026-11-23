@@ -10161,6 +10161,20 @@ msgid "::TOYS FOUND::"
 msgstr ""
 
 #. src: dialog
+#. rich_text: <i>< It's all about <b>your</b> comfort, hon. I'll be anything you want me to be. >
+#. repaired: your comfort, hon. I'll be anything you want me to be. >
+msgctxt "ui"
+msgid "< It's all about your comfort, hon. I'll be anything you want me to be. >"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>< Like this, hmmm...? I love these nice big tits. Especially when adorable customers like <b>you</b> request them. >
+#. repaired: you request them. >
+msgctxt "ui"
+msgid "< Like this, hmmm...? I love these nice big tits. Especially when adorable customers like you request them. >"
+msgstr ""
+
+#. src: dialog
 #. rich_text: <i>< S-sorry Max, I-... Hhh... I couldn't think clearly, I-... I think I should leave now...
 msgctxt "ui"
 msgid "< S-sorry Max, I-... Hhh... I couldn't think clearly, I-... I think I should leave now..."
@@ -17916,21 +17930,6 @@ msgstr ""
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
-msgid "CartelHideoutBadendKeys/Did get naked"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "CartelHideoutBadendKeys/Did third Stage"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "CartelHideoutBadendKeys/Waiting to get Condom"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
 msgid "Caseman"
 msgstr ""
 
@@ -18113,36 +18112,6 @@ msgstr ""
 #. src: us
 msgctxt "ui"
 msgid "Character '"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Character Keys/Did stare at Jamies Boobs"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Character Keys/Did stare at Klaudias Boobs"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Character Keys/Did stare at Lios Crotch"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Character Keys/Did stare at Lios Dick"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Character Keys/Did stare at Novas Boobs"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Character Keys/Did stare at Rosies Boobs"
 msgstr ""
 
 #. src: us
@@ -28395,261 +28364,6 @@ msgstr ""
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GlowingHole PictureTaken - 1 - 2"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/103 Peeking Counter"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/105 Peeking Counter"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/201 Peeking Counter"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Agreed to help Femboy Clean"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Bunnysuit Girl DidMove"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Can Go Upstairs"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Did Camera Tutorial"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Did Conversation 1"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Did Conversation 2"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Did Conversation 3"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Did Conversation 3 1"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Did Intro"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Did Intro Phonecall"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Did Klaudia Picture with Blocker"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Did Lady Groping Femboy Scene"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Did Peek into 205"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Did hit Mark Enabled Trigger?"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Did receive initial Money"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Did talk to Lady groping Femboy"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Drunk Femboy Did Backroom Scolding"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/DrunkFemboy Did Mynx trigger Talk"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/DrunkFemboy Did talk to Cal"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/DrunkFemboy Klaudia Moved to Cal"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/DrunkFemboy Walked up to Klaudia"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Fade Kitchen"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Fade Staffroom"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/First time trying go up"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Found Bunnysuit before Quest"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Klaudia wants proof for Cal"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/KlaudiaChoice AskToGoUpstairs"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Mark fell over"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/NPC17 Talked"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/NovaMeet Did Femboy walk out"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/NovaMeet Did walk out of Bathroom"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Opened Room 102"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Path is blocked"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Peeked room 104 once"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Picture Key 1"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Picture Key 2"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Picture Key 3"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Picture Key 4"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Picture Key 5"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Picture Key 6"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Read 101 Note"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Rosie Asked About Tags"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Rosie Did Intro Dialogue"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Rosie is at Table 8"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Talked about Femboys"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Talked about Klaudias Arm"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/Talked about upstairs"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "GlowingHoleKeys/TookPic Groundfloor Corner Fucking"
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -44261,46 +43975,6 @@ msgstr ""
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
-msgid "Nail Salon Keys/DidSpeakWithHoloLady"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Nail Salon Keys/DidWatchAlleySex"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Nail Salon Keys/EverOpenedBackroomDoor"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Nail Salon Keys/PeekedThroughWindowOnce"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Nail Salon Keys/StaffOnlyDoorUnlocked"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Nail Salon Keys/TableLadyIsStanding"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Nail Salon Keys/UnlockedBackroomHatch"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Nail Salon Keys/WatchedRecording"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
 msgid "Nail Salon's Secret"
 msgstr ""
 
@@ -44538,26 +44212,6 @@ msgstr ""
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Neon-Trust Reserve"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "NeonRise_Lobby_Keys/Did Interact with Couple"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "NeonRise_Lobby_Keys/Did Listen to Couple"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "NeonRise_Lobby_Keys/Did rat out Couple"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "NeonRise_Lobby_Keys/Let Femguard Gope Zoey"
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -53447,26 +53101,6 @@ msgstr ""
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Residential Station"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "ResidentialDistrictKeys/Cartel Drugdealer Talked"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "ResidentialDistrictKeys/CorpoPhone talk"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "ResidentialDistrictKeys/CorpoPhone talk 2"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "ResidentialDistrictKeys/Litterer remove"
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -64442,46 +64076,6 @@ msgstr ""
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
-msgid "Tunnel Lever Keys/Did tunnel guy scene"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Tunnel Lever Keys/Examine Writing Key"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Tunnel Lever Keys/M31 Gas Lever"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Tunnel Lever Keys/Open High Tide Hatch"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Tunnel Lever Keys/Opened Teleporter Hatch"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Tunnel Lever Keys/Valve Fire 2 M31"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Tunnel Lever Keys/Valve Fire M31"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "Tunnel Lever Keys/Valve in hand"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
 msgid "Turn Klaudia around"
 msgstr ""
 
@@ -70820,11 +70414,6 @@ msgstr ""
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
-msgid "WitchsCauldron Keys/DidGiveSample"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
 msgid "With no guide, just voices in my mind"
 msgstr ""
 
@@ -76259,31 +75848,6 @@ msgstr ""
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wait 1 frame"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "wait 2"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "wait 3"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "wait 4"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "wait 5"
-msgstr ""
-
-#. src: raw:MonoBehaviour
-msgctxt "ui"
-msgid "wait 6"
 msgstr ""
 
 #. src: raw:MonoBehaviour
