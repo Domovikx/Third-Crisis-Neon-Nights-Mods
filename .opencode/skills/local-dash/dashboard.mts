@@ -16,7 +16,7 @@
  * Запуск: node .opencode/skills/local-dash/dashboard.mts [--port 8088]
  */
 import { spawnSync } from "node:child_process";
-import { existsSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { createServer } from "node:http";
 import { cpus, freemem, totalmem } from "node:os";
 import { join } from "node:path";

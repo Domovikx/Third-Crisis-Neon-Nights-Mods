@@ -403,14 +403,19 @@ export function batchPrompt(
  * Отличие от обычного перевода — модель видит текущий вариант и правит его,
  * а не переводит заново: так меньше дрейфа смысла (TSSR делает то же).
  */
-export function improvePrompt(items: PoEntry[], context?: ReadonlyMap<string, string[]>): string {
+export function improvePrompt(
+  items: PoEntry[],
+  context?: ReadonlyMap<string, string[]>,
+  genders?: ReadonlyMap<string, "female" | "male">,
+): string {
   const ctxLines: string[] = [];
   items.forEach((e, i) => {
     for (const line of context?.get(e.msgid) ?? []) ctxLines.push(`// ${i + 1} ${line}`);
   });
   const lines = items.map((e, i) => {
     const sp = speakerOf(e);
-    return `${i + 1}. EN: ${e.msgid}${sp ? ` (speaker: ${sp})` : ""}\n   RU: ${e.msgstr}`;
+    const g = sp ? genders?.get(sp) : undefined;
+    return `${i + 1}. EN: ${e.msgid}${sp ? ` (speaker: ${sp}${g ? `, ${g}` : ""})` : ""}\n   RU: ${e.msgstr}`;
   });
   const contextBlock = ctxLines.length
     ? `Context for meaning (lines starting with // are NOT translated):\n${ctxLines.join("\n")}\n`
@@ -925,8 +930,8 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
               model,
               formatPromptN(system, sub.length),
               opts.improve
-                ? improvePrompt(summary ? sub : sub, sceneContext)
-                : batchPrompt(sub, sceneContext),
+                ? improvePrompt(sub, sceneContext, genders)
+                : batchPrompt(sub, sceneContext, genders),
               timeoutMs,
               maxTokens,
             );

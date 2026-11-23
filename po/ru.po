@@ -8120,7 +8120,7 @@ msgstr "(Эта дверь прочнее, чем я думала.)"
 #. rich_text: <i>(This dude is so fucking corny and here I am giving him an eyeful of my chest. Ugh...)</i>
 msgctxt "speaker:Zoey"
 msgid "(This dude is so fucking corny and here I am giving him an eyeful of my chest. Ugh...)"
-msgstr "(Этот тип такой банальный, а я тут пялюсь на свою грудь перед ним. Тьфу...)"
+msgstr "(Этот тип такой чертовски банальный, а я тут выставляю ему напоказ свою грудь. Тьфу...)"
 
 #. src: dialog
 #. rich_text: <i>(This is all my fault... )</i>
@@ -19255,7 +19255,7 @@ msgstr "Брызги спермы"
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "Cum for me, Zoey... Your excitement is going to send my K12 over the edge, ehehe!"
-msgstr "Приходи к оргазму для меня, Зои... Твоё возбуждение вытолкнет мой K12 за пределы, эхе-хе!"
+msgstr "Кончи для меня, Зои... Твоё возбуждение снесёт мой K12 с катушек, эхе-хе!"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Cum in my pussy! Cum in my ass! Please! Fuck meeeee! Fill me up! Put all your cum into this nasty office slut!! Yess!!</color>
@@ -21978,7 +21978,7 @@ msgstr "Сделай это ещё раз, лол"
 #. rich_text: <b>Do it! Cum for me, GAG slut!</b>
 msgctxt "speaker:Enforcer"
 msgid "Do it! Cum for me, GAG slut!"
-msgstr "Делай это! Кончай для меня, заткни рот, шлюха!"
+msgstr "Делай это! Кончай для меня, шлюха с кляпом!"
 
 #. src: dialog
 msgctxt "ui"
@@ -26472,7 +26472,7 @@ msgstr "FsmTemplateHolder: Попытка создать экземпляр не
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Fuck baby, just like that, mhh... You're making me so fucking hard."
-msgstr "Чёрт, детка, вот так-то, м-м-м... Ты заставляешь меня так сильно кончить."
+msgstr "Чёрт, детка, вот так, м-м... Ты меня так чертовски заводишь."
 
 #. src: dialog
 msgctxt "speaker:Lio"
@@ -27553,7 +27553,7 @@ msgstr "Выдать задачу"
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Glad to see you back and excited to take another order from your favorite customer, eheheh."
-msgstr "Рада снова видеть тебя и рада, что ты готова принять ещё один заказ от своего любимого клиента, ехе-ехе."
+msgstr "Рад снова видеть тебя и рад, что ты готова принять ещё один заказ от своего любимого клиента, ехе-ехе."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -33081,7 +33081,7 @@ msgstr "Я прокричу своё имя в толпу"
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "I won't let you go until you've cum with that nasty Andro semen all over your body! Does it feel good, huh?!"
-msgstr "Я не отпущу тебя, пока ты не кончишь всем этим мерзким спермой Андрo по всему телу! Тебе нравится это чувство, а?!"
+msgstr "Я не отпущу тебя, пока не кончишь, вся перемазанная этой мерзкой андро-спермой! Нравится, а?"
 
 #. src: dialog
 msgctxt "ui"
@@ -49847,7 +49847,7 @@ msgstr "Выберите комнату для SLUT Service™..."
 #. rich_text: <color=#EB83FF>Please cum on Rosies... nice big tits, mr Rungar...</color>
 msgctxt "speaker:Zoey"
 msgid "Please cum on Rosies... nice big tits, mr Rungar..."
-msgstr "Пожалуйста, кончай на Розиз... такие красивые большие сиськи, мистер Рунгар..."
+msgstr "Пожалуйста, кончай на Рози... такие красивые большие сиськи, мистер Рунгар..."
 
 #. src: dialog
 msgctxt "ui"
@@ -52810,7 +52810,7 @@ msgstr "Рози начинает лапать грудь Зои сзади"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Rosie loves making me cum with her tits. She'd love to do it with you helping."
-msgstr "Розия обожает доводить меня до конча своими сиськами. Она была бы рада сделать это снова, если бы ты помог."
+msgstr "Рози обожает доводить меня до оргазма своими сиськами. Она с радостью сделает это с твоей помощью."
 
 #. src: dialog
 msgctxt "speaker:Rugnar"
@@ -58264,7 +58264,7 @@ msgstr "Гладить его- член... Да... госпожа..."
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "Stroke it. Give me a handjob, waitress. All the way."
-msgstr "Поглади его. Сделай мне мастурбацию руками, официантка. До самого конца."
+msgstr "Дрочи его. Подрочи мне, официантка. До самого конца."
 
 #. src: us
 msgctxt "ui"
@@ -67388,7 +67388,7 @@ msgstr "Мы? Кто-то заказал две по цене одной?"
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "Wearing Andro semen like a good cum dump, ahaha! Take my baton like a good GAG slut!"
-msgstr "Носишь сперму Андро как хороший мусорный бак для кончи, ахаха! Берёшь мой жезл, как хорошая рабыня-заглушка!"
+msgstr "Носишь сперму андро, как примерная дырка для спермы, ахаха! Принимаешь мой жезл, как хорошая шлюха с кляпом!"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -70565,7 +70565,7 @@ msgstr "Да, Зои?"
 #. src: dialog
 msgctxt "speaker:Klaudia"
 msgid "Yes, it is! The upstairs is for paying clients only."
-msgstr "Да, проблема! Наверху только для платных клиентов."
+msgstr "Да, так и есть! Наверху только для платных клиентов."
 
 #. src: dialog
 msgctxt "speaker:Mira"
@@ -70912,7 +70912,7 @@ msgstr "Ещё бы~"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "You both make me hard."
-msgstr "Вы обе заставляете меня напрягаться."
+msgstr "Вы обе меня заводите."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

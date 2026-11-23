@@ -5,7 +5,9 @@
 остальное — для ревью и людей.
 
 <!-- PROMPT-START -->
+
 Chinese specifics:
+
 - Punctuation is full-width: 。 ， ！ ？ ； ： 、 and …… (six dots) for ellipsis. No spaces before punctuation, no spaces between Chinese characters. Do not leave ASCII . , ! ? inside Chinese sentences.
 - Quotation: “ ” for speech (or keep the source's quotes if any), 「」 only inside nested quotes.
 - Keep Latin brand names and acronyms unchanged: CUM, CLIT, Smutgram, Pocket Pussy, Neon-Trust.
@@ -17,6 +19,7 @@ Chinese specifics:
 - Rich tags <color=...>, <b>, <size=...>: keep byte-identical, translate only the text inside; never translate tag parameters.
 - One source line = one output line. Never insert line breaks or full-width spaces.
 - Code, ids, paths, versions and pure symbols: output unchanged.
+
 <!-- PROMPT-END -->
 
 ## 1. 标点与空格
@@ -40,73 +43,73 @@ Chinese specifics:
 
 英文拟声不要逐字母转写，用中文拟声：
 
-| 英文            | 中文              |
-| --------------- | ----------------- |
-| `Ah! / Ahhh!`   | 啊！/ 啊啊！      |
-| `Oh! / Ohhh!`   | 哦！/ 喔——！      |
-| `Mmm / Mmmm`    | 嗯… / 嗯嗯…       |
-| `Hmm`           | 嗯                |
-| `Nghh / Mngh`   | 唔… / 嗯…         |
-| `Hhh / Hhhh`    | 呼… / 哈…         |
-| `Fuck!`         | 操！/ 妈的！      |
-| `Fhaaa!`        | 哈啊！            |
-| `Ugh / Urgh`    | 呃 / 啧           |
-| `Khh`           | 咳… / 呃…         |
+| 英文          | 中文         |
+| ------------- | ------------ |
+| `Ah! / Ahhh!` | 啊！/ 啊啊！ |
+| `Oh! / Ohhh!` | 哦！/ 喔——！ |
+| `Mmm / Mmmm`  | 嗯… / 嗯嗯…  |
+| `Hmm`         | 嗯           |
+| `Nghh / Mngh` | 唔… / 嗯…    |
+| `Hhh / Hhhh`  | 呼… / 哈…    |
+| `Fuck!`       | 操！/ 妈的！ |
+| `Fhaaa!`      | 哈啊！       |
+| `Ugh / Urgh`  | 呃 / 啧      |
+| `Khh`         | 咳… / 呃…    |
 
 - 保持 `……` 表示断续，`！` 表示喊叫；不要保留英文的 `~`（改用「～」或去掉）。
 - 大写强调（`SLURP`）→ 中文加感叹或拟声重复（`咕咚咕咚`），不要用拉丁大写。
 
 ## 4. 成人词汇（18+）
 
-| 英文          | 一级（常用） | 二级（粗俗） | 不要用     |
-| ------------- | ------------ | ------------ | ---------- |
-| cock / dick   | 肉棒、阴茎   | 鸡巴         | 生殖器     |
-| pussy / cunt  | 小穴、蜜穴   | 逼           | 阴道（临床）|
-| ass / asshole | 屁股、臀     | 屁眼         | 肛门（临床）|
-| tits / boobs  | 胸、乳房     | 奶子         | 乳腺       |
-| cum / semen   | 精液         | 精           | 分泌物     |
-| fuck (verb)   | 做爱、进入   | 操、干       | 性交       |
-| clit          | 阴蒂         | 豆豆         | —          |
-| nipple        | 乳头         | 奶头         | —          |
+| 英文          | 一级（常用） | 二级（粗俗） | 不要用       |
+| ------------- | ------------ | ------------ | ------------ |
+| cock / dick   | 肉棒、阴茎   | 鸡巴         | 生殖器       |
+| pussy / cunt  | 小穴、蜜穴   | 逼           | 阴道（临床） |
+| ass / asshole | 屁股、臀     | 屁眼         | 肛门（临床） |
+| tits / boobs  | 胸、乳房     | 奶子         | 乳腺         |
+| cum / semen   | 精液         | 精           | 分泌物       |
+| fuck (verb)   | 做爱、进入   | 操、干       | 性交         |
+| clit          | 阴蒂         | 豆豆         | —            |
+| nipple        | 乳头         | 奶头         | —            |
 
 Правило: регистр перевода = регистр оригинала. Если в оригинале `cock`, то «肉棒/鸡巴»,
 а не «生殖器».
 
 ## 5. 名字（音译）
 
-| 英文       | 中文         | 备注          |
-| ---------- | ------------ | ------------- |
-| Zoey       | 佐伊         | 女主          |
-| Sarah      | 莎拉         |               |
-| Klaudia    | 克劳迪娅     |               |
-| Lio        | 利奥         | 男            |
-| Rosie      | 罗茜         |               |
-| Leona      | 莉昂娜       |               |
-| Nova       | 诺瓦         |               |
-| Max        | 马克斯       | **女性！**    |
-| Felicia    | 费莉西娅     |               |
-| Jaime      | 杰米         |               |
-| Cypher     | 赛弗         |               |
-| Trov       | 特罗夫       |               |
-| Varen      | 瓦伦         |               |
-| Calliach   | 卡利亚赫     |               |
-| Enforcer   | 执法者       | 不是「执行者」|
+| 英文     | 中文     | 备注           |
+| -------- | -------- | -------------- |
+| Zoey     | 佐伊     | 女主           |
+| Sarah    | 莎拉     |                |
+| Klaudia  | 克劳迪娅 |                |
+| Lio      | 利奥     | 男             |
+| Rosie    | 罗茜     |                |
+| Leona    | 莉昂娜   |                |
+| Nova     | 诺瓦     |                |
+| Max      | 马克斯   | **女性！**     |
+| Felicia  | 费莉西娅 |                |
+| Jaime    | 杰米     |                |
+| Cypher   | 赛弗     |                |
+| Trov     | 特罗夫   |                |
+| Varen    | 瓦伦     |                |
+| Calliach | 卡利亚赫 |                |
+| Enforcer | 执法者   | 不是「执行者」 |
 
 Имена пишутся по таблице; новая форма = ошибка (как «Роузи» в русском).
 
 ## 6. 术语（游戏世界）
 
-| 英文                | 中文       |
-| ------------------- | ---------- |
-| Crush (drug/state)  | 冲动       |
-| Crush Blocker       | 冲动阻断器 |
-| Andro                | 安卓人     |
-| Slutbox             | 荡妇盒     |
-| Smutgram            | Smutgram（品牌，不译） |
-| EZMail              | EZMail（品牌） |
-| Glowing Hole        | 霓虹洞     |
-| Neon Rise           | 霓虹崛起   |
-| Cartel              | 卡特尔     |
+| 英文               | 中文                   |
+| ------------------ | ---------------------- |
+| Crush (drug/state) | 冲动                   |
+| Crush Blocker      | 冲动阻断器             |
+| Andro              | 安卓人                 |
+| Slutbox            | 荡妇盒                 |
+| Smutgram           | Smutgram（品牌，不译） |
+| EZMail             | EZMail（品牌）         |
+| Glowing Hole       | 霓虹洞                 |
+| Neon Rise          | 霓虹崛起               |
+| Cartel             | 卡特尔                 |
 
 ## 7. 排版与断行
 

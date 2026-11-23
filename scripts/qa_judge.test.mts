@@ -12,6 +12,7 @@ import {
   judgeSystem,
   parseConfirm,
   parseVerdict,
+  readDoneKeys,
   sampleIndexes,
   verifySystem,
 } from "./qa_judge.mts";
@@ -102,4 +103,19 @@ test("judgeSystem: язык — параметр, а не хардкод «Russi
 test("verifySystem: вторая ступень тоже знает язык", () => {
   assert.match(verifySystem("zh"), /against a Chinese translation/);
   assert.match(verifySystem("ru"), /against a Russian translation/);
+});
+
+test("readDoneKeys: дозапуск после падения сервера", () => {
+  // Долгий прогон умирает, если GPU освобождает другой агент (2026-11-23 дважды).
+  // Поэтому судья пишет построчно, а при старте пропускает уже отсуженные ключи.
+  const jsonl = [
+    JSON.stringify({ c: "speaker:Zoey", m: "Hello", verdict: { bad: false } }),
+    JSON.stringify({ c: "ui", m: "Menu", verdict: { bad: true } }),
+    "битая строка",
+    "",
+  ].join("\n");
+  const done = readDoneKeys(jsonl);
+  assert.equal(done.size, 2);
+  assert.ok(done.has("speaker:Zoey\u0000Hello"));
+  assert.ok(done.has("ui\u0000Menu"));
 });

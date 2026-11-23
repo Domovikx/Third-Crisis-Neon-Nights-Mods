@@ -23,7 +23,7 @@
  * Выход: `<out>.jsonl` (все вердикты), `<out>.bad.jsonl` (на вычитку),
  * `<out>.md` (сводка).
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { appendFileSync, existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import process from "node:process";
 
@@ -73,6 +73,27 @@ export function parseVerdict(text: string): Verdict | null {
   } catch {
     return null;
   }
+}
+
+/**
+ * Ключи, которые уже отсужены (для дозапуска после падения сервера).
+ *
+ * Долгий прогон умирает, если другую сессию/агент освобождает GPU (2026-11-23
+ * дважды). Без дозапуска теряется вся работа, поэтому пишем построчно и при
+ * старте пропускаем готовые ключи.
+ */
+export function readDoneKeys(text: string): Set<string> {
+  const done = new Set<string>();
+  for (const line of text.split(/\r?\n/)) {
+    if (!line.trim()) continue;
+    try {
+      const r = JSON.parse(line) as { c?: string; m?: string };
+      if (r.m !== undefined) done.add(`${r.c ?? ""}\u0000${r.m}`);
+    } catch {
+      // битая строка не должна ломать дозапуск
+    }
+  }
+  return done;
 }
 
 /**
@@ -314,6 +335,7 @@ async function main(argv: string[]): Promise<number> {
     console.log(`${cli.lang}: кандидатов ${pool.length}, судим ${todo.length} (фаза ${cli.phase})`);
   }
 
+  const outJsonl = `${cli.out}.jsonl`;
   const rows: {
     c: string;
     m: string;
@@ -324,6 +346,18 @@ async function main(argv: string[]): Promise<number> {
     leak: string[];
     script: string[];
   }[] = [];
+  const doneKeys = existsSync(outJsonl)
+    ? readDoneKeys(readFileSync(outJsonl, "utf8"))
+    : new Set<string>();
+  const before = todo.length;
+  if (doneKeys.size) {
+    const keyOfRow = (x: { msgctxt: string; msgid: string }): string =>
+      `${x.msgctxt}\u0000${x.msgid}`;
+    todo = todo.filter((e) => !doneKeys.has(keyOfRow(e)));
+    console.log(
+      `${cli.lang}: дозапуск — уже отсужено ${before - todo.length}, осталось ${todo.length}`,
+    );
+  }
   let failed = 0;
   for (const [i, e] of todo.entries()) {
     const speaker = e.msgctxt.startsWith("speaker:")
@@ -350,7 +384,7 @@ async function main(argv: string[]): Promise<number> {
       );
       if (ok === false) v = { ...v, bad: false, score: 10, reason: `dismissed: ${v.reason}` };
     }
-    rows.push({
+    const row = {
       c: e.msgctxt,
       m: e.msgid,
       ru: e.msgstr,
@@ -361,7 +395,14 @@ async function main(argv: string[]): Promise<number> {
       softened: cli.lang === "ru" ? softenedHits(e.msgid, e.msgstr) : [],
       leak: leakHits(e.msgstr),
       script: LATIN_CYRILLIC_LANGS.has(cli.lang) ? foreignScriptHits(e.msgstr) : [],
-    });
+    };
+    rows.push(row);
+    // Построчно: падение сервера не отнимает уже сделанное.
+    appendFileSync(
+      outJsonl,
+      `${JSON.stringify(row)}
+`,
+    );
     if ((i + 1) % 25 === 0) console.log(`  ${i + 1}/${todo.length}`);
   }
 

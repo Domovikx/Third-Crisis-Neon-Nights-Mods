@@ -79,15 +79,6 @@ function compareKeys(a: PoKey, b: PoKey): number {
 }
 
 /** Копия записи (Python делает `dict(old)` — массивы остаются общими ссылками). */
-function cloneEntry(e: PoEntry): PoEntry {
-  return {
-    ...e,
-    refs: [...e.refs],
-    comments: [...e.comments],
-    flags: [...e.flags],
-    translator: [...e.translator],
-  };
-}
 
 /**
  * Слить переводы вперёд. Возвращает записи в порядке POT (сироты выпиливаются).
