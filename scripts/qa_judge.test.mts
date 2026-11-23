@@ -12,7 +12,7 @@ import {
   judgeSystem,
   parseConfirm,
   parseVerdict,
-  readDoneKeys,
+  loadJudged,
   sampleIndexes,
   verifySystem,
 } from "./qa_judge.mts";
@@ -105,17 +105,19 @@ test("verifySystem: вторая ступень тоже знает язык", (
   assert.match(verifySystem("ru"), /against a Russian translation/);
 });
 
-test("readDoneKeys: дозапуск после падения сервера", () => {
+test("loadJudged: дозапуск после падения сервера", () => {
   // Долгий прогон умирает, если GPU освобождает другой агент (2026-11-23 дважды).
-  // Поэтому судья пишет построчно, а при старте пропускает уже отсуженные ключи.
+  // Судья пишет построчно, при старте грузит готовые строки И их ключи —
+  // иначе финальная перезапись теряла прогресс (баг того же вечера).
   const jsonl = [
-    JSON.stringify({ c: "speaker:Zoey", m: "Hello", verdict: { bad: false } }),
-    JSON.stringify({ c: "ui", m: "Menu", verdict: { bad: true } }),
+    JSON.stringify({ c: "speaker:Zoey", m: "Hello", ru: "Привет", verdict: { bad: false } }),
+    JSON.stringify({ c: "ui", m: "Menu", ru: "Меню", verdict: { bad: true } }),
+    JSON.stringify({ c: "ui", m: "Menu", ru: "Меню", verdict: { bad: true } }),
     "битая строка",
     "",
   ].join("\n");
-  const done = readDoneKeys(jsonl);
-  assert.equal(done.size, 2);
-  assert.ok(done.has("speaker:Zoey\u0000Hello"));
-  assert.ok(done.has("ui\u0000Menu"));
+  const { rows, keys } = loadJudged(jsonl);
+  assert.equal(keys.size, 2, "ключи без дублей");
+  assert.equal(rows.length, 2, "дубль не задваивает отчёт");
+  assert.ok(keys.has("speaker:Zoey\u0000Hello"));
 });

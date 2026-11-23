@@ -82,18 +82,33 @@ export function parseVerdict(text: string): Verdict | null {
  * дважды). Без дозапуска теряется вся работа, поэтому пишем построчно и при
  * старте пропускаем готовые ключи.
  */
-export function readDoneKeys(text: string): Set<string> {
-  const done = new Set<string>();
+export interface JudgedRow {
+  c: string;
+  m: string;
+  ru: string;
+  verdict: Verdict;
+  clinical: string[];
+  softened: string[];
+  leak: string[];
+  script: string[];
+}
+
+export function loadJudged(text: string): { rows: JudgedRow[]; keys: Set<string> } {
+  const rows: JudgedRow[] = [];
+  const keys = new Set<string>();
   for (const line of text.split(/\r?\n/)) {
     if (!line.trim()) continue;
     try {
-      const r = JSON.parse(line) as { c?: string; m?: string };
-      if (r.m !== undefined) done.add(`${r.c ?? ""}\u0000${r.m}`);
+      const r = JSON.parse(line) as JudgedRow;
+      const k = `${r.c}\u0000${r.m}`;
+      if (keys.has(k)) continue;
+      keys.add(k);
+      rows.push(r);
     } catch {
       // битая строка не должна ломать дозапуск
     }
   }
-  return done;
+  return { rows, keys };
 }
 
 /**
@@ -336,19 +351,15 @@ async function main(argv: string[]): Promise<number> {
   }
 
   const outJsonl = `${cli.out}.jsonl`;
-  const rows: {
-    c: string;
-    m: string;
-    ru: string;
-    verdict: Verdict;
-    clinical: string[];
-    softened: string[];
-    leak: string[];
-    script: string[];
-  }[] = [];
-  const doneKeys = existsSync(outJsonl)
-    ? readDoneKeys(readFileSync(outJsonl, "utf8"))
-    : new Set<string>();
+  const rows: JudgedRow[] = [];
+  // Дозапуск: ранее отсуженные строки подгружаем в `rows`, иначе финальная
+  // перезапись .jsonl потеряет их (баг 2026-11-23: прогон начинался заново).
+  let doneKeys = new Set<string>();
+  if (existsSync(outJsonl)) {
+    const loaded = loadJudged(readFileSync(outJsonl, "utf8"));
+    rows.push(...loaded.rows);
+    doneKeys = loaded.keys;
+  }
   const before = todo.length;
   if (doneKeys.size) {
     const keyOfRow = (x: { msgctxt: string; msgid: string }): string =>
