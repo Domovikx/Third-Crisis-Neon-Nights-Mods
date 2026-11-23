@@ -152,11 +152,20 @@ test("triage: код/мусор копируются, живой текст ух
   assert.equal(triage("Привет", "de"), null);
 });
 
-test("parseResponse: только ровно n строк в формате N.", () => {
+test("parseResponse: ровно n строк в формате N., а для n=1 — и без нумерации", () => {
   assert.deepEqual(parseResponse("1. Да\n2. Нет\n", 2), ["Да", "Нет"]);
   assert.deepEqual(parseResponse("1) Да\n2) Нет\n", 2), ["Да", "Нет"]);
   assert.equal(parseResponse("1. Да\n", 2), null, "count mismatch");
-  assert.equal(parseResponse("blah", 1), null, "garbage");
+  // n=1: модель часто отвечает без номера (19 ретраев на 5 строк, 2026-11-23).
+  assert.deepEqual(parseResponse("Привет", 1), ["Привет"], "одна строка без номера");
+  assert.deepEqual(parseResponse("1. Привет", 1), ["Привет"]);
+  assert.deepEqual(parseResponse("N. Привет", 1), ["Привет"], "эхо формата");
+  assert.equal(
+    parseResponse("Вот перевод:\nПривет", 1),
+    null,
+    "две строки — это преамбула, нужен ретрай",
+  );
+  assert.equal(parseResponse("", 1), null, "пустой ответ");
 });
 
 test("validate: теги и RU-кластеры; длина НЕ проверяется", () => {
@@ -388,7 +397,9 @@ test("runQueue: сломанные теги — не пишем, строка у
 
 test("runQueue: непарсибельный ответ — два ретрая и UNPARSABLE в лог", async () => {
   const w = work([entry("Hello there friend", "speaker:Zoey")]);
-  const llm = await fakeLlm(() => "мусор без нумерации");
+  // Две строки при n=1 — уже не «голая строка», а преамбула/пояснение:
+  // именно такой ответ парсер обязан отвергнуть (см. parseResponse).
+  const llm = await fakeLlm(() => "мусор без нумерации\nи ещё строка");
   try {
     const s = await runQueue({
       lang: "ru",

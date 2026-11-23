@@ -312,7 +312,15 @@ export function stripSpeakerLeak(tr: string): { clean: string; leaked: boolean }
   return { clean, leaked: clean !== tr.trim() };
 }
 
-/** Разобрать ответ «1. текст» ровно на n строк; иначе null (нужен ретрай). */
+/**
+ * Разобрать ответ «1. текст» ровно на n строк; иначе null (нужен ретрай).
+ *
+ * Особый случай — `n === 1`: модель часто отвечает одной строкой БЕЗ нумерации
+ * (замер 2026-11-23: из 19 ретраев на 5 строк все были одноэлементными
+ * чанками). При одной строке выравнивать нечего, поэтому принимаем ответ как
+ * есть — но только если он действительно одна непустая строка, иначе это
+ * преамбула/пояснение и нужен ретрай. Префикс-эхо `N.` тоже снимаем.
+ */
 export function parseResponse(text: string, n: number): string[] | null {
   const out: [number, string][] = [];
   for (const line of text.trim().split(/\r\n|\r|\n/)) {
@@ -320,8 +328,20 @@ export function parseResponse(text: string, n: number): string[] | null {
     if (m) out.push([Number(m[1]), m[2].trim()]);
   }
   out.sort((a, b) => a[0] - b[0]);
-  if (out.length !== n || out.some(([i], idx) => i !== idx + 1)) return null;
-  return out.map(([, t]) => t);
+  if (out.length === n && !out.some(([i], idx) => i !== idx + 1)) return out.map(([, t]) => t);
+
+  if (n === 1) {
+    const lines = text
+      .trim()
+      .split(/\r\n|\r|\n/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+    if (lines.length === 1) {
+      const bare = lines[0].replace(/^N\s*[.)]\s*/i, "").trim();
+      if (bare) return [bare];
+    }
+  }
+  return null;
 }
 
 /**
