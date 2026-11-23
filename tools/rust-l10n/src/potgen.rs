@@ -21,6 +21,7 @@ use serde_json::Value;
 use rust_l10n_core::po::{parse_po, render_po, PoEntry};
 
 use crate::inventory::{py_strip, scan_dump, InventoryItem, ItemKind};
+use crate::pot_skip::{skip_condition_matches, SkipCondition};
 use crate::text_filters::{is_asset_name, is_garbage_fragment};
 
 /// `</?(?:font|material)[^>]*>` с флагом `i`: вырезать теги шрифта/материала.
@@ -514,7 +515,11 @@ pub fn render_excluded_jsonl(entries: &[ExcludedEntry]) -> Result<String, String
 /// (тесты) — общий `.part` они бы перемешали, а полный уникальный файл,
 /// переименованный поверх, всегда валиден (побеждает последний писатель).
 pub fn write_excluded(path: &Path, entries: &[ExcludedEntry]) -> Result<(), String> {
-    let text = render_excluded_jsonl(entries)?;
+    write_journal(path, &render_excluded_jsonl(entries)?)
+}
+
+/// Атомарная запись готового текста журнала (`.part` с PID → rename).
+pub fn write_journal(path: &Path, text: &str) -> Result<(), String> {
     if let Some(parent) = path.parent() {
         std::fs::create_dir_all(parent).map_err(|e| format!("{}: {e}", parent.display()))?;
     }
@@ -530,12 +535,269 @@ pub fn write_excluded(path: &Path, entries: &[ExcludedEntry]) -> Result<(), Stri
     })
 }
 
+// ---------------------------------------------------------------------------
+// Skip-политика («этой строке перевод не нужен»).
+//
+// Данные — `config/pot-skip-policy.json`: правило = `id` + метка `src` (та же
+// грамматика, что у политики отбора) + условие `when` из `pot_skip`. Записи
+// НЕ удаляются: POT получает `#, skip` и `#. skip: <id>`; журнал —
+// `tmp/pot-skip.jsonl` (1:1 с TS-эталоном).
+// ---------------------------------------------------------------------------
+
+/// Правило skip-политики.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct SkipRule {
+    /// Идентификатор правила — он и попадает в POT (`#. skip: <id>`).
+    pub id: String,
+    /// Шаблон метки `#. src:` (точная метка или префикс `*`).
+    pub src: String,
+    /// Условие из `pot_skip`.
+    pub when: SkipCondition,
+    /// `false` — правило остаётся в политике для ревью, но не действует.
+    pub enabled: bool,
+}
+
+/// Разобранная skip-политика + путь, откуда прочитана.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct SkipPolicy {
+    pub path: String,
+    pub rules: Vec<SkipRule>,
+}
+
+/// Строка журнала `tmp/pot-skip.jsonl` — ровно одна помеченная запись.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+pub struct SkipJournalEntry {
+    pub rule: String,
+    pub src: String,
+    pub msgid: String,
+    pub msgctxt: String,
+}
+
+/// Итог skip-политики для отчёта прогона.
+#[derive(Debug, Clone, Default, PartialEq, Eq)]
+pub struct SkipReport {
+    pub path: String,
+    pub marked: usize,
+    /// Сколько помечено каждым правилом (порядок политики).
+    pub by_rule: Vec<(String, usize)>,
+}
+
+fn is_rule_id(s: &str) -> bool {
+    let mut chars = s.chars();
+    match chars.next() {
+        Some(c) if c.is_ascii_lowercase() || c.is_ascii_digit() => {}
+        _ => return false,
+    }
+    s.bytes()
+        .all(|b| b.is_ascii_lowercase() || b.is_ascii_digit() || b == b'-')
+}
+
+/// Разобрать skip-политику (JSON-текст) с понятными ошибками.
+pub fn parse_skip_policy(text: &str, source: &str) -> Result<SkipPolicy, String> {
+    let value: Value = serde_json::from_str(text)
+        .map_err(|e| format!("невалидный JSON skip-политики {source}: {e}"))?;
+    let Value::Object(map) = value else {
+        return Err(format!(
+            "skip-политика {source}: ожидался объект {{\"rules\": [...]}}"
+        ));
+    };
+    for key in map.keys() {
+        if key != "rules" && !key.starts_with('_') {
+            return Err(format!(
+                "skip-политика {source}: неизвестное поле \"{key}\" (допустимы rules и _комментарии)"
+            ));
+        }
+    }
+    let Some(Value::Array(items)) = map.get("rules") else {
+        return Err(format!(
+            "skip-политика {source}: поле \"rules\" должно быть массивом правил"
+        ));
+    };
+
+    let mut rules: Vec<SkipRule> = Vec::with_capacity(items.len());
+    let mut seen: HashSet<String> = HashSet::new();
+    for (index, item) in items.iter().enumerate() {
+        let n = index + 1;
+        let Value::Object(rule) = item else {
+            return Err(format!("skip-политика {source}: правило #{n} — не объект"));
+        };
+        for key in rule.keys() {
+            if key != "id" && key != "src" && key != "when" && key != "enabled" {
+                return Err(format!(
+                    "skip-политика {source}: правило #{n} — неизвестное поле \"{key}\""
+                ));
+            }
+        }
+        let Some(Value::String(id)) = rule.get("id") else {
+            return Err(format!(
+                "skip-политика {source}: правило #{n} — id обязателен"
+            ));
+        };
+        if !is_rule_id(id) {
+            return Err(format!(
+                "skip-политика {source}: правило #{n} — id \"{id}\" не по грамматике [a-z0-9-]"
+            ));
+        }
+        if !seen.insert(id.clone()) {
+            return Err(format!(
+                "skip-политика {source}: id правила повторяется: \"{id}\""
+            ));
+        }
+        let Some(Value::String(src)) = rule.get("src") else {
+            return Err(format!(
+                "skip-политика {source}: правило \"{id}\" — src обязателен"
+            ));
+        };
+        validate_policy_pattern(src)
+            .map_err(|e| format!("skip-политика {source}: правило \"{id}\" — {e}"))?;
+        let Some(Value::String(when_raw)) = rule.get("when") else {
+            return Err(format!(
+                "skip-политика {source}: правило \"{id}\" — when обязателен"
+            ));
+        };
+        let Some(when) = SkipCondition::parse(when_raw) else {
+            return Err(format!(
+                "skip-политика {source}: правило \"{id}\" — неизвестное условие \"{when_raw}\" \
+                 (допустимо: noLetters, shortToken, fragment)"
+            ));
+        };
+        let enabled = match rule.get("enabled") {
+            None => true,
+            Some(Value::Bool(value)) => *value,
+            Some(other) => {
+                let message = format!(
+                    "skip-политика {source}: правило \"{id}\" — enabled должен быть boolean: {other}"
+                );
+                return Err(message);
+            }
+        };
+        rules.push(SkipRule {
+            id: id.clone(),
+            src: src.clone(),
+            when,
+            enabled,
+        });
+    }
+
+    Ok(SkipPolicy {
+        path: source.to_string(),
+        rules,
+    })
+}
+
+/// Прочитать skip-политику с диска; `required` — отсутствие файла это ошибка.
+pub fn load_skip_policy(path: &Path, required: bool) -> Result<Option<SkipPolicy>, String> {
+    match std::fs::read_to_string(path) {
+        Ok(text) => Ok(Some(parse_skip_policy(&text, &path.display().to_string())?)),
+        Err(err) if !required && err.kind() == std::io::ErrorKind::NotFound => Ok(None),
+        Err(err) => Err(format!(
+            "skip-политика не читается {}: {err}",
+            path.display()
+        )),
+    }
+}
+
+/// Найти `config/pot-skip-policy.json` в `start` или выше.
+pub fn discover_skip_policy_path(start: &Path) -> Option<PathBuf> {
+    let mut dir = std::fs::canonicalize(start).unwrap_or_else(|_| {
+        std::env::current_dir()
+            .map(|cwd| cwd.join(start))
+            .unwrap_or_else(|_| start.to_path_buf())
+    });
+    loop {
+        let candidate = dir.join("config").join("pot-skip-policy.json");
+        if candidate.is_file() {
+            let text = candidate.to_string_lossy();
+            return Some(match text.strip_prefix(r"\\?\") {
+                Some(rest) => PathBuf::from(rest),
+                None => candidate,
+            });
+        }
+        if !dir.pop() {
+            return None;
+        }
+    }
+}
+
+/// Применить skip-политику к каталогу: пометить записи, собрать журнал.
+///
+/// Побеждает ПЕРВОЕ подходящее правило в порядке политики (порядок — данные,
+/// поэтому результат детерминирован). Записи не удаляются и не меняются.
+pub fn apply_skip_policy(
+    catalog: &mut Catalog,
+    policy: &SkipPolicy,
+) -> (usize, Vec<SkipJournalEntry>, Vec<(String, usize)>) {
+    let mut keys: Vec<(String, String)> = Vec::with_capacity(catalog_size(catalog));
+    for (text, by_ctxt) in catalog.iter() {
+        for ctxt in by_ctxt.keys() {
+            keys.push((text.clone(), ctxt.clone()));
+        }
+    }
+    keys.sort_by(|a, b| a.0.cmp(&b.0).then_with(|| a.1.cmp(&b.1)));
+
+    let active: Vec<&SkipRule> = policy.rules.iter().filter(|r| r.enabled).collect();
+    let mut counts: Vec<usize> = vec![0; active.len()];
+    let mut journal: Vec<SkipJournalEntry> = Vec::new();
+
+    for (text, ctxt) in keys {
+        let slot = catalog
+            .get_mut(&text)
+            .and_then(|by_ctxt| by_ctxt.get_mut(&ctxt))
+            .expect("ключ из каталога");
+        let rich = slot
+            .comments
+            .iter()
+            .find_map(|c| c.strip_prefix("rich_text: "))
+            .unwrap_or("");
+        let Some(index) = active.iter().position(|rule| {
+            src_matches_pattern(&rule.src, &slot.src)
+                && skip_condition_matches(rule.when, &text, rich)
+        }) else {
+            continue;
+        };
+        let rule = active[index];
+        slot.skip = Some(rule.id.clone());
+        counts[index] += 1;
+        journal.push(SkipJournalEntry {
+            rule: rule.id.clone(),
+            src: slot.src.clone(),
+            msgid: text,
+            msgctxt: ctxt,
+        });
+    }
+
+    let by_rule: Vec<(String, usize)> = active
+        .iter()
+        .zip(counts.iter())
+        .map(|(rule, count)| (rule.id.clone(), *count))
+        .collect();
+    (journal.len(), journal, by_rule)
+}
+
+/// Журнал skip как JSONL (по строке на запись, порядок POT).
+pub fn render_skip_journal_jsonl(entries: &[SkipJournalEntry]) -> Result<String, String> {
+    let mut out = String::new();
+    for entry in entries {
+        let line = serde_json::to_string(entry).map_err(|e| format!("журнал skip: {e}"))?;
+        out.push_str(&line);
+        out.push('\n');
+    }
+    Ok(out)
+}
+
+/// Запись журнала skip: `.part` с PID → rename (как у журнала исключённых).
+pub fn write_skip_journal(path: &Path, entries: &[SkipJournalEntry]) -> Result<(), String> {
+    write_journal(path, &render_skip_journal_jsonl(entries)?)
+}
+
 /// Слот каталога: провенанс и комментарии будущей записи.
 #[derive(Debug, Default)]
 pub struct Slot {
     /// `dialog`/`bundle`/`field:*`/`settings`/`us`/`raw:*`/`global`.
     pub src: String,
     pub comments: Vec<String>,
+    /// Id правила skip-политики: в POT даёт `#, skip` и `#. skip: <id>`.
+    pub skip: Option<String>,
 }
 
 /// msgid → msgctxt → слот. Порядок не важен: рендер сортирует ключи.
@@ -667,18 +929,26 @@ pub fn render_pot(catalog: &Catalog, created: &str) -> String {
         .into_iter()
         .map(|(text, ctxt)| {
             let slot = &catalog[text][ctxt];
-            let mut comments = Vec::with_capacity(slot.comments.len() + 1);
+            let mut comments = Vec::with_capacity(slot.comments.len() + 2);
             if !slot.src.is_empty() {
                 // Провенанс — первым комментарием (рядом с rich_text).
                 comments.push(format!("src: {}", slot.src));
             }
+            // Причина «не переводить» — до текста, чтобы её видел человек.
+            if let Some(rule) = &slot.skip {
+                comments.push(format!("skip: {rule}"));
+            }
             comments.extend(slot.comments.iter().cloned());
-            PoEntry {
+            let mut entry = PoEntry {
                 msgid: text.to_string(),
                 msgctxt: ctxt.to_string(),
                 comments,
                 ..PoEntry::default()
+            };
+            if slot.skip.is_some() {
+                entry.flags.push("skip".to_string());
             }
+            entry
         })
         .collect();
 
@@ -738,6 +1008,10 @@ pub struct PotgenOptions {
     pub policy: PolicySource,
     /// Куда писать журнал исключённых (по умолчанию `<корень политики>/tmp/pot-excluded.jsonl`).
     pub excluded_path: Option<PathBuf>,
+    /// Skip-политика: по умолчанию `config/pot-skip-policy.json`, Disabled — без меток.
+    pub skip_policy: PolicySource,
+    /// Куда писать журнал skip (по умолчанию `tmp/pot-skip.jsonl`).
+    pub skip_journal_path: Option<PathBuf>,
 }
 
 #[derive(Debug)]
@@ -751,6 +1025,10 @@ pub struct PotgenResult {
     pub policy: Option<PolicyReport>,
     /// Путь журнала исключённых (`None`, если политика не применялась).
     pub excluded_path: Option<PathBuf>,
+    /// `None` — skip-политика не применялась.
+    pub skip: Option<SkipReport>,
+    /// Путь журнала skip (`None`, если skip-политика не применялась).
+    pub skip_journal_path: Option<PathBuf>,
 }
 
 impl PotgenOptions {
@@ -763,6 +1041,8 @@ impl PotgenOptions {
             created: None,
             policy: PolicySource::Default,
             excluded_path: None,
+            skip_policy: PolicySource::Default,
+            skip_journal_path: None,
         }
     }
 }
@@ -817,6 +1097,7 @@ pub fn run(options: &PotgenOptions) -> Result<PotgenResult, String> {
         }
         None => (catalog, Vec::new(), Vec::new()),
     };
+    let mut catalog = catalog;
     let entries = catalog_size(&catalog);
     if entries == 0 {
         return Err(format!(
@@ -824,6 +1105,31 @@ pub fn run(options: &PotgenOptions) -> Result<PotgenResult, String> {
             policy.as_ref().map(|p| p.path.clone()).unwrap_or_default()
         ));
     }
+
+    // Skip-политика («перевод не нужен») — тоже данные; применяется ПОСЛЕ
+    // отбора: помечаются только записи, реально попавшие в POT.
+    let skip_policy = match &options.skip_policy {
+        PolicySource::Disabled => None,
+        PolicySource::Path(path) => load_skip_policy(path, true)?,
+        PolicySource::Default => {
+            let start = if options.root.as_os_str().is_empty() {
+                PathBuf::from(".")
+            } else {
+                options.root.clone()
+            };
+            match discover_skip_policy_path(&start) {
+                Some(path) => load_skip_policy(&path, true)?,
+                None => None,
+            }
+        }
+    };
+    let skip_applied = match &skip_policy {
+        Some(policy) => {
+            let (marked, journal, by_rule) = apply_skip_policy(&mut catalog, policy);
+            Some((marked, journal, by_rule))
+        }
+        None => None,
+    };
 
     let out_path = options.out_path.clone().unwrap_or_else(|| {
         if options.update {
@@ -862,6 +1168,27 @@ pub fn run(options: &PotgenOptions) -> Result<PotgenResult, String> {
         });
     }
 
+    let mut skip_report: Option<SkipReport> = None;
+    let mut skip_journal_path: Option<PathBuf> = None;
+    if let (Some(policy), Some((marked, journal, by_rule))) = (&skip_policy, &skip_applied) {
+        let repo_root = Path::new(&policy.path)
+            .parent()
+            .and_then(|p| p.parent())
+            .map(Path::to_path_buf)
+            .unwrap_or_else(|| options.root.clone());
+        let path = options
+            .skip_journal_path
+            .clone()
+            .unwrap_or_else(|| repo_root.join("tmp").join("pot-skip.jsonl"));
+        write_skip_journal(&path, journal)?;
+        skip_journal_path = Some(path);
+        skip_report = Some(SkipReport {
+            path: policy.path.clone(),
+            marked: *marked,
+            by_rule: by_rule.clone(),
+        });
+    }
+
     Ok(PotgenResult {
         out_path,
         entries,
@@ -869,5 +1196,7 @@ pub fn run(options: &PotgenOptions) -> Result<PotgenResult, String> {
         stats,
         policy: report,
         excluded_path,
+        skip: skip_report,
+        skip_journal_path,
     })
 }

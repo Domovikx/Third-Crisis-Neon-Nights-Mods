@@ -9,7 +9,9 @@
 //!   5. дубли `(msgid, msgctxt)` с разным `msgstr` в `po/<lang>.po`;
 //!   6. пустой `x` для диалоговой записи из POT.
 //!
-//! Legacy-строки (`sk`) и `#, no-translate` исключаются из 2/3/4/6.
+//! Legacy-строки (`sk`) и `#, no-translate`/`#, skip` исключаются из 2/3/4/6.
+//! `skip` — решение политики potgen («перевод не нужен», docs/pot-skip.md):
+//! пустой перевод такой записи не дефект покрытия.
 
 use std::cmp::Ordering;
 use std::collections::HashMap;
@@ -309,7 +311,7 @@ pub fn check(lang: &str, root: &Path) -> std::io::Result<Report> {
         }
 
         let dlg = !sp.is_empty() || d == "dialogues";
-        if sk || e.flags.iter().any(|f| f == "no-translate") {
+        if sk || e.flags.iter().any(|f| f == "no-translate" || f == "skip") {
             continue;
         }
 

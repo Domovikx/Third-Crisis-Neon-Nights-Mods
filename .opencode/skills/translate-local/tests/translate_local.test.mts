@@ -476,3 +476,51 @@ test("runQueue: --dry-run не зовёт модель и ничего не пи
     cleanup(w);
   }
 });
+
+test("runQueue: `#, skip` не отправляется в модель (счётчик в отчёте)", async () => {
+  const root = mkdtempSync(join(REPO, "tmp", "tl-skip-"));
+  const tmpDir = join(root, "tmp", "translate-local");
+  mkdirSync(join(root, "po"), { recursive: true });
+  const poPath = join(root, "po", "ru.po");
+  writeFileSync(
+    poPath,
+    [
+      'msgid ""',
+      'msgstr ""',
+      "",
+      "#, skip",
+      'msgctxt "ui"',
+      'msgid "wK Ax"',
+      'msgstr ""',
+      "",
+      'msgctxt "ui"',
+      'msgid "Start the game"',
+      'msgstr ""',
+      "",
+    ].join("\n"),
+    "utf8",
+  );
+  const llm = await fakeLlm((lines) => echo(lines));
+  try {
+    const s = await runQueue({
+      lang: "ru",
+      root,
+      poPath,
+      tmpDir,
+      url: llm.url,
+      batch: 5,
+      log: () => {},
+    });
+    assert.equal(s.skipped, 1, "skip учтён отдельным счётчиком");
+    assert.equal(s.empty, 1, "в очередь попала только переводимая строка");
+    assert.equal(s.done, 1);
+    assert.equal(llm.requests.length, 1, "один запрос — только живая строка");
+    assert.ok(!llm.requests[0].includes("wK Ax"), "skip-текст в промпт не попал");
+    assert.ok(llm.requests[0].includes("Start the game"));
+    assert.equal(msgstrOf(poPath, "Start the game"), "ПЕРЕВОД: Start the game");
+    assert.equal(msgstrOf(poPath, "wK Ax"), "", "skip-строка не тронута");
+  } finally {
+    await llm.close();
+    rmSync(root, { recursive: true, force: true });
+  }
+});

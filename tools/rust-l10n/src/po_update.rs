@@ -150,6 +150,10 @@ pub struct MergeStats {
     pub orphans: usize,
     /// Дубли ключа в исходном PO с разными переводами.
     pub dup_keys: usize,
+    /// Ключи POT с `#, skip`: пустых строк в PO не создано (экономия).
+    pub skipped: usize,
+    /// Ключи POT с `#, skip`, у которых перевод уже был: сохранён и помечен.
+    pub skip_kept: usize,
     pub dropped_items: Vec<DroppedTranslation>,
     pub retarget_items: Vec<Retarget>,
     pub orphan_items: Vec<Orphan>,
@@ -244,6 +248,28 @@ pub fn merge_pot<'a>(
         pot_by_text.entry(e.msgid.as_str()).or_default().push(i);
     }
 
+    // 2б. `#, skip` — решение политики potgen: перевод не нужен. Пустых строк
+    //     в PO не заводим, живой перевод сохраняем. Ретаргет и проверка
+    //     «текст жив» смотрят только на НЕ-skip записи: перевод, у которого
+    //     текст остался лишь в skip-ключе, сохраняется хвостом как `legacy`.
+    let mut skip_ids: HashSet<KeyRef<'a>> = HashSet::new();
+    for e in pot_entries {
+        if !e.msgid.is_empty() && e.flags.iter().any(|f| f == "skip") {
+            skip_ids.insert(key_ref(e));
+        }
+    }
+    let mut live_by_text: HashMap<&'a str, Vec<usize>> = HashMap::new();
+    for (text, group) in &pot_by_text {
+        let live: Vec<usize> = group
+            .iter()
+            .copied()
+            .filter(|&i| !skip_ids.contains(&key_ref(&pot_entries[i])))
+            .collect();
+        if !live.is_empty() {
+            live_by_text.insert(text, live);
+        }
+    }
+
     // 3. Исчезнувшие ключи в порядке Python `sorted()` по (msgid, msgctxt).
     let mut vanished: Vec<KeyRef<'a>> = po_map
         .keys()
@@ -261,7 +287,7 @@ pub fn merge_pot<'a>(
         if old.msgstr.is_empty() || old.flags.iter().any(|f| f == "legacy") {
             continue;
         }
-        let Some(cands) = pot_by_text.get(old.msgid.as_str()) else {
+        let Some(cands) = live_by_text.get(old.msgid.as_str()) else {
             continue;
         };
         // Если хоть один одноимённый ключ уже переведён, спасать некуда:
@@ -303,6 +329,38 @@ pub fn merge_pot<'a>(
         }
         let key = key_ref(pe);
         let old = po_map.get(&key).copied();
+
+        // «Перевод не нужен»: пустую строку в PO не заводим вовсе. Уже
+        // существующий перевод не теряем — сохраняем и держим метку skip.
+        if skip_ids.contains(&key) {
+            let Some(o) = old.filter(|o| !o.msgstr.is_empty()) else {
+                stats.skipped += 1;
+                continue;
+            };
+            let mut flags: Vec<String> = o
+                .flags
+                .iter()
+                .filter(|f| *f != "auto-normalized" && *f != "skip")
+                .cloned()
+                .collect();
+            flags.push("skip".to_string());
+            merged.push(MergedEntry {
+                po: PoEntry {
+                    msgid: pe.msgid.clone(),
+                    msgctxt: pe.msgctxt.clone(),
+                    msgstr: o.msgstr.clone(),
+                    refs: pe.refs.clone(),
+                    comments: pe.comments.clone(),
+                    flags,
+                    translator: o.translator.clone(),
+                },
+                obsolete: false,
+            });
+            stats.carried += 1;
+            stats.skip_kept += 1;
+            continue;
+        }
+
         // Ретаргет заполняет только пустую запись: живой перевод не перетираем.
         let fill = match (fills.get(&key), old) {
             (Some(fill), None) => Some(fill),
@@ -320,12 +378,13 @@ pub fn merge_pot<'a>(
             refs: pe.refs.clone(),
             comments: pe.comments.clone(),
             // `auto-normalized` — машинная догадка prefill: в новый POT не едет.
+            // `skip` снимается: POT больше не помечает ключ, метке в PO не место.
             flags: match (fill, old) {
                 (Some(_), None) => Vec::new(),
                 (_, Some(o)) => o
                     .flags
                     .iter()
-                    .filter(|f| *f != "auto-normalized")
+                    .filter(|f| *f != "auto-normalized" && *f != "skip")
                     .cloned()
                     .collect(),
                 (None, None) => Vec::new(),
@@ -369,10 +428,10 @@ pub fn merge_pot<'a>(
             });
             continue;
         }
-        if pot_by_text.contains_key(old.msgid.as_str()) {
+        if live_by_text.contains_key(old.msgid.as_str()) {
             if !fill_sources.contains(key) {
                 // Текст жив под уже переведённым контекстом — варианту некуда деться.
-                let mut alive: Vec<String> = pot_by_text[old.msgid.as_str()]
+                let mut alive: Vec<String> = live_by_text[old.msgid.as_str()]
                     .iter()
                     .map(|&i| pot_entries[i].msgctxt.clone())
                     .collect();
@@ -602,6 +661,8 @@ pub fn report_to_json(stats: &MergeStats) -> String {
     out.push_str(&format!(", \"dropped\": {}", stats.dropped));
     out.push_str(&format!(", \"orphans\": {}", stats.orphans));
     out.push_str(&format!(", \"dupKeys\": {}", stats.dup_keys));
+    out.push_str(&format!(", \"skipped\": {}", stats.skipped));
+    out.push_str(&format!(", \"skipKept\": {}", stats.skip_kept));
 
     out.push_str(", \"retargets\": [");
     for (i, r) in stats.retarget_items.iter().enumerate() {

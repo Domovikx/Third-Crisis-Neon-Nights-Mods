@@ -29,11 +29,20 @@ export function l10nBinary(root: string = REPO_ROOT): string | null {
 /** Подкоманды, у которых корень передаётся флагом `--root`. */
 const COMMANDS = new Set(["potgen", "po2dat", "po_update", "prefill", "find_source"]);
 /** Флаги, которые сами задают пути (тогда `--root` не подставляется). */
-const PATH_FLAGS = new Set(["--root", "--po-dir", "--corpus", "--out", "--dump"]);
+const PATH_FLAGS = new Set([
+  "--root",
+  "--po-dir",
+  "--corpus",
+  "--out",
+  "--dump",
+  "--skip-policy",
+  "--skip-journal",
+]);
 
 const USAGE = `rust-l10n (обёртка)
 
   node scripts/text_cli.mts potgen [--update] [--dump <dir>] [--out <path>]
+                        [--skip-policy <p> | --no-skip-policy] [--skip-journal <p>]
   node scripts/text_cli.mts po2dat [lang]
   node scripts/text_cli.mts po_update [lang] [--po-dir <dir>] [--dup-rule <r>]
                         [--json <path>] [--no-backup]

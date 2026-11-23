@@ -1,14 +1,15 @@
 /**
- * pot_invariants.mts — контракт `po/template.pot` (14 инвариантов).
+ * pot_invariants.mts — контракт `po/template.pot` (15 инвариантов).
  *
  * POT — корень пайплайна: его ошибки попадают во все языки (`po/<lang>.po` →
  * `.dat` → игра). Поэтому проверки собраны в одну функцию
  * `checkPot(potPath, opts?)`, которую зовут и тесты, и CI, и человек из CLI.
  *
  * Что проверяется без дампа (структура и формат):
- *   5 уникальность `(msgid, msgctxt)`, 6 порядок, 7 rich-разметка (форма),
- *   8 экранирование/round-trip, 10 кодировка, 11 заголовок и шаблонность,
- *   14 провенанс (`#. src:` из фиксированного списка).
+ *   5 уникальность `(msgid, msgctxt)`, 6 порядок, 7 rich-разметка (форма и
+ *   обрывки `rich-fragment`), 8 экранирование/round-trip, 10 кодировка,
+ *   11 заголовок и шаблонность, 14 провенанс (`#. src:` из фиксированного
+ *   списка), 15 skip-теги (`#, skip` + `#. skip: <id>` из политики).
  *
  * Что включается, когда передан `dumpPath` (сверка с источником):
  *   1 детерминизм (порядок элементов не влияет), 2 идемпотентность
@@ -43,12 +44,17 @@ import {
   catalogSize,
   ctxtOf,
   discoverPolicyPath,
+  discoverSkipPolicyPath,
+  loadSkipPolicy,
   loadSrcPolicy,
   POT_PATH,
   renderPot,
+  srcMatchesPattern,
   srcOf,
+  applySkipPolicy,
   type PotCatalog,
   type PotStats,
+  type SkipPolicy,
 } from "../.opencode/skills/extract-text/scripts/potgen.mts";
 import {
   newEntry,
@@ -57,6 +63,11 @@ import {
   renderPo,
   type PoEntry,
 } from "../.opencode/skills/extract-text/scripts/po_file.mts";
+import {
+  classifyRich,
+  skipConditionMatches,
+  type SkipCondition,
+} from "../.opencode/skills/extract-text/scripts/pot_skip.mts";
 
 export const REPO_ROOT = resolve(import.meta.dirname, "..");
 
@@ -76,6 +87,7 @@ export const INVARIANTS: Readonly<Record<number, string>> = {
   12: "паритет реализаций",
   13: "устойчивость",
   14: "провенанс",
+  15: "skip-теги",
 };
 
 /** `error` — POT испорчен (пострадают все языки); `warn` — дефект генерации. */
@@ -109,6 +121,13 @@ export interface PotCheckOptions {
    * отдельный шаг политики. Новый POT без `src` контракт не пропускает.
    */
   requireSrc?: boolean;
+  /**
+   * Skip-политика для проверки `#, skip` (инвариант 15).
+   *
+   * `undefined` — найти `config/pot-skip-policy.json` (репозиторий);
+   * `null` — политики нет: любой `#, skip` тогда нарушение.
+   */
+  skipPolicy?: SkipPolicy | null;
 }
 
 /** Дата, используемая во всех сверках: сам POT меняет только `POT-Creation-Date`. */
@@ -285,7 +304,11 @@ function richOf(catalog: PotCatalog["catalog"]): Map<string, string> {
   return rich;
 }
 
-async function buildExpected(dumpPath: string, items?: InventoryItem[]): Promise<Expected> {
+async function buildExpected(
+  dumpPath: string,
+  items?: InventoryItem[],
+  skipPolicy?: SkipPolicy | null,
+): Promise<Expected> {
   const list = items ?? (await scanDump(dumpPath)).items;
   const keys = new Map<string, InventoryItem>();
   let duplicates = 0;
@@ -301,6 +324,10 @@ async function buildExpected(dumpPath: string, items?: InventoryItem[]): Promise
   const policyPath = discoverPolicyPath();
   const policy = policyPath ? loadSrcPolicy(policyPath) : null;
   const catalog = policy ? applySrcPolicy(built.catalog, policy).catalog : built.catalog;
+  // Skip-политика — тоже часть перегенерации: без неё боковая сверка «POT =
+  // перегенерация» видела бы каждый `#, skip` как расхождение.
+  const catalogWithSkip = catalog;
+  if (skipPolicy) applySkipPolicy(catalogWithSkip, skipPolicy);
   const stats = built.stats;
   const twinKeys = new Set<string>();
   for (const key of keys.keys()) {
@@ -565,8 +592,11 @@ function checkEscaping(
     if (isHeader) continue;
     for (const ref of entry.refs)
       add(8, "refs", "error", address(entry), `#: refs не пишутся контрактом: ${ref.slice(0, 40)}`);
-    if (entry.flags.length)
-      add(8, "flags", "error", address(entry), `#, флаги не пишутся: ${entry.flags.join(", ")}`);
+    // Единственный законный флаг — `skip` (решение skip-политики); всё прочее
+    // по-прежнему вне контракта (fuzzy/legacy в PO, не в POT).
+    const unknownFlags = entry.flags.filter((f) => f !== "skip");
+    if (unknownFlags.length)
+      add(8, "flags", "error", address(entry), `#, флаги не пишутся: ${unknownFlags.join(", ")}`);
     if (entry.translator.length)
       add(8, "translator", "error", address(entry), "# комментарии переводчика не пишутся");
   }
@@ -751,6 +781,21 @@ function checkRichFormat(
           "rich_text совпадает с msgid — писать не нужно",
         );
       }
+      // Обрывок: ключ не совпадает с полным текстом. Два подкласса с разными
+      // причинами (см. `classifyRich`): `suffix` — ключ = хвост (дамп обрезал
+      // `text`), `mismatch` — ключ вообще не содержится в полном тексте.
+      // Это дефект ДАННЫХ игры, поэтому warn: правка значила бы переписывать
+      // контент, а не наш код.
+      const relation = classifyRich(id, value);
+      if (relation.relation === "suffix" || relation.relation === "mismatch") {
+        add(
+          7,
+          "rich-fragment",
+          "warn",
+          address(entry),
+          `${relation.relation}: msgid ${JSON.stringify(id.slice(0, 80))} ≠ rich ${JSON.stringify(relation.plain.slice(0, 120))}`,
+        );
+      }
     }
   }
   return actual;
@@ -816,6 +861,109 @@ function checkSrc(
     actual.set(key, value);
   }
   return actual;
+}
+
+/**
+ * Инвариант 15: теги «перевод не нужен» (`#, skip` + `#. skip: <id>`).
+ *
+ * Правила:
+ *   - флаг и причина пишутся парой; причина — id правила из skip-политики
+ *     (`config/pot-skip-policy.json`), а не свободный текст;
+ *   - правило обязано подтверждаться записью (метка `src` и условие `when`),
+ *     иначе метка протухла (`skip-stale`, warn: potgen перегенерирует);
+ *   - без политики любой `#, skip` — ошибка (метка без источника смысла).
+ *
+ * Записи не удаляются: тег лишь говорит po_update/translate_local «не переводить».
+ */
+function checkSkipTags(
+  entries: RawEntry[],
+  policy: SkipPolicy | null,
+  add: (
+    invariant: number,
+    code: string,
+    severity: ViolationSeverity,
+    where: string,
+    detail: string,
+  ) => void,
+): void {
+  const rules = new Map<string, { src: string; when: string }>();
+  for (const rule of policy?.rules ?? []) rules.set(rule.id, rule);
+
+  for (const entry of entries) {
+    const id = entry.fields.msgid?.value;
+    if (id === undefined) continue;
+    const flagged = entry.flags.includes("skip");
+    const comments = entry.comments.filter((c) => c.text.startsWith("skip"));
+    if (!flagged && comments.length === 0) continue;
+
+    if (comments.length > 1) {
+      add(
+        15,
+        "skip-duplicate",
+        "error",
+        address(entry),
+        `несколько skip-меток: ${comments.length}`,
+      );
+    }
+    if (flagged && comments.length === 0) {
+      add(15, "skip-no-rule", "error", address(entry), "есть `#, skip`, нет `#. skip: <id>`");
+    }
+    if (!flagged && comments.length > 0) {
+      add(15, "skip-no-flag", "error", address(entry), "есть `#. skip:`, нет `#, skip`");
+    }
+    const c = comments[0];
+    if (!c) continue;
+    if (!c.text.startsWith("skip: ")) {
+      add(
+        15,
+        "skip-syntax",
+        "error",
+        `строка ${c.line}`,
+        `ожидалось "#. skip: <id>", получено ${JSON.stringify(c.text.slice(0, 60))}`,
+      );
+      continue;
+    }
+    const ruleId = c.text.slice("skip: ".length);
+    if (!policy) {
+      add(
+        15,
+        "skip-without-policy",
+        "error",
+        address(entry),
+        `метка "${ruleId}" без skip-политики (config/pot-skip-policy.json не найден)`,
+      );
+      continue;
+    }
+    const rule = rules.get(ruleId);
+    if (!rule) {
+      add(
+        15,
+        "skip-unknown-rule",
+        "error",
+        address(entry),
+        `правила "${ruleId}" нет в политике (допустимо: ${[...rules.keys()].join(", ") || "—"})`,
+      );
+      continue;
+    }
+    const src =
+      entry.comments.find((x) => x.text.startsWith("src: "))?.text.slice("src: ".length) ?? "";
+    const rich =
+      entry.comments
+        .find((x) => x.text.startsWith("rich_text: "))
+        ?.text.slice("rich_text: ".length) ?? "";
+    if (
+      !srcMatchesPattern(rule.src, src) ||
+      !skipConditionMatches(rule.when as SkipCondition, { msgid: id, rich })
+    ) {
+      add(
+        15,
+        "skip-stale",
+        "warn",
+        address(entry),
+        `правило "${ruleId}" (src ${rule.src}, when ${rule.when}) не подтверждается записью (src ${JSON.stringify(src)})`,
+      );
+    }
+  }
 }
 
 function checkEncoding(
@@ -892,6 +1040,7 @@ function checkAgainstDump(
     where: string,
     detail: string,
   ) => void,
+  skipPolicy?: SkipPolicy | null,
 ): void {
   const potKeys = new Map<string, RawEntry>();
   for (const entry of potEntries) {
@@ -908,9 +1057,17 @@ function checkAgainstDump(
   const includeSrc = opts.requireSrc !== false;
   const forward = renderPot(expected.catalog, created, { includeSrc });
   const { catalog: reversedCatalog } = buildCatalog([...expected.items].reverse());
-  const backward = renderPot(reversedCatalog, created, { includeSrc });
+  // Обратный порядок — та же политика отбора и тот же skip: иначе сравнение
+  // ловило бы не «порядок влияет», а «skip применён только в одну сторону».
+  const policyPathForReverse = discoverPolicyPath();
+  const srcPolicy = policyPathForReverse ? loadSrcPolicy(policyPathForReverse) : null;
+  const reversedKept = srcPolicy
+    ? applySrcPolicy(reversedCatalog, srcPolicy).catalog
+    : reversedCatalog;
+  if (skipPolicy) applySkipPolicy(reversedKept, skipPolicy);
+  const backward = renderPot(reversedKept, created, { includeSrc });
   if (forward !== backward) {
-    const reversedRich = richOf(reversedCatalog);
+    const reversedRich = richOf(reversedKept);
     const richDiff = [...expected.rich.keys()].filter(
       (k) => reversedRich.get(k) !== expected.rich.get(k),
     );
@@ -1130,13 +1287,22 @@ export async function checkPotText(text: string, opts: PotCheckOptions = {}): Pr
   checkOrder(entries, push);
   const actualRich = checkRichFormat(entries, push);
   const actualSrc = checkSrc(entries, opts.requireSrc !== false, push);
+  // Skip-политика: явная из опций или найденная рядом с репозиторием.
+  const skipPolicy =
+    opts.skipPolicy === undefined
+      ? (() => {
+          const path = discoverSkipPolicyPath();
+          return path ? loadSkipPolicy(path, { required: true }) : null;
+        })()
+      : opts.skipPolicy;
+  checkSkipTags(entries, skipPolicy, push);
 
   let sourceChars: Set<string> | null = null;
   if (opts.dumpPath) {
     if (!existsSync(opts.dumpPath)) {
       throw new Error(`dump not found: ${opts.dumpPath}`);
     }
-    const expected = await buildExpected(opts.dumpPath);
+    const expected = await buildExpected(opts.dumpPath, undefined, skipPolicy);
     sourceChars = new Set<string>();
     for (const item of expected.items) {
       for (const ch of item.text + item.richText) {
@@ -1144,7 +1310,7 @@ export async function checkPotText(text: string, opts: PotCheckOptions = {}): Pr
       }
     }
     checkEncoding(parsed, sourceChars, push);
-    checkAgainstDump(parsed, entries, actualRich, actualSrc, expected, opts, push);
+    checkAgainstDump(parsed, entries, actualRich, actualSrc, expected, opts, push, skipPolicy);
 
     const ignored = await countIgnoredDumpLines(opts.dumpPath);
     if (ignored.ignored) {
@@ -1225,6 +1391,8 @@ function truncate(violations: Violation[], limit: number): Violation[] {
 export interface PotSummary {
   entries: number;
   rich: number;
+  /** Записей с `#, skip` (перевод не нужен по политике). */
+  skip: number;
   byCtxt: { ui: number; speaker: number; speakerName: number; other: number };
   headerDate: string | null;
 }
@@ -1236,6 +1404,7 @@ export function summarizePot(text: string): PotSummary {
   const body = hasHeader ? parsed.entries.slice(1) : parsed.entries;
   const byCtxt = { ui: 0, speaker: 0, speakerName: 0, other: 0 };
   let rich = 0;
+  let skip = 0;
   for (const entry of body) {
     const ctxt = entry.fields.msgctxt?.value ?? "";
     if (ctxt === "ui") byCtxt.ui += 1;
@@ -1243,11 +1412,13 @@ export function summarizePot(text: string): PotSummary {
     else if (ctxt.startsWith("speaker:")) byCtxt.speaker += 1;
     else byCtxt.other += 1;
     rich += entry.comments.filter((c) => c.text.startsWith("rich_text: ")).length;
+    if (entry.flags.includes("skip")) skip += 1;
   }
   const header = parsed.entries[0]?.fields.msgstr?.value ?? "";
   return {
     entries: body.length,
     rich,
+    skip,
     byCtxt,
     headerDate: headerFields(header).get("POT-Creation-Date") ?? null,
   };
@@ -1331,7 +1502,7 @@ export async function main(argv: string[]): Promise<number> {
       const c = summary.byCtxt;
       console.log(`POT: ${cli.pot}`);
       console.log(
-        `  записей: ${summary.entries} (rich: ${summary.rich}); контексты: ui ${c.ui}, ` +
+        `  записей: ${summary.entries} (rich: ${summary.rich}, skip: ${summary.skip}); контексты: ui ${c.ui}, ` +
           `speaker:* ${c.speaker}, speaker-name ${c.speakerName}, прочие ${c.other}`,
       );
       if (cli.dumpPath) console.log(`  дамп: ${cli.dumpPath}`);

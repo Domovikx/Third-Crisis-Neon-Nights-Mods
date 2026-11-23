@@ -114,8 +114,11 @@ test(
   "E2E реальный дамп: po/template.pot проходит контракт (opt-in)",
   { skip: realSkip },
   async (t) => {
-    // POT перегенерирован с провенансом (2026-11-22), поэтому src обязателен.
-    const violations = await checkPot(potPath, { dumpPath: dumpDir });
+    // POT перегенерирован с провенансом (2026-11-22), но ДО skip-политики:
+    // `#, skip` появятся при следующем `potgen --update`, поэтому сверку с
+    // перегенерацией здесь выключаем (skipPolicy: null) — иначе каждый
+    // будущий тег был бы `stale` на легаси-файле.
+    const violations = await checkPot(potPath, { dumpPath: dumpDir, skipPolicy: null });
     const errors = violations.filter((v) => v.severity === "error");
     const warns = violations.filter((v) => v.severity === "warn");
     t.diagnostic(
@@ -139,6 +142,7 @@ test(
       "rich-counter",
       "noise-entries",
       "rich-nesting", // данные игры: незакрытые/перекрещенные теги в самом rich_text
+      "rich-fragment", // данные игры: обрывки text=хвост rich_text (docs/pot-skip.md)
     ]);
     const unexpected = warns.filter((v) => !known.has(v.code));
     assert.deepEqual(

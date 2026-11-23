@@ -10,6 +10,7 @@ pub mod find_source;
 pub mod inventory;
 pub mod po2dat;
 pub mod po_update;
+pub mod pot_skip;
 pub mod potgen;
 pub mod prefill;
 pub mod refs;

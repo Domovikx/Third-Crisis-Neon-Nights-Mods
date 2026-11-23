@@ -469,11 +469,14 @@ export interface RunOptions {
 
 export interface RunSummary {
   entries: number;
+  /** Пустых `msgstr`, которые реально пойдут в работу (без `#, skip`). */
   empty: number;
   queued: number;
   done: number;
   triaged: number;
   failed: number;
+  /** Пустые строки с `#, skip`: перевод политикой не нужен, модель не зовём. */
+  skipped: number;
   /** Остановились по файлу PAUSE. */
   paused: boolean;
   /** Остановились из-за ошибки LLM (прогресс сохранён). */
@@ -501,7 +504,12 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
 
   if (!existsSync(poPath)) throw new Error(`missing ${poPath}`);
   const entries = parsePo(readFileSync(poPath, "utf8")).filter((e) => e.msgid);
-  let empty = entries.filter((e) => !e.msgstr);
+  // `#, skip` — решение политики potgen: перевод не нужен, строку в модель не
+  // шлём (po_update такие строки в PO и не заводит; здесь — страховка для PO,
+  // отредактированных руками). Счётчик виден в отчёте.
+  const isSkip = (e: PoEntry): boolean => e.flags.includes("skip");
+  const skipEmpty = entries.filter((e) => !e.msgstr && isSkip(e));
+  let empty = entries.filter((e) => !e.msgstr && !isSkip(e));
   const summary: RunSummary = {
     entries: entries.length,
     empty: empty.length,
@@ -509,10 +517,14 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
     done: 0,
     triaged: 0,
     failed: 0,
+    skipped: skipEmpty.length,
     paused: false,
     aborted: false,
   };
-  log(`${lang}: ${entries.length} entries, ${empty.length} empty`);
+  log(
+    `${lang}: ${entries.length} entries, ${empty.length} empty` +
+      (skipEmpty.length ? `, ${skipEmpty.length} skip (не переводятся)` : ""),
+  );
 
   const include = (opts.include ?? []).filter(Boolean);
   if (include.length) {
@@ -642,10 +654,12 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
       `progress: done=${summary.done} triaged=${summary.triaged} failed=${summary.failed} pos=${i}/${todo.length}`,
     );
   }
-  log(`RESULT done=${summary.done} triaged=${summary.triaged} failed=${summary.failed}`);
+  log(
+    `RESULT done=${summary.done} triaged=${summary.triaged} failed=${summary.failed}` +
+      (summary.skipped ? ` skipped=${summary.skipped}` : ""),
+  );
   return summary;
 }
-
 // --- CLI --------------------------------------------------------------------
 
 interface CliArgs {

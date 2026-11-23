@@ -127,6 +127,34 @@ msgstr ""
   }
 });
 
+test("check: `#, skip` не считается пустым диалогом (решение potgen)", () => {
+  const dir = fixture(
+    "skip",
+    `#. src: raw:MonoBehaviour
+#. skip: short-token
+#, skip
+msgctxt "speaker:Z"
+msgid "wK Ax"
+msgstr ""
+
+#: [dlg:1#0]
+msgctxt "speaker:Z"
+msgid "Hi"
+msgstr ""
+`,
+    "",
+  );
+  try {
+    const { summary, findings } = check("ru", dir);
+    assert.equal(summary.total, 2);
+    const empty = findings.filter((f) => f.rule === "empty-dialogue").map((f) => f.text);
+    assert.deepEqual(empty, ["Hi"], "skip-строка из правил исключена, обычная — нет");
+    assert.equal(summary.errors, 1);
+  } finally {
+    cleanup(dir);
+  }
+});
+
 test("check: дисбаланс rich-тегов (r vs rt) — error, совпадение — молчит", () => {
   const pot = `#: [dlg:1#0]
 msgctxt "speaker:Z"

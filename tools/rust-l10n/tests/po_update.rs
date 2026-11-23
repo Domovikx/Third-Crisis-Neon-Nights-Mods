@@ -566,3 +566,69 @@ fn пустая_шапка_не_ломает_разбор() {
         "остаётся только содержательная запись"
     );
 }
+
+// ---------------------------------------------------------------------------
+// `#, skip`: пустых строк в PO не создаём, живой перевод сохраняем.
+// ---------------------------------------------------------------------------
+
+fn e_skip(msgid: &str, msgstr: &str) -> PoEntry {
+    let mut entry = e(msgid, "ui", msgstr, &[]);
+    entry.flags.push("skip".to_string());
+    entry
+}
+
+#[test]
+fn skip_записи_не_создают_пустых_строк_в_po() {
+    let pot = [e_skip("junk", ""), e("Kept line", "ui", "", &[])];
+    let out = merge_pot(&[], &pot, DupRule::Last);
+    // junk не попал в PO вовсе; Kept line — обычная пустая строка.
+    assert_eq!(out.merged.len(), 1);
+    assert_eq!(out.merged[0].po.msgid, "Kept line");
+    assert_eq!(out.stats.skipped, 1);
+    assert_eq!(out.stats.new, 1);
+    let text = render_merged(&out.merged, &[HEADER.to_string()]);
+    assert!(!text.contains("junk"), "{text}");
+}
+
+#[test]
+fn skip_переведённая_строка_сохраняется_и_помечается() {
+    let pot = [e_skip("junk", "")];
+    let po = [e("junk", "ui", "мусор", &[])];
+    let out = merge_pot(&po, &pot, DupRule::Last);
+    assert_eq!(out.merged.len(), 1);
+    assert_eq!(out.merged[0].po.msgstr, "мусор");
+    assert!(out.merged[0].po.flags.contains(&"skip".to_string()));
+    assert_eq!(out.stats.skip_kept, 1);
+    assert_eq!(out.stats.carried, 1);
+    let text = render_merged(&out.merged, &[HEADER.to_string()]);
+    assert!(text.contains("#, skip"), "{text}");
+    assert!(text.contains("msgstr \"мусор\""), "{text}");
+}
+
+#[test]
+fn снятый_skip_убирает_метку_из_po() {
+    // POT больше не помечает ключ — метка `skip` не должна остаться в PO.
+    let pot = [e("line", "ui", "", &[])];
+    let mut old = e("line", "ui", "строка", &[]);
+    old.flags.push("skip".to_string());
+    let out = merge_pot(&[old], &pot, DupRule::Last);
+    assert!(
+        out.merged[0].po.flags.is_empty(),
+        "{:?}",
+        out.merged[0].po.flags
+    );
+    assert_eq!(out.stats.skip_kept, 0);
+}
+
+#[test]
+fn перевод_чья_строка_жива_только_под_skip_сохраняется_хвостом() {
+    // Ключ выпал, но текст остался в POT только как skip-запись: перевод не
+    // теряем (рантайм ищет по тексту) — уходит в хвост с флагом legacy.
+    let pot = [e_skip("Gone text", "")];
+    let po = [e("Gone text", "speaker:Zoey", "Ушло", &[])];
+    let out = merge_pot(&po, &pot, DupRule::Last);
+    assert_eq!(out.merged.len(), 1, "skip-строка в PO не создана");
+    assert_eq!(out.merged[0].po.msgstr, "Ушло");
+    assert!(out.merged[0].po.flags.contains(&"legacy".to_string()));
+    assert_eq!(out.stats.legacy_kept, 1);
+}

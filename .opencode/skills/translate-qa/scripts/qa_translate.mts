@@ -13,6 +13,8 @@
  *   6. пустой `x` для диалоговой записи из POT            -> error.
  *
  * Legacy-строки триажа (флаг `sk` из `#, legacy`) исключены из 2/4/6.
+ * Пустые строки с `#, skip` (политика «перевод не нужен», docs/pot-skip.md)
+ * тоже не считаются пропуском покрытия.
  *
  * ВАЖНО: длина перевода НЕ критерий (правило AGENTS.md). `len(tr) > 10` в
  * правиле 4 — порог поиска непереведённой латиницы, а не оценка длины.
@@ -189,7 +191,9 @@ export function check(
     if (sp) inc(bySpeaker, sp, Boolean(tr));
 
     const dlg = Boolean(sp) || d === "dialogues";
-    if (sk || e.flags.includes("no-translate")) continue;
+    // `skip` — решение политики potgen («перевод не нужен», docs/pot-skip.md):
+    // пустой перевод такой записи — не дефект покрытия.
+    if (sk || e.flags.includes("no-translate") || e.flags.includes("skip")) continue;
 
     if (dlg && !tr) {
       findings.push({

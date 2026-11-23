@@ -1,6 +1,6 @@
 # [2026-11-23] Теги «перевод не нужен» в POT + ловля обрывков msgid
 
-Статус: READY
+Статус: DOING (сделано и проверено; ждут решения владельца — риск правила `short-token` и правила под `w? |b`/`wK Ax`)
 
 ## Задача от пользователя
 
@@ -94,3 +94,47 @@
 
 - `docs/pot-provenance.md` — откуда `src`.
 - `docs/pot-contract.md` — куда добавить инвариант.
+
+## Журнал 2026-11-23 (агент)
+
+Сделано:
+
+- `pot_skip.mts` + `pot_skip.rs` — единственная реализация: чистка **только
+  известных TMP-тегов** (`TMP_TAGS`), `classifyRich` (ok/suffix/mismatch/noise),
+  условия `noLetters`/`shortToken`/`fragment`. Порог обрывка — ≥10 символов и
+  ≥2 слов (иначе шесть шумовых `">"`).
+- `config/pot-skip-policy.json` — три правила из ТЗ; выключение — правка JSON
+  (`enabled: false`, удалить правило, `"rules": []`).
+- `potgen` (TS + Rust): `#, skip` + `#. skip: <id>`, журнал `tmp/pot-skip.jsonl`,
+  флаги `--skip-policy/--no-skip-policy/--skip-journal`. POT и журнал TS↔Rust
+  побайтово (проверено на `tmp/dump-after`).
+- `po_update` (TS + Rust): skip не заводит пустых строк, переведённые
+  сохраняются с меткой; счётчики `skipped`/`skipKept` в отчёте; перевод, чей
+  текст жив только под skip-ключом, уходит в хвост `legacy` (не теряется).
+- `translate_local`: skip не уходит в модель, счётчик `skipped` (тест с
+  фейковым сервером).
+- `qa` (TS-эталон + rust-qa): `skip` наряду с `no-translate` не считается
+  пустым диалогом. **Примечание:** это единственная правка вне зоны rust-l10n
+  (`tools/rust-qa/src/rules.rs`, `.opencode/skills/translate-qa/...`), нужна
+  для п.6 ТЗ; без неё паритет QA не сходится.
+- Инварианты: `rich-fragment` (warn, подклассы suffix/mismatch) и 15
+  `skip-теги` (неизвестное правило/метка — ошибка, протухшая метка — warn).
+- `scripts/pot_skip_review.mts` → `tmp/pot-skip-review.md` (по правилу: число,
+  20 примеров; для обрывков — файл дампа + `path_id` + idx).
+
+Цифры (текущий POT = перегенерация `tmp/dump-after` без skip, кроме даты):
+
+- `rich-fragment`: 3 записи — 2 `suffix` (оба `sharedassets7.jsonl`,
+  `path_id=1205`, idx 3 и 1), 1 `mismatch` (`sharedassets5.jsonl`,
+  `path_id=2256`; `… 7192>` против `… <7192>`). Плюс 1 `noise` (`">"`, ниже
+  порога, не диагноз).
+- `#, skip`: 9 822 из 33 447 — `short-token` 9 820, `fragment` 2,
+  `no-letters` 0.
+
+Открыто для владельца:
+
+- `short-token` широкий (29 % POT): подтвердить или `enabled: false`.
+- `w? |b` и `wK Ax` этими правилами НЕ ловятся (есть пробел) — нужно
+  отдельное правило, если такие строки надо выключать.
+- `po/template.pot` не перегенерирован (зона: только чтение) — теги появятся
+  на ближайшем `potgen --update`.

@@ -10,6 +10,8 @@
  *     переклассификация спикера);
  *   - текст пропал из POT целиком → запись остаётся живой с флагом `legacy`
  *     (устаревшая строка в .dat безвредна, потеря живого перевода — регрессия);
+ *   - запись POT с `#, skip` («перевод не нужен»): пустого ключа в PO НЕ
+ *     появляется, а уже существующий перевод сохраняется (и остаётся помечен);
  *   - новый ключ в POT → пустая запись в конце;
  *   - комментарии переводчика всегда переносятся;
  *   - никаких fuzzy-догадок (эвристики миграции — у prefill).
@@ -43,6 +45,10 @@ export interface MergeStats {
   obsolete: number;
   retargeted: number;
   legacyKept: number;
+  /** Ключи POT с `#, skip`: пустых строк в PO не создано (экономия). */
+  skipped: number;
+  /** Ключи POT с `#, skip`, у которых перевод уже был: сохранён и помечен. */
+  skipKept: number;
 }
 
 /** Ключ каталога PO: пара (msgid, msgctxt), как tuple в Python. */
@@ -106,8 +112,22 @@ export function mergePot(
     obsolete: 0,
     retargeted: 0,
     legacyKept: 0,
+    skipped: 0,
+    skipKept: 0,
   };
   const merged: MergedEntry[] = [];
+
+  /** Ключи POT с `#, skip`: перевод не нужен (решение политики в potgen). */
+  const skipIds = new Set<string>();
+  for (const pe of potEntries) {
+    if (pe.msgid && pe.flags.includes("skip")) skipIds.add(keyId(keyOf(pe)));
+  }
+  /** Живые (не skip) записи по тексту: только они — кандидаты ретаргета. */
+  const liveByText = new Map<string, PoEntry[]>();
+  for (const [text, group] of potByText) {
+    const live = group.filter((e) => !skipIds.has(keyId(keyOf(e))));
+    if (live.length) liveByText.set(text, live);
+  }
 
   /** Целевой ключ → (msgstr, translator), спасённые с исчезнувшего ключа. */
   const retargetFill = new Map<string, { msgstr: string; translator: string[] }>();
@@ -118,7 +138,7 @@ export function mergePot(
 
   for (const [, old] of vanished) {
     if (!old.msgstr || old.flags.includes("legacy")) continue;
-    const cands = potByText.get(old.msgid) ?? [];
+    const cands = liveByText.get(old.msgid) ?? [];
     // Если хоть один одноимённый ключ уже переведён, спасать некуда:
     // текст жив и без этого ретаргета.
     const live = cands.some((c) => Boolean(poMap.get(keyId(keyOf(c)))?.msgstr));
@@ -135,12 +155,35 @@ export function mergePot(
   for (const pe of potEntries) {
     if (!pe.msgid) continue;
     const id = keyId(keyOf(pe));
-    let old = poMap.get(id);
+    const old = poMap.get(id);
+
+    // «Перевод не нужен»: пустую строку в PO не заводим вовсе. Уже
+    // существующий перевод не теряем — сохраняем и держим метку skip.
+    if (skipIds.has(id)) {
+      if (!old || !old.msgstr) {
+        stats.skipped += 1;
+        continue;
+      }
+      merged.push({
+        msgid: pe.msgid,
+        msgctxt: pe.msgctxt,
+        msgstr: old.msgstr,
+        refs: [...pe.refs],
+        comments: [...pe.comments],
+        flags: [...old.flags.filter((f) => f !== "auto-normalized" && f !== "skip"), "skip"],
+        translator: [...old.translator],
+      });
+      stats.carried += 1;
+      stats.skipKept += 1;
+      continue;
+    }
+
     const fill = retargetFill.get(id);
-    if (fill && !(old && old.msgstr)) {
+    let base = old;
+    if (fill && !(base && base.msgstr)) {
       // Python: `dict(old) if old else {}` — у пустой записи флагов нет,
       // поэтому флаги берём только у реального старого перевода.
-      const base = old ?? {
+      const empty = base ?? {
         msgid: pe.msgid,
         msgctxt: pe.msgctxt,
         msgstr: "",
@@ -149,19 +192,20 @@ export function mergePot(
         flags: [],
         translator: [],
       };
-      old = { ...base, msgstr: fill.msgstr, translator: [...fill.translator] };
+      base = { ...empty, msgstr: fill.msgstr, translator: [...fill.translator] };
     }
     merged.push({
       msgid: pe.msgid,
       msgctxt: pe.msgctxt,
-      msgstr: old ? old.msgstr : "",
+      msgstr: base ? base.msgstr : "",
       refs: [...pe.refs],
       comments: [...pe.comments],
       // `auto-normalized` — машинная догадка prefill: в новый POT не едет.
-      flags: (old ? old.flags : []).filter((f) => f !== "auto-normalized"),
-      translator: old ? [...old.translator] : [],
+      // `skip` снимается: POT больше не помечает ключ, метке в PO не место.
+      flags: (base ? base.flags : []).filter((f) => f !== "auto-normalized" && f !== "skip"),
+      translator: base ? [...base.translator] : [],
     });
-    if (old && old.msgstr) stats.carried += 1;
+    if (base && base.msgstr) stats.carried += 1;
     else stats.new += 1;
   }
 
@@ -173,7 +217,7 @@ export function mergePot(
       merged.push(old);
       continue;
     }
-    if (potByText.has(old.msgid)) {
+    if (liveByText.has(old.msgid)) {
       // Текст жив под другим ctxt — спасён ретаргетом (или уже заполнен дубль).
       continue;
     }
@@ -313,7 +357,8 @@ export function main(argv: string[]): number {
     console.error(
       `${cli.lang}.po updated: carried=${stats.carried}, new=${stats.new}, ` +
         `obsolete=${stats.obsolete}, retargeted=${stats.retargeted}, ` +
-        `legacy_kept=${stats.legacyKept} (backup .bak) [${poPath}]`,
+        `legacy_kept=${stats.legacyKept}, skipped=${stats.skipped}, ` +
+        `skip_kept=${stats.skipKept} (backup .bak) [${poPath}]`,
     );
     return 0;
   } catch (err) {

@@ -267,3 +267,74 @@ test("main: отсутствующий PO → код 1, справка → 0, м
     console.error = origErr;
   }
 });
+
+// ---------------------------------------------------------------------------
+// `#, skip`: пустых строк в PO не создаём, живой перевод сохраняем.
+// ---------------------------------------------------------------------------
+
+/** Запись POT с `#, skip` (решение skip-политики). */
+function skip(id: string): PoEntry {
+  const entry = e(id, "ui");
+  entry.flags = ["skip"];
+  return entry;
+}
+
+test("mergePot: skip-запись без перевода не попадает в PO вовсе", () => {
+  const { merged, stats } = mergePot([], [skip("junk"), e("Kept line", "ui")]);
+  assert.equal(merged.length, 1);
+  assert.equal(merged[0].msgid, "Kept line");
+  assert.equal(stats.skipped, 1);
+  assert.equal(stats.new, 1);
+  assert.ok(!renderMerged(merged, ['msgid ""', 'msgstr ""']).includes("junk"));
+});
+
+test("mergePot: переведённая skip-запись сохраняется и помечается", () => {
+  const { merged, stats } = mergePot([e("junk", "ui", "мусор")], [skip("junk")]);
+  assert.equal(merged.length, 1);
+  assert.equal(merged[0].msgstr, "мусор");
+  assert.ok(merged[0].flags?.includes("skip"));
+  assert.equal(stats.skipKept, 1);
+  assert.equal(stats.carried, 1);
+});
+
+test("mergePot: снятый skip убирает метку из PO", () => {
+  const old = e("line", "ui", "строка");
+  old.flags = ["skip"];
+  const { merged } = mergePot([old], [e("line", "ui")]);
+  assert.deepEqual(merged[0].flags, [], "POT больше не помечает — метке в PO не место");
+});
+
+test("mergePot: перевод, чья строка жива только под skip, сохраняется хвостом", () => {
+  const { merged, stats } = mergePot([e("Gone text", "speaker:Zoey", "Ушло")], [skip("Gone text")]);
+  assert.equal(merged.length, 1, "skip-строка в PO не создана");
+  assert.equal(merged[0].msgstr, "Ушло");
+  assert.deepEqual(merged[0].flags, ["legacy"]);
+  assert.equal(stats.legacyKept, 1);
+});
+
+test("runPoUpdate: skip не создаёт строк в PO, переведённая остаётся с меткой", () => {
+  const dir = join(root, "skip-run", "po");
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(
+    join(dir, "template.pot"),
+    renderPo([skip("junk-key"), e("Normal line", "ui"), skip("kept-key")], []),
+    "utf8",
+  );
+  // Заголовок обязателен: в PO без шапки первый блок считается шапкой
+  // (задокументированная странность оригинала) — фикстура не про это.
+  writeFileSync(
+    join(dir, "ru.po"),
+    renderPo([e("kept-key", "ui", "уже есть")], ['msgid ""', 'msgstr ""']),
+    "utf8",
+  );
+
+  const res = runPoUpdate({ lang: "ru", poDir: dir });
+  assert.equal(res.stats.skipped, 1, "junk-key не заведён");
+  assert.equal(res.stats.skipKept, 1, "kept-key сохранён");
+
+  const out = readFileSync(join(dir, "ru.po"), "utf8");
+  assert.ok(!out.includes("junk-key"), "пустой skip-строки в PO нет");
+  assert.ok(out.includes('msgid "Normal line"\nmsgstr ""'), "обычная строка на месте");
+  assert.ok(out.includes('msgstr "уже есть"'), "перевод сохранён");
+  assert.match(out, /#, skip\nmsgctxt "ui"\nmsgid "kept-key"\nmsgstr "уже есть"/);
+});

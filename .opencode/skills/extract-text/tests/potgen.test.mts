@@ -18,23 +18,37 @@ import {
 } from "../../../../scripts/pot_provenance_report.mts";
 import {
   applySrcPolicy,
+  applySkipPolicy,
   buildCatalog,
   catalogSize,
   ctxtOf,
+  discoverSkipPolicyPath,
   formatPotDate,
+  formatSkipReport,
   KNOWN_RAW_CLASSES,
   main,
+  parseSkipPolicy,
   parseSrcPolicy,
   policyDecision,
   renderExcludedJsonl,
   renderPot,
+  renderSkipJournalJsonl,
   runPotgen,
   srcMatchesPattern,
   stripFontTags,
   triageReason,
   validatePolicyPattern,
   writeAtomic,
+  type SkipPolicy,
 } from "../scripts/potgen.mts";
+import {
+  classifyRich,
+  hasLetters,
+  isMeaningfulText,
+  skipConditionMatches,
+  stripTmpTags,
+  TMP_TAGS,
+} from "../scripts/pot_skip.mts";
 
 const REPO = resolve(import.meta.dirname, "../../../..");
 const FIXTURE = join(import.meta.dirname, "..", "test_data", "tiny-dump");
@@ -549,6 +563,8 @@ test(
       const rustPot = join(dir, `${mode}-rust.pot`);
       const tsExcluded = join(dir, `${mode}-ts.jsonl`);
       const rustExcluded = join(dir, `${mode}-rust.jsonl`);
+      const tsSkip = join(dir, `${mode}-ts-skip.jsonl`);
+      const rustSkip = join(dir, `${mode}-rust-skip.jsonl`);
       const policyArg = mode === "with" ? policyPath : null;
 
       const res = await runPotgen({
@@ -557,6 +573,7 @@ test(
         created: "2026-01-02 03:04+0000",
         policyPath: policyArg,
         excludedPath: tsExcluded,
+        skipJournalPath: tsSkip,
       });
       const args = [
         "potgen",
@@ -570,12 +587,21 @@ test(
         "2026-01-02 03:04+0000",
         "--excluded",
         rustExcluded,
+        "--skip-journal",
+        rustSkip,
         ...(policyArg ? ["--policy", policyArg] : ["--no-policy"]),
       ];
       const run = spawnSync(RUST_BIN as string, args, { encoding: "utf8" });
       assert.equal(run.status, 0, `rust-l10n ${args.join(" ")}: ${run.stderr}`);
 
       assert.equal(readFileSync(rustPot, "utf8"), readFileSync(tsPot, "utf8"), `${mode}: POT`);
+      // Журнал skip — тоже побайтово (метка правила, порядок POT).
+      assert.equal(readFileSync(rustSkip, "utf8"), readFileSync(tsSkip, "utf8"), `${mode}: skip`);
+      assert.equal(
+        res.skip?.marked,
+        readFileSync(tsSkip, "utf8").split(/\r?\n/).filter(Boolean).length,
+        "журнал skip содержит ровно помеченные записи",
+      );
       if (policyArg) {
         // Число исключённых зависит от данных политики (меняется вместе с config/),
         // поэтому проверяем инвариант, а не магическое число: журнал = исключённые.
@@ -595,3 +621,224 @@ test(
     }
   },
 );
+
+// ---------------------------------------------------------------------------
+// Skip-логика (`pot_skip.mts`) — ОДНА реализация для инварианта и политики.
+//
+// Главный тест — ловушка 2026-11-23: наивная чистка `<[^>]+>` съедает
+// авторские кавычки `< … >` вместе с настоящим тегом, и дефект маскируется
+// (три разовых скрипта дали 0 обрывков там, где баг есть).
+// ---------------------------------------------------------------------------
+
+const REAL_FRAGMENT =
+  "<i>< Like this, hmmm...? I love these nice big tits. Especially when adorable " +
+  "customers like <b>you</b> request them. >";
+
+/** Наивная чистка `<[^>]+>` — ровно так «теряется» дефект. */
+function naiveStrip(s: string): string {
+  return s.replace(/<[^>]+>/g, "");
+}
+
+test("ловушка: наивная чистка даёт совпадение, умная — нет", () => {
+  assert.equal(naiveStrip(REAL_FRAGMENT), "you request them. >", "наивная чистка маскирует дефект");
+  const plain = stripTmpTags(REAL_FRAGMENT);
+  assert.ok(plain.startsWith("< Like this"), "авторские кавычки остались текстом");
+  assert.ok(!plain.includes("<b>"), "настоящий тег <b> снят");
+  assert.ok(plain.includes("like you request them. >"));
+  assert.notEqual(plain, "you request them. >");
+});
+
+test("stripTmpTags: список тегов — данные, цвета и закрывающие снимаются", () => {
+  assert.equal(stripTmpTags("<color=#EB83FF><i>Hi</i></color>"), "Hi");
+  assert.equal(stripTmpTags("<B>Hi</B>"), "Hi", "регистр не важен");
+  assert.equal(stripTmpTags("<size=40>Hi</size>"), "Hi");
+  assert.equal(stripTmpTags("<sprite name=x>Hi"), "Hi", "самозакрывающийся");
+  assert.equal(stripTmpTags("<< not a tag >>"), "<< not a tag >>");
+  assert.equal(stripTmpTags("<colored>Hi</colored>"), "<colored>Hi</colored>", "имя с границей");
+  assert.ok(TMP_TAGS.includes("line-height"), "тег с дефисом живёт в списке");
+});
+
+test("classifyRich: обрывок — хвост полного текста, порог и mismatch", () => {
+  const check = classifyRich("you request them. >", REAL_FRAGMENT);
+  assert.equal(check.relation, "suffix");
+  assert.ok(check.plain.endsWith("you request them. >"));
+
+  assert.equal(isMeaningfulText(">"), false);
+  assert.equal(isMeaningfulText("short"), false, "10 символов, но одно слово");
+  assert.equal(isMeaningfulText("two words!"), true);
+  assert.equal(
+    classifyRich(">", "<< Declination processed. Proceeding relocation. >>").relation,
+    "noise",
+  );
+
+  const rich =
+    "Your new Neon-Trust Reserve account is now open! Your new pin number is as " +
+    "follows... <<color=yellow>7192</color>>";
+  assert.equal(
+    classifyRich(
+      "Your new Neon-Trust Reserve account is now open! Your new pin number is as follows... 7192>",
+      rich,
+    ).relation,
+    "mismatch",
+  );
+
+  for (const [id, okRich] of [
+    ["Hi", "<i>Hi</i>"],
+    ["Hi", "<color=#EB83FF><i>Hi</i></color>"],
+    ["Hi", "<B>Hi</B>"],
+    ["> Cum for me.", "<i> > Cum for me."],
+  ]) {
+    assert.equal(classifyRich(id, okRich).relation, "ok", okRich);
+  }
+});
+
+test("условия правил: noLetters / shortToken / fragment", () => {
+  assert.ok(hasLetters("!AL7"), "буквы A и L есть");
+  assert.ok(!hasLetters("«123»"));
+  assert.ok(skipConditionMatches("noLetters", { msgid: "«123»", rich: "" }));
+  assert.ok(skipConditionMatches("shortToken", { msgid: "?|b", rich: "" }));
+  // Примеры владельца оба С ПРОБЕЛОМ — shortToken их не ловит (см. отчёт).
+  assert.ok(!skipConditionMatches("shortToken", { msgid: "w? |b", rich: "" }));
+  assert.ok(!skipConditionMatches("shortToken", { msgid: "wK Ax", rich: "" }));
+  assert.ok(!skipConditionMatches("shortToken", { msgid: "abcdefghijklm", rich: "" }));
+  assert.ok(
+    skipConditionMatches("fragment", { msgid: "you request them. >", rich: REAL_FRAGMENT }),
+  );
+  assert.ok(!skipConditionMatches("fragment", { msgid: ">", rich: "<< x >>" }));
+});
+
+// ---------------------------------------------------------------------------
+// Skip-политика: данные, ошибки не молчат, записи не удаляются.
+// ---------------------------------------------------------------------------
+
+test("parseSkipPolicy: валидная политика и понятные ошибки", () => {
+  const policy = parseSkipPolicy(
+    '{"rules":[{"id":"no-letters","src":"raw:*","when":"noLetters"}]}',
+    "p.json",
+  );
+  assert.equal(policy.rules.length, 1);
+  assert.equal(policy.rules[0].enabled, true);
+
+  assert.throws(
+    () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:*","when":"nope"}]}', "p.json"),
+    /неизвестное условие "nope".*noLetters, shortToken, fragment/,
+  );
+  assert.throws(
+    () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:Fontt","when":"noLetters"}]}', "p.json"),
+    /неизвестная метка "raw:Fontt"/,
+  );
+  assert.throws(
+    () =>
+      parseSkipPolicy(
+        '{"rules":[{"id":"x","src":"*","when":"noLetters"},{"id":"x","src":"*","when":"fragment"}]}',
+        "p.json",
+      ),
+    /повторяется/,
+  );
+  assert.throws(() => parseSkipPolicy('{"rules":[],"rulez":[]}', "p.json"), /неизвестное поле/);
+  assert.throws(
+    () => parseSkipPolicy('{"rules":[{"id":"Bad Id","src":"*","when":"fragment"}]}', "p.json"),
+    /id/,
+  );
+  const disabled = parseSkipPolicy(
+    '{"rules":[{"id":"x","src":"*","when":"fragment","enabled":false}]}',
+    "p.json",
+  );
+  assert.equal(disabled.rules[0].enabled, false);
+});
+
+test("applySkipPolicy: помечает, не удаляет, журнал в порядке POT", () => {
+  const items = [
+    item({ text: "wK Ax", kind: "raw", src: "raw:MonoBehaviour" }),
+    item({ text: "?|b", kind: "raw", src: "raw:Transform" }),
+    item({ text: "Real UI line", kind: "set", src: "settings" }),
+    item({ text: "you request them. >", kind: "dlg", src: "dialog", richText: REAL_FRAGMENT }),
+  ];
+  const { catalog } = buildCatalog(items);
+  const policy: SkipPolicy = parseSkipPolicy(
+    JSON.stringify({
+      rules: [
+        { id: "short-token", src: "raw:*", when: "shortToken" },
+        { id: "fragment", src: "*", when: "fragment" },
+      ],
+    }),
+    "p.json",
+  );
+  const applied = applySkipPolicy(catalog, policy);
+  assert.equal(catalogSize(catalog), 4, "записи не удалены");
+  assert.equal(applied.marked, 2, "?|b (short-token) + обрывок (fragment)");
+  assert.deepEqual(applied.byRule, [
+    { rule: "short-token", count: 1 },
+    { rule: "fragment", count: 1 },
+  ]);
+  assert.deepEqual(
+    applied.journal.map((j) => [j.rule, j.msgid]),
+    [
+      ["short-token", "?|b"],
+      ["fragment", "you request them. >"],
+    ],
+    "порядок POT (msgid, msgctxt)",
+  );
+  assert.equal(catalog.get("?|b")?.get("ui")?.skip, "short-token");
+  assert.equal(catalog.get("wK Ax")?.get("ui")?.skip, undefined, "пробел = не короткий токен");
+
+  const pot = renderPot(catalog, "2026-01-02 03:04+0000");
+  assert.ok(pot.includes('#, skip\nmsgctxt "ui"\nmsgid "?|b"'), pot);
+  assert.ok(pot.includes("#. skip: fragment"), pot);
+  const jsonl = renderSkipJournalJsonl(applied.journal);
+  assert.equal(jsonl.trim().split("\n").length, 2);
+});
+
+test("runPotgen: skip-метки в POT, журнал и выключатель политики", async () => {
+  const dir = join(root, "skip");
+  mkdirSync(dir, { recursive: true });
+  const policyPath = join(dir, "skip.json");
+  writeFileSync(
+    policyPath,
+    JSON.stringify({ rules: [{ id: "short-token", src: "raw:*", when: "shortToken" }] }),
+    "utf8",
+  );
+  const out = join(dir, "with-skip.pot");
+  const journal = join(dir, "skip.jsonl");
+  const res = await runPotgen({
+    dumpDir: FIXTURE,
+    outPath: out,
+    created: "2026-01-02 03:04+0000",
+    policyPath: null,
+    skipPolicyPath: policyPath,
+    skipJournalPath: journal,
+  });
+  assert.ok(res.skip && res.skip.marked > 0, "мини-дамп содержит короткие raw-токены");
+  const pot = readFileSync(out, "utf8");
+  assert.ok(pot.includes("#, skip"), "метка стоит в POT");
+  const ids = [...pot.matchAll(/#\. skip: ([\w-]+)/g)].map((m) => m[1]);
+  assert.deepEqual([...new Set(ids)], ["short-token"]);
+  const rows = readFileSync(journal, "utf8")
+    .trim()
+    .split("\n")
+    .map((l) => JSON.parse(l));
+  assert.equal(rows.length, res.skip?.marked);
+  assert.ok(rows.every((r) => r.rule === "short-token"));
+  assert.equal(existsSync(`${journal}.part`), false);
+  // Отчёт печатается по правилам.
+  assert.ok(formatSkipReport(res.skip).some((l) => l.includes("short-token")));
+
+  // Выключено — POT без меток и без журнала.
+  const offOut = join(dir, "off.pot");
+  const off = await runPotgen({
+    dumpDir: FIXTURE,
+    outPath: offOut,
+    created: "2026-01-02 03:04+0000",
+    policyPath: null,
+    skipPolicyPath: null,
+  });
+  assert.equal(off.skip, null);
+  assert.equal(off.skipJournalPath, null);
+  assert.ok(!readFileSync(offOut, "utf8").includes("#, skip"));
+});
+
+test("skip-политика находится от корня репозитория", () => {
+  const found = discoverSkipPolicyPath(REPO);
+  assert.ok(found, "config/pot-skip-policy.json");
+  assert.ok(found?.endsWith("pot-skip-policy.json"));
+});

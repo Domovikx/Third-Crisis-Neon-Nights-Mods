@@ -21,6 +21,11 @@
  * в POT НЕ пишутся, а складываются в `tmp/pot-excluded.jsonl`
  * (`{src, msgid, msgctxt, reason}`) — ничего не теряется молча.
  *
+ * Skip-политика (`config/pot-skip-policy.json`, см. `docs/pot-skip.md`):
+ * записи, которым перевод не нужен, ОСТАЮТСЯ в POT, но получают `#, skip` и
+ * `#. skip: <id правила>`; журнал — `tmp/pot-skip.jsonl`. Условия и чистка
+ * TMP-тегов — в `pot_skip.mts` (одна реализация на инвариант и на политику).
+ *
  * Поведение CLI: без флага `--update` пишет только в `tmp/potgen/`
  * (безопасный прогон), с флагом — обновляет `po/template.pot`.
  */
@@ -37,6 +42,7 @@ import {
   type ItemKind,
 } from "./inventory.mts";
 import { newEntry, parsePo, renderPo, type PoEntry } from "./po_file.mts";
+import { SKIP_CONDITIONS, skipConditionMatches, type SkipCondition } from "./pot_skip.mts";
 
 /** Корень репозитория: .../extract-text/scripts → вверх 4 уровня. */
 export const REPO_ROOT = resolve(import.meta.dirname, "../../../..");
@@ -47,6 +53,10 @@ export const REPORT_POT_PATH = join(REPO_ROOT, "tmp", "potgen", "template.pot");
 export const POLICY_PATH = join(REPO_ROOT, "config", "pot-src-policy.json");
 /** Журнал исключённых записей: ничего не теряется молча. */
 export const EXCLUDED_PATH = join(REPO_ROOT, "tmp", "pot-excluded.jsonl");
+/** Политика «этой строке перевод не нужен» (данные, не код). */
+export const SKIP_POLICY_PATH = join(REPO_ROOT, "config", "pot-skip-policy.json");
+/** Журнал помеченных `#, skip` записей (симметрично `pot-excluded.jsonl`). */
+export const SKIP_JOURNAL_PATH = join(REPO_ROOT, "tmp", "pot-skip.jsonl");
 
 /** TMP-теги шрифта/материала: не входят в шаблон (выбор рендерера). */
 const FONT_TAG_RX = /<\/?(?:font|material)[^>]*>/gi;
@@ -399,10 +409,153 @@ export function renderExcludedJsonl(entries: readonly ExcludedEntry[]): string {
   );
 }
 
+// ---------------------------------------------------------------------------
+// Skip-политика («этой строке перевод не нужен»).
+//
+// Политика — ДАННЫЕ (`config/pot-skip-policy.json`): правило = `id` + метка
+// `src` (та же грамматика, что у политики отбора) + условие `when` из
+// `pot_skip.mts`. Неизвестное условие/метка — ошибка, а не тихий игнор.
+// Записи НЕ удаляются: POT получает `#, skip` и `#. skip: <id>`.
+// ---------------------------------------------------------------------------
+
+/** Правило skip-политики. */
+export interface SkipRule {
+  /** Идентификатор правила — он и попадает в POT (`#. skip: <id>`). */
+  id: string;
+  /** Шаблон метки `#. src:` (точная метка или префикс `*`). */
+  src: string;
+  /** Условие из `pot_skip.mts`. */
+  when: SkipCondition;
+  /** `false` — правило остаётся в политике для ревью, но не действует. */
+  enabled: boolean;
+}
+
+/** Разобранная skip-политика + путь, откуда прочитана. */
+export interface SkipPolicy {
+  path: string;
+  rules: SkipRule[];
+}
+
+/** Строка журнала `tmp/pot-skip.jsonl` — ровно одна помеченная запись. */
+export interface SkipJournalEntry {
+  rule: string;
+  src: string;
+  msgid: string;
+  msgctxt: string;
+}
+
+/** Итог skip-политики для отчёта прогона. */
+export interface SkipReport {
+  path: string;
+  marked: number;
+  /** Сколько помечено каждым правилом (порядок политики). */
+  byRule: Array<{ rule: string; count: number }>;
+}
+
+const RULE_ID_RX = /^[a-z0-9][a-z0-9-]*$/;
+
+/** Разобрать skip-политику (JSON-текст) с понятными ошибками. */
+export function parseSkipPolicy(text: string, source = "<skip-policy>"): SkipPolicy {
+  let value: unknown;
+  try {
+    value = JSON.parse(text);
+  } catch (err) {
+    throw new Error(`невалидный JSON skip-политики ${source}: ${(err as Error).message}`);
+  }
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    throw new Error(`skip-политика ${source}: ожидался объект {"rules": [...]}`);
+  }
+  const obj = value as Record<string, unknown>;
+  for (const key of Object.keys(obj)) {
+    if (key !== "rules" && !key.startsWith("_")) {
+      throw new Error(
+        `skip-политика ${source}: неизвестное поле "${key}" (допустимы rules и _комментарии)`,
+      );
+    }
+  }
+  if (!Array.isArray(obj.rules)) {
+    throw new Error(`skip-политика ${source}: поле "rules" должно быть массивом правил`);
+  }
+
+  const rules: SkipRule[] = [];
+  const seen = new Set<string>();
+  obj.rules.forEach((raw, index) => {
+    if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
+      throw new Error(`skip-политика ${source}: правило #${index + 1} — не объект`);
+    }
+    const rule = raw as Record<string, unknown>;
+    for (const key of Object.keys(rule)) {
+      if (key !== "id" && key !== "src" && key !== "when" && key !== "enabled") {
+        throw new Error(
+          `skip-политика ${source}: правило #${index + 1} — неизвестное поле "${key}"`,
+        );
+      }
+    }
+    const id = rule.id;
+    if (typeof id !== "string" || !RULE_ID_RX.test(id)) {
+      throw new Error(
+        `skip-политика ${source}: правило #${index + 1} — id обязателен ("${String(id)}", ожидается [a-z0-9-])`,
+      );
+    }
+    if (seen.has(id)) {
+      throw new Error(`skip-политика ${source}: id правила повторяется: "${id}"`);
+    }
+    seen.add(id);
+    const src = rule.src;
+    if (typeof src !== "string") {
+      throw new Error(`skip-политика ${source}: правило "${id}" — src обязателен`);
+    }
+    const srcError = validatePolicyPattern(src);
+    if (srcError) throw new Error(`skip-политика ${source}: правило "${id}" — ${srcError}`);
+    const when = rule.when;
+    if (typeof when !== "string" || !SKIP_CONDITIONS.includes(when as SkipCondition)) {
+      throw new Error(
+        `skip-политика ${source}: правило "${id}" — неизвестное условие "${String(when)}" ` +
+          `(допустимо: ${SKIP_CONDITIONS.join(", ")})`,
+      );
+    }
+    if (rule.enabled !== undefined && typeof rule.enabled !== "boolean") {
+      throw new Error(`skip-политика ${source}: правило "${id}" — enabled должен быть boolean`);
+    }
+    rules.push({ id, src, when: when as SkipCondition, enabled: rule.enabled !== false });
+  });
+
+  return { path: source, rules };
+}
+
+/** Прочитать skip-политику с диска; `required` — отсутствие файла это ошибка. */
+export function loadSkipPolicy(path: string, opts: { required?: boolean } = {}): SkipPolicy | null {
+  let text: string;
+  try {
+    text = readFileSync(path, "utf8");
+  } catch (err) {
+    if (!opts.required && (err as NodeJS.ErrnoException).code === "ENOENT") return null;
+    throw new Error(`skip-политика не читается ${path}: ${(err as Error).message}`);
+  }
+  return parseSkipPolicy(text, path);
+}
+
+/** Найти `config/pot-skip-policy.json` в `start` или выше (как политика отбора). */
+export function discoverSkipPolicyPath(start: string = REPO_ROOT): string | null {
+  let dir = resolve(start);
+  for (;;) {
+    const candidate = join(dir, "config", "pot-skip-policy.json");
+    if (existsSync(candidate)) return candidate;
+    const parent = dirname(dir);
+    if (parent === dir) return null;
+    dir = parent;
+  }
+}
+
 export interface PotSlot {
   /** Провенанс записи: `dialog`/`bundle`/`field:*`/`settings`/`us`/`raw:*`/`global`. */
   src: string;
   comments: string[];
+  /**
+   * Id правила skip-политики, если перевод не нужен: в POT даёт `#, skip` и
+   * `#. skip: <id>`. Запись при этом остаётся в POT (прозрачность).
+   */
+  skip?: string;
 }
 
 /** Каталог: msgid → msgctxt → слот. */
@@ -533,6 +686,58 @@ export function catalogSize(catalog: Catalog): number {
   return n;
 }
 
+/**
+ * Применить skip-политику к каталогу: пометить записи, собрать журнал.
+ *
+ * Побеждает ПЕРВОЕ подходящее правило в порядке политики (порядок — данные,
+ * поэтому результат детерминирован). Записи не удаляются и не меняются —
+ * только получают метку правила.
+ */
+export function applySkipPolicy(
+  catalog: Catalog,
+  policy: SkipPolicy,
+): { marked: number; journal: SkipJournalEntry[]; byRule: SkipReport["byRule"] } {
+  const keys: Array<[string, string]> = [];
+  for (const [text, byCtxt] of catalog) {
+    for (const ctxt of byCtxt.keys()) keys.push([text, ctxt]);
+  }
+  keys.sort((a, b) => compareCodePoints(a[0], b[0]) || compareCodePoints(a[1], b[1]));
+
+  const active = policy.rules.filter((r) => r.enabled);
+  const counts = new Map<string, number>(active.map((r) => [r.id, 0]));
+  const journal: SkipJournalEntry[] = [];
+
+  for (const [text, ctxt] of keys) {
+    const slot = (catalog.get(text) as Map<string, PotSlot>).get(ctxt) as PotSlot;
+    const rich =
+      slot.comments.find((c) => c.startsWith("rich_text: "))?.slice("rich_text: ".length) ?? "";
+    const rule = active.find(
+      (r) =>
+        srcMatchesPattern(r.src, slot.src) && skipConditionMatches(r.when, { msgid: text, rich }),
+    );
+    if (!rule) continue;
+    slot.skip = rule.id;
+    counts.set(rule.id, (counts.get(rule.id) ?? 0) + 1);
+    journal.push({ rule: rule.id, src: slot.src, msgid: text, msgctxt: ctxt });
+  }
+
+  return {
+    marked: journal.length,
+    journal,
+    byRule: active.map((r) => ({ rule: r.id, count: counts.get(r.id) ?? 0 })),
+  };
+}
+
+/** Журнал skip как JSONL (по строке на запись, порядок POT). */
+export function renderSkipJournalJsonl(entries: readonly SkipJournalEntry[]): string {
+  if (entries.length === 0) return "";
+  return (
+    entries
+      .map((e) => JSON.stringify({ rule: e.rule, src: e.src, msgid: e.msgid, msgctxt: e.msgctxt }))
+      .join("\n") + "\n"
+  );
+}
+
 /** Отрендерить каталог в POT (сортировка по msgid, затем msgctxt). */
 export function renderPot(
   catalog: Catalog,
@@ -555,8 +760,13 @@ export function renderPot(
     // Провенанс — первым комментарием (рядом с rich_text): по нему строится
     // политика отбора, см. docs/pot-provenance.md. `includeSrc: false` нужен
     // только для сверки POT, сгенерированного ДО провенанса.
-    e.comments =
-      includeSrc && slot.src ? [`src: ${slot.src}`, ...slot.comments] : [...slot.comments];
+    // `skip: <id>` идёт сразу за src: причина «не переводить» видна до текста.
+    e.comments = [
+      ...(includeSrc && slot.src ? [`src: ${slot.src}`] : []),
+      ...(slot.skip ? [`skip: ${slot.skip}`] : []),
+      ...slot.comments,
+    ];
+    if (slot.skip) e.flags = ["skip"];
     return e;
   });
 
@@ -588,10 +798,31 @@ export function writeAtomic(path: string, text: string): void {
   const part = `${path}.part`;
   try {
     writeFileSync(part, text, "utf8");
-    renameSync(part, path);
+    renameWithRetry(part, path);
   } catch (err) {
     rmSync(part, { force: true });
     throw err;
+  }
+}
+
+/**
+ * `rename` с повтором на Windows: сканер/индексатор на миг держит файл, и
+ * `renameSync` отдаёт EPERM/EBUSY (проверено 2026-11-23: параллельные прогоны
+ * `npm test` пишут общий `tmp/pot-excluded.jsonl`). Данные не меняются —
+ * только ожидание 50 мс, максимум ~1 с.
+ */
+function renameWithRetry(from: string, to: string, attempts = 20): void {
+  for (let attempt = 0; ; attempt += 1) {
+    try {
+      renameSync(from, to);
+      return;
+    } catch (err) {
+      const code = (err as NodeJS.ErrnoException).code;
+      if (attempt >= attempts || (code !== "EPERM" && code !== "EBUSY" && code !== "EACCES")) {
+        throw err;
+      }
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 50);
+    }
   }
 }
 
@@ -607,11 +838,22 @@ export function writeExcludedAtomic(path: string, text: string): void {
   const part = `${path}.${process.pid}.part`;
   try {
     writeFileSync(part, text, "utf8");
-    renameSync(part, path);
+    renameWithRetry(part, path);
   } catch (err) {
     rmSync(part, { force: true });
     throw err;
   }
+}
+
+/**
+ * Запись журнала skip (`tmp/pot-skip.jsonl`).
+ *
+ * Тот же приём, что у журнала исключённых: уникальный `.part` с PID, потому
+ * что журналы пишут параллельные прогоны (тесты), а полный файл,
+ * переименованный поверх, всегда валиден (побеждает последний писатель).
+ */
+export function writeSkipJournalAtomic(path: string, entries: readonly SkipJournalEntry[]): void {
+  writeExcludedAtomic(path, renderSkipJournalJsonl(entries));
 }
 
 export interface PotgenOptions {
@@ -627,6 +869,13 @@ export interface PotgenOptions {
   policyPath?: string | null;
   /** Куда писать журнал исключённых (по умолчанию `tmp/pot-excluded.jsonl`). */
   excludedPath?: string;
+  /**
+   * Skip-политика: `undefined` — найти `config/pot-skip-policy.json`;
+   * `null` — выключить (POT без `#, skip`); строка — явный путь (обязан быть).
+   */
+  skipPolicyPath?: string | null;
+  /** Куда писать журнал skip (по умолчанию `tmp/pot-skip.jsonl`). */
+  skipJournalPath?: string;
 }
 
 export interface PotgenResult {
@@ -640,6 +889,10 @@ export interface PotgenResult {
   policy: PolicyReport | null;
   /** Путь журнала исключённых (`null`, если политика не применялась). */
   excludedPath: string | null;
+  /** `null` — skip-политика не применялась. */
+  skip: SkipReport | null;
+  /** Путь журнала skip (`null`, если skip-политика не применялась). */
+  skipJournalPath: string | null;
 }
 
 /**
@@ -675,6 +928,15 @@ export async function runPotgen(options: PotgenOptions = {}): Promise<PotgenResu
     throw new Error(`empty catalog after policy: политика исключила все записи (${policy?.path})`);
   }
 
+  // Skip-политика («перевод не нужен») — тоже данные. Применяется ПОСЛЕ
+  // отбора: помечаются только записи, реально попавшие в POT.
+  let skipPolicy: SkipPolicy | null = null;
+  if (options.skipPolicyPath !== null) {
+    const skipPath = options.skipPolicyPath ?? discoverSkipPolicyPath();
+    if (skipPath) skipPolicy = loadSkipPolicy(skipPath, { required: true });
+  }
+  const skipApplied = skipPolicy ? applySkipPolicy(finalCatalog, skipPolicy) : null;
+
   const outPath = options.outPath ?? (options.update ? POT_PATH : REPORT_POT_PATH);
   const text = renderPot(finalCatalog, options.created);
   writeAtomic(outPath, text);
@@ -692,6 +954,18 @@ export async function runPotgen(options: PotgenOptions = {}): Promise<PotgenResu
     };
   }
 
+  let skipReport: SkipReport | null = null;
+  let skipJournalPath: string | null = null;
+  if (skipApplied && skipPolicy) {
+    skipJournalPath = options.skipJournalPath ?? SKIP_JOURNAL_PATH;
+    writeSkipJournalAtomic(skipJournalPath, skipApplied.journal);
+    skipReport = {
+      path: skipPolicy.path,
+      marked: skipApplied.marked,
+      byRule: skipApplied.byRule,
+    };
+  }
+
   return {
     outPath,
     entries: catalogSize(finalCatalog),
@@ -700,21 +974,27 @@ export async function runPotgen(options: PotgenOptions = {}): Promise<PotgenResu
     dumpDir,
     policy: policyReport,
     excludedPath,
+    skip: skipReport,
+    skipJournalPath,
   };
 }
 
 const USAGE = `Usage: node potgen.mts [--update] [--dump <dir>] [--out <path>]
                        [--policy <path> | --no-policy] [--excluded <path>]
+                       [--skip-policy <path> | --no-skip-policy] [--skip-journal <path>]
                        [--created <date>]
 
-  --update        записать po/template.pot (без флага — только tmp/potgen/)
-  --dump <dir>    каталог JSONL-дампа (по умолчанию tmp/dump)
-  --out <path>    явный путь результата (перебивает --update)
-  --policy <path> политика отбора (по умолчанию config/pot-src-policy.json)
-  --no-policy     выключить политику (POT как до неё)
-  --excluded <p>  журнал исключённых (по умолчанию tmp/pot-excluded.jsonl)
-  --created <d>   фиксированная дата заголовка (тесты/паритет)
-  -h, --help      эта справка`;
+  --update          записать po/template.pot (без флага — только tmp/potgen/)
+  --dump <dir>      каталог JSONL-дампа (по умолчанию tmp/dump)
+  --out <path>      явный путь результата (перебивает --update)
+  --policy <path>   политика отбора (по умолчанию config/pot-src-policy.json)
+  --no-policy       выключить политику (POT как до неё)
+  --excluded <p>    журнал исключённых (по умолчанию tmp/pot-excluded.jsonl)
+  --skip-policy <p> политика «перевод не нужен» (config/pot-skip-policy.json)
+  --no-skip-policy  не ставить '#, skip' (POT без меток)
+  --skip-journal <p> журнал помеченных записей (по умолчанию tmp/pot-skip.jsonl)
+  --created <d>     фиксированная дата заголовка (тесты/паритет)
+  -h, --help        эта справка`;
 
 interface Cli {
   update: boolean;
@@ -722,6 +1002,8 @@ interface Cli {
   outPath?: string;
   policyPath?: string | null;
   excludedPath?: string;
+  skipPolicyPath?: string | null;
+  skipJournalPath?: string;
   created?: string;
   help: boolean;
 }
@@ -732,12 +1014,15 @@ function parseArgs(argv: string[]): Cli {
     const arg = argv[i];
     if (arg === "--update") cli.update = true;
     else if (arg === "--no-policy") cli.policyPath = null;
+    else if (arg === "--no-skip-policy") cli.skipPolicyPath = null;
     else if (arg === "--help" || arg === "-h") cli.help = true;
     else if (
       arg === "--dump" ||
       arg === "--out" ||
       arg === "--policy" ||
       arg === "--excluded" ||
+      arg === "--skip-policy" ||
+      arg === "--skip-journal" ||
       arg === "--created"
     ) {
       const value = argv[i + 1];
@@ -747,11 +1032,17 @@ function parseArgs(argv: string[]): Cli {
       else if (arg === "--out") cli.outPath = value;
       else if (arg === "--policy") cli.policyPath = value;
       else if (arg === "--excluded") cli.excludedPath = value;
+      else if (arg === "--skip-policy") cli.skipPolicyPath = value;
+      else if (arg === "--skip-journal") cli.skipJournalPath = value;
       else cli.created = value;
     } else if (arg.startsWith("--dump=")) cli.dumpDir = arg.slice("--dump=".length);
     else if (arg.startsWith("--out=")) cli.outPath = arg.slice("--out=".length);
     else if (arg.startsWith("--policy=")) cli.policyPath = arg.slice("--policy=".length);
     else if (arg.startsWith("--excluded=")) cli.excludedPath = arg.slice("--excluded=".length);
+    else if (arg.startsWith("--skip-policy="))
+      cli.skipPolicyPath = arg.slice("--skip-policy=".length);
+    else if (arg.startsWith("--skip-journal="))
+      cli.skipJournalPath = arg.slice("--skip-journal=".length);
     else if (arg.startsWith("--created=")) cli.created = arg.slice("--created=".length);
     else throw new Error(`неизвестный аргумент: ${arg}`);
   }
@@ -769,6 +1060,20 @@ export function formatPolicyReport(report: PolicyReport | null, disabled = false
   }
   const lines = [`  policy: ${report.path} — excluded ${report.excluded}, kept ${report.kept}`];
   for (const { src, count } of report.bySrc) lines.push(`    ${src}: ${count}`);
+  return lines;
+}
+
+/** Человеческий отчёт о skip-политике (строки для stderr). */
+export function formatSkipReport(report: SkipReport | null, disabled = false): string[] {
+  if (!report) {
+    return [
+      disabled
+        ? "  skip-policy: выключена (--no-skip-policy)"
+        : "  skip-policy: не найдена (config/pot-skip-policy.json) — POT без меток",
+    ];
+  }
+  const lines = [`  skip-policy: ${report.path} — marked ${report.marked}`];
+  for (const { rule, count } of report.byRule) lines.push(`    ${rule}: ${count}`);
   return lines;
 }
 
@@ -801,6 +1106,12 @@ export async function main(argv: string[]): Promise<number> {
     }
     if (res.excludedPath) {
       console.error(`  excluded log: ${res.excludedPath} (${res.policy?.excluded ?? 0} rows)`);
+    }
+    for (const line of formatSkipReport(res.skip, cli.skipPolicyPath === null)) {
+      console.error(line);
+    }
+    if (res.skipJournalPath) {
+      console.error(`  skip journal: ${res.skipJournalPath} (${res.skip?.marked ?? 0} rows)`);
     }
     return 0;
   } catch (err) {

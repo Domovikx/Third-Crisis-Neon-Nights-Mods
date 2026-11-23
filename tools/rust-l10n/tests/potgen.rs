@@ -294,7 +294,8 @@ fn политика_находится_от_корня_репозитория() 
             "raw:Mesh".to_string(),
             "raw:MonoScript".to_string(),
             "raw:Texture2D".to_string(),
-            "raw:Sprite".to_string()
+            "raw:Sprite".to_string(),
+            "raw:TextAsset".to_string()
         ]
     );
 }
@@ -348,4 +349,125 @@ fn known_raw_classes_совпадают_с_дампером_и_ts() {
     c.sort_unstable();
     d.sort_unstable();
     assert_eq!(c, d, "TS- и Rust-списки классов разошлись");
+}
+
+// ---------------------------------------------------------------------------
+// Skip-политика («перевод не нужен»): метки в POT, журнал, ошибки данных.
+// ---------------------------------------------------------------------------
+
+#[test]
+fn skip_политика_разбирается_и_ошибки_не_молчат() {
+    use rust_l10n::potgen::{parse_skip_policy, SkipPolicy};
+    let policy: SkipPolicy = parse_skip_policy(
+        r#"{"rules":[{"id":"no-letters","src":"raw:*","when":"noLetters"}]}"#,
+        "p.json",
+    )
+    .expect("валидная политика");
+    assert_eq!(policy.rules.len(), 1);
+    assert_eq!(policy.rules[0].id, "no-letters");
+    assert!(policy.rules[0].enabled);
+
+    let bad_when = parse_skip_policy(
+        r#"{"rules":[{"id":"x","src":"raw:*","when":"nope"}]}"#,
+        "p.json",
+    )
+    .expect_err("неизвестное условие");
+    assert!(
+        bad_when.contains("неизвестное условие \"nope\""),
+        "{bad_when}"
+    );
+
+    let bad_src = parse_skip_policy(
+        r#"{"rules":[{"id":"x","src":"raw:Fontt","when":"noLetters"}]}"#,
+        "p.json",
+    )
+    .expect_err("опечатка метки");
+    assert!(
+        bad_src.contains("неизвестная метка \"raw:Fontt\""),
+        "{bad_src}"
+    );
+
+    let dup = parse_skip_policy(
+        r#"{"rules":[{"id":"x","src":"*","when":"noLetters"},{"id":"x","src":"*","when":"fragment"}]}"#,
+        "p.json",
+    )
+    .expect_err("дубль id");
+    assert!(dup.contains("повторяется"), "{dup}");
+
+    let bad_key = parse_skip_policy(r#"{"rules":[],"rulez":[]}"#, "p.json").expect_err("поле");
+    assert!(bad_key.contains("неизвестное поле \"rulez\""), "{bad_key}");
+
+    let disabled = parse_skip_policy(
+        r#"{"rules":[{"id":"x","src":"*","when":"fragment","enabled":false}]}"#,
+        "p",
+    )
+    .expect("enabled=false");
+    assert!(!disabled.rules[0].enabled);
+}
+
+fn tiny_skip_policy(text: &str) -> rust_l10n::potgen::SkipPolicy {
+    rust_l10n::potgen::parse_skip_policy(text, "p.json").expect("политика")
+}
+
+#[test]
+fn skip_политика_помечает_записи_и_пишет_журнал_в_порядке_pot() {
+    use rust_l10n::potgen::{
+        apply_skip_policy, catalog_size, render_pot, render_skip_journal_jsonl,
+    };
+
+    let mut catalog = tiny_catalog();
+    // Политика только по коротким токенам raw — как боевые настройки.
+    let policy =
+        tiny_skip_policy(r#"{"rules":[{"id":"short-token","src":"raw:*","when":"shortToken"}]}"#);
+    let (marked, journal, by_rule) = apply_skip_policy(&mut catalog, &policy);
+    assert_eq!(catalog_size(&catalog), 10, "записи не удаляются");
+    assert!(marked > 0, "мини-дамп содержит короткие raw-токены");
+    assert_eq!(by_rule, vec![("short-token".to_string(), marked)]);
+    assert_eq!(journal.len(), marked);
+    // Журнал — по порядку POT (msgid, msgctxt).
+    let mut sorted = journal.clone();
+    sorted.sort_by(|a, b| {
+        a.msgid
+            .cmp(&b.msgid)
+            .then_with(|| a.msgctxt.cmp(&b.msgctxt))
+    });
+    assert_eq!(journal, sorted);
+
+    let pot = render_pot(&catalog, "2026-01-02 03:04+0000");
+    assert!(pot.contains("#, skip\n"), "{pot}");
+    assert!(pot.contains("#. skip: short-token\n"), "{pot}");
+    // Помеченная запись осталась в POT.
+    for entry in &journal {
+        assert!(
+            pot.contains(&format!("msgid \"{}\"", entry.msgid)),
+            "{}",
+            entry.msgid
+        );
+    }
+
+    let jsonl = render_skip_journal_jsonl(&journal).expect("журнал");
+    assert!(jsonl.ends_with('\n'));
+    assert_eq!(jsonl.lines().count(), marked);
+}
+
+#[test]
+fn skip_выключенная_политика_не_меняет_pot() {
+    let dir = out_dir("skip-off");
+    let mut options = PotgenOptions::new(&dir);
+    options.dump_dir = tiny_dump();
+    options.out_path = Some(dir.join("template.pot"));
+    options.created = Some("2026-01-02 03:04+0000".to_string());
+    options.policy = PolicySource::Disabled;
+    options.skip_policy = PolicySource::Disabled;
+    let res = run(&options).expect("potgen");
+    assert!(res.skip.is_none());
+    assert!(res.skip_journal_path.is_none());
+    let pot = std::fs::read_to_string(&res.out_path).expect("POT");
+    assert!(!pot.contains("#, skip"), "{pot}");
+    assert_eq!(
+        pot,
+        std::fs::read_to_string(golden()).expect("golden"),
+        "без skip-политики POT = золотой"
+    );
+    let _ = std::fs::remove_dir_all(&dir);
 }

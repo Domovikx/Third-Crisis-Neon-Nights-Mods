@@ -22,7 +22,11 @@ import {
   type Violation,
 } from "./pot_invariants.mts";
 import { newEntry, renderPo } from "../.opencode/skills/extract-text/scripts/po_file.mts";
-import { potHeaderLines, runPotgen } from "../.opencode/skills/extract-text/scripts/potgen.mts";
+import {
+  potHeaderLines,
+  parseSkipPolicy,
+  runPotgen,
+} from "../.opencode/skills/extract-text/scripts/potgen.mts";
 
 const REPO = resolve(import.meta.dirname, "..");
 const CREATED = "2026-01-02 03:04+0000";
@@ -41,6 +45,10 @@ interface PotSeed {
   rich?: string;
   /** `null` — записи без провенанса (негатив инварианта 14). */
   src?: string | null;
+  /** Id правила skip-политики: пишет `#, skip` + `#. skip: <id>`. */
+  skip?: string;
+  /** Голые флаги (негатив: контракт разрешает только `skip`). */
+  flags?: string[];
 }
 
 /** Канонический POT из перечня записей (порядок как дан). */
@@ -51,7 +59,10 @@ function pot(entries: PotSeed[], header: string[] = potHeaderLines(CREATED)): st
     e.msgctxt = seed.ctx ?? "ui";
     e.msgstr = seed.str ?? "";
     if (seed.src !== null) e.comments.push(`src: ${seed.src ?? "dialog"}`);
+    if (seed.skip !== undefined) e.comments.push(`skip: ${seed.skip}`);
     if (seed.rich !== undefined) e.comments.push(`rich_text: ${seed.rich}`);
+    if (seed.skip !== undefined) e.flags.push("skip");
+    if (seed.flags) e.flags = [...seed.flags];
     return e;
   });
   return renderPo(poEntries, header);
@@ -148,10 +159,10 @@ async function generate(
 
 // ---------------------------------------------------------------------------
 
-test("набор инвариантов: 1–14 объявлены", () => {
+test("набор инвариантов: 1–15 объявлены", () => {
   assert.deepEqual(
     Object.keys(INVARIANTS).map(Number),
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
   );
 });
 
@@ -519,10 +530,10 @@ test("вспомогательное: дата и сводка", () => {
 test("реальный POT в репозитории: структурные инварианты без дампа (если файл есть)", async () => {
   const path = join(REPO, "po", "template.pot");
   if (!existsSync(path)) return;
-  // po/template.pot сгенерирован ДО провенанса: метки `#. src:` появятся при
-  // перегенерации (шаг политики отбора). Структуру и остальной контракт —
-  // проверяем; новый POT без src контракт не пропустит (инвариант 14).
-  const violations = await checkPot(path, { requireSrc: false });
+  // po/template.pot сгенерирован ДО провенанса и ДО skip-политики: метки
+  // `#. src:` и `#, skip` появятся при перегенерации (шаги политик). Структуру
+  // и остальной контракт — проверяем; новый POT без src контракт не пропустит.
+  const violations = await checkPot(path, { requireSrc: false, skipPolicy: null });
   const errors = violations.filter((v) => v.severity === "error");
 
   // Известные дефекты данных (найдены 2026-11-22, чистка — отдельная задача).
@@ -552,4 +563,110 @@ test("вложенность rich_text: перекрещенные теги ло
   assert.match(crossed[0], /без открывающего|перекрещ/);
   const unbalanced = richNestingProblems("<i>a <color=#fff>b");
   assert.ok(unbalanced.some((p) => /незакрытые/.test(p)));
+});
+
+// ---------------------------------------------------------------------------
+// Инвариант 7 (rich-fragment) и 15 (skip-теги).
+// ---------------------------------------------------------------------------
+
+const REAL_FRAGMENT =
+  "<i>< Like this, hmmm...? I love these nice big tits. Especially when adorable " +
+  "customers like <b>you</b> request them. >";
+
+const SKIP_POLICY = parseSkipPolicy(
+  JSON.stringify({
+    rules: [
+      { id: "no-letters", src: "raw:*", when: "noLetters" },
+      { id: "short-token", src: "raw:*", when: "shortToken" },
+      { id: "fragment", src: "*", when: "fragment" },
+    ],
+  }),
+  "<test>",
+);
+
+test("rich-fragment: обрывок-хвост ловится, шум по порогу — нет", async () => {
+  const text = pot([
+    { id: "you request them. >", rich: REAL_FRAGMENT },
+    { id: ">", rich: "<< Declination processed. Proceeding relocation. >>" },
+    { id: "Fine line", rich: "<i>Fine line</i>" },
+  ]);
+  const violations = await checkPotText(text, { skipPolicy: SKIP_POLICY });
+  const frags = violations.filter((v) => v.code === "rich-fragment");
+  assert.equal(frags.length, 1, JSON.stringify(violations, null, 2));
+  assert.equal(frags[0].severity, "warn", "дефект данных игры, не контракта");
+  assert.match(frags[0].detail, /^suffix:/);
+  assert.ok(frags[0].detail.includes("you request them. >"));
+});
+
+test("rich-fragment: расхождение на символ — подкласс mismatch", async () => {
+  const id =
+    "Your new Neon-Trust Reserve account is now open! Your new pin number is as follows... 7192>";
+  const rich =
+    "Your new Neon-Trust Reserve account is now open! Your new pin number is as " +
+    "follows... <<color=yellow>7192</color>>";
+  const violations = await checkPotText(pot([{ id, rich }]), { skipPolicy: SKIP_POLICY });
+  const frags = violations.filter((v) => v.code === "rich-fragment");
+  assert.equal(frags.length, 1);
+  assert.match(frags[0].detail, /^mismatch:/);
+});
+
+test("skip-теги: пара флаг+причина принимается, записи остаются в POT", async () => {
+  const text = pot([
+    { id: "?|b", src: "raw:Transform", skip: "short-token" },
+    { id: "you request them. >", skip: "fragment", rich: REAL_FRAGMENT },
+    { id: "Normal line" },
+  ]);
+  const violations = await checkPotText(text, { skipPolicy: SKIP_POLICY });
+  assert.deepEqual(
+    violations.filter((v) => v.invariant === 15),
+    [],
+    JSON.stringify(violations, null, 2),
+  );
+  assert.equal(summarizePot(text).skip, 2, "записи не удалены, только помечены");
+});
+
+test("skip-теги: неизвестное правило — ошибка, не тихий игнор", async () => {
+  const text = pot([{ id: "?|b", src: "raw:Transform", skip: "made-up" }]);
+  const violations = await checkPotText(text, { skipPolicy: SKIP_POLICY });
+  expectCaught(violations, 15, "skip-unknown-rule");
+  assert.match(
+    violations.find((v) => v.code === "skip-unknown-rule")?.detail ?? "",
+    /no-letters, short-token, fragment/,
+  );
+});
+
+test("skip-теги: флаг без причины, причина без флага, мусорная причина", async () => {
+  const noRule = pot([{ id: "x1", src: "raw:Transform", flags: ["skip"] }]);
+  expectCaught(await checkPotText(noRule, { skipPolicy: SKIP_POLICY }), 15, "skip-no-rule");
+
+  const noFlag = pot([{ id: "x2", src: "raw:Transform" }]).replace(
+    'msgid "x2"',
+    '#. skip: short-token\nmsgid "x2"',
+  );
+  expectCaught(await checkPotText(noFlag, { skipPolicy: SKIP_POLICY }), 15, "skip-no-flag");
+
+  const badSyntax = pot([{ id: "x3", src: "raw:Transform", flags: ["skip"] }]).replace(
+    "#. src: raw:Transform",
+    "#. src: raw:Transform\n#. skip short-token",
+  );
+  expectCaught(await checkPotText(badSyntax, { skipPolicy: SKIP_POLICY }), 15, "skip-syntax");
+});
+
+test("skip-теги: метка без политики — ошибка", async () => {
+  const text = pot([{ id: "?|b", src: "raw:Transform", skip: "short-token" }]);
+  expectCaught(await checkPotText(text, { skipPolicy: null }), 15, "skip-without-policy");
+});
+
+test("skip-теги: протухшее правило — warn, а не тишина", async () => {
+  // Правило short-token требует raw:*, а метка записи — dialog.
+  const text = pot([{ id: "line here", src: "dialog", skip: "short-token" }]);
+  const violations = await checkPotText(text, { skipPolicy: SKIP_POLICY });
+  const stale = violations.find((v) => v.code === "skip-stale");
+  assert.ok(stale, JSON.stringify(violations, null, 2));
+  assert.equal(stale?.severity, "warn");
+});
+
+test("контракт: флаг не-skip по-прежнему ошибка", async () => {
+  const text = pot([{ id: "line", flags: ["fuzzy"] }]);
+  expectCaught(await checkPotText(text, { skipPolicy: SKIP_POLICY }), 8, "flags");
 });

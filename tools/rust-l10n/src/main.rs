@@ -28,7 +28,9 @@ rust-l10n — текстовый пайплайн локализации (POT/PO
 
 Использование:
   rust-l10n potgen [--update] [--dump <dir>] [--out <path>] [--created <date>]
-                   [--policy <path> | --no-policy] [--excluded <path>] [--root <dir>]
+                   [--policy <path> | --no-policy] [--excluded <path>]
+                   [--skip-policy <path> | --no-skip-policy] [--skip-journal <path>]
+                   [--root <dir>]
       --update        записать <root>/po/template.pot (без флага — только tmp/potgen/)
       --dump <dir>    каталог JSONL-дампа (по умолчанию <root>/tmp/dump)
       --out <path>    явный путь результата (перебивает --update)
@@ -36,6 +38,9 @@ rust-l10n — текстовый пайплайн локализации (POT/PO
       --policy <p>    политика отбора (по умолчанию config/pot-src-policy.json)
       --no-policy     выключить политику (POT как до неё)
       --excluded <p>  журнал исключённых (по умолчанию <корень политики>/tmp/pot-excluded.jsonl)
+      --skip-policy <p>  политика «перевод не нужен» (config/pot-skip-policy.json)
+      --no-skip-policy   не ставить '#, skip'
+      --skip-journal <p> журнал помеченных (по умолчанию tmp/pot-skip.jsonl)
       --root <dir>    корень репозитория (по умолчанию текущий каталог)
 
   rust-l10n po2dat [lang] [--root <dir>] [--out <path>]
@@ -114,6 +119,7 @@ fn potgen_cli(argv: &[String]) -> u8 {
     let mut dump: Option<PathBuf> = None;
     let mut out: Option<PathBuf> = None;
     let mut excluded: Option<PathBuf> = None;
+    let mut skip_journal: Option<PathBuf> = None;
 
     let mut i = 0usize;
     while i < argv.len() {
@@ -131,7 +137,12 @@ fn potgen_cli(argv: &[String]) -> u8 {
                 options.policy = potgen::PolicySource::Disabled;
                 Ok(())
             }
-            "--dump" | "--out" | "--created" | "--root" | "--policy" | "--excluded" => {
+            "--no-skip-policy" => {
+                options.skip_policy = potgen::PolicySource::Disabled;
+                Ok(())
+            }
+            "--dump" | "--out" | "--created" | "--root" | "--policy" | "--excluded"
+            | "--skip-policy" | "--skip-journal" => {
                 let value = flag_value(argv, &mut i, arg);
                 value.map(|value| match arg {
                     "--dump" => dump = Some(PathBuf::from(value)),
@@ -139,6 +150,10 @@ fn potgen_cli(argv: &[String]) -> u8 {
                     "--created" => options.created = Some(value),
                     "--policy" => options.policy = potgen::PolicySource::Path(PathBuf::from(value)),
                     "--excluded" => excluded = Some(PathBuf::from(value)),
+                    "--skip-policy" => {
+                        options.skip_policy = potgen::PolicySource::Path(PathBuf::from(value))
+                    }
+                    "--skip-journal" => skip_journal = Some(PathBuf::from(value)),
                     _ => options.root = PathBuf::from(value),
                 })
             }
@@ -147,7 +162,9 @@ fn potgen_cli(argv: &[String]) -> u8 {
                 || arg.starts_with("--created=")
                 || arg.starts_with("--root=")
                 || arg.starts_with("--policy=")
-                || arg.starts_with("--excluded=") =>
+                || arg.starts_with("--excluded=")
+                || arg.starts_with("--skip-policy=")
+                || arg.starts_with("--skip-journal=") =>
             {
                 let name = arg.split('=').next().unwrap_or(arg);
                 flag_value(argv, &mut i, name).map(|value| match name {
@@ -156,6 +173,10 @@ fn potgen_cli(argv: &[String]) -> u8 {
                     "--created" => options.created = Some(value),
                     "--policy" => options.policy = potgen::PolicySource::Path(PathBuf::from(value)),
                     "--excluded" => excluded = Some(PathBuf::from(value)),
+                    "--skip-policy" => {
+                        options.skip_policy = potgen::PolicySource::Path(PathBuf::from(value))
+                    }
+                    "--skip-journal" => skip_journal = Some(PathBuf::from(value)),
                     _ => options.root = PathBuf::from(value),
                 })
             }
@@ -174,6 +195,7 @@ fn potgen_cli(argv: &[String]) -> u8 {
     options.dump_dir = dump.unwrap_or_default();
     options.out_path = out;
     options.excluded_path = excluded;
+    options.skip_journal_path = skip_journal;
 
     match potgen::run(&options) {
         Ok(res) => {
@@ -214,6 +236,30 @@ fn potgen_cli(argv: &[String]) -> u8 {
                     "  excluded log: {} ({} rows)",
                     path.display(),
                     res.policy.as_ref().map(|p| p.excluded).unwrap_or(0)
+                );
+            }
+            match &res.skip {
+                Some(report) => {
+                    eprintln!("  skip-policy: {} — marked {}", report.path, report.marked);
+                    for (rule, count) in &report.by_rule {
+                        eprintln!("    {rule}: {count}");
+                    }
+                }
+                None => {
+                    if matches!(options.skip_policy, potgen::PolicySource::Disabled) {
+                        eprintln!("  skip-policy: выключена (--no-skip-policy)");
+                    } else {
+                        eprintln!(
+                            "  skip-policy: не найдена (config/pot-skip-policy.json) — POT без меток"
+                        );
+                    }
+                }
+            }
+            if let Some(path) = &res.skip_journal_path {
+                eprintln!(
+                    "  skip journal: {} ({} rows)",
+                    path.display(),
+                    res.skip.as_ref().map(|p| p.marked).unwrap_or(0)
                 );
             }
             0
@@ -423,7 +469,7 @@ fn print_merge_report(lang: &str, res: &po_update::PoUpdateResult, dup_rule: Dup
     };
     eprintln!(
         "{lang}.po updated: carried={}, new={}, obsolete={}, retargeted={}, legacy_kept={}, \
-orphans={}, dropped={}, dup_keys={} ({backup}) [{}]",
+orphans={}, dropped={}, dup_keys={}, skipped={}, skip_kept={} ({backup}) [{}]",
         s.carried,
         s.new,
         s.obsolete,
@@ -432,6 +478,8 @@ orphans={}, dropped={}, dup_keys={} ({backup}) [{}]",
         s.orphans,
         s.dropped,
         s.dup_keys,
+        s.skipped,
+        s.skip_kept,
         res.po_path.display()
     );
 

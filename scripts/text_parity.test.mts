@@ -31,6 +31,7 @@ import {
 import { join, resolve } from "node:path";
 
 import { buildDat, writeDat } from "../.opencode/skills/extract-text/scripts/po2dat.mts";
+import { newEntry, renderPo } from "../.opencode/skills/extract-text/scripts/po_file.mts";
 import { runPotgen } from "../.opencode/skills/extract-text/scripts/potgen.mts";
 import { runPoUpdate } from "../.opencode/skills/extract-text/scripts/po_update.mts";
 import { runPrefill } from "../.opencode/skills/extract-text/scripts/prefill_po.mts";
@@ -323,3 +324,55 @@ test(
     );
   },
 );
+
+/** `#, skip` в POT: TS и Rust одинаково не создают пустых строк в PO. */
+test("паритет po_update с `#, skip`: PO и счётчики совпадают", { skip }, () => {
+  const makeEntry = (id: string, str = "", ctxt = "ui"): ReturnType<typeof newEntry> => {
+    const e = newEntry();
+    e.msgid = id;
+    e.msgctxt = ctxt;
+    e.msgstr = str;
+    return e;
+  };
+  const potEntries = [
+    makeEntry("junk-empty"),
+    makeEntry("Normal line"),
+    { ...makeEntry("junk-translated"), flags: ["skip"] },
+  ];
+  potEntries[0].flags = ["skip"];
+
+  const dirs = ["ts", "rust"].map((side) => {
+    const dir = join(tmp, `po-update-skip-${side}`, "po");
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(
+      join(dir, "template.pot"),
+      renderPo(potEntries, ['msgid ""', 'msgstr ""']),
+      "utf8",
+    );
+    writeFileSync(
+      join(dir, "ru.po"),
+      renderPo([makeEntry("junk-translated", "уже есть")], ['msgid ""', 'msgstr ""']),
+      "utf8",
+    );
+    return dir;
+  });
+
+  const res = runPoUpdate({ lang: "ru", poDir: dirs[0] });
+  const report = join(dirs[1], "report.json");
+  rust(["po_update", "ru", "--po-dir", dirs[1], "--json", report]);
+
+  assert.equal(
+    readFileSync(join(dirs[1], "ru.po"), "utf8"),
+    readFileSync(join(dirs[0], "ru.po"), "utf8"),
+    "PO с skip байт-в-байт",
+  );
+  const text = readFileSync(join(dirs[0], "ru.po"), "utf8");
+  assert.ok(!text.includes("junk-empty"), "пустая skip-строка не заведена");
+  assert.ok(text.includes('#, skip\nmsgctxt "ui"\nmsgid "junk-translated"'), "метка сохранена");
+  assert.equal(res.stats.skipped, 1);
+  assert.equal(res.stats.skipKept, 1);
+
+  const stats = JSON.parse(readFileSync(report, "utf8")) as Record<string, number>;
+  assert.equal(stats.skipped, 1, "Rust: skipped");
+  assert.equal(stats.skipKept, 1, "Rust: skipKept");
+});
