@@ -10303,6 +10303,20 @@ msgid "::TOYS FOUND::"
 msgstr "::ИГРУШКИ НАЙДЕНЫ::"
 
 #. src: dialog
+#. rich_text: <i>< It's all about <b>your</b> comfort, hon. I'll be anything you want me to be. >
+#. repaired: your comfort, hon. I'll be anything you want me to be. >
+msgctxt "ui"
+msgid "< It's all about your comfort, hon. I'll be anything you want me to be. >"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>< Like this, hmmm...? I love these nice big tits. Especially when adorable customers like <b>you</b> request them. >
+#. repaired: you request them. >
+msgctxt "ui"
+msgid "< Like this, hmmm...? I love these nice big tits. Especially when adorable customers like you request them. >"
+msgstr ""
+
+#. src: dialog
 #. rich_text: <i>< S-sorry Max, I-... Hhh... I couldn't think clearly, I-... I think I should leave now...
 msgctxt "ui"
 msgid "< S-sorry Max, I-... Hhh... I couldn't think clearly, I-... I think I should leave now..."

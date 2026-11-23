@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NeonTranslator 1.0\n"
-"POT-Creation-Date: 2026-11-23 10:12+0000\n"
+"POT-Creation-Date: 2026-11-23 10:38+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -11635,6 +11635,20 @@ msgstr ""
 #, skip
 msgctxt "ui"
 msgid ";EGB?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>< It's all about <b>your</b> comfort, hon. I'll be anything you want me to be. >
+#. repaired: your comfort, hon. I'll be anything you want me to be. >
+msgctxt "ui"
+msgid "< It's all about your comfort, hon. I'll be anything you want me to be. >"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>< Like this, hmmm...? I love these nice big tits. Especially when adorable customers like <b>you</b> request them. >
+#. repaired: you request them. >
+msgctxt "ui"
+msgid "< Like this, hmmm...? I love these nice big tits. Especially when adorable customers like you request them. >"
 msgstr ""
 
 #. src: dialog
@@ -101180,14 +101194,6 @@ msgctxt "ui"
 msgid "you realized you accidentally made a pun like how i just realized it while writing this"
 msgstr ""
 
-#. src: dialog
-#. skip: fragment
-#. rich_text: <i>< Like this, hmmm...? I love these nice big tits. Especially when adorable customers like <b>you</b> request them. >
-#, skip
-msgctxt "ui"
-msgid "you request them. >"
-msgstr ""
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "you think you could, uh"
@@ -101196,14 +101202,6 @@ msgstr ""
 #. src: dialog
 msgctxt "ui"
 msgid "you're watching someone die :)"
-msgstr ""
-
-#. src: dialog
-#. skip: fragment
-#. rich_text: <i>< It's all about <b>your</b> comfort, hon. I'll be anything you want me to be. >
-#, skip
-msgctxt "ui"
-msgid "your comfort, hon. I'll be anything you want me to be. >"
 msgstr ""
 
 #. src: us
