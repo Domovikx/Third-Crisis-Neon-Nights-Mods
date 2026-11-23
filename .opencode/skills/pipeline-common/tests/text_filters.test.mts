@@ -11,7 +11,9 @@ import {
   isAssetName,
   isGarbageFragment,
   isSkipPrefix,
+  hasSubstToken,
   stripRich,
+  substTokens,
 } from "../scripts/text_filters.mts";
 
 test("isAssetName: Unity-компоненты распознаются", () => {
@@ -87,4 +89,14 @@ test("константы на месте (единый источник прав
   assert.ok(SKIP_RAW_PREFIXES.includes("line_"));
   assert.ok(KNOWN_NON_SPEAKERS.has("Narrator"));
   assert.ok(KNOWN_NON_SPEAKERS.has("Simon"));
+});
+
+test("hasSubstToken: #Имя#, {Имя}, printf — шаблон; обычный текст и проценты — нет", () => {
+  for (const s of ["Received #ItemName#.", "#A# #B#", "{Count} items", "Hi %s", "%1$d шт", "%4i"]) {
+    assert.ok(hasSubstToken(s), `токен в ${JSON.stringify(s)}`);
+  }
+  for (const s of ["100% sure", "plain text", "50% off", "#", "{}"]) {
+    assert.ok(!hasSubstToken(s), `нет токена в ${JSON.stringify(s)}`);
+  }
+  assert.deepEqual(substTokens("#A# {B} %s"), ["#A#", "{B}", "%s"]);
 });

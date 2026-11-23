@@ -40,6 +40,7 @@ import {
   poUnescape,
   type PoEntry,
 } from "../../extract-text/scripts/po_file.mts";
+import { hasSubstToken, substTokens } from "../../pipeline-common/scripts/text_filters.mts";
 import { loadLanguagePriority, translateLangs } from "../../../../scripts/languages.mts";
 
 export const REPO_ROOT = resolve(import.meta.dirname, "../../../..");
@@ -385,10 +386,8 @@ export function validate(src: string, tr: string, lang: string): string | null {
  * исходным. Также закрываем `{Имя}` и printf-стиль `%s`, `%1$d`.
  */
 export function keepsTokens(src: string, tr: string): boolean {
-  const rx = /#[\p{L}\p{N}_]+#|\{[\p{L}\p{N}_]+\}|%(?:\d+\$)?[sdif]/gu;
-  const tokens = (s: string): string[] => (s.match(rx) ?? []).slice().sort();
-  const a = tokens(src);
-  const b = tokens(tr);
+  const a = substTokens(src).sort();
+  const b = substTokens(tr).sort();
   return a.length === b.length && a.every((t, i) => t === b[i]);
 }
 

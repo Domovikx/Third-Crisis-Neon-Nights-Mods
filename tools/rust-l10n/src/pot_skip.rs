@@ -196,6 +196,7 @@ pub enum SkipCondition {
     ShortToken,
     NoWord,
     Identifier,
+    Tokens,
     Fragment,
 }
 
@@ -207,6 +208,7 @@ impl SkipCondition {
             "shortToken" => Some(SkipCondition::ShortToken),
             "noWord" => Some(SkipCondition::NoWord),
             "identifier" => Some(SkipCondition::Identifier),
+            "tokens" => Some(SkipCondition::Tokens),
             "fragment" => Some(SkipCondition::Fragment),
             _ => None,
         }
@@ -218,6 +220,7 @@ impl SkipCondition {
             SkipCondition::ShortToken => "shortToken",
             SkipCondition::NoWord => "noWord",
             SkipCondition::Identifier => "identifier",
+            SkipCondition::Tokens => "tokens",
             SkipCondition::Fragment => "fragment",
         }
     }
@@ -328,6 +331,7 @@ pub fn skip_condition_matches(when: SkipCondition, msgid: &str, rich: &str) -> b
         }
         SkipCondition::NoWord => !has_word(msgid),
         SkipCondition::Identifier => looks_like_identifier(msgid),
+        SkipCondition::Tokens => crate::text_filters::has_subst_token(msgid),
         SkipCondition::Fragment => classify_rich(msgid, rich).relation == RichRelation::Suffix,
     }
 }

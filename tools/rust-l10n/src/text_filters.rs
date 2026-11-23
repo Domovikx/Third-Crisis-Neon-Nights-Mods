@@ -155,3 +155,42 @@ fn strip_tags(s: &str) -> String {
     }
     out
 }
+
+/// Токен подстановки в тексте игры: `#Имя#`, `{Имя}`, `%s`, `%1$d`.
+///
+/// 1:1 с TS (`SUBST_TOKEN_RX` / `hasSubstToken` в `pipeline-common`). В диалогах
+/// ANToolkit это живые шаблоны: пресет `Received #ItemName#.` игра собирает в
+/// `Received Iron Dagger.`, поэтому такой ключ — формат, а не текст для игрока.
+/// `potgen` по этому признаку ставит `#, skip`.
+pub fn has_subst_token(s: &str) -> bool {
+    let chars: Vec<char> = s.chars().collect();
+    let mut i = 0usize;
+    while i < chars.len() {
+        let c = chars[i];
+        if c == '#' || c == '{' {
+            let close = if c == '#' { '#' } else { '}' };
+            let mut j = i + 1;
+            let mut name = 0usize;
+            while j < chars.len() && (chars[j].is_alphanumeric() || chars[j] == '_') {
+                j += 1;
+                name += 1;
+            }
+            if name > 0 && j < chars.len() && chars[j] == close {
+                return true;
+            }
+        } else if c == '%' {
+            let mut j = i + 1;
+            while j < chars.len() && chars[j].is_ascii_digit() {
+                j += 1;
+            }
+            if j < chars.len() && chars[j] == '$' {
+                j += 1;
+            }
+            if j < chars.len() && matches!(chars[j], 's' | 'd' | 'i' | 'f') {
+                return true;
+            }
+        }
+        i += 1;
+    }
+    false
+}

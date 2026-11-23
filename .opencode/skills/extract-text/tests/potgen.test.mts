@@ -721,6 +721,19 @@ test("условия правил: noLetters / shortToken / noWord / fragment", 
   for (const id of ["ACCESS", "Accept", "ARRIVAL", "Aaron", "Neon-Trust", "AC/DС"]) {
     assert.ok(!skipConditionMatches("identifier", { msgid: id, rich: "" }), `не identifier: ${id}`);
   }
+  // tokens: шаблон с подстановкой — формат, а не текст.
+  for (const id of [
+    "Received #ItemName#.",
+    "#TakenFromInventoryText# #ItemName#.",
+    "E#M#",
+    "Hi %s",
+    "{Count} items",
+  ]) {
+    assert.ok(skipConditionMatches("tokens", { msgid: id, rich: "" }), `tokens: ${id}`);
+  }
+  for (const id of ["Received the item.", "100% sure", "Hi there"]) {
+    assert.ok(!skipConditionMatches("tokens", { msgid: id, rich: "" }), `не tokens: ${id}`);
+  }
   assert.ok(
     skipConditionMatches("fragment", { msgid: "you request them. >", rich: REAL_FRAGMENT }),
   );
@@ -741,7 +754,7 @@ test("parseSkipPolicy: валидная политика и понятные о�
 
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:*","when":"nope"}]}', "p.json"),
-    /неизвестное условие "nope".*noLetters, shortToken, noWord, identifier, fragment/,
+    /неизвестное условие "nope".*noLetters, shortToken, noWord, identifier, tokens, fragment/,
   );
   assert.throws(
     () => parseSkipPolicy('{"rules":[{"id":"x","src":"raw:Fontt","when":"noLetters"}]}', "p.json"),

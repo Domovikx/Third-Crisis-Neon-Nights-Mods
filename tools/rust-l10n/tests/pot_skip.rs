@@ -137,6 +137,18 @@ fn условия_правил() {
             "не identifier: {id:?}"
         );
     }
+    for id in ["Received #ItemName#.", "E#M#", "Hi %s", "{Count} items"] {
+        assert!(
+            skip_condition_matches(SkipCondition::Tokens, id, ""),
+            "tokens: {id:?}"
+        );
+    }
+    for id in ["Received the item.", "100% sure", "Hi there"] {
+        assert!(
+            !skip_condition_matches(SkipCondition::Tokens, id, ""),
+            "не tokens: {id:?}"
+        );
+    }
     // Настоящие подписи остаются: у них есть слово.
     for real in ["ACCESS", "ACHIEVEMENTS", "SAVEFILENAME", "x y ZZZ"] {
         assert!(

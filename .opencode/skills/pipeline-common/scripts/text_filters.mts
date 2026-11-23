@@ -126,3 +126,23 @@ export function isSkipPrefix(s: string): boolean {
 export function stripRich(s: string): string {
   return s.replace(RICH_TAG_RX, "").trim();
 }
+
+/**
+ * Токены подстановки в тексте игры: `#Имя#`, `{Имя}`, printf-стиль `%s`, `%1$d`.
+ *
+ * В диалогах ANToolkit это живые шаблоны: пресет `Received #ItemName#.` игра
+ * собирает в `Received Iron Dagger.`, поэтому такой ключ — не текст для игрока,
+ * а формат. Правило одно на весь репозиторий: potgen по нему ставит `#, skip`,
+ * а переводчик проверяет, что токены не переименованы (`keepsTokens`).
+ */
+export const SUBST_TOKEN_RX = /#[\p{L}\p{N}_]+#|\{[\p{L}\p{N}_]+\}|%(?:\d+\$)?\d*[sdif]/gu;
+
+/** Есть ли в строке хотя бы один токен подстановки (см. `SUBST_TOKEN_RX`). */
+export function hasSubstToken(s: string): boolean {
+  return /#[\p{L}\p{N}_]+#|\{[\p{L}\p{N}_]+\}|%(?:\d+\$)?\d*[sdif]/u.test(s);
+}
+
+/** Все токены подстановки в порядке появления (для сверки перевода). */
+export function substTokens(s: string): string[] {
+  return s.match(SUBST_TOKEN_RX) ?? [];
+}
