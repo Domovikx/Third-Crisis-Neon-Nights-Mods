@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NeonTranslator 1.0\n"
-"POT-Creation-Date: 2026-11-23 17:16+0000\n"
+"POT-Creation-Date: 2026-11-23 17:19+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -15968,11 +15968,15 @@ msgid "Ad=u"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "AdPopupsMinigame, Assembly-CSharp"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "AdPopupsMinigameAdPopup, Assembly-CSharp"
 msgstr ""
@@ -18520,6 +18524,8 @@ msgid "Animation Track"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "AnimationViewer, Assembly-CSharp"
 msgstr ""
@@ -23282,6 +23288,8 @@ msgid "BucketEvent"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "BugReportPopup, Assembly-CSharp"
 msgstr ""
@@ -24769,7 +24777,7 @@ msgid "CUU-C"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: code-ref
 #, skip
 msgctxt "ui"
 msgid "CUU/C"
@@ -29901,23 +29909,29 @@ msgid "Dialogue$"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Dialogue/Auto"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Dialogue/Hide"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: code-ref
 #, skip
 msgctxt "ui"
 msgid "Dialogue/Log"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Dialogue/Skip"
 msgstr ""
@@ -41585,7 +41599,7 @@ msgid "HCff"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: code-ref
 #, skip
 msgctxt "ui"
 msgid "HDUU/C"
@@ -56438,6 +56452,8 @@ msgid "MainMenu"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "MainMenuZoeySpine, Assembly-CSharp"
 msgstr ""
@@ -59752,6 +59768,8 @@ msgid "N-not so loud-... please... what if someone... hears us...?"
 msgstr ""
 
 #. src: us
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "N/A"
 msgstr ""
@@ -59908,7 +59926,7 @@ msgid "NL~?o"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: code-ref
 #, skip
 msgctxt "ui"
 msgid "NMCUU/C"
@@ -59945,6 +59963,8 @@ msgid "NN underboob shirt"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "NNCharacterInspection, Assembly-CSharp"
 msgstr ""
@@ -59955,6 +59975,8 @@ msgid "NNItemPopupUI: ItemPopulate is not Set."
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "NNJiggleCharacter, Assembly-CSharp"
 msgstr ""
@@ -67824,6 +67846,8 @@ msgid "Phonecall Timeline"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Phonecall, Assembly-CSharp"
 msgstr ""
@@ -69410,6 +69434,8 @@ msgid "PlaySound '"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "PlaySoundFromCategory, Assembly-CSharp"
 msgstr ""
@@ -69505,40 +69531,50 @@ msgid "Player walks up stairs without paying_repeat"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Player/Cancel"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Player/Console"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Player/FlashTop"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: code-ref
 #, skip
 msgctxt "ui"
 msgid "Player/Move"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: code-ref
 #, skip
 msgctxt "ui"
 msgid "Player/Pause"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Player/Sprint"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Player/TabMenu"
 msgstr ""
@@ -69549,14 +69585,14 @@ msgid "Player/Toggle Player Sprite"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: code-ref
 #, skip
 msgctxt "ui"
 msgid "Player/Use"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: code-ref
 #, skip
 msgctxt "ui"
 msgid "Player/Zoom"
@@ -69949,21 +69985,29 @@ msgid "Portable Wizard"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Poses/"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Poses/Awkward"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Poses/Awkward2"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Poses/Awkward3"
 msgstr ""
@@ -76650,6 +76694,8 @@ msgid "SetActive"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "SetAnimatorBool, Assembly-CSharp"
 msgstr ""
@@ -78105,6 +78151,8 @@ msgid "Shower with Leona."
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "ShowerManager, Assembly-CSharp"
 msgstr ""
@@ -82307,6 +82355,8 @@ msgid "TCNN Universal Render Pipeline Asset_Renderer"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "TCNNTabMenuCategoryButtonUI, Assembly-CSharp"
 msgstr ""
@@ -86176,24 +86226,28 @@ msgid "Tool$"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: code-ref
 #, skip
 msgctxt "ui"
 msgid "Tool/Primary"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Tool/Secondary"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "Tool/Tertiary"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: code-ref
 #, skip
 msgctxt "ui"
 msgid "Tool/Toggle"
@@ -87675,6 +87729,8 @@ msgid "UI West Button"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "UI/Cancel"
 msgstr ""
@@ -87700,6 +87756,8 @@ msgid "UI/Dpad Up"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "UI/NextCategory"
 msgstr ""
@@ -87720,11 +87778,15 @@ msgid "UI/UI West Button"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "UI/UIEastButton"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "UI/UINavigation"
 msgstr ""
@@ -87750,11 +87812,15 @@ msgid "UI/UINavigation Up"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "UI/UIScrollDown"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "UI/UIScrollUp"
 msgstr ""
@@ -89518,7 +89584,7 @@ msgid "V'i"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: reviewed
+#. skip: code-ref
 #, skip
 msgctxt "ui"
 msgid "V/CUU%C"
@@ -92297,6 +92363,8 @@ msgid "Waitressing Score Screen"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: code-ref
+#, skip
 msgctxt "ui"
 msgid "WaitressingScoreScreenUI, Assembly-CSharp"
 msgstr ""

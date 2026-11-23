@@ -205,6 +205,12 @@ fn условия_правил() {
             "не snake: {id:?}"
         );
     }
+    for id in ["Dialogue/Auto", "AnimationViewer, Assembly-CSharp"] {
+        assert!(skip_condition_matches(SkipCondition::CodeRef, id, ""), "code: {id:?}");
+    }
+    for id in ["24/7 Kiosk", "Annoyed / Angry", "AMS/UI SoftMask", "a b/c"] {
+        assert!(!skip_condition_matches(SkipCondition::CodeRef, id, ""), "не code: {id:?}");
+    }
     for id in ["Bark 12", "Bark2 3", "Choice1", "Agree2", "Disable2"] {
         assert!(
             skip_condition_matches(SkipCondition::StateName, id, ""),

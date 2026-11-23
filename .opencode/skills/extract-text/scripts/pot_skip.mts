@@ -146,6 +146,7 @@ export type SkipCondition =
   | "snakeCase"
   | "fsmLabel"
   | "stateName"
+  | "codeRef"
   | "fragment";
 
 /** Все допустимые условия; неизвестное — ошибка политики, не тихий игнор. */
@@ -161,6 +162,7 @@ export const SKIP_CONDITIONS: readonly SkipCondition[] = [
   "snakeCase",
   "fsmLabel",
   "stateName",
+  "codeRef",
   "fragment",
 ];
 
@@ -170,6 +172,19 @@ const HAS_LETTER_RX = /\p{L}/u;
 /** «Нет ни одной буквы» — символы, цифры, пунктуация, пустота. */
 export function hasLetters(s: string): boolean {
   return HAS_LETTER_RX.test(s);
+}
+
+/**
+ * Ссылка на код: путь вида `Dialogue/Auto` (без пробелов и без расширения)
+ * или имя типа .NET (`AnimationViewer, Assembly-CSharp`).
+ *
+ * Это не текст для игрока. Узко намеренно: `24/7 Kiosk`, `Annoyed / Angry` и
+ * `AMS/UI SoftMask` содержат пробелы и остаются переводимыми.
+ */
+export function isCodeRef(s: string): boolean {
+  const t = s.trim();
+  if (/,\s*Assembly-CSharp$/.test(t)) return true;
+  return !/\s/.test(t) && /\//.test(t) && /\p{L}/u.test(t);
 }
 
 /**
@@ -348,6 +363,8 @@ export function skipConditionMatches(when: SkipCondition, ctx: SkipContext): boo
       return isFsmLabel(ctx.msgid);
     case "stateName":
       return isStateName(ctx.msgid);
+    case "codeRef":
+      return isCodeRef(ctx.msgid);
     case "saveKey":
       // Save-ключ игры (`GlowingHoleKeys/103 Peeking Counter`) — идентификатор
       // состояния, а не реплика. Замер 2026-11-23: 85 живых записей.

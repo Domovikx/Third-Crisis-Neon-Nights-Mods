@@ -118,7 +118,7 @@
   (`#. src:`), отбор по происхождению вместо фильтров по виду; сначала только замер распределения
 - [2026-11-23-pot-skip-tags.md](2026-11-23-pot-skip-tags.md) — **READY** — теги `#, skip`
   (не переводить) по правилам провенанса + инвариант «обрывок msgid»; записи не удаляются
-- [2026-11-23-copy-of-source-cleanup.md](2026-11-23-copy-of-source-cleanup.md) — **READY** —
+- [2026-11-23-copy-of-source-cleanup.md](2026-11-23-copy-of-source-cleanup.md) — **DONE** —
   404 живые строки `msgstr == msgid`: разложить на ассеты/состояния/подписи, мусор в skip,
   настоящие подписи перевести
 - [2026-11-23-speaker-gender.md](2026-11-23-speaker-gender.md) — **DONE** —

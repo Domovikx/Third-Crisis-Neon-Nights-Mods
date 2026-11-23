@@ -203,6 +203,7 @@ pub enum SkipCondition {
     SnakeCase,
     FsmLabel,
     StateName,
+    CodeRef,
     Fragment,
 }
 
@@ -221,6 +222,7 @@ impl SkipCondition {
             "snakeCase" => Some(SkipCondition::SnakeCase),
             "fsmLabel" => Some(SkipCondition::FsmLabel),
             "stateName" => Some(SkipCondition::StateName),
+            "codeRef" => Some(SkipCondition::CodeRef),
             "fragment" => Some(SkipCondition::Fragment),
             _ => None,
         }
@@ -239,6 +241,7 @@ impl SkipCondition {
             SkipCondition::SnakeCase => "snakeCase",
             SkipCondition::FsmLabel => "fsmLabel",
             SkipCondition::StateName => "stateName",
+            SkipCondition::CodeRef => "codeRef",
             SkipCondition::Fragment => "fragment",
         }
     }
@@ -356,6 +359,7 @@ pub fn skip_condition_matches(when: SkipCondition, msgid: &str, rich: &str) -> b
         SkipCondition::SnakeCase => is_snake_case(msgid),
         SkipCondition::FsmLabel => is_fsm_label(msgid),
         SkipCondition::StateName => is_state_name(msgid),
+        SkipCondition::CodeRef => is_code_ref(msgid),
         SkipCondition::Fragment => classify_rich(msgid, rich).relation == RichRelation::Suffix,
     }
 }
@@ -418,6 +422,16 @@ pub fn looks_like_asset_path(s: &str) -> bool {
         ]
         .iter()
         .any(|ext| lower.contains(&format!(".{ext}")))
+}
+
+/// Ссылка на код: путь без пробелов/расширения или имя типа .NET (1:1 с TS `isCodeRef`).
+pub fn is_code_ref(s: &str) -> bool {
+    let t = s.trim();
+    let lower = t.to_lowercase();
+    if lower.ends_with(", assembly-csharp") {
+        return true;
+    }
+    !t.chars().any(|c| c.is_whitespace()) && t.contains('/') && t.chars().any(is_letter)
 }
 
 /// Имя состояния/действия (`Bark 12`, `Choice1`, `Agree2`) — 1:1 с TS `isStateName`.
