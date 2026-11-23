@@ -25,7 +25,7 @@ PO — `references/PO_FORMAT.md`, rich — `docs/rich-text-audit.md`.
 
 ### P0 — чинить до следующего длинного прогона
 
-**2.1. Бэкенд умирает на длинных прогонах.** За сессию три падения
+**2.1. (решено 2026-11-23) Бэкенд умирает на длинных прогонах.** За сессию три падения
 `HTTP 400 {"error":"terminated"}`: процесс инференса LM Studio завершается, модель
 выгружается, прогон встаёт. В соседнем проекте (TSSR) это уже проходили и решили
 переходом на **headless `llama-server`** из бэкендов LM Studio (`-c 8192 -np 4`,
@@ -34,6 +34,12 @@ PO — `references/PO_FORMAT.md`, rich — `docs/rich-text-audit.md`.
 `chat_template_kwargs: {enable_thinking: false}` — наш код отправляет только
 первое, значит на llama-server «размышления» вернутся.
 Сейчас смягчено ретраями и перезагрузкой модели, но это лечение симптома.
+
+**Решение:** перешли на headless `llama-server` (порт 8081, `-c 8192 -np 1`,
+`--alias index-translate-9b`). Проверено: сервер поднимается за секунды, `/health`
+= ok, 14 строк разметки прошли без единого сбоя. Наш код теперь отправляет и
+`reasoning_effort`, и `chat_template_kwargs: {enable_thinking: false}` — первое
+понимает LM Studio, второе llama.cpp.
 
 **2.2. У C# рантайма нет unit-тестов.** `.opencode/skills/build-translator/tests`
 содержит только тест сборки. Логика, от которой зависит весь результат в игре —

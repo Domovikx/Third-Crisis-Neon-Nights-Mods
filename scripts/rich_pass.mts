@@ -90,6 +90,69 @@ export function needRt(entries: PoEntry[], richMap: ReadonlyMap<string, string>)
   return out;
 }
 
+/**
+ * Подсвеченные фрагменты: текст внутри inline-тегов.
+ *
+ * Модели нужно знать, ЧТО подсвечено: иначе она не может найти соответствие в
+ * переводе и либо пересказывает, либо оставляет тег висеть. Пример:
+ * `<i>(<color>F-Fuck!</color> That was too close!)</i>` → `F-Fuck!`.
+ */
+export function highlighted(rich: string): string[] {
+  const out: string[] = [];
+  const rx = /<([a-zA-Z]+)(?:=[^<>]*)?>([^<>]+)<\/\1>/g;
+  for (const m of rich.matchAll(rx)) {
+    const text = m[2].trim();
+    if (text) out.push(text);
+  }
+  return out;
+}
+
+/** Простая inline-пара: тег + текст внутри (без вложенных тегов). */
+export interface InlineSpan {
+  open: string;
+  inner: string;
+  close: string;
+}
+
+/** Найти пары «тег → текст → тот же закрывающий тег» внутри строки. */
+export function inlineSpans(rich: string): InlineSpan[] {
+  const out: InlineSpan[] = [];
+  const rx = /<([a-zA-Z]+)(?:=[^<>]*)?>([^<>]+)<\/\1>/g;
+  for (const m of rich.matchAll(rx)) {
+    out.push({ open: m[0].slice(0, m[0].indexOf(">") + 1), inner: m[2], close: `</${m[1]}>` });
+  }
+  return out;
+}
+
+/**
+ * Собрать `rt` из готового перевода и выбранных фрагментов.
+ *
+ * Модель не переписывает текст, а только указывает, каким куском перевода
+ * соответствует подсвеченное слово. Текст без тегов поэтому гарантированно
+ * равен `msgstr` — сборка детерминированная.
+ *
+ * `picks[i]` — подстрока `msgstr` для `spans[i]`; ищем по порядку, чтобы две
+ * одинаковые подсветки не наложились.
+ */
+export function buildRtWithSpans(
+  msgstr: string,
+  spans: readonly InlineSpan[],
+  picks: readonly string[],
+): string | null {
+  if (spans.length !== picks.length) return null;
+  let out = msgstr;
+  let cursor = 0;
+  for (let i = 0; i < spans.length; i += 1) {
+    const pick = picks[i].trim();
+    if (!pick) return null;
+    const at = out.indexOf(pick, cursor);
+    if (at < 0) return null;
+    out = `${out.slice(0, at)}${spans[i].open}${pick}${spans[i].close}${out.slice(at + pick.length)}`;
+    cursor = at + spans[i].open.length + pick.length + spans[i].close.length;
+  }
+  return out;
+}
+
 /** Вставить `# rich_translation:` перед `msgctxt`/`msgid` нужных записей. */
 export function insertRtComments(text: string, updates: ReadonlyMap<string, string>): string {
   if (updates.size === 0) return text;
@@ -113,6 +176,7 @@ interface Cli {
   dry: boolean;
   url: string;
   model: string;
+  mode: "markup" | "span";
 }
 
 function parseArgs(argv: string[]): Cli {
@@ -122,6 +186,7 @@ function parseArgs(argv: string[]): Cli {
     dry: false,
     url: "http://127.0.0.1:1234",
     model: "index-translate-9b",
+    mode: "markup",
   };
   for (let i = 0; i < argv.length; i += 1) {
     const a = argv[i];
@@ -135,7 +200,11 @@ function parseArgs(argv: string[]): Cli {
     else if (a === "--limit") cli.limit = Number(val());
     else if (a === "--url") cli.url = val();
     else if (a === "--model") cli.model = val();
-    else throw new Error(`неизвестный аргумент: ${a}`);
+    else if (a === "--mode") {
+      const mode = val();
+      if (mode !== "markup" && mode !== "span") throw new Error(`--mode: markup|span, не ${mode}`);
+      cli.mode = mode;
+    } else throw new Error(`неизвестный аргумент: ${a}`);
   }
   return cli;
 }
@@ -146,7 +215,14 @@ Task: put the SAME tags around the corresponding words of the translation.
 Rules: do not change the translation wording; every tag must appear exactly once,
 with the same name and same parameters; reply with one line only, no explanation.`;
 
-async function markup(url: string, model: string, rich: string, msgstr: string): Promise<string> {
+async function markup(
+  url: string,
+  model: string,
+  rich: string,
+  msgstr: string,
+  marks: string[],
+  hint = "",
+): Promise<string> {
   const res = await fetch(`${url.replace(/\/+$/, "")}/v1/chat/completions`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -154,17 +230,65 @@ async function markup(url: string, model: string, rich: string, msgstr: string):
       model,
       messages: [
         { role: "system", content: SYS },
-        { role: "user", content: `original: ${rich}\ntranslation: ${msgstr}` },
+        {
+          role: "user",
+          content: `original: ${rich}\ntranslation: ${msgstr}${hint ? `\n${hint}` : ""}`,
+        },
       ],
       temperature: 0,
       max_tokens: 500,
+      // LM Studio понимает reasoning_effort, llama.cpp — только шаблон.
       reasoning_effort: "none",
+      chat_template_kwargs: { enable_thinking: false },
     }),
     signal: AbortSignal.timeout(120_000),
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
   const json = (await res.json()) as { choices?: { message?: { content?: string } }[] };
   return (json.choices?.[0]?.message?.content ?? "").trim().split(/\r?\n/)[0] ?? "";
+}
+
+/**
+ * Спросить у модели, каким фрагментом перевода передан подсвеченный текст.
+ *
+ * Ответ — только подстрока перевода (копия), без кавычек и пояснений. Если
+ * модель ничего не нашла или ответила фразой — считаем, что соответствия нет.
+ */
+async function pickSpan(
+  url: string,
+  model: string,
+  inner: string,
+  msgstr: string,
+): Promise<string> {
+  const res = await fetch(`${url.replace(/\/+$/, "")}/v1/chat/completions`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model,
+      messages: [
+        {
+          role: "system",
+          content:
+            "You map a highlighted fragment of an English line to the exact words of its finished translation. " +
+            "Reply with ONLY that fragment copied verbatim from the translation, no quotes, no explanation. " +
+            "If the translation has no corresponding words, reply with an empty line.",
+        },
+        {
+          role: "user",
+          content: `highlighted: ${inner}
+translation: ${msgstr}`,
+        },
+      ],
+      temperature: 0,
+      max_tokens: 120,
+      reasoning_effort: "none",
+      chat_template_kwargs: { enable_thinking: false },
+    }),
+    signal: AbortSignal.timeout(60_000),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}: ${(await res.text()).slice(0, 160)}`);
+  const json = (await res.json()) as { choices?: { message?: { content?: string } }[] };
+  return (json.choices?.[0]?.message?.content ?? "").trim().replace(/^["'«»]+|["'«»]+$/g, "");
 }
 
 async function main(argv: string[]): Promise<number> {
@@ -193,23 +317,61 @@ async function main(argv: string[]): Promise<number> {
 
   const updates = new Map<string, string>();
   const failed: string[] = [];
+  let lastProblem = "";
   for (const [i, e] of todo.entries()) {
     const rich = richMap.get(e.msgid) as string;
+    if (cli.mode === "span") {
+      const spans = inlineSpans(rich);
+      const picks: string[] = [];
+      let ok = spans.length > 0;
+      for (const span of spans) {
+        try {
+          const pick = await pickSpan(cli.url, cli.model, span.inner, e.msgstr);
+          if (!pick || !e.msgstr.includes(pick)) {
+            ok = false;
+            break;
+          }
+          picks.push(pick);
+        } catch (err) {
+          console.error(`LLM: ${(err as Error).message}`);
+          ok = false;
+          break;
+        }
+      }
+      const built = ok ? buildRtWithSpans(e.msgstr, spans, picks) : null;
+      if (built && !validateRt(rich, e.msgstr, built)) {
+        updates.set(e.msgid, built);
+      } else {
+        failed.push(`${e.msgid}  ⟵ span: ${ok ? "не собралось" : "нет соответствия"}`);
+      }
+      if ((i + 1) % 20 === 0) console.log(`  ${i + 1}/${todo.length}`);
+      continue;
+    }
+
     let candidate = "";
-    for (let attempt = 1; attempt <= 2; attempt += 1) {
+    let hint = "";
+    for (let attempt = 1; attempt <= 3; attempt += 1) {
       try {
-        candidate = await markup(cli.url, cli.model, rich, e.msgstr);
+        candidate = await markup(cli.url, cli.model, rich, e.msgstr, highlighted(rich), hint);
       } catch (err) {
-        if (attempt === 2) console.error(`LLM: ${(err as Error).message}`);
+        if (attempt === 3) console.error(`LLM: ${(err as Error).message}`);
         continue;
       }
-      if (!validateRt(rich, e.msgstr, candidate)) break;
+      const problem = validateRt(rich, e.msgstr, candidate);
+      lastProblem = problem ?? "";
+      if (!problem) break;
+      // Следующая попытка — с точным указанием, что не так: модель чаще всего
+      // пересказывает текст, а нужен буквальный перенос перевода.
+      hint =
+        problem === "plain differs"
+          ? `WRONG: text without tags was "${plainOf(candidate)}" but it MUST be exactly "${plainOf(e.msgstr)}". Copy the translation verbatim, only insert the tags.`
+          : `WRONG: ${problem}. Tags must match the original exactly (same names, same parameters, same nesting).`;
       candidate = "";
     }
     if (candidate && !validateRt(rich, e.msgstr, candidate)) {
       updates.set(e.msgid, candidate);
     } else {
-      failed.push(e.msgid);
+      failed.push(`${e.msgid}  ⟵ ${lastProblem || "no answer"}`);
     }
     if ((i + 1) % 20 === 0) console.log(`  ${i + 1}/${todo.length}`);
   }
@@ -218,7 +380,7 @@ async function main(argv: string[]): Promise<number> {
     writeFileSync(poPath, insertRtComments(poText, updates), "utf8");
   }
   console.log(`готово: записано ${updates.size}, не прошло ${failed.length}`);
-  for (const m of failed.slice(0, 10)) console.log("  ✗", JSON.stringify(m.slice(0, 70)));
+  for (const m of failed.slice(0, 12)) console.log("  ✗", m.slice(0, 140));
   return 0;
 }
 

@@ -9,7 +9,15 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { insertRtComments, needRt, openStack, plainOf, validateRt } from "./rich_pass.mts";
+import {
+  buildRtWithSpans,
+  inlineSpans,
+  insertRtComments,
+  needRt,
+  openStack,
+  plainOf,
+  validateRt,
+} from "./rich_pass.mts";
 import { parsePo } from "../.opencode/skills/extract-text/scripts/po_file.mts";
 
 test("validateRt: обёртка и inline при совпадении текста проходят", () => {
@@ -100,4 +108,41 @@ msgstr "Другое"
   );
   assert.equal((out.match(/rich_translation/g) ?? []).length, 1);
   assert.equal(plainOf("<i>> Hahh!"), "> Hahh!");
+});
+
+test("inlineSpans: находит пару тег+текст+закрытие", () => {
+  assert.deepEqual(inlineSpans("Hehe- That sounds- <color=#EB83FF>fun...</color>"), [
+    { open: "<color=#EB83FF>", inner: "fun...", close: "</color>" },
+  ]);
+  assert.deepEqual(inlineSpans("<i>(<color=#fff>word</color> tail)</i>"), [
+    { open: "<color=#fff>", inner: "word", close: "</color>" },
+  ]);
+  // Обёртку `inlineSpans` тоже находит — но такие строки отсекает `needRt`
+  // (им `rt` не нужен, сборка и так работает).
+  assert.equal(inlineSpans("<i>whole line</i>").length, 1);
+});
+
+test("buildRtWithSpans: теги ставятся детерминированно, текст не меняется", () => {
+  const msgstr = "Хе-хе- Звучит- весело...";
+  const spans = inlineSpans("Hehe- That sounds- <color=#EB83FF>fun...</color>");
+  const rt = buildRtWithSpans(msgstr, spans, ["весело..."]);
+  assert.equal(rt, "Хе-хе- Звучит- <color=#EB83FF>весело...</color>");
+  assert.equal(plainOf(rt ?? ""), msgstr, "чистый текст обязан совпасть");
+  assert.equal(
+    validateRt("Hehe- That sounds- <color=#EB83FF>fun...</color>", msgstr, rt ?? ""),
+    null,
+  );
+
+  assert.equal(buildRtWithSpans(msgstr, spans, ["нет такого"]), null, "нет фрагмента — отказ");
+  assert.equal(buildRtWithSpans(msgstr, spans, []), null, "число фрагментов не совпало");
+});
+
+test("buildRtWithSpans: две подсветки подряд не накладываются", () => {
+  const msgstr = "Ах! Бля, это отлично!";
+  const spans = inlineSpans("<color=#fff>Ah</color> fuck, it's <b>great</b>!");
+  assert.equal(spans.length, 2);
+  const rt = buildRtWithSpans(msgstr, spans, ["Ах!", "отлично"]);
+  assert.ok(rt);
+  assert.equal(plainOf(rt as string), msgstr);
+  assert.match(rt as string, /^<color=#fff>Ах!<\/color> Бля, это <b>отлично<\/b>!$/);
 });
