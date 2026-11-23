@@ -501,10 +501,11 @@ export function stripEchoLabel(text: string): string {
 export function keepsFraming(src: string, tr: string): boolean {
   const s = src.trim();
   const t = tr.trim();
-  const opens = (x: string): string => (/^["«„“]/.test(x) ? "q" : /^[([]/.test(x) ? "b" : "");
-  const closes = (x: string): string => (/["»“”]$/.test(x) ? "q" : /[)\]]$/.test(x) ? "b" : "");
-  // Проверяем только ПАРНУЮ рамку: у обрезанных ключей дампа (`Did rat out?)`,
-  // `... pussy"`) рамка односторонняя, и требовать её от перевода бессмысленно.
+  // «q» — кавычки (в т.ч. китайские “” 「」 『』), «b» — скобки (в т.ч. （） ［］).
+  const opens = (x: string): string =>
+    /^["«„“「『]/u.test(x) ? "q" : /^[(（\[]/u.test(x) ? "b" : "";
+  const closes = (x: string): string =>
+    /["»“”」』]$/u.test(x) ? "q" : /[)）\]]$/u.test(x) ? "b" : "";
   const a = opens(s);
   if (a && a === closes(s) && a !== opens(t)) return false;
   const c = closes(s);
@@ -590,9 +591,12 @@ export function keepsMarker(src: string, tr: string): boolean {
   if (!m) return true;
   const mark = m[0];
   if (tr.startsWith(mark)) return true;
-  const pair: Record<string, string> = { "!": "¡", "?": "¿" };
-  const alt = pair[mark];
-  return alt !== undefined && tr.startsWith(alt);
+  // CJK пишет те же маркеры полноширинными знаками: ! → ！, ? → ？
+  const pair: Record<string, string[]> = {
+    "!": ["¡", "！"],
+    "?": ["¿", "？"],
+  };
+  return (pair[mark] ?? []).some((alt) => tr.startsWith(alt));
 }
 
 // --- запись po --------------------------------------------------------------
