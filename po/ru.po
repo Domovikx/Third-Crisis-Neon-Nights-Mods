@@ -23698,6 +23698,7 @@ msgctxt "ui"
 msgid "Down sound"
 msgstr "Звук вниз"
 
+# rich_translation: <size=28>Внизу, в подвале.</size> Но все говорят, что слышали там странные звуки...
 #. src: dialog
 #. rich_text: Downstairs, in the basement. But everyone is saying they heard weird noises... <size=28>down there... </size>
 msgctxt "speaker:Brad"
@@ -32346,6 +32347,7 @@ msgctxt "ui"
 msgid "Hm? Have you two met?"
 msgstr "Хм? Вы двое знакомы?"
 
+# rich_translation: Хм? Ох... Ну... Если ты не в настроении, это нормально... Всё в порядке... Я имею в виду, это должно быть просто... Просто как бы... <size=30>потри свою... киску...</size> пока... да.
 #. src: dialog
 #. rich_text: Hm? Oh- Well... If you aren't feeling up to it, that's okay... All good... I mean it should be simple... Just like... rub your... <size=30>pussy</size>... until... yeah.
 msgctxt "ui"
@@ -73526,6 +73528,7 @@ msgctxt "ui"
 msgid "You'll be able to come here using any of my vending machines you find."
 msgstr "Ты сможешь прийти сюда через любой из моих автоматов, что найдёшь."
 
+# rich_translation: <color=#EB83FF>Ты снишишь цену вдвое, если я... разрешу тебе...?</color>
 #. src: dialog
 #. rich_text: You'll half the price, if I... <color=#EB83FF>let you</color>-...?
 msgctxt "speaker:Zoey"
