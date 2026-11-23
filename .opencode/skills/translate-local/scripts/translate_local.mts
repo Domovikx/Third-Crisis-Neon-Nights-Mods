@@ -565,7 +565,12 @@ async function callLm(
     }),
     signal: AbortSignal.timeout(timeoutMs),
   });
-  if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+  if (!res.ok) {
+    // Тело ответа обязательно: LM Studio на 400 объясняет причину
+    // (контекст, шаблон, размер), без него диагностика — гадание.
+    const body = await res.text().catch(() => "");
+    throw new Error(`HTTP ${res.status} ${res.statusText}: ${body.slice(0, 300)}`);
+  }
   const json = (await res.json()) as { choices?: { message?: { content?: string } }[] };
   return json.choices?.[0]?.message?.content ?? "";
 }
