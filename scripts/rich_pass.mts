@@ -138,17 +138,62 @@ export function buildRtWithSpans(
   msgstr: string,
   spans: readonly InlineSpan[],
   picks: readonly string[],
+  rich = "",
 ): string | null {
   if (spans.length !== picks.length) return null;
+  /** Найти фрагмент: точно, затем без краевой пунктуации, затем без пробелов. */
+  const find = (hay: string, pick: string, from: number): { at: number; len: number } | null => {
+    const exact = hay.indexOf(pick, from);
+    if (exact >= 0) return { at: exact, len: pick.length };
+    const edge = /^[\s。，、！？…“”「」『』（）()"'«»]+|[\s。，、！？…“”「」『』（）()"'«»]+$/gu;
+    const core = pick.replace(edge, "");
+    if (core && core !== pick) {
+      const at = hay.indexOf(core, from);
+      if (at >= 0) return { at, len: core.length };
+    }
+    // CJK-модель иногда ставит полноширинный пробел внутри фрагмента.
+    const norm = (x: string): string => x.replace(/[\s\u3000]+/gu, "");
+    const hayNorm = norm(hay.slice(from));
+    const pickNorm = norm(pick);
+    if (pickNorm && hayNorm.includes(pickNorm)) {
+      // Возвращаем исходные координаты: считаем позицию по символам без пробелов.
+      let hi = from;
+      let skipped = 0;
+      while (hi < hay.length && skipped < hayNorm.indexOf(pickNorm)) {
+        if (!/[\s\u3000]/u.test(hay[hi])) skipped += 1;
+        hi += 1;
+      }
+      let len = 0;
+      let need = pickNorm.length;
+      let j = hi;
+      while (j < hay.length && need > 0) {
+        if (!/[\s\u3000]/u.test(hay[j])) need -= 1;
+        j += 1;
+      }
+      len = j - hi;
+      if (len > 0) return { at: hi, len };
+    }
+    return null;
+  };
   let out = msgstr;
   let cursor = 0;
   for (let i = 0; i < spans.length; i += 1) {
     const pick = picks[i].trim();
     if (!pick) return null;
-    const at = out.indexOf(pick, cursor);
-    if (at < 0) return null;
-    out = `${out.slice(0, at)}${spans[i].open}${pick}${spans[i].close}${out.slice(at + pick.length)}`;
-    cursor = at + spans[i].open.length + pick.length + spans[i].close.length;
+    const found = find(out, pick, cursor);
+    if (!found) return null;
+    const actual = out.slice(found.at, found.at + found.len);
+    out = `${out.slice(0, found.at)}${spans[i].open}${actual}${spans[i].close}${out.slice(found.at + found.len)}`;
+    cursor = found.at + spans[i].open.length + actual.length + spans[i].close.length;
+  }
+  // Внешняя обёртка (`<i>…</i>`, `<b>…</b>`) — часть rich_text, её надо вернуть,
+  // иначе набор тегов rt не совпадёт с оригиналом (поймано на zh 2026-11-23:
+  // 190 строк «не собралось» именно из-за обёртки вокруг inline-цвета).
+  if (rich) {
+    const prefix = /^(?:<[^>]+>)+/.exec(rich)?.[0] ?? "";
+    const suffix = /(?:<\/[^>]+>)+$/.exec(rich)?.[0] ?? "";
+    if (prefix && !out.startsWith(prefix)) out = prefix + out;
+    if (suffix && !out.endsWith(suffix)) out = out + suffix;
   }
   return out;
 }
@@ -338,7 +383,7 @@ async function main(argv: string[]): Promise<number> {
           break;
         }
       }
-      const built = ok ? buildRtWithSpans(e.msgstr, spans, picks) : null;
+      const built = ok ? buildRtWithSpans(e.msgstr, spans, picks, rich) : null;
       if (built && !validateRt(rich, e.msgstr, built)) {
         updates.set(e.msgid, built);
       } else {

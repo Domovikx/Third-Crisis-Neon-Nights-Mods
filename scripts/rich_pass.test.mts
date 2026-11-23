@@ -146,3 +146,30 @@ test("buildRtWithSpans: две подсветки подряд не наклад
   assert.equal(plainOf(rt as string), msgstr);
   assert.match(rt as string, /^<color=#fff>Ах!<\/color> Бля, это <b>отлично<\/b>!$/);
 });
+
+test("buildRtWithSpans: CJK-модель добавляет краевые знаки — фрагмент всё равно находится", () => {
+  const spans = [{ open: "<color=#EB83FF>", inner: "更深", close: "</color>" }];
+  // Модель выбрала «更深……», а в переводе «更深，不……» — точного совпадения нет,
+  // фрагмент находится без краевой пунктуации.
+  const built = buildRtWithSpans("（更深，不，我不喜欢这样。）", spans, ["更深……"]);
+  assert.ok(built, "фрагмент найден без точного совпадения");
+  assert.ok(built!.includes("<color=#EB83FF>更深</color>"), built ?? "");
+});
+
+test("buildRtWithSpans: полноширинный пробел внутри фрагмента не ломает поиск", () => {
+  const spans = [{ open: "<b>", inner: "你好世界", close: "</b>" }];
+  const built = buildRtWithSpans("你好　世界，好的。", spans, ["你好世界"]);
+  assert.ok(built, "фрагмент найден без учёта полноширинного пробела");
+});
+
+test("buildRtWithSpans: внешняя обёртка rich возвращается вместе с inline-тегом", () => {
+  // rich = <i>(<color>X</color> …)</i>: span вставляет только цвет, обёртку надо вернуть,
+  // иначе теги rt не совпадут с оригиналом (190 строк zh, 2026-11-23).
+  const rich = "<i>(Deeper... No, I'm not.)</i>".replace("Deeper", "<color=#EB83FF>Deeper</color>");
+  const spans = [{ open: "<color=#EB83FF>", inner: "Deeper", close: "</color>" }];
+  const built = buildRtWithSpans("（更深……不。）", spans, ["更深"], rich);
+  assert.ok(built, "собралось");
+  assert.ok(built!.startsWith("<i>"), built ?? "");
+  assert.ok(built!.endsWith("</i>"), built ?? "");
+  assert.ok(built!.includes("<color=#EB83FF>更深</color>"), built ?? "");
+});
