@@ -135,7 +135,14 @@ export function classifyRich(msgid: string, rich: string): RichCheck {
 
 /** Условия правил skip-политики (имена — контракт JSON, менять нельзя молча). */
 export type SkipCondition =
-  "noLetters" | "shortToken" | "noWord" | "identifier" | "tokens" | "hexColor" | "fragment";
+  | "noLetters"
+  | "shortToken"
+  | "noWord"
+  | "identifier"
+  | "tokens"
+  | "hexColor"
+  | "assetPath"
+  | "fragment";
 
 /** Все допустимые условия; неизвестное — ошибка политики, не тихий игнор. */
 export const SKIP_CONDITIONS: readonly SkipCondition[] = [
@@ -145,6 +152,7 @@ export const SKIP_CONDITIONS: readonly SkipCondition[] = [
   "identifier",
   "tokens",
   "hexColor",
+  "assetPath",
   "fragment",
 ];
 
@@ -154,6 +162,25 @@ const HAS_LETTER_RX = /\p{L}/u;
 /** «Нет ни одной буквы» — символы, цифры, пунктуация, пустота. */
 export function hasLetters(s: string): boolean {
   return HAS_LETTER_RX.test(s);
+}
+
+/** Расширения файлов, которые встречаются в строках игры как ссылки. */
+const ASSET_EXT_RX =
+  /\.(png|jpe?g|gif|bmp|tga|psd|mat|asset|prefab|wav|ogg|mp3|json|txt|xml|dll|cs|shader|anim|controller|unity|fbx|ttf|otf|dat)\b/i;
+
+/**
+ * Похоже ли на путь к ассету, а не на текст для игрока.
+ *
+ * Замер 2026-11-23: в POT это ровно одна запись —
+ * `Assets/AssetPacks/…/blackTex 1.png` из `dialog` (игра сама положила путь в
+ * реплику). Узко намеренно: из 234 строк со слэшем `24/7 Kiosk`,
+ * `Annoyed / Angry` и `Alpha: N/A` — настоящий текст, их резать нельзя.
+ */
+export function looksLikeAssetPath(s: string): boolean {
+  const text = pyStrip(s);
+  if (/^Assets\//i.test(text)) return true;
+  if (/(^|[/\\])Resources\//.test(text)) return true;
+  return ASSET_EXT_RX.test(text) && /[/\\]/.test(text);
 }
 
 /** Максимальная длина «короткого токена» в code points. */
@@ -229,6 +256,7 @@ export interface SkipContext {
  * `identifier` — программный идентификатор (CamelCase/snake_case/CONST_CASE);
  * `tokens` — шаблон подстановки (`#Имя#`, `{Имя}`, `%s`), не текст для игрока;
  * `hexColor` — `#RRGGBB` (константа цвета, встречается в куче `#US`);
+ * `assetPath` — путь к ассету (`Assets/…`, `…/Resources/…`, файл с расширением);
  * `fragment` — ключ это хвост `rich_text` (та же чистка, что у инварианта).
  * Провенанс (`src`) проверяет вызывающий: условие о тексте, не о метке.
  */
@@ -250,6 +278,9 @@ export function skipConditionMatches(when: SkipCondition, ctx: SkipContext): boo
     case "hexColor":
       // `#FFD24A` из кучи `#US` — константа цвета, а не строка для игрока.
       return /^#[0-9A-Fa-f]{3,8}$/u.test(pyStrip(ctx.msgid));
+    case "assetPath":
+      // Путь к ассету (`Assets/.../blackTex 1.png`) — это ссылка, не текст.
+      return looksLikeAssetPath(ctx.msgid);
     case "fragment":
       return classifyRich(ctx.msgid, ctx.rich).relation === "suffix";
     default:

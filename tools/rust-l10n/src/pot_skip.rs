@@ -198,6 +198,7 @@ pub enum SkipCondition {
     Identifier,
     Tokens,
     HexColor,
+    AssetPath,
     Fragment,
 }
 
@@ -211,6 +212,7 @@ impl SkipCondition {
             "identifier" => Some(SkipCondition::Identifier),
             "tokens" => Some(SkipCondition::Tokens),
             "hexColor" => Some(SkipCondition::HexColor),
+            "assetPath" => Some(SkipCondition::AssetPath),
             "fragment" => Some(SkipCondition::Fragment),
             _ => None,
         }
@@ -224,6 +226,7 @@ impl SkipCondition {
             SkipCondition::Identifier => "identifier",
             SkipCondition::Tokens => "tokens",
             SkipCondition::HexColor => "hexColor",
+            SkipCondition::AssetPath => "assetPath",
             SkipCondition::Fragment => "fragment",
         }
     }
@@ -336,6 +339,7 @@ pub fn skip_condition_matches(when: SkipCondition, msgid: &str, rich: &str) -> b
         SkipCondition::Identifier => looks_like_identifier(msgid),
         SkipCondition::Tokens => crate::text_filters::has_subst_token(msgid),
         SkipCondition::HexColor => is_hex_color(msgid),
+        SkipCondition::AssetPath => looks_like_asset_path(msgid),
         SkipCondition::Fragment => classify_rich(msgid, rich).relation == RichRelation::Suffix,
     }
 }
@@ -351,4 +355,51 @@ pub fn is_hex_color(s: &str) -> bool {
         return false;
     };
     (3..=8).contains(&rest.chars().count()) && rest.chars().all(|c| c.is_ascii_hexdigit())
+}
+
+/// Путь к ассету (`Assets/…`, `…/Resources/…`, файл с расширением + слэш).
+///
+/// 1:1 с TS (`looksLikeAssetPath`). Замер 2026-11-23: в POT ровно одна такая
+/// строка; `24/7 Kiosk` и `Annoyed / Angry` — настоящий текст, их не трогаем.
+pub fn looks_like_asset_path(s: &str) -> bool {
+    let t = py_strip(s);
+    if t.to_ascii_lowercase().starts_with("assets/") {
+        return true;
+    }
+    let lower = t.to_ascii_lowercase();
+    if lower.contains("resources/") {
+        return true;
+    }
+    let has_slash = t.contains('/') || t.contains('\\');
+    has_slash
+        && [
+            "png",
+            "jpg",
+            "jpeg",
+            "gif",
+            "bmp",
+            "tga",
+            "psd",
+            "mat",
+            "asset",
+            "prefab",
+            "wav",
+            "ogg",
+            "mp3",
+            "json",
+            "txt",
+            "xml",
+            "dll",
+            "cs",
+            "shader",
+            "anim",
+            "controller",
+            "unity",
+            "fbx",
+            "ttf",
+            "otf",
+            "dat",
+        ]
+        .iter()
+        .any(|ext| lower.contains(&format!(".{ext}")))
 }
