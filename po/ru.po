@@ -132,7 +132,7 @@ msgstr "\"Это всё из-за тебя.\""
 #. src: dialog
 msgctxt "ui"
 msgid "\"can't imagine what I'd do without her.\" You're very anxious about finding your lost cat."
-msgstr "«Я даже не представляю, что бы я делал без неё»."
+msgstr "«Я даже не представляю, что бы я делала без неё». Ты очень волнуешься из-за пропавшей кошки."
 
 #. src: dialog
 msgctxt "ui"
@@ -987,7 +987,7 @@ msgstr "(Костюм зайки? Где мне его взять?)"
 #. rich_text: <color=#EB83FF><i>(But I did all that nasty stuff with Nova... For what if not-... )</i></color>
 msgctxt "ui"
 msgid "(But I did all that nasty stuff with Nova... For what if not-... )"
-msgstr "(Но я ведь делал все эти ужасные дела с Новой... Зачем же всё это, если не...?)"
+msgstr "(Но я ведь делала все эти ужасные дела с Новой... Зачем же всё это, если не...?)"
 
 #. src: dialog
 #. rich_text: <i>(But I probably got her in trouble last night by trying to call her.)</i>
@@ -3495,7 +3495,7 @@ msgstr "(Мне не стоило это подписывать...)"
 #. rich_text: <i>(I should've... Should I have? But... I think I just made things much worse for her... Ugh... Goddammit, Zoey. You always mess shit up. )</i>
 msgctxt "ui"
 msgid "(I should've... Should I have? But... I think I just made things much worse for her... Ugh... Goddammit, Zoey. You always mess shit up. )"
-msgstr "(Мне следовало... Разве я должен был? Но... кажется, я только усугубил её положение... Тьфу... Чёрт возьми, Зои! Ты всегда всё портишь.)"
+msgstr "(Мне следовало... Разве я должна была? Но... кажется, я только усугубила её положение... Тьфу... Чёрт возьми, Зои! Ты всегда всё портишь.)"
 
 #. src: dialog
 #. rich_text: <i>(I should-.. Confirm his identity with my camera.. )</i>
@@ -4300,7 +4300,7 @@ msgstr "(Я... Не стоит её беспокоить. Я справлюсь.
 #. rich_text: <i>(I... I shouldn't have done that... )</i>
 msgctxt "ui"
 msgid "(I... I shouldn't have done that... )"
-msgstr "(...Я... я не должен был этого делать...)"
+msgstr "(...Я... я не должна была этого делать...)"
 
 #. src: dialog
 #. rich_text: <i>(I... I shouldn't have done that... She's my friend...)</i>
@@ -4349,7 +4349,7 @@ msgstr "(Если я найду запасную Андро-Батарею, я �
 #. rich_text: <color=#EB83FF><i>(If I kept earning like this, I-)</i></color>
 msgctxt "ui"
 msgid "(If I kept earning like this, I-)"
-msgstr "(Если бы я продолжал зарабатывать так же, я...)"
+msgstr "(Если бы я продолжала зарабатывать так же, я...)"
 
 #. src: dialog
 #. rich_text: <i>(If I tell Klaudia about one of her boys being drunk, maybe that will distract her for a moment.. !)</i>
@@ -6576,7 +6576,7 @@ msgstr "(Ну... полагаю, мне просто нужно положить
 #. rich_text: <color=#EB83FF><i>(Rosie mentioned having Nova on my side is a good idea... She could get me fired for what I've already done, I bet... )</i></color>
 msgctxt "ui"
 msgid "(Rosie mentioned having Nova on my side is a good idea... She could get me fired for what I've already done, I bet... )"
-msgstr "(Рози упомянула, что иметь Нову на своей стороне — хорошая идея... Она может уволить меня за то, что я уже сделал, уверен...)"
+msgstr "(Рози упомянула, что иметь Нову на своей стороне — хорошая идея... Она может уволить меня за то, что я уже сделала, уверена...)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Rosie really did this too...?)</i></color>
@@ -6735,7 +6735,7 @@ msgstr "(Она держит их пристёгнутыми к бедру. Не
 #. rich_text: <i>(She knows I stole the blocker!)</i>
 msgctxt "ui"
 msgid "(She knows I stole the blocker!)"
-msgstr "(Она знает, что я украл блокатор!)"
+msgstr "(Она знает, что я украла блокатор!)"
 
 #. src: dialog
 #. rich_text: <i>(She probably didn't get those tips for making exceptional drinks.. )</i>
@@ -8114,7 +8114,7 @@ msgstr "(Этот чип синий... Похоже, на нём напечат�
 #. rich_text: <i>(This door is sturdier than I thought. )</i>
 msgctxt "ui"
 msgid "(This door is sturdier than I thought. )"
-msgstr "(Эта дверь прочнее, чем я думал.)"
+msgstr "(Эта дверь прочнее, чем я думала.)"
 
 #. src: dialog
 #. rich_text: <i>(This dude is so fucking corny and here I am giving him an eyeful of my chest. Ugh...)</i>
@@ -13677,7 +13677,7 @@ msgstr "И я люблю гулять с моей милой соседкой."
 #. src: dialog
 msgctxt "ui"
 msgid "And I told you we were getting impatient."
-msgstr "А я же говорил(а), что мы начинаем терять терпение."
+msgstr "А мы ведь говорили, что теряем терпение."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -16223,7 +16223,7 @@ msgstr "Билли Мейс"
 #. src: dialog
 msgctxt "ui"
 msgid "Bingo! I knew I could find a condom."
-msgstr "Бинго! Я знал(а), что смогу найти презерватив."
+msgstr "Бинго! Презерватив-то я найду."
 
 #. src: dialog
 msgctxt "ui"
@@ -20961,7 +20961,7 @@ msgstr "Уже показали фотографию Клавдии?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did stare at crotch before?"
-msgstr "Уже смотрел(а) на промежность?"
+msgstr "Уже доводилось смотреть на промежность?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21504,7 +21504,7 @@ msgstr "Диалог не был очищен"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Didnt do Mouth Gag"
-msgstr "Не делал(а) кляп во рту"
+msgstr "Кляп во рту не использован"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Different-... line of work...?</color>
@@ -29485,7 +29485,7 @@ msgstr "Ты работала в баре раньше, Мэдисон?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Havent completed first Key"
-msgstr "Не завершил(а) первый ключ"
+msgstr "Первый ключ не завершён"
 
 #. src: dialog
 msgctxt "ui"
@@ -29749,7 +29749,7 @@ msgstr "Хе-хе... Мм-м, спасибо, сэр..."
 #. src: dialog
 msgctxt "ui"
 msgid "Heh-! Uh, thanks, Exxy! Happy to... help!"
-msgstr "Хе-хе! Э-э, спасибо, Экси! Рад(а)... помочь!"
+msgstr "Хе-хе! Э-э, спасибо, Экси! Рада... помочь!"
 
 #. src: dialog
 msgctxt "ui"
@@ -30392,7 +30392,7 @@ msgstr "Алло, Босс."
 #. src: dialog
 msgctxt "ui"
 msgid "Hey Exxy, I'd like to do an Xhibition Run."
-msgstr "Эй, Экси, я бы хотел(а) устроить «Экзибишн-ран»."
+msgstr "Эй, Экси, я бы хотела устроить «Экзибишн-ран»."
 
 #. src: dialog
 msgctxt "ui"
@@ -45782,7 +45782,7 @@ msgstr "Ой..~ Сойдёт, ехехе..~"
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Oh no, I dropped some bucks... Why don't you lean over to pick them up?"
-msgstr "О, нет, я уронила несколько купюр... Почему бы тебе не наклониться и подобрать их?"
+msgstr "О, нет, я уронил несколько купюр... Почему бы тебе не наклониться и подобрать их?"
 
 #. src: dialog
 msgctxt "ui"
@@ -46885,7 +46885,7 @@ msgstr "В бегах"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "On Took Photo"
-msgstr "Сделал(а) фото"
+msgstr "Фото сделано"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51143,7 +51143,7 @@ msgstr "Готов добавить диалог?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Ready to enable Interactions?"
-msgstr "Готов(а) включить взаимодействия?"
+msgstr "Включить взаимодействия?"
 
 #. src: dialog
 msgctxt "ui"
@@ -56782,7 +56782,7 @@ msgstr "Значит... ты хочешь, чтобы я отвлекла её �
 #. src: dialog
 msgctxt "ui"
 msgid "So? I said I'm thirsty."
-msgstr "Ну и что? Я же сказал(а), что хочу пить."
+msgstr "Ну и что? Я же сказал, что хочу пить."
 
 #. src: field:DisplayName
 msgctxt "ui"
@@ -68584,7 +68584,7 @@ msgstr "То, чего ты не можешь сделать — это выбр
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "What'd I do to deserve you, Sarah?"
-msgstr "Что я такого сделал, чтобы заслужить тебя, Сара?"
+msgstr "Что я такого сделала, чтобы заслужить тебя, Сара?"
 
 #. src: dialog
 msgctxt "ui"
@@ -71022,7 +71022,7 @@ msgstr "Ты принесла деньги?"
 #. src: dialog
 msgctxt "ui"
 msgid "You called?"
-msgstr "Ты звонил(а)?"
+msgstr "Ты меня звал?"
 
 #. src: dialog
 msgctxt "ui"
@@ -74116,7 +74116,7 @@ msgstr "с клиентом."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ready to fix"
-msgstr "Готов(а) починить."
+msgstr "Готово к починке."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
