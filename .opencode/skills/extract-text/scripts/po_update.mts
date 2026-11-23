@@ -55,6 +55,8 @@ export interface MergeStats {
   skipped: number;
   /** Переводы, чей текст в POT остался только под `#, skip`: в PO не перенесены. */
   skipDropped: number;
+  /** Переводы вырезанных политикой текстов (ассеты): в PO не перенесены. */
+  cutDropped: number;
 }
 
 /** Ключ каталога PO: пара (msgid, msgctxt), как tuple в Python. */
@@ -95,6 +97,11 @@ function cloneEntry(e: PoEntry): PoEntry {
 export function mergePot(
   poEntries: PoEntry[],
   potEntries: PoEntry[],
+  /**
+   * Тексты, вырезанные политикой отбора (журнал `pot-excluded.jsonl`).
+   * Их переводы не сохраняются как `legacy`: это имена ассетов, а не текст.
+   */
+  cutTexts: ReadonlySet<string> = new Set(),
 ): { merged: MergedEntry[]; stats: MergeStats } {
   const poMap = new Map<string, PoEntry>();
   for (const e of poEntries) {
@@ -120,6 +127,7 @@ export function mergePot(
     legacyKept: 0,
     skipped: 0,
     skipDropped: 0,
+    cutDropped: 0,
   };
   const merged: MergedEntry[] = [];
 
@@ -213,6 +221,13 @@ export function mergePot(
   // Хвост: переводы, чьих ключей нет в POT (и которых не спас ретаргет).
   for (const [, old] of vanished) {
     if (!old.msgstr) continue;
+    // Вырезано политикой (ассет) — не важно, помечено ли уже `legacy`:
+    // такой перевод в PO не нужен (иначе очистка не сработает на повторном
+    // прогоне, проверено 2026-11-23).
+    if (cutTexts.has(old.msgid)) {
+      stats.cutDropped += 1;
+      continue;
+    }
     if (old.flags.includes("legacy")) {
       // Уже мигрированные триаж-переводы: их нет в POT по замыслу, в архив не уходят.
       merged.push(old);
@@ -283,6 +298,13 @@ export interface PoUpdateOptions {
   lang?: string;
   /** Каталог с `template.pot` и `<lang>.po` (по умолчанию `po/` репозитория). */
   poDir?: string;
+  /**
+   * Журнал вырезанных политикой строк (`tmp/pot-excluded.jsonl`). Если файл
+   * есть, переводы вырезанных текстов НЕ сохраняются как `legacy`: это имена
+   * ассетов, их перевод — мусор в PO. По умолчанию ищется рядом с `poDir`
+   * (`<root>/tmp/pot-excluded.jsonl`).
+   */
+  excludedPath?: string | null;
 }
 
 export interface PoUpdateResult {
@@ -302,6 +324,24 @@ export function runPoUpdate(options: PoUpdateOptions = {}): PoUpdateResult {
     throw new Error(`${poPath} missing (seed it from template.pot first)`);
   }
 
+  const excludedPath =
+    options.excludedPath === undefined
+      ? join(poDir, "..", "tmp", "pot-excluded.jsonl")
+      : options.excludedPath;
+  const cutTexts = new Set<string>();
+  if (excludedPath && existsSync(excludedPath)) {
+    const journal = readFileSync(excludedPath, "utf8");
+    for (const line of journal.split(/\r?\n/)) {
+      if (!line.trim()) continue;
+      try {
+        const row = JSON.parse(line) as { msgid?: string };
+        if (typeof row.msgid === "string") cutTexts.add(row.msgid);
+      } catch {
+        // Битые строки журнала не должны ломать слияние.
+      }
+    }
+  }
+
   const poRaw = readFileSync(poPath, "utf8");
   const header = extractHeader(poRaw);
   const pot = parsePo(potRaw);
@@ -309,6 +349,7 @@ export function runPoUpdate(options: PoUpdateOptions = {}): PoUpdateResult {
   const { merged, stats } = mergePot(
     old.filter((e) => e.msgid),
     pot.filter((e) => e.msgid),
+    cutTexts,
   );
 
   const backupPath = `${poPath}.bak`;
@@ -365,7 +406,7 @@ export function main(argv: string[]): number {
       `${cli.lang}.po updated: carried=${stats.carried}, new=${stats.new}, ` +
         `obsolete=${stats.obsolete}, retargeted=${stats.retargeted}, ` +
         `legacy_kept=${stats.legacyKept}, skipped=${stats.skipped}, ` +
-        `skip_dropped=${stats.skipDropped} ` +
+        `skip_dropped=${stats.skipDropped}, cut_dropped=${stats.cutDropped} ` +
         `(backup .bak) [${poPath}]`,
     );
     return 0;

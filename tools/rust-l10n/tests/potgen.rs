@@ -1,9 +1,11 @@
 //! potgen: золотой POT мини-дампа (сгенерён TS-эталоном) и границы CLI-контракта.
 
+use std::collections::HashSet;
 use std::path::{Path, PathBuf};
 
+use rust_l10n::inventory::{InventoryItem, ItemKind};
 use rust_l10n::potgen::{
-    apply_src_policy, discover_policy_path, parse_src_policy, policy_decision,
+    apply_src_policy, build_catalog, discover_policy_path, parse_src_policy, policy_decision,
     render_excluded_jsonl, run, src_matches_pattern, validate_policy_pattern, PolicySource,
     PotgenOptions, SrcPolicy, KNOWN_RAW_CLASSES,
 };
@@ -114,7 +116,7 @@ fn tiny_catalog() -> rust_l10n::potgen::Catalog {
     use rust_l10n::inventory::{scan_dump, InventoryItem};
     let inventory = scan_dump(&tiny_dump()).expect("мини-дамп читается");
     let items: Vec<InventoryItem> = inventory.items;
-    let (catalog, _stats) = rust_l10n::potgen::build_catalog(&items, &Default::default());
+    let (catalog, _stats) = rust_l10n::potgen::build_catalog(&items, &Default::default(), None);
     catalog
 }
 
@@ -287,16 +289,53 @@ fn политика_находится_от_корня_репозитория() 
     let policy = rust_l10n::potgen::load_src_policy(&found, true)
         .expect("читается")
         .expect("есть");
+    // Список проверен человеком 2026-11-23 (docs/pot-provenance.md): только
+    // ассетные типы. Если сюда добавили что-то ещё — тест обязан упасть,
+    // потому что это решение, а не техническая правка.
+    const REVIEWED: &[&str] = &[
+        "raw:Font",
+        "raw:Mesh",
+        "raw:MonoScript",
+        "raw:Texture2D",
+        "raw:Sprite",
+        "raw:TextAsset",
+        "raw:GameObject",
+        "raw:AudioClip",
+        "raw:Shader",
+        "raw:Material",
+        "raw:AnimatorController",
+        "raw:AnimationClip",
+        "raw:SpriteAtlas",
+        "raw:AssetBundle",
+        "raw:AudioMixerController",
+        "raw:ComputeShader",
+        "raw:RenderTexture",
+        "raw:VisualEffect",
+        "raw:VisualEffectAsset",
+        "raw:VideoClip",
+        "raw:PhysicMaterial",
+        "raw:CustomRenderTexture",
+        "raw:ShaderVariantCollection",
+        "field:m_Name",
+        "field:m_ClassName",
+        "field:boneName",
+        "field:m_PackedSpriteNamesToIndex",
+        "field:m_AtlasTags",
+        "field:m_Namespace",
+        "field:m_FontNames",
+        "field:ArtistName",
+        "field:ArtistURL",
+        "field:m_AssemblyName",
+        "field:FadeOutBoolName",
+        "field:category",
+        "field:slotName",
+        "field:UnknownName",
+        "field:Name",
+    ];
     assert_eq!(
         policy.exclude,
-        vec![
-            "raw:Font".to_string(),
-            "raw:Mesh".to_string(),
-            "raw:MonoScript".to_string(),
-            "raw:Texture2D".to_string(),
-            "raw:Sprite".to_string(),
-            "raw:TextAsset".to_string()
-        ]
+        REVIEWED.iter().map(|s| s.to_string()).collect::<Vec<_>>(),
+        "состав политики изменился — обнови список осознанно"
     );
 }
 
@@ -497,4 +536,44 @@ fn skip_выключенная_политика_не_меняет_pot() {
         "без skip-политики POT = золотой"
     );
     let _ = std::fs::remove_dir_all(&dir);
+}
+
+fn inv_item(text: &str, kind: ItemKind, src: &str) -> InventoryItem {
+    InventoryItem {
+        text: text.to_string(),
+        speaker: String::new(),
+        rich_text: String::new(),
+        kind,
+        source: "test".to_string(),
+        idx: None,
+        src: src.to_string(),
+    }
+}
+
+#[test]
+fn дедуп_предпочитает_живой_источник_исключённому_ассету() {
+    let policy = parse_src_policy(r#"{"exclude":["raw:GameObject"],"include":["*"]}"#, "p")
+        .expect("политика");
+    let is_excluded = |src: &str| policy_decision(&policy, src).is_some();
+
+    let asset = || inv_item("Hello", ItemKind::Raw, "raw:GameObject");
+    let dialog = || inv_item("Hello", ItemKind::Dlg, "dialog");
+
+    for items in [vec![asset(), dialog()], vec![dialog(), asset()]] {
+        let (catalog, _) = build_catalog(&items, &HashSet::new(), Some(&is_excluded));
+        let slot = catalog
+            .get("Hello")
+            .and_then(|by_ctxt| by_ctxt.get("ui"))
+            .expect("слот существует");
+        assert_eq!(
+            slot.src, "dialog",
+            "метка обязана стать живой: иначе срез ассетов унесёт текст"
+        );
+    }
+
+    // Только ассет — политика убирает запись.
+    let (catalog, _) = build_catalog(&[asset()], &HashSet::new(), Some(&is_excluded));
+    let (kept, excluded, _) = apply_src_policy(catalog, &policy);
+    assert!(kept.is_empty(), "ассетная строка исключена");
+    assert_eq!(excluded[0].src, "raw:GameObject");
 }

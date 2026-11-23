@@ -295,6 +295,23 @@ test("mergePot: переведённая skip-запись в PO не попад
   assert.equal(stats.carried, 0);
 });
 
+test("mergePot: перевод вырезанного политикой текста не остаётся legacy", () => {
+  const { merged, stats } = mergePot(
+    [e("Gone asset name", "ui", "Мусорный перевод")],
+    [],
+    new Set(["Gone asset name"]),
+  );
+  assert.equal(merged.length, 0, "ассетный текст вырезан — перевод не тянем");
+  assert.equal(stats.cutDropped, 1, "потеря видна в счётчике");
+  assert.equal(stats.legacyKept, 0);
+});
+
+test("mergePot: без журнала вырезанных поведение прежнее (legacy)", () => {
+  const { merged } = mergePot([e("Gone", "ui", "Ушло")], []);
+  assert.equal(merged.length, 1);
+  assert.deepEqual(merged[0].flags, ["legacy"]);
+});
+
 test("mergePot: снятый skip убирает метку из PO", () => {
   const old = e("line", "ui", "строка");
   old.flags = ["skip"];

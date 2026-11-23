@@ -158,6 +158,8 @@ pub struct MergeStats {
     pub skipped: usize,
     /// Переводы, чей текст в POT остался только под `#, skip`: не перенесены.
     pub skip_dropped: usize,
+    /// Переводы вырезанных политикой текстов (ассеты): не перенесены.
+    pub cut_dropped: usize,
     pub dropped_items: Vec<DroppedTranslation>,
     pub retarget_items: Vec<Retarget>,
     pub orphan_items: Vec<Orphan>,
@@ -195,6 +197,9 @@ pub fn merge_pot<'a>(
     po_entries: &'a [PoEntry],
     pot_entries: &'a [PoEntry],
     dup_rule: DupRule,
+    // Тексты, вырезанные политикой отбора: их перевод — мусор (имена ассетов),
+    // в `legacy` его не тянем.
+    cut_texts: &HashSet<String>,
 ) -> MergeOutcome {
     let mut stats = MergeStats::default();
 
@@ -406,6 +411,11 @@ pub fn merge_pot<'a>(
         if old.msgstr.is_empty() {
             continue;
         }
+        // Вырезано политикой (ассет) — не важно, помечено ли уже `legacy`.
+        if cut_texts.contains(old.msgid.as_str()) {
+            stats.cut_dropped += 1;
+            continue;
+        }
         if old.flags.iter().any(|f| f == "legacy") {
             // Уже мигрированные триаж-переводы: их нет в POT по замыслу.
             merged.push(MergedEntry {
@@ -560,12 +570,16 @@ pub struct PoUpdateOptions {
     pub dup_rule: DupRule,
     /// Писать `<lang>.po.bak` перед перезаписью (по умолчанию да, как в TS).
     pub backup: bool,
+    /// Журнал вырезанных политикой строк (`<root>/tmp/pot-excluded.jsonl`).
+    /// Если файла нет — поведение как раньше (translations остаются legacy).
+    pub excluded: Option<PathBuf>,
 }
 
 impl PoUpdateOptions {
     pub fn new(root: &Path) -> Self {
         Self {
             lang: "ru".to_string(),
+            excluded: None,
             po_dir: root.join("po"),
             dup_rule: DupRule::default(),
             backup: true,
@@ -602,7 +616,27 @@ pub fn run_po_update(options: &PoUpdateOptions) -> Result<PoUpdateResult, String
         .into_iter()
         .filter(|e| !e.msgid.is_empty())
         .collect();
-    let outcome = merge_pot(&old, &pot, options.dup_rule);
+    let excluded_path = options.excluded.clone().unwrap_or_else(|| {
+        options
+            .po_dir
+            .join("..")
+            .join("tmp")
+            .join("pot-excluded.jsonl")
+    });
+    let mut cut_texts: HashSet<String> = HashSet::new();
+    if let Ok(journal) = std::fs::read_to_string(&excluded_path) {
+        for line in journal.lines() {
+            if line.trim().is_empty() {
+                continue;
+            }
+            if let Ok(value) = serde_json::from_str::<serde_json::Value>(line) {
+                if let Some(serde_json::Value::String(msgid)) = value.get("msgid") {
+                    cut_texts.insert(msgid.clone());
+                }
+            }
+        }
+    }
+    let outcome = merge_pot(&old, &pot, options.dup_rule, &cut_texts);
 
     let backup_path = if options.backup {
         let path = PathBuf::from(format!("{}.bak", po_path.display()));
@@ -655,6 +689,7 @@ pub fn report_to_json(stats: &MergeStats) -> String {
     out.push_str(&format!(", \"dupKeys\": {}", stats.dup_keys));
     out.push_str(&format!(", \"skipped\": {}", stats.skipped));
     out.push_str(&format!(", \"skipDropped\": {}", stats.skip_dropped));
+    out.push_str(&format!(", \"cutDropped\": {}", stats.cut_dropped));
 
     out.push_str(", \"retargets\": [");
     for (i, r) in stats.retarget_items.iter().enumerate() {

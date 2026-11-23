@@ -856,6 +856,10 @@ pub struct PotStats {
 pub fn build_catalog(
     items: &[InventoryItem],
     old_keys: &HashSet<(String, String)>,
+    // `is_excluded` — признак «метка исключена политикой». Нужен при дедупе:
+    // если строку доставили и ассет (`raw:GameObject`), и живой источник
+    // (`dialog`), победить обязан живой — иначе срез ассетов унесёт текст.
+    is_excluded: Option<&dyn Fn(&str) -> bool>,
 ) -> (Catalog, PotStats) {
     let mut catalog: Catalog = HashMap::new();
     let mut seen: HashSet<(String, String)> = HashSet::new();
@@ -874,6 +878,19 @@ pub fn build_catalog(
         if seen.contains(&key) {
             // Двойник: один перевод на все вхождения. rich обновляем, только
             // если у первого вхождения его не было.
+            //
+            // Если слот занял исключённый источник, а сейчас пришёл живой —
+            // переключаем метку на живой: иначе строка выпадет вместе с ассетом.
+            if let Some(is_excluded) = is_excluded {
+                if let Some(slot) = catalog
+                    .get_mut(&item.text)
+                    .and_then(|by_ctxt| by_ctxt.get_mut(&ctxt))
+                {
+                    if !slot.src.is_empty() && is_excluded(&slot.src) && !is_excluded(&item.src) {
+                        slot.src = item.src.clone();
+                    }
+                }
+            }
             if !rich.is_empty() {
                 if let Some(slot) = catalog
                     .get_mut(&item.text)
@@ -1104,12 +1121,9 @@ pub fn run(options: &PotgenOptions) -> Result<PotgenResult, String> {
     // Ключи берём из репозиторного `po/template.pot` ВСЕГДА, даже если пишем
     // в другой файл: это только статистика new/vanished.
     let old_keys = old_keys_from_pot(&options.root.join("po").join("template.pot"));
-    let (catalog, stats) = build_catalog(&inventory.items, &old_keys);
-    if catalog_size(&catalog) == 0 {
-        return Err("empty catalog: нечего записывать (пустой дамп?)".to_string());
-    }
 
     // Политика отбора по провенансу — данные (`config/pot-src-policy.json`).
+    // Читается ДО сборки каталога: дедуп должен знать исключённые метки.
     let policy = match &options.policy {
         PolicySource::Disabled => None,
         PolicySource::Path(path) => load_src_policy(path, true)?,
@@ -1125,6 +1139,15 @@ pub fn run(options: &PotgenOptions) -> Result<PotgenResult, String> {
             }
         }
     };
+
+    let is_excluded: Option<Box<dyn Fn(&str) -> bool + '_>> = policy
+        .as_ref()
+        .map(|p| Box::new(move |src: &str| policy_decision(p, src).is_some()) as Box<_>);
+    let is_excluded_ref: Option<&dyn Fn(&str) -> bool> = is_excluded.as_deref();
+    let (catalog, stats) = build_catalog(&inventory.items, &old_keys, is_excluded_ref);
+    if catalog_size(&catalog) == 0 {
+        return Err("empty catalog: нечего записывать (пустой дамп?)".to_string());
+    }
 
     let (catalog, excluded, by_src) = match &policy {
         Some(policy) => {

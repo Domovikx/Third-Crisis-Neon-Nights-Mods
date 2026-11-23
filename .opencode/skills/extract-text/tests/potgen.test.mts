@@ -191,6 +191,8 @@ test("runPotgen: мини-дамп → POT с ожидаемыми запися�
     dumpDir: FIXTURE,
     outPath: out,
     created: "2026-01-02 03:04+0000",
+    // Тест про каталог и rich, а не про политику: без неё фикстура целиком.
+    policyPath: null,
   });
 
   assert.equal(res.entries, 10);
@@ -874,6 +876,35 @@ test("skip-политика находится от корня репозито�
   const found = discoverSkipPolicyPath(REPO);
   assert.ok(found, "config/pot-skip-policy.json");
   assert.ok(found?.endsWith("pot-skip-policy.json"));
+});
+
+test("buildCatalog: при дубле побеждает живой источник, а не исключённый ассет", () => {
+  const policy = parseSrcPolicy(
+    JSON.stringify({ exclude: ["raw:GameObject"], include: ["*"] }),
+    "p.json",
+  );
+  const isExcluded = (src: string): boolean => policyDecision(policy, src).excluded;
+  const asset = () => item({ text: "Hello", kind: "raw", src: "raw:GameObject" });
+  const dialog = () => item({ text: "Hello", kind: "dlg", src: "dialog" });
+
+  // Порядок 1: ассет первым.  Порядок 2: живой первым.
+  for (const items of [
+    [asset(), dialog()],
+    [dialog(), asset()],
+  ]) {
+    const { catalog } = buildCatalog(items, new Set(), isExcluded);
+    assert.equal(
+      catalog.get("Hello")?.get("ui")?.src,
+      "dialog",
+      "метка обязана стать живой: иначе срез ассетов унесёт настоящий текст",
+    );
+  }
+
+  // Только ассет — политика убирает запись, журнал её фиксирует.
+  const onlyAsset = buildCatalog([asset()], new Set(), isExcluded);
+  const applied = applySrcPolicy(onlyAsset.catalog, policy);
+  assert.equal(applied.catalog.size, 0, "ассетная строка исключена");
+  assert.equal(applied.excluded[0]?.src, "raw:GameObject");
 });
 
 test("applySkipPolicy: srcExclude сужает правило, не ломая остальные метки", () => {

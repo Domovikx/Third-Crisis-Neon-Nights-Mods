@@ -643,6 +643,13 @@ function slotOf(catalog: Catalog, text: string, ctxt: string): PotSlot {
 export function buildCatalog(
   items: InventoryItem[],
   oldKeys: ReadonlySet<string> = new Set(),
+  /**
+   * Признак «эта метка исключена политикой». Нужен при дедупе: если строку
+   * доставили и ассет (`raw:GameObject`), и живой источник (`dialog`),
+   * победить обязан живой — иначе срез ассетов унесёт настоящий текст.
+   * Проверка политики ПОСЛЕ дедупа этого не спасает (слот уже один).
+   */
+  isExcluded?: (src: string) => boolean,
 ): PotCatalog {
   const catalog: Catalog = new Map();
   const seen = new Set<string>();
@@ -666,6 +673,15 @@ export function buildCatalog(
     if (seen.has(key)) {
       // Двойник: один перевод на все вхождения. rich обновляем, только если
       // у первого вхождения его не было (стиль не зависит от порядка дампа).
+      //
+      // Если слот занял исключённый источник, а сейчас пришёл живой —
+      // переключаем метку на живой: иначе строка выпадет вместе с ассетом.
+      if (isExcluded) {
+        const slot = slotOf(catalog, item.text, ctxt);
+        if (slot.src && isExcluded(slot.src) && !isExcluded(item.src)) {
+          slot.src = item.src;
+        }
+      }
       if (rich) {
         const slot = slotOf(catalog, item.text, ctxt);
         if (!slot.comments.some((c) => c.startsWith("rich_text:"))) {
@@ -950,19 +966,25 @@ export async function runPotgen(options: PotgenOptions = {}): Promise<PotgenResu
     throw new Error(`empty dump: ${dumpDir} — переводимых строк не найдено`);
   }
 
-  // Ключи берём из репозиторного `po/template.pot` ВСЕГДА, даже если пишем
-  // в `--out` другой файл: это только статистика new/vanished, на состав
-  // каталога не влияет.
-  const { catalog, stats } = buildCatalog(inventory.items, oldKeysFromPot());
-  if (catalogSize(catalog) === 0) {
-    throw new Error("empty catalog: нечего записывать (пустой дамп?)");
-  }
-
   // Политика отбора по провенансу — данные (`config/pot-src-policy.json`).
+  // Читаем ДО сборки каталога: дедуп должен знать, какие метки исключены,
+  // чтобы живой источник побеждал ассетный при одинаковом тексте.
   let policy: SrcPolicy | null = null;
   if (options.policyPath !== null) {
     const policyPath = options.policyPath ?? discoverPolicyPath();
     if (policyPath) policy = loadSrcPolicy(policyPath, { required: true });
+  }
+
+  // Ключи берём из репозиторного `po/template.pot` ВСЕГДА, даже если пишем
+  // в `--out` другой файл: это только статистика new/vanished, на состав
+  // каталога не влияет.
+  const { catalog, stats } = buildCatalog(
+    inventory.items,
+    oldKeysFromPot(),
+    policy ? (src) => policyDecision(policy, src).excluded : undefined,
+  );
+  if (catalogSize(catalog) === 0) {
+    throw new Error("empty catalog: нечего записывать (пустой дамп?)");
   }
   const applied = policy ? applySrcPolicy(catalog, policy) : null;
   const finalCatalog = applied?.catalog ?? catalog;

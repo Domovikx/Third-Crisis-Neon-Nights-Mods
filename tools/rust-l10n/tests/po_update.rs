@@ -1,6 +1,7 @@
 //! po_update: порт TS-тестов (`.opencode/skills/extract-text/tests/po_update.test.mts`)
 //! + тесты нового учёта выпавших ключей (`dropped`/`orphans`/`dup_keys`).
 
+use std::collections::HashSet;
 use std::path::{Path, PathBuf};
 
 use rust_l10n::po_update::{
@@ -57,6 +58,7 @@ impl Fixture {
             po_dir: self.root.join("po"),
             dup_rule: DupRule::Last,
             backup: true,
+            excluded: None,
         }
     }
 
@@ -77,7 +79,7 @@ const HEADER: &str = "msgid \"\"\nmsgstr \"\"\n";
 fn перенос_и_новая_запись_refs_berutsya_из_pot() {
     let pot = [e("A", "ui", "", &[]), e("B", "ui", "", &[])];
     let po = [e("A", "ui", "А", &["f1"])];
-    let out = merge_pot(&po, &pot, DupRule::Last);
+    let out = merge_pot(&po, &pot, DupRule::Last, &HashSet::new());
 
     assert_eq!(out.stats.carried, 1);
     assert_eq!(out.stats.new, 1);
@@ -92,7 +94,12 @@ fn перенос_и_новая_запись_refs_berutsya_из_pot() {
 fn исчезнувший_текст_живёт_с_флагом_legacy() {
     let pot = [e("A", "ui", "", &[])];
     let gone = e("Gone", "ui", "Ушло", &[]);
-    let out = merge_pot(&[e("A", "ui", "А", &[]), gone], &pot, DupRule::Last);
+    let out = merge_pot(
+        &[e("A", "ui", "А", &[]), gone],
+        &pot,
+        DupRule::Last,
+        &HashSet::new(),
+    );
 
     assert_eq!(out.stats.legacy_kept, 1);
     assert_eq!(out.stats.obsolete, 0);
@@ -118,7 +125,7 @@ fn ретаргет_при_смене_контекста() {
     let pot = [e("Go", "speaker:Zed", "", &[])];
     let mut old = e("Go", "ui", "Иди", &["translations/old.yaml"]);
     old.translator = vec!["rich: <b>Иди</b>".to_string()];
-    let out = merge_pot(&[old], &pot, DupRule::Last);
+    let out = merge_pot(&[old], &pot, DupRule::Last, &HashSet::new());
 
     assert_eq!(out.stats.retargeted, 1);
     assert_eq!(out.stats.dropped, 0);
@@ -148,7 +155,7 @@ fn ретаргет_не_срабатывает_если_одноимённый_
         e("Go", "speaker:Amy", "Иди", &[]),
         e("Go", "ui", "Ступай", &[]),
     ];
-    let out = merge_pot(&po, &pot, DupRule::Last);
+    let out = merge_pot(&po, &pot, DupRule::Last, &HashSet::new());
 
     assert_eq!(out.stats.retargeted, 0);
     assert_eq!(out.stats.dropped, 1, "вариант не потерялся молча");
@@ -177,7 +184,7 @@ fn два_исчезнувших_ключа_на_один_целевой_пер�
     // Порядок в файле: «первый», «второй»; сортировка по msgctxt решает, кто
     // вошёл в fill последним (второй по сортировке перезаписывает первый).
     let po = [e("Go", "aaa", "Первый", &[]), e("Go", "zzz", "Второй", &[])];
-    let out = merge_pot(&po, &pot, DupRule::Last);
+    let out = merge_pot(&po, &pot, DupRule::Last, &HashSet::new());
 
     assert_eq!(
         out.merged[0].po.msgstr, "Второй",
@@ -195,7 +202,7 @@ fn два_исчезнувших_ключа_на_один_целевой_пер�
 fn пустые_переводы_выпадают_obsolete_всегда_ноль() {
     let pot = [e("A", "ui", "", &[])];
     let po = [e("A", "ui", "", &[]), e("Gone", "ui", "", &[])];
-    let out = merge_pot(&po, &pot, DupRule::Last);
+    let out = merge_pot(&po, &pot, DupRule::Last, &HashSet::new());
     assert_eq!(out.stats.obsolete, 0);
     assert_eq!(out.stats.dropped, 0);
     assert_eq!(out.merged.len(), 1);
@@ -206,7 +213,12 @@ fn запись_с_флагом_legacy_остаётся_в_хвосте_без_�
     let pot = [e("A", "ui", "", &[])];
     let mut legacy = e("Triaged", "ui", "Мусор", &[]);
     legacy.flags = vec!["legacy".to_string()];
-    let out = merge_pot(&[e("A", "ui", "А", &[]), legacy], &pot, DupRule::Last);
+    let out = merge_pot(
+        &[e("A", "ui", "А", &[]), legacy],
+        &pot,
+        DupRule::Last,
+        &HashSet::new(),
+    );
 
     assert_eq!(
         out.stats.legacy_kept, 0,
@@ -222,7 +234,7 @@ fn auto_normalized_не_переезжает_в_новый_pot() {
     let pot = [e("A", "ui", "", &[])];
     let mut po = e("A", "ui", "А", &[]);
     po.flags = vec!["fuzzy".to_string(), "auto-normalized".to_string()];
-    let out = merge_pot(&[po], &pot, DupRule::Last);
+    let out = merge_pot(&[po], &pot, DupRule::Last, &HashSet::new());
     assert_eq!(out.merged[0].po.flags, vec!["fuzzy".to_string()]);
 }
 
@@ -230,7 +242,7 @@ fn auto_normalized_не_переезжает_в_новый_pot() {
 fn дубликаты_ключа_в_po_побеждает_последний_и_это_видно() {
     let pot = [e("A", "ui", "", &[])];
     let po = [e("A", "ui", "первый", &[]), e("A", "ui", "второй", &[])];
-    let out = merge_pot(&po, &pot, DupRule::Last);
+    let out = merge_pot(&po, &pot, DupRule::Last, &HashSet::new());
     assert_eq!(out.merged[0].po.msgstr, "второй");
     assert_eq!(out.stats.dup_keys, 1);
     assert_eq!(out.stats.dup_items[0].variants, vec!["первый", "второй"]);
@@ -245,14 +257,14 @@ fn dup_rule_earliest_ref_выбирает_то_что_увидит_рантай�
     // В файле ранний блок идёт первым: правила расходятся.
     let po = [early, late];
 
-    let last = merge_pot(&po, &pot, DupRule::Last);
+    let last = merge_pot(&po, &pot, DupRule::Last, &HashSet::new());
     assert_eq!(
         last.merged[0].po.msgstr, "поздний",
         "последний блок в файле"
     );
     assert_eq!(last.stats.dup_items[0].chosen, "поздний");
 
-    let by_ref = merge_pot(&po, &pot, DupRule::EarliestRef);
+    let by_ref = merge_pot(&po, &pot, DupRule::EarliestRef, &HashSet::new());
     assert_eq!(
         by_ref.merged[0].po.msgstr, "ранний",
         "earliest-ref = translations/1.yaml, как решает po2dat"
@@ -271,7 +283,7 @@ fn кавычки_и_переводы_строк_переживают_merge_rend
     let id = "He said \"hi\"\nbye";
     let pot = [e(id, "ui", "", &[])];
     let po = [e(id, "ui", "Он сказал \"привет\"\nпока", &[])];
-    let out = merge_pot(&po, &pot, DupRule::Last);
+    let out = merge_pot(&po, &pot, DupRule::Last, &HashSet::new());
     let text = render_merged(&out.merged, &["# header".to_string()]);
     let back = parse_po(&text);
 
@@ -290,7 +302,7 @@ fn комментарии_переводчика_сохраняются_пуст
         "note for humans".to_string(),
         String::new(),
     ];
-    let out = merge_pot(&[old], &pot, DupRule::Last);
+    let out = merge_pot(&[old], &pot, DupRule::Last, &HashSet::new());
     let text = render_merged(&out.merged, &[]);
     assert!(text.contains("# rich: <b>А</b>"));
     assert!(text.contains("# note for humans"));
@@ -413,6 +425,7 @@ fn отсутствующий_po_ошибка_и_файл_не_создаётс�
         po_dir: root.join("po"),
         dup_rule: DupRule::Last,
         backup: true,
+        excluded: None,
     };
     let err = run_po_update(&options).expect_err("должна быть ошибка");
     assert!(err.contains("missing"), "сообщение: {err}");
@@ -450,7 +463,7 @@ fn json_отчёт_содержит_выпавшие_и_сирот() {
         e("Go", "ui", "Ступай", &[]),
         legacy,
     ];
-    let out = merge_pot(&po, &pot, DupRule::Last);
+    let out = merge_pot(&po, &pot, DupRule::Last, &HashSet::new());
     let json = report_to_json(&out.stats);
 
     assert!(json.contains("\"dropped\": 1"), "{json}");
@@ -472,6 +485,7 @@ fn опустевший_pot_делает_все_переводы_сиротам�
         &[e("Gone1", "ui", "Раз", &[]), e("Gone2", "ui", "Два", &[])],
         &[],
         DupRule::Last,
+        &HashSet::new(),
     );
     assert_eq!(out.stats.legacy_kept, 2);
     assert_eq!(out.stats.orphans, 2);
@@ -509,6 +523,7 @@ fn шаблон_отчёта_печатает_все_ключи_счётчико
         &[e("A", "ui", "А", &[])],
         &[e("A", "ui", "", &[]), e("B", "ui", "", &[])],
         DupRule::Last,
+        &HashSet::new(),
     )
     .stats;
     let text = report_to_json(&stats);
@@ -580,7 +595,7 @@ fn e_skip(msgid: &str, msgstr: &str) -> PoEntry {
 #[test]
 fn skip_записи_не_создают_пустых_строк_в_po() {
     let pot = [e_skip("junk", ""), e("Kept line", "ui", "", &[])];
-    let out = merge_pot(&[], &pot, DupRule::Last);
+    let out = merge_pot(&[], &pot, DupRule::Last, &HashSet::new());
     // junk не попал в PO вовсе; Kept line — обычная пустая строка.
     assert_eq!(out.merged.len(), 1);
     assert_eq!(out.merged[0].po.msgid, "Kept line");
@@ -594,10 +609,28 @@ fn skip_записи_не_создают_пустых_строк_в_po() {
 fn skip_переведённая_строка_в_po_не_попадает() {
     let pot = [e_skip("junk", "")];
     let po = [e("junk", "ui", "мусор", &[])];
-    let out = merge_pot(&po, &pot, DupRule::Last);
+    let out = merge_pot(&po, &pot, DupRule::Last, &HashSet::new());
     assert!(out.merged.is_empty(), "инфошум не тянет за собой перевод");
     assert_eq!(out.stats.skipped, 1);
     assert_eq!(out.stats.carried, 0);
+}
+
+#[test]
+fn перевод_вырезанного_политикой_текста_не_остаётся_legacy() {
+    let mut cut = HashSet::new();
+    cut.insert("Gone asset name".to_string());
+    let out = merge_pot(
+        &[e("Gone asset name", "ui", "Мусор", &[])],
+        &[],
+        DupRule::Last,
+        &cut,
+    );
+    assert!(
+        out.merged.is_empty(),
+        "ассетный текст вырезан — перевод не тянем"
+    );
+    assert_eq!(out.stats.cut_dropped, 1, "потеря видна в счётчике");
+    assert_eq!(out.stats.legacy_kept, 0);
 }
 
 #[test]
@@ -606,7 +639,7 @@ fn снятый_skip_убирает_метку_из_po() {
     let pot = [e("line", "ui", "", &[])];
     let mut old = e("line", "ui", "строка", &[]);
     old.flags.push("skip".to_string());
-    let out = merge_pot(&[old], &pot, DupRule::Last);
+    let out = merge_pot(&[old], &pot, DupRule::Last, &HashSet::new());
     assert!(
         out.merged[0].po.flags.is_empty(),
         "{:?}",
@@ -621,7 +654,7 @@ fn перевод_под_skip_ключом_не_остаётся_ни_живым
     // ни хвостом legacy (старый перевод был копией msgid или транслитом).
     let pot = [e_skip("Gone text", "")];
     let po = [e("Gone text", "speaker:Zoey", "Ушло", &[])];
-    let out = merge_pot(&po, &pot, DupRule::Last);
+    let out = merge_pot(&po, &pot, DupRule::Last, &HashSet::new());
     assert!(out.merged.is_empty(), "skip-ключ не остаётся в PO");
     assert_eq!(out.stats.skipped, 1, "в POT это одна skip-запись");
     assert_eq!(
