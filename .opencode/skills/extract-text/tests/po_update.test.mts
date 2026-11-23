@@ -69,6 +69,38 @@ test("mergePot: исчезнувший текст остаётся живым с
   assert.match(kept.translator.at(-1) ?? "", /^legacy: text vanished from POT/);
 });
 
+test("mergePot: ключ вернулся в POT — протухший флаг legacy снимается", () => {
+  // На 2026-11-23 таких «протухших» меток было 128: текст вернулся в POT,
+  // а в po/ru.po запись осталась помеченной сиротой. Метка должна уйти вместе
+  // с её пояснением, иначе запись навсегда выглядит как потерянная.
+  const pot = [e("Back", "ui")];
+  const stale = e("Back", "ui", "Вернулось");
+  stale.flags = ["legacy"];
+  stale.translator = ["legacy: text vanished from POT, kept for runtime lookup"];
+
+  const { merged, stats } = mergePot([stale], pot);
+  const out = merged.find((x) => x.msgid === "Back") as MergedEntry;
+  assert.equal(out.msgstr, "Вернулось");
+  assert.deepEqual(out.flags, []);
+  assert.deepEqual(out.translator, []);
+  assert.equal(stats.carried, 1);
+});
+
+test("mergePot: мусорная сирота выпиливается, живая остаётся", () => {
+  // Правило 2026-11-23: legacy полезна только когда в ней есть что искать.
+  const pot = [e("A", "ui")];
+  const junk = e('Wv"?$', "ui", "Wv\\");
+  const same = e("12345", "ui", "12345");
+  const alive = e("APP NOT FOUND", "ui", "ПРИЛОЖЕНИЕ НЕ НАЙДЕНО");
+  const { merged, stats } = mergePot([e("A", "ui", "А"), junk, same, alive], pot);
+
+  assert.equal(stats.legacyDropped, 2, "копия оригинала и мусорный ключ не нужны");
+  assert.equal(stats.legacyKept, 1);
+  const kept = merged.find((x) => x.msgid === "APP NOT FOUND") as MergedEntry;
+  assert.equal(kept.msgstr, "ПРИЛОЖЕНИЕ НЕ НАЙДЕНО");
+  assert.ok(!merged.some((x) => x.msgid === 'Wv"?$'));
+});
+
 test("mergePot: ретаргет — перевод спасается при смене msgctxt", () => {
   const pot = [e("Go", "speaker:Zed")];
   const old = e("Go", "ui", "Иди", ["translations/old.yaml"]);

@@ -121,6 +121,44 @@ fn исчезнувший_текст_живёт_с_флагом_legacy() {
 }
 
 #[test]
+fn ключ_вернулся_в_pot_флаг_legacy_снимается() {
+    // На 2026-11-23 таких «протухших» меток было 128: текст вернулся в POT,
+    // а запись в po/ru.po осталась помеченной сиротой.
+    let pot = [e("Back", "ui", "", &[])];
+    let mut stale = e("Back", "ui", "Вернулось", &[]);
+    stale.flags = vec!["legacy".to_string()];
+    stale.translator = vec!["legacy: text vanished from POT, kept for runtime lookup".to_string()];
+    let out = merge_pot(&[stale], &pot, DupRule::Last, &HashSet::new());
+
+    let got = out
+        .merged
+        .iter()
+        .find(|m| m.po.msgid == "Back")
+        .expect("Back");
+    assert_eq!(got.po.msgstr, "Вернулось");
+    assert!(got.po.flags.is_empty(), "флаг сироты снят");
+    assert!(got.po.translator.is_empty(), "пояснение снято");
+    assert_eq!(out.stats.carried, 1);
+}
+
+#[test]
+fn мусорная_сирота_выпиливается() {
+    let pot = [e("A", "ui", "", &[])];
+    let same = e("12345", "ui", "12345", &[]);
+    let alive = e("APP NOT FOUND", "ui", "ПРИЛОЖЕНИЕ НЕ НАЙДЕНО", &[]);
+    let out = merge_pot(
+        &[e("A", "ui", "А", &[]), same, alive],
+        &pot,
+        DupRule::Last,
+        &HashSet::new(),
+    );
+
+    assert_eq!(out.stats.legacy_dropped, 1, "копия оригинала не нужна");
+    assert_eq!(out.stats.legacy_kept, 1);
+    assert!(!out.merged.iter().any(|m| m.po.msgid == "12345"));
+}
+
+#[test]
 fn ретаргет_при_смене_контекста() {
     let pot = [e("Go", "speaker:Zed", "", &[])];
     let mut old = e("Go", "ui", "Иди", &["translations/old.yaml"]);

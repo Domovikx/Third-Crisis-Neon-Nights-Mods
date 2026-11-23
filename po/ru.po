@@ -160,8 +160,6 @@ msgid "' in animMap!"
 msgstr "' в animMap!"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "' in the roomset! This is not good!"
 msgstr "' в наборе комнат! Это плохо!"
@@ -197,8 +195,6 @@ msgid "'! Create a new save!"
 msgstr "'! Создайте новое сохранение!"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "'! Use another name!"
 msgstr "'! Используйте другое имя!"
@@ -252,7 +248,6 @@ msgstr "(\"Клавдия — кроличья сука\"...?! Ч-?)"
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(... ! )</i></color>
 # rich_translation: <color=#EB83FF><i>(... ! )</i></color>
-#, legacy
 msgctxt "ui"
 msgid "(... ! )"
 msgstr "(... ! )"
@@ -1271,9 +1266,9 @@ msgctxt "speaker:Zoey"
 msgid "(Dang, he locked the door when he left... )"
 msgstr "(Чёрт, он запер дверь, когда уходил...)"
 
-# rich_translation: <i>(<color=#EB83FF>Глубже... </color>Нет, мне это не нравится, <color=#EB83FF>я бы никогда такого не сделала...</color> Это просто... Я же только помогаю ей!)</i>
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Deeper... </color>No, I'm not into this, <color=#EB83FF>I wouldn't...</color> This is... I'm j<color=#EB83FF>ust hel</color>ping he<color=#EB83FF>r</color>!  )</i>
+# rich_translation: <i>(<color=#EB83FF>Глубже... </color>Нет, мне это не нравится, <color=#EB83FF>я бы никогда такого не сделала...</color> Это просто... Я же только помогаю ей!)</i>
 msgctxt "ui"
 msgid "(Deeper... No, I'm not into this, I wouldn't... This is... I'm just helping her!  )"
 msgstr "(Глубже... Нет, мне это не нравится, я бы никогда такого не сделала... Это просто... Я же только помогаю ей!)"
@@ -1454,9 +1449,9 @@ msgctxt "speaker:Zoey"
 msgid "(Enjoying... me...?)"
 msgstr "(Ей нравится... я...?)"
 
-# rich_translation: <i>(<color=#EB83FF>Ещё сильнее... Чтобы дос</color>тать этот <color=#EB83FF>чип, Зои</color>. Ты почти справилась!)</i>
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Even harder... To ge</color>t that c<color=#EB83FF>hip, Zoe</color>y. You almost got it!)</i>
+# rich_translation: <i>(<color=#EB83FF>Ещё сильнее... Чтобы дос</color>тать этот <color=#EB83FF>чип, Зои</color>. Ты почти справилась!)</i>
 msgctxt "ui"
 msgid "(Even harder... To get that chip, Zoey. You almost got it!)"
 msgstr "(Ещё сильнее... Чтобы достать этот чип, Зои. Ты почти справилась!)"
@@ -1545,16 +1540,16 @@ msgctxt "ui"
 msgid "(Fffh... Shouldn't I-... say something...?)"
 msgstr "(Ф-ф... Не должна ли я-... сказать что-то...?)"
 
-# rich_translation: <i>(Ф-ф-ф... хх... кто бы меня ни увидел... такая <color=#EB83FF>чертовски горячая</color>...)</i>
 #. src: dialog
 #. rich_text: <i>(Fffhh anyone could see me... so <color=#EB83FF>fucking hot</color>... )</i>
+# rich_translation: <i>(Ф-ф-ф... хх... кто бы меня ни увидел... такая <color=#EB83FF>чертовски горячая</color>...)</i>
 msgctxt "ui"
 msgid "(Fffhh anyone could see me... so fucking hot... )"
 msgstr "(Ф-ф-ф... хх... кто бы меня ни увидел... такая чертовски горячая...)"
 
-# rich_translation: <i>(Ффаах... Я чувствую запах их геля для душа... <color=#EB83FF>Чёрт~</color>)</i>
 #. src: dialog
 #. rich_text: <i>(Fffhh... I can smell their body wash... <color=#EB83FF>Fuck~</color> )</i>
+# rich_translation: <i>(Ффаах... Я чувствую запах их геля для душа... <color=#EB83FF>Чёрт~</color>)</i>
 msgctxt "ui"
 msgid "(Fffhh... I can smell their body wash... Fuck~ )"
 msgstr "(Ффаах... Я чувствую запах их геля для душа... Чёрт~)"
@@ -1921,9 +1916,9 @@ msgctxt "ui"
 msgid "(God, fuckhh.. It's so soft.. I-.. Khh.. )"
 msgstr "(Чёрт, бля.. Она такая мягкая.. Я-.. Кх..)"
 
-# rich_translation: <i>(Боже, это так глупо... <color=#EB83FF>Фф...</color>)</i>
 #. src: dialog
 #. rich_text: <i>(God, this is so stupid... <color=#EB83FF>Fffh...</color> )</i>
+# rich_translation: <i>(Боже, это так глупо... <color=#EB83FF>Фф...</color>)</i>
 msgctxt "ui"
 msgid "(God, this is so stupid... Fffh... )"
 msgstr "(Боже, это так глупо... Фф...)"
@@ -2006,9 +2001,9 @@ msgctxt "ui"
 msgid "(Good ol' Neon City subway... I should move forward before anyone realizes I don't have a ticket.)"
 msgstr "(Старое доброе метро Неон-Сити... Надо пройти дальше, пока никто не понял, что у меня нет билета.)"
 
-# rich_translation: <i>(Боже... Она такая <color=#EB83FF>красивая...</color> Нет! Нет. Плохо, Зои. Фф... Здесь <color=#EB83FF>становится так тепло</color>...)</i>
 #. src: dialog
 #. rich_text: <i>(Gosh... She's s<color=#EB83FF>o pretty...</color> No! No. Bad Zoey. Fffh... It's get<color=#EB83FF>ting so warm in here</color>... )</i>
+# rich_translation: <i>(Боже... Она такая <color=#EB83FF>красивая...</color> Нет! Нет. Плохо, Зои. Фф... Здесь <color=#EB83FF>становится так тепло</color>...)</i>
 msgctxt "speaker:Zoey"
 msgid "(Gosh... She's so pretty... No! No. Bad Zoey. Fffh... It's getting so warm in here... )"
 msgstr "(Боже... Она такая красивая... Нет! Нет. Плохо, Зои. Фф... Здесь становится так тепло...)"
@@ -2554,9 +2549,9 @@ msgctxt "ui"
 msgid "(Hhh... She groped me so thoroughly... I should have stopped her, I should have-.. Mm... )"
 msgstr "(Х-х-х... Она так тщательно меня ощупала... Я должна была остановить её, я должна была-.. М-м... )"
 
-# rich_translation: <i>(Х-х-х... Это так рискованно... <color=#EB83FF>Боже, я уже мокрая...</color>)</i>
 #. src: dialog
 #. rich_text: <i>(Hhh... This is so risky... <color=#EB83FF>God, I'm getting wet...</color> )</i>
+# rich_translation: <i>(Х-х-х... Это так рискованно... <color=#EB83FF>Боже, я уже мокрая...</color>)</i>
 msgctxt "ui"
 msgid "(Hhh... This is so risky... God, I'm getting wet... )"
 msgstr "(Х-х-х... Это так рискованно... Боже, я уже мокрая...)"
@@ -2700,9 +2695,9 @@ msgctxt "ui"
 msgid "(Hopefully nobody saw... )"
 msgstr "(Надеюсь, никто не увидел... )"
 
-# rich_translation: <i>(Надеюсь, никто не увидит... <color=#EB83FF>Фффа...</color>)</i>
 #. src: dialog
 #. rich_text: <i>(Hopefully nobody sees... <color=#EB83FF>Fffh...</color> )</i>
+# rich_translation: <i>(Надеюсь, никто не увидит... <color=#EB83FF>Фффа...</color>)</i>
 msgctxt "ui"
 msgid "(Hopefully nobody sees... Fffh... )"
 msgstr "(Надеюсь, никто не увидит... Фффа...)"
@@ -4263,9 +4258,9 @@ msgctxt "ui"
 msgid "(I-Is this a... dildo?)"
 msgstr "(Э-Это... дилдо?)"
 
-# rich_translation: <i>(Э-это не то, что кажется! <color=#EB83FF>Я-я клянусь!</color>)</i>
 #. src: dialog
 #. rich_text: <i>(I-It's not what it looks like! <color=#EB83FF>I-I swear!</color> )</i>
+# rich_translation: <i>(Э-это не то, что кажется! <color=#EB83FF>Я-я клянусь!</color>)</i>
 msgctxt "ui"
 msgid "(I-It's not what it looks like! I-I swear! )"
 msgstr "(Э-это не то, что кажется! Я-я клянусь!)"
@@ -5769,9 +5764,9 @@ msgctxt "ui"
 msgid "(N-... No, I-... Hhh-... I-... Nghh...)"
 msgstr "(Н-... Нет, я-... Х-х-... Я-... Н-н-...)"
 
-# rich_translation: <i>(Н-Нет! Кто-то меня увидел! Они... они знают, <color=#EB83FF>что я такое...</color>)</i>
 #. src: dialog
 #. rich_text: <i>(N-No! Someone saw me! They... They know <color=#EB83FF>what I am...</color> )</i>
+# rich_translation: <i>(Н-Нет! Кто-то меня увидел! Они... они знают, <color=#EB83FF>что я такое...</color>)</i>
 msgctxt "ui"
 msgid "(N-No! Someone saw me! They... They know what I am... )"
 msgstr "(Н-Нет! Кто-то меня увидел! Они... они знают, что я такое...)"
@@ -5941,9 +5936,9 @@ msgctxt "ui"
 msgid "(No! I-I just needed to clean it up! I didn't want to... lick Lio's... )"
 msgstr "(Нет! Я... я просто хотела всё очистить! Я не хотела... лизать Лио... )"
 
-# rich_translation: <color=#EB83FF><i>(Нет! Нет. Перест</color>ань. Перестань это делать. Холодный душ! Бейсбол! Ах... Просто... закончи распаковывать...)</i>
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(No! No. St</color>op. Stop doing that. Cold showers! Baseball! Agh... Just... finish unpacking... )</i>
+# rich_translation: <color=#EB83FF><i>(Нет! Нет. Перест</color>ань. Перестань это делать. Холодный душ! Бейсбол! Ах... Просто... закончи распаковывать...)</i>
 msgctxt "ui"
 msgid "(No! No. Stop. Stop doing that. Cold showers! Baseball! Agh... Just... finish unpacking... )"
 msgstr "(Нет! Нет. Перестань. Перестань это делать. Холодный душ! Бейсбол! Ах... Просто... закончи распаковывать...)"
@@ -6754,9 +6749,9 @@ msgctxt "ui"
 msgid "(She really doesn't... Think what she does is... Bad...?)"
 msgstr "(Она правда не... считает то, что делает... чем-то... плохим...?)"
 
-# rich_translation: <i>(Она сказала «я», а не «этот». Фф... Её <color=#EB83FF>киска будто оторвёт мне пальцы...</color> )</i>
 #. src: dialog
 #. rich_text: <i>(She said "I" instead of "This one". Ghh... Her p<color=#EB83FF>ussy feels like it's gonna tear my fingers off...</color> )</i>
+# rich_translation: <i>(Она сказала «я», а не «этот». Фф... Её <color=#EB83FF>киска будто оторвёт мне пальцы...</color> )</i>
 msgctxt "ui"
 msgid "(She said \"I\" instead of \"This one\". Ghh... Her pussy feels like it's gonna tear my fingers off... )"
 msgstr "(Она сказала «я», а не «этот». Фф... Её киска будто оторвёт мне пальцы... )"
@@ -7122,9 +7117,9 @@ msgctxt "ui"
 msgid "(So I just need to get her... wet... )"
 msgstr "(Значит, мне просто нужно сделать её... мокрой...)"
 
-# rich_translation: <i>(Они так близко, что могут меня учуять... <color=#EB83FF>Ох, чёрт!</color>)</i>
 #. src: dialog
 #. rich_text: <i>(So close they can smell me... <color=#EB83FF>Ooh fuck~</color> )</i>
+# rich_translation: <i>(Они так близко, что могут меня учуять... <color=#EB83FF>Ох, чёрт!</color>)</i>
 msgctxt "ui"
 msgid "(So close they can smell me... Ooh fuck~ )"
 msgstr "(Они так близко, что могут меня учуять... Ох, чёрт!)"
@@ -7193,7 +7188,7 @@ msgstr "(Так это его любимая группа?)"
 #. rich_text: <i>(So these are the parts Lio needs to make a fake of the blocker?)</i>
 msgctxt "speaker:Zoey"
 msgid "(So these are the parts Lio needs to make a fake of the blocker?)"
-msgstr "(Так вот они те части, которые Лио нужно сделать подделкой блокировщика?) Зои"
+msgstr "(Так вот они те части, которые Лио нужно сделать подделкой блокировщика?)"
 
 #. src: dialog
 #. rich_text: <i>(So this remote is for the lights, good to know.)</i>
@@ -8034,9 +8029,9 @@ msgctxt "ui"
 msgid "(They made such a mess.. In so many places.. )"
 msgstr "(Они устроили такой беспорядок.. Во многих местах.. )"
 
-# rich_translation: <i>(Они и правда хотят стать знаменитыми в этом приложении Smutgram...? Не думаю, что парочка провокационных фоток <color=#EB83FF>поможет им... достичь такой цели</color>...)</i>
 #. src: dialog
 #. rich_text: <i>(They really wanna be famous on this Smutgram app...? Not sure some teasing pics are gonna-... <color=#EB83FF>cut it for that</color>... )</i>
+# rich_translation: <i>(Они и правда хотят стать знаменитыми в этом приложении Smutgram...? Не думаю, что парочка провокационных фоток <color=#EB83FF>поможет им... достичь такой цели</color>...)</i>
 msgctxt "ui"
 msgid "(They really wanna be famous on this Smutgram app...? Not sure some teasing pics are gonna-... cut it for that... )"
 msgstr "(Они и правда хотят стать знаменитыми в этом приложении Smutgram...? Не думаю, что парочка провокационных фоток поможет им... достичь такой цели...)"
@@ -8756,9 +8751,9 @@ msgctxt "ui"
 msgid "(Wh- What the hell am I doing?)"
 msgstr "(Ч- Что, чёрт возьми, я делаю?)"
 
-# rich_translation: <color=#EB83FF><i>(Чт-! Я совсем за</color>была, что они за нами наблюдают... м-м...)</i>
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Wh-! I completely for</color>got they were watching us... nngh... )</i>
+# rich_translation: <color=#EB83FF><i>(Чт-! Я совсем за</color>была, что они за нами наблюдают... м-м...)</i>
 msgctxt "speaker:Zoey"
 msgid "(Wh-! I completely forgot they were watching us... nngh... )"
 msgstr "(Чт-! Я совсем забыла, что они за нами наблюдают... м-м...)"
@@ -9662,8 +9657,6 @@ msgid "...Yes. That is my fetish. And public display of a fetish is only punisha
 msgstr "Да. Это мой фетиш. А публичное проявление фетиша наказуемо лишь предупреждением."
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "0.13 Content"
 msgstr "Контент 0.13"
@@ -10069,22 +10062,16 @@ msgid "0.6 - Main Story - Meet The Boss"
 msgstr "0.6 - Основная история - Встреча с боссом"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "0.6 Content"
 msgstr "Контент 0.6"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "0.8 Content"
 msgstr "Контент 0.8"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "0.9 Content"
 msgstr "Контент 0.9"
@@ -10136,8 +10123,6 @@ msgid "25 s Delay"
 msgstr "Задержка в 25 с"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "2: Enable the 'Enabled' setting in the game."
 msgstr "2: Включите настройку 'Enabled' в игре."
@@ -10178,36 +10163,26 @@ msgid "3d Camera Only"
 msgstr "Только 3D камера"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "3d Case Opened"
 msgstr "Открыт случай №3D"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "3d Finished"
 msgstr "Случай №3D завершён"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "3d Injector Picked Up"
 msgstr "Взят инъектор из 3D"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "3d Latches Opened"
 msgstr "3D-защелки открыты"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "3d Numbers Entered"
 msgstr "Введены 3D-числа"
@@ -10321,8 +10296,6 @@ msgid ":: Undressing process beginning... ::"
 msgstr ":: Начало процесса раздевания... ::"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "::SEARCH ENDED::"
 msgstr "::ПОИСК ЗАВЕРШЁН::"
@@ -10333,8 +10306,6 @@ msgid "::SEARCHING::"
 msgstr "::ИСКАНИЕ::"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "::TOYS FOUND::"
 msgstr "::ИГРУШКИ НАЙДЕНЫ::"
@@ -10365,7 +10336,6 @@ msgstr "< П-прости, Макс, я-... Хх... Я не мог ясно мы
 #. rich_text: << Declination processed. Proceeding relocation. >>
 # rich_translation: << Отказ обработан. Начинаю перемещение. >>
 # legacy: migrated from skipped YAML
-#, legacy
 msgctxt "ui"
 msgid ">"
 msgstr ">"
@@ -11504,8 +11474,6 @@ msgid "AMPLITUDE"
 msgstr "АМПЛИТУДА"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "ANAnimator: Tried to get layer that doesn't exist '"
 msgstr "ANAnimator: Попытка получить несуществующий слой '"
@@ -11541,8 +11509,6 @@ msgid "AOb @"
 msgstr "AOb @"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "APP NOT FOUND"
 msgstr "ПРИЛОЖЕНИЕ НЕ НАЙДЕНО"
@@ -12000,8 +11966,6 @@ msgid "Activate the box fsms"
 msgstr "Активируй коробку ФСМС"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Activate the dealer"
 msgstr "Включить дилера"
@@ -12434,8 +12398,6 @@ msgid "After Injector picked up"
 msgstr "После того как Инъектор подобрал..."
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "After Prologue"
 msgstr "После пролога"
@@ -12562,8 +12524,6 @@ msgid "Agree again Dialogue"
 msgstr "Согласись ещё раз — Диалог"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Agree2"
 msgstr "Agree2"
@@ -12583,9 +12543,9 @@ msgctxt "ui"
 msgid "Ah fuck that's good, yess...! Rub your whole fucking face over my pussy, nasty little waitress!"
 msgstr "Ах! Бля, это отлично, да-а-а...! Три всё своё чёртово лицо по всей моей киске, похотливая маленькая официантка!"
 
-# rich_translation: <size=30>Ах, чёрт!</size> <size=37>Да! Порочный кролик-мальчик!</size> Следующий раунд!
 #. src: dialog
 #. rich_text: <size=30>Ah <size=37>fuck!</size> Yes! Naughty bunny boy!<size=37> Next round!
+# rich_translation: <size=30>Ах, чёрт!</size> <size=37>Да! Порочный кролик-мальчик!</size> Следующий раунд!
 msgctxt "speaker:Cartel Guy"
 msgid "Ah fuck! Yes! Naughty bunny boy! Next round!"
 msgstr "Ах, чёрт! Да! Порочный кролик-мальчик! Следующий раунд!"
@@ -14102,8 +14062,6 @@ msgid "Anim 4"
 msgstr "Анимация 4"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Anim completed"
 msgstr "Анимация завершена"
@@ -14907,8 +14865,6 @@ msgid "Ask about an Andro Battery."
 msgstr "Спросить об Андро-Батарее."
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Ask about her Arm"
 msgstr "Спросить о её руке"
@@ -14989,8 +14945,6 @@ msgid "Ask for Drugs"
 msgstr "Спросить про наркотики"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Ask for Femboy"
 msgstr "Попросить фембоя"
@@ -15006,8 +14960,6 @@ msgid "Ask for Repeat Dialogue"
 msgstr "Попросить повторить диалог"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Ask for Upstairs"
 msgstr "Попросить наверх"
@@ -15280,8 +15232,6 @@ msgid "Atta girl. What do you think of that, Issac~?"
 msgstr "Вот молодец, девочка. Ну как тебе, Исаак~?"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Attaching exit room!"
 msgstr "Прикрепление выходной комнаты!"
@@ -15292,8 +15242,6 @@ msgid "Attack Range"
 msgstr "Область атаки"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Attempting to generate room from filteredList with count:"
 msgstr "Попытка сгенерировать комнату из filteredList с количеством:"
@@ -16237,7 +16185,6 @@ msgid "Bff?"
 msgstr "Лучшая подруга?"
 
 #. src: raw:MonoBehaviour
-#, legacy
 msgctxt "ui"
 msgid "Bhair2_base2)\\"
 msgstr "Bhair2_base2)\\\\"
@@ -17061,8 +17008,6 @@ msgid "Button Clicked"
 msgstr "Кнопка нажата"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Buy Alcohol"
 msgstr "Купить алкоголь"
@@ -17220,8 +17165,6 @@ msgid "CONNECTED"
 msgstr "ПОДКЛЮЧЕНО"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "CONNECTED, NO TOYS FOUND"
 msgstr "ПОДКЛЮЧЕНО, ИГРУШЕК НЕ НАЙДЕНО"
@@ -17262,8 +17205,6 @@ msgid "Caged Femboy Corrupt Technologies Advertisement"
 msgstr "Объявление корпорации \"Коррумпированные технологии\" (заключённый фембой)"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Cal Arrived"
 msgstr "Кал прибыл"
@@ -17445,8 +17386,6 @@ msgid "Can not show item subcategory,"
 msgstr "Не может показывать подкатегорию предмета,"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Can only show folder on windows."
 msgstr "Можно показать папку только в Windows."
@@ -17673,8 +17612,6 @@ msgid "Car start"
 msgstr "Запуск автомобиля"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Carcen Joined Resistance"
 msgstr "Карсен присоединился к Сопротивлению"
@@ -17877,15 +17814,11 @@ msgid "Chapter popup"
 msgstr "Окно главы"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "CharController: Adding Input Restraint:"
 msgstr "CharController: Добавление ограничения ввода:"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "CharController: Removing Input Restraint:"
 msgstr "CharController: Удаление ограничения ввода:"
@@ -18192,8 +18125,6 @@ msgid "CheckDoorLocked: Door is null!"
 msgstr "CheckDoorLocked: Дверь равна null!"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Checking room for filtering:"
 msgstr "Проверка комнаты для фильтрации:"
@@ -18409,8 +18340,6 @@ msgid "Clear FarDepth"
 msgstr "Чистая глубина дальности"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Clear Groping Animations"
 msgstr "Очистить анимации лапанья"
@@ -18466,8 +18395,6 @@ msgid "Click me for achievement list..."
 msgstr "Нажмите на меня для списка достижений..."
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Click me!"
 msgstr "Нажми на меня!"
@@ -18619,8 +18546,6 @@ msgid "Cocky"
 msgstr "Наглый"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Code: 8862"
 msgstr "Код: 8862"
@@ -19011,15 +18936,11 @@ msgid "Confused"
 msgstr "Смущённый"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Console initialized!"
 msgstr "Консоль инициализирована!"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Console: ConCommand '"
 msgstr "Консоль: Команда консоли '"
@@ -19312,8 +19233,6 @@ msgid "Create popup"
 msgstr "Создать всплывающее окно"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "CreateEffect: No effect string or object was supplied!"
 msgstr "CreateEffect: Не предоставлена строка или объект эффекта!"
@@ -19566,8 +19485,6 @@ msgid "Cutscene - Wait for Lio DeliveryTimeline"
 msgstr "Кат-сцена — Подождите доставку Лио"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Cutscene Done"
 msgstr "Сцена завершена"
@@ -19839,22 +19756,16 @@ msgid "DISABLED"
 msgstr "DISABLED"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "DLC: DLC is not installed!"
 msgstr "DLC: DLC не установлен!"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "DLC: Steam shows that the DLC is installed!"
 msgstr "DLC: Steam показывает, что DLC установлен!"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "DLC: This is a patron build! DLC is installed."
 msgstr "DLC: Это патреон-сборка! DLC установлен."
@@ -20220,8 +20131,6 @@ msgid "Decline to help Femboy Clean"
 msgstr "Отказаться помогать фембою с уборкой"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Decline2"
 msgstr "Decline2"
@@ -20252,8 +20161,6 @@ msgid "Deep breath in on the ... and out on the 'hah'."
 msgstr "Глубоко вдохни на «...» и выдохни на «ха»."
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Default ID"
 msgstr "ID по умолчанию"
@@ -20497,8 +20404,6 @@ msgid "Dialogue Autoplay"
 msgstr "Автовоспроизведение диалогов"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Dialogue Done"
 msgstr "Диалог завершён"
@@ -22981,8 +22886,6 @@ msgid "Done here"
 msgstr "Готово."
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Dont bark"
 msgstr "Не лает"
@@ -23350,8 +23253,6 @@ msgid "Dynamic Lighting"
 msgstr "Динамическое освещение"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "DynamicKey: Tried to add unknown type '"
 msgstr "DynamicKey: Попытка добавить неизвестный тип '"
@@ -24327,8 +24228,6 @@ msgid "Entered"
 msgstr "Вход"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Entered Room"
 msgstr "Вход в комнату"
@@ -24344,8 +24243,6 @@ msgid "Entered Trigger"
 msgstr "Вход в триггер"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Entity: More than one player entity is currently active!"
 msgstr "Entity: Активно более одной сущности игрока!"
@@ -24411,8 +24308,6 @@ msgid "Equipment...? Wait, I know someone who can help!"
 msgstr "Оборудование...? Погоди, я знаю одного человека, который может помочь!"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Equipped Phone"
 msgstr "Телефон установлен"
@@ -25043,8 +24938,6 @@ msgid "Fade Sex Layer"
 msgstr "Слой секса с затуханием"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Fade again"
 msgstr "Затухание снова"
@@ -25622,37 +25515,31 @@ msgid "Fhahh...! Hurry...! It- she's not- Ghh-... Letting me out of-"
 msgstr "Ф-ха-...! Быстрее...! Она- она не- Кх-... Выпускает меня из-"
 
 #. src: raw:MonoBehaviour
-#, legacy
 msgctxt "ui"
 msgid "Fhair2_Fbase)\\"
 msgstr "Fhair2_Fbase)\\\\"
 
 #. src: raw:MonoBehaviour
-#, legacy
 msgctxt "ui"
 msgid "Fhair2_bang1)\\"
 msgstr "Fhair2_bang1)\\\\"
 
 #. src: raw:MonoBehaviour
-#, legacy
 msgctxt "ui"
 msgid "Fhair2_bang2)\\"
 msgstr "Fhair2_bang2)\\\\"
 
 #. src: raw:MonoBehaviour
-#, legacy
 msgctxt "ui"
 msgid "Fhair2_bang3)\\"
 msgstr "Fhair2_bang3)\\\\"
 
 #. src: raw:MonoBehaviour
-#, legacy
 msgctxt "ui"
 msgid "Fhair2_bang4)\\"
 msgstr "Fhair2_bang4)\\\\"
 
 #. src: raw:MonoBehaviour
-#, legacy
 msgctxt "ui"
 msgid "Fhair2_bang5)\\"
 msgstr "Fhair2_bang5)\\\\"
@@ -25740,8 +25627,6 @@ msgid "Filter Compare"
 msgstr "Сравнение фильтров"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "FilteredList is 0!"
 msgstr "FilteredList равен 0!"
@@ -26459,8 +26344,6 @@ msgid "Forced"
 msgstr "Принудительно"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Forced use! Only using this room..."
 msgstr "Принудительное использование! Использую только эту комнату..."
@@ -26627,8 +26510,6 @@ msgid "Front Bangs"
 msgstr "Передние чёлки"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "FsmTemplateHolder: Tried to instantiate template that doesn't exist!"
 msgstr "FsmTemplateHolder: Попытка создать экземпляр несуществующего шаблона!"
@@ -27197,22 +27078,16 @@ msgid "Generate a new layout"
 msgstr "Сгенерировать новую планировку"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Generated room:"
 msgstr "Сгенерирована комната:"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Generation Complete! Completed in"
 msgstr "Генерация завершена! Завершено за"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Generation took longer than max allowed time! Stopping generation..."
 msgstr "Генерация заняла больше максимально допустимого времени! Остановка генерации..."
@@ -27433,8 +27308,6 @@ msgid "Get your phone out, Z! Snap a selfie of us two! I know my hair's not the 
 msgstr "Доставай телефон, З! Сделай нас двоих селфи! Я знаю, что у меня сейчас не лучшая причёска, но всё же!"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "GetComponentInChildrenFromComponent: Could not find type '"
 msgstr "GetComponentInChildrenFromComponent: Не удалось найти тип '"
@@ -27502,9 +27375,9 @@ msgctxt "speaker:Zoey"
 msgid "Ghh! Wh-... B-But..."
 msgstr "Фф! Ч-что... Н-но..."
 
-# rich_translation: Ф<color=#EB83FF>ф... Хх... Я... Т-</color>ты... у<color=#EB83FF>верен?</color>
 #. src: dialog
 #. rich_text: Gh<color=#EB83FF>h... Hh... I... A-</color>Are yo<color=#EB83FF>u... su</color>re?
+# rich_translation: Ф<color=#EB83FF>ф... Хх... Я... Т-</color>ты... у<color=#EB83FF>верен?</color>
 msgctxt "ui"
 msgid "Ghh... Hh... I... A-Are you... sure?"
 msgstr "Фф... Хх... Я... Т-ты... уверен?"
@@ -27783,22 +27656,16 @@ msgid "Glowing Hole 103 Peeking"
 msgstr "Подглядывание: Светящаяся Дыра 103"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Glowing Hole 103 Peeking 2"
 msgstr "Сияющая дыра 103 Просмотр 2"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Glowing Hole 103 Peeking 3"
 msgstr "Сияющая дыра 103 Просмотр 3"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Glowing Hole 103 Peeking 3 Horny"
 msgstr "Сияющая дыра 103 Просмотр 3 Эротичный"
@@ -27809,22 +27676,16 @@ msgid "Glowing Hole 105 Peeking"
 msgstr "Подглядывание: Светящаяся Дыра 105"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Glowing Hole 105 Peeking 2"
 msgstr "Сияющая дыра 105 Просмотр 2"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Glowing Hole 105 Peeking 3"
 msgstr "Сияющая дыра 105 Просмотр 3"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Glowing Hole 105 Peeking 3 Horny"
 msgstr "Сияющая дыра 105 Просмотр 3 Эротичный"
@@ -27835,8 +27696,6 @@ msgid "Glowing Hole 201 Peeking"
 msgstr "Подглядывание: Светящаяся Дыра 201"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Glowing Hole 201 Peeking 2"
 msgstr "Сияющая дыра 201 Подглядывание 2"
@@ -27867,22 +27726,16 @@ msgid "Glowing Hole Bathroom SpriteShapeProfile"
 msgstr "Сприт-профиль ванной с светящейся дырой"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Glowing Hole Room 103 Peeking Perversion"
 msgstr "Сияющая дыра Комната 103 Подглядывание Извращение"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Glowing Hole Room 105 Peeking Perversion"
 msgstr "Сияющая дыра Комната 105 Подглядывание Извращение"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Glowing Hole Room 201 Peeking Perversion"
 msgstr "Сияющая дыра Комната 201 Подглядывание Извращение"
@@ -27905,8 +27758,6 @@ msgid "Glowing Zoey - Enforcer M"
 msgstr "Светящаяся Зои — Силовик М"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "GlowingHole BarMusic Volume"
 msgstr "Громкость музыки GlowingHole"
@@ -28799,9 +28650,9 @@ msgctxt "ui"
 msgid "H-Heh... Uhm... Thanks."
 msgstr "Х-хе-хе... Эм... Спасибо."
 
-# rich_translation: Х<color=#EB83FF>-х-х...</color> Х<color=#EB83FF>е-хе</color>... Да, по<color=#EB83FF>жалуйста...</color>
 #. src: dialog
 #. rich_text: H-H<color=#EB83FF>hh...</color> H-<color=#EB83FF>He</color>h... Yes pl<color=#EB83FF>ease...</color>
+# rich_translation: Х<color=#EB83FF>-х-х...</color> Х<color=#EB83FF>е-хе</color>... Да, по<color=#EB83FF>жалуйста...</color>
 msgctxt "ui"
 msgid "H-Hhh... H-Heh... Yes please..."
 msgstr "Х-х-х... Хе-хе... Да, пожалуйста..."
@@ -32655,9 +32506,9 @@ msgctxt "ui"
 msgid "I just..."
 msgstr "Я просто..."
 
-# rich_translation: Я пр<color=#EB83FF>осто...</color> я больше не могу... Эта жара... она пр<color=#EB83FF>осто невыносима...</color>
 #. src: dialog
 #. rich_text: I ju<color=#EB83FF>st...</color> I can't... take it anymore... This heat is... it's ju<color=#EB83FF>st too much...</color>
+# rich_translation: Я пр<color=#EB83FF>осто...</color> я больше не могу... Эта жара... она пр<color=#EB83FF>осто невыносима...</color>
 msgctxt "ui"
 msgid "I just... I can't... take it anymore... This heat is... it's just too much..."
 msgstr "Я просто... я больше не могу... Эта жара... она просто невыносима..."
@@ -34860,8 +34711,6 @@ msgid "Immediate"
 msgstr "Немедленно"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Immediate Continue"
 msgstr "Немедленно продолжить"
@@ -35176,8 +35025,6 @@ msgid "Inspection Closed"
 msgstr "Инспекция закрыта"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Inspection Done"
 msgstr "Инспекция завершена"
@@ -35213,8 +35060,6 @@ msgid "Interactable\""
 msgstr "Взаимодействие"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "InteractableTypes: '"
 msgstr "Типы взаимодействия: '"
@@ -35270,8 +35115,6 @@ msgid "Interesting. This one is having a wardrobe malfunction. Correcting..."
 msgstr "Забавно. У этой неполадки с гардеробом. Исправляю..."
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Internal Monologue"
 msgstr "Внутренний монолог"
@@ -38036,8 +37879,6 @@ msgid "LOOK AT LIO NOW!!!"
 msgstr "СМОТРИ НА ЛИО СЕЙЧАС!!!"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "LOVENSE TOY FOUND:"
 msgstr "ИГРУШКА LOVENSE НАЙДЕНА:"
@@ -38048,8 +37889,6 @@ msgid "LOVENSE:"
 msgstr "LOVENSE:"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "LOVENSE: Connected to app, but no toys found."
 msgstr "LOVENSE: Подключено к приложению, но игрушки не найдены."
@@ -38275,8 +38114,6 @@ msgid "Laundry Room Keycard"
 msgstr "Ключ-карта прачечной"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Layout completed in"
 msgstr "Планировка завершена за"
@@ -38892,8 +38729,6 @@ msgid "Level Name"
 msgstr "Уровень"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "LevelTransition: Level does not exist at build index '"
 msgstr "LevelTransition: Уровень не существует по индексу сборки '"
@@ -39211,8 +39046,6 @@ msgid "Lime"
 msgstr "Лайм"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Limiting FPS to"
 msgstr "Ограничение FPS до"
@@ -39363,8 +39196,6 @@ msgid "List is empty!"
 msgstr "Список пуст!"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "List of commands"
 msgstr "Список команд"
@@ -40057,8 +39888,6 @@ msgid "Lovense Status"
 msgstr "Lovense: Статус"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Lovense Toy Search"
 msgstr "Поиск игрушек Lovense"
@@ -40449,8 +40278,6 @@ msgid "Make guards chase"
 msgstr "Заставь стражников гнаться за ним"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Make her walk back"
 msgstr "Заставить её вернуться"
@@ -40671,8 +40498,6 @@ msgid "Master Snake"
 msgstr "Мастер Змея"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Master Volume"
 msgstr "Громкость"
@@ -41629,8 +41454,6 @@ msgid "Missing Remote"
 msgstr "Пропущен удалённый доступ"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Missing ToMove or TargetPosition in"
 msgstr "Отсутствует ToMove или TargetPosition в"
@@ -42579,8 +42402,6 @@ msgid "Move Zoey back"
 msgstr "Вернуть Зои"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Move Zoey in to the guy"
 msgstr "Подвинуть Зои к парню"
@@ -42817,8 +42638,6 @@ msgid "Movement Speed"
 msgstr "Скорость движения"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Movement slowed to normal!"
 msgstr "Скорость движения восстановлена до нормальной!"
@@ -43028,9 +42847,9 @@ msgctxt "ui"
 msgid "My, aren't you a tame one..~ I know a few clients that would pay more than a small fortune for you like this, ehehe..~"
 msgstr "Ого, ну ты и послушная..~ Знаю парочку клиентов, которые отвалили бы за тебя целое состояние в таком виде, ехехе..~"
 
-# rich_translation: Ох, слышишь это, Зои? Сжми мои сиськи вместе. Сделай их хорошенько и плотно для нашего <i>клиента</i>, эхе-хе.
 #. src: dialog
 #. rich_text: My, hear that, Zoey? Press my tits together. Make it nice and tight for our <i>customer</i>, ehehe.
+# rich_translation: Ох, слышишь это, Зои? Сжми мои сиськи вместе. Сделай их хорошенько и плотно для нашего <i>клиента</i>, эхе-хе.
 msgctxt "ui"
 msgid "My, hear that, Zoey? Press my tits together. Make it nice and tight for our customer, ehehe."
 msgstr "Ох, слышишь это, Зои? Сжми мои сиськи вместе. Сделай их хорошенько и плотно для нашего клиента, эхе-хе."
@@ -43522,8 +43341,6 @@ msgid "Need fuck"
 msgstr "Нужно трахнуться"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Need more rooms... Generating a new one."
 msgstr "Нужно больше комнат... Генерирую новую."
@@ -47822,8 +47639,6 @@ msgid "OverworldAnimationTranslator: Tried to play a null animation!"
 msgstr "OverworldAnimationTranslator: Попытка воспроизвести пустую анимацию!"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Overwrite Save"
 msgstr "Перезаписать сохранение"
@@ -48062,8 +47877,6 @@ msgid "Pate"
 msgstr "Пате"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Path Femboy off screen"
 msgstr "Увести фембоя с экрана"
@@ -48254,8 +48067,6 @@ msgid "Peeping Tom"
 msgstr "Подглядывающий Том"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Peitho Ending"
 msgstr "Концовка Пейто"
@@ -48788,8 +48599,6 @@ msgid "Play Choice Dialogue for getting groped"
 msgstr "Проиграть диалог выбора для ощупывания"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Play Credits"
 msgstr "Показать титры"
@@ -50052,8 +49861,6 @@ msgid "Playing stupid, huh? 10 bucks if you bend over and let me get a good look
 msgstr "Играть в дурака, да? Десять долларов, если ты наклонишься и позволишь мне хорошо посмотреть на твою задницу, официантка."
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Playmaker Blur"
 msgstr "Размытие Playmaker"
@@ -51492,8 +51299,6 @@ msgid "Received Parts Dialogue"
 msgstr "Диалог о полученных частях"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Received Toys:"
 msgstr "Получены игрушки:"
@@ -51969,8 +51774,6 @@ msgid "Renderer"
 msgstr "Рендерер"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Renderer ordering completed in"
 msgstr "Упорядочивание рендереров завершено за"
@@ -52824,7 +52627,6 @@ msgid "Room 202"
 msgstr "Комната 202"
 
 #. src: raw:MonoBehaviour
-#, legacy
 msgctxt "ui"
 msgid "Room 204\\nUpper Floor"
 msgstr "Room 204\\\\nUpper Floor"
@@ -52965,8 +52767,6 @@ msgid "Room205Flavor - Windows"
 msgstr "ВкусКомнаты205 - Окна"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "RoomGenerator: Could not find room ID: '"
 msgstr "RoomGenerator: Не удалось найти ID комнаты: '"
@@ -53359,8 +53159,6 @@ msgid "SHOW MORE"
 msgstr "ПОКАЗАТЬ БОЛЬШЕ"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "SIBLING PORT ALREADY ATTACHED TO"
 msgstr "СОСЕДНИЙ ПОРТ УЖЕ ПРИСОЕДИНЁН К"
@@ -53718,8 +53516,6 @@ msgid "SaveKey"
 msgstr "СОХРАНИТЬ"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "SaveManager: Clearing save..."
 msgstr "SaveManager: Очистка сохранения..."
@@ -53730,8 +53526,6 @@ msgid "SaveManager: Loading save:"
 msgstr "Загрузка сохранения:"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "SaveManager: Saving game:"
 msgstr "SaveManager: Сохранение игры:"
@@ -56366,15 +56160,11 @@ msgid "Skip femboy uWu"
 msgstr "Пропустить фембоя uWu"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Skip going back to the motel to sleep?"
 msgstr "Пропустить возвращение в мотель для сна?"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Skip sleeping"
 msgstr "Пропустить сон"
@@ -57329,8 +57119,6 @@ msgid "SoundList was empty when trying to play a random sound."
 msgstr "Звуковой список был пустым при попытке воспроизвести случайный звук."
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Sounds VA Duck"
 msgstr "Приглушение звуков озвучкой"
@@ -57663,8 +57451,6 @@ msgid "Stand up"
 msgstr "Встать"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Stand up Animation"
 msgstr "Анимация вставания"
@@ -58128,8 +57914,6 @@ msgid "Starting challenge mode with"
 msgstr "Запуск режима вызова"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Starting room layout generation!"
 msgstr "Запуск генерации планировки комнат!"
@@ -60165,8 +59949,6 @@ msgid "Tell Max about Klark"
 msgstr "Рассказать Макс о Кларке"
 
 #. src: raw:MonoBehaviour
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Tell Max about the recordings"
 msgstr "Рассказать Макс о записях"
@@ -62245,22 +62027,16 @@ msgid "This place is dirty in more ways than one."
 msgstr "Это место грязное во всех смыслах."
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "This room is either an entry or an exit! Skipping..."
 msgstr "Эта комната — вход или выход! Пропускаю..."
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "This room is not allowed to generate! Skipping..."
 msgstr "Этой комнате запрещено генерироваться! Пропускаю..."
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "This room was used last! Skipping..."
 msgstr "Эта комната использовалась последней! Пропускаю..."
@@ -62780,8 +62556,6 @@ msgid "Tracksuit Pants V2"
 msgstr "Брюки от спортивного костюма V2"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "TrailHandler: Could not find CharController component in parent! Removing..."
 msgstr "TrailHandler: Не удалось найти компонент CharController в родителе! Удаляю..."
@@ -63540,8 +63314,6 @@ msgid "Type '?' to list all commands"
 msgstr "Введите '?' для списка команд"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Type 'help' for list of commands!"
 msgstr "Введите 'help' для списка команд!"
@@ -64276,8 +64048,6 @@ msgid "UnLock player movement"
 msgstr "Разблокировать передвижение игрока"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Unable to enter from this side."
 msgstr "Нельзя войти с этой стороны."
@@ -64687,8 +64457,6 @@ msgid "Unlocked Dialogue"
 msgstr "Диалог разблокирован"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Unlocked by"
 msgstr "Разблокировано"
@@ -64699,15 +64467,11 @@ msgid "Unnamed Inventory"
 msgstr "Безымянный инвентарь"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Unnamed Layer"
 msgstr "Безымянный слой"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "Unnamed State"
 msgstr "Безымянное состояние"
@@ -65590,15 +65354,11 @@ msgid "W-with my... Chest...?"
 msgstr "Г-грудью...?"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "WARNING: Setting FPS higher than normal may break player movement!"
 msgstr "ВНИМАНИЕ: Установка FPS выше нормы может сломать движение игрока!"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "WARNING: Setting FPS lower than normal may make the game unplayable!"
 msgstr "ВНИМАНИЕ: Установка FPS ниже нормы может сделать игру неиграбельной!"
@@ -71307,8 +71067,6 @@ msgid "You can-... mhh... switch the model any time."
 msgstr "Можно-... м-м... переключать модель в любое время."
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "You cannot create a save called '"
 msgstr "Вы не можете создать сохранение с именем '"
@@ -73499,8 +73257,6 @@ msgid "feeling hopeless, longing for better times"
 msgstr "чувствуя безнадёжность, тоскуя по лучшим временам"
 
 #. src: us
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "ui"
 msgid "filteredList has count:"
 msgstr "filteredList имеет количество:"
@@ -75020,40 +74776,10 @@ msgctxt "ui"
 msgid "| GetDataFromItem: Item doesn't exist! Returning empty DynamicTable."
 msgstr "| GetDataFromItem: Предмет не существует! Возвращаю пустой DynamicTable."
 
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "!)2;DLRTYWQI?3)"
-msgstr "!)2;DLRTYWQI?3)"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "!=$A%U"
-msgstr "!=$A%U"
-
 #, legacy
 msgctxt "ui"
 msgid "\"-8AIPSWSPJD?8/(#"
 msgstr "\\"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "\"[FA"
-msgstr "[ФА"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "#-7?FJLMJFE@:960,)$"
-msgstr "#-7?FJLMJFE@:960,)$"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "#.7@FKLRPNIHD=5/("
-msgstr "#.7@FKLRPNIHD=5/("
 
 #, legacy
 msgctxt "ui"
@@ -75064,102 +74790,6 @@ msgstr "$\\"
 msgctxt "ui"
 msgid "$#)IHL\""
 msgstr "$#)IHL\\"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "$#9)HI*R"
-msgstr "$#9)Привет*"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "$,19@EGKQSUUVUTRLKGFA;5/("
-msgstr "$,19@EGKQSUUVUTRLKGFA;5/("
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "$,39;BFHJIFD@95/'"
-msgstr "$,39;BFHJIFD@95/'"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "$.AZ"
-msgstr "$.АЗ"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "$W?AY"
-msgstr "$W?AY"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "%*-379@EGKHFB;3)"
-msgstr "%*-379@EGKHFB;3)"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "%*168?DFKQSWTRME;0%"
-msgstr "%*168?DFKQSWTRME;0%"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "%.4=CHILKGE@91'"
-msgstr "%.4=CHILKGE@91'"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "%/8AHLNRRPNLHFB;73-&"
-msgstr "%/8AHLNRRPNLHFB;73-&"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "%I$?D"
-msgstr "%И$?Д"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "%IL?"
-msgstr "%IL?"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "'/58:@EFHIIHGFA?;960)$"
-msgstr "'/58:@EFHIIHGFA?;960)$"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "'/7=@BEC@;:71*!"
-msgstr "'/7=@BEC@;:71*!"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "'19@EGQOLJHFBA=:95/-,)$"
-msgstr "'19@EGQOLJHFBA=:95/-,)$"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "'4AES"
-msgstr "'4AES"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "'@EK"
-msgstr "@ЕК"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -75182,38 +74812,8 @@ msgstr "(- шлюхой.)"
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "speaker:Zoey"
-msgid "(...)"
-msgstr "(...)"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "speaker:Zoey"
-msgid "(Ah! )"
-msgstr "(Ах!)"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "(Ah... )"
-msgstr "(Ах... )"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "(BA;"
-msgstr "(BA;"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "speaker:Zoey"
 msgid "(But if what he's saying about this San is true... the Cartel isn't just going to let her go...)"
 msgstr "(Но если он прав насчёт Сан... Картель просто так не отпустит её...)"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "(E(L!"
-msgstr "(E(Л!"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -75382,12 +74982,6 @@ msgstr "(Порно...?)"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
-msgctxt "ui"
-msgid "(Q?A"
-msgstr "(Q?A"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "speaker:Zoey"
 msgid "(So-.. Rough.. Khh.. !)"
 msgstr "(Так-.. Грубо.. Кх.. !)"
@@ -75431,62 +75025,8 @@ msgstr "(Не так...)"
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
-msgid ")2:AFGLJF?7-"
-msgstr ")2:AFGLJF?7-"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid ")5?IQWY_]ZUSND?8/&"
-msgstr ")5?IQWY_]ZUSND?8/&"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid ")AIJQ"
-msgstr ")AIJQ"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid ")AU?"
-msgstr ")AU?"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid ")EIJP"
-msgstr ")EIJP"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "*5?IQWYZVSQKGFA:95/+(#"
-msgstr "*5?IQWYZVSQKGFA:95/+(#"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
 msgid ", and have the employee climb inside. It will handle the rest."
 msgstr ", и пусть сотрудник залезет внутрь. Остальное он сделает сам."
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "speaker:Zoey"
-msgid "...!"
-msgstr "...!"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid ".AZ0=A"
-msgstr ".AZ0=A"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "/*P?E"
-msgstr "/*P?E"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -75503,104 +75043,8 @@ msgstr "0.4 - GlowingHoleBartending - RichCustomerVaren - 4 - 2 - Принять
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
-msgid "0E(J1"
-msgstr "0E(Ж1"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "0K ?9b"
-msgstr "0К? 9b"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "0OX"
-msgstr "0OX"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "0UV"
-msgstr "0UV"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "0UW"
-msgstr "0UW"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "0c25a78a-8b9c-4acf-86fb-419fc795aee8"
-msgstr "0c25a78a-8b9c-4acf-86fb-419fc795aee8"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
 msgid "10 - TODO: Continue here with content in 0.5"
 msgstr "10 - TODO: Продолжить здесь с содержимым в 0.5"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "1114"
-msgstr "1114"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "11:43am - 8/30/2017"
-msgstr "11:43 - 8/30/2017"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "1259406f-f6d0-4cb4-8755-4c7fec68e2ba"
-msgstr "1259406f-f6d0-4cb4-8755-4c7fec68e2ba"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "18d9f786-164f-43b6-90db-a708601e6bd6"
-msgstr "18d9f786-164f-43b6-90db-a708601e6bd6"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "1K?G z"
-msgstr "1К?Г з"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "1dbdd70a-8ed5-42e6-ad7e-36a997041b5e"
-msgstr "1dbdd70a-8ed5-42e6-ad7e-36a997041b5e"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "1dbf91c1-a68a-42dd-9230-e247545576ae"
-msgstr "1dbf91c1-a68a-42dd-9230-e247545576ae"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "202"
-msgstr "202"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "203"
-msgstr "203"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "204"
-msgstr "204"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -75611,158 +75055,14 @@ msgstr "205, поняла. Позвоню, когда сделаю."
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
-msgid "25a6aaa6-6ee9-4c6f-b253-9ed7e3b19093"
-msgstr "25a6aaa6-6ee9-4c6f-b253-9ed7e3b19093"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "28667f45-6df6-440f-b88f-6b09ec4e1c40"
-msgstr "28667f45-6df6-440f-b88f-6b09ec4e1c40"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "2?UJR?"
-msgstr "2?UJR?"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "2?UJR?5 z"
-msgstr "2?UJR?5 z"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "31c3a513-4577-4a05-ac96-3f5a1af85a4f"
-msgstr "31c3a513-4577-4a05-ac96-3f5a1af85a4f"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "3cfc2eb8-0b4e-433c-9625-bae8bfffa351"
-msgstr "3cfc2eb8-0b4e-433c-9625-bae8bfffa351"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "4O;P_1"
-msgstr "4O;P_1"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "4^XA"
-msgstr "4^XA"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "537d8372-b666-49a2-890c-9597ad5e94a1"
-msgstr "537d8372-b666-49a2-890c-9597ad5e94a1"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "5?BA"
-msgstr "5?BA"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
 msgid "6! Eji"
 msgstr "6! Эйи"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
-msgid "64ef3f49-dccf-45dd-8bab-ec471030cc2c"
-msgstr "64ef3f49-dccf-45dd-8bab-ec471030cc2c"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "671d0991-ea60-4a96-9e07-4746f6344132"
-msgstr "671d0991-ea60-4a96-9e07-4746f6344132"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "71ae30c0-a81a-4c3b-81f4-d848bfedba73"
-msgstr "71ae30c0-a81a-4c3b-81f4-d848bfedba73"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "76217f78-494d-496c-b553-e6279acb509d"
-msgstr "76217f78-494d-496c-b553-e6279acb509d"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "7K-A"
-msgstr "7К-А"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "8354b1c1-a074-47d3-8289-8367a417c204"
-msgstr "8354b1c1-a074-47d3-8289-8367a417c204"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "83600077-f37b-4616-a8b8-e83b4b68ec39"
-msgstr "83600077-f37b-4616-a8b8-e83b4b68ec39"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "8862"
-msgstr "8862"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
 msgid "9 - Repeatable"
 msgstr "9 - Повторяемое"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "9?PO2?"
-msgstr "9?PO2?"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "9cdd9f31-3bb0-4fc2-9746-a6de2fa6e35b"
-msgstr "9cdd9f31-3bb0-4fc2-9746-a6de2fa6e35b"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid ":AC9"
-msgstr ":AC9"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid ";.NA"
-msgstr ";.NA"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid ";?VA"
-msgstr ";?VA"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "<b><color="
-msgstr "<b><color="
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -75793,12 +75093,6 @@ msgstr "<color=perversion>Продолжай смотреть.</color>"
 msgctxt "ui"
 msgid "<color=perversion>Peek at them having sex.</color>"
 msgstr "<color=извращение>Смотреть, как они занимаются сексом.</color>"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "=7FA"
-msgstr "=7FA"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -75853,103 +75147,8 @@ msgstr ">> Сообщение #25 - 09:11 Сегодняшняя запись л
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
-msgid ">Charges:<b></color>"
-msgstr ">Charges:<b></color>"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "speaker-name"
-msgid "???"
-msgstr "???"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "?HO?"
-msgstr "?HO?"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "?I)8@D"
-msgstr "?I)8@D"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "?MOF@"
-msgstr "?MOF@"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "?RE@"
-msgstr "?RE@"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "?X9(A"
-msgstr "?X9(A"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "@E*Q"
-msgstr "@E*Q"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "@FU"
-msgstr "@FU"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "@JG&A"
-msgstr "@ДжЕГ&А"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "@O8S@"
-msgstr "@O8S@"
-
-#, legacy
-msgctxt "ui"
-msgid "@PI\""
-msgstr "@PI\\"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
 msgid "A measurement of how horny you currently are."
 msgstr "Показатель того, насколько вы сейчас возбуждены."
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "A&Z?"
-msgstr "А и З?"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "A'AJ"
-msgstr "А'АЖ"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "A(,!A"
-msgstr "А(,!А"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "A*j"
-msgstr "А*ж"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -75957,102 +75156,12 @@ msgctxt "speaker:Zoey"
 msgid "A-Ahh~"
 msgstr "А-Ах~"
 
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "A23hAff"
-msgstr "A23hAff"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "A?#aP"
-msgstr "А?#aP"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "A?C_!"
-msgstr "А?С_!"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "A?bu"
-msgstr "A?bu"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "AAAN@"
-msgstr "AAAN@"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "ACO"
-msgstr "ACO"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "ADp\""
-msgstr "ADp\""
-
 # rich_translation: <b>AIRSHIP Исследовательский Отдел</b>nЭкспериментальное Лечение Мозга:
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
 msgid "AIRSHIP Research DivisionnExperimental Brain Treatment:"
 msgstr "Исследовательский отдел дирижабля. Экспериментальное лечение мозга:"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "AMjQ"
-msgstr "AMjQ"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "AN?7"
-msgstr "AN?7"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "AN??Yq"
-msgstr "AN??Yq"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "ANToolkit.Cam.CameraScrollZoom"
-msgstr "ANToolkit.Cam.CameraScrollZoom"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "ANToolkit.Controllers.Interactable"
-msgstr "ANToolkit.Controllers.Interactable"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "ANp?"
-msgstr "ANp?"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "AUA"
-msgstr "AUA"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "AZX"
-msgstr "AZX"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -76074,75 +75183,9 @@ msgstr "Аан-...!"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
-msgctxt "ui"
-msgid "Ad!"
-msgstr "Реклама!"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "Ad@"
-msgstr "Реклама@"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "speaker:Zoey"
-msgid "Ah-...!"
-msgstr "Ах-...!"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "speaker:Zoey"
-msgid "Ah...?"
-msgstr "Ах...?"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "speaker:Zoey"
 msgid "Ahhnnghhh~!!"
 msgstr "Аааххннн~!!"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "Ai]"
-msgstr "Ай"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "Aj0?Ks"
-msgstr "Aj0?Ks"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "AndroidUtils"
-msgstr "AndroidUtils"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "Ap$"
-msgstr "Ап$"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "ApEn"
-msgstr "ApEn"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "ApprouchTrigger"
-msgstr "ApprouchTrigger"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "Aq=$@"
-msgstr "Aq=$@"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -76153,26 +75196,8 @@ msgstr "Ари?"
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
-msgid "As="
-msgstr "As="
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
 msgid "Ask to go upstairs."
 msgstr "Попросить подняться наверх"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "AttackSpineboy"
-msgstr "AttackSpineboy"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "AudioLowPassFilter"
-msgstr "AudioLowPassFilter"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -76183,61 +75208,8 @@ msgstr "Оу, я тебя разбудил? Жаль. Ты опоздала! У 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
-msgid "Aw?F"
-msgstr "Aw?F"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "B?(g"
-msgstr "Б?(г"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "B?g"
-msgstr "B?g"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "B?k\\Q="
-msgstr "B?k\\Q="
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "BBUleg"
-msgstr "ББУголок"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "BE1?z"
-msgstr "BE1?z"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "BQ8mC"
-msgstr "BQ8mC"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
 msgid "BUU[C"
 msgstr "БУ[С"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "Bartending_Varen_3_2_Accept_1"
-msgstr "Bartending_Varen_3_2_Accept_1"
-
-#, legacy
-msgctxt "ui"
-msgid "Bd\""
-msgstr "Bd\\"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -76248,50 +75220,14 @@ msgstr "Бду@"
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
-msgid "Be*Q"
-msgstr "Бе*Q"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
 msgid "Behind Door Sounds"
 msgstr "Звуки за дверью"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
-msgid "Bff?D"
-msgstr "Bff?D"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "Bg:"
-msgstr "Бг:"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "Bk?("
-msgstr "Бк?("
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "BkC"
-msgstr "BkC"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
 msgid "Blaf"
 msgstr "Блф"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "BlendType"
-msgstr "BlendType"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -76325,80 +75261,9 @@ msgstr "Но... М-м-м..."
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
-msgctxt "ui"
-msgid "C!x"
-msgstr "С!x"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "speaker:Zoey"
 msgid "C-cum...?!"
 msgstr "К-кончить...?!"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "C/TbCR"
-msgstr "C/TbCR"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "C3c@"
-msgstr "C3c@"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "C5?k"
-msgstr "C5?k"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "C:-I"
-msgstr "C:-I"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "C?8e"
-msgstr "C?8e"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "C?E3"
-msgstr "C?E3"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "C?Nw*"
-msgstr "C?Nw*"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "C@3co@"
-msgstr "C@3co@"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "CD?Rx"
-msgstr "CD?Rx"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "CE?X"
-msgstr "CE?X"
-
-#, legacy
-msgctxt "ui"
-msgid "CE\\"
-msgstr "CE\\\\"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -76415,32 +75280,14 @@ msgstr "Проверить на Максе"
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
-msgid "CiU"
-msgstr "CiU"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
 msgid "Clb"
 msgstr "Клб"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
-msgid "CmjQ"
-msgstr "CmjQ"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
 msgid "Cnr"
 msgstr "Цнр"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "CombinedSkin"
-msgstr "CombinedSkin"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -76466,17 +75313,6 @@ msgctxt "ui"
 msgid "Create new save"
 msgstr "Создать новый сохранённый файл"
 
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "Ct`"
-msgstr "Цт`"
-
-#, legacy
-msgctxt "ui"
-msgid "D)\\mC"
-msgstr "D)\\\\mC"
-
 #, legacy
 msgctxt "ui"
 msgid "D)\\mCmhJB\\"
@@ -76485,56 +75321,8 @@ msgstr "D)\\\\mCmhJB\\\\"
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
-msgid "D2?l"
-msgstr "D2?l"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "D?p["
-msgstr "D?p["
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "DE*P"
-msgstr "DE*P"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "DJr"
-msgstr "DJr"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "DMl?B"
-msgstr "DMl?B"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "DMl?D"
-msgstr "DMl?D"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "DSc?t"
-msgstr "DSc?t"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
 msgid "Dancing Character Siluhette"
 msgstr "Танцующая фигура"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "DarkSarah"
-msgstr "DarkSarah"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -76568,12 +75356,6 @@ msgstr "Назначение: Комната 203"
 msgctxt "ui"
 msgid "Destination: Room 204"
 msgstr "Назначение: Комната 204"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "Dl-?"
-msgstr "Дл-?"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -76615,104 +75397,8 @@ msgstr "Не проеби. Запомни: серый кейс с фиолето
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
-msgid "Dq=5C"
-msgstr "Dq=5C"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "DrawProcedural"
-msgstr "DrawProcedural"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "Dw!"
-msgstr "Дм!"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "Dz@q!"
-msgstr "Дз@q!"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "E)Ba"
-msgstr "E)Ба"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
 msgid "E)FqJP"
 msgstr "E)ФкЖП"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "E5=A"
-msgstr "E5=A"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "E5?E"
-msgstr "E5?E"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "E?:q"
-msgstr "E?:q"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "E?S)"
-msgstr "E?S)"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "EB4?"
-msgstr "EB4?"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "EDff"
-msgstr "EDff"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "ELb"
-msgstr "ЭЛб"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "EMjP"
-msgstr "EMjP"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "ENr"
-msgstr "r"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "EU@3c"
-msgstr "EU@3c"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "EU@H)"
-msgstr "EU@H)"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -76762,12 +75448,6 @@ msgstr "Наслаждайся креслом."
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
-msgid "EpCf"
-msgstr "EpCf"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
 msgid "Equip the camera from your inventory and take a picture of the pair."
 msgstr "Возьмите камеру из инвентаря и сделайте фото паре."
 
@@ -76779,87 +75459,15 @@ msgstr "Дополнительный реквизит: земля и первы�
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
-msgctxt "ui"
-msgid "F+?i"
-msgstr "Ф+?и"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "speaker:Zoey"
 msgid "F-fine..."
 msgstr "Л-ладно..."
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
-msgctxt "ui"
-msgid "F0@f"
-msgstr "Ф0@ф"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "F0@qU"
-msgstr "Ф0@кУ"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "F=:g"
-msgstr "F=:g"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "F?3G^?i"
-msgstr "F?3G^?i"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "F?TtV?e"
-msgstr "F?TtV?e"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "F?aKr?"
-msgstr "F?aKr?"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "F?tK"
-msgstr "F?tK"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "F@t\""
-msgstr "Ф@т\""
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "FSM"
-msgstr "FSM"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "FacingDirection"
-msgstr "FacingDirection"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "speaker:Zoey"
 msgid "Fahhh-...!"
 msgstr "Фа-а-...!"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "FbOU"
-msgstr "FbOU"
 
 # rich_translation: <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Ф-ф-ф-ф... </font></color>
 # legacy: text vanished from POT, kept for runtime lookup
@@ -76925,12 +75533,6 @@ msgstr "Сияющая дыра 201 Подглядывание 3 Сексуал�
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
-msgctxt "ui"
-msgid "GlowingHole_LookAtSuitcaseAgain_SexStatIncrease"
-msgstr "GlowingHole_LookAtSuitcaseAgain_SexStatIncrease"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "speaker:Cancel"
 msgid "Go back."
 msgstr "Назад."
@@ -76953,22 +75555,11 @@ msgctxt "speaker:???"
 msgid "Guhh..!!!"
 msgstr "Гух..!!!"
 
-#, legacy
-msgctxt "ui"
-msgid "Gx\""
-msgstr "Gx\\"
-
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
 msgid "Hehe, she's out of your reach, hun."
 msgstr "Хе-хе, она вне твоего досягаемого, милая."
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "speaker:Zoey"
-msgid "Hh..."
-msgstr "Х-х..."
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -77008,21 +75599,9 @@ msgstr "Хм..."
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
-msgctxt "ui"
-msgid "Hn?,"
-msgstr "Хм?,"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "speaker:Zoey"
 msgid "Hnnghhhahhh..."
 msgstr "Х-н-н-ах..."
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "H̷e̵'̸s̷ ̵m̴i̶n̴e̸.̴"
-msgstr "О̷н̵ ̷м̶о̵й̸.̶"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -77084,11 +75663,6 @@ msgstr "Кх..."
 msgctxt "speaker:Zoey"
 msgid "Khh...!"
 msgstr "Кх...!"
-
-#, legacy
-msgctxt "ui"
-msgid "Lb\""
-msgstr "Lb\\"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -77217,11 +75791,6 @@ msgctxt "ui"
 msgid "NN Exterior Puddle post processing"
 msgstr "Пост-обработка лужи снаружи NN"
 
-#, legacy
-msgctxt "ui"
-msgid "Nb\""
-msgstr "Nb\\"
-
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "speaker:Zoey"
@@ -77251,12 +75820,6 @@ msgstr "Н-н...!"
 msgctxt "speaker:Zoey"
 msgid "Nghhh...!"
 msgstr "Н-н-н...!"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "No Charcontroller set in PMA_CharLookInDirection in state:"
-msgstr "Charcontroller не установлен в PMA_CharLookInDirection в состоянии:"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -77364,18 +75927,6 @@ msgstr "Заказ 4 — TODO"
 msgctxt "ui"
 msgid "Order 5 - TODO"
 msgstr "Заказ 5 — TODO"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "speaker-name"
-msgid "OrderSlutService"
-msgstr "ЗАКАЗ"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "ui"
-msgid "PMA_LevelTransitionEnded: TransitionToLevel is null. +"
-msgstr "PMA_LevelTransitionEnded: TransitionToLevel равен null. +"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -77571,12 +76122,6 @@ msgstr "Тому, кого это касается — я ваш тайный п
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
-msgctxt "speaker-name"
-msgid "ToCallOnDialogueDone"
-msgstr "ВЫЗОВ_ДИАЛ"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
 msgctxt "speaker:Zoey"
 msgid "Ugh! We're done here!"
 msgstr "Тьфу! Мы закончили!"
@@ -77627,12 +76172,6 @@ msgstr "Нуу... Скажем так... Его дурные решения — 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "speaker:Zoey"
-msgid "Wh-... I-"
-msgstr "Ч-... Я-"
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "speaker:Zoey"
 msgid "What do you want... Sir..."
 msgstr "Чего Вы хотите... Сэр..."
 
@@ -77642,21 +76181,11 @@ msgctxt "speaker:Rosie"
 msgid "Whatever you prefer, darling. Klaudia really just cares about her customers getting drunk so the service bunnies can strip them off their money easily, ehehe!"
 msgstr "Как хочешь, дорогая. Клавдию волнует только, чтобы клиенты напились, а зайки обслуживания могли легко обчистить их карманы, хе-хе!"
 
-#, legacy
-msgctxt "ui"
-msgid "Wv\"?$"
-msgstr "Wv\\"
-
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "speaker:Zoey"
 msgid "Y-... You mean-... Hhh... Li-"
 msgstr "В-... Вы имеете в виду-... Х-х... Ли-"
-
-#, legacy
-msgctxt "ui"
-msgid "YU?\\"
-msgstr "YU?\\\\"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -77745,11 +76274,6 @@ msgctxt "ui"
 msgid "[TREATMENT] is painless, and non-invasive. Side effects may occur, such as mood changes, sleeplessness, or [REDACTED]."
 msgstr "[ЛЕЧЕНИЕ] безболезненно и неинвазивно. Возможны побочные эффекты, такие как перепады настроения, бессонница или [УДАЛЕНО]."
 
-#, legacy
-msgctxt "ui"
-msgid "\\UT"
-msgstr "\\\\UT"
-
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
 msgctxt "ui"
@@ -77836,12 +76360,6 @@ msgstr "разваливается за пределами этих стен. У
 msgctxt "ui"
 msgid "s not gone.. yet."
 msgstr "ещё не ушла.. пока."
-
-# legacy: text vanished from POT, kept for runtime lookup
-#, legacy
-msgctxt "speaker:Zoey"
-msgid "s up to.)"
-msgstr "задумал.)"
 
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy

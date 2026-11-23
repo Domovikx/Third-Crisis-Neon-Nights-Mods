@@ -29,6 +29,7 @@ import process from "node:process";
 
 import { compareCodePoints } from "./inventory.mts";
 import { parsePo, poEscape, type PoEntry } from "./po_file.mts";
+import { isLegacyWorthKeeping } from "./pot_skip.mts";
 import { writeAtomic } from "./potgen.mts";
 
 /** Корень репозитория: .../extract-text/scripts → вверх 4 уровня. */
@@ -45,6 +46,8 @@ export interface MergeStats {
   obsolete: number;
   retargeted: number;
   legacyKept: number;
+  /** Legacy-записи без ценности (msgstr == msgid или имя ассета) — выпилены. */
+  legacyDropped: number;
   /**
    * Ключи POT с `#, skip`: в PO их нет вовсе (ни пустых, ни переведённых).
    *
@@ -125,6 +128,7 @@ export function mergePot(
     obsolete: 0,
     retargeted: 0,
     legacyKept: 0,
+    legacyDropped: 0,
     skipped: 0,
     skipDropped: 0,
     cutDropped: 0,
@@ -211,8 +215,12 @@ export function mergePot(
       comments: [...pe.comments],
       // `auto-normalized` — машинная догадка prefill: в новый POT не едет.
       // `skip` снимается: POT больше не помечает ключ, метке в PO не место.
-      flags: (base ? base.flags : []).filter((f) => f !== "auto-normalized" && f !== "skip"),
-      translator: base ? [...base.translator] : [],
+      // `legacy` снимается: ключ снова в POT, значит запись не сирота
+      // (на 2026-11-23 таких «протухших» меток было 128 — текст вернулся, флаг остался).
+      flags: (base ? base.flags : []).filter(
+        (f) => f !== "auto-normalized" && f !== "skip" && f !== "legacy",
+      ),
+      translator: base ? base.translator.filter((c) => !c.startsWith("legacy: text vanished")) : [],
     });
     if (base && base.msgstr) stats.carried += 1;
     else stats.new += 1;
@@ -230,6 +238,12 @@ export function mergePot(
     }
     if (old.flags.includes("legacy")) {
       // Уже мигрированные триаж-переводы: их нет в POT по замыслу, в архив не уходят.
+      // Но и держать мусор незачем: `msgstr == msgid` или имя ассета ничего не
+      // даёт рантайму (правило 2026-11-23, замер — в `isLegacyWorthKeeping`).
+      if (!isLegacyWorthKeeping(old.msgid, old.msgstr)) {
+        stats.legacyDropped += 1;
+        continue;
+      }
       merged.push(old);
       continue;
     }
@@ -241,6 +255,10 @@ export function mergePot(
       // Текст в POT остался только как skip: перевод не нужен (решение
       // 2026-11-23), в PO его не тянем даже хвостом `legacy`.
       stats.skipDropped += 1;
+      continue;
+    }
+    if (!isLegacyWorthKeeping(old.msgid, old.msgstr)) {
+      stats.legacyDropped += 1;
       continue;
     }
     const keep = cloneEntry(old);
@@ -405,7 +423,8 @@ export function main(argv: string[]): number {
     console.error(
       `${cli.lang}.po updated: carried=${stats.carried}, new=${stats.new}, ` +
         `obsolete=${stats.obsolete}, retargeted=${stats.retargeted}, ` +
-        `legacy_kept=${stats.legacyKept}, skipped=${stats.skipped}, ` +
+        `legacy_kept=${stats.legacyKept}, legacy_dropped=${stats.legacyDropped}, ` +
+        `skipped=${stats.skipped}, ` +
         `skip_dropped=${stats.skipDropped}, cut_dropped=${stats.cutDropped} ` +
         `(backup .bak) [${poPath}]`,
     );

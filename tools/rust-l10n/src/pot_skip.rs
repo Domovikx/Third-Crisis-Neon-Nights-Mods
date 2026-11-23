@@ -416,6 +416,34 @@ pub fn looks_like_asset_path(s: &str) -> bool {
         .any(|ext| lower.contains(&format!(".{ext}")))
 }
 
+/// Стоит ли держать «legacy»-перевод (текст пропал из POT).
+///
+/// 1:1 с TS (`isLegacyWorthKeeping`). Рантайм ищет перевод по оригинальному
+/// тексту, поэтому сирота полезна только когда в ней есть что искать: живой
+/// текст и настоящий перевод. Замер 2026-11-23: из 597 legacy-записей 212 —
+/// `msgstr == msgid` или имя ассета; остальные 385 — реальные подписи.
+pub fn is_legacy_worth_keeping(msgid: &str, msgstr: &str) -> bool {
+    let tr = py_strip(msgstr);
+    if tr.is_empty() || tr == py_strip(msgid) {
+        return false;
+    }
+    // Условия без провенанса: короткие подписи (`ACCESS`) и пути не трогаем —
+    // для `raw:MonoBehaviour` это настоящий UI.
+    const JUNK: [SkipCondition; 8] = [
+        SkipCondition::NoLetters,
+        SkipCondition::NoWord,
+        SkipCondition::Identifier,
+        SkipCondition::SnakeCase,
+        SkipCondition::FsmLabel,
+        SkipCondition::SaveKey,
+        SkipCondition::Tokens,
+        SkipCondition::HexColor,
+    ];
+    !JUNK
+        .into_iter()
+        .any(|c| skip_condition_matches(c, msgid, ""))
+}
+
 /// Метка FSM: ключ начинается со слова `FSM` (1:1 с TS `isFsmLabel`).
 ///
 /// `FSM Lio Printer`, `FSM Nova Moving In` — имена машин состояний Unity,

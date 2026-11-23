@@ -171,6 +171,39 @@ export function hasLetters(s: string): boolean {
 }
 
 /**
+ * Условия, при которых пропавший из POT текст — мусор, а не «сирота для рантайма».
+ *
+ * `shortToken` и `assetPath` сюда НЕ входят: для `raw:MonoBehaviour` короткие
+ * подписи (`ACCESS`) — настоящий UI, а путь может быть путём в тексте.
+ */
+const LEGACY_JUNK: readonly SkipCondition[] = [
+  "noLetters",
+  "noWord",
+  "identifier",
+  "snakeCase",
+  "fsmLabel",
+  "saveKey",
+  "tokens",
+  "hexColor",
+];
+
+/**
+ * Стоит ли держать «legacy»-перевод (текст пропал из POT, оставлен для рантайма).
+ *
+ * Рантайм ищет перевод по оригинальному тексту, поэтому сирота полезна только
+ * тогда, когда в ней есть ЧТО искать: живой текст и настоящий перевод. Замер
+ * 2026-11-23: из 597 legacy-записей 212 — `msgstr == msgid` или имя ассета
+ * (`Wv"?$`, `Agree2`, `Bhair2_base2)\`); остальные 385 — реальные подписи
+ * (`APP NOT FOUND`, `Ask for Femboy`), которые в POT не попали из-за пробела в
+ * дампе (`global_strings`), и они работают.
+ */
+export function isLegacyWorthKeeping(msgid: string, msgstr: string): boolean {
+  const tr = msgstr.trim();
+  if (!tr || tr === msgid.trim()) return false;
+  return !LEGACY_JUNK.some((when) => skipConditionMatches(when, { msgid, rich: "" }));
+}
+
+/**
  * Метка FSM: ключ начинается со слова `FSM`.
  *
  * `FSM Lio Printer`, `FSM Nova Moving In`, `FSM Sex XP` — имена машин состояний

@@ -144,6 +144,8 @@ pub struct MergeStats {
     /// попадают в `dropped` (`RetargetOverwritten`).
     pub retargeted: usize,
     pub legacy_kept: usize,
+    /// Legacy-записи без ценности (msgstr == msgid или имя ассета) — выпилены.
+    pub legacy_dropped: usize,
     /// Потерянные в ЭТОМ прогоне переводы (см. [`DroppedTranslation`]).
     pub dropped: usize,
     /// Всего сирот в выходном PO (включая ранее помеченные `legacy`).
@@ -370,19 +372,26 @@ pub fn merge_pot<'a>(
             comments: pe.comments.clone(),
             // `auto-normalized` — машинная догадка prefill: в новый POT не едет.
             // `skip` снимается: POT больше не помечает ключ, метке в PO не место.
+            // `legacy` снимается: ключ снова в POT, значит запись не сирота
+            // (на 2026-11-23 таких «протухших» меток было 128).
             flags: match (fill, old) {
                 (Some(_), None) => Vec::new(),
                 (_, Some(o)) => o
                     .flags
                     .iter()
-                    .filter(|f| *f != "auto-normalized" && *f != "skip")
+                    .filter(|f| *f != "auto-normalized" && *f != "skip" && *f != "legacy")
                     .cloned()
                     .collect(),
                 (None, None) => Vec::new(),
             },
             translator: match (fill, old) {
                 (Some(f), _) => f.translator.to_vec(),
-                (None, Some(o)) => o.translator.clone(),
+                (None, Some(o)) => o
+                    .translator
+                    .iter()
+                    .filter(|c| !c.starts_with("legacy: text vanished"))
+                    .cloned()
+                    .collect(),
                 (None, None) => Vec::new(),
             },
         };
@@ -417,7 +426,13 @@ pub fn merge_pot<'a>(
             continue;
         }
         if old.flags.iter().any(|f| f == "legacy") {
-            // Уже мигрированные триаж-переводы: их нет в POT по замыслу.
+            // Уже мигрированные триаж-переводы: их нет в POT по замыслу. Но и
+            // держать мусор незачем: `msgstr == msgid` или имя ассета рантайму
+            // ничего не дают (правило 2026-11-23).
+            if !crate::pot_skip::is_legacy_worth_keeping(&old.msgid, &old.msgstr) {
+                stats.legacy_dropped += 1;
+                continue;
+            }
             merged.push(MergedEntry {
                 po: old.clone(),
                 obsolete: false,
@@ -446,6 +461,12 @@ pub fn merge_pot<'a>(
                     alive,
                 });
             }
+            continue;
+        }
+        // Мусор в legacy не держим: `msgstr == msgid` или имя ассета рантайму
+        // ничего не дают (правило 2026-11-23, замер в `is_legacy_worth_keeping`).
+        if !crate::pot_skip::is_legacy_worth_keeping(&old.msgid, &old.msgstr) {
+            stats.legacy_dropped += 1;
             continue;
         }
         let mut keep = old.clone();
@@ -684,6 +705,7 @@ pub fn report_to_json(stats: &MergeStats) -> String {
     out.push_str(&format!(", \"obsolete\": {}", stats.obsolete));
     out.push_str(&format!(", \"retargeted\": {}", stats.retargeted));
     out.push_str(&format!(", \"legacyKept\": {}", stats.legacy_kept));
+    out.push_str(&format!(", \"legacyDropped\": {}", stats.legacy_dropped));
     out.push_str(&format!(", \"dropped\": {}", stats.dropped));
     out.push_str(&format!(", \"orphans\": {}", stats.orphans));
     out.push_str(&format!(", \"dupKeys\": {}", stats.dup_keys));

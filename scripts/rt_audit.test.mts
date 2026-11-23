@@ -7,6 +7,8 @@
  */
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 import { auditLang, hasRichTranslation, isInlineRich } from "./rt_audit.mts";
 import { parsePo } from "../.opencode/skills/extract-text/scripts/po_file.mts";
@@ -70,3 +72,30 @@ test("auditLang: теги в msgstr при чистом оригинале — �
   assert.equal(s.tagsInMsgstr, 1, "теги в msgstr — дефект, их место в rt");
   assert.equal(s.rich, 2);
 });
+
+/**
+ * Гейт на РЕАЛЬНЫХ данных: где есть `rich_text`, там обязан быть
+ * `rich_translation`. Правило проекта, а не пожелание: без `rt` игрок видит
+ * перевод без цвета/курсива (теги внутрь фразы через Replace не доходят).
+ *
+ * Тест читает настоящий `po/<lang>.po`, поэтому работает и в CI: добавили
+ * строку с inline-разметкой и не заполнили `rt` — сборка красная.
+ *
+ * Список языков под гейтом — не «все»: у унаследованных переводов (de, pl и
+ * остальные) `rt` пока нет вовсе (0 из 287 на 2026-11-23), их сначала лечат,
+ * потом добавляют сюда. Новый язык = починить данные + дописать в список.
+ */
+const GATED_LANGS = ["ru"] as const;
+
+for (const lang of GATED_LANGS) {
+  test(`po/${lang}.po: rich_text без rich_translation — 0`, () => {
+    const text = readFileSync(join(import.meta.dirname, "..", "po", `${lang}.po`), "utf8");
+    const stat = auditLang(lang, text);
+    assert.equal(
+      stat.missing,
+      0,
+      `есть rich_text, но нет rich_translation: ${stat.missing} из ${stat.inline} inline-строк`,
+    );
+    assert.equal(stat.tagsInMsgstr, 0, "теги должны жить в rich_translation, а не в msgstr");
+  });
+}
