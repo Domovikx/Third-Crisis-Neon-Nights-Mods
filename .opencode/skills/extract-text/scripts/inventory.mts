@@ -525,6 +525,17 @@ export class DumpScanner {
       });
     }
 
+    // Карта цветов наполняется ПО МЕРЕ сканирования, а `richText` разворачивался
+    // в момент добавления. Значит объект, встреченный РАНЬШЕ своего
+    // `color_parser_list`, остался бы с именованным цветом (`<color=perversion>`),
+    // который TMP не понимает → потеря цвета, зависящая от порядка файлов.
+    // Второй проход по готовому списку убирает эту зависимость (Rust-эталон
+    // делает так же: `finish()` после полного скана). Идемпотентно: hex-значение
+    // повторно не меняется (проверено 2026-11-23).
+    for (const item of items) {
+      if (item.richText) item.richText = resolveNamedColors(item.richText, this.colors);
+    }
+
     return { items, stats: { chunkFiles: 0, summaryFiles: 0 } };
   }
 

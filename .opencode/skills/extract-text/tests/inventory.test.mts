@@ -103,6 +103,20 @@ test("DumpScanner: диалоги ANToolkit — strip, дедуп по объе�
   assert.equal(items[1].richText, "<color=#EB83FF>Hi</color>");
 });
 
+test("DumpScanner: цвет разворачивается, даже если color_parser_list встретился позже", () => {
+  // Порядок файлов не должен влиять на цвет: диалог идёт ДО карты цветов.
+  const scanner = new DumpScanner();
+  addRow(scanner, {
+    asset: "a_first",
+    path_id: 1,
+    dialogues: [{ speaker: "", text: "Later", rich_text: "<color=perversion>Later</color>" }],
+  });
+  addRow(scanner, { asset: "z_last", path_id: 2, color_parser_list: { perversion: "#EB83FF" } });
+
+  const items = only(scanner.finish().items, "dlg");
+  assert.equal(items[0].richText, "<color=#EB83FF>Later</color>");
+});
+
 test("DumpScanner: 64-битный path_id не теряет точность и сортируется как int", () => {
   const raw =
     '{"asset":"bundle_x","path_id":-5271052525308704166,"dialogues":[{"speaker":"","text":"Big","rich_text":""}]}';
