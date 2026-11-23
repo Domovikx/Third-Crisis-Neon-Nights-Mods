@@ -35,7 +35,7 @@ Legacy-строки триажа (флаг `sk` из `#, legacy`) исключе
 ## Команды
 
 ```bash
-node .opencode/skills/extract-text/scripts/po2dat.mts ru   # сначала свежий .dat
+npm run po2dat -- ru                 # сначала свежий .dat
 node .opencode/skills/translate-qa/scripts/qa_translate.mts [--lang ru] [--out tmp/qa.html]
 node .opencode/skills/translate-qa/scripts/review_queue.mts [--lang ru] [--limit 100]
 ```
@@ -44,7 +44,7 @@ QA печатает сводку в stderr и возвращает **код 1 п
 HTML-дашборд: карточки покрытия, бары по персонажам, таблица находок с
 фильтром; лежит в `tmp/` (не трекается).
 
-`.dat` собирает `po2dat.mts` — **QA читает `.dat`, а не только PO**. Если `.dat`
+`.dat` собирает `rust-l10n po2dat` — **QA читает `.dat`, а не только PO**. Если `.dat`
 старый, отчёт врёт про покрытие: сначала `po2dat`, потом QA.
 
 ## Очередь ревью (`scripts/review_queue.mts`)
@@ -73,7 +73,7 @@ HTML-дашборд: карточки покрытия, бары по персо
 - **Извлечение** — A/B `potgen.mts` до/после: ноль диффа после нормализации даты.
 - **Перевод (PO)** — Poedit сейчас; Weblate (self-hosted) когда придут
   переводчики: глоссарий, TM, suggestions, скриншоты к строкам, matrix view.
-- **Компиляция** — отчёт `po2dat.mts` (dupes/legacy/gated) + A/B словаря.
+- **Компиляция** — отчёт `po2dat` (dupes/legacy/gated) + A/B словаря.
 - **Качество** — `qa_translate.mts` + `tmp/qa.html`: 6 правил, exit 1 при errors.
 - **Очередь человеку** — `review_queue.mts` → `tmp/review_queue.html`.
 - **Игра** — `NeonTranslator.log` (`Lang`, `Translations: N`) + киноплёнка (потом).

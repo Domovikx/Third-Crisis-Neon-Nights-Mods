@@ -1,22 +1,28 @@
 ---
 name: extract-text
-description: PO-пайплайн текста игры (inventory, potgen, po_update, prefill_po, po2dat, po_file, find_source). Строки берутся из дампа JSONL; YAML-дерево translations/ удалено (осталось легаси-входом prefill). Всё на .mts, Python-файлы — легаси до удаления владельцем.
+description: PO-пайплайн текста игры (inventory, potgen, po_update, po_file, skip-политика). Рабочие команды — Rust (`rust-l10n`, обёртка `scripts/text_cli.mts`); TS-эталоны остались только у potgen и po_update. Строки берутся из дампа JSONL; YAML-дерево translations/ удалено.
 ---
 
 # extract-text — PO-пайплайн текста
 
 ## Что где
 
-- Источник правды — `po/template.pot` + `po/<lang>.po` (POT-хаб, **33 271 запись**).
+- Источник правды — `po/template.pot` + `po/<lang>.po` (POT-хаб, **33 447 записей**).
 - Строки берутся **из дампа** `tmp/dump/*.jsonl` (выход `dump-assets`),
   не из YAML: дерево `translations/` удалено. `#: translations/*` в старых PO —
   историческое происхождение, не существующие файлы.
-- TS-модули: `po_file`, `inventory`, `potgen`, `po_update`, `prefill_po`,
-  `po2dat`, `find_source`.
-- Python-файлы в `scripts/` (`po_update.py`, `prefill_po.py`, `find_source.py`)
-  — **легаси-референсы**: код перенесён, поведение сверено. Удаляет владелец;
-  не запускать (два последних импортируют удалённые `potgen.py`/`extractor.py`).
+- TS-модули: `po_file`, `inventory`, `potgen`, `po_update`, `pot_skip`,
+  `pot_skip_review`. Из них **эталонами** остались `potgen` и `po_update`
+  (рабочий путь — Rust, паритет — `scripts/text_parity.test.mts`);
+  `po2dat`, `prefill` и `find_source` уже без TS-дублей — их стерегут тесты
+  Rust и слепки `scripts/text_golden.test.mts`.
+- Правило миграции (владелец, 2026-11-23): как только Rust-реализация
+  доказана и протестирована, старый аналог **удаляется в том же коммите** —
+  см. `docs/rust-vs-ts.md`.
 - Грабли, проверенные на реальном дампе — `MAP.md` этого скилла.
+- Формат PO/POT и первоисточники (gettext, translate-toolkit, Babel) —
+  `references/PO_FORMAT.md`: что значит каждый префикс, почему флаги через
+  запятую, какие правила нельзя нарушать.
 
 ## Скрипты (`scripts/`)
 
@@ -25,11 +31,12 @@ description: PO-пайплайн текста игры (inventory, potgen, po_up
 - `potgen.mts` — каталог `(msgid, msgctxt)` → `po/template.pot`.
 - `po_update.mts` — аналог `msgmerge -U`: перенос `msgstr` в новый POT
   (точный ключ / ретаргет при смене `msgctxt` / новые пустые / `legacy`-хвост).
-- `prefill_po.mts` — заполнение пустых `msgstr` из YAML-корпуса + отчёт
-  (exact/fuzzy/auto-normalized/conflicts/missing/orphans).
-- `po2dat.mts` — `po/<lang>.po` → `runtime/patch_<lang>.dat` (словарь рантайма).
 - `po_file.mts` — парсер/рендер PO (детерминированный round-trip).
-- `find_source.mts` — провенанс: какие объекты дампа дали строку.
+- `pot_skip.mts` — условия skip-политики (что переводить не нужно) и чистка
+  TMP-тегов; `pot_skip_review.mts` — отчёт для ревью правил.
+
+Удалены после миграции на Rust (брать из `rust-l10n`): `prefill_po.mts`,
+`po2dat.mts`, `find_source.mts`.
 
 ## Команды
 
@@ -59,23 +66,27 @@ node .opencode/skills/extract-text/scripts/po_update.mts ru
 #   флаги: [lang] (по умолчанию ru), --po-dir <dir>
 
 # Предзаполнение PO из YAML-корпуса (легаси-вход translations/, см. ниже)
-node .opencode/skills/extract-text/scripts/prefill_po.mts
+npm run po:prefill -- ru
 #   флаги: [lang], --po-dir <dir>, --corpus <dir>
 
 # Где эта строка в дампе (все вхождения, либо первое)
-node .opencode/skills/extract-text/scripts/find_source.mts "Yesss...!~"
-node .opencode/skills/extract-text/scripts/find_source.mts "Wait" --first
+npm run find:source -- "Yesss...!~"
+npm run find:source -- "Wait" --first
 #   флаги: --first, --dump <dir> (по умолчанию tmp/dump)
 #   exit: 0 — найдено, 1 — нет/дампа нет, 2 — аргументы
 
 # Сборка словаря для игры
 npm run po2dat -- ru
+
+# Аудит TMP-разметки в POT (классы: unclosed/crossed/unknown/named-color/…)
+npm run rich:audit
+npm run rich:audit -- --examples 20 --out tmp/rich-audit.md
 ```
 
 Запись `template.pot`, `po/<lang>.po` и `.dat` атомарная (`.part` → rename):
 обрыв процесса не обнуляет файл. `po_update` пишет `po/<lang>.po.bak`.
 
-`prefill_po.mts` — **про YAML-корпус**: в новой репе дерева `translations/`
+`npm run po:prefill` — **про YAML-корпус**: в новой репе дерева `translations/`
 нет, поэтому без `--corpus` инструмент только сохраняет текущие переводы
 и печатает отчёт (все непереведённые POT-строки — в `missing`). Это не
 ошибка порта: Python-версия после ретайра YAML вела себя так же.
@@ -128,7 +139,7 @@ msgstr ""
 - одна запись на уникальную пару `(msgid, msgctxt)`; порядок — сортировка по
   `(msgid, msgctxt)` (порядок code points, как Python);
 - `msgctxt`: `speaker:<Имя>` (реплика), `speaker-name` (имя персонажа), `ui`;
-- `#:` refs **не пишутся**; провенанс ищется по дампу (`find_source.mts`);
+- `#:` refs **не пишутся**; провенанс ищется по дампу (`npm run find:source`);
 - `#. src:` — провенанс записи: `dialog`, `bundle`, `field:<ИмяПоля>`,
   `settings`, `us`, `raw:<TypeName>`, `global` (метка = путь доставки в POT,
   первое вхождение побеждает; список фиксирован — инвариант 14 контракта,
@@ -165,43 +176,20 @@ POT. Причины и цифры — `tasks/2026-11-21-pot-coverage-gaps.md`:
 ## Тесты
 
 ```bash
-# Базовые модули (71): text_filters, po_file, po2dat, inventory, potgen, languages
+# Вся TS-матрица (включая паритет potgen/po_update и слепки po2dat/prefill/
+# find_source)
 npm test
-
-# Порт PO-инструментов (50): po_update 19, prefill_po 21, find_source 10
-node --test .opencode/skills/extract-text/tests/po_update.test.mts \
-  .opencode/skills/extract-text/tests/prefill_po.test.mts \
-  .opencode/skills/extract-text/tests/find_source.test.mts
 
 # Сквозной: дамп → POT → .dat на мини-фикстуре (без игры и сети)
 npm run test:e2e
+
+# Слепки выхода (обновление — только осознанно, дифф виден):
+npm run test:golden
+GOLDEN_UPDATE=1 npm run test:golden
 ```
 
-Фикстура — `test_data/tiny-dump/`.
+Фикстура — `test_data/tiny-dump/`. Rust-сторона: `cargo test -p rust-l10n`
+(`tools/rust-l10n/tests/`) — те же кейсы, что были у TS-тестов, плюс паритет.
 
-Паритет с Python (2026-11-21):
-
-- `potgen`: на дампе 319 МБ `potgen.py --update` и `potgen.mts --update`
-  дают идентичный POT (33 271 запись, diff пуст после нормализации
-  `POT-Creation-Date` и `CRLF`);
-- `po_update`: 10 языков (`po/*.po` + `template.pot` на копиях) — идентично
-  байт-в-байт после `CRLF`→`LF`; ru: carried 18 596 / new 14 675 / legacy 0;
-- `prefill_po`: реальный YAML-корпус из истории старой репы + реальные `po/` —
-  `ru.po` идентичен после нормализации EOL и `PO-Revision-Date`, отчёт
-  (18596/33271 exact, fuzzy 14, auto-normalized 136, missing 14 525,
-  orphans 8) совпал текстом после нормализации EOL;
-- `find_source`: 5 строк на реальном дампе (включая многовхождения и срез
-  120 code points) — вывод идентичен после `CRLF`→`LF`.
-
-Политика (2026-11-22): `potgen.test.mts` проверяет разбор/валидацию политики
-(битый JSON, неизвестное поле, неизвестная метка — ошибки), применение
-(исключённые не в POT, а в журнале; пустая политика = POT как раньше) и
-паритет TS ↔ Rust побайтово **с политикой и без** (POT + `tmp/pot-excluded.jsonl`).
-`tools/rust-l10n/tests/potgen.rs` — то же со стороны Rust плюс сверка списка
-`KNOWN_RAW_CLASSES` с `unity_classes.mts` и с TS.
-
-## Устаревшее
-
-`parser.py`, `extractor.py`, `potgen.py` удалены из нового дерева (логика
-перенесена в `inventory`/`potgen`/`prefill_po`). Обратного пути PO→YAML нет:
-рантайм читает только `.dat`, YAML-корпус остался только входом `prefill`.
+История паритета с Python и TS (цифры, даты, чем сверяли) — `docs/rust-vs-ts.md`
+и `tasks/2026-11-22-*`. Здесь остаётся только то, что действует сейчас.

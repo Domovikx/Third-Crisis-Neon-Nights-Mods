@@ -2,8 +2,10 @@
  * text_cli.mts — обёртка над `rust-l10n` (рабочий текстовый пайплайн:
  * potgen, po2dat, po_update).
  *
- * Считает Rust (`tools/rust-l10n`), эталоны остаются на TS (`npm run potgen:ts`,
- * `po2dat:ts`, `po:update:ts`) и стерегут паритет в `scripts/text_parity.test.mts`.
+ * Считает Rust (`tools/rust-l10n`) — единственная рабочая реализация. У `potgen`
+ * и `po_update` TS-эталоны ещё живут (`potgen:ts`, `po:update:ts`) и стерегут
+ * паритет в `scripts/text_parity.test.mts`; `po2dat`/`prefill`/`find_source`
+ * уже без TS-дублей (правило — `docs/rust-vs-ts.md`).
  *
  * Замер (2026-11-22): potgen 2.0× на реальном дампе (124 МБ/с против 61),
  * po2dat 4.4×, po_update 4.2×, prefill ~4× на реальных po/
@@ -51,8 +53,7 @@ const USAGE = `rust-l10n (обёртка)
   node scripts/text_cli.mts find_source "<msgid text>" [--first] [--dump <dir>]
 
 Дамп для find_source сканируется тем же Rust-инвентарём, что у potgen.
-Эталонные TS-реализации: npm run potgen:ts / npm run po2dat:ts / npm run po:update:ts /
-npm run po:prefill:ts.
+Эталоны TS остались только у potgen и po_update: npm run potgen:ts / npm run po:update:ts.
 Сборка: npm run l10n:build.`;
 
 function main(argv: string[]): number {
@@ -71,8 +72,7 @@ function main(argv: string[]): number {
   if (!bin) {
     console.error("rust-l10n не собран. Соберите: npm run l10n:build");
     console.error(
-      "Эталоны без Rust: npm run potgen:ts / npm run po2dat:ts / npm run po:update:ts / " +
-        "npm run po:prefill:ts",
+      "Без Rust работает только паритетный эталон: npm run potgen:ts / npm run po:update:ts",
     );
     return 2;
   }

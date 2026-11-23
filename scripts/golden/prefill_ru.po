@@ -1,0 +1,60 @@
+# Russian translation for NeonTranslator (migrated from YAML corpus).
+msgid ""
+msgstr ""
+"Project-Id-Version: NeonTranslator 1.0\n"
+"PO-Revision-Date: 2026-01-02 03:04+0000\n"
+"Language: ru\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. src: field:fsm
+msgctxt "ui"
+msgid "Ask about her Arm"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "BACK"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "ColorParserList"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Dialogue Log"
+msgstr ""
+
+#. src: settings
+msgctxt "ui"
+msgid "New Game"
+msgstr ""
+
+#. src: settings
+msgctxt "ui"
+msgid "Options"
+msgstr ""
+
+#. src: field:m_Name
+msgctxt "ui"
+msgid "Tiny"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Welcome back, Sarah.</color>
+msgctxt "speaker:Zoey"
+msgid "Welcome back, Sarah."
+msgstr "С возвращением, Сара."
+
+#. src: bundle
+msgctxt "speaker:Zoey"
+msgid "Where are you going now, my dear friend?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker-name"
+msgid "Zoey"
+msgstr ""

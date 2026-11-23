@@ -3,15 +3,15 @@
 Наш конвейер повторяет классический gettext-цикл 1-в-1 (см. GNU gettext manual,
 `msgmerge -U`: exact match carry-over, fuzzy matching, backups):
 
-| Gettext BP           | У нас                  | Примечание                                    |
-| -------------------- | ---------------------- | --------------------------------------------- |
-| `xgettext` → POT     | `potgen.mts`           | EN-база, уникальные `(msgid, msgctxt)`        |
-| `msginit` новый язык | копия POT → `po/de.po` | + header (`Language`, `Plural-Forms`)         |
-| `msgmerge -U`        | `po_update.py [lang]`  | carried / new / obsolete (`#~`), бэкап `.bak` |
-| перевод              | Poedit / Weblate       | fuzzy-флаги ревьюит человек                   |
-| `msgfmt -c`          | `po2dat.mts [lang]`    | компиляция в `patch_<lang>.dat` + отчёт       |
-| `msgfmt` check       | `qa_translate.py`      | синтаксис PO + 6 правил качества              |
-| переключение         | `deploy.ps1 -Lang`     | `active_lang.txt`, fallback `ru`              |
+| Gettext BP           | У нас                      | Примечание                                    |
+| -------------------- | -------------------------- | --------------------------------------------- |
+| `xgettext` → POT     | `potgen.mts`               | EN-база, уникальные `(msgid, msgctxt)`        |
+| `msginit` новый язык | копия POT → `po/de.po`     | + header (`Language`, `Plural-Forms`)         |
+| `msgmerge -U`        | `po_update.py [lang]`      | carried / new / obsolete (`#~`), бэкап `.bak` |
+| перевод              | Poedit / Weblate           | fuzzy-флаги ревьюит человек                   |
+| `msgfmt -c`          | `npm run po2dat -- <lang>` | компиляция в `patch_<lang>.dat` (Rust)        |
+| `msgfmt` check       | `qa_translate.py`          | синтаксис PO + 6 правил качества              |
+| переключение         | `deploy.ps1 -Lang`         | `active_lang.txt`, fallback `ru`              |
 
 Правила, отличающиеся от голого gettext (осознанно):
 

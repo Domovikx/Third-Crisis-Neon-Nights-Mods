@@ -1,0 +1,8 @@
+# Where are you going now, my dear friend?
+[bundle:bundle_tiny#0] speaker=Zoey :: Where are you going now, my dear friend?
+[raw:bundle_tiny_assets_all_abc123#1] :: Where are you going now, my dear friend?
+# Zoey
+[spk:Zoey] :: Zoey
+[raw:bundle_tiny_assets_all_abc123#2] :: Zoey
+# Dialogue Log
+[raw:level0#0] :: Dialogue Log

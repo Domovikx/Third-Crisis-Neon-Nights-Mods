@@ -1,6 +1,6 @@
 /**
  * Тесты деплоя: план раскладки, native-режим `en`, атомарная запись, паритет
- * `.dat` с `po2dat.mts`, разбор CLI.
+ * `.dat` с независимой сборкой `rust-l10n po2dat`, разбор CLI.
  *
  * Игра НЕ нужна: фейковая установка и фейковый репозиторий собираются во
  * временной папке `tmp/`. Реальный деплой проверяется вручную (см. SKILL.md).
@@ -16,10 +16,11 @@ import {
   rmSync,
   writeFileSync,
 } from "node:fs";
+import { spawnSync } from "node:child_process";
 import { join, resolve } from "node:path";
 
 import { GAME_DATA_FOLDER } from "../../../../scripts/game_dir.mts";
-import { buildDat, writeDat } from "../../extract-text/scripts/po2dat.mts";
+import { l10nBinary } from "../../../../scripts/text_cli.mts";
 import {
   CJK_FONTS,
   MAIN_FONT,
@@ -218,7 +219,12 @@ test("executeDeploy(ru): DLL, шрифты, словарь, active_lang на м�
   );
 });
 
-test("executeDeploy(ru): .dat байт-в-байт равен сборке po2dat.mts", () => {
+test("executeDeploy(ru): .dat байт-в-байт равен независимой сборке rust-l10n", (t) => {
+  const bin = l10nBinary();
+  if (!bin) {
+    t.skip("rust-l10n не собран (npm run l10n:build)");
+    return;
+  }
   const game = fakeGame("parity-game");
   const repo = fakeRepo("parity-repo");
   executeDeploy(planDeploy(game, "ru", repo), repo);
@@ -226,13 +232,15 @@ test("executeDeploy(ru): .dat байт-в-байт равен сборке po2da
   const installed = readFileSync(join(game, GAME_DATA_FOLDER, "Managed", "patch_ru.dat"));
   const staged = readFileSync(join(repo, "runtime", "patch_ru.dat"));
 
-  // Независимая сборка тем же po2dat.mts — эталон паритета.
-  const { rows } = buildDat("ru", repo);
+  // Независимая сборка тем же Rust-компилятором, но отдельным процессом.
   const reference = join(repo, "reference.dat");
-  writeDat(rows, reference);
+  const run = spawnSync(bin, ["po2dat", "ru", "--root", repo, "--out", reference], {
+    encoding: "utf8",
+  });
+  assert.equal(run.status, 0, run.stderr);
 
   assert.deepEqual(installed, staged, "Managed/ = staging из deploy");
-  assert.deepEqual(installed, readFileSync(reference), "Managed/ = сборка po2dat.mts");
+  assert.deepEqual(installed, readFileSync(reference), "Managed/ = сборка rust-l10n po2dat");
 });
 
 test("executeDeploy(en): словарь не кладётся, старый patch_en.dat не удаляется", () => {

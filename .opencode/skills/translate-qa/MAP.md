@@ -9,7 +9,7 @@
 - ⚠️ **QA читает `.dat`, а не только PO** → `loadDat()` открывает
   `runtime/patch_<lang>.dat` → если `.dat` старый, отчёт врёт про покрытие →
   проверено (`loadDat`, сводка ru 18 610/33 271) → сначала
-  `node .opencode/skills/extract-text/scripts/po2dat.mts <lang>`, потом QA.
+  `npm run po2dat -- <lang>`, потом QA.
 
 - ⚠️ **PO и `.dat` уже расходятся** → 55 строк `.dat` отличаются от `po/ru.po`
   (сборка 2026-11-21), плюс 14 текстов имеют пустой `msgstr` в PO, но непустой

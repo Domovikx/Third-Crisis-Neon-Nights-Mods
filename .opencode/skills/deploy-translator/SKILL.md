@@ -9,7 +9,7 @@ compatibility: opencode
 
 Ставит в установку игры четыре вещи: рантайм-DLL, шрифт(ы), словарь и
 прокси-лоадер. Источник переводов — POT-хаб (`po/template.pot` + `po/<lang>.po`),
-словарь собирается тем же `po2dat.mts`, что и `npm run po2dat` (второй
+словарь собирается тем же `rust-l10n po2dat`, что и `npm run po2dat` (второй
 реализации нет).
 
 ## Команды
@@ -36,7 +36,7 @@ node .opencode/skills/deploy-translator/scripts/deploy.mts --help
 2. `--proxy`: `<игра>/dwmapi.dll` + `<игра>/dwmapi_real.dll` + копия прокси в
    репозиторий (нужен MSVC).
 3. `po/<lang>.po` → `runtime/patch_<lang>.dat` (`buildDat` + `writeDat` из
-   `po2dat.mts`, запись атомарная) → `Managed/patch_<lang>.dat`.
+   `rust-l10n po2dat`, запись атомарная) → `Managed/patch_<lang>.dat`.
 4. В `Managed/`: `NeonTranslatorRuntime.dll`, `RobotoCondensed-Regular.ttf`,
    `NotoSansSC.ttf`/`NotoSansJP.ttf` (если есть), `patch_<lang>.dat`,
    `active_lang.txt` (без перевода строки — рантайм читает как есть).
@@ -59,7 +59,7 @@ node .opencode/skills/deploy-translator/scripts/deploy.mts --help
 ```bash
 M="<игра>/Third Crisis Neon Nights_Data/Managed"
 cat "$M/active_lang.txt"                       # ожидаемый код языка
-node .opencode/skills/extract-text/scripts/po2dat.mts ru   # независимая сборка
+npm run po2dat -- ru                                    # независимая сборка (Rust)
 sha256sum "$M/patch_ru.dat" runtime/patch_ru.dat           # хэши совпадают
 ```
 

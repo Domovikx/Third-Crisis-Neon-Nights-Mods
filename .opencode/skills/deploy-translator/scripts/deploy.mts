@@ -5,8 +5,8 @@
  * Делает то же и в том же порядке:
  *   1. (опция `--rebuild`) `buildRuntime()` → `runtime/NeonTranslatorRuntime.dll`;
  *   2. (опция `--proxy`) `buildProxy()` → `dwmapi.dll` в корне игры + копия в репо;
- *   3. `po/<lang>.po` → `runtime/patch_<lang>.dat` (через `po2dat.mts`, одна
- *      реализация на весь репозиторий) → `Managed/patch_<lang>.dat`;
+ *   3. `po/<lang>.po` → `runtime/patch_<lang>.dat` (через `rust-l10n po2dat`,
+ *      одна реализация на весь репозиторий) → `Managed/patch_<lang>.dat`;
  *   4. DLL + шрифт(ы) + словарь + `active_lang.txt` → `Managed/`;
  *   5. `dwmapi.dll` из репозитория → корень игры (рядом с exe).
  *
@@ -23,10 +23,12 @@
  *   node .opencode/skills/deploy-translator/scripts/deploy.mts --lang en
  *   node .opencode/skills/deploy-translator/scripts/deploy.mts --lang de --rebuild --proxy
  */
+import { spawnSync } from "node:child_process";
 import {
   copyFileSync,
   existsSync,
   mkdirSync,
+  readFileSync,
   renameSync,
   rmSync,
   statSync,
@@ -37,7 +39,7 @@ import process from "node:process";
 
 import { GAME_DATA_FOLDER } from "../../../../scripts/game_dir.mts";
 import { REPO_ROOT, SOURCE_LANG, allLangs } from "../../../../scripts/languages.mts";
-import { buildDat, writeDat } from "../../extract-text/scripts/po2dat.mts";
+import { l10nBinary } from "../../../../scripts/text_cli.mts";
 import { buildRuntime, resolveGame } from "../../build-translator/scripts/build.mts";
 import { buildProxy } from "../../build-translator/scripts/build_proxy.mts";
 
@@ -212,16 +214,13 @@ export function executeDeploy(plan: DeployPlan, repoRoot: string = REPO_ROOT): D
       copied.push(op.to);
       console.log(`  + ${op.what} -> ${op.to}`);
     } else if (op.kind === "build-dat") {
-      const { rows, report } = buildDat(plan.lang, repoRoot);
       const staged = join(repoRoot, "runtime", `patch_${plan.lang}.dat`);
-      writeDat(rows, staged);
+      buildDatRust(plan.lang, repoRoot, staged);
       copyAtomic(staged, op.to);
       copied.push(op.to);
-      dat = { staged, installed: op.to, rows: rows.length };
-      console.log(
-        `  + patch_${plan.lang}.dat: ${rows.length} строк ` +
-          `(переведено ${report.filled}, без rich ${report.noRich}, гейт ${report.gatedAutoNormalized})`,
-      );
+      const rows = readFileSync(staged, "utf8").split(/\r?\n/).filter(Boolean).length;
+      dat = { staged, installed: op.to, rows };
+      console.log(`  + patch_${plan.lang}.dat: ${rows} строк (rust-l10n po2dat)`);
       console.log(`    ${staged} -> ${op.to}`);
     } else if (op.kind === "write-active-lang") {
       writeAtomic(op.to, plan.lang);
@@ -231,6 +230,30 @@ export function executeDeploy(plan: DeployPlan, repoRoot: string = REPO_ROOT): D
   }
 
   return { copied, dat, warnings: plan.warnings };
+}
+
+/**
+ * Собрать `.dat` рабочей реализацией (`rust-l10n po2dat`).
+ *
+ * Раньше словарь собирался TS-функцией в процессе; после миграции осталась
+ * одна реализация — Rust, поэтому ошибка сборки обязана быть громкой: без
+ * свежего `.dat` игра показала бы прошлый словарь.
+ */
+function buildDatRust(lang: string, repoRoot: string, out: string): void {
+  // Бинарь живёт в репозитории с `tools/`; у тестового «фейкового» репозитория
+  // его нет, поэтому фолбэк — настоящий корень репозитория.
+  const bin = l10nBinary(repoRoot) ?? l10nBinary();
+  if (!bin) {
+    throw new Error("rust-l10n не собран: `npm run l10n:build` (нужен для словаря .dat)");
+  }
+  const run = spawnSync(bin, ["po2dat", lang, "--root", repoRoot, "--out", out], {
+    encoding: "utf8",
+  });
+  if (run.status !== 0) {
+    throw new Error(
+      `rust-l10n po2dat ${lang}: ${(run.stderr || "").trim() || "exit " + run.status}`,
+    );
+  }
 }
 
 /** Атомарная запись текста: `.part` → rename. */

@@ -70,7 +70,7 @@ OpenAI-совместим. Список языков и их названия д
 ## После прогона
 
 ```bash
-node .opencode/skills/extract-text/scripts/po2dat.mts ru   # или npm run po2dat -- ru
+npm run po2dat -- ru
 node .opencode/skills/translate-qa/scripts/qa_translate.mts --out tmp/qa.html
 # затем деплой (скилл deploy-translator) и проверка в игре
 ```

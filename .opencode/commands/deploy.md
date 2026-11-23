@@ -16,7 +16,7 @@ npm run deploy -- --lang en             # native-режим: словаря не
 
 Что делает деплой:
 
-- собирает `po/<lang>.po` → `patch_<lang>.dat` через `po2dat.mts` (одна реализация, не копия);
+- собирает `po/<lang>.po` → `patch_<lang>.dat` через `rust-l10n po2dat` (одна реализация, не копия);
 - кладёт в `<игра>/<Game>_Data/Managed/`: DLL рантайма, шрифты (кириллица + CJK),
   словарь (кроме `en`), `active_lang.txt` с кодом языка;
 - прокси `dwmapi.dll` — в корень игры (если он там нужен и собран).
