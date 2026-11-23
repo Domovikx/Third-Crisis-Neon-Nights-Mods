@@ -993,7 +993,7 @@ msgstr "(Но я ведь делала все эти ужасные дела с 
 #. rich_text: <i>(But I probably got her in trouble last night by trying to call her.)</i>
 msgctxt "ui"
 msgid "(But I probably got her in trouble last night by trying to call her.)"
-msgstr "(Но я, наверное, подставила её вчера своим звонком.)"
+msgstr "(Но я, наверное, втянула её в неприятности вчера, когда пыталась позвонить.)"
 
 #. src: dialog
 #. rich_text: <i>(But I'll just... save this picture for <color=#EB83FF>later</color>...)</i>
@@ -2399,7 +2399,7 @@ msgstr "(Хех... Этого, эм, должно быть достаточно.
 #. rich_text: <i>(Her arms is see-through. The material looks almost soft. )</i>
 msgctxt "ui"
 msgid "(Her arms is see-through. The material looks almost soft. )"
-msgstr "(Её рука прозрачная. Материал выглядит почти мягким. )"
+msgstr "(Её руки полупрозрачные. Материал выглядит почти мягким.)"
 
 #. src: dialog
 #. rich_text: <i>(Her cigarette is.. Glowing..? Like the whole thing. )</i>
@@ -9869,7 +9869,7 @@ msgstr "0.3 Заметки о выпуске"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 Residential Enforcer Groping 1"
-msgstr "0.3 Жилищный силовиков: Прикосновения 1"
+msgstr "0.3 Жилищный силовик: Ощупывание 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -15087,7 +15087,7 @@ msgstr "Assembly за кадр"
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Asshole? Hah! The asshole right in front of my nose, ngh! I wanna slather that perfect pucker of yours so bad, ahaha!"
-msgstr "Придурок? Ха! Этот придурок прямо перед моим носом, мхм! Я так хочу смазать твою идеальную складочку, ахаха!"
+msgstr "Придурок? Ха! Этот придурок прямо перед носом, мхм! Я так хочу смазать твою идеальную складочку, ахаха!"
 
 #. src: us
 msgctxt "ui"
@@ -23195,7 +23195,7 @@ msgstr "Ахах, я такое уже слышала. Не волнуйся, д
 #. src: dialog
 msgctxt "ui"
 msgid "Eheh, that's right. Show me your little pussy."
-msgstr "Хе-хе, так и есть. Покажи мне свою маленькую киску."
+msgstr "Хе-хе, точно. Покажи мне свою киску."
 
 #. src: dialog
 msgctxt "ui"
@@ -37392,7 +37392,7 @@ msgstr "Клавдия Осмотр груди"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Klaudia Chips Dialogue"
-msgstr "Клавдия Диалог про чипсы"
+msgstr "Клавдия Чипсы: диалог"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -37462,7 +37462,7 @@ msgstr "Клавдия Осмотр каблуков"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Klaudia Knee Dialogue"
-msgstr "Клавдия Диалог про колено"
+msgstr "Клавдия: Диалог о колене"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41021,7 +41021,7 @@ msgstr "Мина... у неё такая буцету-аура, эхе-хе."
 #. src: dialog
 msgctxt "ui"
 msgid "Mind going blank, double penetration is gearing up"
-msgstr "Разум пустеет, двойное проникновение набирает обороты"
+msgstr "Мысли уходят в пустоту — двойное проникновение набирает обороты"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -42124,7 +42124,7 @@ msgstr "Подведи женщину, чтобы она пощупала Роз
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Move Zoey 1 s Later"
-msgstr "Подвиги Зои через секунду"
+msgstr "Перемести Зои 1 с позже"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -48321,7 +48321,7 @@ msgstr "Запустить CG"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play Choice Dialogue for getting groped"
-msgstr "Проиграть диалог выбора для ощупывания"
+msgstr "Пройти диалог выбора, чтобы тебя пощупали"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60422,7 +60422,7 @@ msgstr "Вот так. Вот тебе маленькая награда."
 #. src: dialog
 msgctxt "ui"
 msgid "That's right. Simply answer truthfully and you'll get your drugs to cum with, ehehe."
-msgstr "Вот так. Просто отвечай честно, и получишь свою дозу, чтобы кончить, ехехе."
+msgstr "Точно. Просто отвечай честно — и получишь свою дозу, чтобы кончить, ехехе."
 
 #. src: dialog
 msgctxt "ui"
@@ -64509,7 +64509,7 @@ msgstr "Варен"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Varen Handjob"
-msgstr "Рука Варена"
+msgstr "Ручной секс Варена"
 
 #. src: dialog
 msgctxt "ui"
@@ -65863,7 +65863,7 @@ msgstr "Ждать восстановления"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for rooftop enter"
-msgstr "Подожди, пока войдёшь на крышу"
+msgstr "Подожди, пока войдёшь на крышу."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -66045,7 +66045,7 @@ msgstr "Жди своей очереди."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for unsit"
-msgstr "Ожидание вставания"
+msgstr "Ожидание, пока не встанут."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -66337,7 +66337,7 @@ msgstr "Официантка — Улучшение — 1 Мелькание г�
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing - Upgrade - 1 Spit in Drink"
-msgstr "Ожидание официантки — Улучшение — 1 Плевок в напиток"
+msgstr "Официантка — Улучшение — 1 Плевок в напиток"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -71211,7 +71211,7 @@ msgstr "Ты чуть не получила Brain Burn от этого шлем�
 #. src: dialog
 msgctxt "ui"
 msgid "You were cumming for hours, ehehe. Yet you still look like you're desperate for more."
-msgstr "Ты кончала часами, хе-хе. А всё равно смотришь так, будто тебе мало."
+msgstr "Ты кончала часами, хе-хе. А всё равно выглядишь так, будто тебе и дальше мало."
 
 #. src: us
 msgctxt "ui"
@@ -74033,7 +74033,7 @@ msgstr "Отключить логику фонарика"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "turn off self"
-msgstr "Отключи себя"
+msgstr "Отключись"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

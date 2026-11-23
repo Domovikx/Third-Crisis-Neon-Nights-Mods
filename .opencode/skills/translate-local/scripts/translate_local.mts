@@ -423,6 +423,7 @@ export function improvePrompt(
   return (
     contextBlock +
     `Improve each Russian translation: keep the same meaning and facts, keep the adult register exactly as explicit as the English source (no softening, no clinical terms), ` +
+    `never change the gender of second-person forms («ты пришла» follows the person ADDRESSED, not the speaker), ` +
     `make the language natural, preserve markup tags. Reply with exactly ${items.length} lines in format "N. improved translation".\n` +
     lines.join("\n")
   );
@@ -509,6 +510,21 @@ export function keepsFraming(src: string, tr: string): boolean {
   const c = closes(s);
   if (c && c === opens(s) && c !== closes(t)) return false;
   return true;
+}
+
+/**
+ * Пол формы 2-го лица в переводе («ты пришла» / «ты пришёл»).
+ *
+ * Нужен как щит на пассе улучшения: модель видит пол СПИКЕРА и иногда
+ * переставляет на него формы адресата («не слышала» → «не слышал»), хотя
+ * «ты» согласуется с тем, к кому обращаются (2026-11-23, 7 строк).
+ */
+export function person2Gender(text: string): "fem" | "masc" | null {
+  const fem = /(?<!\p{L})ты\s+(?:[^.!?…]{0,20}?)([а-яё]+ла)(?!\p{L})/iu.test(text);
+  const masc = /(?<!\p{L})ты\s+(?:[^.!?…]{0,20}?)([а-яё]+л)(?!\p{L})(?![а-яё])/iu.test(text);
+  if (fem && !masc) return "fem";
+  if (masc && !fem) return "masc";
+  return null;
 }
 
 /**
@@ -1012,7 +1028,11 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
             }
           } else if (opts.improve) {
             // В improve пустая/такая же строка — не улучшение, не пишем.
-            if (leak.clean && leak.clean.trim() !== e.msgstr.trim()) {
+            // Щит: пол 2-го лица не переставляем (адресат ≠ спикер).
+            const oldGender = person2Gender(e.msgstr);
+            const newGender = person2Gender(leak.clean);
+            const flipsGender = oldGender !== null && newGender !== null && oldGender !== newGender;
+            if (leak.clean && leak.clean.trim() !== e.msgstr.trim() && !flipsGender) {
               updates.set(entryKey(e), leak.clean);
               translatedKeys.push(entryKey(e));
               summary.done += 1;
