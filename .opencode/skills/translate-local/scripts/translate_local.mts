@@ -241,14 +241,30 @@ export function loadSkillRules(root: string = REPO_ROOT, maxSfx = 40, maxGloss =
 }
 
 /** Короткие имена собственные из уже переведённых строк (`Zoey=Зои`). */
-export function buildGlossary(entries: PoEntry[], limit = 30): string {
+/**
+ * Глоссарий имён для промпта.
+ *
+ * Сначала — КАНОН из строк `msgctxt "speaker-name"`: их `msgstr` и есть принятое
+ * написание (Rosie=Рози). Раньше брались просто первые 30 слов с заглавной, и
+ * канон мог не попасть; в тексте из-за этого появлялись «Роузи» и «Клаудия»
+ * (проверено 2026-11-23: 15 таких строк в ru).
+ */
+export function buildGlossary(entries: PoEntry[], limit = 60): string {
   const out: string[] = [];
+  const seen = new Set<string>();
+  const push = (m: string, t: string): void => {
+    if (!t || seen.has(m) || out.length >= limit) return;
+    seen.add(m);
+    out.push(`${m}=${t}`);
+  };
+  for (const e of entries) {
+    if (e.msgctxt === "speaker-name") push(e.msgid, e.msgstr);
+    if (out.length >= limit) return out.join("; ");
+  }
   for (const e of entries) {
     const [m, t] = [e.msgid, e.msgstr];
-    if (t && /^[A-Z][a-z]{1,15}$/.test(m) && !["Off", "Yes", "No"].includes(m)) {
-      out.push(`${m}=${t}`);
-      if (out.length >= limit) break;
-    }
+    if (t && /^[A-Z][a-z]{1,15}$/.test(m) && !["Off", "Yes", "No"].includes(m)) push(m, t);
+    if (out.length >= limit) break;
   }
   return out.join("; ");
 }

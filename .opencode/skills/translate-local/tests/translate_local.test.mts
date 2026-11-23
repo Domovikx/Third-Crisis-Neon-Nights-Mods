@@ -155,6 +155,18 @@ test("triage: код/мусор копируются, живой текст ух
   assert.equal(triage("Привет", "de"), null);
 });
 
+test("buildGlossary: канон speaker-name идёт первым и попадает целиком", () => {
+  const es = [
+    entry("Some Text", "ui", ""),
+    entry("Rosie", "speaker-name", "Рози"),
+    entry("Zoey", "speaker-name", "Зои"),
+    entry("Anna", "speaker-name", "Анна"),
+    entry("Extra", "ui", "Лишнее"),
+  ];
+  const g = buildGlossary(es);
+  assert.ok(g.startsWith("Rosie=Рози; Zoey=Зои; Anna=Анна"), g);
+});
+
 test("keepsNumbering: номер строки промпта не протекает в перевод", () => {
   assert.equal(keepsNumbering("But how are you...?", "2. Но как ты...?"), false);
   assert.equal(keepsNumbering("But how are you...?", "Но как ты...?"), true);

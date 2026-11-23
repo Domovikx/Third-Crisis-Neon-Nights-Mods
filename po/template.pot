@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NeonTranslator 1.0\n"
-"POT-Creation-Date: 2026-11-23 11:26+0000\n"
+"POT-Creation-Date: 2026-11-23 12:29+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -22659,6 +22659,8 @@ msgid "BodyWriting"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "Bodywriting - Klaudias Bunny"
 msgstr ""
@@ -31028,6 +31030,8 @@ msgid "Disable Prompt"
 msgstr ""
 
 #. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
 msgctxt "ui"
 msgid "Disable Rosie Default FSM"
 msgstr ""
