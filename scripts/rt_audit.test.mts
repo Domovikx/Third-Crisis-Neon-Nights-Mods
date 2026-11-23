@@ -51,3 +51,22 @@ test("auditLang: считает только переведённые inline-с�
   assert.equal(s.inlineWithRt, 1);
   assert.equal(s.missing, 1, "только переведённая inline без rt — нарушение");
 });
+
+test("auditLang: теги в msgstr при чистом оригинале — отдельный счётчик", () => {
+  const po = [
+    'msgid ""',
+    'msgstr ""',
+    "",
+    "#. rich_text: <color=#EB83FF>Peek</color>",
+    'msgid "Peek"',
+    'msgstr "<color=пerversия>Смотреть</color>"',
+    "",
+    "#. rich_text: <color=#EB83FF>Look</color>",
+    'msgid "Look"',
+    'msgstr "Смотреть"',
+    "",
+  ].join("\n");
+  const s = auditLang("xx", po);
+  assert.equal(s.tagsInMsgstr, 1, "теги в msgstr — дефект, их место в rt");
+  assert.equal(s.rich, 2);
+});

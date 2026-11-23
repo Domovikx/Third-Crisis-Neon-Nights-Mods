@@ -20,12 +20,12 @@ msgstr "Текст ссылки:"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "\"COCK\", hmm. Let's see."
-msgstr "«COCK», хм. Посмотрим."
+msgstr "«ХЕР», хм. Посмотрим."
 
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "\"COCK\"...? Really...?"
-msgstr "«COCK»...? Серьёзно...?"
+msgstr "«ХЕР»...? Серьёзно...?"
 
 #. src: dialog
 #. rich_text: <i>"However, the Blocker can deliver an infinite number of injections. Just needs a day to recharge between each dose."
@@ -50,7 +50,7 @@ msgstr "\"Я просто... не смог довести антидот до у
 # rich_translation: <i>"Я искренне верил, что моя работа сделает мир лучше. Что если людей просто <b>вынудить</b> сотрудничать друг с другом..."</i>
 msgctxt "ui"
 msgid "\"I truly believed my work would make the world a better place. That if people were just compelled to cooperate together...\""
-msgstr "\"Я искренне верил, что моя работа сделает мир лучше. Что если людей просто <b>вынудить</b> сотрудничать друг с другом...\""
+msgstr "\"Я искренне верил, что моя работа сделает мир лучше. Что если людей просто вынудить сотрудничать друг с другом...\""
 
 #. src: dialog
 #. rich_text: <i>"It worked... too well. The ramifications are horrifying. My coworkers are now discussing mass emission methods."</i>
@@ -19895,7 +19895,7 @@ msgstr "Пропустите меня, пожалуйста?"
 # rich_translation: Могла бы ты... ну... Ф-ф... <size=30>плюнуть в мой напиток...?
 msgctxt "speaker:Customer"
 msgid "Could you... like... Hhh... spit in my drink...?"
-msgstr "Могла бы ты... ну... Ф-ф... <size=30>плюнуть в мой напиток...?"
+msgstr "Могла бы ты... ну... Ф-ф... плюнуть в мой напиток...?"
 
 #. src: us
 msgctxt "ui"
@@ -51386,7 +51386,7 @@ msgstr "Пожалуйста! Пожалуйста, дай мне кончить
 # rich_translation: Пожалуйста, дорогая. Чувствуй себя как дома. Я <b>совсем</b> не против твоей компании, эхехе.
 msgctxt "speaker:Leona"
 msgid "Please, darling. Make yourself a home. I really don't mind having you around, eheheh."
-msgstr "Пожалуйста, дорогая. Чувствуй себя как дома. Я <b>совсем</b> не против твоей компании, эхехе."
+msgstr "Пожалуйста, дорогая. Чувствуй себя как дома. Я совсем не против твоей компании, эхехе."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Please, sir...! Please- Please cum-! Cumm...!</color>
@@ -57430,7 +57430,7 @@ msgstr "Покажи мне ту комнату. Я хочу поговорит�
 # rich_translation: Покажи мне сиськи, ну пожа-а-алуйста? Я <b>должен</B> их увиде-е-еть...
 msgctxt "speaker:Customer"
 msgid "Show me ya' tits, pleaseeee? I have to see emmm'..."
-msgstr "Покажи мне сиськи, ну пожа-а-алуйста? Я <b>должен</B> их увиде-е-еть..."
+msgstr "Покажи мне сиськи, ну пожа-а-алуйста? Я должен их увиде-е-еть..."
 
 #. src: dialog
 msgctxt "speaker:Woman"
@@ -62847,7 +62847,7 @@ msgstr "Товар, который я пытаюсь продать сейчас
 # rich_translation: Коридор — не место для обсуждения таких... <b>интимных</b> подробностей.
 msgctxt "speaker:Leona"
 msgid "The hallway isn't the place to discuss such... intimate details."
-msgstr "Коридор — не место для обсуждения таких... <b>интимных</b> подробностей."
+msgstr "Коридор — не место для обсуждения таких... интимных подробностей."
 
 #. src: dialog
 msgctxt "ui"
@@ -63837,7 +63837,7 @@ msgstr "Эти, да... Я-..."
 # rich_translation: Хотя... Я бы <b>очень</b> хотела увидеть тебя в том, что носили мои горничные.
 msgctxt "speaker:Leona"
 msgid "Though... I'd love to see you in something my maids used to wear."
-msgstr "Хотя... Я бы <b>очень</b> хотела увидеть тебя в том, что носили мои горничные."
+msgstr "Хотя... Я бы очень хотела увидеть тебя в том, что носили мои горничные."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -72128,7 +72128,7 @@ msgstr "Ага..."
 # rich_translation: Ага... Привлекает внимание-... <i>нежелательное</i> иногда.
 msgctxt "ui"
 msgid "Yeah... Draws attention from the-... less fun kind sometimes."
-msgstr "Ага... Привлекает внимание-... <i>нежелательное</i> иногда."
+msgstr "Ага... Привлекает внимание-... нежелательное иногда."
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -73366,7 +73366,7 @@ msgstr "Ты разворошила осиное гнездо, Зои. Чемо�
 # rich_translation: Конечно заслужила, дорогуша. Это было <b>так</b> горячо...
 msgctxt "ui"
 msgid "You sure did, darling. That was so hot..."
-msgstr "Конечно заслужила, дорогуша. Это было <b>так</b> горячо..."
+msgstr "Конечно заслужила, дорогуша. Это было так горячо..."
 
 #. src: dialog
 msgctxt "ui"
@@ -73757,7 +73757,7 @@ msgstr "Тебе не быть наёмницей, девочка-лузер. А
 # rich_translation: Ты не за выпивкой.. <i>Пока</i>..~
 msgctxt "ui"
 msgid "You're not here for drinks.. Yet..~"
-msgstr "Ты не за выпивкой.. <i>Пока</i>..~"
+msgstr "Ты не за выпивкой.. Пока..~"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

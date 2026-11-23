@@ -40,6 +40,8 @@ export interface RtStat {
   inlineTranslated: number;
   inlineWithRt: number;
   missing: number;
+  /** Переводов с тегами при чистом оригинале: теги должны жить в `rt`. */
+  tagsInMsgstr: number;
 }
 
 /** Посчитать одно PO: сколько inline-строк есть и у скольких нет `rt`. */
@@ -51,9 +53,11 @@ export function auditLang(lang: string, poText: string): RtStat {
     inlineTranslated: 0,
     inlineWithRt: 0,
     missing: 0,
+    tagsInMsgstr: 0,
   };
   for (const e of parsePo(poText)) {
     if (!e.msgid) continue;
+    if (!/<[^>]+>/.test(e.msgid) && /<[^>]+>/.test(e.msgstr)) stat.tagsInMsgstr += 1;
     const rich = e.comments.find((c) => c.startsWith("rich_text: "))?.slice(11) ?? "";
     if (!rich) continue;
     stat.rich += 1;
@@ -107,19 +111,19 @@ function main(argv: string[]): number {
   if (cli.json) {
     console.log(JSON.stringify(stats, null, 2));
   } else {
-    console.log("язык  rich  inline  переведено  с rt  без rt");
+    console.log("язык  rich  inline  переведено  с rt  без rt  теги-в-msgstr");
     for (const s of stats) {
       console.log(
         `${s.lang.padEnd(4)} ${String(s.rich).padStart(5)} ${String(s.inline).padStart(7)} ` +
           `${String(s.inlineTranslated).padStart(11)} ${String(s.inlineWithRt).padStart(5)} ` +
-          `${String(s.missing).padStart(6)}`,
+          `${String(s.missing).padStart(6)} ${String(s.tagsInMsgstr).padStart(6)}`,
       );
     }
     const missing = stats.reduce((n, s) => n + s.missing, 0);
     console.log(`\nбез rich_translation (потеряют оформление): ${missing}`);
   }
   const missing = stats.reduce((n, s) => n + s.missing, 0);
-  return cli.strict && missing > 0 ? 1 : 0;
+  return cli.strict && (missing > 0 || stats.some((s) => s.tagsInMsgstr > 0)) ? 1 : 0;
 }
 
 if (import.meta.filename === process.argv[1]) {
