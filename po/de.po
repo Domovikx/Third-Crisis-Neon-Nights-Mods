@@ -151,21 +151,6 @@ msgstr ""
 
 #. src: us
 msgctxt "ui"
-msgid "#8A8F98"
-msgstr ""
-
-#. src: us
-msgctxt "ui"
-msgid "#A64141"
-msgstr ""
-
-#. src: us
-msgctxt "ui"
-msgid "#FFD24A"
-msgstr ""
-
-#. src: us
-msgctxt "ui"
 msgid "$ Visible"
 msgstr "$ Sichtbar"
 

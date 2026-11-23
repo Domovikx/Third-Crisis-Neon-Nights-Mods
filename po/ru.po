@@ -146,21 +146,6 @@ msgstr "# Вагинальный секс"
 
 #. src: us
 msgctxt "ui"
-msgid "#8A8F98"
-msgstr "#8A8F98"
-
-#. src: us
-msgctxt "ui"
-msgid "#A64141"
-msgstr "#A64141"
-
-#. src: us
-msgctxt "ui"
-msgid "#FFD24A"
-msgstr "#FFD24A"
-
-#. src: us
-msgctxt "ui"
 msgid "$ Visible"
 msgstr "$ Видимость"
 

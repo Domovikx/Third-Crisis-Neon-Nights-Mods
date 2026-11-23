@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NeonTranslator 1.0\n"
-"POT-Creation-Date: 2026-11-23 09:29+0000\n"
+"POT-Creation-Date: 2026-11-23 09:37+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -254,11 +254,15 @@ msgid "# Vaginal Sex"
 msgstr ""
 
 #. src: us
+#. skip: hex-color
+#, skip
 msgctxt "ui"
 msgid "#8A8F98"
 msgstr ""
 
 #. src: us
+#. skip: hex-color
+#, skip
 msgctxt "ui"
 msgid "#A64141"
 msgstr ""
@@ -299,6 +303,8 @@ msgid "#AV"
 msgstr ""
 
 #. src: us
+#. skip: hex-color
+#, skip
 msgctxt "ui"
 msgid "#FFD24A"
 msgstr ""
