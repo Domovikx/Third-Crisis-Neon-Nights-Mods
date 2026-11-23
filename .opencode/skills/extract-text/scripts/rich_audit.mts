@@ -18,6 +18,9 @@
  *   stripped-tag — `<font>/<material>` (мы их вырезаем; остаток = баг);
  *   literal-angle— `<` в роли авторской кавычки (`< Like this… >`), не тег;
  *   tag-in-msgid — в самом ключе есть `<`/`>` (ключ = разметка);
+ *   inline-tags  — теги стоят ВНУТРИ текста, поэтому `plain` не является
+ *                  цельным куском `rich`: рантайм (`richText.Replace(plain, tr)`)
+ *                  такую строку не соберёт и покажет перевод без разметки;
  *   self-fragment— ключ = хвост `rich_text`, хотя строка пришла из `bundle`
  *                  (это уже НАША обрезка `stripRich`, а не данные игры);
  *   game-fragment— ключ = хвост `rich_text` у `dialog` (данные игры, см.
@@ -35,7 +38,7 @@ import { resolve } from "node:path";
 import process from "node:process";
 
 import { parsePo, type PoEntry } from "./po_file.mts";
-import { TMP_TAGS, classifyRich, isMeaningfulText } from "./pot_skip.mts";
+import { TMP_TAGS, classifyRich, isMeaningfulText, stripTmpTags } from "./pot_skip.mts";
 import { POT_PATH, writeAtomic } from "./potgen.mts";
 
 /** Один распознанный тег. */
@@ -113,6 +116,8 @@ export interface RichProblems {
   strippedTag: string[];
   literalAngle: number;
   duplicateTag: string[];
+  /** `plain` не является цельным куском `rich` → разметка при переводе теряется. */
+  inlineTags: boolean;
 }
 
 /** Разобрать разметку: что сломано, с именами тегов. */
@@ -130,6 +135,7 @@ export function richProblems(rich: string): RichProblems {
     strippedTag: [],
     literalAngle: 0,
     duplicateTag: [],
+    inlineTags: false,
   };
 
   // 0. Цвет без hex: CSS-имя TMP разберёт сам, игровое — нет.
@@ -198,6 +204,10 @@ export function richProblems(rich: string): RichProblems {
       out.unknownTag.push(raw.slice(0, 40));
     }
   }
+  // Разметка «обёрткой» (<i>текст</i>) собирается обратно: plain — цельный кусок.
+  // Теги внутри текста — нет, см. `docs/rich-text-audit.md`.
+  out.inlineTags = !rich.includes(stripTmpTags(rich));
+
   return out;
 }
 
@@ -224,6 +234,7 @@ const CLASS_KEYS = [
   "literal-angle",
   "duplicate-tag",
   "tag-in-msgid",
+  "inline-tags",
   "self-fragment",
   "game-fragment",
 ] as const;
@@ -262,6 +273,7 @@ export function audit(entries: readonly PoEntry[]): AuditReport {
     for (const name of p.strippedTag) bump("stripped-tag", e, `${name} :: ${rich}`);
     for (const name of p.duplicateTag) bump("duplicate-tag", e, `${name} :: ${rich}`);
     if (p.literalAngle) counts["literal-angle"] += 1;
+    if (p.inlineTags) bump("inline-tags", e, `${rich} :: ${src}`);
 
     const relation = classifyRich(e.msgid, rich).relation;
     if (relation === "suffix" && isMeaningfulText(e.msgid)) {
