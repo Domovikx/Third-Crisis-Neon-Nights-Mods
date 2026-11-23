@@ -32,6 +32,7 @@ import { leakHits } from "./leak_guard.mts";
 import { LATIN_CYRILLIC_LANGS, foreignScriptHits } from "./script_guard.mts";
 import { clinicalHits, softenedHits } from "./register_lexicon.mts";
 import { inKeys, readKeys } from "../.opencode/skills/pipeline-common/scripts/qa_keys.mts";
+import { loadGenderMap } from "./speaker_gender.mts";
 
 const REPO = join(import.meta.dirname, "..");
 
@@ -263,6 +264,8 @@ async function main(argv: string[]): Promise<number> {
     return 2;
   }
   const entries = parsePo(readFileSync(join(REPO, "po", `${cli.lang}.po`), "utf8"));
+  // Пол спикера помогает судье ловить ошибки согласования, а не догадываться.
+  const genders = loadGenderMap(REPO);
   const pool = candidates(entries);
   let todo: PoEntry[];
   if (cli.keys) {
@@ -289,10 +292,12 @@ async function main(argv: string[]): Promise<number> {
     const speaker = e.msgctxt.startsWith("speaker:")
       ? e.msgctxt.slice(8) || "narration"
       : "narration";
+    const g = genders.get(speaker);
+    const speakerLine = g ? `${speaker} (${g})` : speaker;
     let v: Verdict | null = null;
     for (let attempt = 1; attempt <= 2 && !v; attempt += 1) {
       try {
-        v = await judge(cli.url, cli.model, e.msgid, e.msgstr, speaker);
+        v = await judge(cli.url, cli.model, e.msgid, e.msgstr, speakerLine);
       } catch (err) {
         if (attempt === 2) console.error(`LLM: ${(err as Error).message}`);
       }

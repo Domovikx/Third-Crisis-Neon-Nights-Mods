@@ -39,6 +39,7 @@ import { scanDump } from "../../extract-text/scripts/inventory.mts";
 import { inKeys, readKeys } from "../../pipeline-common/scripts/qa_keys.mts";
 import { isPromptLeak } from "../../../../scripts/leak_guard.mts";
 import { LATIN_CYRILLIC_LANGS, hasForeignScript } from "../../../../scripts/script_guard.mts";
+import { loadGenderMap } from "../../../../scripts/speaker_gender.mts";
 import {
   parsePo,
   poEscape,
@@ -369,7 +370,11 @@ export async function buildSceneContext(dumpDir: string): Promise<Map<string, st
  * Пользовательский промпт пачки: контекст (`// …`, не переводить) +
  * нумерованные строки с тегом спикера.
  */
-export function batchPrompt(items: PoEntry[], context?: ReadonlyMap<string, string[]>): string {
+export function batchPrompt(
+  items: PoEntry[],
+  context?: ReadonlyMap<string, string[]>,
+  genders?: ReadonlyMap<string, "female" | "male">,
+): string {
   const ctxLines: string[] = [];
   items.forEach((e, i) => {
     const ctx = context?.get(e.msgid);
@@ -378,7 +383,8 @@ export function batchPrompt(items: PoEntry[], context?: ReadonlyMap<string, stri
   });
   const lines = items.map((e, i) => {
     const sp = speakerOf(e);
-    return `${i + 1}. ${e.msgid}${sp ? ` (speaker: ${sp})` : ""}`;
+    const g = sp ? genders?.get(sp) : undefined;
+    return `${i + 1}. ${e.msgid}${sp ? ` (speaker: ${sp}${g ? `, ${g}` : ""})` : ""}`;
   });
   const contextBlock = ctxLines.length
     ? `Context for meaning (lines starting with // are NOT translated):\n${ctxLines.join("\n")}\n`
@@ -742,6 +748,8 @@ export interface RunOptions {
   improve?: boolean;
   /** Ограничить очередь строками из списка `qa_judge --out` (ключи). */
   keys?: ReadonlySet<string>;
+  /** Пол спикеров (config/speaker-gender.json); тесты подменяют. */
+  genders?: ReadonlyMap<string, "female" | "male">;
   /** Пауза между повторами запроса, мс (тесты ставят 0). */
   retryDelayMs?: number;
   /** Куда писать отчёты (по умолчанию console.log; тесты глушат). */
@@ -836,6 +844,8 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
 
   // --repair: очередь — не пустые, а ПЕРЕВЕДЁННЫЕ строки, которые не проходят
   // validate (потеря маркера, дисбаланс тегов). Обычный прогон их не трогает.
+  const genders = opts.genders ?? loadGenderMap(opts.root ?? REPO_ROOT);
+
   let todo = opts.improve
     ? entries.filter((e) => e.msgstr && !e.flags.includes("skip"))
     : opts.repair
