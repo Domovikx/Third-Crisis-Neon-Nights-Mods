@@ -543,11 +543,12 @@ test("runQueue: непарсибельный ответ — два ретрая 
       tmpDir: w.tmpDir,
       url: llm.url,
       batch: 1,
+      retryDelayMs: 0,
       log: () => {},
     });
     assert.equal(s.failed, 1);
     assert.equal(s.done, 0);
-    assert.equal(llm.requests.length, 2, "ровно две попытки");
+    assert.equal(llm.requests.length, 3, "три попытки (retry 1/3, 2/3, стоп)");
     assert.ok(readFileSync(join(w.tmpDir, "ru.review"), "utf8").includes("UNPARSABLE"));
     assert.equal(msgstrOf(w.poPath, "Hello there friend"), "");
   } finally {

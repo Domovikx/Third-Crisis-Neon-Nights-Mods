@@ -31,6 +31,7 @@ import {
   rmSync,
   writeFileSync,
 } from "node:fs";
+import { spawnSync } from "node:child_process";
 import { join, resolve } from "node:path";
 import process from "node:process";
 
@@ -542,6 +543,25 @@ export function applyMsgstrInPlace(
 
 // --- вызов LLM --------------------------------------------------------------
 
+/**
+ * Перезагрузить модель в LM Studio после падения бэкенда.
+ *
+ * Падение выглядит как `HTTP 400 {"error":"terminated"}` (лог LM Studio:
+ * «Channel Error … terminated»): процесс инференса умер и модель выгружена.
+ * Без перезагрузки прогон останавливается, поэтому пробуем поднять её сами.
+ * Если `lms` в PATH нет — молча возвращаем false (поведение как раньше).
+ */
+export function reloadModel(model: string, contextLength = 8192): boolean {
+  for (const bin of ["lms", "lms.exe"]) {
+    const res = spawnSync(bin, ["load", model, "--gpu", "max", "-c", String(contextLength)], {
+      stdio: "ignore",
+      timeout: 240_000,
+    });
+    if (res.status === 0) return true;
+  }
+  return false;
+}
+
 /** POST `/v1/chat/completions`; встроенный fetch, без зависимостей. */
 async function callLm(
   url: string,
@@ -562,6 +582,10 @@ async function callLm(
       ],
       temperature: 0.3,
       max_tokens: maxTokens,
+      // Гасим «размышления» модели: с ними токены уходят в reasoning_content,
+      // ответ пустеет/обрезается, а скорость падает. Работает ТОЛЬКО это поле
+      // (проверено 2026-11-23 по логам LM Studio: /no_think не помогает).
+      reasoning_effort: "none",
     }),
     signal: AbortSignal.timeout(timeoutMs),
   });
@@ -601,6 +625,8 @@ export interface RunOptions {
   repair?: boolean;
   /** Каталог дампа для контекста сцены (без него контекст не передаётся). */
   dumpDir?: string;
+  /** Пауза между повторами запроса, мс (тесты ставят 0). */
+  retryDelayMs?: number;
   /** Куда писать отчёты (по умолчанию console.log; тесты глушат). */
   log?: (line: string) => void;
 }
@@ -757,7 +783,7 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
       for (const sub of splitForCtx(system, need, maxTokens, ctxLimit, sceneContext)) {
         let parsed: string[] | null = null;
         let resp = "";
-        for (let attempt = 1; attempt <= 2; attempt += 1) {
+        for (let attempt = 1; attempt <= 3; attempt += 1) {
           try {
             resp = await callLm(
               url,
@@ -768,7 +794,25 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
               maxTokens,
             );
           } catch (err) {
-            log(`LLM call failed: ${(err as Error).message}; stopping, progress kept`);
+            const message = (err as Error).message;
+            // Падение бэкенда («terminated») лечится перезагрузкой модели;
+            // сетевой таймаут — просто повтором. Три попытки, потом стоп.
+            if (attempt < 3) {
+              log(`LLM call failed: ${message}; retry ${attempt}/3`);
+              const crashed = /terminated|HTTP 400/i.test(message);
+              if (crashed && attempt === 1) {
+                log(`перезагружаю модель ${model}…`);
+                reloadModel(model);
+              }
+              Atomics.wait(
+                new Int32Array(new SharedArrayBuffer(4)),
+                0,
+                0,
+                (opts.retryDelayMs ?? 3000) * attempt,
+              );
+              continue;
+            }
+            log(`LLM call failed: ${message}; stopping, progress kept`);
             stopAll = true;
             break;
           }
