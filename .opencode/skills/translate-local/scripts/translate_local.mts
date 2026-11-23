@@ -424,11 +424,15 @@ const RESP_RX = /^\s*(\d+)\s*[.)]\s?(.*)$/;
 // переводит «(speaker: Zoey)» и оставляет «(говорящий: Зои)» / «(эмоция: …)» —
 // в игре это видно как часть реплики (проверено 2026-11-23: 42 строки в ru).
 const SPEAKER_LEAK_RX =
-  /\s*\((?:speaker|emotion|говорящ[а-яё]*|говорит|эмоци[а-яё]*)\s*:[^)]*\)\s*$/iu;
+  /\s*\((?:speaker|emotion|говорящ[а-яё]*|говорит|голос[а-яё]*|эмоци[а-яё]*)\s*:[^)]*\)\s*$/iu;
+// Второй вид утечки — без двоеточия: «(голос Зои)» в конце реплики
+// (проверено 2026-11-23: одна такая строка в ru). Узко: только в конце и коротко,
+// иначе задели бы реплики вроде «(Голосовой файл)».
+const VOICE_TAIL_RX = /\s*\((?:голос[а-яё]*|эмоци[а-яё]*)\s+(?!файл)[^)]{1,30}\)\s*$/iu;
 
 /** Убрать эхо `(speaker: X)`, которое модель копирует из промпта. */
 export function stripSpeakerLeak(tr: string): { clean: string; leaked: boolean } {
-  const clean = tr.replace(SPEAKER_LEAK_RX, "").trim();
+  const clean = tr.replace(SPEAKER_LEAK_RX, "").replace(VOICE_TAIL_RX, "").trim();
   return { clean, leaked: clean !== tr.trim() };
 }
 
@@ -445,7 +449,7 @@ export function parseResponse(text: string, n: number): string[] | null {
   const out: [number, string][] = [];
   for (const line of text.trim().split(/\r\n|\r|\n/)) {
     const m = RESP_RX.exec(line);
-    if (m) out.push([Number(m[1]), m[2].trim()]);
+    if (m) out.push([Number(m[1]), stripEchoLabel(m[2])]);
   }
   out.sort((a, b) => a[0] - b[0]);
   if (out.length === n && !out.some(([i], idx) => i !== idx + 1)) return out.map(([, t]) => t);

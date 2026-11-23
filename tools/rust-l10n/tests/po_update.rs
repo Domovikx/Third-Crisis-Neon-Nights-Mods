@@ -91,7 +91,9 @@ fn перенос_и_новая_запись_refs_berutsya_из_pot() {
 }
 
 #[test]
-fn исчезнувший_текст_живёт_с_флагом_legacy() {
+fn исчезнувший_текст_выпиливается() {
+    // POT — единственный источник «что нужно игре»: сирота в PO некому
+    // отдавать, а её присутствие маскирует дыру экстрактора (2026-11-23).
     let pot = [e("A", "ui", "", &[])];
     let gone = e("Gone", "ui", "Ушло", &[]);
     let out = merge_pot(
@@ -101,23 +103,15 @@ fn исчезнувший_текст_живёт_с_флагом_legacy() {
         &HashSet::new(),
     );
 
-    assert_eq!(out.stats.legacy_kept, 1);
+    assert_eq!(out.stats.orphan_dropped, 1);
     assert_eq!(out.stats.obsolete, 0);
     assert_eq!(out.stats.dropped, 0);
-    let kept = out
-        .merged
-        .iter()
-        .find(|m| m.po.msgid == "Gone")
-        .expect("сирота в хвосте");
-    assert_eq!(kept.po.msgstr, "Ушло");
-    assert!(!kept.obsolete, "никогда #~");
-    assert_eq!(kept.po.flags, vec!["legacy".to_string()]);
-    assert!(kept
-        .po
-        .translator
-        .last()
-        .expect("комментарий")
-        .starts_with("legacy: text vanished from POT"));
+    assert!(
+        !out.merged.iter().any(|m| m.po.msgid == "Gone"),
+        "сироты в выходном PO нет"
+    );
+    assert_eq!(out.stats.orphan_items.len(), 1, "что выпало — видно");
+    assert_eq!(out.stats.orphan_items[0].msgstr, "Ушло");
 }
 
 #[test]
@@ -142,7 +136,7 @@ fn ключ_вернулся_в_pot_флаг_legacy_снимается() {
 }
 
 #[test]
-fn мусорная_сирота_выпиливается() {
+fn выпиливаются_все_сироты() {
     let pot = [e("A", "ui", "", &[])];
     let same = e("12345", "ui", "12345", &[]);
     let alive = e("APP NOT FOUND", "ui", "ПРИЛОЖЕНИЕ НЕ НАЙДЕНО", &[]);
@@ -153,9 +147,13 @@ fn мусорная_сирота_выпиливается() {
         &HashSet::new(),
     );
 
-    assert_eq!(out.stats.legacy_dropped, 1, "копия оригинала не нужна");
-    assert_eq!(out.stats.legacy_kept, 1);
-    assert!(!out.merged.iter().any(|m| m.po.msgid == "12345"));
+    assert_eq!(out.stats.orphan_dropped, 2);
+    assert_eq!(out.stats.orphan_items.len(), 2);
+    assert_eq!(
+        out.merged.len(),
+        1,
+        "в PO остаётся только то, что есть в POT"
+    );
 }
 
 #[test]
@@ -247,24 +245,19 @@ fn пустые_переводы_выпадают_obsolete_всегда_ноль
 }
 
 #[test]
-fn запись_с_флагом_legacy_остаётся_в_хвосте_без_изменений() {
+fn старая_запись_с_legacy_тоже_выпиливается() {
     let pot = [e("A", "ui", "", &[])];
-    let mut legacy = e("Triaged", "ui", "Мусор", &[]);
-    legacy.flags = vec!["legacy".to_string()];
+    let mut stale = e("Triaged", "ui", "Мусор", &[]);
+    stale.flags = vec!["legacy".to_string()];
     let out = merge_pot(
-        &[e("A", "ui", "А", &[]), legacy],
+        &[e("A", "ui", "А", &[]), stale],
         &pot,
         DupRule::Last,
         &HashSet::new(),
     );
 
-    assert_eq!(
-        out.stats.legacy_kept, 0,
-        "legacy не считается заново спасённым"
-    );
-    assert_eq!(out.stats.orphans, 1, "сирота видна в каждом прогоне");
-    assert_eq!(out.merged.len(), 2);
-    assert_eq!(out.merged[1].po.flags, vec!["legacy".to_string()]);
+    assert_eq!(out.stats.orphan_dropped, 1);
+    assert_eq!(out.merged.len(), 1, "в PO только то, что есть в POT");
 }
 
 #[test]
@@ -505,7 +498,8 @@ fn json_отчёт_содержит_выпавшие_и_сирот() {
     let json = report_to_json(&out.stats);
 
     assert!(json.contains("\"dropped\": 1"), "{json}");
-    assert!(json.contains("\"orphans\": 1"), "{json}");
+    assert!(json.contains("\"orphanDropped\": 1"), "{json}");
+    assert!(json.contains("\"orphanItems\""), "{json}");
     assert!(json.contains("\"already-translated\""), "{json}");
     assert!(
         json.contains("\"Ступай\""),
@@ -518,21 +512,20 @@ fn json_отчёт_содержит_выпавшие_и_сирот() {
 }
 
 #[test]
-fn опустевший_pot_делает_все_переводы_сиротами_но_не_теряет_их() {
+fn опустевший_pot_выпиливает_сирот_с_отчётом() {
     let out = merge_pot(
         &[e("Gone1", "ui", "Раз", &[]), e("Gone2", "ui", "Два", &[])],
         &[],
         DupRule::Last,
         &HashSet::new(),
     );
-    assert_eq!(out.stats.legacy_kept, 2);
-    assert_eq!(out.stats.orphans, 2);
-    assert_eq!(out.stats.dropped, 0);
-    assert_eq!(out.merged.len(), 2);
-    assert!(out
-        .merged
-        .iter()
-        .all(|m| m.po.flags == vec!["legacy".to_string()]));
+    assert_eq!(out.stats.orphan_dropped, 2);
+    assert!(out.merged.is_empty(), "PO без POT жить не должен");
+    assert_eq!(
+        out.stats.orphan_items.len(),
+        2,
+        "что выпало — видно поимённо"
+    );
 }
 
 #[test]
@@ -570,7 +563,7 @@ fn шаблон_отчёта_печатает_все_ключи_счётчико
         "new",
         "obsolete",
         "retargeted",
-        "legacyKept",
+        "orphanDropped",
         "dropped",
         "orphans",
         "dupKeys",
@@ -654,7 +647,7 @@ fn skip_переведённая_строка_в_po_не_попадает() {
 }
 
 #[test]
-fn перевод_вырезанного_политикой_текста_не_остаётся_legacy() {
+fn перевод_вырезанного_политикой_текста_выпиливается() {
     let mut cut = HashSet::new();
     cut.insert("Gone asset name".to_string());
     let out = merge_pot(
@@ -668,7 +661,6 @@ fn перевод_вырезанного_политикой_текста_не_о
         "ассетный текст вырезан — перевод не тянем"
     );
     assert_eq!(out.stats.cut_dropped, 1, "потеря видна в счётчике");
-    assert_eq!(out.stats.legacy_kept, 0);
 }
 
 #[test]
@@ -687,9 +679,9 @@ fn снятый_skip_убирает_метку_из_po() {
 }
 
 #[test]
-fn перевод_под_skip_ключом_не_остаётся_ни_живым_ни_legacy() {
+fn перевод_под_skip_ключом_не_остаётся_в_po() {
     // Решение 2026-11-23: skip-ключ не тянет за собой перевод — ни живым,
-    // ни хвостом legacy (старый перевод был копией msgid или транслитом).
+    // ни сиротой (старый перевод был копией msgid или транслитом).
     let pot = [e_skip("Gone text", "")];
     let po = [e("Gone text", "speaker:Zoey", "Ушло", &[])];
     let out = merge_pot(&po, &pot, DupRule::Last, &HashSet::new());
@@ -699,5 +691,4 @@ fn перевод_под_skip_ключом_не_остаётся_ни_живым
         out.stats.skip_dropped, 1,
         "перевод под ней отброшен осознанно"
     );
-    assert_eq!(out.stats.legacy_kept, 0);
 }

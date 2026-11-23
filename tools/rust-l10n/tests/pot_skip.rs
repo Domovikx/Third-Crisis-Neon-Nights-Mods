@@ -4,8 +4,7 @@
 //! авторские кавычки `< … >` вместе с реальным тегом, и дефект маскируется.
 
 use rust_l10n::pot_skip::{
-    classify_rich, has_letters, is_legacy_worth_keeping, skip_condition_matches, strip_tmp_tags,
-    RichRelation, SkipCondition,
+    classify_rich, has_letters, skip_condition_matches, strip_tmp_tags, RichRelation, SkipCondition,
 };
 
 const REAL_FRAGMENT: &str = "<i>< Like this, hmmm...? I love these nice big tits. Especially when adorable customers like <b>you</b> request them. >";
@@ -205,20 +204,6 @@ fn условия_правил() {
             !skip_condition_matches(SkipCondition::SnakeCase, id, ""),
             "не snake: {id:?}"
         );
-    }
-    for (id, tr) in [
-        ("Wv\"?$", "Wv\\"),
-        ("Some Key", "Some Key"),
-        (",,;:", ",,;:"),
-    ] {
-        assert!(!is_legacy_worth_keeping(id, tr), "мусор в legacy: {id:?}");
-    }
-    for (id, tr) in [
-        ("APP NOT FOUND", "ПРИЛОЖЕНИЕ НЕ НАЙДЕНО"),
-        ("Ask for Femboy", "Попросить фембоя"),
-        ("ACCESS", "ДОСТУП"),
-    ] {
-        assert!(is_legacy_worth_keeping(id, tr), "живой legacy: {id:?}");
     }
     for id in ["FSM Lio Printer", "FSM Nova Moving In", "Fsm Nova Move"] {
         assert!(

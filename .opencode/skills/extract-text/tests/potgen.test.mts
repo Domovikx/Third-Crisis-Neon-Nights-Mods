@@ -47,7 +47,6 @@ import {
 import {
   classifyRich,
   hasLetters,
-  isLegacyWorthKeeping,
   isMeaningfulText,
   skipConditionMatches,
   stripTmpTags,
@@ -770,22 +769,6 @@ test("условия правил: noLetters / shortToken / noWord / fragment", 
   for (const id of ["Change", "24/7 Kiosk", "Annoyed / Angry", "Alpha: N/A", "Neon-Trust"]) {
     assert.ok(!skipConditionMatches("snakeCase", { msgid: id, rich: "" }), `не snake: ${id}`);
   }
-  // isLegacyWorthKeeping: держим только осмысленный legacy-перевод.
-  for (const [id, tr] of [
-    ['Wv"?$', "Wv\\"],
-    ["Some Key", "Some Key"],
-    [",,;:", ",,;:"],
-  ] as const) {
-    assert.equal(isLegacyWorthKeeping(id, tr), false, `мусор в legacy: ${id}`);
-  }
-  for (const [id, tr] of [
-    ["APP NOT FOUND", "ПРИЛОЖЕНИЕ НЕ НАЙДЕНО"],
-    ["Ask for Femboy", "Попросить фембоя"],
-    ["ACCESS", "ДОСТУП"],
-  ] as const) {
-    assert.equal(isLegacyWorthKeeping(id, tr), true, `живой legacy: ${id}`);
-  }
-
   // fsmLabel: метка машины состояний Unity, а не текст для игрока.
   for (const id of ["FSM Lio Printer", "FSM Nova Moving In", "Fsm Nova Move"]) {
     assert.ok(skipConditionMatches("fsmLabel", { msgid: id, rich: "" }), `fsm: ${id}`);

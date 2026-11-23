@@ -476,15 +476,14 @@ fn print_merge_report(lang: &str, res: &po_update::PoUpdateResult, dup_rule: Dup
         "без бэкапа"
     };
     eprintln!(
-        "{lang}.po updated: carried={}, new={}, obsolete={}, retargeted={}, legacy_kept={}, \
-legacy_dropped={}, orphans={}, dropped={}, dup_keys={}, skipped={}, skip_dropped={}, \
+        "{lang}.po updated: carried={}, new={}, obsolete={}, retargeted={}, \
+orphan_dropped={}, orphans={}, dropped={}, dup_keys={}, skipped={}, skip_dropped={}, \
 cut_dropped={} ({backup}) [{}]",
         s.carried,
         s.new,
         s.obsolete,
         s.retargeted,
-        s.legacy_kept,
-        s.legacy_dropped,
+        s.orphan_dropped,
         s.orphans,
         s.dropped,
         s.dup_keys,

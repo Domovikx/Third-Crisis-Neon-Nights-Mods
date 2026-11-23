@@ -55,18 +55,25 @@ test("mergePot: перенос существующего + новая пуст�
   assert.equal(byId.get("B")?.msgstr, "");
 });
 
-test("mergePot: исчезнувший текст остаётся живым с флагом legacy (никогда #~)", () => {
+test("mergePot: ключа нет в POT — перевод выпиливается, а не живёт сиротой", () => {
+  // POT — единственный источник «что нужно игре». Сирота в PO некому отдавать,
+  // а её присутствие маскирует дыру экстрактора (решение владельца 2026-11-23).
   const pot = [e("A", "ui")];
   const gone = e("Gone", "ui", "Ушло");
   const { merged, stats } = mergePot([e("A", "ui", "А"), gone], pot);
 
-  assert.equal(stats.legacyKept, 1);
+  assert.equal(stats.orphanDropped, 1);
   assert.equal(stats.obsolete, 0);
-  const kept = merged.find((x) => x.msgid === "Gone") as MergedEntry;
-  assert.equal(kept.msgstr, "Ушло");
-  assert.equal(kept.obsolete, undefined);
-  assert.deepEqual(kept.flags, ["legacy"]);
-  assert.match(kept.translator.at(-1) ?? "", /^legacy: text vanished from POT/);
+  assert.equal(
+    merged.some((x) => x.msgid === "Gone"),
+    false,
+    "сироты в выходном PO нет",
+  );
+  assert.deepEqual(
+    stats.orphanItems.map((x) => x.key[0]),
+    ["Gone"],
+    "что выпало — видно",
+  );
 });
 
 test("mergePot: ключ вернулся в POT — протухший флаг legacy снимается", () => {
@@ -86,19 +93,19 @@ test("mergePot: ключ вернулся в POT — протухший флаг
   assert.equal(stats.carried, 1);
 });
 
-test("mergePot: мусорная сирота выпиливается, живая остаётся", () => {
-  // Правило 2026-11-23: legacy полезна только когда в ней есть что искать.
+test("mergePot: выпиливаются ВСЕ сироты, независимо от качества перевода", () => {
   const pot = [e("A", "ui")];
   const junk = e('Wv"?$', "ui", "Wv\\");
   const same = e("12345", "ui", "12345");
   const alive = e("APP NOT FOUND", "ui", "ПРИЛОЖЕНИЕ НЕ НАЙДЕНО");
   const { merged, stats } = mergePot([e("A", "ui", "А"), junk, same, alive], pot);
 
-  assert.equal(stats.legacyDropped, 2, "копия оригинала и мусорный ключ не нужны");
-  assert.equal(stats.legacyKept, 1);
-  const kept = merged.find((x) => x.msgid === "APP NOT FOUND") as MergedEntry;
-  assert.equal(kept.msgstr, "ПРИЛОЖЕНИЕ НЕ НАЙДЕНО");
-  assert.ok(!merged.some((x) => x.msgid === 'Wv"?$'));
+  assert.equal(stats.orphanDropped, 3);
+  assert.equal(merged.length, 1);
+  assert.deepEqual(
+    stats.orphanItems.map((x) => x.key[0]).sort(),
+    ["12345", "APP NOT FOUND", 'Wv"?$'].sort(),
+  );
 });
 
 test("mergePot: ретаргет — перевод спасается при смене msgctxt", () => {
@@ -142,14 +149,13 @@ test("mergePot: пустые переводы молча выпадают, obsol
   assert.equal(merged.length, 1);
 });
 
-test("mergePot: запись с флагом legacy остаётся в хвосте без изменений", () => {
+test("mergePot: старая запись с флагом legacy тоже выпиливается", () => {
   const pot = [e("A", "ui")];
-  const legacy = e("Triaged", "ui", "Мусор");
-  legacy.flags = ["legacy"];
-  const { merged, stats } = mergePot([e("A", "ui", "А"), legacy], pot);
-  assert.equal(stats.legacyKept, 0, "legacy-записи не считаются заново спасёнными");
-  assert.equal(merged.length, 2);
-  assert.deepEqual(merged[1].flags, ["legacy"]);
+  const stale = e("Triaged", "ui", "Мусор");
+  stale.flags = ["legacy"];
+  const { merged, stats } = mergePot([e("A", "ui", "А"), stale], pot);
+  assert.equal(stats.orphanDropped, 1);
+  assert.equal(merged.length, 1, "в PO остаётся только то, что есть в POT");
 });
 
 test("mergePot: auto-normalized не переезжает в новый POT", () => {
@@ -335,13 +341,12 @@ test("mergePot: перевод вырезанного политикой тек�
   );
   assert.equal(merged.length, 0, "ассетный текст вырезан — перевод не тянем");
   assert.equal(stats.cutDropped, 1, "потеря видна в счётчике");
-  assert.equal(stats.legacyKept, 0);
 });
 
-test("mergePot: без журнала вырезанных поведение прежнее (legacy)", () => {
-  const { merged } = mergePot([e("Gone", "ui", "Ушло")], []);
-  assert.equal(merged.length, 1);
-  assert.deepEqual(merged[0].flags, ["legacy"]);
+test("mergePot: пустой POT — всё становится сиротами и выпиливается", () => {
+  const { merged, stats } = mergePot([e("Gone", "ui", "Ушло")], []);
+  assert.equal(merged.length, 0);
+  assert.equal(stats.orphanDropped, 1);
 });
 
 test("mergePot: снятый skip убирает метку из PO", () => {
@@ -356,7 +361,6 @@ test("mergePot: перевод под skip-текстом не остаётся 
   assert.equal(merged.length, 0, "skip-текст не тянет за собой перевод");
   assert.equal(stats.skipped, 1, "в POT это одна skip-запись");
   assert.equal(stats.skipDropped, 1, "перевод под ней отброшен осознанно");
-  assert.equal(stats.legacyKept, 0);
 });
 
 test("runPoUpdate: skip не создаёт строк в PO, переведённая остаётся с меткой", () => {

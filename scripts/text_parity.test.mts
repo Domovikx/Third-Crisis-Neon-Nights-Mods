@@ -141,7 +141,7 @@ for (const lang of LANGS) {
       "carried",
       "new",
       "retargeted",
-      "legacyKept",
+      "orphanDropped",
       "dropped",
       "orphans",
       "dupKeys",

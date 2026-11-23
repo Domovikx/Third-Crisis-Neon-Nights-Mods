@@ -8,7 +8,7 @@
  *   - ключ исчез, но текст жив под другим ctxt → ретаргет (спасение: рантайм
  *     всё равно ключует по голому тексту; примеры — слияние ui-двойника,
  *     переклассификация спикера);
- *   - текст пропал из POT целиком → запись остаётся живой с флагом `legacy`
+ *   - текст пропал из POT целиком → запись выпиливается (POT решает, что нужно игре)
  *     (устаревшая строка в .dat безвредна, потеря живого перевода — регрессия);
  *   - запись POT с `#, skip` («перевод не нужен»): пустого ключа в PO НЕ
  *     появляется, а уже существующий перевод сохраняется (и остаётся помечен);
@@ -29,7 +29,6 @@ import process from "node:process";
 
 import { compareCodePoints } from "./inventory.mts";
 import { parsePo, poEscape, type PoEntry } from "./po_file.mts";
-import { isLegacyWorthKeeping } from "./pot_skip.mts";
 import { writeAtomic } from "./potgen.mts";
 
 /** Корень репозитория: .../extract-text/scripts → вверх 4 уровня. */
@@ -45,9 +44,8 @@ export interface MergeStats {
   new: number;
   obsolete: number;
   retargeted: number;
-  legacyKept: number;
-  /** Legacy-записи без ценности (msgstr == msgid или имя ассета) — выпилены. */
-  legacyDropped: number;
+  /** Сироты (ключа нет в POT) — выпилены. POT решает, что нужно игре. */
+  orphanDropped: number;
   /**
    * Ключи POT с `#, skip`: в PO их нет вовсе (ни пустых, ни переведённых).
    *
@@ -60,6 +58,8 @@ export interface MergeStats {
   skipDropped: number;
   /** Переводы вырезанных политикой текстов (ассеты): в PO не перенесены. */
   cutDropped: number;
+  /** Что именно выпало (ключ + перевод) — чтобы дыры экстрактора были видны. */
+  orphanItems: { key: PoKey; msgstr: string }[];
 }
 
 /** Ключ каталога PO: пара (msgid, msgctxt), как tuple в Python. */
@@ -90,7 +90,7 @@ function cloneEntry(e: PoEntry): PoEntry {
 }
 
 /**
- * Слить переводы вперёд. Возвращает записи в порядке POT + хвост legacy.
+ * Слить переводы вперёд. Возвращает записи в порядке POT (сироты выпиливаются).
  *
  * Порядок операций важен: сначала собираются ретаргеты по всем исчезнувшим
  * ключам (в отсортированном порядке, поэтому при двух кандидатах на один
@@ -102,7 +102,7 @@ export function mergePot(
   potEntries: PoEntry[],
   /**
    * Тексты, вырезанные политикой отбора (журнал `pot-excluded.jsonl`).
-   * Их переводы не сохраняются как `legacy`: это имена ассетов, а не текст.
+   * Их переводы просто выпиливаются: это имена ассетов, а не текст.
    */
   cutTexts: ReadonlySet<string> = new Set(),
 ): { merged: MergedEntry[]; stats: MergeStats } {
@@ -127,11 +127,11 @@ export function mergePot(
     new: 0,
     obsolete: 0,
     retargeted: 0,
-    legacyKept: 0,
-    legacyDropped: 0,
+    orphanDropped: 0,
     skipped: 0,
     skipDropped: 0,
     cutDropped: 0,
+    orphanItems: [],
   };
   const merged: MergedEntry[] = [];
 
@@ -227,24 +227,17 @@ export function mergePot(
   }
 
   // Хвост: переводы, чьих ключей нет в POT (и которых не спас ретаргет).
+  //
+  // Такие записи ВЫПИЛИВАЮТСЯ, а не помечаются `legacy`. POT — единственный
+  // источник «что нужно игре»: если ключа нет в шаблоне, перевод некому
+  // отдавать. Раньше запись оставляли «для рантайма» — и в po/ru.po накопилось
+  // 597 таких сирот, из которых 128 к тому же давно вернулись в POT (протухший
+  // флаг). Инфошум, который маскирует дыры экстрактора: если текст реально
+  // нужен игре, его место в POT, а не в хвосте PO (решение владельца 2026-11-23).
   for (const [, old] of vanished) {
     if (!old.msgstr) continue;
-    // Вырезано политикой (ассет) — не важно, помечено ли уже `legacy`:
-    // такой перевод в PO не нужен (иначе очистка не сработает на повторном
-    // прогоне, проверено 2026-11-23).
     if (cutTexts.has(old.msgid)) {
       stats.cutDropped += 1;
-      continue;
-    }
-    if (old.flags.includes("legacy")) {
-      // Уже мигрированные триаж-переводы: их нет в POT по замыслу, в архив не уходят.
-      // Но и держать мусор незачем: `msgstr == msgid` или имя ассета ничего не
-      // даёт рантайму (правило 2026-11-23, замер — в `isLegacyWorthKeeping`).
-      if (!isLegacyWorthKeeping(old.msgid, old.msgstr)) {
-        stats.legacyDropped += 1;
-        continue;
-      }
-      merged.push(old);
       continue;
     }
     if (liveByText.has(old.msgid)) {
@@ -252,25 +245,14 @@ export function mergePot(
       continue;
     }
     if (skipTexts.has(old.msgid)) {
-      // Текст в POT остался только как skip: перевод не нужен (решение
-      // 2026-11-23), в PO его не тянем даже хвостом `legacy`.
       stats.skipDropped += 1;
       continue;
     }
-    if (!isLegacyWorthKeeping(old.msgid, old.msgstr)) {
-      stats.legacyDropped += 1;
-      continue;
-    }
-    const keep = cloneEntry(old);
-    if (!keep.flags.includes("legacy")) {
-      keep.flags = [...keep.flags, "legacy"];
-      keep.translator = [
-        ...keep.translator,
-        "legacy: text vanished from POT, kept for runtime lookup",
-      ];
-    }
-    merged.push(keep);
-    stats.legacyKept += 1;
+    stats.orphanDropped += 1;
+    stats.orphanItems.push({
+      key: [old.msgid, old.msgctxt],
+      msgstr: old.msgstr,
+    });
   }
 
   return { merged, stats };
@@ -423,8 +405,7 @@ export function main(argv: string[]): number {
     console.error(
       `${cli.lang}.po updated: carried=${stats.carried}, new=${stats.new}, ` +
         `obsolete=${stats.obsolete}, retargeted=${stats.retargeted}, ` +
-        `legacy_kept=${stats.legacyKept}, legacy_dropped=${stats.legacyDropped}, ` +
-        `skipped=${stats.skipped}, ` +
+        `orphan_dropped=${stats.orphanDropped}, skipped=${stats.skipped}, ` +
         `skip_dropped=${stats.skipDropped}, cut_dropped=${stats.cutDropped} ` +
         `(backup .bak) [${poPath}]`,
     );

@@ -7,7 +7,7 @@
 //!   берутся из POT;
 //! - ключ исчез, текст жив под другим ctxt → ретаргет (рантайм ключует по
 //!   голому тексту);
-//! - текст пропал из POT целиком → запись остаётся живой с флагом `legacy`
+//! - текст пропал из POT целиком → запись выпиливается (POT решает, что нужно игре)
 //!   (потеря живого перевода — регрессия, мёртвая строка безвредна);
 //! - новый ключ в POT → пустая запись в конце;
 //! - комментарии переводчика всегда переносятся;
@@ -15,7 +15,7 @@
 //!
 //! **Учёт выпавших ключей** (то, чем страдал TS-эталон и что дало 1 321 мёртвый
 //! перевод, `docs/data-audit.md` §5.3): отчёт печатает `carried`, `new`,
-//! `retargeted`, `dropped`, `orphans`, `legacy_kept`, `dup_keys`; каждый
+//! `retargeted`, `dropped`, `orphans`, `orphan_dropped`, `dup_keys`; каждый
 //! выпавший ключ виден поимённо (с видео «где текст жив»), а `dropped > 0` —
 //! повод для явного предупреждения. Счётчики не влияют на байты PO.
 //!
@@ -133,7 +133,7 @@ pub struct DupKey {
 }
 
 /// Статистика слияния. Имена счётчиков — как у TS-эталона (`carried`, `new`,
-/// `obsolete`, `retargeted`, `legacy_kept`) плюс новые: `dropped`, `orphans`,
+/// `obsolete`, `retargeted`) плюс новые: `dropped`, `orphans`, `orphan_dropped`,
 /// `dup_keys` — ровно то, чего не хватало для видимости выпавших ключей.
 #[derive(Debug, Clone, Default)]
 pub struct MergeStats {
@@ -143,9 +143,8 @@ pub struct MergeStats {
     /// Ретаргеты, которые реально доехали до PO; затёртые другим кандидатом
     /// попадают в `dropped` (`RetargetOverwritten`).
     pub retargeted: usize,
-    pub legacy_kept: usize,
-    /// Legacy-записи без ценности (msgstr == msgid или имя ассета) — выпилены.
-    pub legacy_dropped: usize,
+    /// Сироты (ключа нет в POT) — выпилены. POT решает, что нужно игре.
+    pub orphan_dropped: usize,
     /// Потерянные в ЭТОМ прогоне переводы (см. [`DroppedTranslation`]).
     pub dropped: usize,
     /// Всего сирот в выходном PO (включая ранее помеченные `legacy`).
@@ -415,33 +414,24 @@ pub fn merge_pot<'a>(
     stats.retarget_items.sort_by(|a, b| a.from.cmp(&b.from));
 
     // 6. Хвост: переводы, чьих ключей нет в POT (и которых не спас ретаргет).
+    //
+    // Такие записи ВЫПИЛИВАЮТСЯ, а не помечаются `legacy`: POT — единственный
+    // источник «что нужно игре». Раньше запись оставляли «для рантайма», и в
+    // po/ru.po накопилось 597 сирот, 128 из которых давно вернулись в POT
+    // (протухший флаг). Если текст реально нужен игре — его место в POT, а не
+    // в хвосте PO (решение владельца 2026-11-23).
     for key in &vanished {
         let old = po_map[key];
         if old.msgstr.is_empty() {
             continue;
         }
-        // Вырезано политикой (ассет) — не важно, помечено ли уже `legacy`.
+        // Вырезано политикой (ассет) — перевод не нужен, считаем отдельно.
         if cut_texts.contains(old.msgid.as_str()) {
             stats.cut_dropped += 1;
             continue;
         }
-        if old.flags.iter().any(|f| f == "legacy") {
-            // Уже мигрированные триаж-переводы: их нет в POT по замыслу. Но и
-            // держать мусор незачем: `msgstr == msgid` или имя ассета рантайму
-            // ничего не дают (правило 2026-11-23).
-            if !crate::pot_skip::is_legacy_worth_keeping(&old.msgid, &old.msgstr) {
-                stats.legacy_dropped += 1;
-                continue;
-            }
-            merged.push(MergedEntry {
-                po: old.clone(),
-                obsolete: false,
-            });
-            continue;
-        }
         if skip_texts.contains(old.msgid.as_str()) {
-            // Текст в POT остался только как skip: перевод не нужен
-            // (решение 2026-11-23), в PO его не тянем даже хвостом `legacy`.
+            // Текст в POT остался только под `#, skip`: перевод не нужен.
             stats.skip_dropped += 1;
             continue;
         }
@@ -463,23 +453,11 @@ pub fn merge_pot<'a>(
             }
             continue;
         }
-        // Мусор в legacy не держим: `msgstr == msgid` или имя ассета рантайму
-        // ничего не дают (правило 2026-11-23, замер в `is_legacy_worth_keeping`).
-        if !crate::pot_skip::is_legacy_worth_keeping(&old.msgid, &old.msgstr) {
-            stats.legacy_dropped += 1;
-            continue;
-        }
-        let mut keep = old.clone();
-        if !keep.flags.iter().any(|f| f == "legacy") {
-            keep.flags.push("legacy".to_string());
-            keep.translator
-                .push("legacy: text vanished from POT, kept for runtime lookup".to_string());
-        }
-        merged.push(MergedEntry {
-            po: keep,
-            obsolete: false,
+        stats.orphan_dropped += 1;
+        stats.orphan_items.push(Orphan {
+            key: (key.0.to_string(), key.1.to_string()),
+            msgstr: old.msgstr.clone(),
         });
-        stats.legacy_kept += 1;
     }
 
     stats.dropped_items.sort_by(|a, b| a.key.cmp(&b.key));
@@ -704,8 +682,7 @@ pub fn report_to_json(stats: &MergeStats) -> String {
     out.push_str(&format!(", \"new\": {}", stats.new));
     out.push_str(&format!(", \"obsolete\": {}", stats.obsolete));
     out.push_str(&format!(", \"retargeted\": {}", stats.retargeted));
-    out.push_str(&format!(", \"legacyKept\": {}", stats.legacy_kept));
-    out.push_str(&format!(", \"legacyDropped\": {}", stats.legacy_dropped));
+    out.push_str(&format!(", \"orphanDropped\": {}", stats.orphan_dropped));
     out.push_str(&format!(", \"dropped\": {}", stats.dropped));
     out.push_str(&format!(", \"orphans\": {}", stats.orphans));
     out.push_str(&format!(", \"dupKeys\": {}", stats.dup_keys));
