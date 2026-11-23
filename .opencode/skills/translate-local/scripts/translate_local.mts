@@ -72,6 +72,21 @@ const RU_STATIC = `Russian specifics:
 // --- триаж без модели -------------------------------------------------------
 
 const BANNED_RX = /фх|нгх|мгх|(?<![аоух])гх|нхаа/iu;
+
+/**
+ * Подсказка для точечного ретрая, когда перевод не прошёл `validate`.
+ *
+ * Замер 2026-11-23 (150 строк): 9 отказов, все — `banned cluster`: модель
+ * писала стоны как «Фхааа», хотя в промпте это запрещено. Без ретрая строка
+ * остаётся пустой навсегда (и при следующем прогоне модель повторит выбор),
+ * поэтому на отказ делается ОДИН повтор с явным указанием, что не так.
+ */
+const FIX_HINT: Record<string, string> = {
+  "banned cluster":
+    "Не используй сочетания «фх», «гх», «нгх», «мгх». Для вздохов и стонов пиши «Фф», «Ффф», «Мхм», «Ах», «Ох».",
+  "tag imbalance": "Сохрани все теги (<i>, </i>, <color=...>) ровно как в оригинале.",
+  empty: "Ответ не должен быть пустым: переведи строку.",
+};
 const COPY_PURE_RX = /^[^A-Za-zА-Яа-яЁё]+$/u;
 const COPY_CAMEL_RX = /^[A-Za-z]+[a-z][A-Z][A-Za-z]*$/;
 const COPY_PATH_RX = /[\\/]|\.wav|\.png|\.ogg|path_id=|=|m_[A-Z]/;
@@ -649,6 +664,31 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
           summary.failed += sub.length;
           continue;
         }
+        /** Один точечный ретрай строки с подсказкой «что не так». */
+        async function fixOne(e: PoEntry, problem: string): Promise<string | null> {
+          const hint = FIX_HINT[problem];
+          if (!hint) return null;
+          try {
+            const resp2 = await callLm(
+              url,
+              model,
+              formatPromptN(system, 1),
+              `${batchPrompt([e])}
+
+ВАЖНО: ${hint}
+` + "Ответь РОВНО одной строкой: только перевод, без нумерации, без кавычек и пояснений.",
+              timeoutMs,
+              maxTokens,
+            );
+            const again = parseResponse(resp2, 1);
+            if (!again) return null;
+            const clean = stripSpeakerLeak(again[0]).clean;
+            return clean && !validate(e.msgid, clean, lang) ? clean : null;
+          } catch {
+            return null;
+          }
+        }
+
         for (let k = 0; k < sub.length; k += 1) {
           const e = sub[k];
           const leak = stripSpeakerLeak(parsed[k]);
@@ -658,7 +698,14 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
             note(
               `${problem.toUpperCase()} src=${e.msgid.slice(0, 80)} tr=${leak.clean.slice(0, 80)}`,
             );
-            summary.failed += 1;
+            const fixed = await fixOne(e, problem);
+            if (fixed) {
+              updates.set(entryKey(e), fixed);
+              translatedKeys.push(entryKey(e));
+              summary.done += 1;
+            } else {
+              summary.failed += 1;
+            }
           } else {
             updates.set(entryKey(e), leak.clean);
             translatedKeys.push(entryKey(e));

@@ -395,6 +395,34 @@ test("runQueue: сломанные теги — не пишем, строка у
   }
 });
 
+test("runQueue: banned cluster исправляется точечным ретраем (без потери строки)", async () => {
+  const w = work([entry("Ghh... What am I... Doing... ", "speaker:Zoey")]);
+  // Первый ответ — запрещённое «Фх», второй (после подсказки) — нормальный.
+  const llm = await fakeLlm(
+    (_lines, call) =>
+      (call === 0 ? "Фхааа... Что я... делаю?" : undefined) ?? "Фф... Что я... делаю?",
+  );
+  try {
+    const s = await runQueue({
+      lang: "ru",
+      root: w.root,
+      poPath: w.poPath,
+      tmpDir: w.tmpDir,
+      url: llm.url,
+      batch: 1,
+      log: () => {},
+    });
+    assert.equal(s.done, 1, "строка переведена со второй попытки");
+    assert.equal(s.failed, 0);
+    assert.equal(llm.requests.length, 2, "основной запрос + один исправляющий");
+    assert.match(llm.requests[1], /ВАЖНО: Не используй сочетания/, "подсказка ушла в промпт");
+    assert.match(msgstrOf(w.poPath, "Ghh... What am I... Doing... "), /^Фф/);
+  } finally {
+    await llm.close();
+    cleanup(w);
+  }
+});
+
 test("runQueue: непарсибельный ответ — два ретрая и UNPARSABLE в лог", async () => {
   const w = work([entry("Hello there friend", "speaker:Zoey")]);
   // Две строки при n=1 — уже не «голая строка», а преамбула/пояснение:
