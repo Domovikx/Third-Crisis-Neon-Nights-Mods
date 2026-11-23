@@ -288,13 +288,11 @@ test("mergePot: skip-запись без перевода не попадает 
   assert.ok(!renderMerged(merged, ['msgid ""', 'msgstr ""']).includes("junk"));
 });
 
-test("mergePot: переведённая skip-запись сохраняется и помечается", () => {
+test("mergePot: переведённая skip-запись в PO не попадает вовсе", () => {
   const { merged, stats } = mergePot([e("junk", "ui", "мусор")], [skip("junk")]);
-  assert.equal(merged.length, 1);
-  assert.equal(merged[0].msgstr, "мусор");
-  assert.ok(merged[0].flags?.includes("skip"));
-  assert.equal(stats.skipKept, 1);
-  assert.equal(stats.carried, 1);
+  assert.equal(merged.length, 0, "ни строки, ни перевода: это инфошум");
+  assert.equal(stats.skipped, 1);
+  assert.equal(stats.carried, 0);
 });
 
 test("mergePot: снятый skip убирает метку из PO", () => {
@@ -304,12 +302,12 @@ test("mergePot: снятый skip убирает метку из PO", () => {
   assert.deepEqual(merged[0].flags, [], "POT больше не помечает — метке в PO не место");
 });
 
-test("mergePot: перевод, чья строка жива только под skip, сохраняется хвостом", () => {
+test("mergePot: перевод под skip-текстом не остаётся ни живым, ни legacy", () => {
   const { merged, stats } = mergePot([e("Gone text", "speaker:Zoey", "Ушло")], [skip("Gone text")]);
-  assert.equal(merged.length, 1, "skip-строка в PO не создана");
-  assert.equal(merged[0].msgstr, "Ушло");
-  assert.deepEqual(merged[0].flags, ["legacy"]);
-  assert.equal(stats.legacyKept, 1);
+  assert.equal(merged.length, 0, "skip-текст не тянет за собой перевод");
+  assert.equal(stats.skipped, 1, "в POT это одна skip-запись");
+  assert.equal(stats.skipDropped, 1, "перевод под ней отброшен осознанно");
+  assert.equal(stats.legacyKept, 0);
 });
 
 test("runPoUpdate: skip не создаёт строк в PO, переведённая остаётся с меткой", () => {
@@ -329,12 +327,12 @@ test("runPoUpdate: skip не создаёт строк в PO, переведён
   );
 
   const res = runPoUpdate({ lang: "ru", poDir: dir });
-  assert.equal(res.stats.skipped, 1, "junk-key не заведён");
-  assert.equal(res.stats.skipKept, 1, "kept-key сохранён");
+  assert.equal(res.stats.skipped, 2, "оба skip-ключа не заведены");
 
   const out = readFileSync(join(dir, "ru.po"), "utf8");
-  assert.ok(!out.includes("junk-key"), "пустой skip-строки в PO нет");
+  assert.ok(!out.includes("junk-key"), "пустого skip-ключа в PO нет");
+  assert.ok(!out.includes("kept-key"), "переведённый skip-ключ тоже не попадает");
+  assert.ok(!out.includes('msgstr "уже есть"'), "его перевод не тянется в PO");
   assert.ok(out.includes('msgid "Normal line"\nmsgstr ""'), "обычная строка на месте");
-  assert.ok(out.includes('msgstr "уже есть"'), "перевод сохранён");
-  assert.match(out, /#, skip\nmsgctxt "ui"\nmsgid "kept-key"\nmsgstr "уже есть"/);
+  assert.ok(!/#, skip/.test(out), "ни одной skip-метки в PO");
 });

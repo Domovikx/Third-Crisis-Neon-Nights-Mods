@@ -150,10 +150,14 @@ pub struct MergeStats {
     pub orphans: usize,
     /// Дубли ключа в исходном PO с разными переводами.
     pub dup_keys: usize,
-    /// Ключи POT с `#, skip`: пустых строк в PO не создано (экономия).
+    /// Ключи POT с `#, skip`: в PO их нет вовсе (ни пустых, ни переведённых).
+    ///
+    /// Решение владельца 2026-11-23: инфошум не попадает в PO даже как «уже
+    /// переведённая» строка. Потери нет: у 2 695 таких строк в `ru` перевод был
+    /// копией `msgid` или транслитерацией мусора (`-APG` → `-АПГ`).
     pub skipped: usize,
-    /// Ключи POT с `#, skip`, у которых перевод уже был: сохранён и помечен.
-    pub skip_kept: usize,
+    /// Переводы, чей текст в POT остался только под `#, skip`: не перенесены.
+    pub skip_dropped: usize,
     pub dropped_items: Vec<DroppedTranslation>,
     pub retarget_items: Vec<Retarget>,
     pub orphan_items: Vec<Orphan>,
@@ -253,9 +257,12 @@ pub fn merge_pot<'a>(
     //     «текст жив» смотрят только на НЕ-skip записи: перевод, у которого
     //     текст остался лишь в skip-ключе, сохраняется хвостом как `legacy`.
     let mut skip_ids: HashSet<KeyRef<'a>> = HashSet::new();
+    // Тексты, которые в POT есть ТОЛЬКО как skip (без живого ключа).
+    let mut skip_texts: HashSet<&'a str> = HashSet::new();
     for e in pot_entries {
         if !e.msgid.is_empty() && e.flags.iter().any(|f| f == "skip") {
             skip_ids.insert(key_ref(e));
+            skip_texts.insert(e.msgid.as_str());
         }
     }
     let mut live_by_text: HashMap<&'a str, Vec<usize>> = HashMap::new();
@@ -267,6 +274,8 @@ pub fn merge_pot<'a>(
             .collect();
         if !live.is_empty() {
             live_by_text.insert(text, live);
+        } else {
+            skip_texts.insert(*text);
         }
     }
 
@@ -330,34 +339,11 @@ pub fn merge_pot<'a>(
         let key = key_ref(pe);
         let old = po_map.get(&key).copied();
 
-        // «Перевод не нужен»: пустую строку в PO не заводим вовсе. Уже
-        // существующий перевод не теряем — сохраняем и держим метку skip.
+        // «Перевод не нужен»: в PO не заводим ни пустую строку, ни «уже
+        // переведённую» (старый перевод — копия `msgid` или транслит мусора).
+        // При выключении правила строка появится заново пустой.
         if skip_ids.contains(&key) {
-            let Some(o) = old.filter(|o| !o.msgstr.is_empty()) else {
-                stats.skipped += 1;
-                continue;
-            };
-            let mut flags: Vec<String> = o
-                .flags
-                .iter()
-                .filter(|f| *f != "auto-normalized" && *f != "skip")
-                .cloned()
-                .collect();
-            flags.push("skip".to_string());
-            merged.push(MergedEntry {
-                po: PoEntry {
-                    msgid: pe.msgid.clone(),
-                    msgctxt: pe.msgctxt.clone(),
-                    msgstr: o.msgstr.clone(),
-                    refs: pe.refs.clone(),
-                    comments: pe.comments.clone(),
-                    flags,
-                    translator: o.translator.clone(),
-                },
-                obsolete: false,
-            });
-            stats.carried += 1;
-            stats.skip_kept += 1;
+            stats.skipped += 1;
             continue;
         }
 
@@ -426,6 +412,12 @@ pub fn merge_pot<'a>(
                 po: old.clone(),
                 obsolete: false,
             });
+            continue;
+        }
+        if skip_texts.contains(old.msgid.as_str()) {
+            // Текст в POT остался только как skip: перевод не нужен
+            // (решение 2026-11-23), в PO его не тянем даже хвостом `legacy`.
+            stats.skip_dropped += 1;
             continue;
         }
         if live_by_text.contains_key(old.msgid.as_str()) {
@@ -662,7 +654,7 @@ pub fn report_to_json(stats: &MergeStats) -> String {
     out.push_str(&format!(", \"orphans\": {}", stats.orphans));
     out.push_str(&format!(", \"dupKeys\": {}", stats.dup_keys));
     out.push_str(&format!(", \"skipped\": {}", stats.skipped));
-    out.push_str(&format!(", \"skipKept\": {}", stats.skip_kept));
+    out.push_str(&format!(", \"skipDropped\": {}", stats.skip_dropped));
 
     out.push_str(", \"retargets\": [");
     for (i, r) in stats.retarget_items.iter().enumerate() {

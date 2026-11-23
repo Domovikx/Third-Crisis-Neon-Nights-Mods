@@ -10255,13 +10255,6 @@ msgid "010 Now thats a bunngirl 1"
 msgstr "010 Teraz to jest króliczek 1"
 
 #. src: raw:AudioClip
-#. skip: no-word
-#, skip
-msgctxt "ui"
-msgid "011 I do I 1"
-msgstr "011 Tak Tak 1"
-
-#. src: raw:AudioClip
 msgctxt "ui"
 msgid "011 Turn around for me Ill just 1"
 msgstr "011 Obróć się dla mnie Ja tylko 1"
@@ -13043,13 +13036,6 @@ msgid "227-Ow! Crap!"
 msgstr ""
 
 #. src: raw:AudioClip
-#. skip: no-word
-#, skip
-msgctxt "ui"
-msgid "228-(Is it"
-msgstr "228-(Czy to"
-
-#. src: raw:AudioClip
 msgctxt "ui"
 msgid "23-Found Me"
 msgstr ""
@@ -14655,13 +14641,6 @@ msgstr "46-Aaaahhh Hahhh Khhmmnnn 1"
 msgctxt "ui"
 msgid "46-Ghh~ Right ther- Ahh~! Ohh fffhh~"
 msgstr ""
-
-#. src: raw:AudioClip
-#. skip: no-word
-#, skip
-msgctxt "ui"
-msgid "46-I uh"
-msgstr "46-Ja, yyy"
 
 #. src: raw:AudioClip
 msgctxt "ui"
@@ -18395,13 +18374,6 @@ msgctxt "ui"
 msgid "Ady"
 msgstr ""
 
-#. src: raw:Transform
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Adz"
-msgstr "Adz"
-
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Aerial Dust Burst 12"
@@ -18554,13 +18526,6 @@ msgstr "Po podniesieniu logiki króliczego stroju"
 msgctxt "ui"
 msgid "After taking Picture Dialogue"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Afterglow"
-msgstr "Poświata"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19911,13 +19876,6 @@ msgctxt "ui"
 msgid "Amount of times Zoey has squirted."
 msgstr "Ile razy Zoey miała squirt."
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "AmountLabel"
-msgstr "Etykieta kwoty"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "An Alternative Zoey"
@@ -19952,13 +19910,6 @@ msgstr ""
 msgctxt "speaker:Zoey"
 msgid "An outfit?"
 msgstr "Strój?"
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Anal"
-msgstr "Anal"
 
 #. src: raw:AnimatorController
 msgctxt "ui"
@@ -20854,13 +20805,6 @@ msgctxt "ui"
 msgid "Anyways, I've decided to handle things the good ol' fashioned way. But I need someone to grab my concoctions from those machines."
 msgstr "Tak czy inaczej, postanowiłam załatwić sprawy po staremu, po bożemu. Ale potrzebuję kogoś, kto wyciągnie moje mikstury z tych maszyn."
 
-#. src: raw:RectTransform
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Aop"
-msgstr "Aop"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Apartment Bathroom Floor 1"
@@ -21140,13 +21084,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Aquire UI Trigger"
 msgstr "Wyzwalacz UI namierzania"
-
-#. src: raw:Transform
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "ArL(B"
-msgstr "ArL(B"
 
 #. src: field:m_Name
 msgctxt "ui"
@@ -22259,13 +22196,6 @@ msgctxt "ui"
 msgid "Attack Range"
 msgstr ""
 
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Attempting"
-msgstr "Próba"
-
 #. src: us
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -22478,13 +22408,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Awoo!"
 msgstr ""
-
-#. src: raw:AnimationClip
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Aww"
-msgstr "Aww"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -23065,13 +22988,6 @@ msgctxt "ui"
 msgid "Backlight"
 msgstr "Podświetlenie"
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Backroom"
-msgstr "Zaplecze"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Backroom Cleanup("
@@ -23101,13 +23017,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Bad Light!"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Bag"
-msgstr "Torba"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -23225,13 +23134,6 @@ msgid "Bangers SDF Material"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Bar"
-msgstr "Bar"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Bar Area"
 msgstr "Strefa baru"
@@ -23325,13 +23227,6 @@ msgstr "Interakcje barowe"
 msgctxt "ui"
 msgid "Bar counter upstairs"
 msgstr "Lada barowa na górze"
-
-#. src: raw:AudioMixerController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "BarMusic"
-msgstr "Muzyka barowa"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -23573,13 +23468,6 @@ msgctxt "ui"
 msgid "Barnaban"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Barstool"
-msgstr "Stołek barowy"
-
 #. src: field:m_Name
 msgctxt "ui"
 msgid "Bartender"
@@ -23589,13 +23477,6 @@ msgstr "Barman"
 msgctxt "ui"
 msgid "Bartender_Atlas"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Bartending"
-msgstr "Praca za barem"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -23646,13 +23527,6 @@ msgstr "UI klientów minigry barmańskiej"
 msgctxt "ui"
 msgid "Bartending Static Customers"
 msgstr "Statyczni klienci minigry barmańskiej"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Base"
-msgstr "Baza"
 
 #. src: raw:Shader
 msgctxt "ui"
@@ -23763,13 +23637,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Bat Wing"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Bathroom"
-msgstr "Łazienka"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -24201,13 +24068,6 @@ msgctxt "ui"
 msgid "Before mission_loop"
 msgstr ""
 
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "BeforeYank"
-msgstr "Przed szarpnięciem"
-
 #. src: dialog
 msgctxt "ui"
 msgid "Beg for it! Beg more for it, filthy little fuckbunny!"
@@ -24278,13 +24138,6 @@ msgstr "Wierzysz mi teraz?"
 msgctxt "speaker:Klaudia"
 msgid "Believe me... You'll find her company much more... enjoyable than when you last met her, ehehe."
 msgstr "Uwierz mi... Jej towarzystwo okaże się dużo... przyjemniejsze niż gdy widziałaś ją ostatnio, ehehe."
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Bench"
-msgstr "Ławka"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -24360,13 +24213,6 @@ msgstr "Poza tym, że lubi łapać, Varen po prostu cieszy się tutejszymi widok
 msgctxt "ui"
 msgid "Bff?"
 msgstr ""
-
-#. src: raw:AnimationClip
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Bfff"
-msgstr "Bfff"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -24626,13 +24472,6 @@ msgid "Bl-... Blocker-... Khhh-... Mnnhhh..."
 msgstr "Bl-... Blocker-... Chhh-... Mmnnhhh..."
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Black"
-msgstr "Czarny"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Black Background"
 msgstr ""
@@ -24822,20 +24661,6 @@ msgctxt "ui"
 msgid "Black top"
 msgstr "czarna góra"
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "BlackClone"
-msgstr "BlackClone"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Blanket"
-msgstr "Koc"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "BlauKitten - Assistant Programmer"
@@ -24850,13 +24675,6 @@ msgstr "BlauKitten - Programista"
 msgctxt "ui"
 msgid "Blee bloop!"
 msgstr "Bli blup!"
-
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Blend"
-msgstr "Mieszanie"
 
 #. src: raw:Shader
 msgctxt "ui"
@@ -24877,13 +24695,6 @@ msgstr "Zaślepiona nadziejami, z życzeniem do nieba"
 msgctxt "ui"
 msgid "Blink Speed"
 msgstr ""
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Blinking"
-msgstr "Mruganie"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -25061,13 +24872,6 @@ msgctxt "ui"
 msgid "Blur Radius"
 msgstr ""
 
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Blush"
-msgstr "Rumieniec"
-
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Board chalk"
@@ -25238,27 +25042,6 @@ msgctxt "ui"
 msgid "Boob window"
 msgstr "Okienko na biust"
 
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "BoobBack"
-msgstr "Tył biustu"
-
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "BoobFront"
-msgstr "Przód biustu"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Booba"
-msgstr "Cycki"
-
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Booba Ladies for LRLD"
@@ -25333,13 +25116,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Boobs Small"
 msgstr "Małe cycki"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "BoobsNude"
-msgstr "Nagie cycki"
 
 #. src: field:m_Name
 msgctxt "ui"
@@ -25522,13 +25298,6 @@ msgid "Both are really soft, ehehe!~ But if you're looking to squish something, 
 msgstr "Obie są naprawdę mięciutkie, ehehe!~ Ale jeśli chcesz coś pościskać, powinnaś naprawdę spróbować moich ud.~"
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Bottle"
-msgstr "Butelka"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Bottle 1"
 msgstr "Butelka 1"
@@ -25639,23 +25408,9 @@ msgid "Bounce on over here, baby."
 msgstr "Podskocz tu do mnie, skarbie."
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Bowl"
-msgstr "Miska"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Bowls Shadows"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Box"
-msgstr "Pudełko"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -25686,13 +25441,6 @@ msgstr "Pudła na szafce"
 msgctxt "ui"
 msgid "Boyfriend? But-... that means-"
 msgstr "Chłopak? Ale-... to znaczy-"
-
-#. src: raw:Transform
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Bph"
-msgstr "Bph"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -25841,13 +25589,6 @@ msgctxt "ui"
 msgid "BridgeConnector Right"
 msgstr ""
 
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Brightness"
-msgstr "Jasność"
-
 #. src: dialog
 msgctxt "ui"
 msgid "Brilliant! Just a recap. Limited time. Do as many lewd things as you can, as fast as you can, and don't get caught, yeah? Have fun!"
@@ -25862,13 +25603,6 @@ msgstr "Brkn Hvn - Udźwiękowienie"
 msgctxt "ui"
 msgid "Bro ducky"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Broken"
-msgstr "Zepsute"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25904,13 +25638,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Broken Walkway"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Broom"
-msgstr "Miotła"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25966,13 +25693,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Bruising"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Brush"
-msgstr "Szczotka"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -26078,13 +25798,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Bunch of assholes. Those enforcers will take any opportunity to be dickheads to people, and they just have to sit around and take it."
 msgstr "Zgraja dupków. Ci egzekutorzy wykorzystają każdą okazję, żeby uprzykrzać ludziom życie, a ludzie muszą po prostu siedzieć cicho i to znosić."
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Bunnies"
-msgstr "Króliczki"
 
 #. src: field:DisplayName
 msgctxt "ui"
@@ -26537,20 +26250,6 @@ msgstr "Cień przycisku"
 msgctxt "ui"
 msgid "Button with Text"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "ButtonPanel"
-msgstr "Panel przycisków"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Buttons"
-msgstr "Przyciski"
 
 #. src: field:m_Name
 msgctxt "ui"
@@ -27326,13 +27025,6 @@ msgctxt "ui"
 msgid "CUU]C"
 msgstr ""
 
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "CUUaC"
-msgstr "CUUaC"
-
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Caandels Front Left Shadow"
@@ -27392,13 +27084,6 @@ msgstr ""
 msgctxt "ui"
 msgid "CableSocketEvents: no CableSocket component found."
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Cables"
-msgstr "Kable"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -27499,13 +27184,6 @@ msgstr "Nie znaleziono numeru zwrotnego dla struktury"
 msgctxt "ui"
 msgid "Caller"
 msgstr "Rozmówca"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Calliach"
-msgstr "Calliach"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -27942,13 +27620,6 @@ msgctxt "ui"
 msgid "Camera tutorial TaskTarget"
 msgstr "Cel zadaniowy samouczka kamery"
 
-#. src: raw:GameObject
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "CameraContainer"
-msgstr "Kontener kamery"
-
 #. src: field:m_Name
 msgctxt "ui"
 msgid "CameraHUD"
@@ -27978,13 +27649,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Camera_Open"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Cameras"
-msgstr "Kamery"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -28636,13 +28300,6 @@ msgid "Caption Text"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Car"
-msgstr "Samochód"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Car Base"
 msgstr ""
@@ -28754,24 +28411,10 @@ msgctxt "ui"
 msgid "Cardboard box"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Cards"
-msgstr "Karty"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Carlos"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Carpet"
-msgstr "Dywan"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -29293,13 +28936,6 @@ msgctxt "ui"
 msgid "Caution Threshold"
 msgstr ""
 
-#. src: raw:AnimationClip
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Cdc"
-msgstr "Cdc"
-
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Ceiling thingy"
@@ -29335,13 +28971,6 @@ msgstr "Oczywiście. Jeśli zrobisz dla mnie małą... przysługę."
 msgctxt "ui"
 msgid "Cff,C"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Chair"
-msgstr "Krzesło"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -29571,13 +29200,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Char_GlowingHole_Man 1"
 msgstr "Char_GlowingHole_Man 1"
-
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "Char_Klaudia"
-msgstr "Char_Klaudia"
 
 #. src: field:m_Name
 msgctxt "ui"
@@ -30036,13 +29658,6 @@ msgctxt "ui"
 msgid "Checking room for filtering:"
 msgstr "Sprawdzanie pokoju do filtrowania:"
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Checkmark"
-msgstr "Ptaszek"
-
 #. src: field:m_Name
 msgctxt "ui"
 msgid "Cheeky Zoey"
@@ -30077,20 +29692,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Chest Location"
 msgstr ""
-
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "Chest_Boobs"
-msgstr "Klatka_Cycki"
-
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "Chest_Flat"
-msgstr "Klatka_Płaska"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -30131,13 +29732,6 @@ msgstr "Neon strefy chillu"
 msgctxt "ui"
 msgid "Chime 1"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Chips"
-msgstr "Chipsy"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -30255,13 +29849,6 @@ msgid "Chrs"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Cigarette"
-msgstr "Papieros"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Cilinder product"
 msgstr ""
@@ -30307,13 +29894,6 @@ msgid "Citizens("
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "City"
-msgstr "Miasto"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "City Abyss Drone"
 msgstr ""
@@ -30342,13 +29922,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Class is invalid:"
 msgstr "Klasa jest nieprawidłowa:"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Clean"
-msgstr "Czyste"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -30559,13 +30132,6 @@ msgctxt "ui"
 msgid "Cloak Top"
 msgstr ""
 
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Close"
-msgstr "Zamknij"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Close Arms"
@@ -30656,13 +30222,6 @@ msgctxt "speaker:Leona"
 msgid "Close your eyes, darling."
 msgstr "Zamknij oczy, kochanie."
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Closed"
-msgstr "Zamknięte"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Closed Ads"
@@ -30703,13 +30262,6 @@ msgstr "Bliżej. Przestań się wiercić. Jesteśmy sami w tym kącie wozu."
 msgctxt "speaker:Zoey"
 msgid "Closer...? O-okay..."
 msgstr "Bliżej...? D-dobra..."
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Closet"
-msgstr "Szafa"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -30857,13 +30409,6 @@ msgid "Clown Makeup"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Clutter"
-msgstr "Rupiecie"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Clutter Pile"
 msgstr ""
@@ -30989,13 +30534,6 @@ msgid "Coffe Cup Shadow"
 msgstr "Cień filiżanki kawy"
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Coffee"
-msgstr "Kawa"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Coffee Pot"
 msgstr ""
@@ -31065,24 +30603,10 @@ msgctxt "ui"
 msgid "Collar"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Colldier"
-msgstr "Colldier"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Collect"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Collectables"
-msgstr "Znajdźki"
 
 #. src: us
 msgctxt "ui"
@@ -31098,13 +30622,6 @@ msgstr "Obiekt: Nie podano typu w"
 msgctxt "ui"
 msgid "CollectibleManager: Could not find collectible type '"
 msgstr "CollectibleManager: Nie znaleziono typu obiektu '"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Collectibles"
-msgstr "Przedmioty kolekcjonerskie"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -31170,13 +30687,6 @@ msgstr ""
 msgctxt "ui"
 msgid "CollingUnit-5"
 msgstr ""
-
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Color"
-msgstr "Kolor"
 
 #. src: raw:Shader
 msgctxt "ui"
@@ -31548,13 +31058,6 @@ msgid "Composite Shadow caster"
 msgstr "Złożony rzucacz cieni"
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Computer"
-msgstr "Komputer"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Computer Mouse"
 msgstr ""
@@ -31588,13 +31091,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Condensed"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Condom"
-msgstr "Prezerwatywa"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -31631,13 +31127,6 @@ msgstr "Prezerwatywa na Gościu z kartelu"
 msgctxt "ui"
 msgid "Condom- Wh- What...?"
 msgstr "Prezerwatywa- Co- Co...?"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Condoms"
-msgstr "Prezerwatywy"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -31720,13 +31209,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Construction Worker Top"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Container"
-msgstr "Pojemnik"
 
 #. src: raw:AnimatorController
 msgctxt "ui"
@@ -32074,13 +31556,6 @@ msgid "Correct. So I assume that means you've got the suitcase?"
 msgstr "Zgadza się. Czyli rozumiem, że masz walizkę?"
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Corridor"
-msgstr "Korytarz"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Corridor 1"
 msgstr ""
@@ -32331,13 +31806,6 @@ msgid "Costa"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Couch"
-msgstr "Kanapa"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Couch 2"
 msgstr "Kanapa 2"
@@ -32424,13 +31892,6 @@ msgid "Count Open Boxes Loop"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Counter"
-msgstr "Lada"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Counter rug"
 msgstr ""
@@ -32464,13 +31925,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Cpt Awe"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Crack"
-msgstr "Pęknięcie"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -32571,13 +32025,6 @@ msgstr "Pęknięcie 8"
 msgctxt "ui"
 msgid "Crack 9"
 msgstr "Pęknięcie 9"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Cracks"
-msgstr "Pęknięcia"
 
 #. src: dialog
 msgctxt "ui"
@@ -32722,13 +32169,6 @@ msgid "Crotch Location"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Crowd"
-msgstr "Tłum"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Crumpled paper"
 msgstr ""
@@ -32762,13 +32202,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Culling Helper"
 msgstr ""
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Cum"
-msgstr "Sperma"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -32911,13 +32344,6 @@ msgctxt "ui"
 msgid "Cum with fingering"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Cum#N"
-msgstr "Sperma#N"
-
 #. src: dialog
 #. rich_text: <color=#EB83FF>Cum-... Nghh-... Please-...! I-... I want to-... Please...! Please!!</color>
 msgctxt "ui"
@@ -32962,24 +32388,10 @@ msgctxt "ui"
 msgid "Cummmhh... Yess, ma'ammhh..."
 msgstr "Dochodzęęę... Taaak, paaaniii..."
 
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "Cumshot_Loop"
-msgstr "Wytrysk_Pętla"
-
 #. src: field:m_Name
 msgctxt "ui"
 msgid "Cumv2"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Cup"
-msgstr "Kubek"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -32995,13 +32407,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Cup Shadow"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Cupboard"
-msgstr "Szafka"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -33109,13 +32514,6 @@ msgid "Cursed Condom Sticker"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Curtain"
-msgstr "Zasłona"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Curtain Mask"
 msgstr "Maska zasłony"
@@ -33126,20 +32524,6 @@ msgid "Curtain Parent"
 msgstr "Rodzic zasłony"
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Curtains"
-msgstr "Zasłony"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Curtians"
-msgstr "Zasłony"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Curved Ad Prefab"
 msgstr ""
@@ -33148,13 +32532,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Curved Ads"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Cushions"
-msgstr "Poduszki"
 
 #. src: dialog
 msgctxt "ui"
@@ -33220,13 +32597,6 @@ msgstr "Klient teraz maca jej dupę"
 msgctxt "ui"
 msgid "Customer starts groping Thigh"
 msgstr "Klient zaczyna macać udo"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Customers"
-msgstr "Klienci"
 
 #. src: dialog
 msgctxt "ui"
@@ -33385,13 +32755,6 @@ msgid "Cutin Target"
 msgstr "Cel wstawki"
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Cutscene"
-msgstr "Przerywnik"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Cutscene - Klaudia comes in"
 msgstr "Przerywnik - Wchodzi Klaudia"
@@ -33480,13 +32843,6 @@ msgstr "Przerywnik: Brak reżysera"
 msgctxt "ui"
 msgid "Cutscene: Starting cutscene: '"
 msgstr "Przerywnik: Rozpoczynanie przerywnika: '"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Cutscenes"
-msgstr "Przerywniki"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -33938,13 +33294,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Dailogue stop"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "DamageVignettes"
-msgstr "Winiety obrażeń"
 
 #. src: dialog
 msgctxt "ui"
@@ -34471,13 +33820,6 @@ msgctxt "ui"
 msgid "Debugging Essentials"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Decals"
-msgstr "Naklejki"
-
 #. src: us
 msgctxt "ui"
 msgid "Deceleration Multi"
@@ -34845,13 +34187,6 @@ msgctxt "ui"
 msgid "Detail Size"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Details"
-msgstr "Szczegóły"
-
 #. src: us
 msgctxt "ui"
 msgid "Details for this achievement will be revealed once unlocked."
@@ -34861,13 +34196,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Detectable"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Detergent"
-msgstr "Detergent"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -34888,13 +34216,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Dff,C"
 msgstr ""
-
-#. src: raw:RectTransform
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Dhb"
-msgstr "Dhb"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -35195,13 +34516,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Dick or Treat Text"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Dickomat"
-msgstr "Dickomat"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -36252,13 +35566,6 @@ msgid "Dirt/For Swap"
 msgstr "Ziemia/Do podmiany"
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Dirty"
-msgstr "Brudny"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Dirty Rug"
 msgstr ""
@@ -36603,13 +35910,6 @@ msgctxt "ui"
 msgid "Disabled, we want to allow this explicitely"
 msgstr ""
 
-#. src: raw:AnimationClip
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Disappear"
-msgstr "Zniknij"
-
 #. src: dialog
 msgctxt "ui"
 msgid "Disappointed in yourself."
@@ -36631,13 +35931,6 @@ msgid "Discord Button"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Display"
-msgstr "Wyświetlacz"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Display Canvas"
 msgstr "Kanwa wyświetlacza"
@@ -36646,13 +35939,6 @@ msgstr "Kanwa wyświetlacza"
 msgctxt "ui"
 msgid "Display Hint Here"
 msgstr ""
-
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Distance"
-msgstr "Dystans"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -36703,13 +35989,6 @@ msgstr "Wybrano odwracanie uwagi dla Jam"
 msgctxt "ui"
 msgid "Distribution Performance:"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Distributor"
-msgstr "Dystrybutor"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -37974,23 +37253,9 @@ msgid "Door to Upper Staffroom"
 msgstr "Drzwi do górnej socjalnej"
 
 #. src: raw:AnimationClip
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "DoorClosed"
-msgstr "DrzwiZamknięte"
-
-#. src: raw:AnimationClip
 msgctxt "ui"
 msgid "DoorClosed 1"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "DoorClosing"
-msgstr "ZamykanieDrzwi"
 
 #. src: raw:AnimationClip
 msgctxt "ui"
@@ -37998,82 +37263,19 @@ msgid "DoorClosing 1"
 msgstr ""
 
 #. src: raw:AnimationClip
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "DoorOpen"
-msgstr "DrzwiOtwarte"
-
-#. src: raw:AnimationClip
 msgctxt "ui"
 msgid "DoorOpen 1"
 msgstr ""
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "DoorOpenE"
-msgstr "DrzwiOtwarteE"
-
-#. src: raw:AnimationClip
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "DoorOpen_Snappy"
-msgstr "DrzwiOtwarte_Szybkie"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "DoorOpening"
-msgstr "OtwieranieDrzwi"
 
 #. src: raw:AnimationClip
 msgctxt "ui"
 msgid "DoorOpening 1"
 msgstr ""
 
-#. src: raw:AnimatorOverrideController
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "Door_Apartment"
-msgstr "Drzwi_Mieszkanie"
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Door_Snappy"
-msgstr "Drzwi_Szybkie"
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Door_WC"
-msgstr "Drzwi_WC"
-
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Door_Wall 1"
 msgstr ""
-
-#. src: raw:AnimatorOverrideController
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "Door_Wardrobe"
-msgstr "Drzwi_Szafa"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Doors"
-msgstr "Drzwi"
 
 #. src: us
 msgctxt "ui"
@@ -38114,20 +37316,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Double penetration by tentacles slowly ramps up"
 msgstr "Podwójna penetracja mackami powoli narasta"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Dough"
-msgstr "Ciasto"
-
-#. src: raw:AnimationClip
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Down"
-msgstr "W dół"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -38195,13 +37383,6 @@ msgctxt "ui"
 msgid "Drag marks"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Drain"
-msgstr "Odpływ"
-
 #. src: us
 msgctxt "ui"
 msgid "Draw Debug"
@@ -38231,13 +37412,6 @@ msgstr "Sny po prostu... To raczej nie moja bajka."
 msgctxt "ui"
 msgid "Drenched Pussy"
 msgstr "Mokra cipka"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Dress"
-msgstr "Sukienka"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -38593,20 +37767,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Dripping Showers"
 msgstr "Kapiące prysznice"
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Drool"
-msgstr "Ślina"
-
-#. src: raw:VisualEffectAsset
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Drop"
-msgstr "Upuść"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39165,13 +38325,6 @@ msgctxt "ui"
 msgid "Eh? Why'd you come here then?"
 msgstr "Co? To po co tu przyszedłeś?"
 
-#. src: raw:MonoBehaviour
-#. skip: no-word
-#, skip
-msgctxt "ui"
-msgid "Eh?!"
-msgstr "Co?!"
-
 #. src: dialog
 msgctxt "ui"
 msgid "Eheh! If you insist!"
@@ -39256,13 +38409,6 @@ msgstr "Eheheh. Ojej... Cała bez tchu? Brzmisz, jakbyś naprawdę potrzebowała
 msgctxt "ui"
 msgid "Ehehehe... Now..."
 msgstr "Ehehehe... Teraz..."
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Ehh"
-msgstr "Ech"
 
 #. src: dialog
 msgctxt "ui"
@@ -39490,13 +38636,6 @@ msgid "Emergency light - Off"
 msgstr ""
 
 #. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Emission"
-msgstr "Emisja"
-
-#. src: raw:Shader
 msgctxt "ui"
 msgid "Emission Power"
 msgstr "Moc emisji"
@@ -39525,13 +38664,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Employment Chip"
 msgstr ""
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Empty"
-msgstr "Pusty"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -40223,13 +39355,6 @@ msgctxt "ui"
 msgid "Enforcer starts groping Zoey"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Enforcers"
-msgstr "Egzekutorzy"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enforcers Incoming"
@@ -40443,13 +39568,6 @@ msgid "Entity: More than one player entity is currently active!"
 msgstr "Entity: Aktywna jest więcej niż jedna jednostka gracza!"
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Entrance"
-msgstr "Wejście"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Entrance Area"
 msgstr "Strefa wejścia"
@@ -40533,20 +39651,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Env Props"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Enviorment"
-msgstr "Otoczenie"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Enviroment"
-msgstr "Otoczenie"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -40718,13 +39822,6 @@ msgstr "Eee-... Yyy-... Skąd ty-... wiesz...?"
 msgctxt "ui"
 msgid "Erection Start"
 msgstr "Początek erekcji"
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "ErectionA"
-msgstr "ErekcjaA"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41198,13 +40295,6 @@ msgid "Explosive Charge"
 msgstr ""
 
 #. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Expression"
-msgstr "Mina"
-
-#. src: raw:AnimatorController
 msgctxt "ui"
 msgid "Expression Ahegao"
 msgstr "Mina Ahegao"
@@ -41314,20 +40404,6 @@ msgctxt "ui"
 msgid "Expression override and final dialogue"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Extention"
-msgstr "Przedłużenie"
-
-#. src: raw:SpriteAtlas
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Exterior:"
-msgstr "Zewnątrz:"
-
 #. src: raw:Shader
 msgctxt "ui"
 msgid "External Alpha"
@@ -41367,13 +40443,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Extra Props Ground and First Floor_old"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Extras"
-msgstr "Dodatki"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41847,13 +40916,6 @@ msgctxt "ui"
 msgid "Facing Layer"
 msgstr ""
 
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Fade"
-msgstr "Zanikanie"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Fade 2"
@@ -42309,13 +41371,6 @@ msgctxt "ui"
 msgid "FakeSisters Tablet Extra Animations"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Fakelight"
-msgstr "Sztuczne światło"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Falanu"
@@ -42375,13 +41430,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Falling apart for strangers~"
 msgstr "Rozpadam się dla obcych~"
-
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Falloff"
-msgstr "Zanik światła"
 
 #. src: raw:Shader
 msgctxt "ui"
@@ -42491,13 +41539,6 @@ msgstr "Ulubiony zespół? Nie, sorry."
 msgctxt "ui"
 msgid "Fayt"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Fear"
-msgstr "Strach"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -43828,13 +42869,6 @@ msgctxt "ui"
 msgid "Flinch 2"
 msgstr ""
 
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Flip"
-msgstr "Obrót"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Flip Lever"
@@ -43854,13 +42888,6 @@ msgstr ""
 msgctxt "speaker:Zoey"
 msgid "Flipping this once is more than enough."
 msgstr "Przerzucenie tego raz w zupełności wystarczy."
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Floor"
-msgstr "Podłoga"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -44033,13 +43060,6 @@ msgid "Floor2"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Floors"
-msgstr "Podłogi"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Flower 1"
 msgstr ""
@@ -44140,13 +43160,6 @@ msgid "Flustered. Hot milf.o"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Flyer"
-msgstr "Ulotka"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Flying Car"
 msgstr ""
@@ -44186,13 +43199,6 @@ msgstr ""
 msgctxt "ui"
 msgid "FocusArea"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Fog"
-msgstr "Mgła"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -44290,13 +43296,6 @@ msgctxt "ui"
 msgid "Follow the Rabbit"
 msgstr "Podążaj za Królikiem"
 
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "FollowHer"
-msgstr "IdźZaNią"
-
 #. src: raw:Shader
 msgctxt "ui"
 msgid "Font Atlas"
@@ -44348,13 +43347,6 @@ msgid "Fonts & Materials/LiberationSans SDF - Overlay"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Food"
-msgstr "Jedzenie"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Food Roll"
 msgstr "Rolka jedzenia"
@@ -44363,13 +43355,6 @@ msgstr "Rolka jedzenia"
 msgctxt "ui"
 msgid "Food Roll Shadow"
 msgstr "Cień rolki jedzenia"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Footer"
-msgstr "Stopka"
 
 #. src: field:m_Name
 msgctxt "ui"
@@ -44576,13 +43561,6 @@ msgid "Forced use! Only using this room..."
 msgstr "Użycie wymuszone! Używanie tylko tego pokoju..."
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Foreground"
-msgstr "Pierwszy plan"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Foreground Animation"
 msgstr ""
@@ -44653,13 +43631,6 @@ msgid "Forgot that Klark is next to her, bit spooked by him speaking up."
 msgstr "Zapomniała, że Klark stoi obok niej, trochę spłoszona, że się odezwał."
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Forground"
-msgstr "Pierwszy plan"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Forground Elements"
 msgstr "Elementy pierwszego planu"
@@ -44668,13 +43639,6 @@ msgstr "Elementy pierwszego planu"
 msgctxt "ui"
 msgid "Forground Pole"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Fork"
-msgstr "Widelec"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -44750,13 +43714,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Foxy Cat Outfit Top"
 msgstr ""
-
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Frame"
-msgstr "Ramka"
 
 #. src: us
 msgctxt "ui"
@@ -45255,27 +44212,6 @@ msgctxt "ui"
 msgid "Furline Advertisement"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Furnishung"
-msgstr "Umeblowanie"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Furniture"
-msgstr "Meble"
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Furry"
-msgstr "Futrzak"
-
 #. src: raw:AnimatorController
 msgctxt "ui"
 msgid "Furry Switch7"
@@ -45693,27 +44629,6 @@ msgid "GameObjects Per Frame"
 msgstr "Obiektów na klatkę"
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "GameOver"
-msgstr "KoniecGry"
-
-#. src: raw:AnimationClip
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "GameOverAnim"
-msgstr "AnimacjaKońcaGry"
-
-#. src: raw:AnimatorController
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "GameOverCanvas"
-msgstr "PłótnoKońcaGry"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "GameOverUI - Slutbox Variant"
 msgstr ""
@@ -45722,20 +44637,6 @@ msgstr ""
 msgctxt "ui"
 msgid "GameOverUI - Suitcase Variant Variant"
 msgstr "UI końca gry - Wariant walizki Wariant"
-
-#. src: raw:AnimationClip
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "GameOver_Idle"
-msgstr "KoniecGry_Bezczynność"
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "GameOverx"
-msgstr "KoniecGryx"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -45766,13 +44667,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Garage door"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Gas"
-msgstr "Gaz"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -45879,13 +44773,6 @@ msgctxt "ui"
 msgid "GasRoom 1 PipeRattle 1"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Gate"
-msgstr "Brama"
-
 #. src: raw:Shader
 msgctxt "ui"
 msgid "Gaussian Depth Of Field Blur Horizontal"
@@ -45971,13 +44858,6 @@ msgstr "Generowanie ukończone! Ukończono w"
 msgctxt "ui"
 msgid "Generation took longer than max allowed time! Stopping generation..."
 msgstr "Generowanie przekroczyło maks. czas! Zatrzymywanie..."
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Generator"
-msgstr "Generator"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -46585,13 +45465,6 @@ msgid "Glad to see you back and excited to take another order from your favorite
 msgstr "Miło cię znowu widzieć i nie mogę się doczekać kolejnego zamówienia od twojego ulubionego klienta, eheheh."
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Glass"
-msgstr "Szkło"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Glass Breaking"
 msgstr ""
@@ -46605,20 +45478,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Glass Shattered"
 msgstr "Rozbite szkło"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Glasses"
-msgstr "Okulary"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Glint"
-msgstr "Błysk"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -46729,13 +45588,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Glove"
 msgstr "Rękawica"
-
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Glow"
-msgstr "Blask"
 
 #. src: raw:Shader
 msgctxt "ui"
@@ -46972,13 +45824,6 @@ msgstr "Glowing Zoey - Doggy"
 msgctxt "ui"
 msgid "Glowing Zoey - Enforcer M"
 msgstr ""
-
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "GlowingHole"
-msgstr "GlowingHole"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -47941,13 +46786,6 @@ msgctxt "ui"
 msgid "Grab your things from the locker"
 msgstr "Zabierz swoje rzeczy z szafki"
 
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Grabbed"
-msgstr "Złapano"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Grabby Hands"
@@ -48117,13 +46955,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Green sign check"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Greenlight"
-msgstr "Greenlight"
 
 #. src: dialog
 msgctxt "ui"
@@ -48344,13 +47175,6 @@ msgstr "Macanie nagle przechodzi na cycki"
 msgctxt "ui"
 msgid "Groping suddenly stopped"
 msgstr "Macanie nagle ustało"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Ground"
-msgstr "Ground"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -48716,13 +47540,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Ground test"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "GroundFloor"
-msgstr "GroundFloor"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49512,13 +48329,6 @@ msgid "Halloween Gargirl Shadow"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Hallway"
-msgstr "Hallway"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Hallway 101 Sign"
 msgstr "Hallway 101 Sign"
@@ -49597,13 +48407,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Hallway_Neighbors 2_loop"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Hallways"
-msgstr "Hallways"
 
 #. src: raw:Shader
 msgctxt "ui"
@@ -50435,13 +49238,6 @@ msgid "Hear us and do what, hm?"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Heart"
-msgstr "Heart"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Heart Image"
 msgstr ""
@@ -50490,13 +49286,6 @@ msgstr "Niech niebiosa bronią! Ta przeklęta Klaudia zabroniła mi wchodzić do
 msgctxt "speaker:Zoey"
 msgid "Heavy sigh. You're really reluctant to talk."
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Heels"
-msgstr "Heels"
 
 #. src: field:m_Name
 msgctxt "ui"
@@ -51974,13 +50763,6 @@ msgctxt "ui"
 msgid "Hickeys"
 msgstr "Malinki"
 
-#. src: raw:AnimationClip
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Hidden"
-msgstr "Ukryte"
-
 #. src: us
 msgctxt "ui"
 msgid "Hidden Achievement"
@@ -52320,13 +51102,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Highlight item and wait for use"
 msgstr "Zaznacz przedmiot i czekaj na użycie"
-
-#. src: raw:AnimatorController
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "Highlight_Show"
-msgstr "Highlight_Show"
 
 #. src: raw:AnimatorController
 msgctxt "ui"
@@ -52737,24 +51512,10 @@ msgctxt "ui"
 msgid "Holo Pumpkins for after quest"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Holo-plant"
-msgstr "Holo-roślina"
-
 #. src: dialog
 msgctxt "ui"
 msgid "Holo-plant. No photosynthesis, only photons."
 msgstr "Holo-roślina. Bez fotosyntezy, tylko fotony."
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Holo-poster"
-msgstr "Holo-plakat"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -52795,20 +51556,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Holocobweb 9"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Hologal"
-msgstr "Holo-laska"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Hologram"
-msgstr "Hologram"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -52909,13 +51656,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Holopumpkin No Carving"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Holoscreen"
-msgstr "Holoekran"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -53018,13 +51758,6 @@ msgstr "Mam nadzieję, że jeszcze cię złapię, słodziaku!"
 msgctxt "speaker:Rosie"
 msgid "Hope to see you again soon."
 msgstr "Do zobaczenia wkrótce."
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Horizontal"
-msgstr "Poziomo"
 
 #. src: raw:Shader
 msgctxt "ui"
@@ -53135,20 +51868,6 @@ msgstr ""
 msgctxt "ui"
 msgid "HornyHUD Horizontal Offset"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "HornyLimiter"
-msgstr "HornyLimiter"
-
-#. src: raw:GameObject
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "HornyVignette"
-msgstr "HornyVignette"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -53491,13 +52210,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Html Log"
 msgstr "Log HTML"
-
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Hue"
-msgstr "Odcień"
 
 #. src: raw:Shader
 msgctxt "ui"
@@ -56073,13 +54785,6 @@ msgctxt "ui"
 msgid "I?fff?"
 msgstr ""
 
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "IA,"
-msgstr "SI,"
-
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "IE_MunCH RA"
@@ -56422,13 +55127,6 @@ msgctxt "ui"
 msgid "Immediate Continue"
 msgstr ""
 
-#. src: raw:VisualEffect
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Impact"
-msgstr "Uderzenie"
-
 #. src: raw:AudioClip
 msgctxt "ui"
 msgid "Impact 0"
@@ -56692,13 +55390,6 @@ msgctxt "ui"
 msgid "Initial state"
 msgstr ""
 
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "InitialYank"
-msgstr "InitialYank"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Initialization finished"
@@ -56784,13 +55475,6 @@ msgctxt "ui"
 msgid "Inlay"
 msgstr "Wkładka"
 
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Inner"
-msgstr "Wewnętrzne"
-
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Inner Locker Bootom Space"
@@ -56860,13 +55544,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Insecure, maybe even whispering?#"
 msgstr ""
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Insert"
-msgstr "Włóż"
 
 #. src: us
 msgctxt "ui"
@@ -56988,13 +55665,6 @@ msgctxt "ui"
 msgid "Instantly start Work"
 msgstr ""
 
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Intensity"
-msgstr "Intensywność"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Interact"
@@ -57059,13 +55729,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Interacted with Rosie"
 msgstr "Interakcja z Rosie"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Interaction"
-msgstr "Interakcja"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -58710,24 +57373,10 @@ msgctxt "ui"
 msgid "JOURNAL"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Jacket"
-msgstr "Kurtka"
-
 #. src: field:m_Name
 msgctxt "ui"
 msgid "Jacket Preview"
 msgstr "Podgląd kurtki"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Jacuzzi"
-msgstr "Jacuzzi"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -58974,13 +57623,6 @@ msgctxt "ui"
 msgid "Jane Doe"
 msgstr ""
 
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "January_Presets"
-msgstr "January_Presets"
-
 #. src: us
 msgctxt "ui"
 msgid "Japanese Machine Translated / 日本の機械翻訳"
@@ -58990,13 +57632,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Jaron"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Jasmine"
-msgstr "Jasmine"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59227,13 +57862,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Journal room 2"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Journals"
-msgstr "Dzienniki"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -59755,13 +58383,6 @@ msgid "Kendrick"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Ketchup"
-msgstr "Keczup"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Ketchup Shadow"
 msgstr ""
@@ -60089,13 +58710,6 @@ msgctxt "ui"
 msgid "King Bob Dole"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Kitchen"
-msgstr "Kuchnia"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Kitchen 1"
@@ -60240,13 +58854,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Kitty Top"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Klark"
-msgstr "Klark"
 
 #. src: dialog
 msgctxt "speaker-name"
@@ -61411,20 +60018,6 @@ msgctxt "ui"
 msgid "Left/Right_Side"
 msgstr ""
 
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "LeftArm"
-msgstr "LeftArm"
-
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "LeftLeg"
-msgstr "LeftLeg"
-
 #. src: raw:AnimatorController
 msgctxt "ui"
 msgid "Leg Grope"
@@ -62334,27 +60927,6 @@ msgctxt "ui"
 msgid "Lied"
 msgstr ""
 
-#. src: raw:VisualEffect
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Lifetime"
-msgstr "Czas życia"
-
-#. src: raw:VisualEffectAsset
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Lifetime:"
-msgstr "Czas życia:"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Light"
-msgstr "Światło"
-
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Light 2D"
@@ -62679,13 +61251,6 @@ msgstr "Jaśniejszy kolor"
 msgctxt "ui"
 msgid "Lightning"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Lights"
-msgstr "Światła"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -63109,13 +61674,6 @@ msgstr "Wybór łącza"
 msgctxt "ui"
 msgid "Link selected to Unity's hierarchy window"
 msgstr "Połącz zaznaczenie z oknem hierarchii Unity"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Links"
-msgstr "Odnośniki"
 
 #. src: dialog
 msgctxt "speaker-name"
@@ -63588,13 +62146,6 @@ msgid "LiosCap Shadow"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Lipstick"
-msgstr "Szminka"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Lipstick 2"
 msgstr "Szminka 2"
@@ -63906,13 +62457,6 @@ msgctxt "ui"
 msgid "Listen, pal. You know the old saying, a picture's worth a thousand words? Well she's a fuckin' poet."
 msgstr "Słuchaj, kolego. Znasz powiedzenie, że jeden obraz wart tysiąca słów? No to ona jest pieprzoną poetką."
 
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Lit"
-msgstr "Zapalone"
-
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Lit Shine"
@@ -64007,13 +62551,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Load Save File"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "LoadLatestSave"
-msgstr "Wczytaj ostatni zapis"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -64226,13 +62763,6 @@ msgid "Locked State Visuals"
 msgstr "Wizualizacja stanu zamknięcia"
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Locker"
-msgstr "Szafka"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Locker 2"
 msgstr ""
@@ -64343,23 +62873,9 @@ msgid "Locks"
 msgstr "Zamki"
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Logic"
-msgstr "Logika"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Logic and Container"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Logo"
-msgstr "Logo"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -64375,13 +62891,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Logo - Furline Ad"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Logs"
-msgstr "Dzienniki"
 
 #. src: us
 msgctxt "ui"
@@ -65140,13 +63649,6 @@ msgid "Lowpassed VA"
 msgstr "VA z filtrem dolnoprzepustowym"
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Lube"
-msgstr "Lubrykant"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Lube LED"
 msgstr ""
@@ -65312,13 +63814,6 @@ msgid "Lute, The Lightning Dragon"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Luxus"
-msgstr "Luxus"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Luxus Bed"
 msgstr "Łóżko Luxus"
@@ -65332,13 +63827,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Luxus Bottle Shadow"
 msgstr ""
-
-#. src: raw:AnimationClip
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "LvlUpMove"
-msgstr "LvlUpMove"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -65731,23 +64219,9 @@ msgid "Main View"
 msgstr ""
 
 #. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "MainMenu"
-msgstr "Menu główne"
-
-#. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "MainMenuZoeySpine, Assembly-CSharp"
 msgstr ""
-
-#. src: raw:AudioMixerController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "MainMusic"
-msgstr "Główna muzyka"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -66197,13 +64671,6 @@ msgid "March 2026"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Mark"
-msgstr "Znak"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Mark Enabler"
 msgstr "Aktywator znaku"
@@ -66432,13 +64899,6 @@ msgstr "Cień ręcznika do masażu 4"
 msgctxt "ui"
 msgid "Massage chair? Didn't you use that one already?"
 msgstr "Fotel do masażu? Nie używałaś już tamtego?"
-
-#. src: raw:AudioMixerController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Master"
-msgstr "Główny"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67555,23 +66015,9 @@ msgid "Michael Myers"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Microwave"
-msgstr "Kuchenka mikrofalowa"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Microwave Shadow"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Middle"
-msgstr "Środek"
 
 #. src: field:m_Name
 msgctxt "ui"
@@ -67632,20 +66078,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Milestone10"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Milestones"
-msgstr "Kamienie milowe"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Milk"
-msgstr "Mleko"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -68053,13 +66485,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Mix of annoyed and insecure."
 msgstr "Mieszanka zirytowania i niepewności."
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Mixer"
-msgstr "Mikser"
 
 #. src: dialog
 msgctxt "ui"
@@ -68654,13 +67079,6 @@ msgctxt "ui"
 msgid "Mo Jenkins"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Moaning"
-msgstr "Jęczenie"
-
 #. src: dialog
 msgctxt "ui"
 msgid "Moaning louder now"
@@ -68886,13 +67304,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Moustache 1"
 msgstr ""
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Mouth"
-msgstr "Usta"
 
 #. src: raw:AnimatorController
 msgctxt "ui"
@@ -69499,13 +67910,6 @@ msgctxt "ui"
 msgid "Murseli"
 msgstr ""
 
-#. src: raw:AudioMixerController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Music"
-msgstr "Muzyka"
-
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Music Ducker"
@@ -69605,13 +68009,6 @@ msgstr "MusicToPlay"
 msgctxt "ui"
 msgid "Must be the Itch. Hehe, feels like being a hormonal teen in college again. Sorry for bringing it up again, if you don't-"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Mustard"
-msgstr "Musztarda"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -69829,13 +68226,6 @@ msgstr ""
 msgctxt "speaker:Zoey"
 msgid "My... bio-signature?"
 msgstr "Moja... bio-sygnatura?"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Mynx"
-msgstr "Mynx"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -71105,13 +69495,6 @@ msgctxt "ui"
 msgid "NaN Catcher"
 msgstr ""
 
-#. src: raw:AnimationClip
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Naa"
-msgstr "Niee"
-
 #. src: dialog
 msgctxt "speaker:Man"
 msgid "Nah, no but. I'm more of a tits man anyway."
@@ -71427,13 +69810,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Neck Port Active"
 msgstr ""
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Necktie"
-msgstr "Krawat"
 
 #. src: dialog
 msgctxt "ui"
@@ -73153,13 +71529,6 @@ msgid "Not yet..."
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Note"
-msgstr "Notatka"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Note - Only in Intro"
 msgstr "Note - Only in Intro"
@@ -73213,13 +71582,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Notice walk close with Bodywriting Dialogue"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "NotifPanel"
-msgstr "NotifPanel"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -74296,13 +72658,6 @@ msgctxt "ui"
 msgid "Ocular Nerve Poster"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Odl"
-msgstr "Odl"
-
 #. src: dialog
 msgctxt "ui"
 msgid "Of course I know Rungar. He's a big tipper and that's not the only big thing about him, ehehe!"
@@ -74508,20 +72863,6 @@ msgstr "Zaproponuj 20"
 msgctxt "ui"
 msgid "Office Cameras"
 msgstr "Kamery biurowe"
-
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Offset"
-msgstr "Przesunięcie"
-
-#. src: raw:Transform
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Ogt"
-msgstr "Ogt"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -75977,13 +74318,6 @@ msgctxt "ui"
 msgid "On use while locked"
 msgstr ""
 
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "OnAccepted"
-msgstr "OnAccepted"
-
 #. src: field:fsm
 msgctxt "ui"
 msgid "OnAnyLatchUnlocked"
@@ -76479,13 +74813,6 @@ msgctxt "ui"
 msgid "Open your inventory to drink the cocktail!"
 msgstr "Otwórz ekwipunek, żeby wypić koktajl!"
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Opened"
-msgstr "Otwarte"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Opi"
@@ -76510,13 +74837,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Option C"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Optional"
-msgstr "Opcjonalne"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -76903,13 +75223,6 @@ msgctxt "ui"
 msgid "Ori"
 msgstr ""
 
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Ork"
-msgstr "Ork"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Osandran"
@@ -77165,13 +75478,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Outside_Trash_PlasticBag_2 1"
 msgstr "Outside_Trash_PlasticBag_2 1"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Oven"
-msgstr "Piekarnik"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -78476,13 +76782,6 @@ msgctxt "ui"
 msgid "Phew, you got it."
 msgstr "Uff, masz to."
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Phone"
-msgstr "Telefon"
-
 #. src: field:Name
 msgctxt "ui"
 msgid "Phone Camera"
@@ -78828,13 +77127,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Pillow Right"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Pillows"
-msgstr "Poduszki"
 
 #. src: us
 msgctxt "ui"
@@ -79370,13 +77662,6 @@ msgstr "Ton"
 msgctxt "ui"
 msgid "Piviot Front"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Pivot"
-msgstr "Oś obrotu"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -80991,13 +79276,6 @@ msgctxt "speaker:Trov"
 msgid "Playing stupid, huh? 10 bucks if you bend over and let me get a good look at your ass, waitress."
 msgstr "Zgrywasz głupią, co? 10 dolców, jeśli się schylisz i dasz mi się dobrze przyjrzeć twojej dupie, kelnerko."
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Playmaker"
-msgstr "Playmaker"
-
 #. src: us
 # legacy: text vanished from POT, kept for runtime lookup
 #, legacy
@@ -81678,13 +79956,6 @@ msgctxt "ui"
 msgid "Powdered soap"
 msgstr ""
 
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Power"
-msgstr "Moc"
-
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Power Box"
@@ -81930,13 +80201,6 @@ msgctxt "ui"
 msgid "Printer Cable"
 msgstr ""
 
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Printing"
-msgstr "Drukowanie"
-
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Printing Sequence"
@@ -82165,13 +80429,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Pubes on Zoeys Face"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Puddles"
-msgstr "Kałuże"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -83123,13 +81380,6 @@ msgid "Rail End Top"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Railing"
-msgstr "Balustrada"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Railing FakeLight"
 msgstr ""
@@ -83293,20 +81543,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Rat out cutsceneTimeline"
 msgstr ""
-
-#. src: raw:VisualEffect
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Rate"
-msgstr "Tempo"
-
-#. src: raw:VisualEffectAsset
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Rate'"
-msgstr "Tempo'"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -83615,13 +81851,6 @@ msgctxt "ui"
 msgid "Receiver"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Reception"
-msgstr "Recepcja"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Recieved Calliach Task"
@@ -83631,13 +81860,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Record Equipment"
 msgstr "Sprzęt do nagrywania"
-
-#. src: raw:AnimationClip
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Recorded"
-msgstr "Nagrano"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -83733,13 +81955,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Red sign"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "RedClone"
-msgstr "RedClone"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -83865,13 +82080,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Refractive Pores"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Refrigerator"
-msgstr "Lodówka"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -84017,13 +82225,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Remind to meet Nova"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Remote"
-msgstr "Pilot"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -84942,13 +83143,6 @@ msgctxt "ui"
 msgid "Restrict things"
 msgstr ""
 
-#. src: raw:ComputeShader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Result"
-msgstr "Wynik"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Resume"
@@ -85490,20 +83684,6 @@ msgstr "Prawda? Mówiłam ci. Ale poczekaj, aż zacznie się prawdziwy masaż."
 msgctxt "ui"
 msgid "Right? Oh, you'd be surprised how many people walk in here without even reading the sign."
 msgstr "Prawda? Zdziwiłabyś się, ilu ludzi tu wchodzi, nawet nie czytając szyldu."
-
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "RightArm"
-msgstr "Prawe ramię"
-
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "RightLeg"
-msgstr "Prawa noga"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -86138,13 +84318,6 @@ msgid "RoomGenerator: Could not find room ID: '"
 msgstr "RoomGenerator: Nie znaleziono ID pokoju: '"
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Rooms"
-msgstr "Pokoje"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Rooms 101-105"
 msgstr "Pokoje 101-105"
@@ -86504,13 +84677,6 @@ msgstr "Specjał Rosie"
 msgctxt "ui"
 msgid "Rotate to door"
 msgstr ""
-
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Rotation"
-msgstr "Obrót"
 
 #. src: raw:AnimatorController
 msgctxt "ui"
@@ -87040,13 +85206,6 @@ msgctxt "ui"
 msgid "STOP FLASHING"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "SUBMIT"
-msgstr "ZATWIERDŹ"
-
 #. src: field:m_Name
 msgctxt "ui"
 msgid "SUITCASE"
@@ -87081,13 +85240,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Safe and sound."
 msgstr "Cała i zdrowa."
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Safety"
-msgstr "Bezpieczeństwo"
 
 #. src: dialog
 msgctxt "speaker-name"
@@ -87570,13 +85722,6 @@ msgctxt "ui"
 msgid "Satin skirt"
 msgstr "Satynowa spódnica"
 
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Saturation"
-msgstr "Nasycenie"
-
 #. src: raw:GameObject
 msgctxt "ui"
 msgid "Sauce 1"
@@ -87636,13 +85781,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Save up for a new model"
 msgstr "Zbieraj na nowy model"
-
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "SaveFileName"
-msgstr "SaveFileName"
 
 #. src: dialog
 msgctxt "speaker-name"
@@ -87737,13 +85875,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Scaffolding Wind Loop"
 msgstr ""
-
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Scale"
-msgstr "Skala"
 
 #. src: raw:Shader
 msgctxt "ui"
@@ -87915,13 +86046,6 @@ msgctxt "ui"
 msgid "Screen: ####x####@##Hz"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Screens"
-msgstr "Ekrany"
-
 #. src: dialog
 msgctxt "ui"
 msgid "Screw 'em."
@@ -88021,13 +86145,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Search the backroom"
 msgstr ""
-
-#. src: raw:AnimationClip
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Searchlight"
-msgstr "Reflektor"
 
 #. src: settings
 msgctxt "ui"
@@ -88138,13 +86255,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Secret admirer? Well, how exciting! Why didn't they come lookin' for me themselves?"
 msgstr "Tajemniczy wielbiciel? Ależ ekscytujące! Czemu sam mnie nie poszukał?"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Security"
-msgstr "Ochrona"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -88379,20 +86489,6 @@ msgstr "Sentinel Type - BigNoodleTooOblique SDF_NoOutline"
 msgctxt "ui"
 msgid "Sentinel Type - BigNoodleTooOblique SDF_Outline"
 msgstr "Sentinel Type - BigNoodleTooOblique SDF_Outline"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Seperator"
-msgstr "Separator"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Seperators"
-msgstr "Separatory"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -89479,13 +87575,6 @@ msgctxt "ui"
 msgid "Seven"
 msgstr ""
 
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Sex"
-msgstr "Seks"
-
 #. src: us
 msgctxt "ui"
 msgid "Sex Addict"
@@ -90383,13 +88472,6 @@ msgid "Shadow but no casting"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Shadowcaster"
-msgstr "Rzucający cień"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Shadowcaster 2"
 msgstr ""
@@ -90792,13 +88874,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Shine White"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Shirt"
-msgstr "Koszula"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -91381,13 +89456,6 @@ msgid "Showeing Lady Pathfinding Target"
 msgstr "Cel ścieżki Pani"
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Shower"
-msgstr "Prysznic"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Shower Back Tiles"
 msgstr ""
@@ -91687,13 +89755,6 @@ msgstr "Złowrogi"
 msgctxt "ui"
 msgid "Sinister, Satisfied with the answer"
 msgstr "Złowrogi, zadowolony z odpowiedzi"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Sink"
-msgstr "Zlew"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -92617,13 +90678,6 @@ msgctxt "ui"
 msgid "Snapping out of the trance"
 msgstr "Wyrywa się z transu"
 
-#. src: raw:AudioMixerController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Snapshot"
-msgstr "Migawka"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Sneaker"
@@ -92977,13 +91031,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Soaked"
 msgstr "Przemoczony"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Soap"
-msgstr "Mydło"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -93457,13 +91504,6 @@ msgid "SoundList was empty when trying to play a random sound."
 msgstr ""
 
 #. src: raw:AudioMixerController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Sounds"
-msgstr "Dźwięki"
-
-#. src: raw:AudioMixerController
 msgctxt "ui"
 msgid "Sounds Ducker"
 msgstr "Wyciszanie dźwięków"
@@ -93706,13 +91746,6 @@ msgctxt "speaker:Enforcer"
 msgid "Speak up. Use your words."
 msgstr "Mów głośno. Używaj słów."
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Speaker"
-msgstr "Głośnik"
-
 #. src: raw:AnimationClip
 msgctxt "ui"
 msgid "Speaker Bouncing"
@@ -93807,13 +91840,6 @@ msgstr "Przyspiesz Zoey"
 msgctxt "ui"
 msgid "Speed change Finished"
 msgstr "Zmiana prędkości zakończona"
-
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Speeda"
-msgstr "Speeda"
 
 #. src: raw:AnimationClip
 msgctxt "ui"
@@ -93971,13 +91997,6 @@ msgid "SpineSlotColor"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Spiral"
-msgstr "Spirala"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Spiral Parent"
 msgstr "Nadrzędna spirala"
@@ -94042,13 +92061,6 @@ msgctxt "ui"
 msgid "Split Screen Separator"
 msgstr "Separator podzielonego ekranu"
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Sponge"
-msgstr "Gąbka"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Spooks"
@@ -94074,20 +92086,6 @@ msgctxt "ui"
 msgid "Spot3"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Spotlight"
-msgstr "Reflektor"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Spotlights"
-msgstr "Reflektory"
-
 #. src: field:m_Name
 msgctxt "ui"
 msgid "Spraks Right Parent"
@@ -94112,13 +92110,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Sprint"
 msgstr ""
-
-#. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Sprite"
-msgstr "Sprite"
 
 #. src: raw:Material
 msgctxt "ui"
@@ -94295,13 +92286,6 @@ msgctxt "ui"
 msgid "Sprites/Default"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Sprties"
-msgstr "Sprity"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Spying on Bunny Boy and Client"
@@ -94422,13 +92406,6 @@ msgstr "Podłoga zaplecza"
 msgctxt "ui"
 msgid "Staffroom Shadow Chair"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Stage"
-msgstr "Scena"
 
 #. src: us
 msgctxt "ui"
@@ -95064,13 +93041,6 @@ msgctxt "ui"
 msgid "Stat Name"
 msgstr ""
 
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "State"
-msgstr "Stan"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 1"
@@ -95393,13 +93363,6 @@ msgctxt "ui"
 msgid "Stockings"
 msgstr "Pończochy"
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Stools"
-msgstr "Stołki"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Stop"
@@ -95499,13 +93462,6 @@ msgstr "Magazyn"
 msgctxt "ui"
 msgid "Store Result is of the wrong type.\nIt should be of type:"
 msgstr "Store Result ma zły typ.\nPowinien być typu:"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Stove"
-msgstr "Kuchenka"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -95693,13 +93649,6 @@ msgid "Strip, play anim and 2nd dialogue"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Stripe"
-msgstr "Pasek"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Stripe Lower Left"
 msgstr ""
@@ -95748,13 +93697,6 @@ msgstr "Wyłączony sprzęt w paski"
 msgctxt "ui"
 msgid "Stripn't characters"
 msgstr "Nie rozbieraj postaci"
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Stroke"
-msgstr "Głaskanie"
 
 #. src: dialog
 msgctxt "ui"
@@ -95891,13 +93833,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Submit Event 2"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Subtitle"
-msgstr "Podtytuł"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -96807,13 +94742,6 @@ msgid "Swap Kitty"
 msgstr ""
 
 #. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Sweat"
-msgstr "Pot"
-
-#. src: raw:AnimatorController
 msgctxt "ui"
 msgid "Sweat Customer"
 msgstr ""
@@ -97385,20 +95313,6 @@ msgid "TabMenu Limb Effect UI"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "TabOpener"
-msgstr "TabOpener"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Table"
-msgstr "Stół"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Table 1"
 msgstr "Stół 1"
@@ -97557,13 +95471,6 @@ msgstr "Table_Staffroom 1"
 msgctxt "ui"
 msgid "Tables and Seating Area"
 msgstr "Stoły i strefa siedzeń"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Tablet"
-msgstr "Tablet"
 
 #. src: raw:AnimatorController
 msgctxt "ui"
@@ -97791,13 +95698,6 @@ msgctxt "ui"
 msgid "Take your... hmmnff! ... time."
 msgstr ""
 
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "TakePicture"
-msgstr "TakePicture"
-
 #. src: dialog
 msgctxt "ui"
 msgid "Taken by surprise by the reaction of the customer. Didn't think about *why* the customer would want to see her tits until now. Realizing it's because she's hot, which she can't accept but makes her feel good.'"
@@ -97813,13 +95713,6 @@ msgstr "Robienie zdjęcia dziewczynie pod prysznicem"
 msgctxt "speaker:Zoey"
 msgid "Taking a picture of my like... Chest or rear..."
 msgstr "Zdjęcie mojego jakby... Biustu albo tyłka..."
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Talk"
-msgstr "Rozmawiaj"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -98459,13 +96352,6 @@ msgstr "Macka penetruje jej dupę"
 msgctxt "ui"
 msgid "Tentacle thrusts into her pussy.'"
 msgstr "Macka wpycha się w jej cipkę."
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Tentacles"
-msgstr "Macki"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -100961,13 +98847,6 @@ msgid "Timing Helper"
 msgstr ""
 
 #. src: raw:Shader
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Tint"
-msgstr "Odcień"
-
-#. src: raw:Shader
 msgctxt "ui"
 msgid "Tint Black"
 msgstr ""
@@ -101110,13 +98989,6 @@ msgid "Tirno"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Tissue"
-msgstr "Chusteczka"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Tissue 2"
 msgstr "Chusteczka 2"
@@ -101155,13 +99027,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Titan Poster"
 msgstr "Plakat Titana"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Title"
-msgstr "Tytuł"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -101207,13 +99072,6 @@ msgstr ""
 msgctxt "ui"
 msgid "To level"
 msgstr ""
-
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "ToCallOnUse"
-msgstr "ToCallOnUse"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -101577,20 +99435,6 @@ msgid "TopRight"
 msgstr "TopRight"
 
 #. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "Top_Dry"
-msgstr "Top_Dry"
-
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "Top_Wet"
-msgstr "Top_Wet"
-
-#. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Topless dialogue"
 msgstr ""
@@ -101634,13 +99478,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Touchscreen was pressed!"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Towel"
-msgstr "Ręcznik"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -102469,20 +100306,6 @@ msgctxt "ui"
 msgid "Transition to train"
 msgstr ""
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Transitions"
-msgstr "Przejścia"
-
-#. src: raw:Material
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Transparent"
-msgstr "Przezroczysty"
-
 #. src: raw:Shader
 msgctxt "ui"
 msgid "Transparent+0"
@@ -102507,13 +100330,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Trapped in the dark"
 msgstr "Uwięziona w ciemności"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Trash"
-msgstr "Śmieci"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -102569,13 +100385,6 @@ msgstr ""
 msgctxt "ui"
 msgid "TravelatorRoom FliesBuzzing_Loop"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Tray"
-msgstr "Taca"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -105702,13 +103511,6 @@ msgid "Upper vent trigger"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "UpperFloor"
-msgstr "UpperFloor"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "UpperLight FakeLight"
 msgstr ""
@@ -105717,13 +103519,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Uppies!"
 msgstr "Do góry!"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Upstairs"
-msgstr "Na górze"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -107128,13 +104923,6 @@ msgctxt "ui"
 msgid "Vagina Stat Image"
 msgstr ""
 
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Vaginal"
-msgstr "Dopochwowy"
-
 #. src: us
 msgctxt "ui"
 msgid "Vaginal Sex"
@@ -107386,13 +105174,6 @@ msgid "VertexOffsetX,"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Vertical"
-msgstr "Pionowy"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Vertical Buttons"
 msgstr ""
@@ -107548,13 +105329,6 @@ msgctxt "ui"
 msgid "Vibe's Jacket"
 msgstr ""
 
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Vibrate"
-msgstr "Wibracja"
-
 #. src: settings
 msgctxt "ui"
 msgid "Vibrate in Dialogue"
@@ -107564,13 +105338,6 @@ msgstr "Wibracje w dialogach"
 msgctxt "ui"
 msgid "Vibrate in Interface"
 msgstr "Wibracje w interfejsie"
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Vibrator"
-msgstr "Wibrator"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -107767,13 +105534,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Visually Give Money"
 msgstr ""
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Visuals"
-msgstr "Efekty wizualne"
 
 #. src: us
 msgctxt "ui"
@@ -108069,13 +105829,6 @@ msgstr ""
 msgctxt "ui"
 msgid "WISHLIST"
 msgstr "LISTA ŻYCZEŃ"
-
-#. src: raw:MonoBehaviour
-#. skip: identifier
-#, skip
-msgctxt "ui"
-msgid "WIshlist"
-msgstr "Lista życzeń"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -109945,13 +107698,6 @@ msgid "Walking, hmmm? Riiight..."
 msgstr "Spacerki, hmmm? Taaak..."
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Walkway"
-msgstr "Kładka"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Wall 2"
 msgstr ""
@@ -110431,20 +108177,6 @@ msgctxt "ui"
 msgid "Wall vertical"
 msgstr "Ściana pionowa"
 
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Wall/Ground"
-msgstr "Ściana/Podłoga"
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Wall_Door"
-msgstr "Wall_Door"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wallpaper"
@@ -110521,13 +108253,6 @@ msgstr "Wskaźnik chęci zamówienia"
 msgctxt "ui"
 msgid "Want to cum... so bad-... nghhh... fuckhh... so hot..."
 msgstr "Chcę dojść... tak bardzo-... nghhh... kurwaa... tak gorąco..."
-
-#. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Wardrobe"
-msgstr "Szafa"
 
 #. src: raw:GameObject
 msgctxt "ui"
@@ -111654,13 +109379,6 @@ msgstr "Mokra cipka"
 msgctxt "ui"
 msgid "Wet Texture Long"
 msgstr ""
-
-#. src: raw:MonoBehaviour
-#. skip: no-word
-#, skip
-msgctxt "ui"
-msgid "Wh-"
-msgstr "C-"
 
 #. src: dialog
 msgctxt "ui"
@@ -113067,23 +110785,9 @@ msgid "Window: ####x####@##Hz[###dpi]"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Windows"
-msgstr "Okna"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Windows/For Jumping Out Intro"
 msgstr "Okna/Do wstępu z wyskokiem"
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Windy"
-msgstr "Wietrznie"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -117364,13 +115068,6 @@ msgid "Zoey_overworld"
 msgstr ""
 
 #. src: raw:GameObject
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Zoeys"
-msgstr "Zoey"
-
-#. src: raw:GameObject
 msgctxt "ui"
 msgid "Zoeys Blocker inside Locker Visually"
 msgstr "Bloker Zoey w szafce wizualnie"
@@ -117514,13 +115211,6 @@ msgstr ""
 msgctxt "ui"
 msgid "Zoom to Top"
 msgstr "Zoom do góry"
-
-#. src: raw:AnimatorController
-#. skip: short-token
-#, skip
-msgctxt "ui"
-msgid "Zoomv"
-msgstr "Zoomv"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -120611,13 +118301,6 @@ msgctxt "ui"
 msgid "t usually get visitors in the shower."
 msgstr "zwykle nie mam gości pod prysznicem."
 
-#. src: raw:MonoBehaviour
-#. skip: no-word
-#, skip
-msgctxt "ui"
-msgid "t ya?"
-msgstr "cię?"
-
 #. src: dialog
 msgctxt "ui"
 msgid "t you see I"
@@ -121113,14 +118796,6 @@ msgctxt "ui"
 msgid "you realized you accidentally made a pun like how i just realized it while writing this"
 msgstr "zorientowałaś się, że przypadkiem zrobiłaś grę słów, tak jak ja, pisząc to"
 
-#. src: dialog
-#. skip: fragment
-#. rich_text: <i>< Like this, hmmm...? I love these nice big tits. Especially when adorable customers like <b>you</b> request them. >
-#, skip
-msgctxt "ui"
-msgid "you request them. >"
-msgstr "poprosisz o nie. >"
-
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "you think you could, uh"
@@ -121130,14 +118805,6 @@ msgstr "myślisz, że mógłbyś, yyy"
 msgctxt "ui"
 msgid "you're watching someone die :)"
 msgstr "oglądasz, jak ktoś umiera :)"
-
-#. src: dialog
-#. skip: fragment
-#. rich_text: <i>< It's all about <b>your</b> comfort, hon. I'll be anything you want me to be. >
-#, skip
-msgctxt "ui"
-msgid "your comfort, hon. I'll be anything you want me to be. >"
-msgstr "twój komfort, skarbie. Będę, kim zechcesz. >"
 
 #. src: us
 msgctxt "ui"

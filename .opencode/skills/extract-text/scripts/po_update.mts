@@ -45,10 +45,16 @@ export interface MergeStats {
   obsolete: number;
   retargeted: number;
   legacyKept: number;
-  /** Ключи POT с `#, skip`: пустых строк в PO не создано (экономия). */
+  /**
+   * Ключи POT с `#, skip`: в PO их нет вовсе (ни пустых, ни переведённых).
+   *
+   * Решение владельца 2026-11-23: инфошум не должен попадать в PO даже как
+   * «уже переведённая» строка. Потери нет: у 2 695 таких строк в `ru` перевод
+   * был либо копией `msgid`, либо транслитерацией мусора (`-APG` → `-АПГ`).
+   */
   skipped: number;
-  /** Ключи POT с `#, skip`, у которых перевод уже был: сохранён и помечен. */
-  skipKept: number;
+  /** Переводы, чей текст в POT остался только под `#, skip`: в PO не перенесены. */
+  skipDropped: number;
 }
 
 /** Ключ каталога PO: пара (msgid, msgctxt), как tuple в Python. */
@@ -113,20 +119,26 @@ export function mergePot(
     retargeted: 0,
     legacyKept: 0,
     skipped: 0,
-    skipKept: 0,
+    skipDropped: 0,
   };
   const merged: MergedEntry[] = [];
 
   /** Ключи POT с `#, skip`: перевод не нужен (решение политики в potgen). */
   const skipIds = new Set<string>();
+  /** Тексты, которые в POT есть ТОЛЬКО как skip (без живого ключа). */
+  const skipTexts = new Set<string>();
   for (const pe of potEntries) {
-    if (pe.msgid && pe.flags.includes("skip")) skipIds.add(keyId(keyOf(pe)));
+    if (pe.msgid && pe.flags.includes("skip")) {
+      skipIds.add(keyId(keyOf(pe)));
+      skipTexts.add(pe.msgid);
+    }
   }
   /** Живые (не skip) записи по тексту: только они — кандидаты ретаргета. */
   const liveByText = new Map<string, PoEntry[]>();
   for (const [text, group] of potByText) {
     const live = group.filter((e) => !skipIds.has(keyId(keyOf(e))));
     if (live.length) liveByText.set(text, live);
+    else skipTexts.add(text);
   }
 
   /** Целевой ключ → (msgstr, translator), спасённые с исчезнувшего ключа. */
@@ -157,24 +169,13 @@ export function mergePot(
     const id = keyId(keyOf(pe));
     const old = poMap.get(id);
 
-    // «Перевод не нужен»: пустую строку в PO не заводим вовсе. Уже
-    // существующий перевод не теряем — сохраняем и держим метку skip.
+    // «Перевод не нужен»: в PO не заводим ни пустую строку, ни «уже
+    // переведённую». Старый перевод такого ключа — копия `msgid` или
+    // транслитерация мусора, терять нечего (замер 2026-11-23: 2 695 строк в
+    // `ru`, 1 382 из них = `msgid`, 1 226 — транслит вроде `-APG` → `-АПГ`).
+    // При выключении правила `po_update` создаст строку заново (pустую).
     if (skipIds.has(id)) {
-      if (!old || !old.msgstr) {
-        stats.skipped += 1;
-        continue;
-      }
-      merged.push({
-        msgid: pe.msgid,
-        msgctxt: pe.msgctxt,
-        msgstr: old.msgstr,
-        refs: [...pe.refs],
-        comments: [...pe.comments],
-        flags: [...old.flags.filter((f) => f !== "auto-normalized" && f !== "skip"), "skip"],
-        translator: [...old.translator],
-      });
-      stats.carried += 1;
-      stats.skipKept += 1;
+      stats.skipped += 1;
       continue;
     }
 
@@ -219,6 +220,12 @@ export function mergePot(
     }
     if (liveByText.has(old.msgid)) {
       // Текст жив под другим ctxt — спасён ретаргетом (или уже заполнен дубль).
+      continue;
+    }
+    if (skipTexts.has(old.msgid)) {
+      // Текст в POT остался только как skip: перевод не нужен (решение
+      // 2026-11-23), в PO его не тянем даже хвостом `legacy`.
+      stats.skipDropped += 1;
       continue;
     }
     const keep = cloneEntry(old);
@@ -358,7 +365,8 @@ export function main(argv: string[]): number {
       `${cli.lang}.po updated: carried=${stats.carried}, new=${stats.new}, ` +
         `obsolete=${stats.obsolete}, retargeted=${stats.retargeted}, ` +
         `legacy_kept=${stats.legacyKept}, skipped=${stats.skipped}, ` +
-        `skip_kept=${stats.skipKept} (backup .bak) [${poPath}]`,
+        `skip_dropped=${stats.skipDropped} ` +
+        `(backup .bak) [${poPath}]`,
     );
     return 0;
   } catch (err) {

@@ -591,18 +591,13 @@ fn skip_записи_не_создают_пустых_строк_в_po() {
 }
 
 #[test]
-fn skip_переведённая_строка_сохраняется_и_помечается() {
+fn skip_переведённая_строка_в_po_не_попадает() {
     let pot = [e_skip("junk", "")];
     let po = [e("junk", "ui", "мусор", &[])];
     let out = merge_pot(&po, &pot, DupRule::Last);
-    assert_eq!(out.merged.len(), 1);
-    assert_eq!(out.merged[0].po.msgstr, "мусор");
-    assert!(out.merged[0].po.flags.contains(&"skip".to_string()));
-    assert_eq!(out.stats.skip_kept, 1);
-    assert_eq!(out.stats.carried, 1);
-    let text = render_merged(&out.merged, &[HEADER.to_string()]);
-    assert!(text.contains("#, skip"), "{text}");
-    assert!(text.contains("msgstr \"мусор\""), "{text}");
+    assert!(out.merged.is_empty(), "инфошум не тянет за собой перевод");
+    assert_eq!(out.stats.skipped, 1);
+    assert_eq!(out.stats.carried, 0);
 }
 
 #[test]
@@ -617,18 +612,21 @@ fn снятый_skip_убирает_метку_из_po() {
         "{:?}",
         out.merged[0].po.flags
     );
-    assert_eq!(out.stats.skip_kept, 0);
+    assert_eq!(out.stats.skipped, 0);
 }
 
 #[test]
-fn перевод_чья_строка_жива_только_под_skip_сохраняется_хвостом() {
-    // Ключ выпал, но текст остался в POT только как skip-запись: перевод не
-    // теряем (рантайм ищет по тексту) — уходит в хвост с флагом legacy.
+fn перевод_под_skip_ключом_не_остаётся_ни_живым_ни_legacy() {
+    // Решение 2026-11-23: skip-ключ не тянет за собой перевод — ни живым,
+    // ни хвостом legacy (старый перевод был копией msgid или транслитом).
     let pot = [e_skip("Gone text", "")];
     let po = [e("Gone text", "speaker:Zoey", "Ушло", &[])];
     let out = merge_pot(&po, &pot, DupRule::Last);
-    assert_eq!(out.merged.len(), 1, "skip-строка в PO не создана");
-    assert_eq!(out.merged[0].po.msgstr, "Ушло");
-    assert!(out.merged[0].po.flags.contains(&"legacy".to_string()));
-    assert_eq!(out.stats.legacy_kept, 1);
+    assert!(out.merged.is_empty(), "skip-ключ не остаётся в PO");
+    assert_eq!(out.stats.skipped, 1, "в POT это одна skip-запись");
+    assert_eq!(
+        out.stats.skip_dropped, 1,
+        "перевод под ней отброшен осознанно"
+    );
+    assert_eq!(out.stats.legacy_kept, 0);
 }
