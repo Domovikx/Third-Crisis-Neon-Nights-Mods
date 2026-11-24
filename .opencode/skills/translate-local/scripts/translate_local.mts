@@ -571,6 +571,9 @@ export function restoreFraming(src: string, tr: string, lang: string): string {
   if (s.endsWith(">") && !out.endsWith(">")) out = `${out} >`;
   const openQuote = lang === "ru" ? "«" : "“";
   const closeQuote = lang === "ru" ? "»" : "”";
+  // Авторские кавычки `< … >` (встречаются в оригинале как «реплика в угловых»).
+  if (/^<\s/.test(s) && !out.startsWith("<")) out = `< ${out}`;
+  if (/\s>$/.test(s) && !out.endsWith(">")) out = `${out} >`;
   if (/^[(（]/.test(s) && !/^[(（]/.test(out)) out = `（${out}`;
   if (/[)）]$/.test(s) && !/[)）]$/.test(out)) out = `${out}）`;
   if (/^["“]/.test(s) && !/^["“«]/.test(out) && !/^[(（]/.test(out)) out = `${openQuote}${out}`;
@@ -628,7 +631,10 @@ export function validate(src: string, tr: string, lang: string): string | null {
   if (isPromptLeak(tr)) return "prompt leak";
   // Гомоглифы: имя Lio превращалось в «Лิโอ» (тайский) и «Лيو» (арабский) в 13
   // строках ru. Для иероглифических языков проверка не применяется.
-  if (LATIN_CYRILLIC_LANGS.has(lang) && hasForeignScript(tr)) return "foreign script";
+  // Смешанный оригинал (например, меню языков: «… / 中文机器翻译») разрешает
+  // чужую письменность в переводе — иначе такая строка не переводится никогда.
+  if (LATIN_CYRILLIC_LANGS.has(lang) && hasForeignScript(tr) && !hasForeignScript(src))
+    return "foreign script";
   return null;
 }
 
@@ -641,7 +647,9 @@ export function validate(src: string, tr: string, lang: string): string | null {
  */
 export function keepsNumbering(src: string, tr: string): boolean {
   if (!/^\d+\s*[.)]\s/.test(tr)) return true;
-  return /^\d+\s*[.)]\s/.test(src);
+  // Перевод может начать с числа, если число есть в оригинале ГДЕ УГОДНО:
+  // «February 18th» → «18. Februar» (2026-11-24, de).
+  return /\d/.test(src) || /^\d+\s*[.)]\s/.test(src);
 }
 
 /**
