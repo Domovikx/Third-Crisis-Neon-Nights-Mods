@@ -261,13 +261,38 @@ const UI_REJECT_NAMES = new Set(["FSM", "FSMs", "GUID", "Data"]);
  * Строгий фильтр от Steamworks/Unity-шума; киберпанк-текст (█ ▓ ▒ ░)
  * остаётся, если проходит шаблоны.
  */
-export function isUiString(s: string): boolean {
+/**
+ * Поля, которые заведомо содержат текст для игрока, а не шум.
+ *
+ * Для них не работают эвристики «длиннее 50 символов» и «точка + заглавная»:
+ * описания одежды/предметов и подсказки галереи — это предложения.
+ * Замер 2026-11-24: 11 `Description` и 5 `UnlockHint` не попадали в POT.
+ */
+const TEXT_FIELDS = new Set([
+  "Description",
+  "UnlockHint",
+  "m_text",
+  "DisplayName",
+  "UseText",
+  "TakenFromInventoryText",
+]);
+
+/**
+ * Метка провенанса для названия предмета: в raw-куче игры оно стоит сразу за
+ * своим id `Apl_<…>`. Метка синтетическая (не имя поля type tree) — она
+ * отличает такие строки от `field:Name`, который политика отбора исключает
+ * как имя объекта/анимации.
+ */
+export const ITEM_NAME_SRC = "field:ItemName";
+
+export function isUiString(s: string, trusted = false): boolean {
   const len = cpLen(s);
   // Границы UI-лейбла: 2..50 code points. Верхняя граница — историческая
   // защита от Steamworks/Unity-шума; цена фиксирована осознанно: описания
   // предметов и квестов длиннее 50 символов в POT не попадают.
   // Список пробелов и приёмка — tasks/2026-11-21-pot-coverage-gaps.md.
-  if (!s || len < 2 || len > 50) return false;
+  if (!s || len < 2) return false;
+  if (len > (trusted ? 500 : 50)) return false;
 
   const chars = [...s];
   // Свойства шейдеров/Unity: подчёркивание + заглавная.
@@ -286,10 +311,11 @@ export function isUiString(s: string): boolean {
   // («Yeah. Looks like it.»). Диалоги это не задевает (они приходят из
   // dialogues/fsm_strings), но raw-строки сцен с точками теряются:
   // ~459 предложений, tasks/2026-11-21-pot-coverage-gaps.md.
-  if (s.includes(".") && [...s.split(".")[0]].slice(0, 5).some(pyIsUpperChar)) return false;
-  if (s.includes("<") || s.includes(">")) return false;
-  if (s.includes("{") || s.includes("}")) return false;
-  if (s.includes("(") && s.includes(")")) return false;
+  if (!trusted && s.includes(".") && [...s.split(".")[0]].slice(0, 5).some(pyIsUpperChar))
+    return false;
+  if (!trusted && (s.includes("<") || s.includes(">"))) return false;
+  if (!trusted && (s.includes("{") || s.includes("}"))) return false;
+  if (!trusted && s.includes("(") && s.includes(")")) return false;
   // Пути и файлы.
   if (s.startsWith("actions/") || s.startsWith("expressions/") || s.startsWith("Textures/")) {
     return false;
@@ -663,7 +689,8 @@ export class DumpScanner {
 
     // Типизированные поля объекта: если raw-скан нашёл значение поля
     // (type tree), провенанс точнее — `field:<ИмяПоля>`, а не `raw:<Type>`.
-    // Индекс строится лениво: он нужен только для прошедших фильтр строк.
+    // Индекс строится один раз на объект: лейбл нужен ДО фильтра, потому что
+    // доверенные текстовые поля (описания, подсказки) не режутся эвристиками.
     const typeName = asString(obj.type) || "unknown";
     let typedFields: Map<string, string> | null = null;
     const labelOf = (text: string): string => {
@@ -674,14 +701,28 @@ export class DumpScanner {
     // Дедуп глобальный (на весь дамп): один и тот же лейбл из разных сцен
     // даёт одну запись. Для перевода это верно (текст один), но `source`
     // останется первым ассетом, где строка встретилась.
-    for (const raw of asArray(obj.raw_strings)) {
+    const rawAll = asArray(obj.raw_strings);
+    for (let i = 0; i < rawAll.length; i += 1) {
+      const raw = rawAll[i];
       if (typeof raw !== "string") continue;
       const s = pyStrip(raw);
       if (!s || local.has(s) || this.uiGlobalSeen.has(s) || s.includes("\u0000")) continue;
-      if (!isUiString(s)) continue;
+      // Название предмета опознаётся СТРУКТУРНО: в базе предметов оно идёт
+      // сразу за своим id `Apl_<…>`. Это факт о данных, а не «похоже на имя»,
+      // поэтому доверяем и скобкам («Leather Skirt (Black)»), и длине.
+      const rawPrev = i > 0 ? rawAll[i - 1] : "";
+      const prev = typeof rawPrev === "string" ? pyStrip(rawPrev) : "";
+      // Только MonoBehaviour: у Sprite в кучу попадают соседние, но чужие строки
+      // (имя атласа, обрывок) — там пара `Apl_` + строка ничего не значит.
+      const itemName = typeName === "MonoBehaviour" && prev.startsWith("Apl_");
+      // Поля с текстом для игрока (описания, подсказки) не режем эвристиками.
+      const label = itemName ? ITEM_NAME_SRC : labelOf(s);
+      const trusted =
+        itemName || (label.startsWith("field:") && TEXT_FIELDS.has(label.slice("field:".length)));
+      if (!isUiString(s, trusted)) continue;
       local.add(s);
       this.uiGlobalSeen.add(s);
-      entries.push({ text: s, src: labelOf(s) });
+      entries.push({ text: s, src: label });
     }
   }
 

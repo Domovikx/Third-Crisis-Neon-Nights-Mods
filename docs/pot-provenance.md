@@ -360,6 +360,17 @@ node scripts/pot_invariants.mts tmp/pot-labels.pot --dump tmp/dump-after
 - `Rosie Placeholder` — `ui`
 - `Skank` — `ui`
 
+### `field:ItemName` — синтетическая метка (2026-11-24)
+
+Не имя поля type tree: так помечается **название предмета**, которое в raw-куче
+игры идёт сразу за своим id `Apl_<…>` (база предметов в `resources`). Правило
+структурное, поэтому скобки и длина не мешают: «Sporty Bra (Black)»,
+«Leather Skirt (Black)» и ещё 60 названий раньше не попадали в POT — их резала
+эвристика `(...)`, а парные копии из бандлов выпадали вместе с исключённым
+`field:Name`. Правило действует только на `MonoBehaviour`: у `Sprite` в кучу
+попадают соседние, но чужие строки (имя атласа, обрывок).
+Замер: `potgen` даёт +79 записей, −0; TS↔Rust байт-в-байт.
+
 ### `field:TakenFromInventoryText` — 1 в POT, проза 0
 
 - `Lost` — `ui`

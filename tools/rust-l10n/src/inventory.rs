@@ -266,13 +266,39 @@ pub fn resolve_named_colors(s: &str, colors: &HashMap<String, String>) -> String
     out
 }
 
+/// Поля, которые заведомо несут текст для игрока, а не шум.
+///
+/// Для них не работают эвристики «длиннее 50 символов», «точка + заглавная» и
+/// скобки: описания одежды/предметов и подсказки галереи — это предложения.
+/// Замер 2026-11-24: 11 `Description` и 5 `UnlockHint` не попадали в POT.
+const TEXT_FIELDS: [&str; 6] = [
+    "Description",
+    "UnlockHint",
+    "m_text",
+    "DisplayName",
+    "UseText",
+    "TakenFromInventoryText",
+];
+
+/// Метка провенанса названия предмета: в raw-куче игры оно стоит сразу за
+/// своим id `Apl_<…>`. Метка синтетическая — отличает такие строки от
+/// `field:Name`, который политика отбора исключает как имя объекта/анимации.
+pub const ITEM_NAME_SRC: &str = "field:ItemName";
+
+/// Мягкая эвристика (см. `is_ui_string_field`).
+pub fn is_ui_string(s: &str) -> bool {
+    is_ui_string_field(s, false)
+}
+
 /// `_is_ui_string`: похоже ли `raw_string` на UI-лейбл (1:1).
 ///
-/// Границы 2..50 code points — историческая защита от Steamworks/Unity-шума;
-/// цена фиксирована осознанно (см. `tasks/2026-11-21-pot-coverage-gaps.md`).
-pub fn is_ui_string(s: &str) -> bool {
+/// Границы 2..50 code points — историческая защита от Steamworks/Unity-шума.
+/// Для доверенных текстовых полей (`TEXT_FIELDS`) потолок 500 и остальные
+/// эвристики не применяются (см. `tasks/2026-11-21-pot-coverage-gaps.md`).
+pub fn is_ui_string_field(s: &str, trusted: bool) -> bool {
     let len = cp_len(s);
-    if s.is_empty() || !(2..=50).contains(&len) {
+    let limit = if trusted { 500 } else { 50 };
+    if s.is_empty() || !(2..=limit).contains(&len) {
         return false;
     }
     let chars: Vec<char> = s.chars().collect();
@@ -332,16 +358,16 @@ pub fn is_ui_string(s: &str) -> bool {
     }
     // C#-имена полей с точками (Namespace.Field, Base Layer.Idle). Эвристика
     // срабатывает на любую строку с точкой и заглавной в первых 5 code points.
-    if s.contains('.') {
+    if !trusted && s.contains('.') {
         let head: Vec<char> = s.split('.').next().unwrap_or("").chars().take(5).collect();
         if head.iter().any(|c| py_is_upper_char(*c)) {
             return false;
         }
     }
-    if s.contains('<') || s.contains('>') || s.contains('{') || s.contains('}') {
+    if !trusted && (s.contains('<') || s.contains('>') || s.contains('{') || s.contains('}')) {
         return false;
     }
-    if s.contains('(') && s.contains(')') {
+    if !trusted && s.contains('(') && s.contains(')') {
         return false;
     }
     // Пути и файлы.
@@ -913,13 +939,14 @@ impl DumpScanner {
                 t
             }
         };
-        // Индекс типизированных полей — только если строка прошла фильтр
-        // (на реальном дампе это экономит разбор `fields` у 99 % объектов).
+        // Индекс типизированных полей строится один раз на объект: лейбл нужен
+        // ДО фильтра (доверенные поля не режутся мягкими эвристиками).
         let mut typed: Option<HashMap<String, String>> = None;
 
         // Дедуп глобальный (на весь дамп): один и тот же лейбл из разных сцен
         // даёт одну запись. Для перевода это верно (текст один).
-        for raw in as_array(row.raw_strings.as_ref()) {
+        let raw_all = as_array(row.raw_strings.as_ref());
+        for (i, raw) in raw_all.iter().enumerate() {
             let Value::String(raw) = raw else {
                 continue;
             };
@@ -931,16 +958,40 @@ impl DumpScanner {
             {
                 continue;
             }
-            if !is_ui_string(s) {
+            // Название предмета опознаётся СТРУКТУРНО: в базе предметов оно идёт
+            // сразу за своим id `Apl_<…>` (не «похоже на имя», а факт о данных),
+            // поэтому доверяем и скобкам («Leather Skirt (Black)»), и длине.
+            let prev = if i > 0 {
+                match &raw_all[i - 1] {
+                    Value::String(v) => py_strip(v),
+                    _ => "",
+                }
+            } else {
+                ""
+            };
+            // Только MonoBehaviour: у Sprite в кучу попадают соседние, но чужие
+            // строки (имя атласа, обрывок) — там пара `Apl_` + строка ничего не значит.
+            let item_name = type_name == "MonoBehaviour" && prev.starts_with("Apl_");
+            // Поля с текстом для игрока (описания, подсказки) не режутся
+            // мягкими эвристиками, поэтому лейбл нужен ДО фильтра.
+            let src = if item_name {
+                ITEM_NAME_SRC.to_string()
+            } else {
+                let index = typed.get_or_insert_with(|| typed_field_index(row));
+                index
+                    .get(s)
+                    .cloned()
+                    .unwrap_or_else(|| format!("raw:{type_name}"))
+            };
+            let trusted = item_name
+                || src
+                    .strip_prefix("field:")
+                    .is_some_and(|f| TEXT_FIELDS.contains(&f));
+            if !is_ui_string_field(s, trusted) {
                 continue;
             }
             local.insert(s.to_string());
             self.ui_global_seen.insert(s.to_string());
-            let index = typed.get_or_insert_with(|| typed_field_index(row));
-            let src = index
-                .get(s)
-                .cloned()
-                .unwrap_or_else(|| format!("raw:{type_name}"));
             entries.push((s.to_string(), src));
         }
     }

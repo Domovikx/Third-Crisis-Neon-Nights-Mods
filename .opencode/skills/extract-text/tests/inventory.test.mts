@@ -483,3 +483,57 @@ test("DumpScanner: бандл — objName, line_ и {json} не становят
     ],
   );
 });
+
+test("DumpScanner: доверенные текстовые поля не режутся правилом 50 символов", () => {
+  // Реальный промах POT (2026-11-24): описания одежды и подсказки галереи —
+  // предложения >50 символов, их отбрасывал `isUiString`. Проверено на дампе:
+  // 11 `Description` + 5 `UnlockHint` не попадали в шаблон.
+  const desc = "Just an old pair of shorts to wear around my apartment.";
+  const scanner = new DumpScanner();
+  addRow(scanner, {
+    asset: "bundle_shorts_assets_all_x",
+    type: "MonoBehaviour",
+    strings: { Description: desc },
+    raw_strings: [desc],
+  });
+  // Длинная строка НЕ из доверенного поля по-прежнему отсекается.
+  const noise = "This line is long enough to be rejected by the fifty character rule.";
+  addRow(scanner, { asset: "level1", type: "TextAsset", raw_strings: [noise] });
+
+  const items = only(scanner.finish().items, "raw");
+  assert.deepEqual(
+    items.map((i) => [i.text, i.src]),
+    [[desc, "field:Description"]],
+  );
+});
+
+test("isUiString: trusted-флаг снимает эвристики длины, точки, скобок и тегов", () => {
+  const desc = "Business up top, party down below. Part of the Hi-Thread casual set.";
+  assert.equal(isUiString(desc), false, "обычная эвристика: >50 символов и точка");
+  assert.equal(isUiString(desc, true), true);
+  assert.equal(isUiString("Have a close look at Rosies breasts.", true), true);
+  // Скобки/угловые скобки в описании — обычная пунктуация, не разметка.
+  assert.equal(isUiString("Found in M31 over the entrance area (north lift).", true), true);
+});
+
+test("DumpScanner: название предмета после `Apl_<id>` не режется скобками", () => {
+  // База предметов: имя стоит сразу за своим id. Правило структурное, поэтому
+  // «Sporty Bra (Black)» снимается как доверенная строка, а не как «похоже на имя».
+  const scanner = new DumpScanner();
+  addRow(scanner, {
+    asset: "resources",
+    type: "MonoBehaviour",
+    raw_strings: ["Apl_Zoey_Underwear_Sporty_Black_Top", "Sporty Bra (Black)", "Use"],
+  });
+  const items = only(scanner.finish().items, "raw");
+  const name = items.find((i) => i.text === "Sporty Bra (Black)");
+  assert.ok(name, "название предмета обязано попасть в инвентарь");
+  assert.equal(name.src, "field:ItemName");
+  // Обычная строка с теми же скобками, но без id-пары, по-прежнему отсекается.
+  scanner.addChunkRow(
+    { asset: "level1", type: "TextAsset", raw_strings: ["Some label (odd)"] },
+    "{}",
+  );
+  const after = only(scanner.finish().items, "raw").filter((i) => i.text === "Some label (odd)");
+  assert.equal(after.length, 0);
+});
