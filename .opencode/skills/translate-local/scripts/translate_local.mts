@@ -561,6 +561,19 @@ export function restoreFraming(src: string, tr: string, lang: string): string {
 }
 
 /**
+ * CJK-пунктуация: многоточие пишется «……», а не тремя точками.
+ *
+ * Модель на zh ставит ASCII `...` внутри китайского текста (2026-11-24: 67 строк).
+ * Правило узкое: только для CJK-языков и только многоточие — запятые/точки
+ * не трогаем, чтобы не ломать латинские вставки.
+ */
+export function normalizePunctuation(tr: string, lang: string): string {
+  if (lang !== "zh" && lang !== "ja") return tr;
+  if (!/[\u4e00-\u9fff]/.test(tr)) return tr;
+  return tr.replace(/\.{3,}/g, "……").replace(/。{3,}/g, "……");
+}
+
+/**
  * Проверка ответа. `null` — ок; строка — причина отказа.
  * Длину НЕ проверяем (AGENTS.md): единственная сверка — смысловая (QA + человек).
  */
@@ -1053,7 +1066,7 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
           const e = sub[k];
           const leak = stripSpeakerLeak(parsed[k]);
           if (leak.leaked) note(`LEAK src=${e.msgid.slice(0, 80)}`);
-          const framed = restoreFraming(e.msgid, leak.clean, lang);
+          const framed = normalizePunctuation(restoreFraming(e.msgid, leak.clean, lang), lang);
           const problem = validate(e.msgid, framed, lang);
           if (problem) {
             note(

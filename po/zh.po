@@ -3194,7 +3194,7 @@ msgstr "（我想……这里可能都见怪不怪了……她大概什么时候
 #. rich_text: <color=#EB83FF><i>(I guess it... it didn't feel all bad, but... )</i></color>
 msgctxt "ui"
 msgid "(I guess it... it didn't feel all bad, but... )"
-msgstr "（我想那...那感觉也并非全都不好，但是...）"
+msgstr "（我想那……那感觉也并非全都不好，但是……）"
 
 #. src: dialog
 #. rich_text: <i>(I guess now I just need to.. )</i>
@@ -4536,13 +4536,13 @@ msgstr "（这真的值得小费吗……？）"
 #. rich_text: <color=#EB83FF><i>(Is this really... okay...?)</i></color>
 msgctxt "speaker:Zoey"
 msgid "(Is this really... okay...?)"
-msgstr "（这样真的...没问题吗...？）"
+msgstr "（这样真的……没问题吗……？）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Is this really... the right job for me...?)</i></color>
 msgctxt "speaker:Zoey"
 msgid "(Is this really... the right job for me...?)"
-msgstr "（这...真的是适合我的工作吗...？）"
+msgstr "（这……真的是适合我的工作吗……？）"
 
 #. src: dialog
 #. rich_text: <i>(Is this-... Part of the passphrase...?!)</i>
@@ -5027,7 +5027,7 @@ msgstr "（只是想……摸一下……所以……）"
 #. rich_text: <color=#EB83FF><i>(Just- one more... hit...)</i></color>
 msgctxt "ui"
 msgid "(Just- one more... hit...)"
-msgstr "（还...再一下...）"
+msgstr "（还……再一下……）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Just-... A peek... )</i></color>
@@ -8041,7 +8041,7 @@ msgstr "（他们都在盯着我——盯着我的——）"
 #. rich_text: <color=#EB83FF><i>(They're all-... staring at-... m-me...?)</i></color>
 msgctxt "ui"
 msgid "(They're all-... staring at-... m-me...?)"
-msgstr "（他们全-...都在盯着-...我-...看...？）"
+msgstr "（他们全-……都在盯着-……我-……看……？）"
 
 # rich_translation: <i><color=#EB83FF>（好硬……）</color></i>
 #. src: dialog
@@ -9451,7 +9451,7 @@ msgstr "..."
 #. src: dialog
 msgctxt "ui"
 msgid "... A-Arf... Arf..."
-msgstr "... 啊——汪……汪……"
+msgstr "…… 啊——汪……汪……"
 
 #. src: dialog
 msgctxt "ui"
@@ -9466,7 +9466,7 @@ msgstr "…但——？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "... Hah..."
-msgstr "... 哈……"
+msgstr "…… 哈……"
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -9497,17 +9497,17 @@ msgstr "…我们约定以后再也不做这种事了吧。"
 #. rich_text: <color=#EB83FF>... M-mhmmm...</color>
 msgctxt "speaker:Zoey"
 msgid "... M-mhmmm..."
-msgstr "...嗯——嗯——"
+msgstr "……嗯——嗯——"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "... Nope."
-msgstr "... 不。"
+msgstr "…… 不。"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "... Please... play with me more... ma'am..."
-msgstr "...求您了...再多陪我玩一会儿...夫人..."
+msgstr "……求您了……再多陪我玩一会儿……夫人……"
 
 #. src: dialog
 msgctxt "ui"
@@ -9562,7 +9562,7 @@ msgstr "…嗯？"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "... Yes? But- You didn't tell me why the spirits are-"
-msgstr "... 嗯？但——你还没告诉我那些灵体是——"
+msgstr "…… 嗯？但——你还没告诉我那些灵体是——"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -9572,7 +9572,7 @@ msgstr "是……还是不是。"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "... upward..."
-msgstr "...向上……"
+msgstr "……向上……"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -9587,12 +9587,12 @@ msgstr "他这么说着，嗯。还装了新摄像头。"
 #. src: dialog
 msgctxt "speaker:Brad"
 msgid "...Did any of my neighbors see you going down there?"
-msgstr "...我邻居里有人看到你下去过吗？"
+msgstr "……我邻居里有人看到你下去过吗？"
 
 #. src: dialog
 msgctxt "ui"
 msgid "...I'm glad."
-msgstr "...真高兴。"
+msgstr "……真高兴。"
 
 #. src: dialog
 msgctxt "ui"
@@ -9607,7 +9607,7 @@ msgstr "对了，谢谢。感谢你之前做的一切……"
 #. src: dialog
 msgctxt "ui"
 msgid "...Thanks, by the way. For yesterday..."
-msgstr "...对了，谢了。昨天那事儿……"
+msgstr "……对了，谢了。昨天那事儿……"
 
 #. src: dialog
 msgctxt "ui"
@@ -10270,7 +10270,7 @@ msgstr "< 像这样，嗯……？我喜欢这对漂亮的大胸。尤其是当�
 #. rich_text: <i>< S-sorry Max, I-... Hhh... I couldn't think clearly, I-... I think I should leave now...
 msgctxt "ui"
 msgid "< S-sorry Max, I-... Hhh... I couldn't think clearly, I-... I think I should leave now..."
-msgstr "<对...对不起，马克斯，我...嗯...我脑子不清醒，我...我想我现在应该走了..."
+msgstr "<对……对不起，马克斯，我……嗯……我脑子不清醒，我……我想我现在应该走了……"
 
 #. src: dialog
 #. rich_text: << Declination processed. Proceeding relocation. >>
@@ -10423,7 +10423,7 @@ msgstr "> 呃啊啊啊啊……我……我……"
 #. rich_text: <i>> Fhahh... ghhh...
 msgctxt "ui"
 msgid "> Fhahh... ghhh..."
-msgstr "> 啊哈... 嗯..."
+msgstr "> 啊哈…… 嗯……"
 
 #. src: dialog
 #. rich_text: <i>> Fhhahhh...! Goddess...! Hahhh...!
@@ -10604,7 +10604,7 @@ msgstr "> 我……我真的很抱歉，夫人！它们太不可思议了！又�
 #. rich_text: <i>> I-... I need more-... stroke my cock!
 msgctxt "ui"
 msgid "> I-... I need more-... stroke my cock!"
-msgstr "> 我...我需要更多...快操我的鸡巴！"
+msgstr "> 我……我需要更多……快操我的鸡巴！"
 
 #. src: dialog
 #. rich_text: <i>> I-... I-... !
@@ -11196,7 +11196,7 @@ msgstr "A-……偷偷看一眼。别的什么也不做……明白吗？"
 #. rich_text: <color=#EB83FF>A-... pleasure...?</color>
 msgctxt "ui"
 msgid "A-... pleasure...?"
-msgstr "快...快乐...？"
+msgstr "快……快乐……？"
 
 #. src: dialog
 msgctxt "ui"
@@ -11254,7 +11254,7 @@ msgstr "不——不要碰我……！"
 #. src: dialog
 msgctxt "speaker:Mira"
 msgid "A-another strawberry...? Would that be- um- like... okay...?"
-msgstr "还...还要一个草莓...？这...这应该...可以吧...？"
+msgstr "还……还要一个草莓……？这……这应该……可以吧……？"
 
 #. src: dialog
 msgctxt "ui"
@@ -12914,7 +12914,7 @@ msgstr "啊——！！该死——！！发光——！求你了——！！我
 #. src: dialog
 msgctxt "ui"
 msgid "Ahh-... Mnhhh...! Yesss..."
-msgstr "啊——...嗯——...！对对对..."
+msgstr "啊——……嗯——……！对对对……"
 
 #. src: dialog
 msgctxt "ui"
@@ -16823,7 +16823,7 @@ msgstr "C-D4 起爆装置"
 #. src: dialog
 msgctxt "speaker:Mira"
 msgid "C-can I tip you...?"
-msgstr "我...我可以给你小费吗？"
+msgstr "我……我可以给你小费吗？"
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -16834,7 +16834,7 @@ msgstr "我……我能不能先给点小费，太太……？"
 #. rich_text: <color=#EB83FF>C-customers are-... w-waiting... s-sir...!</color>
 msgctxt "ui"
 msgid "C-customers are-... w-waiting... s-sir...!"
-msgstr "客-客人们都...等...等着呢...先生...！"
+msgstr "客-客人们都……等……等着呢……先生……！"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19014,7 +19014,7 @@ msgstr "精液……求你了……嗯……！"
 #. rich_text: <color=#EB83FF>Cum-... please...!</color>
 msgctxt "ui"
 msgid "Cum-... please...!"
-msgstr "射...射出来...求你了...！"
+msgstr "射……射出来……求你了……！"
 
 #. src: dialog
 msgctxt "ui"
@@ -20152,7 +20152,7 @@ msgstr "DialogueManager: 正在播放台词："
 #. src: us
 msgctxt "ui"
 msgid "DialogueManager: Skipping..."
-msgstr "对话管理器：跳过..."
+msgstr "对话管理器：跳过……"
 
 #. src: us
 msgctxt "ui"
@@ -25142,7 +25142,7 @@ msgstr "啊——操！我——我想要高潮！高潮，求你了，哦——
 #. src: dialog
 msgctxt "ui"
 msgid "Fhahh...! Hurry...! It- she's not- Ghh-... Letting me out of-"
-msgstr "哈啊...！快...！她——她不是——呃——...让我出去的——"
+msgstr "哈啊……！快……！她——她不是——呃——……让我出去的——"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25210,7 +25210,7 @@ msgstr "啊啊啊……！嗯……！就是这样……！太……太热了…
 #. rich_text: <color=#EB83FF>Fhhhuckk... Hhh...</color>
 msgctxt "ui"
 msgid "Fhhhuckk... Hhh..."
-msgstr "操...嗯..."
+msgstr "操……嗯……"
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -25904,7 +25904,7 @@ msgstr "用于测试"
 #. rich_text: <color=#EB83FF>For the... tip... sir...</color>
 msgctxt "ui"
 msgid "For the... tip... sir..."
-msgstr "关于...那个...技巧...先生..."
+msgstr "关于……那个……技巧……先生……"
 
 #. src: dialog
 msgctxt "ui"
@@ -26447,12 +26447,12 @@ msgstr "该……该死……Fghh……"
 #. rich_text: <color=#EB83FF>G-Glow... Injection...? I... Ngh...!</color>
 msgctxt "ui"
 msgid "G-Glow... Injection...? I... Ngh...!"
-msgstr "光...注射剂...？我...嗯...！"
+msgstr "光……注射剂……？我……嗯……！"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "G-Glow...? But-"
-msgstr "光...？但——"
+msgstr "光……？但——"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -26986,7 +26986,7 @@ msgstr "让他们……喝醉……对……对……"
 #. src: dialog
 msgctxt "ui"
 msgid "Gh-... god wh-... what have I-... done..."
-msgstr "天...天哪...我...我到底干了什么..."
+msgstr "天……天哪……我……我到底干了什么……"
 
 # rich_translation: <b>哈……你看起来……好……性感……！求你，帮帮我……我需要……需要高潮……！</b>
 #. src: dialog
@@ -28280,7 +28280,7 @@ msgstr "嘿嘿……嗯……谢谢。"
 #. rich_text: H-H<color=#EB83FF>hh...</color> H-<color=#EB83FF>He</color>h... Yes pl<color=#EB83FF>ease...</color>
 msgctxt "ui"
 msgid "H-Hhh... H-Heh... Yes please..."
-msgstr "哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈...哈"
+msgstr "哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈……哈"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>H-Hhh... Y-Yes, ma'a-</color>
@@ -30431,7 +30431,7 @@ msgstr "嗯……对……对！"
 #. rich_text: <color=#EB83FF>Hh-... h-huh...?</color>
 msgctxt "ui"
 msgid "Hh-... h-huh...?"
-msgstr "哈...哈？"
+msgstr "哈……哈？"
 
 #. src: dialog
 msgctxt "ui"
@@ -30457,7 +30457,7 @@ msgstr "嗯……谢……谢谢……嗯……我们的房间是……"
 #. src: dialog
 msgctxt "speaker:Woman"
 msgid "Hhh-... Ashley, I can- feel your piercing rub against my- nh-..."
-msgstr "哈——...艾什莉，我感——到你在刺——激我——嗯——..."
+msgstr "哈——……艾什莉，我感——到你在刺——激我——嗯——……"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Hhh-... I-...</color>
@@ -32750,7 +32750,7 @@ msgstr "在你全身都沾满那恶心的安德罗精液之前，我绝不会让
 #. src: dialog
 msgctxt "ui"
 msgid "I won't-... promise, please...! Just a bit... closer..."
-msgstr "我...不会...承诺的，求你了...！就...再靠近一点..."
+msgstr "我……不会……承诺的，求你了……！就……再靠近一点……"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -34420,7 +34420,7 @@ msgstr "在206号房的淋浴间里"
 #. src: dialog
 msgctxt "ui"
 msgid "In the... Way?"
-msgstr "挡...道？"
+msgstr "挡……道？"
 
 #. src: dialog
 msgctxt "ui"
@@ -35935,7 +35935,7 @@ msgstr "没……没关系，我想，亲爱的。你本来就该闭嘴的。不
 #. src: dialog
 msgctxt "ui"
 msgid "It's... It's fine. Wasn't your fault. Had to do what we had to do..."
-msgstr "没...没关系。不是你的错。我们当时只能那样做……"
+msgstr "没……没关系。不是你的错。我们当时只能那样做……"
 
 #. src: dialog
 msgctxt "ui"
@@ -36541,7 +36541,7 @@ msgstr "只专注我们的声音就好~"
 #. rich_text: <color=#EB83FF>Just for a quick moment... Okay...?</color>
 msgctxt "speaker:Zoey"
 msgid "Just for a quick moment... Okay...?"
-msgstr "就...就一小会儿...好吗...？"
+msgstr "就……就一小会儿……好吗……？"
 
 #. src: dialog
 msgctxt "ui"
@@ -36576,7 +36576,7 @@ msgstr "开玩笑的，亲爱的。"
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "Just lay your hand... right here."
-msgstr "就把手...放在这里吧。"
+msgstr "就把手……放在这里吧。"
 
 #. src: dialog
 msgctxt "speaker:Rugnar"
@@ -36685,7 +36685,7 @@ msgstr "那个……就是好奇问一下……你说的“好好求你”……
 #. rich_text: <color=#EB83FF>Just-... Don't touch me...!</color>
 msgctxt "ui"
 msgid "Just-... Don't touch me...!"
-msgstr "别...别碰我...！"
+msgstr "别……别碰我……！"
 
 #. src: dialog
 msgctxt "ui"
@@ -37758,7 +37758,7 @@ msgstr "往前倾，把屁股往后顶，服务员。那个姿势下你的身体
 #. rich_text: <color=#EB83FF>Lean... over...? </color>
 msgctxt "speaker:Zoey"
 msgid "Lean... over...?"
-msgstr "要...要往前倾吗？"
+msgstr "要……要往前倾吗？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39755,7 +39755,7 @@ msgstr "我——我在VR里的朋友……她……推荐了这个地方……�
 #. src: dialog
 msgctxt "ui"
 msgid "M-my top...?"
-msgstr "我...我的上衣...？"
+msgstr "我……我的上衣……？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -42616,7 +42616,7 @@ msgstr "不—不要碰我的……胸……好——好吧……？"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "N-no touching... Alright?"
-msgstr "不...不许碰...好吗？"
+msgstr "不……不许碰……好吗？"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -43217,7 +43217,7 @@ msgstr "嗯……谢……谢谢……"
 #. src: dialog
 msgctxt "ui"
 msgid "Nghh... Fhhh... You're so-... hot... Khhh..."
-msgstr "嗯... 哈... 你真是... 太热了... 嗯..."
+msgstr "嗯…… 哈…… 你真是…… 太热了…… 嗯……"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Nghh... P-please...! Hhhh...</color>
@@ -44823,7 +44823,7 @@ msgstr "当当然。本来我自己就能修好，但是……我还有些重要
 #. src: dialog
 msgctxt "ui"
 msgid "O-okay, I uhm... I can stay for a bit."
-msgstr "嗯...好吧，我我可以先待一会儿。"
+msgstr "嗯……好吧，我我可以先待一会儿。"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>O-okay, I-... I'll get another tip, right...?</color>
@@ -44870,7 +44870,7 @@ msgstr "好……不过不许乱摸……只……别做奇怪的事，好吗？
 #. rich_text: <color=#EB83FF>O-okay...! So-...</color>
 msgctxt "speaker:Zoey"
 msgid "O-okay...! So-..."
-msgstr "好...好的！那...那个..."
+msgstr "好……好的！那……那个……"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>O-okay...! That's e-enough...!</color>
@@ -47263,18 +47263,18 @@ msgstr "照——照片~？给——给这些拍张照吧，宝贝~！"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "P-personal...?! I-... I don't think that's-... F-for me..."
-msgstr "个个人...？！我...我可不觉得那...那适合我..."
+msgstr "个个人……？！我……我可不觉得那……那适合我……"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>P-please... I-... Nghhh...</color>
 msgctxt "ui"
 msgid "P-please... I-... Nghhh..."
-msgstr "求...求你...我...嗯啊啊啊..."
+msgstr "求……求你……我……嗯啊啊啊……"
 
 #. src: dialog
 msgctxt "ui"
 msgid "P-put your ass... right up to my-... face... pleasehh... I want to... S-smell youhhh..."
-msgstr "把...你的屁股...贴到...我的...脸上...求你了...我想...闻闻你的味道..."
+msgstr "把……你的屁股……贴到……我的……脸上……求你了……我想……闻闻你的味道……"
 
 #. src: us
 msgctxt "ui"
@@ -49441,7 +49441,7 @@ msgstr "请选择一间房间享受荡妇服务"
 #. rich_text: <i>Please choose a room for SLUT Service™...</i>
 msgctxt "ui"
 msgid "Please choose a room for SLUT Service™..."
-msgstr "请选择一个房间来体验 SLUT Service™..."
+msgstr "请选择一个房间来体验 SLUT Service™……"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Please cum on Rosies... nice big tits, mr Rungar...</color>
@@ -52562,7 +52562,7 @@ msgstr "服-服务只针对……服务兔女郎……先生……"
 #. rich_text: <color=#EB83FF>S-slap... slap m-me...</color>
 msgctxt "ui"
 msgid "S-slap... slap m-me..."
-msgstr "啪...啪我..."
+msgstr "啪……啪我……"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>S-so... much... ngh...</color>
@@ -52578,7 +52578,7 @@ msgstr "对对不起！我——啊……没没什么……我——嗯……"
 #. src: dialog
 msgctxt "speaker:Mira"
 msgid "S-sorry, I shouldn't have- asked... Um... C-can I-... You-... C-come like... close and-... let me... see...?"
-msgstr "对...对不起，我不该问的...那个...我...可...可以...你...你...靠...靠近一点...让我...看看...吗？"
+msgstr "对……对不起，我不该问的……那个……我……可……可以……你……你……靠……靠近一点……让我……看看……吗？"
 
 #. src: dialog
 msgctxt "ui"
@@ -52588,12 +52588,12 @@ msgstr "对、对不起，我想我们之间有点误会，这只是一个密码
 #. src: dialog
 msgctxt "ui"
 msgid "S-sorry, I-... I can't...!"
-msgstr "对...对不起，我...我做不到...！"
+msgstr "对……对不起，我……我做不到……！"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "S-sorry, I-... I'm busy..."
-msgstr "对...对不起，我...我在忙..."
+msgstr "对……对不起，我……我在忙……"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -52609,7 +52609,7 @@ msgstr "对、对不起，没兴趣……"
 #. rich_text: <color=#EB83FF>S-sorry, sir-... I-... I should get back to... W-work...</color>
 msgctxt "ui"
 msgid "S-sorry, sir-... I-... I should get back to... W-work..."
-msgstr "对...对不起，先生...我...我应该回去...工...工作了..."
+msgstr "对……对不起，先生……我……我应该回去……工……工作了……"
 
 #. src: dialog
 msgctxt "ui"
@@ -52619,7 +52619,7 @@ msgstr "对..对不起！8号桌在叫我！呃..！"
 #. src: dialog
 msgctxt "speaker:Mira"
 msgid "S-sorry...! Um... I-... I'd really... like to... um..."
-msgstr "对...对不起...！呃...我...我真的很...想...那个...嗯..."
+msgstr "对……对不起……！呃……我……我真的很……想……那个……嗯……"
 
 #. src: dialog
 msgctxt "ui"
@@ -55901,7 +55901,7 @@ msgstr "面带微笑，双眼含笑"
 #. src: dialog
 msgctxt "ui"
 msgid "Smoking hot... Insecure... You check all my boxes, babe. And I sure as fuck am not the only one to think so, eheh."
-msgstr "火辣的...缺乏自信的...你完全符合我的所有标准，宝贝。而且，肯定不止我一个人这么想，嘿嘿。"
+msgstr "火辣的……缺乏自信的……你完全符合我的所有标准，宝贝。而且，肯定不止我一个人这么想，嘿嘿。"
 
 #. src: dialog
 msgctxt "ui"
@@ -56923,7 +56923,7 @@ msgstr "错开式揭示 构建"
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Stand still for me *hic*..."
-msgstr "给我站住别动 *hic*..."
+msgstr "给我站住别动 *hic*……"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58836,7 +58836,7 @@ msgstr "这——就是我看到他们在做爱的地方……"
 #. src: dialog
 msgctxt "speaker:Mira"
 msgid "T-thank you..."
-msgstr "谢...谢谢..."
+msgstr "谢……谢谢……"
 
 #. src: dialog
 msgctxt "speaker:Mira"
@@ -59596,7 +59596,7 @@ msgstr "这……这样够了……！"
 #. rich_text: <color=#EB83FF>Th- that's-... Ah-...!</color>
 msgctxt "ui"
 msgid "Th- that's-... Ah-...!"
-msgstr "这——这——...啊——...！"
+msgstr "这——这——……啊——……！"
 
 #. src: dialog
 msgctxt "ui"
@@ -60731,7 +60731,7 @@ msgstr "这个轮子，嗯……当然。它就在这块零件的后面。"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "The... real... massage?"
-msgstr "真...正...的...按摩？"
+msgstr "真……正……的……按摩？"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -61484,7 +61484,7 @@ msgstr "这个房间要么是入口，要么是出口！跳过……"
 #. src: us
 msgctxt "ui"
 msgid "This room is not allowed to generate! Skipping..."
-msgstr "该房间不允许生成！跳过..."
+msgstr "该房间不允许生成！跳过……"
 
 #. src: us
 msgctxt "ui"
@@ -66289,7 +66289,7 @@ msgstr "服务员得分界面"
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Waitresss... Lookin' amazinghh..."
-msgstr "女侍...看起来超赞的..."
+msgstr "女侍……看起来超赞的……"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -66359,7 +66359,7 @@ msgstr "走，女士"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Walk me through...? R-right, thanks...!"
-msgstr "带...我走一遍？好...好的，谢谢...！"
+msgstr "带……我走一遍？好……好的，谢谢……！"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67543,7 +67543,7 @@ msgstr "什——真的吗？该死，佐伊，要是我早知道，绝不会让
 #. rich_text: <color=#EB83FF>Wha-... I-...</color>
 msgctxt "speaker:Zoey"
 msgid "Wha-... I-..."
-msgstr "什——...我——..."
+msgstr "什——……我——……"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Wha-...! N-no...! That's-... No...!</color>
@@ -67835,7 +67835,7 @@ msgstr "你到底在说哪种商品啊？"
 #. src: dialog
 msgctxt "ui"
 msgid "What kind of... service...?"
-msgstr "什么...服务...？"
+msgstr "什么……服务……？"
 
 #. src: dialog
 msgctxt "ui"
@@ -71807,7 +71807,7 @@ msgstr "佐佐佐伊！我……我……"
 #. rich_text: <color=#EB83FF>Z-zoey-... Nghh... Madison...</color>
 msgctxt "speaker:Zoey"
 msgid "Z-zoey-... Nghh... Madison..."
-msgstr "佐...佐伊...嗯...麦迪逊..."
+msgstr "佐……佐伊……嗯……麦迪逊……"
 
 #. src: raw:Transform
 msgctxt "ui"
