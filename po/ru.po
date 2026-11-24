@@ -61966,7 +61966,7 @@ msgstr "Я же говорил, сработает!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Tongue fuck my pussy, waitress!"
-msgstr "Проткни мой клитор языком, официантка!"
+msgstr "Вылижи мне киску языком, официантка!"
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -63800,7 +63800,7 @@ msgstr "Разморози Зои 3"
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "Ungh... Fuck. I'll pay you double if you- ghh- make me cum."
-msgstr "Угх... Чёрт. Я заплачу тебе вдвойне, если ты... м-м... доведёшь меня до конька."
+msgstr "Угх... Чёрт. Я заплачу тебе вдвойне, если ты... м-м... доведёшь меня до оргазма."
 
 #. src: dialog
 msgctxt "speaker:Zoey"
