@@ -68,7 +68,7 @@ msgstr "“我曾真的相信，自己的工作能让世界变得更好。只要
 #. rich_text: <i>"It worked... too well. The ramifications are horrifying. My coworkers are now discussing mass emission methods."</i>
 msgctxt "ui"
 msgid "\"It worked... too well. The ramifications are horrifying. My coworkers are now discussing mass emission methods.\""
-msgstr "“奏效了……效果也太好了。后果简直令人毛骨悚然。我的同事现在都在讨论大规模射精的方法。”"
+msgstr "“奏效了……而且效果太好了。后果简直令人毛骨悚然。我的同事现在都在讨论大规模射精的方法。”"
 
 #. src: dialog
 msgctxt "ui"
@@ -2286,7 +2286,7 @@ msgstr "(他比我大两倍还多……？！)"
 #. rich_text: <i>(He's pimping out that andro behind him...!)</i>
 msgctxt "speaker:Zoey"
 msgid "(He's pimping out that andro behind him...!)"
-msgstr "（他正用身后那个安德罗当皮条客……！）"
+msgstr "（他正在用身后那个安德罗当皮条客……！）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(He's so... hard... )</i></color>
@@ -4639,7 +4639,7 @@ msgstr "（成功了！）"
 #. rich_text: <i>(It'd be wrong to take a picture of her while she's knocked out... but It'd save her... Ugh... maybe I should just flash him instead...)</i>
 msgctxt "ui"
 msgid "(It'd be wrong to take a picture of her while she's knocked out... but It'd save her... Ugh... maybe I should just flash him instead...)"
-msgstr "（在她昏迷的时候给她拍照确实不对……但那样就能救她……该死……或许我干脆直接让他看个片儿好了……）"
+msgstr "（在她昏迷的时候给她拍照确实不对……但那样就能救她……唉……或许我干脆直接让他看个片儿好了……）"
 
 #. src: dialog
 #. rich_text: <i>(It'll hurt her if I just pull the thing off. I've gotta get it under control somehow... but how?)</i>
@@ -5996,7 +5996,7 @@ msgstr "（不……我这是怎么了……？）"
 #. rich_text: <color=#EB83FF><i>(No-... just... think of the money... And I'm not even really... touching his... thing... Just his pants... mhm... )</i></color>
 msgctxt "ui"
 msgid "(No-... just... think of the money... And I'm not even really... touching his... thing... Just his pants... mhm... )"
-msgstr "（不……别想了……就为了钱……而且我甚至真的……没碰他的……那玩意儿……只是他的裤子……嗯……）"
+msgstr "（不……别想了……就为了钱……而且我甚至真的……没碰他的……那东西……只是他的裤子……嗯……）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(No-... no, no, no... this-... It's just cold, my nipples-... )</i></color>
@@ -6729,7 +6729,7 @@ msgstr "（她真的不……不觉得她做的事……是……坏事吗……
 #. rich_text: <i>(She said "I" instead of "This one". Ghh... Her p<color=#EB83FF>ussy feels like it's gonna tear my fingers off...</color> )</i>
 msgctxt "ui"
 msgid "(She said \"I\" instead of \"This one\". Ghh... Her pussy feels like it's gonna tear my fingers off... )"
-msgstr "（她说的是“我”，而不是“这个”。该死……她的逼感觉快要把我的手指扯下来了……）"
+msgstr "（她说的“我”而不是“这个”。该死……她的阴蒂感觉快要把我的手指扯下来了……）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(She said that it's for beginners and there's no crash after with this flavor, so-... )</i></color>
@@ -10489,7 +10489,7 @@ msgstr "> 天啊，你的鸡巴在疯狂地跳动……"
 #. rich_text: <i> > Going straight for the dick, hmm? Can't say I'm surprised by that.
 msgctxt "ui"
 msgid "> Going straight for the dick, hmm? Can't say I'm surprised by that."
-msgstr "> 直接冲鸡巴去的，嗯？倒也不意外。"
+msgstr "> 直接冲着鸡巴去，嗯？倒也不意外。"
 
 #. src: dialog
 #. rich_text: <i>> Good boy... Lay down for your Andro queen.
@@ -10682,7 +10682,7 @@ msgstr "> 这样吗？"
 #. rich_text: <i>> Maybe I'll start rubbing your inferior little meat lever if you tell me how amazing my nice big Andro tits are, hmm?
 msgctxt "ui"
 msgid "> Maybe I'll start rubbing your inferior little meat lever if you tell me how amazing my nice big Andro tits are, hmm?"
-msgstr "> 如果你告诉我我这对漂亮的大安德罗胸有多棒，或许我会开始揉揉你那低劣的小肉棒子，嗯？"
+msgstr "> 如果你告诉我我这对漂亮的大安德罗胸有多棒，或许我会开始揉揉你那低劣的小肉杆子，嗯？"
 
 #. src: dialog
 #. rich_text: <i> > Mhh... yesss...
@@ -10772,7 +10772,7 @@ msgstr "> 嗯嗯嗯……啊啊啊……你的男人鸡巴感觉真好，马克�
 #. rich_text: <i>> Mnnghhh... Fhuckk your andro pussy is incredible, yesss!
 msgctxt "ui"
 msgid "> Mnnghhh... Fhuckk your andro pussy is incredible, yesss!"
-msgstr "> 嗯啊啊……去你妈的，你的男根小穴简直绝了，对对对！"
+msgstr "> 嗯啊啊……去你妈的，你的男根小穴太棒了，对对对！"
 
 #. src: dialog
 #. rich_text: <i> > More than just relaxing. I see you put on the-... extension... I asked for.
@@ -10838,7 +10838,7 @@ msgstr "> 哦……？我把温度调得太高了，亲爱的？"
 #. rich_text: <i>> Ohh fuck! Stroke my cock! Yesss! Harder! Stroke it harder! Do it!
 msgctxt "ui"
 msgid "> Ohh fuck! Stroke my cock! Yesss! Harder! Stroke it harder! Do it!"
-msgstr "> 哦，操！快撸我的肉棒！对！再用力点！撸硬点！干！"
+msgstr "> 哦，操！快撸我的鸡巴！对！再用力点！撸硬点！干！"
 
 #. src: dialog
 #. rich_text: <i>> Please, goddess! This meatbag is begging for your superior Andro pussy...!
@@ -11538,7 +11538,7 @@ msgstr "啊！抱歉！"
 #. src: dialog
 msgctxt "ui"
 msgid "Act skank. Spank like skank."
-msgstr "当婊子。像婊子一样被抽。"
+msgstr "当婊子。像婊子一样被打。"
 
 #. src: dialog
 msgctxt "ui"
@@ -12210,7 +12210,7 @@ msgstr "没错。这东西……尺寸可真不小。"
 #. src: dialog
 msgctxt "ui"
 msgid "Affirmative. This one apologizes. It seems to have reached an intense climax."
-msgstr "没错。这家伙在道歉。看起来它已经达到了高潮。"
+msgstr "没错。这个在道歉。看起来它已经达到了高潮。"
 
 #. src: dialog
 msgctxt "ui"
@@ -12386,7 +12386,7 @@ msgstr "同意帮助女仆男孩打扫"
 #. src: dialog
 msgctxt "ui"
 msgid "Ah fuck that's good, yess...! Rub your whole fucking face over my pussy, nasty little waitress!"
-msgstr "啊操，真他妈爽，嗯……！把你那张臭逼脸全贴在我小穴上，你这个下流的服务员！"
+msgstr "啊操，真爽，嗯……！把整个臭脸都贴在我小穴上，你这个下流的服务员！"
 
 #. src: dialog
 #. rich_text: <size=30>Ah <size=37>fuck!</size> Yes! Naughty bunny boy!<size=37> Next round!
@@ -13474,7 +13474,7 @@ msgstr "一个智能体完成了对非网格链接的穿越"
 #. src: dialog
 msgctxt "ui"
 msgid "An interesting suggestion. Please stimulate this one's vagina in an accelerated rhythm."
-msgstr "有趣的提议。请用更急促的节奏刺激我的阴道。"
+msgstr "这个提议很有趣。请用更快的节奏刺激我的阴道。"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -18354,7 +18354,7 @@ msgstr "进来……帮帮我……求你了！"
 #. src: dialog
 msgctxt "speaker:Intercom"
 msgid "Come in and-... let me cum to it... please-... I will finally be free...!"
-msgstr "进来……让我爽一下……求你了……我终于能自由了……！"
+msgstr "进来……让我享受它……求你了……我终于能自由了……！"
 
 #. src: dialog
 msgctxt "ui"
@@ -18423,7 +18423,7 @@ msgstr "来吧，贱货！他妈的求他啊！"
 #. src: dialog
 msgctxt "ui"
 msgid "Come on, tell us how good it feels to grind your wet pussy up and down my bulge, loser merc."
-msgstr "来吧，告诉我，用你那湿淋淋的小穴在我这硬邦邦的玩意儿上上下下摩擦，感觉有多爽啊，你这个失败的佣兵。"
+msgstr "来吧，告诉我，用你那湿漉漉的小穴在我这硬邦邦的玩意儿上上下下摩擦，感觉有多爽啊，你这个失败者佣兵。"
 
 #. src: dialog
 msgctxt "speaker:Woman"
@@ -18749,7 +18749,7 @@ msgstr "让克劳迪娅相信卡尔喝醉了"
 #. src: dialog
 msgctxt "ui"
 msgid "Convince them to be lewd."
-msgstr "说服他们变得淫乱。"
+msgstr "说服他们变得淫荡。"
 
 #. src: dialog
 msgctxt "ui"
@@ -19019,7 +19019,7 @@ msgstr "射……射出来……求你了……！"
 #. src: dialog
 msgctxt "ui"
 msgid "Cumming from getting fucked by a client, haha! Filthy fucktoy bunny!"
-msgstr "被客户干到高潮，哈哈！肮脏的性玩具兔！"
+msgstr "被客户操到高潮，哈哈！肮脏的性玩具兔！"
 
 #. src: dialog
 msgctxt "ui"
@@ -19347,7 +19347,7 @@ msgstr "哎呀，害羞的客户最可爱啦！你能当个乖宝宝，找到Cal
 #. src: dialog
 msgctxt "ui"
 msgid "D'aww, just fucking with ya, periguete. Heard the boss is letting puta's snort glow off his cock today."
-msgstr "哎呀，我就是逗你玩的，小坏蛋。听说老板今天让这小婊子在他鸡巴上吸光他的精液呢。"
+msgstr "哎呀，我就是逗你玩儿的，小坏蛋。听说老板今天让这小婊子在他鸡巴上吸光他的精液呢。"
 
 #. src: dialog
 msgctxt "ui"
@@ -20332,7 +20332,7 @@ msgstr "诺瓦之前摸过佐伊吗？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did Nova allow to make customers cum?"
-msgstr "诺瓦允许顾客射精吗？"
+msgstr "诺瓦允许顾客高潮吗？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25120,7 +25120,7 @@ msgstr "嗯……不是……"
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Fghh... The mone' I'd give ya to thoroughly grope ithh..."
-msgstr "啊啊……要是能彻底摸一把你，我愿意付出任何代价……"
+msgstr "啊啊……要是能彻底揉一把你，我愿意付出任何代价……"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Fghh... so s-sensitive... hahh...</color>
@@ -26180,7 +26180,7 @@ msgstr "去他妈的。我们得对这些人做点什么。"
 #. src: dialog
 msgctxt "ui"
 msgid "Fuck yeah bunny girl, watch me getting stuffed!"
-msgstr "操，兔女郎，看老子怎么把你塞满！"
+msgstr "操，兔女郎，看老子怎么把你填满！"
 
 #. src: dialog
 msgctxt "ui"
@@ -26817,7 +26817,7 @@ msgstr "获取全局数据"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Get her boobs out"
-msgstr "把她奶子露出来"
+msgstr "把她的奶子露出来"
 
 #. src: dialog
 msgctxt "ui"
@@ -28502,7 +28502,7 @@ msgstr "哈哈！他们根本不知道！这正好说明，当我们整天盯着
 #. src: dialog
 msgctxt "ui"
 msgid "Haha, well.. If you want table service, you can order a remote to call me."
-msgstr "哈哈，嗯……你要是想要桌上服务，可以点个遥控器来叫我。"
+msgstr "哈哈，嗯……如果你想要桌上服务，可以点个遥控器来叫我。"
 
 #. src: dialog
 msgctxt "ui"
@@ -29187,7 +29187,7 @@ msgstr "他明显在拖延时间。得了吧，我们干脆叫上GAG，让守卫
 #. rich_text: <i>He's still out cold, as if he saw true love's first tits.</i>
 msgctxt "ui"
 msgid "He's still out cold, as if he saw true love's first tits."
-msgstr "他还晕着呢，就像看到了真爱的第一对奶子一样。"
+msgstr "他还晕着呢，就像见到了真爱的第一对奶子一样。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -30795,7 +30795,7 @@ msgstr "他的凸起正顶在佐伊身上"
 #. src: dialog
 msgctxt "ui"
 msgid "His cock is now hard, Zoey is looking down, kinda surprised at the massive nasty cock."
-msgstr "他的肉棒现在硬邦邦的，佐伊正低头看着，对这根巨大又恶心的肉棒有点惊讶。"
+msgstr "他的鸡巴现在硬邦邦的，佐伊正低头看着，对这根巨大又恶心的鸡巴有点惊讶。"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>His- cock... It's-</color>
@@ -31024,7 +31024,7 @@ msgstr "嗯~你穿紧身皮衣的胸部看起来真不错。"
 #. src: dialog
 msgctxt "ui"
 msgid "Hmm~ Maybe we should we let her cum~"
-msgstr "嗯~ 或许我们应该让她射~"
+msgstr "嗯~ 或许我们应该让她高潮~"
 
 #. src: dialog
 msgctxt "ui"
@@ -31034,7 +31034,7 @@ msgstr "嗯～不是啦……不过我喜欢！"
 #. src: dialog
 msgctxt "ui"
 msgid "Hmm~ That deserves a reward~ You can cum~"
-msgstr "嗯～这可得给点奖励～你可以射了～"
+msgstr "嗯～这值得奖励～你可以射了～"
 
 #. src: dialog
 msgctxt "ui"
@@ -32090,7 +32090,7 @@ msgstr "我听说你会做“特别”的按摩呢~"
 #. src: dialog
 msgctxt "ui"
 msgid "I hope the landlord chokes on her dildo."
-msgstr "希望房东被她的假鸡巴噎死。"
+msgstr "希望房东被她的假阳具噎死。"
 
 #. src: dialog
 msgctxt "ui"
@@ -32479,7 +32479,7 @@ msgstr "我他妈的连个维护套件都不该需要。"
 #. rich_text: <i>I silently show him the picture of Jasmine's jiggling boobs on my phone. After one glance, he sputters and widens his eyes.</i>
 msgctxt "ui"
 msgid "I silently show him the picture of Jasmine's jiggling boobs on my phone. After one glance, he sputters and widens his eyes."
-msgstr "我沉默着把手机上茉莉花那对晃来晃去的奶子照片给他看。他只瞥了一眼，就喷出一声，眼睛瞪得老大。"
+msgstr "我默默把手机上茉莉花那对晃来晃去的奶子照片给他看。他只看了一眼，就喷出一声，眼睛瞪得老大。"
 
 # rich_translation: 我还是觉得女仆装穿在你身上肯定特别惊艳……要不你来……<b>帮我……收拾一下屋子，怎么样？</b>
 #. src: dialog
@@ -32674,7 +32674,7 @@ msgstr "我平时都会尽量藏起来的，但……我还没洗过我的长袖
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "I wanna riph' off thath' shuit and shtick my tongue niiiice and deephh down ya shweaty little assholeeee', ahaha!"
-msgstr "我想把那套衣服撕下来，然后把我舌头深深、深深地塞进你那汗津津的小逼眼里，啊哈哈！"
+msgstr "我想把那套衣服撕下来，然后把我舌头深深、深深地塞进你那汗津津的小屁眼里，啊哈哈！"
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -32745,7 +32745,7 @@ msgstr "我会向人群大声喊出我的名字"
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "I won't let you go until you've cum with that nasty Andro semen all over your body! Does it feel good, huh?!"
-msgstr "在你全身都沾满那恶心的安德罗精液之前，我绝不会让你走！爽不爽，嗯？！"
+msgstr "在你全身都沾满那恶心的安德罗精液之前，我绝不会让你走！感觉爽吗，嗯？！"
 
 #. src: dialog
 msgctxt "ui"
@@ -32982,7 +32982,7 @@ msgstr "我没事，谢谢你，亲爱的。不过那些该死的执法者把沙
 #. src: dialog
 msgctxt "ui"
 msgid "I'm fine. Unlike my damn headset. I even paid for same-day delivery. Fucking CLIT. They can eat my fucking dick."
-msgstr "我没事。不像我那该死的耳机。我甚至都付了当天送达的钱。该死的CLIT。他们可以去吃我的鸡巴。"
+msgstr "我没事。不像我那个该死的耳机。我甚至都付了当天送达的钱。该死的CLIT。他们可以去吃我的鸡巴。"
 
 #. src: dialog
 msgctxt "ui"
@@ -37214,7 +37214,7 @@ msgstr "克劳迪娅 询问关于男娘的事"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Klaudia Ask about Femboy repeat"
-msgstr "克劳迪娅 询问关于伪娘的重复内容"
+msgstr "克劳迪娅 询问关于女仆男孩的重复内容"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -37381,7 +37381,7 @@ msgstr "克劳迪娅只在乎自己的利益。在这里，乐趣可不止一点
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Klaudia pick'd a perfect replac'mnt, *hic*, ehehe... Yer tits look even hotter in this suit, mhmmm..."
-msgstr "克劳迪娅挑了个完美的替代品，*哽咽*，嘿嘿……这身衣服让你的胸看起来更性感了，嗯嗯……"
+msgstr "克劳迪娅选了一个完美的替代品，*哽咽*，嘿嘿……这套衣服让你的胸看起来更性感了，嗯嗯……"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -37612,12 +37612,12 @@ msgstr "楼上那位喜欢摸人的伪娘女士 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "LadyGropingFemboyUpstairs 3"
-msgstr "楼上的女士正在抚摸男娘"
+msgstr "楼上的女士在抚摸男娘"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "LadyGropingFemboyUpstairs 4"
-msgstr "楼上的性感伪娘正在摸我"
+msgstr "楼上的性感男娘正在摸我"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -37627,7 +37627,7 @@ msgstr "楼上的性感女伪娘正在摸我"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "LadyGropingFemboyUpstairs Take Picture"
-msgstr "拍摄楼上那位喜欢摸人的伪娘女士"
+msgstr "拍摄楼上那位爱摸人的伪娘女士"
 
 #. src: dialog
 msgctxt "ui"
@@ -38099,7 +38099,7 @@ msgstr "做完了就告诉我一声。"
 #. src: dialog
 msgctxt "ui"
 msgid "Let me snap a pic of my fingers in your pussy."
-msgstr "让我拍张我手指插在你小穴里的照片吧。"
+msgstr "让我拍张我手指在你小穴里的照片吧。"
 
 #. src: dialog
 msgctxt "ui"
@@ -39550,7 +39550,7 @@ msgstr "低"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Low Perv CG dialogue"
-msgstr "低俗色情CG對話"
+msgstr "低俗色情CG对话"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39980,7 +39980,7 @@ msgstr "男人开始往上扯佐伊的裙子。"
 #. src: dialog
 msgctxt "ui"
 msgid "Man cums between her thighs with the cum squirting on her thighs3"
-msgstr "男人射精在她的大腿之间，精液溅满了她的大腿。"
+msgstr "男人在她的大腿间射精，精液溅满了她的大腿。"
 
 #. src: dialog
 msgctxt "ui"
@@ -41348,7 +41348,7 @@ msgstr "嗯，嘿嘿嘿。看看你都干了什么。"
 #. src: dialog
 msgctxt "ui"
 msgid "Mmm, listen to that sloppy pussy, ehehe. That's hot."
-msgstr "嗯，听听那湿哒哒的小穴，嘿嘿。真刺激。"
+msgstr "嗯，听听那湿漉漉的小穴，嘿嘿。真刺激。"
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -42339,7 +42339,7 @@ msgstr "我的手臂？我把它切掉了。"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "My back feels for you."
-msgstr "我的背都在为你发颤。"
+msgstr "我的后背都在为你颤抖。"
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -42649,7 +42649,7 @@ msgstr "别——别那么大声……求你了……要是有人……听见我
 #. rich_text: <i>N69News reporter Katy Barnes reporting with breaking news in Neon City's Redlight District where a strange break-in has occurred.</i>
 msgctxt "ui"
 msgid "N69News reporter Katy Barnes reporting with breaking news in Neon City's Redlight District where a strange break-in has occurred."
-msgstr "N69新闻的记者凯蒂·巴恩斯正在报道霓虹城红灯区的突发新闻：一家名为“发光洞穴”的GAG认证场所刚刚发生了一起离奇的抢劫案。"
+msgstr "N69新闻的记者凯蒂·巴恩斯正在报道霓虹城红灯区的突发新闻：那里一家名为“发光洞穴”的GAG认证场所刚刚发生了一起奇怪的盗窃案。"
 
 # rich_translation: <color=yellow>N69新闻：</color>发光洞穴抢劫案
 #. src: dialog
@@ -42776,7 +42776,7 @@ msgstr "NaN 捕手"
 #. src: dialog
 msgctxt "speaker:Man"
 msgid "Nah, no but. I'm more of a tits man anyway."
-msgstr "不，没什么但。反正我更爱看奶子。"
+msgstr "不，没什么但。反正我更喜欢看奶子。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -45053,7 +45053,7 @@ msgstr "当然啦。嘿，快来帮我把这些东西拆完。我这儿指甲都
 #. src: dialog
 msgctxt "ui"
 msgid "Of course. I think I've got juuuust the thing. All it needs are a few modifications and it should be a perfect vaginal-chip-removing tool."
-msgstr "当然。我觉得我正好有合适的东西。只要稍微改一改，它就能成为完美的阴道芯片移除工具。"
+msgstr "当然。我觉得我正好有合适的东西。只需要稍微改一改，它就能成为完美的阴道芯片移除工具。"
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -45478,7 +45478,7 @@ msgstr "哦，你们还一起吃饭？真可爱！"
 #. src: dialog
 msgctxt "ui"
 msgid "Oh you know~  Eau du Cum, Lemonscented Cum, Cum Rouge. Nothing like a little musk to get you cute little organics in the mood."
-msgstr "哦，你知道的~ 精液香水、柠檬香精液、红精液。一点麝香的气味，正好能让你们这些小有机体进入状态。"
+msgstr "哦，你知道的~ 精液香水，柠檬香精液，红精液。一点麝香的味道，正好能让你们这些小有机体进入状态。"
 
 #. src: us
 msgctxt "ui"
@@ -48797,7 +48797,7 @@ msgstr "开始初始对话"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play insecure Zoey Dialogue"
-msgstr "玩缺乏自信的佐伊的对话"
+msgstr "玩不自信的佐伊的对话"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49287,7 +49287,7 @@ msgstr "玩“脱衣”重复对话"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play try leave dialogue"
-msgstr "玩、试、离开、对话"
+msgstr "玩，试，离开，对话"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49944,7 +49944,7 @@ msgstr "应该不是。"
 #. src: dialog
 msgctxt "ui"
 msgid "Proceed. This one agrees that the electric junction box is certainly the point of failure."
-msgstr "继续吧。这家伙也同意，电 junction 箱肯定就是故障点。"
+msgstr "继续吧。这个也同意，电 junction 箱肯定就是故障点。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50269,7 +50269,7 @@ msgstr "穿上兔女郎服"
 #. src: dialog
 msgctxt "ui"
 msgid "Put your hands under my tits, press them up for Rungar."
-msgstr "把手伸进我的奶子底下，为鲁格纳把她们顶起来。"
+msgstr "把手放在我的奶子下面，为朗加尔把她们顶起来。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50719,7 +50719,7 @@ msgstr "这个超酷的道具名字好长啊"
 #. rich_text: <size=27>Really now... Is that why your pussy is oozing on a cock in a public train like this? Is that why you didn't even try to pull away? You never put up any resistance. You want this.
 msgctxt "ui"
 msgid "Really now... Is that why your pussy is oozing on a cock in a public train like this? Is that why you didn't even try to pull away? You never put up any resistance. You want this."
-msgstr "真的吗……所以你的小穴在公共火车上对着鸡巴流汁就是因为这个？所以你连挣扎一下都没尝试？你完全没有反抗。你就是想要这个。"
+msgstr "说真的……这就是你的小穴在公共火车上对着鸡巴流汁的理由？这就是你连挣扎一下都没尝试的原因？你完全没有反抗。你想要这个。"
 
 #. src: dialog
 msgctxt "ui"
@@ -52013,7 +52013,7 @@ msgstr "对……！好……好吧……姐……姐姐……"
 #. src: dialog
 msgctxt "speaker:Max"
 msgid "Right? And I can just pull the ol' vagina off too. Rub it on things. Can still feel it remotely. No periods either."
-msgstr "对啊？而且我还能直接把那老掉牙的鸡巴给扯下来呢。拿来蹭东西都行。还能远程感觉到它。也完全没有月经。"
+msgstr "对吧？而且我还能直接把老掉牙的阴道给扯下来呢。拿来蹭东西都行。还能远程感觉到它。也完全没有月经。"
 
 #. src: dialog
 msgctxt "ui"
@@ -53241,7 +53241,7 @@ msgstr "座位：坐姿动画未翻译！未播放动画！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Second Dialogue"
-msgstr "重要：不要在翻译中添加行号（例如“2. ”）：回复只需译文本身。"
+msgstr "重要：不要将行号（例如“2. ”）添加到翻译中：回复只需译文本身。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55992,7 +55992,7 @@ msgstr "观察力真强啊！怎么，以前从没见过兔耳朵吗？"
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "So quiet... anxious, hmm? Now, now, girl. It's not difficult to keep conversation flowing. Why don't you tell me how my old cock feels in your young hand."
-msgstr "这么安静……是紧张吗？好了好了，小姑娘。让对话继续下去可不难。不如你告诉我，我的老鸡巴在你年轻的手里感觉如何？"
+msgstr "好安静……是紧张吗？好了好了，小姑娘。让对话继续下去可不难。不如你告诉我，我的老鸡巴在你年轻的手里感觉如何？"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -57498,7 +57498,7 @@ msgstr "别靠近 2"
 #. src: dialog
 msgctxt "ui"
 msgid "Stay a while longer after your shift, I'll show you more of the 'ropes'~"
-msgstr "下班后多留一会儿吧，我会让你见识更多“绳子”的用法～"
+msgstr "下班后多待一会儿吧，我会让你见识更多“绳子”的用法～"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57780,7 +57780,7 @@ msgstr "把她剥光了。让我们好好看看你这只新宠物吧。"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Strip pants and play dialogue"
-msgstr "脱裤子，开始对话吧。"
+msgstr "脱掉裤子，开始对话吧。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58041,7 +58041,7 @@ msgstr "行李箱 坏 结束 1 开场动画 时间线"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Suitcase bad End 3 Sit on Lap CutsceneTimeline"
-msgstr "行李箱 坏了 结束 3 坐在腿上 过场动画时间线"
+msgstr "行李箱 坏 结束 3 坐在腿上 过场动画时间线"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59437,7 +59437,7 @@ msgstr "告诉她，佐伊。"
 #. src: dialog
 msgctxt "ui"
 msgid "Tell him to stick his money up his ass."
-msgstr "叫他把钱他妈的塞进自己屁股里。"
+msgstr "叫他把钱塞进自己的屁股里。"
 
 #. src: dialog
 msgctxt "ui"
@@ -60113,7 +60113,7 @@ msgstr "这主意太棒了，姐妹！可以配个“家庭事务”的标题！
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "That's better, waitress slut. Let your fat ass do the talking, ahaha!"
-msgstr "这样才好，服务员婊子。让你的肥屁股替我说话，啊哈哈！"
+msgstr "这样才好，服务员的婊子。让你的肥屁股替我说话，啊哈哈！"
 
 #. src: dialog
 msgctxt "ui"
@@ -60593,7 +60593,7 @@ msgstr "我们最不希望看到的就是你被捕，毕竟我们离最终敲定
 #. src: dialog
 msgctxt "ui"
 msgid "The lewd gas has taken her over.."
-msgstr "淫秽的气体已经将她完全吞噬……"
+msgstr "淫荡的气体已经将她完全吞噬……"
 
 # rich_translation: <b>佣兵这行当可没让你过上好日子。不如试试换个……行业？</b>
 #. src: dialog
@@ -62254,7 +62254,7 @@ msgstr "尽量别把话说得那么大声！我们直接去沙龙吧。"
 #. src: dialog
 msgctxt "ui"
 msgid "Try not to suck your pet's lips off, Leona. We'll be in touch."
-msgstr "可别把宠物的小鸡巴吸烂了，莉昂娜。我们还会再联系的。"
+msgstr "可别把宠物的小嘴吸烂了，莉昂娜。我们还会再联系的。"
 
 #. src: dialog
 msgctxt "ui"
@@ -62717,7 +62717,7 @@ msgstr "打开酒吧音乐"
 #. src: dialog
 msgctxt "ui"
 msgid "Turn on your vibrator, I want to feel my money's worth."
-msgstr "打开你的振动器，我要物有所值。"
+msgstr "把振动器打开，我要物有所值。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -66179,7 +66179,7 @@ msgstr "端菜 - 升级 - 1 往饮料里吐口水"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing - Upgrade - 3 Ass Groping"
-msgstr "服务生 - 升级 - 3次摸臀"
+msgstr "服务生 - 升级 - 3 次臀部摸索"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68387,7 +68387,7 @@ msgstr "谁能想到，我会在这样的地方，遇到像你这样特别的人
 #. src: dialog
 msgctxt "ui"
 msgid "Who knows, maybe it's cum."
-msgstr "谁知道呢，说不定就是精液呢。"
+msgstr "谁知道呢，也许就是精液吧。"
 
 #. src: dialog
 msgctxt "ui"
@@ -69122,7 +69122,7 @@ msgstr "你们的个性简直天差地别，嘿嘿……"
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Y'er tit flaps are blocking ya tip, waitresh *hic*."
-msgstr "小丫头，你的奶子肉把小弟弟挡住了，等等……*打嗝*。"
+msgstr "小丫头，你的胸肉把小弟弟挡住了，等等……*打嗝*。"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Y- Yes, sir...</color>
@@ -69581,7 +69581,7 @@ msgstr "是啊，GAG在危机之后调整人员安排时，就把我们调到了
 #. src: dialog
 msgctxt "ui"
 msgid "Yeah, well they can GAG on my ass."
-msgstr "是啊，他们想操我的屁股都别想。"
+msgstr "是啊，他们想操我的屁股都休想。"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -70100,7 +70100,7 @@ msgstr "是啊，这样很好。"
 #. src: dialog
 msgctxt "ui"
 msgid "Yes, that's good.. Fuck, your boypussy is so tight and warm, mmhh.."
-msgstr "是啊，这样真棒……操，你的小穴又紧又暖，嗯……"
+msgstr "是啊，这样很好……该死的，你的小穴又紧又暖，嗯……"
 
 #. src: dialog
 msgctxt "ui"
@@ -70229,7 +70229,7 @@ msgstr "是啊……！黏糊糊的，嘿嘿嘿！你从那些触手里往外渗
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "Yesss! Think of that mighty Andro cock you made spurt like a good citizen, Zoey! Feel that warm Andro cum on you while you grind my baton to orgasm!"
-msgstr "是是是！想想你让那根强大的安德罗鸡巴喷涌的样子，真像个好公民呢，佐伊！感受那温热的安德罗精液洒在你身上，同时用我的棒子把你干到高潮吧！"
+msgstr "是啊！想想你让那根强大的安德罗鸡巴喷涌的样子，真像个好公民呢，佐伊！感受那温热的安德罗精液洒在你身上，同时用我的棒子把你干到高潮吧！"
 
 #. src: dialog
 msgctxt "ui"
@@ -70745,7 +70745,7 @@ msgstr "你也知道，隐私总得尊重嘛。"
 #. src: dialog
 msgctxt "ui"
 msgid "You know... Waitresses in the past tended to end up going a little further with clients than they strictly should."
-msgstr "你知道的……以前的女服务员，往往跟客人搞的关系……比规定要更亲密一点。"
+msgstr "你知道的……以前的女服务员，往往会跟客人发生一些……比规定要更亲密的关系。"
 
 #. src: dialog
 msgctxt "ui"
@@ -70931,7 +70931,7 @@ msgstr "你应该"
 #. rich_text: You should consider adding some chrome to yourself, sweety. It can be much more.. <b>sensitive</b>..~
 msgctxt "speaker:Klaudia"
 msgid "You should consider adding some chrome to yourself, sweety. It can be much more.. sensitive..~"
-msgstr "亲爱的，你该考虑给自己加点儿镀铬装饰了。那样会敏感得多……~"
+msgstr "你应该考虑给自己加点儿镀铬装饰，亲爱的。这样会敏感得多……~"
 
 #. src: dialog
 msgctxt "ui"
@@ -71505,7 +71505,7 @@ msgstr "你一直在为我练习，对吧？"
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "You've felt my cock already, so why not earn a nice double tip for the real deal, hmm?"
-msgstr "你已经感受过我的肉棒了，那不如好好干一场，拿个双倍小费怎么样，嗯？"
+msgstr "你都已经感受过我的肉棒了，那不如好好干一场，拿个双倍小费怎么样，嗯？"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -72047,7 +72047,7 @@ msgstr "佐伊在这方面的表现相当出色。你有过相关经验吗？"
 #. src: dialog
 msgctxt "ui"
 msgid "Zoey spots 2 bunnies and a male customer being lewd"
-msgstr "佐伊发现两只兔子和一个男顾客正在搞淫秽的事！"
+msgstr "佐伊发现两只兔子和一个男顾客正在做下流的事"
 
 #. src: dialog
 msgctxt "ui"
@@ -72257,7 +72257,7 @@ msgstr "再次向瓦伦屈服吧……"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "[20] Squish your boobs for Rugnar"
-msgstr "为鲁格纳挤挤你的奶子吧"
+msgstr "为鲁格纳挤挤你的胸吧"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -73726,7 +73726,7 @@ msgstr "必须能在预定时间执行。"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "t care if your life"
-msgstr "你管你死活呢"
+msgstr "你管你命不命呢"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -74096,7 +74096,7 @@ msgstr "擦拭对话3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wiping dialogue new"
-msgstr "擦拭着对话，全新的开始。"
+msgstr "擦拭着对话，新的开始。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
