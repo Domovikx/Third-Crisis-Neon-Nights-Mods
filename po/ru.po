@@ -2650,7 +2650,7 @@ msgstr "(Хмм.. Как бы мне узнать любимую группу Л
 #. rich_text: <i>(Hmm... It's addressed to my next door neighbour, Jaime. Says it's a CLIT maintenance kit.)</i>
 msgctxt "ui"
 msgid "(Hmm... It's addressed to my next door neighbour, Jaime. Says it's a CLIT maintenance kit.)"
-msgstr "(Хм... Адресовано моей соседке, Джейми. Говорит, это набор для обслуживания CLIT.)"
+msgstr "(Хм... Адресовано моей соседке Джейми. Пишут, что это набор для обслуживания CLIT.)"
 
 #. src: dialog
 #. rich_text: <i>(Hmm... Let's see...)</i>
@@ -3375,7 +3375,7 @@ msgstr "(Очень надеюсь, что я не всё ей испортил�
 #. rich_text: <color=#EB83FF><i>(I really just... came in the middle of a crowded train... fuck... )</i></color>
 msgctxt "ui"
 msgid "(I really just... came in the middle of a crowded train... fuck... )"
-msgstr "(Я правда... кончила посреди переполненного поезда... чёрт...)"
+msgstr "(Я правда... кончила прямо в переполненном поезде... чёрт...)"
 
 #. src: dialog
 #. rich_text: <i>(I really need to stop letting my place get this dirty. Feels like I'm only cleaning up when Sarah comes over.)</i>
@@ -18570,7 +18570,7 @@ msgstr "Ну же, девочка-лузер. Можешь тереться св
 # rich_translation: Давай, гражданка-слуга. Скажи, что обожаешь <b>силу</b> своих защитников!
 msgctxt "speaker:Enforcer"
 msgid "Come on, servant citizen. Tell me you adore your protectors strength!"
-msgstr "Давай, гражданка-слуга. Скажи, что обожаешь силу своих защитников!"
+msgstr "Ну же, гражданка-слуга. Скажи, что обожаешь силу своих защитников!"
 
 #. src: dialog
 msgctxt "ui"
@@ -25001,7 +25001,7 @@ msgstr "Обнаружено резервное срабатывание fadein"
 #. src: dialog
 msgctxt "ui"
 msgid "Falling apart for strangers~"
-msgstr "Распадаешься на части от рук незнакомок~"
+msgstr "Разваливаешься на части от рук незнакомцев~"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -27696,7 +27696,7 @@ msgstr "Давай, надевай свой костюм зайки."
 #. src: dialog
 msgctxt "ui"
 msgid "Go on, skank."
-msgstr "Давай, шлюха."
+msgstr "Ну же, шлюха."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -29335,7 +29335,7 @@ msgstr "Ты уже вытащила чип Сайфера?"
 #. src: dialog
 msgctxt "ui"
 msgid "Have you willingly taken glow before, Madison?"
-msgstr "Ты принимала глау раньше добровольно, Мэдисон?"
+msgstr "Ты уже принимала глау по своей воле, Мэдисон?"
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
@@ -31025,7 +31025,7 @@ msgstr "Теперь под кайфом"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "High perv\\"
-msgstr "Высокий извращенец\\"
+msgstr "Высокий извращенец"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -31525,7 +31525,7 @@ msgstr "Наведение"
 #. src: dialog
 msgctxt "ui"
 msgid "How about a nip slip for the camera?"
-msgstr "Может, мелькнём соском для камеры?"
+msgstr "А как насчёт того, чтобы показать сосок камере?"
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -31702,7 +31702,7 @@ msgstr "Как часто Зои показывала много тела на �
 #. src: us
 msgctxt "ui"
 msgid "How often Zoey was denied an orgasm."
-msgstr "Как часто Зои отказывали в оргазме."
+msgstr "Как часто Зои не давали достичь оргазма."
 
 #. src: us
 msgctxt "ui"
@@ -40315,7 +40315,7 @@ msgstr "Мужской электрик — топ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "MaleBulge - Zoey Grope"
-msgstr "Выпуклость — Зои щупает"
+msgstr "Выпуклость — Зои трогает"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49031,7 +49031,7 @@ msgstr "Игра не вызвала диалог"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play error"
-msgstr "Звук ошибки"
+msgstr "Ошибка воспроизведения"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -52644,7 +52644,7 @@ msgstr "Комната205 - 7 - Успех"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Room205Flavor - Cum on Sofa"
-msgstr "ВкусКомнаты205 - КончитьНаДиван"
+msgstr "ВкусКомнаты205 — Кончить на диван"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -53071,7 +53071,7 @@ msgstr "СОСЕДНИЙ ПОРТ УЖЕ ПРИСОЕДИНЁН К"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SKANK"
-msgstr "ШЛЮХА"
+msgstr "SKANK"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58455,7 +58455,7 @@ msgstr "Чемодан — плохо, конец, сцена 1, вступле�
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Suitcase bad End 3 Sit on Lap CutsceneTimeline"
-msgstr "Чемодан плохой Конец 3 Сидеть на коленях Сценарий"
+msgstr "Чемодан — плохой. Конец 3. Сидеть на коленях. Сценарий."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -62663,7 +62663,7 @@ msgstr "Трукюлентрепер"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "True Love's First Tits"
-msgstr "Первые сиськи настоящей любви"
+msgstr "Истинная любовь: первые сиськи"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -63191,7 +63191,7 @@ msgstr "Повернись к Зои"
 #. src: dialog
 msgctxt "ui"
 msgid "Turned on by how worked up they got the customer, but insecure about letting them fuck Max's pussy."
-msgstr "Возбуждает, как Макс распаляет клиента, но стрёмно от мысли, что он трахнёт её киску."
+msgstr "Клиент так разгорячился, что это её заводит, но ей страшно от мысли, что он трахнет киску Макса."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

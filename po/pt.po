@@ -25323,7 +25323,7 @@ msgstr "Foda-se, era isso que eu queria ouvir! Mais rápido, garota. Acaricie me
 #. rich_text: <color=#EB83FF>Fhuckhh... Fingers never- nghh... felt this good... mnhhh...</color>
 msgctxt "speaker:Zoey"
 msgid "Fhuckhh... Fingers never- nghh... felt this good... mnhhh..."
-msgstr "Foda-se... Os dedos nunca... nghh... tinham parecido tão bons... mnhhh..."
+msgstr "PT: Foda-se... Os dedos nunca... nghh... tinham parecido tão bons... mnhhh... (falante: Zoey, feminina)"
 
 #. src: dialog
 #. rich_text: <size=28>Fhuckhhh... Hhhh...
@@ -28208,7 +28208,7 @@ msgstr "Diálogo de Apalpação 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Grope Dialogue 4"
-msgstr "tradução."
+msgstr "Diálogo de Apalpação 4"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -30902,7 +30902,7 @@ msgstr "Estou chapado agora"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "High perv\\"
-msgstr "Alto pervertido\\"
+msgstr "PT: Alto pervertido"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -34274,7 +34274,7 @@ msgstr "Iceagi - @Iceagi_"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Ich f"
-msgstr "Eu s"
+msgstr "PT: Eu s"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -40216,7 +40216,7 @@ msgstr "O homem começa a puxar a saia de Zoe para cima."
 #. src: dialog
 msgctxt "ui"
 msgid "Man cums between her thighs with the cum squirting on her thighs3"
-msgstr "O homem goza entre as coxas dela, com o porra espirrando nas coxas dela."
+msgstr "PT: O homem goza entre as coxas dela, com o porra espirrando nas coxas dela."
 
 #. src: dialog
 msgctxt "ui"
@@ -49743,7 +49743,7 @@ msgstr "Por favor, querido(a). Sinta-se em casa. Eu realmente não me importo de
 #. rich_text: <color=#EB83FF>Please, sir...! Please- Please cum-! Cumm...!</color>
 msgctxt "ui"
 msgid "Please, sir...! Please- Please cum-! Cumm...!"
-msgstr "Por favor, senhor...! Por favor... goze...! Goze...!"
+msgstr "PT: Por favor, senhor...! Por favor... goze...! Goze...!"
 
 #. src: dialog
 msgctxt "ui"
@@ -64775,7 +64775,7 @@ msgstr "Título de Pinup Muito Longo Kkkk!"
 #. src: dialog
 msgctxt "ui"
 msgid "Very coy and playful"
-msgstr "Hehe, também tem um monte de bebidas se você quiser ficar bem animada~ Eu sei que às vezes preciso disso hoje em dia. Entende o que quero dizer, amor?"
+msgstr "PT: Hehe, também tem um monte de bebidas se você quiser ficar bem animada~ Eu sei que às vezes preciso disso hoje em dia. Entende o que quero dizer, amor?"
 
 #. src: dialog
 msgctxt "ui"

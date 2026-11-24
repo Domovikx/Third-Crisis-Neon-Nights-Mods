@@ -6729,7 +6729,7 @@ msgstr "（她真的不……不觉得她做的事……是……坏事吗……
 # rich_translation: <i>（她说的“我”而不是“这个”。该死……<color=#EB83FF>她的阴蒂感觉快要把我的手指扯下来了……</color>）</i>
 msgctxt "ui"
 msgid "(She said \"I\" instead of \"This one\". Ghh... Her pussy feels like it's gonna tear my fingers off... )"
-msgstr "（她说的“我”而不是“这个”。该死……她的阴蒂感觉快要把我的手指扯下来了……）"
+msgstr "（她说的是“我”，而不是“这个”。该死……她的阴蒂感觉快要把我的手指扯下来了……）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(She said that it's for beginners and there's no crash after with this flavor, so-... )</i></color>
@@ -10772,7 +10772,7 @@ msgstr "> 嗯嗯嗯……啊啊啊……你的男人鸡巴感觉真好，马克�
 #. rich_text: <i>> Mnnghhh... Fhuckk your andro pussy is incredible, yesss!
 msgctxt "ui"
 msgid "> Mnnghhh... Fhuckk your andro pussy is incredible, yesss!"
-msgstr "> 嗯啊啊……去你妈的，你的男根小穴太棒了，对对对！"
+msgstr "> 嗯啊啊……去你妈的，你的肉棒小穴太棒了，对对对！"
 
 #. src: dialog
 #. rich_text: <i> > More than just relaxing. I see you put on the-... extension... I asked for.
@@ -11129,7 +11129,7 @@ msgstr "佣兵？操，太棒了！正好！我有个活要交给你！把我们
 #. src: dialog
 msgctxt "ui"
 msgid "A neo-fucky what?"
-msgstr "什么“新式操具”？"
+msgstr "新式操具？"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -28607,7 +28607,7 @@ msgstr "哈哈！他们根本不知道！这正好说明，当我们整天盯着
 #. src: dialog
 msgctxt "ui"
 msgid "Haha, well.. If you want table service, you can order a remote to call me."
-msgstr "哈哈，嗯……如果你想要桌上服务，可以点个遥控器来叫我。"
+msgstr "哈哈，嗯……要是你想享受桌上服务，可以点个遥控器来叫我。"
 
 #. src: dialog
 msgctxt "ui"
@@ -40215,7 +40215,7 @@ msgstr "男人开始往上扯佐伊的裙子。"
 #. src: dialog
 msgctxt "ui"
 msgid "Man cums between her thighs with the cum squirting on her thighs3"
-msgstr "男人在她的大腿间射精，精液溅满了她的大腿。"
+msgstr "男人射精在她的大腿之间，精液溅满了她的大腿。"
 
 #. src: dialog
 msgctxt "ui"
@@ -40714,7 +40714,7 @@ msgstr "见到Lio"
 #. src: dialog
 msgctxt "ui"
 msgid "Meet me in the bathroom and spend some... private time with your cute face squished between my thighs and your tongue on my pussy."
-msgstr "在浴室里见我，然后花点……私人时间，用你那张可爱的脸夹在我双腿之间，用你的舌头舔我的小穴。"
+msgstr "在浴室里见我，然后用点……私人时间，把你那张可爱的脸夹在我双腿之间，再用你的舌头舔我的小穴。"
 
 #. src: dialog
 msgctxt "speaker:Intercom"
@@ -54756,7 +54756,7 @@ msgstr "情趣玩具公司的股价肯定会上涨到天际。嘿嘿。"
 #. src: dialog
 msgctxt "ui"
 msgid "Sexy cavala like you gonna make some good cash today, eheh. Wanna come in and be a good whore today, puthina?"
-msgstr "性感的小马，今天能赚不少钱呢，嘿嘿。想进来当个好妓女吗，小婊子？"
+msgstr "性感的马儿，今天能赚不少钱呢，嘿嘿。想进来当个好妓女吗，小婊子？"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><size=27>Sh-... shh... nhhh... </color>
@@ -57563,7 +57563,7 @@ msgstr "开始第一个过场动画"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start fuckin"
-msgstr "开始干吧"
+msgstr "开始操吧"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57703,7 +57703,7 @@ msgstr "状态3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 4"
-msgstr "重要：不要在翻译中添加行号（例如“2. ”）：回复只需译文本身。"
+msgstr "重要：翻译中不要添加行号（例如“2. ”），只需返回译文本身。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58301,7 +58301,7 @@ msgstr "行李箱 坏 结束 1 开场动画 时间线"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Suitcase bad End 3 Sit on Lap CutsceneTimeline"
-msgstr "行李箱 坏 结束 3 坐在腿上 过场动画时间线"
+msgstr "行李箱 坏了 结束 3 坐在腿上 过场动画时间线"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58511,7 +58511,7 @@ msgstr "行李箱坏结局 - 贩毒集团藏身处 - 21"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 21_line_3-FSM"
-msgstr "翻译。"
+msgstr "手提箱坏结局 - 卡特尔藏身处 - 21_第3行-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60868,7 +60868,7 @@ msgstr "我们最不希望看到的就是你被捕，毕竟我们离最终敲定
 #. src: dialog
 msgctxt "ui"
 msgid "The lewd gas has taken her over.."
-msgstr "淫荡的气体已经将她完全吞噬……"
+msgstr "淫秽的气体已经将她完全吞噬……"
 
 #. src: dialog
 #. rich_text: The life of a mercenary didn't exactly pan out for you. Why not dip your toes into a different line of... <b>work</b>, hm?
@@ -71890,7 +71890,7 @@ msgstr "你一直在为我练习，对吧？"
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "You've felt my cock already, so why not earn a nice double tip for the real deal, hmm?"
-msgstr "你都已经感受过我的肉棒了，那不如好好干一场，拿个双倍小费怎么样，嗯？"
+msgstr "你已经感受过我的肉棒了，那不如好好干一场，拿个双倍小费怎么样，嗯？"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -72034,7 +72034,7 @@ msgstr "你女朋友明显有麻烦，而我正好能帮上忙，所以我为什
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "Your hand is so pretty on my old cock, ehehe."
-msgstr "你的手握在我这根老鸡巴上，真漂亮啊，嘿嘿。"
+msgstr "你的手搭在我这根老鸡巴上，可真漂亮啊，嘿嘿。"
 
 #. src: dialog
 msgctxt "ui"

@@ -31390,7 +31390,7 @@ msgstr "Pasa el cursor"
 #. src: dialog
 msgctxt "ui"
 msgid "How about a nip slip for the camera?"
-msgstr "¿Qué tal un deslizamiento de pezon para la cámara?"
+msgstr "¿Qué tal un deslizamiento de pezones para la cámara?"
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -41447,7 +41447,7 @@ msgstr "Mmm, ¿sientes cómo se excita, pequeña camarera?"
 #. src: dialog
 msgctxt "ui"
 msgid "Mmhh, fhh. That's right, babe. Lick your bodyguards pussy... just like that."
-msgstr "Mmm, fhh. Así es, cariño. Lame la polla de tus guardaespaldas... justo así."
+msgstr "Mmm, fhh. Así es, nena. Lame la polla de tus guardaespaldas... justo así."
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -43012,22 +43012,22 @@ msgstr "Salón de uñas"
 #. src: bundle
 msgctxt "speaker:Cocky"
 msgid "Nail Salon Clerk"
-msgstr "[Cocky] Sí. Déjame explicarte..."
+msgstr "[Arrogante] Sí. Déjame explicarte..."
 
 #. src: bundle
 msgctxt "speaker:Lewd"
 msgid "Nail Salon Clerk"
-msgstr "Empleada del salón de uñas (hablante: Lewd)"
+msgstr "ES: Empleada del salón de uñas (hablante: Lewd)"
 
 #. src: bundle
 msgctxt "speaker:Mewing"
 msgid "Nail Salon Clerk"
-msgstr "Empleada del salón de uñas (hablante: Mewing)"
+msgstr "ES: Empleada del salón de uñas (hablante: Mewing)"
 
 #. src: bundle
 msgctxt "speaker:Scheming"
 msgid "Nail Salon Clerk"
-msgstr "Empleada del salón de uñas (hablante: Scheming)"
+msgstr "ES: Empleada del salón de uñas (hablante: Scheming)"
 
 #. src: dialog
 msgctxt "speaker:Surprised"
@@ -49734,7 +49734,7 @@ msgstr "Por favor, cariño. Siéntete como en casa. De verdad que no me importa 
 #. rich_text: <color=#EB83FF>Please, sir...! Please- Please cum-! Cumm...!</color>
 msgctxt "ui"
 msgid "Please, sir...! Please- Please cum-! Cumm...!"
-msgstr "¡Por favor, señor...! ¡Por favor... eyáculase...! ¡Eyáculate...!"
+msgstr "ES: ¡Por favor, señor...! ¡Por favor... eyacula...! ¡Eyacula...!"
 
 #. src: dialog
 msgctxt "ui"
@@ -63023,7 +63023,7 @@ msgstr "Gírate hacia Zoey"
 #. src: dialog
 msgctxt "ui"
 msgid "Turned on by how worked up they got the customer, but insecure about letting them fuck Max's pussy."
-msgstr "Excitada por lo alterado que estaba el cliente, pero insegura al dejar que se follara la coño de Max."
+msgstr "Excitada por lo alterado que estaba el cliente, pero insegura al dejar que se follara el coño de Max."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -64766,7 +64766,7 @@ msgstr "¡Título larguísimo de pinup, jaja!"
 #. src: dialog
 msgctxt "ui"
 msgid "Very coy and playful"
-msgstr "Jeje, y también hay un montón de bebidas si necesitas ponerte un poco alegre~ Sé que yo a veces lo necesito hoy en día. ¿Me entiendes, cariño?"
+msgstr "ES: Jeje, y también hay un montón de bebidas si necesitas ponerte un poco alegre~ Sé que yo a veces lo necesito hoy en día. ¿Me entiendes, cariño?"
 
 #. src: dialog
 msgctxt "ui"

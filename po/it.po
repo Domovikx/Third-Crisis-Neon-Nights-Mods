@@ -12367,7 +12367,7 @@ msgstr "Accetta: dito, fica, 1"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Agree Finger Pussy 2"
-msgstr "Concorda: dito, fica, 2"
+msgstr "D'accordo: dito, fica, 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -28344,7 +28344,7 @@ msgstr "L'uomo abbaia 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Guy bark 4"
-msgstr "Traduzione."
+msgstr "Ragazzo, abbaià 4"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -29240,7 +29240,7 @@ msgstr "Ah ah! Hai qualche piano per oggi, super spia?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Hazed"
-msgstr "Soffocato"
+msgstr "soffocato"
 
 #. src: dialog
 msgctxt "ui"
@@ -48744,7 +48744,7 @@ msgstr "Riproduci il dialogo chiamato"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play calling dialogue"
-msgstr "Avvia la chiamata al dialogo"
+msgstr "Avvia la chiamata al dialogo."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49514,7 +49514,7 @@ msgstr "Gioca il dialogo della terza missione"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play top off repeat dialogue"
-msgstr "Ripeti il dialogo senza pensare"
+msgstr "Ripeti il dialogo senza pensarci."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49735,7 +49735,7 @@ msgstr "Prego, tesoro. Fatti a casa. Non mi dispiace affatto averti qui, eheheh.
 #. rich_text: <color=#EB83FF>Please, sir...! Please- Please cum-! Cumm...!</color>
 msgctxt "ui"
 msgid "Please, sir...! Please- Please cum-! Cumm...!"
-msgstr "La prego, signore...! La prego... venga...! Venga...!"
+msgstr "IT: La prego, signore...! La prego... venga...! Venga...!"
 
 #. src: dialog
 msgctxt "ui"
@@ -49949,7 +49949,7 @@ msgstr "La lucidità post-eiaculazione sta tornando. Il terrore si insinua lenta
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Post pic dialogue"
-msgstr "Inserisci l'immagine per il dialogo"
+msgstr "Inserisci l'immagine per il dialogo."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -61681,7 +61681,7 @@ msgstr "Questo modello è soddisfatto che tu lo approvi. Questo telaio è stato 
 #. src: dialog
 msgctxt "ui"
 msgid "This one is satisfied you approve. It was designed to be a perfect recreation of female anatomy, down to the last detail."
-msgstr "Questo è soddisfatto del tuo approvazione. È stato progettato per essere una riproduzione perfetta dell'anatomia femminile, fino all'ultimo dettaglio."
+msgstr "Questo è soddisfatto del fatto che tu lo approvi. È stato progettato per essere una riproduzione perfetta dell'anatomia femminile, fino all'ultimo dettaglio."
 
 #. src: dialog
 msgctxt "ui"
@@ -63918,7 +63918,7 @@ msgstr "Svesti Zoey"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Undress and play dialogue"
-msgstr "Spogliati e gioca al dialogo"
+msgstr "Spogliati e gioca al dialogo."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

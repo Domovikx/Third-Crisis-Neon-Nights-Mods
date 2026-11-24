@@ -15365,7 +15365,7 @@ msgstr "は、はやくしてください..."
 #. rich_text: <color=#EB83FF>B-but I thought-... We're not allowed to-...</color>
 msgctxt "speaker:Zoey"
 msgid "B-but I thought-... We're not allowed to-..."
-msgstr "でも、私は…お客様をイかせるなんて、許されてないはずなのに…（話者：ゾーイ、女性）"
+msgstr "で、でも、私…お客様をイかせるなんて、許されてないはずなのに…（話者：ゾーイ、女性）"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -27575,7 +27575,7 @@ msgstr "さあ、早くバニーズーツを着なさい。"
 #. src: dialog
 msgctxt "ui"
 msgid "Go on, skank."
-msgstr "行きなさいよ、クソ女。"
+msgstr "行けよ、クソ女。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -27787,7 +27787,7 @@ msgstr "いい子だ。"
 #. src: dialog
 msgctxt "speaker:Klaudia"
 msgid "Good girl. Cum."
-msgstr "素直な子だ。イけ。"
+msgstr "素直な子ね。イけ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -31577,7 +31577,7 @@ msgstr "ゾーイが公の場で体を大きく見せた頻度はどのくらい
 #. src: us
 msgctxt "ui"
 msgid "How often Zoey was denied an orgasm."
-msgstr "ゾーイがオーガズムを拒否された頻度。"
+msgstr "ZOIEがオーガズムを拒否された頻度。"
 
 #. src: us
 msgctxt "ui"
@@ -32840,7 +32840,7 @@ msgstr "あの服を破り捨てて、お前の汗ばんだ小穴に舌をずっ
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "I wanna' fhuck youu... *hic*"
-msgstr "君と…ヤりたい… *ヒク*"
+msgstr "お前と…ヤりたい… *ヒク*"
 
 #. src: dialog
 msgctxt "ui"
@@ -42249,7 +42249,7 @@ msgstr "ゾーイを戻せ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Move Zoey in to the guy"
-msgstr "ゾーイを男のところに連れて行け"
+msgstr "ゾーイをあの男のところに連れて行け"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55222,7 +55222,7 @@ msgstr "守護者たちに会えて、喜ぶべきじゃないのか？"
 # rich_translation: もっとチップをくれる客には優しくするべきじゃないの？<b>ウェイトレスさん。</b>その巨大な尻の景色を存分に楽しませてくれたら、チップもたっぷりもらえるわよ！
 msgctxt "speaker:Trov"
 msgid "Shouldn't you be nicer to well tipping customers, waitress? Let me enjoy the view of your massive ass, if you want your tip!"
-msgstr "もっとチップをくれる客には優しくするべきじゃないの？ウェイトレスさん。その巨大な尻の景色を存分に楽しませてくれたら、チップもたっぷりもらえるわよ！"
+msgstr "そんなにチップをくれる客には優しくするべきじゃないの？ウェイトレスさん。その巨大な尻を存分に楽しませてくれたら、チップもたっぷりもらえるわよ！"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -61721,7 +61721,7 @@ msgstr "これは君に感謝している。君にとって、それはきっと
 #. src: dialog
 msgctxt "ui"
 msgid "This one trusts your competence. Deeper insertion is acceptable."
-msgstr "彼女はあなたの腕を信じている。もっと深く挿入しても問題ない。"
+msgstr "こいつは君の腕を信じてる。もっと深く挿入しても問題ない。"
 
 #. src: dialog
 msgctxt "ui"
@@ -62501,7 +62501,7 @@ msgstr "残酷な死神"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "True Love's First Tits"
-msgstr "真実の愛の最初の乳房"
+msgstr "真実の愛の最初の乳"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -65943,7 +65943,7 @@ msgstr "インタラクティブなオブジェクトを待っています 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for interactable or horny drop"
-msgstr "インタラクティブな対象または性的なドロップを待つ"
+msgstr "インタラクティブな対象か性的なドロップを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -70760,7 +70760,7 @@ msgstr "あなたは…それに着ると、すごくセクシーだ…グッッ
 #. src: dialog
 msgctxt "ui"
 msgid "You barely touched the bananas I got you!"
-msgstr "俺が用意したバナナをほとんど食べてないじゃないか！"
+msgstr "お前、俺が用意したバナナをほとんど食べてないじゃないか！"
 
 #. src: us
 msgctxt "ui"
@@ -72030,7 +72030,7 @@ msgstr "君の彼女が明らかに困っているのに、俺が助けられる
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "Your hand is so pretty on my old cock, ehehe."
-msgstr "君の手が僕の古くなった肉棒の上で、なんて綺麗なんだろう、えへへ。"
+msgstr "君の手が俺の古くなった肉棒の上で、なんて綺麗なんだろう、えへへ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -72674,7 +72674,7 @@ msgstr "ロージーに胸をまさぐらせよう。"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "[40] Let him spread your ass and take his money."
-msgstr "彼の金を受け取るために、彼にあなたの尻を広げさせてやりなさい。"
+msgstr "彼にお前のケツを広げさせて、金を受け取らせろ。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

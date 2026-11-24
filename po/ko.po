@@ -27774,7 +27774,7 @@ msgstr "착한 아이로군."
 #. src: dialog
 msgctxt "speaker:Klaudia"
 msgid "Good girl. Cum."
-msgstr "착한 아이. 싸."
+msgstr "착한 아이. 싸. (말하는 사람: Klaudia, 여성)"
 
 #. src: dialog
 msgctxt "ui"
@@ -38212,7 +38212,7 @@ msgstr "레스드로우즈 - 보조 아티스트"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Let Enforcer Grope ZoeyTimeline"
-msgstr "집행관이 조이를 더듬게 해라"
+msgstr "집행관이 조이를 더듬게 해라."
 
 #. src: dialog
 msgctxt "ui"
@@ -40167,7 +40167,7 @@ msgstr "남성 전기 기술자 탑"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "MaleBulge - Zoey Grope"
-msgstr "남성 부풀어오름 - 조이 더듬기"
+msgstr "남성 부풀어오름 - 조이의 더듬기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41443,7 +41443,7 @@ msgstr "음... 흥분되는 거 느껴져, 꼬마 웨이트리스?"
 #. src: dialog
 msgctxt "ui"
 msgid "Mmhh, fhh. That's right, babe. Lick your bodyguards pussy... just like that."
-msgstr "음음, 흐흐. 맞아, 자기. 네 보디가드의 보지를 핥아... 바로 그렇게."
+msgstr "음음, 흐흐. 맞아, 자기. 네 보디가드 보지를 핥아... 바로 그렇게."
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -42234,7 +42234,7 @@ msgstr "조이를 뒤로 밀어내세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Move Zoey in to the guy"
-msgstr "조이를 그 남자에게로 끌어당겨."
+msgstr "조이를 그 남자 쪽으로 끌어당겨."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -43531,7 +43531,7 @@ msgstr "좋아! 6699, 이게 바로 그 코드인가 보네!"
 #. src: dialog
 msgctxt "ui"
 msgid "Nice! Heh, there's been a ton of buzz around your last challenge, Zoey. The readers loved watching you expose yourself like that."
-msgstr "멋지네! 헤헤, 지난 챌린지 때문에 소문이 자자했어, 조이. 독자들은 네가 그렇게 몸을 드러내는 걸 아주 좋아했거든."
+msgstr "멋지네! 헤헤, 지난 챌린지로 엄청 화제가 됐었어, 조이. 독자들은 네가 그렇게 몸을 드러내는 걸 아주 좋아했거든."
 
 #. src: dialog
 msgctxt "ui"
@@ -46660,7 +46660,7 @@ msgstr "현재 라인 표시 중 2"
 #. src: dialog
 msgctxt "ui"
 msgid "On Line to show Tablet"
-msgstr "태블릿을 보여줄 줄"
+msgstr "태블릿을 보여주길 원해."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55733,7 +55733,7 @@ msgstr "简化中文机器翻译"
 #. rich_text: <i>Simply fill the SLUT Box
 msgctxt "ui"
 msgid "Simply fill the SLUT Box"
-msgstr "SLUT 박스를 채우기만 하면 돼요."
+msgstr "SLUT 박스만 채워주면 돼."
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -57545,7 +57545,7 @@ msgstr "첫 컷신을 시작하세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start fuckin"
-msgstr "시작하자, 이 자식아."
+msgstr "시작해, 이 자식아."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58493,7 +58493,7 @@ msgstr "SuitcaseBadend - CartelHideout - 21"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 21_line_3-FSM"
-msgstr "번역되지 않은 줄."
+msgstr "SuitcaseBadend - CartelHideout - 21_line_3-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -62064,7 +62064,7 @@ msgstr "시간 척도를 0으로 전환하고 이전 상태로 되돌립니다."
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Told my friends all about how I sniffed your nasty asshole before fucking the brains out of a bunny bitch!"
-msgstr "내 친구들한테 네 그 더러운 항문을 핥아보고 토끼 암캐랑 미친 듯이 섹스했다는 얘기를 다 했어! (말하는 사람: Trov, 남성)"
+msgstr "[트로브] 아, 제발, 내가 그렇게 나쁜 놈은 아니라고. 지난번에 내 돈 받아먹고도 꽤나 즐거워했잖아, 하!"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -63014,7 +63014,7 @@ msgstr "조이에게 몸을 돌리세요"
 #. src: dialog
 msgctxt "ui"
 msgid "Turned on by how worked up they got the customer, but insecure about letting them fuck Max's pussy."
-msgstr "고객이 흥분하는 모습에 흥분되지만, 그들이 맥스의 보지를 범하게 하는 것은 불안하다."
+msgstr "고객의 흥분된 모습에 흥분되지만, 그들이 맥스의 보지를 범하게 하는 건 불안해."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -63908,7 +63908,7 @@ msgstr "조이의 옷을 벗겨요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Undress and play dialogue"
-msgstr "옷을 벗고 플레이하세요."
+msgstr "옷을 벗고 대화를 진행하세요."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -71361,7 +71361,7 @@ msgstr "그게 너랑... 관련이 있다고 생각해? 음... 전화로 얘기�
 #. src: dialog
 msgctxt "ui"
 msgid "You totally did the cum face for a bit there too! You looked so cute, bestie!"
-msgstr "너도 잠시 동안은 정액 얼굴을 했잖아! 정말 귀여워 보였어, 친구야!"
+msgstr "너도 잠시 동안은 정액 얼굴을 했잖아! 진짜 귀여워 보였어, 친구야!"
 
 #. src: dialog
 msgctxt "ui"

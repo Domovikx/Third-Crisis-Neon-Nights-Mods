@@ -291,7 +291,7 @@ msgstr "(... C'est... Gagner de l'argent... rien de plus... M-mmh... )"
 #. rich_text: <color=#EB83FF><i>(... My body... Hot...?)</i></color>
 msgctxt "ui"
 msgid "(... My body... Hot...?)"
-msgstr "(... Mon corps... Chaude... ?)"
+msgstr "（FR : (... Mon corps... Chaude... ?)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(... Right?)</i></color>
@@ -27100,7 +27100,7 @@ msgstr "Ghh ! Qu-... M-Mais..."
 #. rich_text: Gh<color=#EB83FF>h... Hh... I... A-</color>Are yo<color=#EB83FF>u... su</color>re?
 msgctxt "ui"
 msgid "Ghh... Hh... I... A-Are you... sure?"
-msgstr "Ghh... Hh... Je... S-Sais-tu... ?"
+msgstr "F : Ghh... Hh... Je... S-Sais-tu... ?"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Ghhh... Mnhhh... M-m-... Ma'm-... Nhhhh...</color>
@@ -27808,7 +27808,7 @@ msgstr "Bonne fille. Réponds simplement à nos questions et je te laisserai avo
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Good girl. That'll do. You make a good puppy girl, darling."
-msgstr "Bonne fille. C’est comme ça. Tu fais une bonne petite chienne, ma chérie."
+msgstr "Bonne fille. C’est parfait. Tu fais une bonne petite chienne, ma chérie."
 
 #. src: dialog
 msgctxt "ui"
@@ -49505,7 +49505,7 @@ msgstr "Lancez le dialogue de la troisième quête."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play top off repeat dialogue"
-msgstr "Joue en répétant le dialogue sans le haut."
+msgstr "JOUE EN RÉPÉTANT LE DIALOGUE SANS LA PARTIE SUPÉRIEURE."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49726,7 +49726,7 @@ msgstr "Je t'en prie, mon chéri. Fais-toi à l'aise. Ça ne me dérange vraimen
 #. rich_text: <color=#EB83FF>Please, sir...! Please- Please cum-! Cumm...!</color>
 msgctxt "ui"
 msgid "Please, sir...! Please- Please cum-! Cumm...!"
-msgstr "S’il vous plaît, monsieur... ! Je vous en supplie, jouissez... ! Jouissez... !"
+msgstr "FR : S’il vous plaît, monsieur... ! Je vous en supplie, jouissez... ! Jouissez... !"
 
 #. src: dialog
 msgctxt "ui"
@@ -57546,7 +57546,7 @@ msgstr "Début de la première cinématique"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start fuckin"
-msgstr "Commence à te baiser"
+msgstr "Commence à te baiser."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -63015,7 +63015,7 @@ msgstr "Tourne-toi vers Zoey"
 #. src: dialog
 msgctxt "ui"
 msgid "Turned on by how worked up they got the customer, but insecure about letting them fuck Max's pussy."
-msgstr "Excité(e) par l'excitation du client, mais peu sûr(e) de laisser ce dernier baiser la chatte de Max."
+msgstr "FR: Excité(e) par l'excitation du client, mais peu sûr(e) de le laisser baiser la chatte de Max."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -64758,7 +64758,7 @@ msgstr "Très long titre de pin-up, mdr !"
 #. src: dialog
 msgctxt "ui"
 msgid "Very coy and playful"
-msgstr "Hé hé, il y a aussi plein de boissons si tu as besoin d’un bon petit buzz~ Je sais que c’est mon cas de temps en temps ces derniers temps. Tu vois ce que je veux dire, chéri ?"
+msgstr "Hé hé, y a aussi plein de boissons si t’as besoin d’un bon petit buzz~ Je sais que c’est mon cas de temps en temps ces derniers temps. Tu vois ce que je veux dire, chéri ?"
 
 #. src: dialog
 msgctxt "ui"
@@ -65930,7 +65930,7 @@ msgstr "Attendez l'objet interactif 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for interactable or horny drop"
-msgstr "Attendez l'objet interactif ou la baisse de libido."
+msgstr "FR: Attendez l'objet interactif ou la baisse de libido."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

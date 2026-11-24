@@ -2244,7 +2244,7 @@ msgstr "(Er bekommt nicht die ganze Zahlung, wenn ich keinen Ersatz finde...)"
 #. rich_text: <color=#EB83FF><i>(He'll just... scratch that itch between my... )</i></color>
 msgctxt "ui"
 msgid "(He'll just... scratch that itch between my... )"
-msgstr "(Er wird nur... das Jucken zwischen meinen... kratzen... )"
+msgstr "（DE: (Er wird doch nur... diesen Juckreiz zwischen meinen... befriedigen...)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(He's all about manners, right...? So-... I'm sure he can... behave if I accept another tip... )</i></color>
@@ -5905,7 +5905,7 @@ msgstr "(Auf keinen Fall! Rosie ist so – ich kann mir gar nicht vorstellen, wi
 #. rich_text: <i>(<color=#EB83FF>No! I-</color>I j<color=#EB83FF>ust needed t</color>o clean <color=#EB83FF>it u</color>p! I didn't want to... <color=#EB83FF>lick Lio's... </color>)</i>
 msgctxt "ui"
 msgid "(No! I-I just needed to clean it up! I didn't want to... lick Lio's... )"
-msgstr "(Nein! Ich... ich musste das nur aufräumen! Ich wollte nicht... Lios... lecken.)"
+msgstr "（DE: (Nein! Ich... ich musste das nur aufräumen! Ich wollte nicht... Lios... lecken.)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(No! No. St</color>op. Stop doing that. Cold showers! Baseball! Agh... Just... finish unpacking... )</i>
@@ -6718,7 +6718,7 @@ msgstr "(Sie denkt wirklich nicht... dass das, was sie tut... schlimm ist...?)"
 # rich_translation: <i>(Sie sagte „Ich“ statt „Diese hier“. Ghh... <color=#EB83FF>Ihr Pussy fühlt sich an, als würde es mir die Finger abreißen...</color>)</i>
 msgctxt "ui"
 msgid "(She said \"I\" instead of \"This one\". Ghh... Her pussy feels like it's gonna tear my fingers off... )"
-msgstr "(Sie sagte „Ich“ statt „Diese hier“. Ghh... Ihr Pussy fühlt sich an, als würde es mir die Finger abreißen...)"
+msgstr "（DE: (Sie sagte „Ich“ statt „Diese hier“. Ghh... Ihr Pussy fühlt sich an, als würde es mir die Finger abreißen...)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(She said that it's for beginners and there's no crash after with this flavor, so-... )</i></color>
@@ -9909,7 +9909,7 @@ msgstr "0.4 - TunnelAddition - 5 - Mann helfen ablehnen"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.4 - TunnelAddition - 6 - After helping man"
-msgstr "0.4 - TunnelAddition - 6 - Nach Mann helfen"
+msgstr "DE: 0.4 - TunnelAddition - 6 - Nachdem ich dem Mann geholfen hatte"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19159,7 +19159,7 @@ msgstr "Kunde"
 #. src: dialog
 msgctxt "ui"
 msgid "Customer begins Groping Zoeys ass."
-msgstr "Freier beginnt, Zoeys Arsch zu grabschen."
+msgstr "DE: Der Kunde beginnt, Zoey an den Arsch zu fassen."
 
 #. src: dialog
 msgctxt "ui"
@@ -20351,7 +20351,7 @@ msgstr "Wurde die Einführung gestartet?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did Key"
-msgstr "Hat Key"
+msgstr "DE: Hat Key"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -30886,7 +30886,7 @@ msgstr "Jetzt bin ich total high."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "High perv\\"
-msgstr "Hochgradig pervers\\"
+msgstr "Hochgradig pervers"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -35863,7 +35863,7 @@ msgstr "Es ist bald da, hab einfach Geduld und behalte diesmal dein Oberteil an.
 #. src: dialog
 msgctxt "ui"
 msgid "It'll be my treat! You're gonna like it whether you like it or not."
-msgstr "Ich lade dich ein! Es wird dir gefallen, ob du willst oder nicht."
+msgstr "DE: Das geht auf mich! Es wird dir gefallen – ob du willst oder nicht."
 
 #. src: dialog
 msgctxt "ui"
@@ -38210,7 +38210,7 @@ msgstr "LessDraws - Assistenzkünstler"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Let Enforcer Grope ZoeyTimeline"
-msgstr "Lass den Vollstrecker Zoey ertasten."
+msgstr "DE: Lass den Vollstrecker Zoey ertasten."
 
 #. src: dialog
 msgctxt "ui"
@@ -49684,7 +49684,7 @@ msgstr "Bitte gib den Namen des Charakters wie folgt ein: GiveDefaultInventory J
 #. src: dialog
 msgctxt "speaker:Machine"
 msgid "Please insert the semen-filled preservatives."
-msgstr "Bitte füge die mit Sperma gefüllten Konservierungsmittel ein."
+msgstr "D: Bitte füge die mit Sperma gefüllten Konservierungsmittel ein. (Sprecher: Maschine)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Please put your- um- cock between Rosies- boobs, s-sir...</color>
@@ -49725,7 +49725,7 @@ msgstr "Bitte, Liebling. Fühl dich wie zu Hause. Es stört mich wirklich nicht,
 #. rich_text: <color=#EB83FF>Please, sir...! Please- Please cum-! Cumm...!</color>
 msgctxt "ui"
 msgid "Please, sir...! Please- Please cum-! Cumm...!"
-msgstr "Bitte, Sir...! Bitte- Bitte komm-! Kommm...!"
+msgstr "DE: Bitte, Herr...! Bitte- Bitte komm-! Kommm...!"
 
 #. src: dialog
 msgctxt "ui"
@@ -51223,7 +51223,7 @@ msgstr "Merk dir das."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Remember we did this dialogue before"
-msgstr "Merken, dass wir diesen Dialog schon hatten"
+msgstr "Denk daran, dass wir diesen Dialog schon einmal hatten."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -54989,7 +54989,7 @@ msgstr "Mann... Gott, schau dir den Körper an... *hicks*... Unglaublich..."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Shennychwan - FEMALE NPC"
-msgstr "Shennychwan - WEIBLICHER NPC"
+msgstr "Shennychwan – WEIBLICHER NPC"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56411,7 +56411,7 @@ msgstr "Also, wo befindet sich dieser Chip?"
 #. rich_text: <color=#EB83FF>So- ngh- thick... Hahh...! Fghhh! So warm, nghh!</color>
 msgctxt "speaker:Zoey"
 msgid "So- ngh- thick... Hahh...! Fghhh! So warm, nghh!"
-msgstr "So... so dick... Hahh...! Fghhh! So warm, nghh!"
+msgstr "D: So... so dick... Hahh...! Fghhh! So warm, nghh!"
 
 #. src: dialog
 #. rich_text: So-... <b>I</b> have to-...?
@@ -58494,7 +58494,7 @@ msgstr "SuitcaseBadend - CartelHideout - 21"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 21_line_3-FSM"
-msgstr "Übersetzung."
+msgstr "SuitcaseBadend - CartelHideout - 21_line_3-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58599,7 +58599,7 @@ msgstr "Koffer-Badend - Kartell-Versteck - 28_Zeile_0-FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 28_line_4-FSM"
-msgstr "Übersetzung."
+msgstr "SuitcaseBadend - Kartell-Versteck - 28_Zeile_4-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58669,7 +58669,7 @@ msgstr "Übersetzung."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 31_line_9-FSM"
-msgstr "Übersetzung."
+msgstr "SuitcaseBadend - CartelHideout - 31_line_9-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58704,7 +58704,7 @@ msgstr "Übersetzung."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 33_line_9-FSM"
-msgstr "Übersetzung."
+msgstr "SuitcaseBadend - CartelHideout - 33_line_9-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58809,7 +58809,7 @@ msgstr "SuitcaseBadend - CartelHideout - 9"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 9_line_3-FSM"
-msgstr "Übersetzung"
+msgstr "SuitcaseBadend - Kartell-Versteck - 9_Line_3-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59094,7 +59094,7 @@ msgstr "D-der da...! M-mhm...!"
 #. src: dialog
 msgctxt "ui"
 msgid "T-turn around, p-please... I-... I can only cum to-... Ngh..."
-msgstr "D-dreh dich um, b-bitte... Isch-... ich kann nur so ko-... Ngh..."
+msgstr "D-dreh dich um, b-bitte... Ich-... ich kann nur kommen... Ngh..."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -62487,7 +62487,7 @@ msgstr "Truculenter Ernter"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "True Love's First Tits"
-msgstr "Die ersten Titten der wahren Liebe"
+msgstr "Wahre Liebe: Die ersten Titten"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -63015,7 +63015,7 @@ msgstr "Dreh dich zu Zoey um."
 #. src: dialog
 msgctxt "ui"
 msgid "Turned on by how worked up they got the customer, but insecure about letting them fuck Max's pussy."
-msgstr "Angemacht davon, wie sie den Kunden geil gemacht haben, aber unsicher, sie Max' Pussy ficken zu lassen."
+msgstr "Von dem, wie geil sie den Kunden gemacht haben, bin ich angefixt, aber unsicher, ob ich sie Max' Pussy ficken lassen soll."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67057,7 +67057,7 @@ msgstr "Sollen wir den Brief zustellen?"
 #. src: dialog
 msgctxt "ui"
 msgid "We did more than see it. We were the ones driving it."
-msgstr "Wir haben mehr getan, als es zu sehen. Wir sind es gefahren."
+msgstr "Wir haben nicht nur zugesehen. Wir waren diejenigen, die es gesteuert haben."
 
 #. src: dialog
 msgctxt "speaker:Brad"
@@ -69674,7 +69674,7 @@ msgstr "Ja, genau so, eheheh. Hol mir einen Drink. Ich will deinen Arsch anstarr
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Yeah we did do dat"
-msgstr "Ja, ham wa gemacht"
+msgstr "Ja, das haben wir ja gemacht."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -70565,7 +70565,7 @@ msgstr "Yess! Fick dieser Sekretärin das Hirn raus! Fhhaa!! Fick mich härterr!
 #. src: dialog
 msgctxt "ui"
 msgid "Yess! Please! Cum inside me! Yes!"
-msgstr "Yess! Bitte! Spritz in mir ab! Ja!"
+msgstr "DE: Ja! Bitte! Spritz in mich ab! Ja!"
 
 #. src: dialog
 msgctxt "speaker:Customer"
