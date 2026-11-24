@@ -28,9 +28,12 @@ export function isInlineRich(rich: string): boolean {
   return plain.length > 0 && !rich.includes(plain);
 }
 
-/** Есть ли у записи явный перевод разметки (новое имя или старый алиас). */
+/** Есть ли у записи явный перевод разметки (`#.` или `#`, новое имя или алиас). */
 export function hasRichTranslation(entry: PoEntry): boolean {
-  return entry.translator.some((c) => /^rich(_translation)?:/.test(c));
+  return (
+    entry.comments.some((c) => c.startsWith("rich_translation:")) ||
+    entry.translator.some((c) => /^rich(_translation)?:/.test(c))
+  );
 }
 
 export interface RtStat {

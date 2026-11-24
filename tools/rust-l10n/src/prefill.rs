@@ -538,7 +538,14 @@ pub fn build_ru_po(input: &BuildRuPoInput<'_>) -> (Vec<PoEntry>, PrefillReport) 
             msgid: pe.msgid.clone(),
             msgctxt: pe.msgctxt.clone(),
             refs: pe.refs.clone(),
-            comments: pe.comments.clone(),
+            // `rich_translation` не теряется: у подтверждённой записи берём её
+            // значение, у новой — пустая заготовка за `rich_text`.
+            comments: crate::po_update::with_rich_translation(
+                &pe.comments,
+                &confirmed
+                    .map(crate::po_update::rich_translation_of)
+                    .unwrap_or_default(),
+            ),
             translator: confirmed.map(|c| c.translator.clone()).unwrap_or_default(),
             ..PoEntry::default()
         };

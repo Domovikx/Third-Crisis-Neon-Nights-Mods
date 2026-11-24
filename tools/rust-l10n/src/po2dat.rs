@@ -58,15 +58,25 @@ pub fn load_pot_rich(root: &Path) -> HashMap<String, String> {
     rich_map
 }
 
-/// Явный `rich_translation` из комментариев переводчика.
+/// Явный `rich_translation` записи.
 ///
-/// Основное имя — `# rich_translation: …` (совпадает с полем `rt`, которое
-/// читает рантайм). `# rich: …` остаётся алиасом: старые PO писались так.
-/// Если есть оба, побеждает `rich_translation:`.
+/// Основное хранилище — извлечённый комментарий `#. rich_translation: …`,
+/// который по контракту стоит СРАЗУ после `#. rich_text: …` (владелец,
+/// 2026-11-24). Старый переводческий `# rich_translation: …` и его алиас
+/// `# rich: …` продолжают читаться: в них лежит история до миграции.
+/// Если есть несколько источников, побеждает `#.`-форма.
 pub fn rt_override(entry: Option<&PoEntry>) -> String {
     let Some(entry) = entry else {
         return String::new();
     };
+    for c in &entry.comments {
+        if let Some(rest) = c.strip_prefix("rich_translation:") {
+            let value = js_trim(rest);
+            if !value.is_empty() {
+                return value.to_string();
+            }
+        }
+    }
     let mut legacy = "";
     for c in &entry.translator {
         if let Some(rest) = c.strip_prefix("rich_translation:") {

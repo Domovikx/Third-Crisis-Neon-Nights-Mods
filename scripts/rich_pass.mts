@@ -80,7 +80,7 @@ export function needRt(entries: PoEntry[], richMap: ReadonlyMap<string, string>)
   const out: PoEntry[] = [];
   for (const e of entries) {
     if (!e.msgid || !e.msgstr) continue;
-    if (e.translator.some((c) => /^rich(_translation)?:/.test(c))) continue;
+    if (hasRt(e)) continue;
     const rich = richMap.get(e.msgid);
     if (!rich) continue;
     const plain = plainOf(rich);
@@ -88,6 +88,14 @@ export function needRt(entries: PoEntry[], richMap: ReadonlyMap<string, string>)
     out.push(e);
   }
   return out;
+}
+
+/** Есть ли у записи размеченный перевод (новое `#.` или старое `#`). */
+export function hasRt(e: PoEntry): boolean {
+  return (
+    e.comments.some((c) => c.startsWith("rich_translation:")) ||
+    e.translator.some((c) => /^rich(_translation)?:/.test(c))
+  );
 }
 
 /**
@@ -198,11 +206,15 @@ export function buildRtWithSpans(
   return out;
 }
 
-/** Вставить `# rich_translation:` перед `msgctxt`/`msgid` нужных записей. */
+/**
+ * Вписать `#. rich_translation:` сразу за `#. rich_text:` нужных записей.
+ *
+ * Форма — извлечённый комментарий (`#.`), позиция — соседняя строка: это
+ * контракт PO (владелец, 2026-11-24) и то, что читает `po2dat`. Старые
+ * `# rich_translation:` / `# rich:` на месте записи убираются.
+ */
 export function insertRtComments(text: string, updates: ReadonlyMap<string, string>): string {
   if (updates.size === 0) return text;
-  // PO — блоки, разделённые пустой строкой; правим блок целиком, чтобы не
-  // зависеть от порядка `#.`/`msgctxt`/`msgid` внутри записи.
   return text
     .split(/\r?\n\r?\n/)
     .map((block) => {
@@ -210,7 +222,18 @@ export function insertRtComments(text: string, updates: ReadonlyMap<string, stri
       if (!m) return block;
       const key = m[1].replace(/\\"/g, '"').replace(/\\\\/g, "\\");
       const value = updates.get(key);
-      return value === undefined ? block : `# rich_translation: ${value}\n${block}`;
+      if (value === undefined) return block;
+      const lines = block.split("\n");
+      if (!lines.some((l) => l.startsWith("#. rich_text: "))) return block;
+      const rest = lines.filter(
+        (l) => !l.startsWith("#. rich_translation:") && !/^# rich(_translation)?:( |$)/.test(l),
+      );
+      const at = rest.findIndex((l) => l.startsWith("#. rich_text: "));
+      return [
+        ...rest.slice(0, at + 1),
+        `#. rich_translation: ${value}`,
+        ...rest.slice(at + 1),
+      ].join("\n");
     })
     .join("\n\n");
 }

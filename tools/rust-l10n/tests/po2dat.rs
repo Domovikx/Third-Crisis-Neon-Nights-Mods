@@ -79,6 +79,11 @@ msgstr \"\"
 # rich_translation: новый",
             "новый",
         ),
+        // Новое хранилище: извлечённый комментарий сразу за rich_text.
+        (
+            "#. rich_translation: Хе-хе- Звучит- <color=#EB83FF>весело...</color>",
+            "Хе-хе- Звучит- <color=#EB83FF>весело...</color>",
+        ),
     ] {
         let fx = Fixture::new(
             "rt",
@@ -103,6 +108,32 @@ msgstr \"Хе-хе- Звучит- весело...\"
             Some("Hehe- That sounds- <color=#EB83FF>fun...</color>")
         );
     }
+}
+
+#[test]
+fn новая_форма_извлечённого_комментария_побеждает_старую() {
+    let pot = format!(
+        "{HEADER}
+#. rich_text: A <b>bold</b> word
+msgid \"A bold word\"
+msgstr \"\"
+"
+    );
+    let fx = Fixture::new(
+        "rt-priority",
+        &pot,
+        &format!(
+            "{HEADER}
+#. rich_text: A <b>bold</b> word
+#. rich_translation: Жирное <b>слово</b>
+# rich_translation: старое значение
+msgid \"A bold word\"
+msgstr \"Жирное слово\"
+"
+        ),
+    );
+    let (rows, _) = build_dat("xx", &fx.root).expect("сборка");
+    assert_eq!(rows[0].rt.as_deref(), Some("Жирное <b>слово</b>"));
 }
 
 #[test]

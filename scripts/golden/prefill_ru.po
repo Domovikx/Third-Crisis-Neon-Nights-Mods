@@ -45,6 +45,7 @@ msgstr ""
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Welcome back, Sarah.</color>
+#. rich_translation:
 msgctxt "speaker:Zoey"
 msgid "Welcome back, Sarah."
 msgstr "С возвращением, Сара."

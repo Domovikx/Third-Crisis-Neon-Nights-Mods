@@ -374,11 +374,17 @@ fn заголовок_первый_блок_crlf_нормализуется() {
 }
 
 #[test]
-fn без_пустой_строки_в_шапку_уходит_весь_файл() {
+fn без_шапки_первый_блок_это_запись_а_не_шапка() {
+    // Раньше файл без пустой строки целиком уезжал в шапку: запись исчезала из
+    // merge и возвращалась в текст шапки, а на повторном прогоне дублировалась.
+    // Наш же `render_merged` при пустой шапке начинает файл с одного `\n`, то
+    // есть этот случай — реальный (падала идемпотентность `po_update`).
     let raw = "msgid \"A\"\nmsgstr \"Б\"\n";
+    assert!(extract_header(raw).is_empty(), "запись — не шапка");
+    let with_header = "msgid \"\"\nmsgstr \"X\\n\"\n\nmsgid \"A\"\nmsgstr \"Б\"\n";
     assert_eq!(
-        extract_header(raw),
-        vec!["msgid \"A\"".to_string(), "msgstr \"Б\"".to_string()]
+        extract_header(with_header),
+        vec!["msgid \"\"".to_string(), "msgstr \"X\\n\"".to_string()]
     );
 }
 
@@ -691,4 +697,85 @@ fn перевод_под_skip_ключом_не_остаётся_в_po() {
         out.stats.skip_dropped, 1,
         "перевод под ней отброшен осознанно"
     );
+}
+
+// --- rich_translation: хранение в PO, сидинг, идемпотентность ----------------
+
+fn rich_pot() -> String {
+    let mut with_rich = e("Hi <b>there</b>", "ui", "", &[]);
+    with_rich.comments = vec![
+        "src: dialog".to_string(),
+        "rich_text: Hi <b>there</b>".to_string(),
+    ];
+    pot_text(&[with_rich, e("Plain line", "ui", "", &[])], &[])
+}
+
+#[test]
+fn rich_translation_переживает_слияние_и_стоит_за_rich_text() {
+    let pot = rich_pot();
+    let mut po_entry = e("Hi <b>there</b>", "ui", "Привет <b>там</b>", &[]);
+    po_entry.comments = vec![
+        "src: dialog".to_string(),
+        "rich_text: Hi <b>there</b>".to_string(),
+        "rich_translation: Привет <b>там</b>".to_string(),
+    ];
+    let fx = Fixture::new("rt-keep", &pot, &pot_text(&[po_entry], &[]));
+    run_po_update(&fx.options()).expect("прогон");
+
+    let out = fx.read();
+    assert!(
+        out.contains(
+            "#. rich_text: Hi <b>there</b>\n#. rich_translation: Привет <b>там</b>\nmsgctxt \"ui\""
+        ),
+        "поле сохранено и стоит ровно за rich_text:\n{out}"
+    );
+    assert_eq!(out.matches("rich_translation").count(), 1, "без дублей");
+    assert!(
+        !out.contains("# rich_translation:"),
+        "старая форма мигрирована в `#.`:\n{out}"
+    );
+}
+
+#[test]
+fn новая_запись_с_rich_text_приходит_с_пустой_заготовкой() {
+    let fx = Fixture::new("rt-seed", &rich_pot(), "");
+    run_po_update(&fx.options()).expect("прогон");
+    let out = fx.read();
+    assert!(
+        out.contains("#. rich_text: Hi <b>there</b>\n#. rich_translation:\nmsgctxt \"ui\""),
+        "заготовка заведена сразу за rich_text:\n{out}"
+    );
+    let plain = out
+        .split("\n\n")
+        .find(|b| b.contains("msgid \"Plain line\""))
+        .expect("запись без разметки");
+    assert!(
+        !plain.contains("rich_translation"),
+        "у строки без rich_text поля нет:\n{plain}"
+    );
+}
+
+#[test]
+fn повторный_po_update_не_дублирует_и_не_затирает_rich_translation() {
+    let fx = Fixture::new("rt-twice", &rich_pot(), "");
+    run_po_update(&fx.options()).expect("первый");
+    let first = fx.read();
+    run_po_update(&fx.options()).expect("второй");
+    assert_eq!(fx.read(), first, "второй прогон файл не меняет");
+    assert_eq!(first.matches("#. rich_translation:").count(), 1);
+}
+
+#[test]
+fn legacy_rich_переводчика_переезжает_в_извлечённый_комментарий() {
+    let pot = rich_pot();
+    let mut po_entry = e("Hi <b>there</b>", "ui", "Привет <b>там</b>", &[]);
+    po_entry.translator = vec!["rich_translation: Привет <b>там</b>".to_string()];
+    let fx = Fixture::new("rt-legacy", &pot, &pot_text(&[po_entry], &[]));
+    run_po_update(&fx.options()).expect("прогон");
+    let out = fx.read();
+    assert!(
+        out.contains("#. rich_translation: Привет <b>там</b>"),
+        "старое `#`-поле переехало в `#.`:\n{out}"
+    );
+    assert!(!out.contains("# rich_translation:"), "старой формы нет");
 }

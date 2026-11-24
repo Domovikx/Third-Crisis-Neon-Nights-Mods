@@ -87,11 +87,13 @@ msgstr "Без разметки"
   );
 });
 
-test("insertRtComments: комментарий встаёт перед msgctxt, один раз на запись", () => {
+test("insertRtComments: комментарий встаёт сразу за rich_text, один раз на запись", () => {
   const text = `msgid ""
 msgstr ""
 
 #. src: dialog
+#. rich_text: A <b>bold</b> word
+#. rich_translation: старое <b>значение</b>
 msgctxt "ui"
 msgid "A bold word"
 msgstr "Жирное слово"
@@ -100,13 +102,17 @@ msgid "Other"
 msgstr "Другое"
 `;
   const out = insertRtComments(text, new Map([["A bold word", "Жирное <b>слово</b>"]]));
-  // Комментарий ставится в НАЧАЛО блока записи: в PO он валиден в любом месте
-  // до msgid, а блок-подход не зависит от порядка `#.`/`msgctxt`.
+  // Форма — извлечённый комментарий `#.`, место — соседняя строка за rich_text:
+  // так поле читает po2dat и так его проверяет adjacency-гейт.
   assert.match(
     out,
-    /# rich_translation: Жирное <b>слово<\/b>\n#\. src: dialog\nmsgctxt "ui"\nmsgid "A bold word"/,
+    /#\. rich_text: A <b>bold<\/b> word\n#\. rich_translation: Жирное <b>слово<\/b>\nmsgctxt "ui"\nmsgid "A bold word"/,
   );
-  assert.equal((out.match(/rich_translation/g) ?? []).length, 1);
+  assert.equal(
+    (out.match(/rich_translation/g) ?? []).length,
+    1,
+    "старое значение заменено, не добавлено",
+  );
   assert.equal(plainOf("<i>> Hahh!"), "> Hahh!");
 });
 

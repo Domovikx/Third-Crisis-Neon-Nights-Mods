@@ -29,7 +29,7 @@ use std::collections::{BTreeMap, HashMap, HashSet};
 use std::path::{Path, PathBuf};
 
 use rust_l10n_core::json::quoted;
-use rust_l10n_core::po::{escape_po, js_ws, parse_po, PoEntry};
+use rust_l10n_core::po::{escape_po, js_trim, js_ws, parse_po, PoEntry};
 
 use crate::refs::ref_sort_key;
 
@@ -178,6 +178,77 @@ pub struct MergeOutcome {
 /// ~50 мс из 140 — дороже самого парсинга PO.
 type KeyRef<'a> = (&'a str, &'a str);
 
+/// `rich_translation` записи: сначала извлечённый `#.`, затем переводческие
+/// `# rich_translation:` и алиас `# rich:` (наследие до миграции 2026-11-24).
+pub fn rich_translation_of(e: &PoEntry) -> String {
+    for c in &e.comments {
+        if let Some(rest) = c.strip_prefix("rich_translation:") {
+            let value = js_trim(rest);
+            if !value.is_empty() {
+                return value.to_string();
+            }
+        }
+    }
+    for c in &e.translator {
+        if let Some(rest) = c.strip_prefix("rich_translation:") {
+            let value = js_trim(rest);
+            if !value.is_empty() {
+                return value.to_string();
+            }
+        }
+    }
+    for c in &e.translator {
+        if let Some(rest) = c.strip_prefix("rich:") {
+            let value = js_trim(rest);
+            if !value.is_empty() {
+                return value.to_string();
+            }
+        }
+    }
+    String::new()
+}
+
+/// Переводческие комментарии, которые переезжают в новый PO.
+///
+/// `legacy: text vanished` — служебная метка старого пайплайна. `rich_translation`
+/// и алиас `rich` с 2026-11-24 живут извлечённым комментарием за `rich_text`,
+/// поэтому при наличии `rich_text` старая форма убирается (`drop_rich`), чтобы
+/// поле не дублировалось в двух видах. Без `rich_text` она остаётся: терять
+/// данные не из чего восстанавливать.
+#[must_use]
+pub fn clean_translator(translator: &[String], drop_rich: bool) -> Vec<String> {
+    translator
+        .iter()
+        .filter(|c| {
+            !c.starts_with("legacy: text vanished")
+                && !(drop_rich && (c.starts_with("rich_translation:") || c.starts_with("rich:")))
+        })
+        .cloned()
+        .collect()
+}
+
+/// Комментарии записи с `rich_translation` ровно за `rich_text`.
+///
+/// Пустое значение — это заготовка (`#. rich_translation:` без хвоста): она
+/// остаётся, чтобы переводчик видел, что поле обязано быть заполнено, а гейт
+/// разрешал непереведённые строки. Записи без `rich_text` поля не получают.
+pub fn with_rich_translation(comments: &[String], rt: &str) -> Vec<String> {
+    let mut out: Vec<String> = comments
+        .iter()
+        .filter(|c| !c.starts_with("rich_translation:"))
+        .cloned()
+        .collect();
+    if let Some(at) = out.iter().position(|c| c.starts_with("rich_text:")) {
+        let line = if rt.is_empty() {
+            "rich_translation:".to_string()
+        } else {
+            format!("rich_translation: {rt}")
+        };
+        out.insert(at + 1, line);
+    }
+    out
+}
+
 fn key_ref(e: &PoEntry) -> KeyRef<'_> {
     (e.msgid.as_str(), e.msgctxt.as_str())
 }
@@ -186,6 +257,8 @@ struct Fill<'a> {
     source: KeyRef<'a>,
     msgstr: &'a str,
     translator: &'a [String],
+    /// `rich_translation` исчезнувшей записи: переезжает вместе с переводом.
+    rt: String,
 }
 
 /// Слить переводы вперёд. Возвращает записи в порядке POT + хвост сирот.
@@ -323,6 +396,7 @@ pub fn merge_pot<'a>(
             source: *key,
             msgstr: old.msgstr.as_str(),
             translator: &old.translator,
+            rt: rich_translation_of(old),
         };
         if let Some(prev) = fills.insert(target, fill) {
             // Второй исчезнувший ключ затёр первый: вариант потерян, но виден.
@@ -359,6 +433,7 @@ pub fn merge_pot<'a>(
             (Some(fill), Some(o)) if o.msgstr.is_empty() => Some(fill),
             _ => None,
         };
+        let has_rich = pe.comments.iter().any(|c| c.starts_with("rich_text:"));
         let entry = PoEntry {
             msgid: pe.msgid.clone(),
             msgctxt: pe.msgctxt.clone(),
@@ -368,7 +443,16 @@ pub fn merge_pot<'a>(
                 (None, None) => String::new(),
             },
             refs: pe.refs.clone(),
-            comments: pe.comments.clone(),
+            comments: {
+                // `rich_translation` не теряется при слиянии: ретаргет несёт свою
+                // копию, иначе берём её у старой записи. Нет и её — остаётся
+                // пустая заготовка (напоминание переводчику).
+                let rt = match fill {
+                    Some(f) if !f.rt.is_empty() => f.rt.clone(),
+                    _ => old.map(rich_translation_of).unwrap_or_default(),
+                };
+                with_rich_translation(&pe.comments, &rt)
+            },
             // `auto-normalized` — машинная догадка prefill: в новый POT не едет.
             // `skip` снимается: POT больше не помечает ключ, метке в PO не место.
             // `legacy` снимается: ключ снова в POT, значит запись не сирота
@@ -384,13 +468,8 @@ pub fn merge_pot<'a>(
                 (None, None) => Vec::new(),
             },
             translator: match (fill, old) {
-                (Some(f), _) => f.translator.to_vec(),
-                (None, Some(o)) => o
-                    .translator
-                    .iter()
-                    .filter(|c| !c.starts_with("legacy: text vanished"))
-                    .cloned()
-                    .collect(),
+                (Some(f), _) => clean_translator(f.translator, has_rich),
+                (None, Some(o)) => clean_translator(&o.translator, has_rich),
                 (None, None) => Vec::new(),
             },
         };
@@ -551,10 +630,19 @@ pub fn render_merged(entries: &[MergedEntry], header: &[String]) -> String {
 /// режиме, иначе в шапку попал бы `\r` (в репозиторных `po/*.po` EOL = CRLF).
 pub fn extract_header(raw_text: &str) -> Vec<String> {
     let universal = raw_text.replace("\r\n", "\n").replace('\r', "\n");
-    universal
-        .split("\n\n")
-        .next()
-        .unwrap_or("")
+    let first = universal.split("\n\n").next().unwrap_or("");
+    // Шапка — блок с пустым `msgid ""`. Если в первом блоке есть НЕПУСТОЙ
+    // msgid, это уже запись: файл без шапки (наш рендер начинает такой файл с
+    // одного перевода строки, и раньше первая запись уезжала в шапку, а на
+    // повторном прогоне дублировалась).
+    let entry_ahead = first.lines().any(|line| {
+        let t = line.trim_start();
+        t.starts_with("msgid \"") && t != "msgid \"\""
+    });
+    if entry_ahead {
+        return Vec::new();
+    }
+    first
         .split('\n')
         .filter(|line| !line.is_empty())
         .map(str::to_string)

@@ -38,6 +38,8 @@ import process from "node:process";
 import { scanDump } from "../../extract-text/scripts/inventory.mts";
 import { inKeys, readKeys } from "../../pipeline-common/scripts/qa_keys.mts";
 import { isPromptLeak } from "../../../../scripts/leak_guard.mts";
+import { parseTags, placeTags } from "../../../../scripts/rich_tags.mts";
+import { withReviewFlag } from "../../../../scripts/rt_backfill.mts";
 import { LATIN_CYRILLIC_LANGS, hasForeignScript } from "../../../../scripts/script_guard.mts";
 import { loadGenderMap } from "../../../../scripts/speaker_gender.mts";
 import {
@@ -726,11 +728,16 @@ export function applyMsgstrInPlace(
   updates: Map<string, string>,
   overwrite = false,
   options: { crossScript?: boolean } = {},
-): void {
+): string[] {
   const lines = readFileSync(path, "utf8").split(/\r\n|\r|\n/);
   const out: string[] = [];
+  const reviewKeys: string[] = [];
   let curCtxt = "";
   let curId: string[] | null = null;
+  /** `rich_text` текущей записи и позиции rich/rt-строк в `out`. */
+  let richText: string | null = null;
+  let richIdx: number | null = null;
+  let rtIdx: number | null = null;
 
   let i = 0;
   while (i < lines.length) {
@@ -771,8 +778,38 @@ export function applyMsgstrInPlace(
           `подмена письменности в ${path}: «${poUnescape(oldVal.join("")).slice(0, 30)}» → «${next.slice(0, 30)}»`,
         );
       }
-      if (next !== undefined && (oldEmpty || overwrite)) out.push(`msgstr "${poEscape(next)}"`);
-      else out.push(...lines.slice(i, j));
+      if (next !== undefined && (oldEmpty || overwrite)) {
+        out.push(`msgstr "${poEscape(next)}"`);
+        // Контракт: `rich_translation` = `msgstr` + теги из `rich_text`.
+        // Обновляем его тем же проходом, иначе после перевода строка
+        // показывала бы старый текст или теряла разметку.
+        const hasTags = richText !== null && parseTags(richText).length > 0;
+        if (richText !== null && hasTags) {
+          const placed = placeTags(richText, next);
+          const rtLine = `#. rich_translation: ${placed.rt}`;
+          if (rtIdx !== null) out[rtIdx] = rtLine;
+          else if (richIdx !== null) {
+            out.splice(richIdx + 1, 0, rtLine);
+            rtIdx = richIdx + 1;
+          }
+          // Позиция тега не подтверждена — тег не выдумываем, строку помечаем:
+          // её разбирает человек (флаг `#, rt-review` в PO).
+          if (placed.dropped > 0) {
+            reviewKeys.push(key);
+            const start = out.lastIndexOf("");
+            const block = out.slice(start + 1);
+            out.length = start + 1;
+            out.push(...withReviewFlag(block, true));
+            rtIdx = null;
+            richIdx = null;
+          }
+        } else if (richText !== null && rtIdx === null && richIdx !== null) {
+          // Разметки в источнике нет — переносить нечего; заготовку заводим,
+          // но чужое значение (если было) не затираем.
+          out.splice(richIdx + 1, 0, "#. rich_translation:");
+          rtIdx = richIdx + 1;
+        }
+      } else out.push(...lines.slice(i, j));
       i = j;
       curId = [];
       continue;
@@ -780,6 +817,15 @@ export function applyMsgstrInPlace(
       if (s === "") {
         curCtxt = "";
         curId = null;
+        richText = null;
+        richIdx = null;
+        rtIdx = null;
+      } else if (s.startsWith("#. rich_text: ")) {
+        richText = s.slice("#. rich_text: ".length);
+        richIdx = out.length;
+        rtIdx = null;
+      } else if (/^# rich(_translation)?:( |$)|^#\. rich_translation:( |$)/.test(s)) {
+        rtIdx = out.length;
       } else if (!s.startsWith("#") && curId && !s.startsWith('"')) {
         curId = null;
       }
@@ -796,6 +842,7 @@ export function applyMsgstrInPlace(
     rmSync(part, { force: true });
     throw err;
   }
+  return reviewKeys;
 }
 
 // --- вызов LLM --------------------------------------------------------------
@@ -1188,7 +1235,15 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
           note(`DUPE key=${ctxt.slice(0, 30)}|${text.slice(0, 60)} x${count} (same text to all)`);
         }
       }
-      applyMsgstrInPlace(poPath, updates, opts.repair === true || opts.improve === true);
+      const review = applyMsgstrInPlace(
+        poPath,
+        updates,
+        opts.repair === true || opts.improve === true,
+      );
+      if (review.length) {
+        note(`rt-review: ${review.length} строк с неподтверждённой разметкой (флаг в PO)`);
+        for (const key of review.slice(0, 10)) note(`  ! ${key.split(" ")[1]?.slice(0, 70)}`);
+      }
     }
     i += chunk.length;
     log(
