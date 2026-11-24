@@ -7,7 +7,7 @@ description: PO-пайплайн текста игры (inventory, pot_rules, po
 
 ## Что где
 
-- Источник правды — `po/template.pot` + `po/<lang>.po` (POT-хаб, **33 447 записей**).
+- Источник правды — `po/template.pot` + `po/<lang>.po` (POT-хаб, **18 445 записей**).
 - Строки берутся **из дампа** `tmp/dump/*.jsonl` (выход `dump-assets`),
   не из YAML: дерево `translations/` удалено. `#: translations/*` в старых PO —
   историческое происхождение, не существующие файлы.
@@ -48,9 +48,8 @@ description: PO-пайплайн текста игры (inventory, pot_rules, po
 ## Команды
 
 ```bash
-# Свежий дамп: рабочий декодер — Rust (~3× быстрее), TS — эталон
-npm run dump            # = --decoder rust
-npm run dump:ts         # эталон-образец, без Rust-тулчейна
+# Свежий дамп: единственный путь — Rust (декодер + сборка)
+npm run dump            # = --decoder rust; --decoder ts удалён 2026-11-24
 
 # Безопасный прогон: отчёт + tmp/potgen/template.pot (po/ не трогается)
 npm run potgen
@@ -195,7 +194,7 @@ POT. Причины и цифры — `tasks/2026-11-21-pot-coverage-gaps.md`:
   `expected/ru.po` + `expected/stats.json` для `po_update`.
 
 ```bash
-# Вся TS-матрица (правила POT через Rust CLI + золотые слепки)
+# Вся матрица тестов (правила POT через Rust CLI + золотые слепки)
 npm test
 
 # Сквозной: дамп → POT → .dat на мини-фикстуре (без игры и сети)

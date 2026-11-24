@@ -76,8 +76,8 @@
 
 ## Политика отбора по `src`
 
-Дата: 2026-11-22. Реализация — `potgen` обеих реализаций (Rust — рабочий путь,
-TS — эталон); политика лежит **данными** в `config/pot-src-policy.json`:
+Дата: 2026-11-22. Реализация — `potgen` (Rust — единственный путь; TS-эталон удалён
+2026-11-24); политика лежит **данными** в `config/pot-src-policy.json`:
 смена набора меток не требует правки кода.
 
 ### Файл политики
@@ -122,9 +122,9 @@ TS — эталон); политика лежит **данными** в `config/
 | с политикой  |            78 477 |            5,26 MiB | 3,9 с | 2,7 с |
 | **дельта**   | −65 394 (−45,5 %) | −3,70 MiB (−40,2 %) |     — |     — |
 
-POT с политикой и без — **побайтово одинаков** у TS и Rust; журнал исключённых
-тоже побайтово (`tests/potgen.test.mts`: «паритет TS ↔ Rust: POT и журнал
-байт-в-байт (с политикой и без)»).
+POT с политикой и без был **побайтово одинаков** у TS и Rust (TS удалён — сейчас это
+стережёт золото и `tests/potgen.test.mts`: «Rust potgen: политика отбора исключает
+из POT и пишет журнал»).
 
 ### Куда деваются исключённые
 
@@ -148,11 +148,11 @@ POT с политикой и без — **побайтово одинаков** 
 число записей и размер в MiB.
 
 ```bash
-node .opencode/skills/extract-text/scripts/potgen.mts --dump tmp/dump-after --out tmp/pot.pot
-node .opencode/skills/extract-text/scripts/potgen.mts --no-policy --out tmp/all.pot   # как до политики
-node .opencode/skills/extract-text/scripts/potgen.mts --policy config/pot-src-policy.json
-node .opencode/skills/extract-text/scripts/potgen.mts --excluded tmp/pot-excluded.jsonl
-# Rust — те же флаги: npm run potgen -- --no-policy / --policy <path> / --excluded <path>
+npm run potgen -- --dump tmp/dump-after --out tmp/pot.pot
+npm run potgen -- --no-policy --out tmp/all.pot   # как до политики
+npm run potgen -- --policy config/pot-src-policy.json
+npm run potgen -- --excluded tmp/pot-excluded.jsonl
+# флаги те же, что были у удалённого TS-эталона
 ```
 
 ### Что осталось решить владельцу
@@ -183,11 +183,11 @@ node scripts/pot_provenance_report.mts --dump tmp/dump-after
 node scripts/pot_provenance_report.mts --dump tmp/dump-after --json
 
 # POT с метками (в tmp/, po/ не трогается)
-node .opencode/skills/extract-text/scripts/potgen.mts --dump tmp/dump-after --out tmp/pot-labels.pot
+npm run potgen -- --dump tmp/dump-after --out tmp/pot-labels.pot
 
-# паритет TS ↔ Rust и контракт
+# золото POT и контракт
 npm run l10n:build
-node scripts/text_parity.test.mts   # или npm test
+node --test scripts/text_parity.test.mts   # или npm test
 node scripts/pot_invariants.mts tmp/pot-labels.pot --dump tmp/dump-after
 ```
 
@@ -369,7 +369,7 @@ node scripts/pot_invariants.mts tmp/pot-labels.pot --dump tmp/dump-after
 эвристика `(...)`, а парные копии из бандлов выпадали вместе с исключённым
 `field:Name`. Правило действует только на `MonoBehaviour`: у `Sprite` в кучу
 попадают соседние, но чужие строки (имя атласа, обрывок).
-Замер: `potgen` даёт +79 записей, −0; TS↔Rust байт-в-байт.
+Замер: `potgen` даёт +79 записей, −0; выход совпадает с золотом POT байт-в-байт.
 
 ### `field:TakenFromInventoryText` — 1 в POT, проза 0
 
@@ -947,4 +947,4 @@ node scripts/pot_invariants.mts tmp/pot-labels.pot --dump tmp/dump-after
 - `scripts/pot_provenance_report.mts` — генератор таблиц этого документа.
 
 > Обновление 2026-11-24: TS-эталоны удалены, рабочая реализация — Rust,
-> паритет проверяется золотыми фикстурами (см. `docs/rust-vs-ts.md`, раздел 8).
+> паритет проверяется золотыми фикстурами (см. `docs/rust-vs-ts.md`, раздел 14).

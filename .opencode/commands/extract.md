@@ -1,5 +1,5 @@
 ---
-description: Извлечь текст из игры: дамп ассетов (Rust/TS) → POT (Rust potgen)
+description: Извлечь текст из игры: дамп ассетов (Rust) → POT (Rust potgen)
 agent: build
 ---
 
@@ -7,9 +7,9 @@ Run from the repository root (`Third-Crisis-Neon-Nights-Mods`), strictly in orde
 Дамп живёт вне гита (`tmp/dump/`, регенерируется; ~319 МБ).
 
 ```bash
-# 1. Дамп ассетов. Рабочий декодер — Rust (в 3× быстрее); TS — эталон.
+# 1. Дамп ассетов: Rust-декодер + сборка на Rust (единственный путь;
+#    TS-реализации и флаг --decoder ts удалены 2026-11-24)
 npm run dump            # = --decoder rust
-npm run dump:ts         # эталон-образец (работает без Rust-тулчейна)
 
 # 2. Пробный POT в tmp/potgen/ (po/ не трогается)
 npm run potgen
@@ -23,8 +23,8 @@ npm run potgen -- --update
 1. Дамп — JSONL по объектам (`summaries.jsonl` + `<asset>.jsonl`).
    Запускать после апдейта игры (`npm run check:version` напомнит).
    Формат — `references/DUMP_FORMAT.md`; сравнение реализаций — `docs/rust-vs-ts.md`.
-2. `potgen` (Rust) — `inventory` читает дамп потоково и собирает 38 973 строки;
-   каталог `(msgid, msgctxt)` → 33 271 запись POT. Отчёт печатает
+2. `potgen` (Rust) — `inventory` читает дамп потоково и собирает строки;
+   каталог `(msgid, msgctxt)` → `po/template.pot` (18 445 записей). Отчёт печатает
    `inventory items / new / vanished / triaged / rich / merged twins`.
 3. `--update` пишет `po/template.pot` атомарно; без флага — только отчёт.
 

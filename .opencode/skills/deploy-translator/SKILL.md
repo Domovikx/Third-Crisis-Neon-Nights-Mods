@@ -35,8 +35,8 @@ node .opencode/skills/deploy-translator/scripts/deploy.mts --help
 1. `--rebuild`: `runtime/NeonTranslatorRuntime.dll` (нужны `csc.exe` и игра).
 2. `--proxy`: `<игра>/dwmapi.dll` + `<игра>/dwmapi_real.dll` + копия прокси в
    репозиторий (нужен MSVC).
-3. `po/<lang>.po` → `runtime/patch_<lang>.dat` (`buildDat` + `writeDat` из
-   `rust-l10n po2dat`, запись атомарная) → `Managed/patch_<lang>.dat`.
+3. `po/<lang>.po` → `runtime/patch_<lang>.dat` (`rust-l10n po2dat` подпроцессом;
+   запись атомарная) → `Managed/patch_<lang>.dat`.
 4. В `Managed/`: `NeonTranslatorRuntime.dll`, `RobotoCondensed-Regular.ttf`,
    `NotoSansSC.ttf`/`NotoSansJP.ttf` (если есть), `patch_<lang>.dat`,
    `active_lang.txt` (без перевода строки — рантайм читает как есть).
@@ -76,5 +76,4 @@ sha256sum "$M/patch_ru.dat" runtime/patch_ru.dat           # хэши совпа
 - `runtime/patch_<lang>.dat` — staging словаря (в git не попадает).
 - `<игра>/dwmapi.dll` — лоадер; Steam «verify integrity» его удаляет → просто
   повторить деплой.
-- `deploy.ps1` в корне репо — **легаси**, заменён этим скриптом; удаление —
-  решение владельца.
+- `deploy.ps1` был легаси и удалён (2026-11-21, после порта на `.mts`).

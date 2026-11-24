@@ -57,10 +57,10 @@ POT сверялся как множество `msgid` с тремя ступе�
 Нормализация «ядро» помечена отдельно, чтобы не выдать дубликат за пробел: 4 787 строк
 `raw_strings` — это сырые варианты текста, который в POT уже есть.
 
-Воспроизведение POT: `potgen.mts --dump tmp/dump-new --out tmp/audit/pot-from-dump.pot`
-даёт **40 256 записей**, идентичных `po/template.pot` (разница только в
-`POT-Creation-Date`). Значит инвентарь и POT согласованы, и все промахи ниже — это
-именно то, что фильтры/источники **не отдали** в инвентарь, а не потеря на рендере.
+Воспроизведение POT: `npm run potgen -- --dump tmp/dump-new --out tmp/audit/pot-from-dump.pot`
+даёт **40 256 записей** (снимок 2026-11-22), идентичных `po/template.pot` (разница
+только в `POT-Creation-Date`). Значит инвентарь и POT согласованы, и все промахи ниже —
+это именно то, что фильтры/источники **не отдали** в инвентарь, а не потеря на рендере.
 
 ## Инвентарь и матрица покрытия
 
@@ -414,7 +414,7 @@ POT сверялся как множество `msgid` с тремя ступе�
 Прогон:
 
 ```bash
-node .opencode/skills/extract-text/scripts/potgen.mts --dump tmp/dump-new --out tmp/audit/pot-from-dump.pot
+node scripts/text_cli.mts potgen --dump tmp/dump-new --out tmp/audit/pot-from-dump.pot
 node tmp/pot_audit.mts tmp/dump-new
 node tmp/rf_stats.mts tmp/dump-new
 node tmp/dll_audit.mts
@@ -435,4 +435,4 @@ node tmp/dll_audit.mts
   дампа не покажет хвосты 1 790 объектов — реальных промахов может быть больше.
 
 > Обновление 2026-11-24: TS-эталоны удалены, рабочая реализация — Rust,
-> паритет проверяется золотыми фикстурами (см. `docs/rust-vs-ts.md`, раздел 8).
+> паритет проверяется золотыми фикстурами (см. `docs/rust-vs-ts.md`, раздел 14).

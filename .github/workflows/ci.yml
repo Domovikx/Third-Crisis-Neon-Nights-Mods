@@ -37,13 +37,12 @@ jobs:
       - name: Dump tests (discovery, truncation)
         run: npm run test:dump
 
-      - name: E2E pipeline (dump -> POT -> DAT)
+      - name: E2E pipeline (mini-dump -> POT -> .dat)
         run: npm run test:e2e
 
-  # Python-остров: дампер Unity-ассетов (UnityPy не имеет TS-эквивалента).
-  # Пока модуль не портирован — держим его тесты живыми.
-  # Байтовое ядро дампера на Rust (tools/rust-decoder): свой LZ4/LZMA, без правил извлечения.
-  # Сравнение с TS-эталоном и цифры — docs/rust-vs-ts.md.
+  # Rust-ядро: декодер Unity (tools/rust-decoder), QA (rust-qa), аудит данных (rust-lint),
+  # текстовый пайплайн (rust-l10n). TS-эталоны удалены 2026-11-24: проверка идёт против
+  # золотых фикстур (см. гейты ниже), цифры — docs/rust-vs-ts.md.
   rust:
     runs-on: ubuntu-latest
     defaults:
