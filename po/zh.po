@@ -68,7 +68,7 @@ msgstr "“我曾真的相信，自己的工作能让世界变得更好。只要
 #. rich_text: <i>"It worked... too well. The ramifications are horrifying. My coworkers are now discussing mass emission methods."</i>
 msgctxt "ui"
 msgid "\"It worked... too well. The ramifications are horrifying. My coworkers are now discussing mass emission methods.\""
-msgstr "“奏效了……而且效果太好了。后果简直令人毛骨悚然。我的同事现在都在讨论大规模释放的方法。”"
+msgstr "“奏效了……而且效果太好了。后果简直令人毛骨悚然。我的同事现在都在讨论大规模射精的方法。”"
 
 #. src: dialog
 msgctxt "ui"
@@ -231,7 +231,7 @@ msgstr "嘿，服务员……我整晚都在看你那对奶子晃来晃去……
 #. rich_text: 'Means using your body is what really pays in here. Don't worry, you don't <b>have</b> to spread out your little 'vayvay-... Uh-... not that you're allowed to-!! But... you know...
 msgctxt "speaker:Rosie"
 msgid "'Means using your body is what really pays in here. Don't worry, you don't have to spread out your little 'vayvay-... Uh-... not that you're allowed to-!! But... you know..."
-msgstr "在这里，用身体赚钱才是真的划算。别担心，你不用非得把小……小……小阴部什么的都亮出来！！不过……你懂的……"
+msgstr "在这里，用身体赚钱才是真的划算。别担心，你不用非得把小……小……小妹妹什么的都亮出来！！不过……你懂的……"
 
 # rich_translation: “<b>当时急需用钱，所以……就没拒绝，嘿嘿……而且也挺性感的，但……该死，看看你……</b>”
 #. src: dialog
