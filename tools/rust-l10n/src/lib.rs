@@ -6,6 +6,9 @@
 //! Граница и цифры: `docs/language-audit.md`, задачи
 //! `tasks/2026-11-22-rust-text-core.md` и `tasks/2026-11-22-rust-po-update.md`.
 
+pub mod assemble;
+pub mod dotnet_scan;
+pub mod dumpjson;
 pub mod find_source;
 pub mod inventory;
 pub mod po2dat;
@@ -13,5 +16,8 @@ pub mod po_update;
 pub mod pot_skip;
 pub mod potgen;
 pub mod prefill;
+pub mod rd1read;
 pub mod refs;
 pub mod text_filters;
+pub mod typetree;
+pub mod value;

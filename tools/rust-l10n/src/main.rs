@@ -65,6 +65,15 @@ rust-l10n — текстовый пайплайн локализации (POT/PO
                       YYYY-MM-DD ЧЧ:ММ
       --json <path>   полный отчёт предзаполнения в JSON
 
+  rust-l10n dump_assemble <rd1.jsonl> <out-dir> [--raw-string-limit N]
+                        [--global-string-limit N | --no-global-limit] [--dotnet-ui-limit N]
+      rd1.jsonl       промежуточный дамп от `rust-decoder` (tmp/raw/<имя>.rd1.jsonl)
+      out-dir         каталог JSONL-дампа (summaries.jsonl + <asset>.jsonl + index.md)
+      --raw-string-limit N   лимит строк raw_strings на объект (по умолчанию без лимита)
+      --global-string-limit N  лимит global_strings на ассет (по умолчанию 500)
+      --no-global-limit      без лимита global_strings
+      --dotnet-ui-limit N    лимит UI-строк из .NET-кучи (по умолчанию без лимита)
+
   rust-l10n find_source \"<msgid text>\" [--first] [--dump <dir>] [--root <dir>]
       --first         остановиться на первом вхождении
       --dump <dir>    каталог JSONL-дампа (по умолчанию <root>/tmp/dump)
@@ -104,9 +113,90 @@ fn main() -> ExitCode {
         "po_update" => ExitCode::from(po_update_cli(&argv[1..])),
         "prefill" => ExitCode::from(prefill_cli(&argv[1..])),
         "find_source" => ExitCode::from(find_source_cli(&argv[1..])),
+        "dump_assemble" => ExitCode::from(dump_assemble_cli(&argv[1..])),
         other => {
             eprintln!("rust-l10n: неизвестная подкоманда: {other}\n\n{USAGE}");
             ExitCode::from(2)
+        }
+    }
+}
+
+/// dump_assemble: 0 — успех, 1 — ошибка обработки, 2 — ошибка аргументов.
+fn dump_assemble_cli(argv: &[String]) -> u8 {
+    use rust_l10n::assemble::{assemble, AssembleOptions};
+
+    let mut positional: Vec<&String> = Vec::new();
+    let mut json = false;
+    let mut parse_only = false;
+    let mut options = AssembleOptions::default();
+    let mut i = 0;
+    while i < argv.len() {
+        let arg = argv[i].as_str();
+        match arg {
+            "--raw-string-limit" | "--global-string-limit" | "--dotnet-ui-limit" => {
+                let Some(value) = argv.get(i + 1) else {
+                    eprintln!("rust-l10n dump_assemble: {arg} требует число");
+                    return 2;
+                };
+                let Ok(parsed) = value.parse::<usize>() else {
+                    eprintln!("rust-l10n dump_assemble: {arg}: не число: {value}");
+                    return 2;
+                };
+                match arg {
+                    "--raw-string-limit" => options.raw_string_limit = Some(parsed),
+                    "--global-string-limit" => options.global_string_limit = Some(parsed),
+                    _ => options.dotnet_ui_limit = Some(parsed),
+                }
+                i += 2;
+                continue;
+            }
+            "--parse-only" => {
+                parse_only = true;
+                i += 1;
+                continue;
+            }
+            "--json" => {
+                json = true;
+                i += 1;
+                continue;
+            }
+            "--no-global-limit" => {
+                options.global_string_limit = None;
+                i += 1;
+                continue;
+            }
+            _ => positional.push(&argv[i]),
+        }
+        i += 1;
+    }
+
+    if positional.len() != 2 {
+        eprintln!("rust-l10n dump_assemble: нужны <rd1.jsonl> и <out-dir>");
+        return 2;
+    }
+    let raw = std::path::PathBuf::from(positional[0]);
+    let out = std::path::PathBuf::from(positional[1]);
+    match assemble(&raw, &out, &options, parse_only) {
+        Ok(stats) => {
+            if json {
+                println!(
+                    "{{\"assets\":{},\"objects\":{},\"failed\":{}}}",
+                    stats.assets, stats.objects, stats.failed
+                );
+            } else {
+                println!(
+                    "assemble: ассетов {}, объектов {}, ошибок {} -> {}",
+                    stats.assets,
+                    stats.objects,
+                    stats.failed,
+                    out.display()
+                );
+            }
+            0
+        }
+        Err(message) => {
+            eprintln!("rust-l10n dump_assemble: {message}");
+            1
         }
     }
 }

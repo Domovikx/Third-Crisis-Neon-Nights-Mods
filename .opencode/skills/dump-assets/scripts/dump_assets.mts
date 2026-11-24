@@ -28,10 +28,12 @@ import {
   statSync,
   writeFileSync,
 } from "node:fs";
+import { spawnSync } from "node:child_process";
 import { basename, dirname, join, resolve } from "node:path";
 import process from "node:process";
 
 import { checkGameDir, findGameDir, GAME_DATA_FOLDER } from "../../../../scripts/game_dir.mts";
+import { l10nBinary } from "../../../../scripts/text_cli.mts";
 import { scanDotnetSettings, scanDotnetUiStrings } from "./dotnet.mts";
 import { extractObject, type RawScans } from "./extract.mts";
 import { JsonlWriter } from "./jsonl.mts";
@@ -902,6 +904,38 @@ export function dumpAssetsFromRaw(
 }
 
 /**
+ * Собрать дамп Rust-ассемблером (`rust-l10n dump_assemble`).
+ *
+ * Тот же контракт, что у `dumpAssetsFromRaw`: rd1 → `summaries.jsonl` +
+ * `<asset>.jsonl` + `index.md`, побайтово. TS-версия остаётся эталоном для
+ * паритета (`--assembler ts`).
+ */
+export function dumpAssetsRust(
+  rawPath: string,
+  outDir: string,
+  options: DumpOptions = defaultDumpOptions(),
+): DumpStats {
+  const bin = l10nBinary();
+  if (!bin) throw new Error("rust-l10n не собран: npm run l10n:build");
+  const args = ["dump_assemble", rawPath, outDir, "--json"];
+  if (options.rawStringLimit !== null) {
+    args.push("--raw-string-limit", String(options.rawStringLimit));
+  }
+  if (options.globalStringLimit === null) args.push("--no-global-limit");
+  else args.push("--global-string-limit", String(options.globalStringLimit));
+  if (options.dotnetUiLimit !== null) {
+    args.push("--dotnet-ui-limit", String(options.dotnetUiLimit));
+  }
+  const run = spawnSync(bin, args, { encoding: "utf8" });
+  if (run.status !== 0) {
+    throw new Error(run.stderr?.trim() || `dump_assemble: код ${run.status}`);
+  }
+  const line = (run.stdout ?? "").trim().split("\n").pop() ?? "{}";
+  const stats = JSON.parse(line) as DumpStats;
+  return { assets: stats.assets, objects: stats.objects, failed: stats.failed };
+}
+
+/**
  * Отбор `global_strings` из печатных строк файла (порт `scanGlobalStrings`
  * без сканирования байтов: строки уже дал декодер, уникальные по тексту).
  *
@@ -1026,6 +1060,7 @@ function usage(): void {
       "      полный JSONL-дамп (summaries.jsonl + <asset>.jsonl), как Python-эталон",
       "",
       "  --decoder ts|rust  кто разбирает байты: TS (по умолчанию) или Rust-декодер",
+      "  --assembler ts|rust  кто собирает JSONL из rd1: Rust (по умолчанию) или TS-эталон",
       "  --all          все Unity-файлы установленной игры (нужен TCNN_GAME_DIR)",
       "  --files a,b    конкретные файлы (пути или имена из установки)",
       "  --out <dir>    каталог дампа (по умолчанию tmp/dump в корне репозитория)",
@@ -1133,6 +1168,11 @@ function main(argv: string[]): number {
     console.error(`--decoder: ожидалось ts или rust, получено "${decoder}"`);
     return 2;
   }
+  const assembler = argValue(argv, "--assembler") ?? "rust";
+  if (assembler !== "ts" && assembler !== "rust") {
+    console.error(`--assembler: ожидалось ts или rust, получено "${assembler}"`);
+    return 2;
+  }
   const found = findGameDir();
   const game = checkGameDir(found);
   const hasFilesArg = argv.some((a) => a.startsWith("--files"));
@@ -1159,7 +1199,15 @@ function main(argv: string[]): number {
         return 2;
       }
       console.error(`  байтовый уровень: rust → ${rawPath}`);
-      stats = dumpAssetsFromRaw(rawPath, outDir, options);
+      if (assembler === "rust" && l10nBinary()) {
+        console.error("  сборка: rust");
+        stats = dumpAssetsRust(rawPath, outDir, options);
+      } else {
+        if (assembler === "rust") {
+          console.error("  сборка: rust-l10n не собран (npm run l10n:build) — эталон TS");
+        }
+        stats = dumpAssetsFromRaw(rawPath, outDir, options);
+      }
     } else {
       stats = dumpAssets(targets, outDir, options);
     }

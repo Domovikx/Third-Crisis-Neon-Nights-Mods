@@ -29,7 +29,16 @@ export function l10nBinary(root: string = REPO_ROOT): string | null {
 }
 
 /** Подкоманды, у которых корень передаётся флагом `--root`. */
-const COMMANDS = new Set(["potgen", "po2dat", "po_update", "prefill", "find_source"]);
+const COMMANDS = new Set([
+  "potgen",
+  "po2dat",
+  "po_update",
+  "prefill",
+  "find_source",
+  "dump_assemble",
+]);
+/** Подкоманды, которым корень не нужен: пути задаются позиционно. */
+const NO_ROOT = new Set(["dump_assemble"]);
 /** Флаги, которые сами задают пути (тогда `--root` не подставляется). */
 const PATH_FLAGS = new Set([
   "--root",
@@ -50,6 +59,7 @@ const USAGE = `rust-l10n (обёртка)
                         [--json <path>] [--no-backup]
   node scripts/text_cli.mts prefill [lang] [--po-dir <dir>] [--corpus <dir>]
                         [--json <path>]
+  node scripts/text_cli.mts dump_assemble <rd1.jsonl> <out-dir> [--json]
   node scripts/text_cli.mts find_source "<msgid text>" [--first] [--dump <dir>]
 
 Дамп для find_source сканируется тем же Rust-инвентарём, что у potgen.
@@ -81,7 +91,7 @@ function main(argv: string[]): number {
     const name = a.split("=")[0];
     return PATH_FLAGS.has(name);
   });
-  const args = hasPath ? [cmd, ...rest] : [cmd, "--root", REPO_ROOT, ...rest];
+  const args = hasPath || NO_ROOT.has(cmd) ? [cmd, ...rest] : [cmd, "--root", REPO_ROOT, ...rest];
   const run = spawnSync(bin, args, { stdio: "inherit" });
   return run.status ?? 1;
 }
