@@ -532,7 +532,7 @@ export function keepsFraming(src: string, tr: string): boolean {
   const t = tr.trim();
   // «q» — кавычки (в т.ч. китайские “” 「」 『』), «b» — скобки (в т.ч. （） ［］).
   const opens = (x: string): string =>
-    /^["«„“「『]/u.test(x) ? "q" : /^[(（\[]/u.test(x) ? "b" : "";
+    /^["«„“「『]/u.test(x) ? "q" : /^[(（[]/u.test(x) ? "b" : "";
   const closes = (x: string): string =>
     /["»“”」』]$/u.test(x) ? "q" : /[)）\]]$/u.test(x) ? "b" : "";
   const a = opens(s);
@@ -673,9 +673,11 @@ export function keepsMarker(src: string, tr: string): boolean {
   const mark = m[0];
   if (tr.startsWith(mark)) return true;
   // CJK пишет те же маркеры полноширинными знаками: ! → ！, ? → ？
+  // Испанский ставит ¿/¡ в начале фразы, поэтому оба знака принимаются для
+  // «!» и «?» (2026-11-24: две строки es застряли из-за этого).
   const pair: Record<string, string[]> = {
-    "!": ["¡", "！"],
-    "?": ["¿", "？"],
+    "!": ["¡", "！", "¿"],
+    "?": ["¿", "？", "¡"],
     ">": [">", "＞"],
   };
   return (pair[mark] ?? []).some((alt) => tr.startsWith(alt));
@@ -693,10 +695,29 @@ export function keepsMarker(src: string, tr: string): boolean {
  * строк: файл нормализуется в LF — как в Python-версии).
  * Запись атомарная: `.part` → rename (обрыв не обнулит каталог переводов).
  */
+/**
+ * Подмена письменности в существующем переводе — почти всегда ошибка вроде
+ * «в русский файл записали китайский текст» (реальный случай 2026-11-24:
+ * скрипт приёмки zh писал в po/ru.po, 101 строка). Разрешаем только осознанно:
+ * `crossScript: true`.
+ */
+function crossScriptReplace(oldText: string, newText: string): boolean {
+  const cyr = (x: string): number => (x.match(/[\u0400-\u04FF]/g) ?? []).length;
+  const cjk = (x: string): number => (x.match(/[\u4e00-\u9fff]/g) ?? []).length;
+  const oldCyr = cyr(oldText);
+  const oldCjk = cjk(oldText);
+  const newCyr = cyr(newText);
+  const newCjk = cjk(newText);
+  if (oldCyr >= 3 && newCjk >= 3 && newCyr === 0) return true;
+  if (oldCjk >= 3 && newCyr >= 3 && newCjk === 0) return true;
+  return false;
+}
+
 export function applyMsgstrInPlace(
   path: string,
   updates: Map<string, string>,
   overwrite = false,
+  options: { crossScript?: boolean } = {},
 ): void {
   const lines = readFileSync(path, "utf8").split(/\r\n|\r|\n/);
   const out: string[] = [];
@@ -733,6 +754,15 @@ export function applyMsgstrInPlace(
       }
       const oldEmpty = !poUnescape(oldVal.join(""));
       const next = updates.get(key);
+      if (
+        next !== undefined &&
+        !options.crossScript &&
+        crossScriptReplace(poUnescape(oldVal.join("")), next)
+      ) {
+        throw new Error(
+          `подмена письменности в ${path}: «${poUnescape(oldVal.join("")).slice(0, 30)}» → «${next.slice(0, 30)}»`,
+        );
+      }
       if (next !== undefined && (oldEmpty || overwrite)) out.push(`msgstr "${poEscape(next)}"`);
       else out.push(...lines.slice(i, j));
       i = j;
