@@ -15222,22 +15222,22 @@ msgctxt "ui"
 msgid "Autumn Ivy - NOVA"
 msgstr "Autumn Ivy — NOVA"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Aviator Glasses"
 msgstr "Авиаторы"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Aviator Jacket"
 msgstr "Куртка-авиатор"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Aviator Jacket Glove"
 msgstr "Куртка-авиатор Перчатка"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Aviator Jacket Pendant"
 msgstr "Куртка-авиатор Подвеска"
@@ -15582,17 +15582,47 @@ msgctxt "ui"
 msgid "Bad End Start Cutscene"
 msgstr "Плохая концовка: начало кат-сцены"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Baggy Pants"
 msgstr "Широкие штаны"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Baggy Tracksuit Pants (Black)"
+msgstr "Свободные штаны из спортивного костюма (чёрные)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Baggy Tracksuit Pants (Striped)"
+msgstr "Свободные штаны от спортивного костюма (в полоску)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Baggy Tracksuit Pants (White)"
+msgstr "Свободные штаны от спортивного костюма (белые)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Baggy Tracksuit Pants V2 (Black)"
+msgstr "Свободные штаны от спортивного костюма V2 (чёрные)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Baggy Tracksuit Pants V2 (Striped)"
+msgstr "Широкие штаны из спортивного костюма V2 (в полоску)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Baggy Tracksuit Pants V2 (White)"
+msgstr "Свободные штаны от спортивного костюма V2 (белые)"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Balancing Training"
 msgstr "Тренировка по балансировке"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Banana Hat"
 msgstr "Шляпа с бананом"
@@ -15737,6 +15767,16 @@ msgctxt "ui"
 msgid "Base Skin"
 msgstr "Базовая кожа"
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Basic Black Bra (Groped)"
+msgstr "Базовый чёрный бюстгальтер (пощупали)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Basic Black Panties (Groped)"
+msgstr "Чёрные трусики (пощупал)"
+
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Basic Ground"
@@ -15832,12 +15872,12 @@ msgctxt "ui"
 msgid "Bearcore - Lead Developer"
 msgstr "Bearcore — ведущий разработчик"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Beard 1"
 msgstr "Борода 1"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Beard 2"
 msgstr "Борода 2"
@@ -15847,12 +15887,12 @@ msgctxt "ui"
 msgid "Bears Test"
 msgstr "Тест на медведя"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Beary Good Ears"
 msgstr "Отличные уши медведя"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Beary Good Shades"
 msgstr "Отличные очки медведя"
@@ -16091,55 +16131,60 @@ msgctxt "ui"
 msgid "Black Body Marker"
 msgstr "Маркер чёрного тела"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Bunnysuit"
 msgstr "Чёрный костюм зайки"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Cat Ears"
 msgstr "Черные кошачьи уши"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Cat Outfit Bottom"
 msgstr "Нижняя часть наряда черной кошки"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Cat Outfit Top"
 msgstr "Верхняя часть наряда черной кошки"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Hoodie"
 msgstr "Черный худи"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Hoodie Up"
 msgstr "Черный худи (поднято)"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Hoodie with Horns"
 msgstr "Черный худи с рогами"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Net Bottom"
 msgstr "Черный сетчатый нижний белье"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Net Top"
 msgstr "Черный сетчатый верх"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Shorts"
 msgstr "Чёрные шорты"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Black T-Shirt (Damaged)"
+msgstr "Чёрная футболка (повреждённая)"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -16151,12 +16196,12 @@ msgctxt "speaker:Zoey"
 msgid "Black marker... Some thin metal plate with holes... Stick-on tattoos..."
 msgstr "Чёрный маркер... Какая-то тонкая металлическая пластина с дырками... Переводные татуировки..."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black suit shirt"
 msgstr "Чёрная костюмная рубашка"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black top"
 msgstr "Чёрный топ"
@@ -16212,7 +16257,7 @@ msgctxt "ui"
 msgid "Blowjob Dialogue"
 msgstr "Диалог минета"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Blue Chipset"
 msgstr "Синий чипсет"
@@ -16292,10 +16337,15 @@ msgctxt "ui"
 msgid "Boop!"
 msgstr "Бип!"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Boots"
 msgstr "Ботинки"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Boots (Damaged)"
+msgstr "Ботинки (повреждённые)"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -16480,12 +16530,12 @@ msgctxt "ui"
 msgid "Brown"
 msgstr "Коричневый"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Brown Cartel Pants"
 msgstr "Коричневые_Штаны_Картеля"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Brown Cartel Suit"
 msgstr "Коричневый костюм картеля"
@@ -16580,10 +16630,15 @@ msgctxt "ui"
 msgid "Bunnysuit reaction"
 msgstr "Реакция на костюм зайки"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Business glasses"
 msgstr "Деловые очки"
+
+#. src: field:Description
+msgctxt "ui"
+msgid "Business up top, party down below. Part of the Hi-Thread casual set."
+msgstr "Бизнес наверху, вечеринка внизу. Часть повседневного комплекта Hi-Thread."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17049,17 +17104,17 @@ msgctxt "speaker:Klaudia"
 msgid "Cal! What is this?"
 msgstr "Кэл! Что это?"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Calico Cat Ears"
 msgstr "Уши калайковой кошки"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Calico Cat Outfit Bottom"
 msgstr "Нижняя часть наряда калайковой кошки"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Calico Cat Outfit Top"
 msgstr "Верхняя часть наряда калайковой кошки"
@@ -17109,7 +17164,7 @@ msgctxt "ui"
 msgid "Calliach Not Available Bark"
 msgstr "Каллиах Недоступен (Голосовой файл)"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Calliach Outfit"
 msgstr "Набор Каллиах"
@@ -17456,7 +17511,7 @@ msgctxt "speaker-name"
 msgid "Cartel Guy"
 msgstr "Картельный Парень"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cartel Hat"
 msgstr "Шляпа картеля"
@@ -17466,12 +17521,12 @@ msgctxt "ui"
 msgid "Cartel Member"
 msgstr "Член картеля"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cartel Suit Brown"
 msgstr "Коричневый костюм картеля"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cartel Suit Grey"
 msgstr "Серый костюм картеля"
@@ -17959,7 +18014,7 @@ msgctxt "ui"
 msgid "Cheers to more success,"
 msgstr "За новые успехи,"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cheese"
 msgstr "Сыр"
@@ -18310,7 +18365,7 @@ msgctxt "ui"
 msgid "Clothes appear on the ground"
 msgstr "Одежда появляется на земле"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Clown Makeup"
 msgstr "Маска клоуна"
@@ -18750,17 +18805,17 @@ msgctxt "ui"
 msgid "Construction Worker"
 msgstr "Строитель"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Construction Worker Bottom"
 msgstr "Строитель Боттом"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Construction Worker Helmet"
 msgstr "Шлем строителя"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Construction Worker Top"
 msgstr "Верх стройки"
@@ -18885,22 +18940,22 @@ msgctxt "ui"
 msgid "Cool Subway Thing"
 msgstr "Охлаждаемый подземный транспорт"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Corp Jacket"
 msgstr "Корпоративная куртка"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Corp Jacket Robo"
 msgstr "Корпоративный жилет-робот"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Corp Pants"
 msgstr "Корпоративные штаны"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Corp Shoes"
 msgstr "Корпоративная обувь"
@@ -18991,6 +19046,16 @@ msgstr "Не удалось получить тип:"
 msgctxt "ui"
 msgid "Count Open Boxes Loop"
 msgstr "Подсчитай открытые ящики в цикле"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Cozy Shorts"
+msgstr "Уютные шортики"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Cozy Tanktop"
+msgstr "Уютный топ"
 
 #. src: dialog
 msgctxt "ui"
@@ -19325,7 +19390,7 @@ msgctxt "ui"
 msgid "Cybertoaster"
 msgstr "Цибертостер"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cypher Outfit"
 msgstr "Одежда кода"
@@ -19395,22 +19460,22 @@ msgctxt "ui"
 msgid "Cypher waitsT"
 msgstr "Сайфер ждёт..."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cypher's Hat"
 msgstr "Шляпа кода"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cypher's Jacket"
 msgstr "Пиджак кода"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cypher's Mask"
 msgstr "Маска кода"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cypher's Suit"
 msgstr "Костюм Сайфера"
@@ -19615,35 +19680,60 @@ msgctxt "ui"
 msgid "Dar4e 1337"
 msgstr "Дар4е 1337"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Dark Beanie"
 msgstr "Тёмная шапочка"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Dark Beanie (Furry)"
+msgstr "Тёмный бини (фури)"
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Dark Beanie Damaged"
 msgstr "Тёмная бейсболка повреждена"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Dark Beanie Damaged (Furry)"
+msgstr "Тёмная шапочка повреждена (фурри)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Dark Beanie Damaged With Pins (Furry)"
+msgstr "Тёмная шапочка повреждена шпильками (фури)"
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Dark Beanie With Holes"
 msgstr "Тёмная шапка с дырками"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Dark Beanie With Holes And Pin"
 msgstr "Тёмная шапка с дырками и шпилькой"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Dark Beanie With Metal Spikes"
 msgstr "Тёмная шапочка с металлическими шипами"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Dark Beanie With Metal Spikes (Furry)"
+msgstr "Тёмная шапочка с металлическими шипами (фури)"
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Dark Beanie With Rivets"
 msgstr "Тёмная шапка с заклёпками"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Dark Beanie With Rivets (Furry)"
+msgstr "Тёмная шапочка с заклёпками (фурри)"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -20045,7 +20135,7 @@ msgctxt "ui"
 msgid "Demo Popup"
 msgstr "Демо-окно"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Denim Shorts"
 msgstr "Джинсовые шорты"
@@ -20055,7 +20145,7 @@ msgctxt "ui"
 msgid "Denim Skirt"
 msgstr "Джинсовая юбка"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Denim skirt"
 msgstr "Джинсовая юбка"
@@ -22992,7 +23082,7 @@ msgctxt "ui"
 msgid "Dusty Letter"
 msgstr "Запылённое письмо"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Dyed Pubes"
 msgstr "Покрашенные лобковые волосы"
@@ -24389,6 +24479,11 @@ msgctxt "ui"
 msgid "Experience Zoey has gained using her vagina"
 msgstr "Опыт Зои, полученный с помощью вагины"
 
+#. src: field:Description
+msgctxt "ui"
+msgid "Experience real comfort in these low-profile shorts from the Hi-Thread casual set, paired with thigh-high stockings."
+msgstr "Почувствуйте настоящее удобство в этих низких шортах из повседневного набора Hi-Thread, сочетая их с чулками до бёдер."
+
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Experimental Brain Treatment:"
@@ -24440,7 +24535,7 @@ msgctxt "ui"
 msgid "Extra Battery"
 msgstr "Дополнительный аккумулятор"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Exxy Outfit"
 msgstr "Одежда Экси"
@@ -24963,12 +25058,12 @@ msgctxt "ui"
 msgid "Faster... Yes, ma'am..."
 msgstr "Быстрее... Да, госпожа..."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Fat Guy Jacket"
 msgstr "Пальто толстяка"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Fat Guy Outfit"
 msgstr "Наряд толстяка"
@@ -25066,27 +25161,27 @@ msgctxt "ui"
 msgid "Fem Guard begins groping Zoeys ass"
 msgstr "Женская стражница начинает ощупывать задницу Зои."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Female Bunny Ears"
 msgstr "Заячьи уши"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Female Bunnysuit"
 msgstr "Женский костюм зайки"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Female Electrician Helmet"
 msgstr "Шлем электрика (женский)"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Female Electrician Pants"
 msgstr "Женские брюки электрика"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Female Electrician Top"
 msgstr "Женщина-электрик — актив"
@@ -25096,12 +25191,12 @@ msgctxt "ui"
 msgid "Female Enforcer #1112"
 msgstr "Женский силовик №1112"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Female Enforcer Suit"
 msgstr "Костюм силовика (женский)"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Female Enforcer Suit Pink"
 msgstr "Розовый костюм силовика"
@@ -25126,17 +25221,22 @@ msgctxt "speaker-name"
 msgid "Femboy"
 msgstr "Фембой"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Femboy Bunnysuit BigDick"
 msgstr "Костюм зайки фембоя: большой"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Femboy Bunnysuit Jay"
+msgstr "Джей в кроличьем костюме для фембоев"
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Femboy Bunnysuit MediumDick"
 msgstr "Костюм зайки фембоя: средний"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Femboy Bunnysuit SmallDick"
 msgstr "Костюм зайки фембоя: маленький"
@@ -26123,6 +26223,11 @@ msgctxt "speaker:Leona"
 msgid "Found her in the gutter at my old office. She was just a helpless little thing... Laying there mewing... Then she looked up at me, and..."
 msgstr "Нашла её в канаве у своего старого офиса. Она была просто беззащитным маленьким существом... Лежала там и мяукала... А потом подняла на меня глаза, и..."
 
+#. src: field:UnlockHint
+msgctxt "ui"
+msgid "Found in M31 over the entrance area."
+msgstr "Обнаружено в M31 над зоной входа."
+
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Found me!"
@@ -26148,17 +26253,17 @@ msgctxt "speaker:Rugnar"
 msgid "Fourty Fuckbucks, if you let her grope your tits."
 msgstr "40 чертовых баксов, если позволишь ей пощупать твои сиськи. (говорит Ругнар)"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Foxy Cat Ears"
 msgstr "Ушки лисички"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Foxy Cat Outfit Bottom"
 msgstr "Нижнее белье в образе лисички-кошки"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Foxy Cat Outfit Top"
 msgstr "Топ из наряда лисички-кошки"
@@ -26469,7 +26574,7 @@ msgctxt "ui"
 msgid "Furline Advertisement"
 msgstr "Реклама «Фурлайн»"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Gloves"
 msgstr "Перчатки «Клятва будущего»"
@@ -26479,17 +26584,17 @@ msgctxt "ui"
 msgid "Futereswear Gloves 2"
 msgstr "Перчатки «Будущая клятва» 2"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintight Suit Dark"
 msgstr "Будущая клятва: облегающий костюм, тёмный"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintight Suit Light"
 msgstr "Футуристическая клятва: облегающий костюм — лёгкий"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintightv2"
 msgstr "Будущая клятва: Облегающая v2"
@@ -26499,27 +26604,27 @@ msgctxt "ui"
 msgid "Futereswear Skintightv2 2"
 msgstr "Futureswear Skintightv2 2"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintightv2 Gloves"
 msgstr "Перчатки Futereswear Skintightv2"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Straps Black"
 msgstr "Ремень для клятва будущего, чёрный"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Straps Light"
 msgstr "Ремень для будущих клятв — светлый"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Underwear Black"
 msgstr "Футерсвир — чёрное нижнее бельё"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Underwear White"
 msgstr "Футересвир Белое нижнее белье"
@@ -26586,7 +26691,7 @@ msgctxt "speaker:Enforcer"
 msgid "GAG enforcers like myself are the only thing keeping this wretched society in check."
 msgstr "Такие силовики, как я, — единственное, что удерживает это жалкое общество в узде."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "GAG-Issued Mask"
 msgstr "Маска под запретом"
@@ -27380,7 +27485,7 @@ msgctxt "ui"
 msgid "GloryHole Inspection"
 msgstr "Осмотр Glory Hole"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Glove"
 msgstr "Перчатка"
@@ -28132,7 +28237,7 @@ msgctxt "ui"
 msgid "Great. The door locked behind me. Awesome. Looks like I'm gonna have to find a way to get it unlocked again."
 msgstr "Отлично. Дверь за мной захлопнулась. Замечательно. Похоже, придётся искать способ снова её открыть."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Green Chipset"
 msgstr "Зелёный чипсет"
@@ -28147,32 +28252,32 @@ msgctxt "ui"
 msgid "Greetings, Zoey. This one is pleased to meet you again."
 msgstr "Приветствую, Зои. Мне очень приятно снова тебя видеть."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Grey Beanie"
 msgstr "Серый берет"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Grey Beanie With Metal Spikes"
 msgstr "Серый берет с металлическими шипами"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Grey Beanie With Rivets"
 msgstr "Серый бейсболка с заклёпками"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Grey Cartel Suit"
 msgstr "Костюм Серого картеля"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Grey Cartel Suit 2"
 msgstr "Костюм Серого картеля 2"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Grey Cartel Suit 2 Pants"
 msgstr "Костюм Серого картеля: брюки"
@@ -29116,6 +29221,11 @@ msgctxt "ui"
 msgid "Hate it? I don't really hate it. It's honestly kinda fun. I just wish all this GAG nonsense wasn't a thing."
 msgstr "Ненавидишь это? Да не то чтобы я его ненавидела. Честно говоря, даже немного весело. Просто жаль, что вся эта чушь с ГЭГ вообще существует."
 
+#. src: field:UnlockHint
+msgctxt "ui"
+msgid "Have a close look at Rosies breasts."
+msgstr "Внимательно разгляди грудь Рози."
+
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Have fun you two, ehehe."
@@ -29783,6 +29893,16 @@ msgstr "Нет ярости страшнее, чем ярость тёти Са�
 msgctxt "speaker:Woman"
 msgid "Hell yeah! Let me post it!"
 msgstr "Чёрт, да! Поставлю это!"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hello Gorgeous Bottom"
+msgstr "Привет, красавица-задница"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hello Gorgeous Top"
+msgstr "Привет, красавчик."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -30762,6 +30882,26 @@ msgctxt "ui"
 msgid "Hi, Zoey, I'm Ashley! You look trustworthy, would you mind taking a-... picture of me and my friend? It"
 msgstr "Привет, Зои, я Эшли! Ты выглядишь надёжной, не могла бы ты сделать фот...ографию меня и моего друга?"
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hi-Thread Croptop"
+msgstr "Топ с высокой горловиной"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hi-Thread Croptop (Skimpy)"
+msgstr "Топ с высокой горловиной (откровенный)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hi-Thread Shorts"
+msgstr "Шорты с высокой талией"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hi-Thread Shorts (Skimpy)"
+msgstr "Короткие шорты с высокой талией (откровенные)"
+
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "HiJenx - CAL & MALE NPC"
@@ -30862,17 +31002,17 @@ msgctxt "ui"
 msgid "High Tide, 2nd Floor"
 msgstr "Высокий прилив, 2-й этаж"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "High heels with black stockings"
 msgstr "Туфли на каблуках с чёрными чулками"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "High heels with black straps"
 msgstr "Туфли на каблуках с чёрными ремешками"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "High heels with stockings"
 msgstr "Туфли на каблуках с чулками"
@@ -31283,12 +31423,27 @@ msgctxt "ui"
 msgid "Honk! Mi mi mi mi... Hooonk! Mi mi mi mi..."
 msgstr "Бип! Ми ми ми ми... Би-ип! Ми ми ми ми..."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Hoodie"
 msgstr "Худи"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hoodie (Hood Up)"
+msgstr "Худи (с капюшоном)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hoodie Damaged (Hood Up)"
+msgstr "Повреждённый худи (капюшон надет)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hoodie Damaged V2 (Hood Up)"
+msgstr "Повреждённый худи V2 (капюшон поднят)"
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Hoodie Ragged"
 msgstr "Худия в рваном виде"
@@ -31347,7 +31502,7 @@ msgctxt "ui"
 msgid "Horse dildo?"
 msgstr "Лошадиный дилдо?"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Hot pants"
 msgstr "Шортики"
@@ -31860,6 +32015,11 @@ msgstr "Это заметно!"
 msgctxt "speaker:Zoey"
 msgid "I can tell..."
 msgstr "Это заметно..."
+
+#. src: field:Description
+msgctxt "ui"
+msgid "I can use the camera on my phone to take photographs of people. The quality isn't the best, but it's doable."
+msgstr "Я могу использовать камеру на своём телефоне, чтобы делать фотографии людей. Качество не самое лучшее, но вполне сносное."
 
 #. src: dialog
 msgctxt "ui"
@@ -34754,6 +34914,16 @@ msgctxt "ui"
 msgid "Inspect - Trash Pile"
 msgstr "Осмотреть: мусорная куча"
 
+#. src: field:UnlockHint
+msgctxt "ui"
+msgid "Inspect Max's crotch."
+msgstr "Осмотрите пах Макса."
+
+#. src: field:UnlockHint
+msgctxt "ui"
+msgid "Inspect Nova's breasts twice."
+msgstr "Дважды осмотрите грудь Новы."
+
 #. src: dialog
 msgctxt "ui"
 msgid "Inspect her"
@@ -36634,6 +36804,16 @@ msgctxt "speaker:Lio"
 msgid "Just a...?"
 msgstr "Просто...?"
 
+#. src: field:Description
+msgctxt "ui"
+msgid "Just an old pair of shorts to wear around my apartment."
+msgstr "Просто старые шорты, чтобы ходить в них по квартире."
+
+#. src: field:Description
+msgctxt "ui"
+msgid "Just an old tanktop to wear around my apartment."
+msgstr "Просто старая футболка, которую я ношу по квартире."
+
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Just begin the preloading"
@@ -37299,12 +37479,12 @@ msgctxt "ui"
 msgid "Kitchen in the back-area downstairs"
 msgstr "Кухня в задней зоне внизу"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Kitty Ears"
 msgstr "Кошачьи ушки"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Kitty Top"
 msgstr "Китти Топ"
@@ -37424,7 +37604,7 @@ msgctxt "ui"
 msgid "Klaudia Cigarette Inspection"
 msgstr "Клавдия Осмотр сигареты"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Klaudia Default"
 msgstr "Клавдия (по умолчанию)"
@@ -37517,7 +37697,7 @@ msgctxt "speaker:Customer"
 msgid "Klaudia pick'd a perfect replac'mnt, *hic*, ehehe... Yer tits look even hotter in this suit, mhmmm..."
 msgstr "Клавдия выбрала идеальную замену, *ик*, хихи... Твои сиськи выглядят ещё горячее в этом костюме, мхмм..."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Klaudia thong"
 msgstr "Клавдия в тунге"
@@ -37529,7 +37709,7 @@ msgctxt "ui"
 msgid "Klaudia told me you had a good long whif of sweet sweet glow, ehehe. Seems like you're quite responsive to it."
 msgstr "Клавдия сказала, ты хорошо вдохнула сладкого-сладкого глоу, хе-хе. Похоже, ты довольно восприимчива к нему."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Klaudia's Mask"
 msgstr "Маска Клавдии"
@@ -37692,6 +37872,26 @@ msgstr "LOVENSE: Игрушка не поддерживает эту коман�
 msgctxt "ui"
 msgid "LOVENSE: Toy Not Found."
 msgstr "LOVENSE: Игрушка не найдена."
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Lacey Bra (Black)"
+msgstr "Чёрное бюстгальтер Лейси）"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Lacey Bra (White)"
+msgstr "Чашечки Лэйси (белые)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Lacey Panties (Black)"
+msgstr "Трусики Лейси (чёрные)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Lacey Panties (White)"
+msgstr "Трусики Лейси (белые)"
 
 #. src: dialog
 msgctxt "ui"
@@ -37900,6 +38100,11 @@ msgctxt "ui"
 msgid "Leather Skirt"
 msgstr "Кожаная юбка"
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Leather Skirt (Black)"
+msgstr "Кожаная юбка (чёрная)"
+
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Leather Strip"
@@ -38091,6 +38296,11 @@ msgctxt "ui"
 msgid "Leona Kissing Scene Intro"
 msgstr "Вступление к сцене поцелуя Леоны"
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Leona Outfit"
+msgstr "Наряд Леоны"
+
 #. src: dialog
 msgctxt "ui"
 msgid "Leona opens the door"
@@ -38126,10 +38336,15 @@ msgctxt "ui"
 msgid "Leone - @Leone145D"
 msgstr "Леоне — @Leone145D"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Leoprint Shorts"
 msgstr "Леопардовые шорты"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Leoprint Shorts (covered)"
+msgstr "Шорты Leoprint (прикрыты)"
 
 #. src: dialog
 msgctxt "ui"
@@ -38614,17 +38829,17 @@ msgctxt "ui"
 msgid "Light Changer"
 msgstr "Изменитель света"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Light Hoodie"
 msgstr "Легкий худи"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Light Hoodie Up"
 msgstr "Слегка натянутый худи"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Light Hoodie Up Horns"
 msgstr "Легкий худи с рожками"
@@ -38885,6 +39100,11 @@ msgctxt "speaker-name"
 msgid "Lio"
 msgstr "Лио"
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Lio Default Bottom"
+msgstr "Лио — пассив"
+
 #. src: dialog
 msgctxt "ui"
 msgid "Lio Dialogue Preset"
@@ -38919,6 +39139,11 @@ msgstr "Работа Лио"
 msgctxt "ui"
 msgid "Lio's Machine"
 msgstr "Машина Лио"
+
+#. src: field:Description
+msgctxt "ui"
+msgid "Lio's stuck in some sort of sex machine. I've gotta get him out of there!"
+msgstr "Лио застрял в какой-то секс-машине. Надо его оттуда вытащить!"
 
 #. src: dialog
 msgctxt "ui"
@@ -39150,7 +39375,7 @@ msgctxt "ui"
 msgid "Logs Folder"
 msgstr "Папка логов"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Long Pubes"
 msgstr "Длинные лобки"
@@ -39502,6 +39727,16 @@ msgstr "Включить цикл"
 msgctxt "ui"
 msgid "Loops"
 msgstr "Циклы"
+
+#. src: field:m_text
+msgctxt "ui"
+msgid "Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipisciawdawda"
+msgstr "Лорем ипсум долор сид амет, коннектерур адиписинг элит, лорем ипсум долор сид амет, коннектерур адиписинг элит, лорем ипсум долор сид амет, коннектерур адиписинг элит, лорем ипсум долор сид амет, коннектерур адиписинг адипциавда"
+
+#. src: field:m_text
+msgctxt "ui"
+msgid "Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adip"
+msgstr "Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adip"
 
 #. src: field:TakenFromInventoryText
 msgctxt "ui"
@@ -40052,27 +40287,27 @@ msgctxt "ui"
 msgid "Make your way back home"
 msgstr "Прокладывай себе путь обратно домой"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Male Construction Worker Bottom"
 msgstr "Мужской строитель — пассив"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Male Construction Worker Top"
 msgstr "Мужской строитель — актив"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Male Electrician Bottom"
 msgstr "Мужской электрик — пассивный партнёр"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Male Electrician Helmet"
 msgstr "Шлем электрика-мужчины"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Male Electrician Top"
 msgstr "Мужской электрик — топ"
@@ -41885,7 +42120,7 @@ msgctxt "ui"
 msgid "Moaning louder now"
 msgstr "Стонешь всё громче"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Modified GAG Uniform"
 msgstr "Модифицированная форма GAG"
@@ -42001,7 +42236,7 @@ msgctxt "ui"
 msgid "Mouse Y"
 msgstr "Координата Y мыши"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Moustache"
 msgstr "Усы"
@@ -42839,7 +43074,7 @@ msgctxt "ui"
 msgid "NN Vertical Fade Sprite Shape"
 msgstr "Вертикальное затухание спрайта"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "NN underboob shirt"
 msgstr "NN — рубашка с открытой грудью"
@@ -43030,22 +43265,22 @@ msgctxt "ui"
 msgid "Nebulus Nocturnus"
 msgstr "Нэбулус Ноктурнус"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Neck Chip - Glow"
 msgstr "Шейный чип — Сияние"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Neck Chip - Lio's Data Alpha"
 msgstr "Шейный чип — Данные Лио, альфа"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Neck Chip - Lio's Data Beta"
 msgstr "Шейный чип — Бета-данные Лио"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Neck Chip - Lio's Data Gamma"
 msgstr "Шейный чип — данные Лио, гамма"
@@ -43505,17 +43740,17 @@ msgctxt "speaker:Man"
 msgid "Niiice, hehehe. Not only are your tits organic. They're so fucking hot."
 msgstr "Отлично, хе-хе-хе. Мало того, что твои сиськи органические. Они ещё и чертовски горячи."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nipple Chain"
 msgstr "Цепочка для сосков"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nipple Chain Piercings"
 msgstr "Проколы в виде цепочки на сосках"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nipple Cow Bells"
 msgstr "Коровьи колокольчики на сосках"
@@ -43525,22 +43760,22 @@ msgctxt "ui"
 msgid "Nipple Light"
 msgstr "Свет на сосках"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nipple Piercings"
 msgstr "Проколы в сосках"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nipple Rings Large"
 msgstr "Н. Кольца на соски — большие"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nipple Rings Medium"
 msgstr "Кольца на соски, средние"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nipple Rings Small"
 msgstr "Кольца на соски — маленькие"
@@ -44124,7 +44359,7 @@ msgctxt "ui"
 msgid "Normal"
 msgstr "Нормально"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nose Piercing"
 msgstr "Прокол носа"
@@ -44687,6 +44922,11 @@ msgstr "Нову."
 msgctxt "speaker:Zoey"
 msgid "Nova. Alright. Where can I find her?"
 msgstr "Нова. Ладно. Где мне её найти?"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Novas Outfit"
+msgstr "Наряд Новы"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -48173,17 +48413,17 @@ msgctxt "ui"
 msgid "Pink"
 msgstr "Розовый"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Pink Cat Ears"
 msgstr "Розовые кошачьи ушки"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Pink Cat Outfit Bottom"
 msgstr "Нижняя часть розового кошачьего наряда"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Pink Cat Outfit Top"
 msgstr "Розовый кошачий топ"
@@ -48248,37 +48488,37 @@ msgctxt "ui"
 msgid "Place item"
 msgstr "Поместите предмет"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "PlaidPLAY Classic Pen"
 msgstr "Классическая ручка PlaidPLAY"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "PlaidPLAY Classic Skirt"
 msgstr "Классическая юбка PlaidPLAY"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "PlaidPLAY Classic Top"
 msgstr "Классическая топка от PlaidPLAY"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "PlaidPLAY GL-Ass"
 msgstr "PlaidPLAY GL-ассистент"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "PlaidPLAY Mk-5 Pen"
 msgstr "PlaidPLAY Mk-5 ручка"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "PlaidPLAY Mk-5 Skirt"
 msgstr "ПледПЛЕЙ Mk-5 юбка"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "PlaidPLAY Mk-5 Top"
 msgstr "Топ PlaidPLAY Mk-5"
@@ -50251,32 +50491,32 @@ msgctxt "ui"
 msgid "Pumpkin Fucker"
 msgstr "Тыквенный ублюдок"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Punk Jacket"
 msgstr "Панк-куртка"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Punk Jacket Oni"
 msgstr "Панк-куртка Они"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Punk Jacket Robo"
 msgstr "Робот в панковской куртке"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Punk Jeans"
 msgstr "Панковые джинсы"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Punk Shoes"
 msgstr "Ботинки панка"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Punkjacket Shirt"
 msgstr "Куртка-панджак"
@@ -51008,12 +51248,12 @@ msgctxt "ui"
 msgid "Recreating Keyboard Layout!"
 msgstr "Пересоздание раскладки клавиатуры!"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Red Cartel Suit"
 msgstr "Костюм Красного картеля"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Red Chipset"
 msgstr "Красный чипсет"
@@ -52226,7 +52466,7 @@ msgctxt "ui"
 msgid "Robin R"
 msgstr "Робин Р"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Robo Shoes"
 msgstr "Роботизированная обувь"
@@ -52674,7 +52914,7 @@ msgctxt "ui"
 msgid "Russian Machine Translated / Русский Машинный Перевод"
 msgstr "Русский машинный перевод / Русский машинный перевод"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Rutter Gas Immunity"
 msgstr "Иммунизация к газу Раттера"
@@ -52954,7 +53194,7 @@ msgctxt "ui"
 msgid "Sarah Cums"
 msgstr "Сара кончает"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sarah Default"
 msgstr "Сара по умолчанию"
@@ -53100,7 +53340,7 @@ msgctxt "ui"
 msgid "Satin Skirt"
 msgstr "Шёлковая юбка"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Satin skirt"
 msgstr "Атласная юбка"
@@ -53608,7 +53848,7 @@ msgctxt "ui"
 msgid "Sentinel Type - BigNoodleTooOblique SDF"
 msgstr "Тип сенсора — BigNoodleTooOblique SDF"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Septum"
 msgstr "Септум"
@@ -55040,7 +55280,7 @@ msgctxt "ui"
 msgid "Short Circuit"
 msgstr "Короткое замыкание"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Short leather skirt"
 msgstr "Короткая кожаная юбка"
@@ -55631,7 +55871,7 @@ msgctxt "ui"
 msgid "Silent Angel"
 msgstr "Безмолвный ангел"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Silk Skirt"
 msgstr "Шёлковая юбка"
@@ -55824,7 +56064,7 @@ msgctxt "ui"
 msgid "Skipping those upgrades."
 msgstr "Пропускаю эти улучшения."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Skull Hoodie"
 msgstr "Худи с черепом"
@@ -55849,22 +56089,22 @@ msgctxt "ui"
 msgid "Sleep's always been a bit up and down for me..."
 msgstr "Сон у меня всегда скачет..."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sleeved grey top"
 msgstr "Серый топ с рукавами"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sleeveless Black"
 msgstr "Безрукавка чёрная"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sleeveless Punk"
 msgstr "Панк без рукавов"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sleeveless White"
 msgstr "Белое без рукавов"
@@ -56062,12 +56302,12 @@ msgctxt "ui"
 msgid "Snapping out of the trance"
 msgstr "Выход из транса"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sneaker"
 msgstr "Кроссовок"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sneakers"
 msgstr "Кроссовки"
@@ -56969,10 +57209,30 @@ msgctxt "ui"
 msgid "Spooks"
 msgstr "Призраки"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Sports Shorts (black)"
+msgstr "Спортивные шорты (чёрные)"
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sportsshoes"
 msgstr "Спортивная обувь"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Sportsshoes (Damaged)"
+msgstr "Спортивная обувь (Повреждённая)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Sporty Bra (Black)"
+msgstr "Спортивный бюстгальтер (чёрный)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Sporty Panties (Black)"
+msgstr "Спортивные трусики (чёрные)"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57765,7 +58025,7 @@ msgctxt "ui"
 msgid "Stinkin' box."
 msgstr "Чёртова коробка."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Stockings"
 msgstr "Чулки"
@@ -57845,7 +58105,7 @@ msgctxt "ui"
 msgid "Straight"
 msgstr "Прямо"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Strapless striped top"
 msgstr "Полосатый топ-бандо"
@@ -58122,27 +58382,27 @@ msgctxt "ui"
 msgid "Such an astute little lady you are~!"
 msgstr "Какая же ты догадливая малышка~!"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sucky Costume"
 msgstr "Ужасный костюм"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sucky Costume Wig"
 msgstr "Ужасный парик для костюма"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Suit pants"
 msgstr "Брюки-костюм"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Suit top with black shirt"
 msgstr "Верхняя часть костюма с чёрной рубашкой"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Suit top with white shirt"
 msgstr "Пиджак с белой рубашкой"
@@ -58970,6 +59230,11 @@ msgctxt "ui"
 msgid "T'was a night of pleasantry and shared romance. Our love had no equal, nay the stars above could not match the depth of our passion!"
 msgstr "Это была ночь наслаждения и общей романтики. Нашей любви не было равных — и даже звёзды на небесах не могли сравниться с глубиной нашей страсти!"
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "T-Shirt (Damaged)"
+msgstr "Футболка (Повреждённая)"
+
 #. src: dialog
 msgctxt "ui"
 msgid "T-Take all the pictures you n-neeeeed, babe!"
@@ -59366,6 +59631,16 @@ msgstr "Послушная...? Кх... Я-..."
 msgctxt "ui"
 msgid "Tan"
 msgstr "Тан"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Tanktop (Damaged)"
+msgstr "Майка (повреждённая)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Tanktop 2 (Damaged)"
+msgstr "Танкетка 2 (повреждённая)"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -61380,6 +61655,11 @@ msgctxt "ui"
 msgid "This alley doesn't exactly look like a nice stroll, now does it?"
 msgstr "Этот переулок как-то не тянет на приятную прогулку, а?"
 
+#. src: field:Description
+msgctxt "ui"
+msgid "This bra from BluFit promises a sleek sports bra that provides support in all the right places! Feeling blue? Go Blu."
+msgstr "Этот бюстгальтер от BluFit — стильный спортивный топ, который обеспечивает поддержку во всех нужных местах! Печальны? Выбирай Blu."
+
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "This city's a graveyard, alive but decayed"
@@ -61665,6 +61945,11 @@ msgstr "Эта штука просто водит нас кругами!"
 msgctxt "speaker:Lio"
 msgid "This thing's more complicated than I thought it'd be. The material's not like anything I've seen before. I can't just 3D print a double."
 msgstr "Эта штука сложнее, чем я думал. Материал не похож ни на что, что я видел. Я не могу просто распечатать копию на 3D."
+
+#. src: field:Description
+msgctxt "ui"
+msgid "This tiny little memory card is perfect for the photographer with no budget... and no more than 6 things to photograph."
+msgstr "Эта крошечная карта памяти идеально подходит для фотографа без бюджета... и не более чем с шестью объектами для съёмки."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -62090,7 +62375,7 @@ msgctxt "ui"
 msgid "Tops - 100%"
 msgstr "Топы — 100%"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Torn Stockings"
 msgstr "Порванные чулки"
@@ -62140,12 +62425,27 @@ msgctxt "ui"
 msgid "Tracking the Tracker"
 msgstr "Отслеживание следопыта"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Tracksuit (Closed)"
+msgstr "Спортивный костюм (закрыт)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Tracksuit (Draped)"
+msgstr "Спортивный костюм (накинутый)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Tracksuit (Open)"
+msgstr "Спортивный костюм (Открыто)"
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Tracksuit Pants"
 msgstr "Брюки от спортивного костюма"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Tracksuit Pants V2"
 msgstr "Брюки от спортивного костюма V2"
@@ -62500,7 +62800,7 @@ msgctxt "ui"
 msgid "Tsc... I guess not. Consider yourself warned, then."
 msgstr "Тц... Полагаю, что так. Считай себя предупреждённым."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Tshirt"
 msgstr "Футболка"
@@ -63099,6 +63399,61 @@ msgctxt "ui"
 msgid "UNLOCK ALL entries"
 msgstr "ОТКРЫТЬ ВСЕ записи"
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (BLarm)"
+msgstr "Порты USB (BLarm)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (BLleg)"
+msgstr "Порты USB (BLleg)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (BUarm)"
+msgstr "Слоты USB (BUarm)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (BUleg)"
+msgstr "Порты USB (BUleg)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (Bshoulder)"
+msgstr "Порты USB (плечо B)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (FLarm)"
+msgstr "Порты USB (FLarm)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (FLleg)"
+msgstr "Слоты USB (FLleg)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (FShoulder)"
+msgstr "Слоты USB (FShoulder)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (FUarm)"
+msgstr "Слоты USB (FUarm)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (FUleg)"
+msgstr "USB-слоты (FUleg)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (Full)"
+msgstr "Порты USB (полны)"
+
 #. src: dialog
 msgctxt "ui"
 msgid "Uggh! I really want long nails, but my girlfriend wants me to keep them short for... reasons... Ahh, the things I do for love..."
@@ -63607,6 +63962,16 @@ msgctxt "speaker:Zoey"
 msgid "Umm... Okay..."
 msgstr "Эмм... Ладно..."
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Un/ZIP Jacket (Skimpy)"
+msgstr "Распакуй куртку (откровенно)"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Un/ZIP Trenchcoat"
+msgstr "Распакуй/сжми тренчкот"
+
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "UnLock player movement"
@@ -63627,7 +63992,12 @@ msgctxt "ui"
 msgid "Underboob Tshirt"
 msgstr "Футболка с открытой грудью"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Underboob shirt (black)"
+msgstr "Футболка с открытой грудью (чёрная)"
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Underboob straps shirt"
 msgstr "Лямки топа под грудью"
@@ -64122,7 +64492,7 @@ msgctxt "speaker:Zoey"
 msgid "Unsure what to do"
 msgstr "Не знаю, что делать..."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Untied Hair"
 msgstr "Распущенные волосы"
@@ -64491,12 +64861,12 @@ msgctxt "ui"
 msgid "Valve in Zoeys Hand"
 msgstr "Вентиль в руке Зои"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Vampire Costume"
 msgstr "Костюм вампира"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Vampire Costume Wig"
 msgstr "Причёска для костюма вампира"
@@ -64593,12 +64963,12 @@ msgctxt "ui"
 msgid "Verzweifeln eine W"
 msgstr "Отчаянно пытаюсь"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Vibe's Hair Dye"
 msgstr "Краска для волос Вайба"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Vibe's Jacket"
 msgstr "Куртка Вайба"
@@ -64638,7 +65008,7 @@ msgctxt "ui"
 msgid "Vibrators"
 msgstr "Вибраторы"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Vibrosuit"
 msgstr "Вибросвит"
@@ -64713,6 +65083,11 @@ msgstr "Виртуальный набор для обслуживания"
 msgctxt "ui"
 msgid "Virtual Mouse Cursor"
 msgstr "Виртуальный курсор мыши"
+
+#. src: field:UnlockHint
+msgctxt "ui"
+msgid "Visit the bathroom in room 205 during Zoey's dream sequence."
+msgstr "Зайди в ванную в комнате 205 во время сцены сна Зои."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -66752,7 +67127,7 @@ msgctxt "ui"
 msgid "Water"
 msgstr "Вода"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Watery Eyepatch"
 msgstr "Водяной повязка на глаз"
@@ -68452,22 +68827,22 @@ msgctxt "ui"
 msgid "Whispers into Zoeys ear.B"
 msgstr "Шепчет на ухо Зои.B"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White Beanie"
 msgstr "Белый головной убор"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White Beanie With Metal Spikes"
 msgstr "Белая шапочка с металлическими шипами"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White Beanie With Rivets"
 msgstr "Белая шапочка с заклёпками"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White Shorts"
 msgstr "Белые шорты"
@@ -68482,42 +68857,47 @@ msgctxt "ui"
 msgid "White Top (Choker"
 msgstr "Белый топ (чокер)"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White sandals"
 msgstr "Белые сандалии"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White sandals with black socks"
 msgstr "Белые сандалии с чёрными носками"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White sneakers"
 msgstr "Белые кроссовки"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White suit shirt"
 msgstr "Белая рубашка-сорочка"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White tied top"
 msgstr "Белый топ на завязках"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "White tied top (straps)"
+msgstr "Белая завязывающаяся топка (ленты)"
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White top"
 msgstr "Белый топ"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White top with choker"
 msgstr "Белый топ с ошейником"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White top with thin straps"
 msgstr "Белый топ на тонких бретелях"
@@ -68571,6 +68951,11 @@ msgstr "Кто знает? Я не задаю такие вопросы. На в
 msgctxt "ui"
 msgid "Who needs big scores when you've got a bestie like me? I can cover your bills, super spy. I've got daddy's money, remember?"
 msgstr "Кому нужны большие куши, если у тебя есть лучшая подруга вроде меня? Я могу оплатить твои счета, суперагент. У меня папочкины деньги, помнишь?"
+
+#. src: field:Description
+msgctxt "ui"
+msgid "Who needs velcro when you've got a big ass zipper? The Un/ZIP trenchcoat brings you a cool aesthetic without compromising on ease-of-use."
+msgstr "Кому нужен липучка, когда у тебя есть огромный молния? Плащ Un/ZIP дарит крутую эстетику, не жертвуя при этом удобством использования."
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
@@ -68802,12 +69187,12 @@ msgctxt "speaker:Enforcer"
 msgid "Why? You want more, slummer?"
 msgstr "А что? Хочешь продолжения, нищенка?"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Wide Track Pants"
 msgstr "Штаны с широкими штанинами"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Wide Track Pants V2"
 msgstr "Штаны с широкими штанинами V2"
@@ -68918,7 +69303,7 @@ msgctxt "speaker-name"
 msgid "Woman"
 msgstr "Девушка"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Womb Tattoo"
 msgstr "Татуировка на матке"
@@ -68989,7 +69374,7 @@ msgctxt "speaker:Zoey"
 msgid "Working in a sex club as a bunny..."
 msgstr "Работать в секс-клубе в костюме кролика..."
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Worn Gloves"
 msgstr "Носимые перчатки"
@@ -72061,10 +72446,15 @@ msgctxt "ui"
 msgid "Zipper"
 msgstr "Молния"
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Zipper Hoodie"
 msgstr "Свитер на молнии"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Zipper Hoodie (Up)"
+msgstr "Джемпер на молнии (вверх)"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -72280,6 +72670,11 @@ msgstr "Аукцион Зои"
 msgctxt "ui"
 msgid "Zoey's Gangbang Dream"
 msgstr "Сон Зои о групповом сексе"
+
+#. src: field:DisplayName
+msgctxt "ui"
+msgid "Zoey's Rutter encounter."
+msgstr "Встреча Зои с Раттером."
 
 #. src: dialog
 msgctxt "ui"

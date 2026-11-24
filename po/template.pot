@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NeonTranslator 1.0\n"
-"POT-Creation-Date: 2026-11-23 17:19+0000\n"
+"POT-Creation-Date: 2026-11-24 11:25+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -20355,22 +20355,22 @@ msgctxt "ui"
 msgid "Autumn Ivy - NOVA"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Aviator Glasses"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Aviator Jacket"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Aviator Jacket Glove"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Aviator Jacket Pendant"
 msgstr ""
@@ -21582,9 +21582,39 @@ msgctxt "ui"
 msgid "BadShot"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Baggy Pants"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Baggy Tracksuit Pants (Black)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Baggy Tracksuit Pants (Striped)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Baggy Tracksuit Pants (White)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Baggy Tracksuit Pants V2 (Black)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Baggy Tracksuit Pants V2 (Striped)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Baggy Tracksuit Pants V2 (White)"
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -21592,7 +21622,7 @@ msgctxt "ui"
 msgid "Balancing Training"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Banana Hat"
 msgstr ""
@@ -21982,6 +22012,16 @@ msgctxt "ui"
 msgid "BaseTask"
 msgstr ""
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Basic Black Bra (Groped)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Basic Black Panties (Groped)"
+msgstr ""
+
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Basic Ground"
@@ -22098,12 +22138,12 @@ msgctxt "ui"
 msgid "Bearcore - Lead Developer"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Beard 1"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Beard 2"
 msgstr ""
@@ -22113,12 +22153,12 @@ msgctxt "ui"
 msgid "Bears Test"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Beary Good Ears"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Beary Good Shades"
 msgstr ""
@@ -22517,54 +22557,59 @@ msgctxt "ui"
 msgid "Black Body Marker"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Bunnysuit"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Cat Ears"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Cat Outfit Bottom"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Cat Outfit Top"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Hoodie"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Hoodie Up"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Hoodie with Horns"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Net Bottom"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Net Top"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black Shorts"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Black T-Shirt (Damaged)"
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -22577,12 +22622,12 @@ msgctxt "speaker:Zoey"
 msgid "Black marker... Some thin metal plate with holes... Stick-on tattoos..."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black suit shirt"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Black top"
 msgstr ""
@@ -22680,7 +22725,7 @@ msgctxt "ui"
 msgid "Blowjob Dialogue"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Blue Chipset"
 msgstr ""
@@ -22886,9 +22931,14 @@ msgctxt "ui"
 msgid "Boop!"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Boots"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Boots (Damaged)"
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -23199,12 +23249,12 @@ msgctxt "ui"
 msgid "Brown"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Brown Cartel Pants"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Brown Cartel Suit"
 msgstr ""
@@ -23383,9 +23433,14 @@ msgctxt "ui"
 msgid "Bunnysuit reaction"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Business glasses"
+msgstr ""
+
+#. src: field:Description
+msgctxt "ui"
+msgid "Business up top, party down below. Part of the Hi-Thread casual set."
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -25098,17 +25153,17 @@ msgctxt "speaker:Klaudia"
 msgid "Cal! What is this?"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Calico Cat Ears"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Calico Cat Outfit Bottom"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Calico Cat Outfit Top"
 msgstr ""
@@ -25158,7 +25213,7 @@ msgctxt "ui"
 msgid "Calliach Not Available Bark"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Calliach Outfit"
 msgstr ""
@@ -25596,7 +25651,7 @@ msgctxt "speaker-name"
 msgid "Cartel Guy"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cartel Hat"
 msgstr ""
@@ -25606,12 +25661,12 @@ msgctxt "ui"
 msgid "Cartel Member"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cartel Suit Brown"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cartel Suit Grey"
 msgstr ""
@@ -26426,7 +26481,7 @@ msgctxt "ui"
 msgid "Cheers to more success,"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cheese"
 msgstr ""
@@ -27085,7 +27140,7 @@ msgctxt "ui"
 msgid "Clothes appear on the ground"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Clown Makeup"
 msgstr ""
@@ -27635,17 +27690,17 @@ msgctxt "ui"
 msgid "Construction Worker"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Construction Worker Bottom"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Construction Worker Helmet"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Construction Worker Top"
 msgstr ""
@@ -27798,22 +27853,22 @@ msgctxt "ui"
 msgid "Corberion"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Corp Jacket"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Corp Jacket Robo"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Corp Pants"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Corp Shoes"
 msgstr ""
@@ -27937,6 +27992,16 @@ msgstr ""
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Count Open Boxes Loop"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Cozy Shorts"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Cozy Tanktop"
 msgstr ""
 
 #. src: dialog
@@ -28389,7 +28454,7 @@ msgctxt "ui"
 msgid "Cybertoaster"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cypher Outfit"
 msgstr ""
@@ -28459,22 +28524,22 @@ msgctxt "ui"
 msgid "Cypher waitsT"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cypher's Hat"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cypher's Jacket"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cypher's Mask"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Cypher's Suit"
 msgstr ""
@@ -29078,34 +29143,59 @@ msgctxt "ui"
 msgid "Dar4e 1337"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Dark Beanie"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Dark Beanie (Furry)"
+msgstr ""
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Dark Beanie Damaged"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Dark Beanie Damaged (Furry)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Dark Beanie Damaged With Pins (Furry)"
+msgstr ""
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Dark Beanie With Holes"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Dark Beanie With Holes And Pin"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Dark Beanie With Metal Spikes"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Dark Beanie With Metal Spikes (Furry)"
+msgstr ""
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Dark Beanie With Rivets"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Dark Beanie With Rivets (Furry)"
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -29634,7 +29724,7 @@ msgctxt "ui"
 msgid "Demo_MSG_Closed"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Denim Shorts"
 msgstr ""
@@ -29644,7 +29734,7 @@ msgctxt "ui"
 msgid "Denim Skirt"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Denim skirt"
 msgstr ""
@@ -33277,7 +33367,7 @@ msgctxt "ui"
 msgid "Dy?"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Dyed Pubes"
 msgstr ""
@@ -35233,6 +35323,11 @@ msgctxt "ui"
 msgid "Experience Zoey has gained using her vagina"
 msgstr ""
 
+#. src: field:Description
+msgctxt "ui"
+msgid "Experience real comfort in these low-profile shorts from the Hi-Thread casual set, paired with thigh-high stockings."
+msgstr ""
+
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Experimental Brain Treatment:"
@@ -35305,7 +35400,7 @@ msgctxt "ui"
 msgid "Exxy"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Exxy Outfit"
 msgstr ""
@@ -36160,12 +36255,12 @@ msgctxt "ui"
 msgid "Faster... Yes, ma'am..."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Fat Guy Jacket"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Fat Guy Outfit"
 msgstr ""
@@ -36290,27 +36385,27 @@ msgctxt "ui"
 msgid "Fem Guard begins groping Zoeys ass"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Female Bunny Ears"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Female Bunnysuit"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Female Electrician Helmet"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Female Electrician Pants"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Female Electrician Top"
 msgstr ""
@@ -36327,12 +36422,12 @@ msgctxt "ui"
 msgid "Female Enforcer 1112"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Female Enforcer Suit"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Female Enforcer Suit Pink"
 msgstr ""
@@ -36574,17 +36669,22 @@ msgctxt "speaker-name"
 msgid "Femboy"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Femboy Bunnysuit BigDick"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Femboy Bunnysuit Jay"
+msgstr ""
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Femboy Bunnysuit MediumDick"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Femboy Bunnysuit SmallDick"
 msgstr ""
@@ -37762,6 +37862,11 @@ msgctxt "speaker:Leona"
 msgid "Found her in the gutter at my old office. She was just a helpless little thing... Laying there mewing... Then she looked up at me, and..."
 msgstr ""
 
+#. src: field:UnlockHint
+msgctxt "ui"
+msgid "Found in M31 over the entrance area."
+msgstr ""
+
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Found me!"
@@ -37787,17 +37892,17 @@ msgctxt "speaker:Rugnar"
 msgid "Fourty Fuckbucks, if you let her grope your tits."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Foxy Cat Ears"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Foxy Cat Outfit Bottom"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Foxy Cat Outfit Top"
 msgstr ""
@@ -38247,7 +38352,7 @@ msgctxt "ui"
 msgid "Furline Advertisement"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Gloves"
 msgstr ""
@@ -38257,17 +38362,17 @@ msgctxt "ui"
 msgid "Futereswear Gloves 2"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintight Suit Dark"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintight Suit Light"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintightv2"
 msgstr ""
@@ -38277,27 +38382,27 @@ msgctxt "ui"
 msgid "Futereswear Skintightv2 2"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintightv2 Gloves"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Straps Black"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Straps Light"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Underwear Black"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Underwear White"
 msgstr ""
@@ -38424,7 +38529,7 @@ msgctxt "speaker:Zoey"
 msgid "G-Glow...? But-"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 #. skip: reviewed
 #, skip
 msgctxt "ui"
@@ -38560,7 +38665,7 @@ msgctxt "speaker:Enforcer"
 msgid "GAG enforcers like myself are the only thing keeping this wretched society in check."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "GAG-Issued Mask"
 msgstr ""
@@ -39802,7 +39907,7 @@ msgctxt "ui"
 msgid "GloryHole Inspection"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Glove"
 msgstr ""
@@ -41049,7 +41154,7 @@ msgctxt "ui"
 msgid "GreedyDeath"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Green Chipset"
 msgstr ""
@@ -41071,32 +41176,32 @@ msgctxt "ui"
 msgid "Greetings, Zoey. This one is pleased to meet you again."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Grey Beanie"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Grey Beanie With Metal Spikes"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Grey Beanie With Rivets"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Grey Cartel Suit"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Grey Cartel Suit 2"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Grey Cartel Suit 2 Pants"
 msgstr ""
@@ -42706,6 +42811,11 @@ msgctxt "ui"
 msgid "Hate it? I don't really hate it. It's honestly kinda fun. I just wish all this GAG nonsense wasn't a thing."
 msgstr ""
 
+#. src: field:UnlockHint
+msgctxt "ui"
+msgid "Have a close look at Rosies breasts."
+msgstr ""
+
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Have fun you two, ehehe."
@@ -43420,6 +43530,16 @@ msgstr ""
 #, skip
 msgctxt "ui"
 msgid "Helljumper1A"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hello Gorgeous Bottom"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hello Gorgeous Top"
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -44436,6 +44556,26 @@ msgctxt "ui"
 msgid "Hi, Zoey, I'm Ashley! You look trustworthy, would you mind taking a-... picture of me and my friend? It"
 msgstr ""
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hi-Thread Croptop"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hi-Thread Croptop (Skimpy)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hi-Thread Shorts"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hi-Thread Shorts (Skimpy)"
+msgstr ""
+
 #. src: raw:MonoBehaviour
 #. skip: identifier
 #, skip
@@ -44550,17 +44690,17 @@ msgctxt "ui"
 msgid "High Tide, 2nd Floor"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "High heels with black stockings"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "High heels with black straps"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "High heels with stockings"
 msgstr ""
@@ -45060,12 +45200,27 @@ msgctxt "ui"
 msgid "Honk! Mi mi mi mi... Hooonk! Mi mi mi mi..."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Hoodie"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hoodie (Hood Up)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hoodie Damaged (Hood Up)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Hoodie Damaged V2 (Hood Up)"
+msgstr ""
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Hoodie Ragged"
 msgstr ""
@@ -45157,7 +45312,7 @@ msgctxt "ui"
 msgid "Horse dildo?"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Hot pants"
 msgstr ""
@@ -45745,6 +45900,11 @@ msgstr ""
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "I can tell..."
+msgstr ""
+
+#. src: field:Description
+msgctxt "ui"
+msgid "I can use the camera on my phone to take photographs of people. The quality isn't the best, but it's doable."
 msgstr ""
 
 #. src: dialog
@@ -49033,6 +49193,16 @@ msgctxt "ui"
 msgid "Inspect - Trash Pile"
 msgstr ""
 
+#. src: field:UnlockHint
+msgctxt "ui"
+msgid "Inspect Max's crotch."
+msgstr ""
+
+#. src: field:UnlockHint
+msgctxt "ui"
+msgid "Inspect Nova's breasts twice."
+msgstr ""
+
 #. src: dialog
 msgctxt "ui"
 msgid "Inspect her"
@@ -51652,6 +51822,16 @@ msgctxt "speaker:Lio"
 msgid "Just a...?"
 msgstr ""
 
+#. src: field:Description
+msgctxt "ui"
+msgid "Just an old pair of shorts to wear around my apartment."
+msgstr ""
+
+#. src: field:Description
+msgctxt "ui"
+msgid "Just an old tanktop to wear around my apartment."
+msgstr ""
+
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Just begin the preloading"
@@ -52677,12 +52857,12 @@ msgctxt "ui"
 msgid "Kittenzoe"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Kitty Ears"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Kitty Top"
 msgstr ""
@@ -52809,7 +52989,7 @@ msgctxt "ui"
 msgid "Klaudia Cigarette Inspection"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Klaudia Default"
 msgstr ""
@@ -52900,7 +53080,7 @@ msgctxt "speaker:Customer"
 msgid "Klaudia pick'd a perfect replac'mnt, *hic*, ehehe... Yer tits look even hotter in this suit, mhmmm..."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Klaudia thong"
 msgstr ""
@@ -52911,7 +53091,7 @@ msgctxt "ui"
 msgid "Klaudia told me you had a good long whif of sweet sweet glow, ehehe. Seems like you're quite responsive to it."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Klaudia's Mask"
 msgstr ""
@@ -53410,6 +53590,26 @@ msgctxt "ui"
 msgid "LaRazz"
 msgstr ""
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Lacey Bra (Black)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Lacey Bra (White)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Lacey Panties (Black)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Lacey Panties (White)"
+msgstr ""
+
 #. src: dialog
 msgctxt "ui"
 msgid "Ladies and gentlemen she is hacking the mainframe!"
@@ -53686,6 +53886,11 @@ msgctxt "ui"
 msgid "Leather Skirt"
 msgstr ""
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Leather Skirt (Black)"
+msgstr ""
+
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Leather Strip"
@@ -53919,6 +54124,11 @@ msgctxt "ui"
 msgid "Leona Kissing Scene Intro"
 msgstr ""
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Leona Outfit"
+msgstr ""
+
 #. src: dialog
 msgctxt "ui"
 msgid "Leona opens the door"
@@ -54017,9 +54227,14 @@ msgctxt "ui"
 msgid "Leone145D"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Leoprint Shorts"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Leoprint Shorts (covered)"
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -54574,17 +54789,17 @@ msgctxt "ui"
 msgid "Light Changer"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Light Hoodie"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Light Hoodie Up"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Light Hoodie Up Horns"
 msgstr ""
@@ -54936,6 +55151,11 @@ msgctxt "speaker-name"
 msgid "Lio"
 msgstr ""
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Lio Default Bottom"
+msgstr ""
+
 #. src: dialog
 msgctxt "ui"
 msgid "Lio Dialogue Preset"
@@ -54969,6 +55189,11 @@ msgstr ""
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Lio's Machine"
+msgstr ""
+
+#. src: field:Description
+msgctxt "ui"
+msgid "Lio's stuck in some sort of sex machine. I've gotta get him out of there!"
 msgstr ""
 
 #. src: dialog
@@ -55285,7 +55510,7 @@ msgctxt "ui"
 msgid "Logs Folder"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Long Pubes"
 msgstr ""
@@ -55663,6 +55888,16 @@ msgstr ""
 #, skip
 msgctxt "ui"
 msgid "Lord_Grima"
+msgstr ""
+
+#. src: field:m_text
+msgctxt "ui"
+msgid "Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipisciawdawda"
+msgstr ""
+
+#. src: field:m_text
+msgctxt "ui"
+msgid "Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adip"
 msgstr ""
 
 #. src: field:TakenFromInventoryText
@@ -56520,27 +56755,27 @@ msgctxt "ui"
 msgid "Make your way back home"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Male Construction Worker Bottom"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Male Construction Worker Top"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Male Electrician Bottom"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Male Electrician Helmet"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Male Electrician Top"
 msgstr ""
@@ -58751,7 +58986,7 @@ msgctxt "ui"
 msgid "Moaning louder now"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Modified GAG Uniform"
 msgstr ""
@@ -58874,7 +59109,7 @@ msgctxt "ui"
 msgid "Mouse Y"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Moustache"
 msgstr ""
@@ -59957,7 +60192,7 @@ msgctxt "ui"
 msgid "NN Vertical Fade Sprite Shape"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "NN underboob shirt"
 msgstr ""
@@ -60379,22 +60614,22 @@ msgctxt "ui"
 msgid "Nebulus Nocturnus"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Neck Chip - Glow"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Neck Chip - Lio's Data Alpha"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Neck Chip - Lio's Data Beta"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Neck Chip - Lio's Data Gamma"
 msgstr ""
@@ -61111,17 +61346,17 @@ msgctxt "speaker:Man"
 msgid "Niiice, hehehe. Not only are your tits organic. They're so fucking hot."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nipple Chain"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nipple Chain Piercings"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nipple Cow Bells"
 msgstr ""
@@ -61131,22 +61366,22 @@ msgctxt "ui"
 msgid "Nipple Light"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nipple Piercings"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nipple Rings Large"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nipple Rings Medium"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nipple Rings Small"
 msgstr ""
@@ -61792,7 +62027,7 @@ msgctxt "ui"
 msgid "Normal"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Nose Piercing"
 msgstr ""
@@ -62399,6 +62634,11 @@ msgstr ""
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Nova. Alright. Where can I find her?"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Novas Outfit"
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -68009,17 +68249,17 @@ msgctxt "ui"
 msgid "Pink"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Pink Cat Ears"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Pink Cat Outfit Bottom"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Pink Cat Outfit Top"
 msgstr ""
@@ -68133,37 +68373,37 @@ msgctxt "ui"
 msgid "Place item"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "PlaidPLAY Classic Pen"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "PlaidPLAY Classic Skirt"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "PlaidPLAY Classic Top"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "PlaidPLAY GL-Ass"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "PlaidPLAY Mk-5 Pen"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "PlaidPLAY Mk-5 Skirt"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "PlaidPLAY Mk-5 Top"
 msgstr ""
@@ -70492,7 +70732,7 @@ msgctxt "ui"
 msgid "PuB"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 #. skip: reviewed
 #, skip
 msgctxt "ui"
@@ -70551,32 +70791,32 @@ msgctxt "ui"
 msgid "Pumpkin_Fucker"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Punk Jacket"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Punk Jacket Oni"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Punk Jacket Robo"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Punk Jeans"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Punk Shoes"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Punkjacket Shirt"
 msgstr ""
@@ -72108,12 +72348,12 @@ msgctxt "ui"
 msgid "Recreating Keyboard Layout!"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Red Cartel Suit"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Red Chipset"
 msgstr ""
@@ -73990,7 +74230,7 @@ msgctxt "ui"
 msgid "Robin R"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Robo Shoes"
 msgstr ""
@@ -74493,7 +74733,7 @@ msgctxt "ui"
 msgid "Russian Machine Translated / Русский Машинный Перевод"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Rutter Gas Immunity"
 msgstr ""
@@ -75004,7 +75244,7 @@ msgctxt "ui"
 msgid "Sarah Cums"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sarah Default"
 msgstr ""
@@ -75192,7 +75432,7 @@ msgctxt "ui"
 msgid "Satin Skirt"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Satin skirt"
 msgstr ""
@@ -75906,7 +76146,7 @@ msgctxt "ui"
 msgid "Sentinel Type - BigNoodleTooOblique SDF_Outline"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Septum"
 msgstr ""
@@ -77563,7 +77803,7 @@ msgctxt "ui"
 msgid "Short Circuit"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Short leather skirt"
 msgstr ""
@@ -78264,7 +78504,7 @@ msgctxt "ui"
 msgid "Silent Angel"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Silk Skirt"
 msgstr ""
@@ -78519,7 +78759,7 @@ msgctxt "ui"
 msgid "Skipping those upgrades."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Skull Hoodie"
 msgstr ""
@@ -78551,22 +78791,22 @@ msgctxt "ui"
 msgid "Sleep's always been a bit up and down for me..."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sleeved grey top"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sleeveless Black"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sleeveless Punk"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sleeveless White"
 msgstr ""
@@ -78802,7 +79042,7 @@ msgctxt "ui"
 msgid "Smoking hot... Insecure... You check all my boxes, babe. And I sure as fuck am not the only one to think so, eheh."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 #. skip: reviewed
 #, skip
 msgctxt "ui"
@@ -78819,12 +79059,12 @@ msgctxt "ui"
 msgid "Snapping out of the trance"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sneaker"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sneakers"
 msgstr ""
@@ -79607,7 +79847,7 @@ msgctxt "ui"
 msgid "Space = Redress"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 #. skip: reviewed
 #, skip
 msgctxt "ui"
@@ -79811,9 +80051,29 @@ msgctxt "ui"
 msgid "Spooks"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Sports Shorts (black)"
+msgstr ""
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sportsshoes"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Sportsshoes (Damaged)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Sporty Bra (Black)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Sporty Panties (Black)"
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -80772,7 +81032,7 @@ msgctxt "ui"
 msgid "Stinkin' box."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Stockings"
 msgstr ""
@@ -80950,7 +81210,7 @@ msgctxt "ui"
 msgid "StrangeLife"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Strapless striped top"
 msgstr ""
@@ -81275,12 +81535,12 @@ msgctxt "ui"
 msgid "SucksToBeYou"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sucky Costume"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Sucky Costume Wig"
 msgstr ""
@@ -81292,17 +81552,17 @@ msgctxt "ui"
 msgid "SugarMint"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Suit pants"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Suit top with black shirt"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Suit top with white shirt"
 msgstr ""
@@ -82248,6 +82508,11 @@ msgctxt "ui"
 msgid "T*^4uJW"
 msgstr ""
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "T-Shirt (Damaged)"
+msgstr ""
+
 #. src: dialog
 msgctxt "ui"
 msgid "T-Take all the pictures you n-neeeeed, babe!"
@@ -82871,6 +83136,16 @@ msgstr ""
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Tan"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Tanktop (Damaged)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Tanktop 2 (Damaged)"
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -85155,6 +85430,11 @@ msgctxt "ui"
 msgid "This alley doesn't exactly look like a nice stroll, now does it?"
 msgstr ""
 
+#. src: field:Description
+msgctxt "ui"
+msgid "This bra from BluFit promises a sleek sports bra that provides support in all the right places! Feeling blue? Go Blu."
+msgstr ""
+
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "This city's a graveyard, alive but decayed"
@@ -85439,6 +85719,11 @@ msgstr ""
 #. src: dialog
 msgctxt "speaker:Lio"
 msgid "This thing's more complicated than I thought it'd be. The material's not like anything I've seen before. I can't just 3D print a double."
+msgstr ""
+
+#. src: field:Description
+msgctxt "ui"
+msgid "This tiny little memory card is perfect for the photographer with no budget... and no more than 6 things to photograph."
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -86349,7 +86634,7 @@ msgctxt "ui"
 msgid "Tops - 100%"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Torn Stockings"
 msgstr ""
@@ -86420,12 +86705,27 @@ msgctxt "ui"
 msgid "Tracking the Tracker"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Tracksuit (Closed)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Tracksuit (Draped)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Tracksuit (Open)"
+msgstr ""
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Tracksuit Pants"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Tracksuit Pants V2"
 msgstr ""
@@ -86920,7 +87220,7 @@ msgctxt "ui"
 msgid "Tsc... I guess not. Consider yourself warned, then."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Tshirt"
 msgstr ""
@@ -87937,6 +88237,61 @@ msgctxt "ui"
 msgid "URP Spine Renderer Asset_Renderer"
 msgstr ""
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (BLarm)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (BLleg)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (BUarm)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (BUleg)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (Bshoulder)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (FLarm)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (FLleg)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (FShoulder)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (FUarm)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (FUleg)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "USB Slots (Full)"
+msgstr ""
+
 #. src: raw:Transform
 #. skip: short-token
 #, skip
@@ -88592,6 +88947,16 @@ msgctxt "speaker:Zoey"
 msgid "Umm... Okay..."
 msgstr ""
 
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Un/ZIP Jacket (Skimpy)"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Un/ZIP Trenchcoat"
+msgstr ""
+
 #. src: raw:MonoBehaviour
 #. skip: identifier
 #, skip
@@ -88640,7 +89005,12 @@ msgctxt "ui"
 msgid "Underboob Tshirt"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Underboob shirt (black)"
+msgstr ""
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Underboob straps shirt"
 msgstr ""
@@ -89148,7 +89518,7 @@ msgctxt "speaker:Zoey"
 msgid "Unsure what to do"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Untied Hair"
 msgstr ""
@@ -89810,12 +90180,12 @@ msgctxt "ui"
 msgid "Valve in Zoeys Hand"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Vampire Costume"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Vampire Costume Wig"
 msgstr ""
@@ -89988,12 +90358,12 @@ msgctxt "ui"
 msgid "ViCVU"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Vibe's Hair Dye"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Vibe's Jacket"
 msgstr ""
@@ -90033,7 +90403,7 @@ msgctxt "ui"
 msgid "Vibrators"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Vibrosuit"
 msgstr ""
@@ -90163,6 +90533,11 @@ msgstr ""
 #, skip
 msgctxt "ui"
 msgid "VirtualAddictt"
+msgstr ""
+
+#. src: field:UnlockHint
+msgctxt "ui"
+msgid "Visit the bathroom in room 205 during Zoey's dream sequence."
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -92678,7 +93053,7 @@ msgctxt "ui"
 msgid "Water"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Watery Eyepatch"
 msgstr ""
@@ -94393,22 +94768,22 @@ msgctxt "ui"
 msgid "Whispers into Zoeys ear.B"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White Beanie"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White Beanie With Metal Spikes"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White Beanie With Rivets"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White Shorts"
 msgstr ""
@@ -94423,42 +94798,47 @@ msgctxt "ui"
 msgid "White Top (Choker"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White sandals"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White sandals with black socks"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White sneakers"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White suit shirt"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White tied top"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
+msgctxt "ui"
+msgid "White tied top (straps)"
+msgstr ""
+
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White top"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White top with choker"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "White top with thin straps"
 msgstr ""
@@ -94511,6 +94891,11 @@ msgstr ""
 #. src: dialog
 msgctxt "ui"
 msgid "Who needs big scores when you've got a bestie like me? I can cover your bills, super spy. I've got daddy's money, remember?"
+msgstr ""
+
+#. src: field:Description
+msgctxt "ui"
+msgid "Who needs velcro when you've got a big ass zipper? The Un/ZIP trenchcoat brings you a cool aesthetic without compromising on ease-of-use."
 msgstr ""
 
 #. src: dialog
@@ -94741,12 +95126,12 @@ msgctxt "speaker:Enforcer"
 msgid "Why? You want more, slummer?"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Wide Track Pants"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Wide Track Pants V2"
 msgstr ""
@@ -94920,7 +95305,7 @@ msgctxt "speaker-name"
 msgid "Woman"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Womb Tattoo"
 msgstr ""
@@ -94991,7 +95376,7 @@ msgctxt "speaker:Zoey"
 msgid "Working in a sex club as a bunny..."
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Worn Gloves"
 msgstr ""
@@ -99155,9 +99540,14 @@ msgctxt "ui"
 msgid "Zipper"
 msgstr ""
 
-#. src: raw:MonoBehaviour
+#. src: field:ItemName
 msgctxt "ui"
 msgid "Zipper Hoodie"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Zipper Hoodie (Up)"
 msgstr ""
 
 #. src: raw:MonoBehaviour
@@ -99422,6 +99812,11 @@ msgstr ""
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Zoey's Gangbang Dream"
+msgstr ""
+
+#. src: field:DisplayName
+msgctxt "ui"
+msgid "Zoey's Rutter encounter."
 msgstr ""
 
 #. src: dialog
