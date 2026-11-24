@@ -1,0 +1,1374 @@
+{
+  "lang": "ru",
+  "summary": {
+    "total": 629,
+    "filled": 521,
+    "coverage": 82.82988871224165,
+    "errors": 43,
+    "warnings": 136,
+    "by_speaker": [
+      [
+        "Zoey",
+        {
+          "filled": 36,
+          "total": 36
+        }
+      ],
+      [
+        "Trov",
+        {
+          "filled": 4,
+          "total": 4
+        }
+      ],
+      [
+        "Leona",
+        {
+          "filled": 4,
+          "total": 4
+        }
+      ],
+      [
+        "Klaudia",
+        {
+          "filled": 3,
+          "total": 3
+        }
+      ],
+      [
+        "Varen",
+        {
+          "filled": 2,
+          "total": 2
+        }
+      ],
+      [
+        "Max",
+        {
+          "filled": 2,
+          "total": 2
+        }
+      ],
+      [
+        "Rugnar",
+        {
+          "filled": 2,
+          "total": 2
+        }
+      ],
+      [
+        "Cartel Guy",
+        {
+          "filled": 1,
+          "total": 1
+        }
+      ],
+      [
+        "Woman",
+        {
+          "filled": 1,
+          "total": 1
+        }
+      ],
+      [
+        "Enforcer",
+        {
+          "filled": 1,
+          "total": 1
+        }
+      ],
+      [
+        "Mira",
+        {
+          "filled": 1,
+          "total": 1
+        }
+      ],
+      [
+        "Sarah",
+        {
+          "filled": 1,
+          "total": 1
+        }
+      ],
+      [
+        "FINISHED",
+        {
+          "filled": 1,
+          "total": 1
+        }
+      ],
+      [
+        "Customer",
+        {
+          "filled": 1,
+          "total": 1
+        }
+      ]
+    ],
+    "by_dir": [
+      [
+        "ui",
+        {
+          "filled": 521,
+          "total": 629
+        }
+      ]
+    ]
+  },
+  "findings": [
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "' in animMap!",
+      "detail": "' в animMap!"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(... I shouldn't watch...  )",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(Agh- It sprayed me in the face. Need to... use the blocker...)",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(Been feeling the itch more on this ride too, but agh- I can't waste the blocker on it with no charger in sight.)",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(Deeper... No, I'm not into this, I wouldn't... This is... I'm just helping her!  )",
+      "detail": "<i>,<color=#EB83FF>,</color>,<color=#EB83FF>,</color>,<color=#EB83FF>,</color>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#EB83FF>,</color>,<color=#EB83FF>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(Does he really feel... that good...?)",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(He wants it... I wanna see-.. more... )",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(He wants more... so bad... )",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(Hhh... )",
+      "detail": "<color=#EB83FF>,<i>,</i>,</color> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(I need to be more careful.. This place is.. Affecting me.. )",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(I shouldn't draw any attention to myself with the blocker on me, right...? Just... Just ignore it... )",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\\>,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(I shouldn't.. Have done.. That... )",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(I-... I shouldn't let him talk to me like that... No matter the pay... Right...?)",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(I-if that makes it go.. Faster.. S-sure.. )",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(If Sarah is enjoying it- I mean... It's no big deal... Right?)",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(It shouldn't have been.. This hot... )",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(Just letting him... Scratch the... itch... Mhm... )",
+      "detail": "<color=#EB83FF>,<i>,<i>,</i>,</i>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,<i>,<i>,</i>,</i>,</font>,</color>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(Khh-.. I-.. Mnhh.. Hhh.. )",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(Khhh... I'll just.. Quickly... )",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(Last time was fine... right...?)",
+      "detail": "<color=#EB83FF>,<i>,</i>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,<i>,</i>,</font>,</color>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(Maybe I should like... find somewhere private or... one of those orgy carriages.)",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(Mnhh-.. I- it feels like.. warm gel.. )",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(No-... I-... This is so-... wrong.. Why am I not-...)",
+      "detail": "<color=#EB83FF>,<i>,<b>,</b>,</i>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,<i>,<b>,</b>,</i>,</font>,</color>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(Piston..? Ghh.. It's so.. Soft and.. Warm.. )",
+      "detail": "<i>,<color=#EB83FF>,</color>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(That doesn't feel accidental... I should say something... right?)",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(The vibrator.. ! )",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(The vibrator.. He can.. Feel that.. when he goes in?)",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(This taste... It couldn't be... cum... right?)",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "(Ugh... much better...)",
+      "detail": "<i>,<color=#EB83FF>,</color>,</i> vs <i>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,</i>"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "- LoveSense Omnibuzz",
+      "detail": "- LoveSense Omnibuzz"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "...",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "0.4 - GlowingHoleBartending - Nova - 2 - 3 - Agree",
+      "detail": "0.4 - GlowingHoleBartending - Нова - 2 - 3 - Да"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "0.4 - GlowingHoleBartending - Nova - 2 - 5",
+      "detail": "0.4 - GlowingHoleBartending - Нова - 2 - 5"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "0.4 - GlowingHoleBartending - Nova - 2 - 6",
+      "detail": "0.4 - GlowingHoleBartending - Нова - 2 - 6"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "0.4 - PocketPussyVendor - 1",
+      "detail": "0.4 - PocketPussyVendor - 1"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "0.4 - PocketPussyVendor - 2",
+      "detail": "0.4 - PocketPussyVendor - 2"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "1500sumire - @1500sumire",
+      "detail": "1500sumire - @1500sumire"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "3=D d3654b79-4b80-4b6e-87fe-d498dc61f0c7",
+      "detail": "3=D d3654b79-4b80-4b6e-87fe-d498dc61f0c7"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "AMD Custom APU 0405",
+      "detail": "AMD Custom APU 0405"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "Ah fuck! Yes! Naughty bunny boy! Next round!",
+      "detail": "<size=30>,<size=37>,</size>,<size=37> vs <size=30>,</size>,<size=37>,</size>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "Ahh-! Oh... It does!",
+      "detail": "<color=#EB83FF>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Akeno Himejima21",
+      "detail": "Akeno Himejima21"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Autumn Ivy - NOVA",
+      "detail": "Autumn Ivy — NOVA"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Bhair2_base2)\\",
+      "detail": "Bhair2_base2)\\\\"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "CG dialogue 2",
+      "detail": "CG dialogue 2"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "CallTimelineTrigger '",
+      "detail": "CallTimelineTrigger '"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "ClearSpineCharacterAnimation has no SkeletonAnimation on FSM:",
+      "detail": "ClearSpineCharacterAnimation не имеет SkeletonAnimation в FSM:"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Corrupt Technologies Advertisement",
+      "detail": "Реклама Corrupt Technologies"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Diana Lockhart - MYNX",
+      "detail": "Diana Lockhart — MYNX"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "F-Faster? It goes- faster? Hhhh~",
+      "detail": "<color=#EB83FF>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "Ffff... So hot...",
+      "detail": "<color=#EB83FF>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Fhair2_Fbase)\\",
+      "detail": "Fhair2_Fbase)\\\\"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Fhair2_bang1)\\",
+      "detail": "Fhair2_bang1)\\\\"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Fhair2_bang2)\\",
+      "detail": "Fhair2_bang2)\\\\"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Fhair2_bang3)\\",
+      "detail": "Fhair2_bang3)\\\\"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Fhair2_bang4)\\",
+      "detail": "Fhair2_bang4)\\\\"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Fhair2_bang5)\\",
+      "detail": "Fhair2_bang5)\\\\"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "FilteredList is 0!",
+      "detail": "FilteredList равен 0!"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Futereswear Skintightv2 2",
+      "detail": "Futureswear Skintightv2 2"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Futereswear Skintightv2 Gloves",
+      "detail": "Перчатки Futereswear Skintightv2"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "GAUSSIAN13X13",
+      "detail": "GAUSSIAN13X13"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "GAUSSIAN5X5",
+      "detail": "GAUSSIAN5X5"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "GAUSSIAN9X9",
+      "detail": "GAUSSIAN9X9"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "Gah-..! Woah..! Hey..! That's- Khh-..",
+      "detail": "<color=#EB83FF>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "GameObject doesn't have FsmComponent:",
+      "detail": "GameObject не имеет FsmComponent:"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "HVDComicSerifPro SDFFg",
+      "detail": "HVDComicSerifPro SDFFg"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "Hahh~! Oh my god they're spinning~!",
+      "detail": "<color=#EB83FF>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "His... lap...?",
+      "detail": "<color=#EB83FF>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "HoneyScript-Light SDF",
+      "detail": "HoneyScript-Light SDF"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "HoneyScript-SemiBold SDF",
+      "detail": "HoneyScript-SemiBold SDF"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "INSANITORIUM STUDIOS!",
+      "detail": "INSANITORIUM STUDIOS!"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Iceagi - @Iceagi_",
+      "detail": "Iceagi — @Iceagi_"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "InputManager: Axis '",
+      "detail": "InputManager: Ось '"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "LiberationSans SDF",
+      "detail": "LiberationSans SDF"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "LittleLing - @littleling_",
+      "detail": "LittleLing — @littleling_"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "LockpickingManager: LockIndicator is null! Wtf? '",
+      "detail": "LockpickingManager: LockIndicator равен null! Какого? '"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "LockpickingManager: LockIndicatorPrefab is null! Wtf? '",
+      "detail": "LockpickingManager: LockIndicatorPrefab равен null! Какого? '"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Lovense I P",
+      "detail": "Lovense: IP"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Lovense Use H T T P",
+      "detail": "Lovense: HTTP"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "MasterKey F04",
+      "detail": "MasterKey F04"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "N-Nails, heh... Yeah... Mmm~!",
+      "detail": "<color=#EB83FF>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "N-New? Wait- Mnhh~ What's new?",
+      "detail": "<color=#EB83FF>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "No TextMeshProUGUI on",
+      "detail": "Нет TextMeshProUGUI"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "NotoSansSC-Medium SDF",
+      "detail": "NotoSansSC-Medium SDF"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "NotoSerifSC-Black SDF",
+      "detail": "NotoSerifSC-Black SDF"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "NotoSerifSC-Medium SDF",
+      "detail": "NotoSerifSC-Medium SDF"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "NotoSerifSC-Regular SDF",
+      "detail": "NotoSerifSC-Regular SDF"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "NotoSerifSC-Regular SDF 1",
+      "detail": "NotoSerifSC-Regular SDF 1"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "NotoSerifSC-Regular SDF Play",
+      "detail": "NotoSerifSC-Regular SDF Играть"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "OnAnyLatchUnlocked",
+      "detail": "OnAnyLatchUnlocked"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "OnAnyNumberEntered",
+      "detail": "OnAnyNumberEntered"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "OnInjectorPickedUp",
+      "detail": "OnInjectorPickedUp"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "OnNumbersEntered",
+      "detail": "OnNumbersEntered"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Orbitron-Bold SDF",
+      "detail": "Orbitron-Bold SDF"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Orbitron-ExtraBold SDF",
+      "detail": "Orbitron-ExtraBold SDF"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Orbitron-Medium SDF",
+      "detail": "Orbitron-Medium SDF"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Orbitron-Regular SDF",
+      "detail": "Orbitron-Regular SDF"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "OverworldAnimationTranslator: Animation '",
+      "detail": "OverworldAnimationTranslator: Анимация '"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Pathfinding FollowerEntity was null on FSM:",
+      "detail": "Pathfinding FollowerEntity был равен null на FSM:"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "PixieWillow - ZOEY",
+      "detail": "PixieWillow — ЗОИ"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "PlaidPLAY Mk-5 Top",
+      "detail": "Топ PlaidPLAY Mk-5"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "PlayMakerFSM, PlayMaker",
+      "detail": "PlayMakerFSM, PlayMaker"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "PlaySoundFromCategory: '",
+      "detail": "PlaySoundFromCategory: '"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Pocket Pussy Delux Edition",
+      "detail": "Pocket Pussy: Deluxe-издание"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Room 204\\nUpper Floor",
+      "detail": "Room 204\\\\nUpper Floor"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "STOAN - @STOANGuy",
+      "detail": "А-ах! — @STOANGuy"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "ScrollToItem: scrollRect is null",
+      "detail": "ScrollToItem: scrollRect равен нулю"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SerializedVisualLayerInfo: VisualLayerInfo is null!",
+      "detail": "SerializedVisualLayerInfo: VisualLayerInfo равен null!"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Shift Click GameObject",
+      "detail": "Shift+Клик по GameObject"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SlutService_3_Hideable_1_BoxMoved Rewrite",
+      "detail": "SlutService_3_Hideable_1_BoxMoved Переписать"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SlutService_3_Hideable_1_BoxMoved Rewrite 2",
+      "detail": "SlutService_3_Hideable_1_BoxMoved Переписать 2"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SlutService_4 1",
+      "detail": "SlutService_4 1"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SlutService_4 2",
+      "detail": "SlutService_4 2"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "So warm... and cozy... should I...?",
+      "detail": "<color=#EB83FF>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Stopbark - ToStop is null!",
+      "detail": "Stopbark - ToStop равен null!"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 10_line_13-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 10_line_13-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 10_line_15-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 10_line_15-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 10_line_3-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 10_line_3-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 10_line_4-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 10_line_4-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 10_line_7-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 10_line_7-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 11_line_10-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 11_line_10-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 13_line_3-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 13_line_3-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 14_line_7-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 14_line_7-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 16_line_3-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 16_line_3-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 16_line_8-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 16_line_8-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 17_line_10-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 17_line_10-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 17_line_15-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 17_line_15-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 17_line_6-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 17_line_6-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 17_line_8-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 17_line_8-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 18_line_3-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 18_line_3-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 18_line_4-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 18_line_4-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 18_line_6-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 18_line_6-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 19_line_3-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 19_line_3-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 1_line_0-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 1_line_0-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 20_line_3-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 20_line_3-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 21_line_3-FSM",
+      "detail": "SuitcaseBadend — CartelHideout — 21_line_3-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 21_line_6-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 21_line_6-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 22_line_2-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 22_line_2-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 22_line_6-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 22_line_6-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 22_line_7-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 22_line_7-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 22_line_9-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 22_line_9-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 23_line_2-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 23_line_2-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 23_line_6-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 23_line_6-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 23_line_7-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 23_line_7-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 25_line_9-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 25_line_9-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 26_line_7-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 26_line_7-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 27_line_7-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 27_line_7-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 28_line_0-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 28_line_0-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 28_line_4-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 28_line_4-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 29_line_0-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 29_line_0-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 29_line_11-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 29_line_11-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 29_line_8-FSM",
+      "detail": "SuitcaseBadend — CartelHideout — 29_line_8-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 29_line_9-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 29_line_9-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 2_line_0-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 2_line_0-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 30_line_0-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 30_line_0-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 31_line_0-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 31_line_0-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 31_line_4-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 31_line_4-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 32_line_0-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 32_line_0-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 32_line_9-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 32_line_9-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 33_line_0-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 33_line_0-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 33_line_10-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 33_line_10-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 3_line_1-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 3_line_1-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 4_line_1-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 4_line_1-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 6_line_0-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 6_line_0-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 7_line_11-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 7_line_11-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 8_line_0-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 8_line_0-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 8_line_6-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 8_line_6-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseBadend - CartelHideout - 9_line_7-FSM",
+      "detail": "SuitcaseBadend - CartelHideout - 9_line_7-FSM"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "SuitcaseMinigame",
+      "detail": "SuitcaseMinigame"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "T-There used to be a dildo here...",
+      "detail": "<color=#EB83FF>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "Unity Web Request is Null!",
+      "detail": "Unity Web Request равен Null!"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "W-Woah~! Tongues!",
+      "detail": "<color=#EB83FF>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "W-wait..! Nnnhh-.. I didn't-.. Khh Fhhaa...!",
+      "detail": "<color=#EB83FF>,</color>,<color=#EB83FF>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>,<color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>"
+    },
+    {
+      "level": "error",
+      "rule": "tag-imbalance",
+      "rel": "po",
+      "text": "Y-yeahh..! I'd love to.. come upstairs with you, heh!",
+      "detail": "<color=#EB83FF>,</color> vs <color=#B867FF>,<font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">,</font>,</color>"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "ZenDots-Regular SDF",
+      "detail": "ZenDots-Regular SDF"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "bum - @bumdraws",
+      "detail": "bum — @bumdraws"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "pts - Lorem ipsum dolor sit...",
+      "detail": "pts - Lorem ipsum dolor sit..."
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "yakiq - @therealyakiq",
+      "detail": "Якик — @therealyakiq"
+    },
+    {
+      "level": "warning",
+      "rule": "latin-leftover",
+      "rel": "po",
+      "text": "yyyy-MM-dd HH:mm:ss",
+      "detail": "yyyy-MM-dd HH:mm:ss"
+    }
+  ]
+}

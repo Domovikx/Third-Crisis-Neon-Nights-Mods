@@ -29,7 +29,7 @@ import {
   buildCatalog,
   srcOf,
   type PotSlot,
-} from "../.opencode/skills/extract-text/scripts/potgen.mts";
+} from "../.opencode/skills/extract-text/scripts/pot_rules.mts";
 import {
   SRC_LABELS,
   scanDump,

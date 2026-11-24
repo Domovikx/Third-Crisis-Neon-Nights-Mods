@@ -1,0 +1,2751 @@
+
+#. src: us
+msgctxt "ui"
+msgid "! Was the mission ScriptableObject removed or the ID changed?"
+msgstr "! Был ли ScriptableObject миссии удалён или изменён ID?"
+
+#. src: us
+msgctxt "ui"
+msgid "' in animMap!"
+msgstr "' в animMap!"
+
+#. src: us
+msgctxt "ui"
+msgid "' is not a Sound Category on '"
+msgstr "\"' не является звуковой категорией на '\""
+
+#. src: dialog
+#. rich_text: <i>(<color=#EB83FF>... I shouldn't watch...  </color>)</i>
+# rich_translation: <i>(<color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">... Мне не стоит подглядывать...</font></color>)</i>
+msgctxt "ui"
+msgid "(... I shouldn't watch...  )"
+msgstr "(... Мне не стоит подглядывать...)"
+
+#. src: dialog
+#. rich_text: <i>(Agh- It sprayed me in the fa<color=#EB83FF>ce. Need to... use the blocker...)</color></i>
+# rich_translation: <i>(Ах- Она брызнула мне в ли<color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">цо. Нужно... использовать блокиратор...)</font></color></i>
+msgctxt "ui"
+msgid "(Agh- It sprayed me in the face. Need to... use the blocker...)"
+msgstr "(Ах- Она брызнула мне в лицо. Нужно... использовать блокиратор...)"
+
+#. src: dialog
+#. rich_text: <i>(All the stuff up here is so rusty. Guess no one's been up here in a while. This rooftop's just a secluded little island.)</i>
+msgctxt "ui"
+msgid "(All the stuff up here is so rusty. Guess no one's been up here in a while. This rooftop's just a secluded little island.)"
+msgstr "(Всё здесь так проржавело. Похоже, тут давно никто не был. Эта крыша — просто уединённый островок.)"
+
+#. src: dialog
+#. rich_text: <i>(Asshole... )</i>
+msgctxt "ui"
+msgid "(Asshole... )"
+msgstr "(Мудак...)"
+
+#. src: dialog
+#. rich_text: <i>(Been feeling the <color=#EB83FF>itch</color> more on this ride too, but agh- I can't waste the blocker on it with no charger in sight.)</i>
+# rich_translation: <i>(<color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Зуд</font></color> ощущается сильнее и в этой поездке, но ах- я не могу тратить блокиратор, когда зарядки рядом нет.)</i>
+msgctxt "ui"
+msgid "(Been feeling the itch more on this ride too, but agh- I can't waste the blocker on it with no charger in sight.)"
+msgstr "(Зуд ощущается сильнее и в этой поездке, но ах- я не могу тратить блокиратор, когда зарядки рядом нет.)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Can a pelvis like that really have feelings...?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Can a pelvis like that really have feelings...?)"
+msgstr "(Может ли такой таз на самом деле чувствовать...?)"
+
+#. src: dialog
+#. rich_text: <i>(<color=#EB83FF>Deeper... </color>No, I'm not into this, <color=#EB83FF>I wouldn't...</color> This is... I'm j<color=#EB83FF>ust hel</color>ping he<color=#EB83FF>r</color>!  )</i>
+# rich_translation: <i>(<color=#EB83FF>Глубже... </color>Нет, мне это не нравится, <color=#EB83FF>я бы никогда такого не сделала...</color> Это просто... Я же только помогаю ей!)</i>
+msgctxt "ui"
+msgid "(Deeper... No, I'm not into this, I wouldn't... This is... I'm just helping her!  )"
+msgstr "(Глубже... Нет, мне это не нравится, я бы никогда такого не сделала... Это просто... Я же только помогаю ей!)"
+
+#. src: dialog
+#. rich_text: <i>(Does he really feel... <color=#EB83FF>that good</color>...?)</i>
+# rich_translation: <i>(Неужели ему правда... <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">так хорошо</font></color>...?)</i>
+msgctxt "speaker:Zoey"
+msgid "(Does he really feel... that good...?)"
+msgstr "(Неужели ему правда... так хорошо...?)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Does she even-... Know my-... Name-... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Does she even-... Know my-... Name-... )"
+msgstr "(Она вообще-... Знает моё-... Имя-...)"
+
+#. src: dialog
+#. rich_text: <i>(Finally he's done...)</i>
+msgctxt "speaker:Zoey"
+msgid "(Finally he's done...)"
+msgstr "(Наконец-то он закончил...)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Ghh... What am I... Doing... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Ghh... What am I... Doing... )"
+msgstr "(Ффф... Что я... делаю...?)"
+
+#. src: dialog
+#. rich_text: <i>(Guess I can give it a try. )</i>
+msgctxt "ui"
+msgid "(Guess I can give it a try. )"
+msgstr "(Наверное, я могу попробовать.)"
+
+#. src: dialog
+#. rich_text: <i>(<color=#EB83FF>He wants it... I wanna see-.. more...</color> )</i>
+# rich_translation: <i>(<color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Он хочет этого... Я хочу увидеть-.. ещё...</font></color>)</i>
+msgctxt "ui"
+msgid "(He wants it... I wanna see-.. more... )"
+msgstr "(Он хочет этого... Я хочу увидеть-.. ещё...)"
+
+#. src: dialog
+#. rich_text: <i>(He wants more... <color=#EB83FF>so bad</color>... )</i>
+# rich_translation: <i>(Он хочет больше... <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">так отчаянно</font></color>...)</i>
+msgctxt "speaker:Zoey"
+msgid "(He wants more... so bad... )"
+msgstr "(Он хочет больше... так отчаянно...)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(He's-... Groping my ass again...? Khh... )</i></color>
+msgctxt "ui"
+msgid "(He's-... Groping my ass again...? Khh... )"
+msgstr "(Он-... Снова лапает мою задницу...? Кх... )"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Hhh... )</i></color>
+# rich_translation: <i>(<color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Ххх...</font></color>)</i>
+msgctxt "speaker:Zoey"
+msgid "(Hhh... )"
+msgstr "(Ххх...)"
+
+#. src: dialog
+#. rich_text: <i>(Hhhh... what have I gotten myself into...)</i>
+msgctxt "speaker:Zoey"
+msgid "(Hhhh... what have I gotten myself into...)"
+msgstr "(Уф-ф... во что же я ввязалась...)"
+
+#. src: dialog
+#. rich_text: <i>(Huh? It's coming from her direction. That can't be right... Better return to her and see what's happening. )</i>
+msgctxt "ui"
+msgid "(Huh? It's coming from her direction. That can't be right... Better return to her and see what's happening. )"
+msgstr "(Хм? Идёт с её стороны. Этого не может быть... Лучше вернуться к ней и посмотреть, что происходит. )"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(I don't <b>want</b> to think... )</i></color>
+# rich_translation: <color=#EB83FF><i>(Я не <b>хочу</b> думать...)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(I don't want to think... )"
+msgstr "(Я не хочу думать...)"
+
+#. src: dialog
+#. rich_text: <i>(I need to be more careful.. This place is.. <color=#EB83FF>Affecting me</color>.. )</i>
+# rich_translation: <i>(Нужно быть осторожнее.. Это место.. <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Влияет на меня</font></color>..)</i>
+msgctxt "ui"
+msgid "(I need to be more careful.. This place is.. Affecting me.. )"
+msgstr "(Нужно быть осторожнее.. Это место.. Влияет на меня..)"
+
+#. src: dialog
+#. rich_text: <i>(I shouldn't draw any attention to myself with the blocker on me, right...? Just... Just <color=#EB83FF>ignore it...</color> )</i>
+# rich_translation: <i>(Мне не стоит привлекать внимание с блокиратором на мне, да...? Просто... Просто <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion\>игнорировать...</font></color>)</i>
+msgctxt "ui"
+msgid "(I shouldn't draw any attention to myself with the blocker on me, right...? Just... Just ignore it... )"
+msgstr "(Мне не стоит привлекать внимание с блокиратором на мне, да...? Просто... Просто игнорировать...)"
+
+#. src: dialog
+#. rich_text: <i>(I shouldn't.. Have done.. <color=#EB83FF>That</color>... )</i>
+# rich_translation: <i>(Мне не стоило.. <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Этого</font></color>.. Делать...)</i>
+msgctxt "ui"
+msgid "(I shouldn't.. Have done.. That... )"
+msgstr "(Мне не стоило.. Этого.. Делать...)"
+
+#. src: dialog
+#. rich_text: <i>(I sure wouldn't be able to live with myself in a ditch somewhere... I need that money bad.)</i>
+msgctxt "ui"
+msgid "(I sure wouldn't be able to live with myself in a ditch somewhere... I need that money bad.)"
+msgstr "(Точно не смогу жить с собой в какой-нибудь канаве... Мне отчаянно нужны эти деньги.)"
+
+#. src: dialog
+#. rich_text: <i>(I'm really going to help record porn for the Cartel...?)</i>
+# rich_translation: <i>(Я правда собираюсь помогать Картелю с записью порно...?)</i>
+msgctxt "ui"
+msgid "(I'm really going to help record porn for the Cartel...?)"
+msgstr "(Я правда собираюсь помогать Картелю с записью порно...?)"
+
+#. src: dialog
+#. rich_text: <i>(I-.. I shouldn't take pictures of them being-.. <color=#EB83FF>Intimate</color>.. )</i>
+# rich_translation: <i>(Я-.. Не стоит снимать их, когда они-.. <color=#EB83FF>Близки</color>.. )</i>
+msgctxt "ui"
+msgid "(I-.. I shouldn't take pictures of them being-.. Intimate.. )"
+msgstr "(Я-.. Не стоит снимать их, когда они-.. Близки.. )"
+
+#. src: dialog
+#. rich_text: <i>(I-... I shouldn't let him talk to me like that... No matter the pay... <color=#EB83FF>Right</color>...?)</i>
+# rich_translation: <i>(Я-... Я не должна позволять ему так со мной разговаривать... Неважно, сколько платят... <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Ведь так</font></color>...?)</i>
+msgctxt "speaker:Zoey"
+msgid "(I-... I shouldn't let him talk to me like that... No matter the pay... Right...?)"
+msgstr "(Я-... Я не должна позволять ему так со мной разговаривать... Неважно, сколько платят... Ведь так...?)"
+
+#. src: dialog
+#. rich_text: <i>(I-if that makes it go.. <color=#EB83FF>Faster..</color> S-sure.. )</i>
+# rich_translation: <i>(Е-если так будет.. <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Быстрее..</font></color> Д-давай..)</i>
+msgctxt "ui"
+msgid "(I-if that makes it go.. Faster.. S-sure.. )"
+msgstr "(Е-если так будет.. Быстрее.. Д-давай..)"
+
+#. src: dialog
+#. rich_text: <i>(I... really shouldn't watch them... right?)</i>
+msgctxt "ui"
+msgid "(I... really shouldn't watch them... right?)"
+msgstr "(Мне... не стоит за ними подглядывать... ведь так?)"
+
+#. src: dialog
+#. rich_text: <i>(If Sarah is enjoying it- I mean... It's <color=#EB83FF>no big deal</color>... Right?)</i>
+# rich_translation: <i>(Если Саре нравится— в смысле... <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">ничего страшного</font></color>... Ведь так?)</i>
+msgctxt "speaker:Zoey"
+msgid "(If Sarah is enjoying it- I mean... It's no big deal... Right?)"
+msgstr "(Если Саре нравится— в смысле... Ничего страшного... Ведь так?)"
+
+#. src: dialog
+#. rich_text: <i>(It got... Even faster...?)</i>
+msgctxt "speaker:Zoey"
+msgid "(It got... Even faster...?)"
+msgstr "(Оно... Ещё быстрее...?)"
+
+#. src: dialog
+#. rich_text: <i>(It shouldn't have been.. <color=#EB83FF>This hot</color>... )</i>
+# rich_translation: <i>(Это не должно было быть.. <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Таким горячим</font></color>...)</i>
+msgctxt "ui"
+msgid "(It shouldn't have been.. This hot... )"
+msgstr "(Это не должно было быть.. Таким горячим...)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(It's teasing my-... Ghhh... So wet... Fghhh... )</i></color>
+msgctxt "ui"
+msgid "(It's teasing my-... Ghhh... So wet... Fghhh... )"
+msgstr "(Оно дразнит мою-... Уух... Такая влажная... Ф-ф-ф... )"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Just letting him... Scratch the... <i>itch</i>... Mhm... )</i></color>
+# rich_translation: <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion"><i>(Просто позволяю ему... Унять... <i>зуд</i>... Мхм...)</i></font></color>
+msgctxt "ui"
+msgid "(Just letting him... Scratch the... itch... Mhm... )"
+msgstr "(Просто позволяю ему... Унять... зуд... Мхм...)"
+
+#. src: dialog
+#. rich_text: <i>(Just... Making sure.. )</i>
+msgctxt "ui"
+msgid "(Just... Making sure.. )"
+msgstr "(Просто... Проверяю.. )"
+
+#. src: dialog
+#. rich_text: <i>(<color=#EB83FF>Khh-.. I-.. Mnhh.. Hhh..</color> )</i>
+# rich_translation: <i>(<color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Кх-.. Я-.. М-м.. Хх..</font></color>)</i>
+msgctxt "ui"
+msgid "(Khh-.. I-.. Mnhh.. Hhh.. )"
+msgstr "(Кх-.. Я-.. М-м.. Хх..)"
+
+#. src: dialog
+#. rich_text: <i>(<color=#EB83FF>Khhh... I'll just.. Quickly...</color> )</i>
+# rich_translation: <i>(<color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Кхх... Я просто.. Быстро...</font></color>)</i>
+msgctxt "ui"
+msgid "(Khhh... I'll just.. Quickly... )"
+msgstr "(Кхх... Я просто.. Быстро...)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Last time was fine... right...?)</i></color>
+# rich_translation: <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion"><i>(В прошлый раз всё было нормально... ведь так...?)</i></font></color>
+msgctxt "ui"
+msgid "(Last time was fine... right...?)"
+msgstr "(В прошлый раз всё было норм... да..?)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Last time was just sweat... It- it had to be... right? )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Last time was just sweat... It- it had to be... right? )"
+msgstr "(В прошлый раз это был просто пот... Д-должно быть так... правда?)"
+
+#. src: dialog
+#. rich_text: <i>(Maybe I should like... find somewhere private or... <color=#EB83FF>one of those orgy carriages</color>.)</i>
+# rich_translation: <i>(Может, мне стоит... найти укромное место или... <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">один из тех оргийных вагонов</font></color>.)</i>
+msgctxt "ui"
+msgid "(Maybe I should like... find somewhere private or... one of those orgy carriages.)"
+msgstr "(Может, мне стоит... найти укромное место или... один из тех оргийных вагонов.)"
+
+#. src: dialog
+#. rich_text: <i>(Maybe some kind of port for a vr thing...?)</i>
+msgctxt "speaker:Zoey"
+msgid "(Maybe some kind of port for a vr thing...?)"
+msgstr "(Может, какой-то порт для VR-штуки...?)"
+
+#. src: dialog
+#. rich_text: <i>(Mnhh-.. I- it feels like.. <color=#EB83FF>warm gel</color>.. )</i>
+# rich_translation: <i>(М-м-.. О- ощущается как.. <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">тёплый гель</font></color>..)</i>
+msgctxt "ui"
+msgid "(Mnhh-.. I- it feels like.. warm gel.. )"
+msgstr "(М-м-.. О- ощущается как.. тёплый гель..)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Need to... use the Blocker... Please work...)</i></color>
+msgctxt "ui"
+msgid "(Need to... use the Blocker... Please work...)"
+msgstr "(Нужно... использовать Блокатор... Пожалуйста, сработай...)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(No-... I-... This is so-... <b>wrong</b>.. Why am I not-...)</i></color>
+# rich_translation: <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion"><i>(Нет-... Я-... Это так-... <b>неправильно</b>.. Почему я не-...)</i></font></color>
+msgctxt "ui"
+msgid "(No-... I-... This is so-... wrong.. Why am I not-...)"
+msgstr "(Нет-... Я-... Это так-... неправильно.. Почему я не-...)"
+
+#. src: dialog
+#. rich_text: <i>(Not only did I get him into trouble, but now I even missed my chance to sneak past Klaudia upstairs. )</i>
+msgctxt "ui"
+msgid "(Not only did I get him into trouble, but now I even missed my chance to sneak past Klaudia upstairs. )"
+msgstr "(Я не только втянула его в неприятности, но ещё и упустила шанс прошмыгнуть мимо Клавдии наверху. )"
+
+#. src: dialog
+#. rich_text: <i>(Oooh~ A-Am I really doing this? Touching myself and thinking about how Sarah's in there... touching herself too...)</i>
+msgctxt "ui"
+msgid "(Oooh~ A-Am I really doing this? Touching myself and thinking about how Sarah's in there... touching herself too...)"
+msgstr "(Ооо~ Я-Я правда это делаю? Ласкаю себя и думаю о том, как Сара там... тоже ласкает себя...)"
+
+#. src: dialog
+#. rich_text: <i>(<color=#EB83FF>Piston..? Ghh..</color> It's so.. <color=#EB83FF>Soft and.. Warm..</color> )</i>
+# rich_translation: <i>(<color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Поршень..? Кх..</font></color> Он такой.. <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Мягкий и.. Тёплый..</font></color>)</i>
+msgctxt "ui"
+msgid "(Piston..? Ghh.. It's so.. Soft and.. Warm.. )"
+msgstr "(Поршень..? Кх.. Он такой.. Мягкий и.. Тёплый..)"
+
+#. src: dialog
+#. rich_text: <i>(Right... I guess I should just put these in here?)</i>
+msgctxt "ui"
+msgid "(Right... I guess I should just put these in here?)"
+msgstr "(Ну... полагаю, мне просто нужно положить их сюда?)"
+
+#. src: dialog
+#. rich_text: <i>(She's gone... )</i>
+msgctxt "ui"
+msgid "(She's gone... )"
+msgstr "(Она ушла...)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Showing my tits to a man over twice my age...? Khh... How did I end up like this...?)</i></color>
+msgctxt "ui"
+msgid "(Showing my tits to a man over twice my age...? Khh... How did I end up like this...?)"
+msgstr "(Показывать грудь мужчине вдвое старше меня...? Кх... Как я вообще тут оказалась...?)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Spit in the customers drink...? I-... I don't know... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Spit in the customers drink...? I-... I don't know... )"
+msgstr "(Плюнуть в напиток клиента...? Я-... Я не знаю... )"
+
+#. src: dialog
+#. rich_text: <i>(That doesn't feel accidental... I should say something... <color=#EB83FF>right</color>?)</i>
+# rich_translation: <i>(Это не похоже на случайность... Я должна что-то сказать... <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">ведь так</font></color>?)</i>
+msgctxt "speaker:Zoey"
+msgid "(That doesn't feel accidental... I should say something... right?)"
+msgstr "(Это не похоже на случайность... Я должна что-то сказать... ведь так?)"
+
+#. src: dialog
+#. rich_text: <i>(That's a big freaking hammer. )</i>
+msgctxt "ui"
+msgid "(That's a big freaking hammer. )"
+msgstr "(Это чертовски большой молоток.)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(The smell of the fog... It's still-... Khh-... I can't-... Nhh...)</i></color>
+msgctxt "ui"
+msgid "(The smell of the fog... It's still-... Khh-... I can't-... Nhh...)"
+msgstr "(Запах тумана... Он всё ещё-... Кх-... Я не могу-... Н-н...)"
+
+#. src: dialog
+#. rich_text: <i>(<color=#EB83FF>The vibrator.. !</color> )</i>
+# rich_translation: <i>(<color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Вибратор.. !</font></color>)</i>
+msgctxt "ui"
+msgid "(The vibrator.. ! )"
+msgstr "(Вибратор.. !)"
+
+#. src: dialog
+#. rich_text: <i>(The vibrator.. He can.. <color=#EB83FF>Feel</color> that.. when he goes in?)</i>
+# rich_translation: <i>(Вибратор.. Он может.. <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Чувствовать</font></color> это.. когда входит?)</i>
+msgctxt "ui"
+msgid "(The vibrator.. He can.. Feel that.. when he goes in?)"
+msgstr "(Вибратор.. Он может.. Чувствовать это.. когда входит?)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(They're all staring at me- at my-)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(They're all staring at me- at my-)"
+msgstr "(Они все пялятся на меня- на моё-)"
+
+#. src: dialog
+#. rich_text: <i>(This <color=#EB83FF>taste</color>... It couldn't be... cum... right?)</i>
+# rich_translation: <i>(Этот <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">вкус</font></color>... Не может быть... сперма... правда?)</i>
+msgctxt "ui"
+msgid "(This taste... It couldn't be... cum... right?)"
+msgstr "(Этот вкус... Не может быть... сперма... да?!)"
+
+#. src: dialog
+#. rich_text: <i>(Those guards are looking for anyone without a ticket. I better get moving.)</i>
+msgctxt "ui"
+msgid "(Those guards are looking for anyone without a ticket. I better get moving.)"
+msgstr "(Эти охранники ищут безбилетников. Лучше поторопиться.)"
+
+#. src: dialog
+#. rich_text: <i><color=#EB83FF>(Ugh... mu</color>ch better...)</i>
+# rich_translation: <i><color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">(Уф... гора</font></color>здо лучше...)</i>
+msgctxt "ui"
+msgid "(Ugh... much better...)"
+msgstr "(Уф... гораздо лучше...)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(W-wait... He's asking how much to tip me for that...? I-... I don't know...!)</i></color>
+msgctxt "ui"
+msgid "(W-wait... He's asking how much to tip me for that...? I-... I don't know...!)"
+msgstr "(П-подожди... Он спрашивает, сколько дать за это чаевых...? Я-... Я не знаю...!)"
+
+#. src: dialog
+#. rich_text: <i>(What a subtle name for the place... )</i>
+msgctxt "ui"
+msgid "(What a subtle name for the place... )"
+msgstr "(Какое тонкое название для этого места...)"
+
+#. src: dialog
+#. rich_text: <i>(Where the hell is she?)</i>
+msgctxt "ui"
+msgid "(Where the hell is she?)"
+msgstr "(Где её черти носят?)"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i><size=25>(Yes...  )</size></i></color>
+# rich_translation: <color=#EB83FF><i><size=25>(Да...  )</size></i></color>
+msgctxt "ui"
+msgid "(Yes...  )"
+msgstr "(Да... )"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "- LoveSense Omnibuzz"
+msgstr "- LoveSense Omnibuzz"
+
+#. src: us
+msgctxt "ui"
+msgid ". State:"
+msgstr "Состояние"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>... </color>
+msgctxt "speaker:Zoey"
+msgid "..."
+msgstr "..."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "0.3 - Residential - Cartel Event - 5 - Walk back"
+msgstr "0.3 - Жилой район - Событие картеля - 5 - Возвращение назад"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "0.4 - GlowingHoleBartending - Nova - 2 - 3 - Agree"
+msgstr "0.4 - GlowingHoleBartending - Нова - 2 - 3 - Да"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "0.4 - GlowingHoleBartending - Nova - 2 - 5"
+msgstr "0.4 - GlowingHoleBartending - Нова - 2 - 5"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "0.4 - GlowingHoleBartending - Nova - 2 - 6"
+msgstr "0.4 - GlowingHoleBartending - Нова - 2 - 6"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "0.4 - PocketPussyVendor - 1"
+msgstr "0.4 - PocketPussyVendor - 1"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "0.4 - PocketPussyVendor - 2"
+msgstr "0.4 - PocketPussyVendor - 2"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "1500sumire - @1500sumire"
+msgstr "1500sumire - @1500sumire"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "3=D d3654b79-4b80-4b6e-87fe-d498dc61f0c7"
+msgstr "3=D d3654b79-4b80-4b6e-87fe-d498dc61f0c7"
+
+#. src: dialog
+#. rich_text: <i>> Cum inside-...! Cum inside andro-... andro pussy...!
+msgctxt "ui"
+msgid "> Cum inside-...! Cum inside andro-... andro pussy...!"
+msgstr "> Кончи внутрь-...! Кончи в андро-... в андро-киску...!"
+
+#. src: dialog
+#. rich_text: <i>> I-... d-don't worry, it's-... It's just... new to me, I think... >
+msgctxt "ui"
+msgid "> I-... d-don't worry, it's-... It's just... new to me, I think... >"
+msgstr "> Я-... н-не волнуйся, это-... Просто... ново для меня, наверное... >"
+
+#. src: dialog
+#. rich_text: <i>> So demanding all of a sudden.
+msgctxt "ui"
+msgid "> So demanding all of a sudden."
+msgstr "> Какой вдруг требовательный."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "A Bad Good Time"
+msgstr "Плохое хорошее время"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>A-Arff... Rrrarf~!</color>
+msgctxt "speaker:Zoey"
+msgid "A-Arff... Rrrarf~!"
+msgstr "А-а-арф... Рррарф~!"
+
+#. src: us
+msgctxt "ui"
+msgid "AMD Custom APU 0405"
+msgstr "AMD Custom APU 0405"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Accepted Dialogue"
+msgstr "Диалог согласия"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Activate challenge"
+msgstr "Активировать вызов"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Add int and check"
+msgstr "Добавить INT и проверить"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Affection"
+msgstr "Симпатия"
+
+#. src: dialog
+#. rich_text: <size=30>Ah <size=37>fuck!</size> Yes! Naughty bunny boy!<size=37> Next round!
+# rich_translation: <size=30>Ах, чёрт!</size> <size=37>Да! Порочный кролик-мальчик!</size> Следующий раунд!
+msgctxt "speaker:Cartel Guy"
+msgid "Ah fuck! Yes! Naughty bunny boy! Next round!"
+msgstr "Ах, чёрт! Да! Порочный кролик-мальчик! Следующий раунд!"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Ah- I uh... I can't right now, Leona. I'll let you know when I can help."
+msgstr "Ах-... Э-э... Я не могу сейчас, Леона. Я сообщу тебе, когда смогу помочь."
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Ah-... S-sorry... Just, um... All the walking around...</color>
+msgctxt "speaker:Zoey"
+msgid "Ah-... S-sorry... Just, um... All the walking around..."
+msgstr "А-... П-прости... Просто, эм... Вся эта ходьба..."
+
+#. src: dialog
+#. rich_text: Ahh-! Oh... <color=#EB83FF>It does</color>!
+# rich_translation: Ах-! О... <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">И правда</font></color>!
+msgctxt "speaker:Zoey"
+msgid "Ahh-! Oh... It does!"
+msgstr "Ах-! О... И правда!"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Ahh..! Fuck..!!"
+msgstr "Ах..! Бля..!!"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Akeno Himejima21"
+msgstr "Akeno Himejima21"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Alive"
+msgstr "Жива"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Alright, then. Let me know how it goes, I'd love to come over when you're settled in!"
+msgstr "Ну ладно. Дай знать, как всё пойдет — я бы с удовольствием приехала, когда ты уже устроишься!"
+
+#. src: us
+msgctxt "ui"
+msgid "Amount of times Zoey has orgasmed."
+msgstr "Сколько раз Зои кончала."
+
+#. src: dialog
+msgctxt "ui"
+msgid "And next time you'll help me think of something fun we can do together."
+msgstr "А в следующий раз подкинешь идею, чем нам заняться вместе."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Andro Idle Down"
+msgstr "Режим ожидания"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Any idea where he is?"
+msgstr "Есть идеи, где он?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Apex Wet Long"
+msgstr "Вершина мокрая долго"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Are we on the Bunnysuit Mission?"
+msgstr "Мы на миссии с кроличьими костюмами?"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Ask about Lio's place."
+msgstr "Спроси о месте Лио."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Ask to Go Upstairs"
+msgstr "Попроси подняться наверх"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Autumn Ivy - NOVA"
+msgstr "Autumn Ivy — NOVA"
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Ay, waitress! I want 'nather drinkh!"
+msgstr "Эй, фициантка! Налей ‘щё одну!"
+
+#. src: field:m_text
+msgctxt "ui"
+msgid "Back"
+msgstr "Назад"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Bare your Soul"
+msgstr "Раскрой свою душу"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Base Salary"
+msgstr "Базовая зарплата"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Become"
+msgstr "Стань"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Bhair2_base2)\\"
+msgstr "Bhair2_base2)\\\\"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Blinded by hopes, wishing to the sky"
+msgstr "Ослеплён надеждами, загадывая в небо"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Breeding Like A Rabbit"
+msgstr "Плодиться как кролики"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Bunny Rank F"
+msgstr "Зайка (Ранг Ж)"
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "But- l-like what...?"
+msgstr "Но... как бы это сказать...?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "CG dialogue 2"
+msgstr "CG dialogue 2"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Call her whatever you want. Just get her out."
+msgstr "Называй её как хочешь. Просто выведи её отсюда."
+
+#. src: us
+msgctxt "ui"
+msgid "CallTimelineTrigger '"
+msgstr "CallTimelineTrigger '"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Can you take a look at this headset for me?"
+msgstr "Можешь взглянуть на этот шлем?"
+
+#. src: us
+msgctxt "ui"
+msgid "Carcen Joined Resistance"
+msgstr "Карсен присоединился к Сопротивлению"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Changed your mind about coming upstairs with me?"
+msgstr "Передумала насчёт подняться ко мне наверх?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Check for Cypher mission"
+msgstr "Проверь миссию Сайфер?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Choice Selected"
+msgstr "Выбор сделан"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Clear Cleanup Animation 2"
+msgstr "Анимация очистки 2"
+
+#. src: us
+msgctxt "ui"
+msgid "ClearSpineCharacterAnimation has no SkeletonAnimation on FSM:"
+msgstr "ClearSpineCharacterAnimation не имеет SkeletonAnimation в FSM:"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Come with me, then. You can stay over at my place until you sort this out."
+msgstr "Тогда пойдём со мной. Ты можешь остаться у меня, пока не разберёшься с этим."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Construction Worker"
+msgstr "Строитель"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Corrupt Technologies Advertisement"
+msgstr "Реклама Corrupt Technologies"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Cum Squirt"
+msgstr "Брызги спермы"
+
+#. src: dialog
+#. rich_text: Cute. You aren't exactly in a position to make <b>demands</b>. I've got the markers your want in my office. Now tell me.
+# rich_translation: Мило. Ты не в том положении, чтобы выдвигать <b>требования</b>. У меня в кабинете есть маркеры, которые тебе нужны. Ну-ка, говори.
+msgctxt "speaker:Klaudia"
+msgid "Cute. You aren't exactly in a position to make demands. I've got the markers your want in my office. Now tell me."
+msgstr "Мило. Ты не в том положении, чтобы выдвигать требования. У меня в кабинете есть маркеры, которые тебе нужны. Ну-ка, говори."
+
+#. src: dialog
+msgctxt "ui"
+msgid "Damn, that's rough. I hope things get better for you."
+msgstr "Чёрт, это жёстко. Надеюсь, у тебя всё наладится."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Deactivate"
+msgstr "Деактивировать"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Decline to help Femboy Clean"
+msgstr "Отказаться помогать фембою с уборкой"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Dialogue for with Party"
+msgstr "Диалог с партнёром"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Diana Lockhart - MYNX"
+msgstr "Diana Lockhart — MYNX"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Dick move. She's always had a stick up her ass."
+msgstr "Вот же сука. У неё вечно палка в заднице."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Did already take pic"
+msgstr "Уже сфотографировала"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Did talk to Cal already?"
+msgstr "Уже говорил с Калом?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Did we decline before?"
+msgstr "Мы уже отказывались раньше?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Did wear Any Datachip? 2"
+msgstr "Носил ли какую-либо Датачип? 2"
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Didn't really get a good look at your ass earlier. Why don't you turn around for me real quick? Maybe I'll drop a tip too, ahaha."
+msgstr "Никак не получилось хорошо посмотреть на твою попку раньше. Почему бы тебе не обернуться ко мне прямо сейчас? Может, я ещё брошу пару советов, ахаха."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Disable Self"
+msgstr "Выключить себя"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Discarded Page"
+msgstr "Отброшенная страница"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Do lockpicking"
+msgstr "Взломать замок"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Do we have or need the mission?"
+msgstr "У нас есть миссия или она нам нужна?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Do we need to get the code?"
+msgstr "Нужно ли нам получить код?"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Don't upload that... Without sending me the link~"
+msgstr "Не выкладывай это... Не отправив мне ссылку~"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Dpad Up"
+msgstr "Вверх"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "DrunkenFemboy - 5 Klaudia 2"
+msgstr "ПьяныйФембой - 5 Клавдия 2"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Eheh, that's right. Show me your little pussy."
+msgstr "Хе-хе, точно. Покажи мне свою киску."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Enable"
+msgstr "Включить"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Enable kibby"
+msgstr "Включи Кибби"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Enforcer Uniform"
+msgstr "Форма одежды силовика"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Entered Secret Backroom"
+msgstr "Вошёл в секретную подсобку"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Evening Event Finished"
+msgstr "Вечернее событие завершено"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Exhibitionist"
+msgstr "Эксгибиционистка"
+
+#. src: dialog
+#. rich_text: F-Faster? It goes- <color=#EB83FF>faster</color>? Hhhh~
+# rich_translation: Б-Быстрее? Оно— <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">быстрее</font></color>? Х-х-х~
+msgctxt "ui"
+msgid "F-Faster? It goes- faster? Hhhh~"
+msgstr "Б-Быстрее? Оно— быстрее? Х-х-х~"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>F-Fine... I-... I'll work off my-... debt...</color>
+msgctxt "ui"
+msgid "F-Fine... I-... I'll work off my-... debt..."
+msgstr "Х-Хорошо... Я-... Я отработаю свой-... долг..."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Fade out Screen"
+msgstr "Экран постепенно темнеет"
+
+#. src: us
+msgctxt "ui"
+msgid "Fallback caught fadein"
+msgstr "Обнаружено резервное срабатывание fadein"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Female Electrician Helmet"
+msgstr "Шлем электрика (женский)"
+
+#. src: dialog
+msgctxt "speaker-name"
+msgid "Femboy"
+msgstr "Фембой"
+
+#. src: dialog
+#. rich_text: Ff<color=#EB83FF>ff... So hot...</color>
+# rich_translation: Ф<color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">фф... Так жарко...</font></color>
+msgctxt "ui"
+msgid "Ffff... So hot..."
+msgstr "Ффф... Так жарко..."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Fhair2_Fbase)\\"
+msgstr "Fhair2_Fbase)\\\\"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Fhair2_bang1)\\"
+msgstr "Fhair2_bang1)\\\\"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Fhair2_bang2)\\"
+msgstr "Fhair2_bang2)\\\\"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Fhair2_bang3)\\"
+msgstr "Fhair2_bang3)\\\\"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Fhair2_bang4)\\"
+msgstr "Fhair2_bang4)\\\\"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Fhair2_bang5)\\"
+msgstr "Fhair2_bang5)\\\\"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Fhhh, yesss... You're amazing, hun... Stroke his nice cock with my tits!"
+msgstr "Фф-ф, дааа... Ты просто потрясающий, милый... Поглаживай его прекрасный член своими сиськами!"
+
+#. src: us
+msgctxt "ui"
+msgid "FilteredList is 0!"
+msgstr "FilteredList равен 0!"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Fine, I'll... I'll do it. Just get started on the thingie."
+msgstr "Ладно, я... я сделаю это. Просто начинай с этой штуковины."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Fix the Helper Bots"
+msgstr "Исправь вспомогательных ботов"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Force Move Down and Fade Out"
+msgstr "Принудительно переместить вниз и затемнить экран"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Friend Located!"
+msgstr "Друг обнаружен!"
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Fuck, hhh, keep going...!"
+msgstr "Чёрт, х-х-х, продолжай...!"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Futereswear Skintightv2 2"
+msgstr "Futureswear Skintightv2 2"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Futereswear Skintightv2 Gloves"
+msgstr "Перчатки Futereswear Skintightv2"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Fuuuck, man... *hic* not enough. Those glory holes? Not even close... *hic* not enough."
+msgstr "Бля-а-а, мужик... *ик* мало. Эти дырки в стене? Даже близко... *ик* мало."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "GALLERY"
+msgstr "ГАЛЕРЕЯ"
+
+#. src: us
+msgctxt "ui"
+msgid "GAUSSIAN13X13"
+msgstr "GAUSSIAN13X13"
+
+#. src: us
+msgctxt "ui"
+msgid "GAUSSIAN5X5"
+msgstr "GAUSSIAN5X5"
+
+#. src: us
+msgctxt "ui"
+msgid "GAUSSIAN9X9"
+msgstr "GAUSSIAN9X9"
+
+#. src: dialog
+#. rich_text: Gah-..! Woah..! Hey..! That's- <color=#EB83FF>Khh-..</color>
+# rich_translation: Ах-..! Ого..! Эй..! Это- <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Кх-..</font></color>
+msgctxt "ui"
+msgid "Gah-..! Woah..! Hey..! That's- Khh-.."
+msgstr "Ах-..! Ого..! Эй..! Это- Кх-.."
+
+#. src: us
+msgctxt "ui"
+msgid "GameObject doesn't have FsmComponent:"
+msgstr "GameObject не имеет FsmComponent:"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Get remote Winter Setting"
+msgstr "Загрузить удалённую зимнюю обстановку"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Gib photo task"
+msgstr "Отправь фото-задание"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Go unpack the bathroom, bestie! I'll deal with this bed."
+msgstr "Иди распакуй ванную, лучшая подруга! Я разберусь с этой кроватью."
+
+#. src: dialog
+msgctxt "ui"
+msgid "Good girl. Just like that. Doing what you're told will make your life a lot easier, eheh."
+msgstr "Хорошая девочка. Вот так-то. Если будешь делать то, что тебе говорят, жизнь станет намного проще, эхе-хе."
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Got attached to your protector, hmm?"
+msgstr "Привязалась к своему защитнику, хм? (спикер: Силовик)"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Grope Dialogue 1"
+msgstr "Диалог с пощупыванием 1"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "HEY!"
+msgstr "ЭЙ!"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "HVDComicSerifPro SDFFg"
+msgstr "HVDComicSerifPro SDFFg"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Hahaha!"
+msgstr "Ха-ха-ха!"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Hahh~!</color> Oh my god they're spinning~!
+# rich_translation: <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Ах~!</font></color> О боже, они крутятся~!
+msgctxt "ui"
+msgid "Hahh~! Oh my god they're spinning~!"
+msgstr "Ах~! О боже, они крутятся~!"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Has Sucky Wig?"
+msgstr "У тебя есть паршивый парик?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Have we talked to lio?"
+msgstr "Мы уже разговаривали с Лио?"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Hear us and do what, hm?"
+msgstr "Услышат нас — и что тогда, хм?"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Heh... I'll... I'll clean 'em up."
+msgstr "Хе-хе... Я... я их почистю."
+
+#. src: dialog
+msgctxt "ui"
+msgid "Hell hath no fury like Auntie Sarah."
+msgstr "Нет ярости страшнее, чем ярость тёти Сары."
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Here you go, sir."
+msgstr "Вот, держите, сэр."
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Hey Max, what's up?"
+msgstr "Эй, Макс, как дела?"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Hey, darling. Back already? How's my secret admirer doing?"
+msgstr "О, дорогуша. Уже вернулась? Как там мой тайный поклонник?"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Hhh, hh!</color>
+msgctxt "speaker:Zoey"
+msgid "Hhh, hh!"
+msgstr "Х-х, х-х!"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "HiJenx - CAL & MALE NPC"
+msgstr "ХайДженкс — КАЛ и МУЖСКОЙ NPC"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>His... lap...?</color>
+# rich_translation: <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">К нему... на колени...?</font></color>
+msgctxt "ui"
+msgid "His... lap...?"
+msgstr "К нему на колени..?"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Hm. Okay, I guess. What's the challenge?"
+msgstr "Хм... Ладно, полагаю. В чём сложность?"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Hmmm~ your tits look great in tight leather."
+msgstr "Хммм~ твои сиськи отлично смотрятся в обтягивающей коже."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "HoneyScript-Light SDF"
+msgstr "HoneyScript-Light SDF"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "HoneyScript-SemiBold SDF"
+msgstr "HoneyScript-SemiBold SDF"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Hooligan"
+msgstr "Хулиган"
+
+#. src: dialog
+msgctxt "ui"
+msgid "How far can she fall? That"
+msgstr "Как низко она может пасть? Это"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Huh? My fingerprints are also keyed to your lock, silly!"
+msgstr "А? Мой отпечаток тоже привязан к твоему замку, глупышка!"
+
+#. src: dialog
+msgctxt "ui"
+msgid "I can see that but-"
+msgstr "Я вижу, но-"
+
+#. src: dialog
+msgctxt "ui"
+msgid "I don't think it is."
+msgstr "Думаю, нет."
+
+#. src: dialog
+#. rich_text: I ju<color=#EB83FF>st...</color> I can't... take it anymore... This heat is... it's ju<color=#EB83FF>st too much...</color>
+# rich_translation: Я пр<color=#EB83FF>осто...</color> я больше не могу... Эта жара... она пр<color=#EB83FF>осто невыносима...</color>
+msgctxt "ui"
+msgid "I just... I can't... take it anymore... This heat is... it's just too much..."
+msgstr "Я просто... я больше не могу... Эта жара... она просто невыносима..."
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "I need a bit of time to get the cash."
+msgstr "Мне нужно немного времени, чтобы достать деньги."
+
+#. src: dialog
+msgctxt "ui"
+msgid "I think that's actually working."
+msgstr "Кажется, это реально работает."
+
+#. src: dialog
+msgctxt "ui"
+msgid "I wonder what it'd be like to-"
+msgstr "Интересно, каково это —"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "I'm busy, come back later!"
+msgstr "Я занят, приходи позже!"
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "I'm sorry, Zoey... I'm sorry..."
+msgstr "Прости, Зои... Прости..."
+
+#. src: dialog
+msgctxt "ui"
+msgid "I- I can't do this."
+msgstr "Я- Я не могу так."
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I- um... Hhh... n-no.</color>
+msgctxt "ui"
+msgid "I- um... Hhh... n-no."
+msgstr "Я… эм… х-х-х… н-нет."
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "I-... No, Ma'am."
+msgstr "Я-... Нет, мэм."
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "I... Thank you, Zoey."
+msgstr "Я... Спасибо тебе, Зои."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "INSANITORIUM STUDIOS!"
+msgstr "INSANITORIUM STUDIOS!"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Iceagi - @Iceagi_"
+msgstr "Iceagi — @Iceagi_"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>If you want... I could... Turn around too...</color>
+msgctxt "speaker:Zoey"
+msgid "If you want... I could... Turn around too..."
+msgstr "Если хочешь... могу... тоже повернуться..."
+
+#. src: us
+msgctxt "ui"
+msgid "InputManager: Axis '"
+msgstr "InputManager: Ось '"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Inspect - Holo-Plant"
+msgstr "Осмотреть: голо-растение"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Intro Dialogue - Did Groping Scene Before"
+msgstr "Вводный диалог — Была ли сцена пощупываний до этого?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Is Sarah here?"
+msgstr "Сара здесь?"
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Is it supposed to smell like that?"
+msgstr "Оно должно так пахнуть?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Is the door placeholder locked?"
+msgstr "Дверь заблокирована?"
+
+#. src: dialog
+msgctxt "ui"
+msgid "It was an accident! I just fell..."
+msgstr "Это была случайность! Я просто упала..."
+
+#. src: dialog
+#. rich_text: <size=25>It's okay... Just... Let's get this over with... for Felicia.</size>
+msgctxt "ui"
+msgid "It's okay... Just... Let's get this over with... for Felicia."
+msgstr "Ничего страшного... Просто... Давай покончим с этим... ради Фелиции."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Jam Moves Aside 2"
+msgstr "Джем отходит в сторону 2"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Just focus on our voices~"
+msgstr "Просто сосредоточься на наших голосах~"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "JustNox - Environment Artist"
+msgstr "JustNox — художник окружения"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Kitchen 2"
+msgstr "Кухня 2"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Klaudia Heels FSM"
+msgstr "FSM туфель Клавдии"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>L-like this...?</color>
+msgctxt "speaker:Zoey"
+msgid "L-like this...?"
+msgstr "Т-так...?"
+
+#. src: us
+msgctxt "ui"
+msgid "LOVENSE: Invalid Parameter."
+msgstr "LOVENSE: Неверный параметр."
+
+#. src: dialog
+msgctxt "ui"
+msgid "Lashing out"
+msgstr "Выплескивая гнев"
+
+#. src: dialog
+#. rich_text: <i>Leave the train early and arrive at your destination?</i>
+msgctxt "ui"
+msgid "Leave the train early and arrive at your destination?"
+msgstr "Покинуть поезд раньше и прибыть в пункт назначения?"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Let's go!"
+msgstr "Погнали!"
+
+#. src: us
+msgctxt "ui"
+msgid "LevelTransition: Level does not exist at build index '"
+msgstr "LevelTransition: Уровень не существует по индексу сборки '"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "LiberationSans SDF"
+msgstr "LiberationSans SDF"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Like I know!? What's this thing doing, Z?"
+msgstr "А я знаю!? Что эта штука делает, Зет?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Line 6"
+msgstr "6."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "LittleLing - @littleling_"
+msgstr "LittleLing — @littleling_"
+
+#. src: us
+msgctxt "ui"
+msgid "LockpickingManager: LockIndicator is null! Wtf? '"
+msgstr "LockpickingManager: LockIndicator равен null! Какого? '"
+
+#. src: us
+msgctxt "ui"
+msgid "LockpickingManager: LockIndicatorPrefab is null! Wtf? '"
+msgstr "LockpickingManager: LockIndicatorPrefab равен null! Какого? '"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Look who it is..."
+msgstr "Смотри-ка, кто это здесь..."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Lost Journal #3"
+msgstr "Потерянный дневник №3"
+
+#. src: settings
+msgctxt "ui"
+msgid "Lovense I P"
+msgstr "Lovense: IP"
+
+#. src: settings
+msgctxt "ui"
+msgid "Lovense Use H T T P"
+msgstr "Lovense: HTTP"
+
+#. src: dialog
+msgctxt "speaker-name"
+msgid "Machine"
+msgstr "Аппарат"
+
+#. src: us
+msgctxt "ui"
+msgid "Master/Sounds Ducker/Sounds/Sex Sounds"
+msgstr "Мастер/Звуки Дакер/Звуки/Сексуальные звуки"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "MasterKey F04"
+msgstr "MasterKey F04"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Maybe you could start the letter with..."
+msgstr "Может, начать письмо с..."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Memories"
+msgstr "Воспоминания"
+
+#. src: dialog
+#. rich_text: <size=27>Mhhh... Keep your thighs pressed nice and tight...
+msgctxt "ui"
+msgid "Mhhh... Keep your thighs pressed nice and tight..."
+msgstr "Мхх... Держи бёдра плотно сжатыми..."
+
+#. src: us
+msgctxt "ui"
+msgid "Missing FsmComponent!"
+msgstr "Отсутствует FsmComponent!"
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Mmhh fuck yes I am, ahaha! God I wanna lick that little asshole of yours."
+msgstr "М-м-х... Чёрт, да, я такой, ахаха! Боже, как же мне хочется облизать твою маленькую дырочку."
+
+#. src: dialog
+msgctxt "ui"
+msgid "Mmm... Much better... Stroke it nice and tight..."
+msgstr "Ммм... Намного лучше... Води рукой крепко и плотно..."
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Mmnhh fuck yes just like that...! Want me to cum, hmm? Say it, girl!"
+msgstr "М-м-н-н... Чёрт, да, именно так... Хочешь, чтобы я кончил, хм? Скажи это, девочка!"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "More sex scene 2"
+msgstr "Ещё одна сцена секса 2"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Move Zoey away from Leona"
+msgstr "Убери Зои от Леоны"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Move up Animation"
+msgstr "Анимация подъёма"
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "My cuties know better than that, hun..~"
+msgstr "Мои красавчики знают своё дело, милашка..~"
+
+#. src: dialog
+#. rich_text: N-Nails, heh... Yeah... <color=#EB83FF>Mmm~!</color>
+# rich_translation: Н-Ногти, хе... Ага... <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">М-м-м~!</font></color>
+msgctxt "speaker:Zoey"
+msgid "N-Nails, heh... Yeah... Mmm~!"
+msgstr "Н-Ногти, хе... Ага... М-м-м~!"
+
+#. src: dialog
+#. rich_text: N-New? Wait- <color=#EB83FF>Mnhh~</color> What's new?
+# rich_translation: Н-Новое? Погоди- <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">М-н-н~</font></color> Что новое?
+msgctxt "ui"
+msgid "N-New? Wait- Mnhh~ What's new?"
+msgstr "Н-Новое? Погоди- М-н-н~ Что новое?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "NITA - Assistant Artist"
+msgstr "NITA — ассистент художника"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Neck Chip - Lio's Data Gamma"
+msgstr "Шейный чип — данные Лио, гамма"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Never seen you take a drag before."
+msgstr "Никогда не видела, чтобы ты затягивалась."
+
+#. src: us
+msgctxt "ui"
+msgid "NewMission: Tried to start a new mission with null!"
+msgstr "NewMission: Попытка запустить новую миссию с null!"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Nightmare Tentacles"
+msgstr "Кошмарные щупальца"
+
+#. src: us
+msgctxt "ui"
+msgid "No TextMeshProUGUI on"
+msgstr "Нет TextMeshProUGUI"
+
+#. src: us
+msgctxt "ui"
+msgid "No matching gallery image available for the notification test."
+msgstr "Для тестового уведомления не найдено подходящего изображения в галерее."
+
+#. src: dialog
+msgctxt "ui"
+msgid "No, I-... It's fine."
+msgstr "Нет, я-... Всё нормально."
+
+#. src: dialog
+msgctxt "ui"
+msgid "No? Ghosts aren't real."
+msgstr "Нет? Призраки не существуют."
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Not since the crisis."
+msgstr "Со времён кризиса."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "NotoSansSC-Medium SDF"
+msgstr "NotoSansSC-Medium SDF"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "NotoSerifSC-Black SDF"
+msgstr "NotoSerifSC-Black SDF"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "NotoSerifSC-Medium SDF"
+msgstr "NotoSerifSC-Medium SDF"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "NotoSerifSC-Regular SDF"
+msgstr "NotoSerifSC-Regular SDF"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "NotoSerifSC-Regular SDF 1"
+msgstr "NotoSerifSC-Regular SDF 1"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "NotoSerifSC-Regular SDF Play"
+msgstr "NotoSerifSC-Regular SDF Играть"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Nova - 12 After Nova leaves"
+msgstr "Нова - 12 После ухода Новы"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Nova's Deal"
+msgstr "Сделка Новы"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Now... Let me show you how to do this, ehehe..."
+msgstr "А теперь... Дай покажу, как это делается, ехехе..."
+
+#. src: dialog
+msgctxt "speaker:Mira"
+msgid "O-other... things...?"
+msgstr "К-кое-что... другое...?"
+
+#. src: field:m_text
+msgctxt "ui"
+msgid "OTHER"
+msgstr "ДРУГОЕ"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Of course. I think I've got juuuust the thing. All it needs are a few modifications and it should be a perfect vaginal-chip-removing tool."
+msgstr "Конечно. Думаю, у меня есть самое то. Нужно лишь внести пару изменений, и это станет идеальным инструментом для удаления вагинальных чипов."
+
+#. src: dialog
+msgctxt "ui"
+msgid "Oh hey there..~ Wow you're hot, ehehe. Sorry, but I just roped in a client.~"
+msgstr "О, привет..~ Ого, ты горячий, хе-хе. Извини, я только что подцепила клиента.~"
+
+#. src: dialog
+#. rich_text: Oh yeah? Taking my money and stretching your asshole in my face doesn't make you a <b>whore</b>?
+# rich_translation: Ага, да? То, что ты забираешь мои деньги и <b>растягиваешь</b> свою задницу прямо у меня перед лицом, ещё не делает тебя шлюхой?
+msgctxt "speaker:Trov"
+msgid "Oh yeah? Taking my money and stretching your asshole in my face doesn't make you a whore?"
+msgstr "Ага, да? То, что ты забираешь мои деньги и растягиваешь свою задницу прямо у меня перед лицом, ещё не делает тебя шлюхой?"
+
+#. src: dialog
+msgctxt "speaker:Max"
+msgid "Oh, it's fine. I just take 'em off when they get uncomfortable. Like yeah they're sexy, but being flat is way more cozy."
+msgstr "Ой, да нормально. Я их снимаю, когда неудобно. Да, они сексуальные, но без груди гораздо уютнее."
+
+#. src: dialog
+msgctxt "ui"
+msgid "Oh- Secret door. Of course."
+msgstr "О- Секретная дверь. Ну конечно."
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Oh-? Um- thanks.</color>
+msgctxt "ui"
+msgid "Oh-? Um- thanks."
+msgstr "О-? Эм- спасибо."
+
+#. src: dialog
+msgctxt "ui"
+msgid "Okay, it was my boyfriend who told me."
+msgstr "Ладно, это мой парень велел мне."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "On Table Was Served"
+msgstr "На столе было подано"
+
+#. src: field:fsm
+msgctxt "ui"
+msgid "OnAnyLatchUnlocked"
+msgstr "OnAnyLatchUnlocked"
+
+#. src: field:fsm
+msgctxt "ui"
+msgid "OnAnyNumberEntered"
+msgstr "OnAnyNumberEntered"
+
+#. src: field:fsm
+msgctxt "ui"
+msgid "OnInjectorPickedUp"
+msgstr "OnInjectorPickedUp"
+
+#. src: field:fsm
+msgctxt "ui"
+msgid "OnNumbersEntered"
+msgstr "OnNumbersEntered"
+
+#. src: dialog
+msgctxt "speaker:Sarah"
+msgid "Oop, my dad's callin' me, one second, Z."
+msgstr "Ой, папа звонит, секунду, З."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Open up! Let it heal your itch from within, Skank!"
+msgstr "Откройся! Пусть это излечит твой зуд изнутри, Сканк!"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Orbitron-Bold SDF"
+msgstr "Orbitron-Bold SDF"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Orbitron-ExtraBold SDF"
+msgstr "Orbitron-ExtraBold SDF"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Orbitron-Medium SDF"
+msgstr "Orbitron-Medium SDF"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Orbitron-Regular SDF"
+msgstr "Orbitron-Regular SDF"
+
+#. src: us
+msgctxt "ui"
+msgid "Orgasms Denied"
+msgstr "Отказано в оргазме"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Overwhelmed"
+msgstr "Я в шоке."
+
+#. src: us
+msgctxt "ui"
+msgid "OverworldAnimationTranslator: Animation '"
+msgstr "OverworldAnimationTranslator: Анимация '"
+
+#. src: us
+msgctxt "ui"
+msgid "PATHFINDING -"
+msgstr "ПОИСК ПУТИ -"
+
+#. src: dialog
+#. rich_text: <i>Password recovery request... Your one-time passcode is <color=yellow>5297</color>.</i>
+# rich_translation: <i>Запрос на восстановление пароля... Ваш одноразовый код: <color=yellow>5297</color>.</i>
+msgctxt "ui"
+msgid "Password recovery request... Your one-time passcode is 5297."
+msgstr "Запрос на восстановление пароля... Ваш одноразовый код: 5297."
+
+#. src: us
+msgctxt "ui"
+msgid "Pathfinding FollowerEntity was null on FSM:"
+msgstr "Pathfinding FollowerEntity был равен null на FSM:"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Peek Choice"
+msgstr "Выбор: подсмотреть"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Perfect. I'll handle the rest. Go give her the treat, heh."
+msgstr "Идеально. Я займусь остальным. Ступай, дай ей лакомство, хех."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Pick up anim"
+msgstr "Подними аниме"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "PixieWillow - ZOEY"
+msgstr "PixieWillow — ЗОИ"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "PlaidPLAY Classic Top"
+msgstr "Классическая топка от PlaidPLAY"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "PlaidPLAY Mk-5 Top"
+msgstr "Топ PlaidPLAY Mk-5"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Play No cutscene"
+msgstr "Играть — без кат-сцены"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Play calm"
+msgstr "Играть спокойно"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Play first key dialogue 3"
+msgstr "Играть первую ключевую реплику 3"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Play not enough Money"
+msgstr "Играть без достаточного количества денег"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Play show photo dialogue"
+msgstr "Запустить показ фото с диалогом"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "PlayMakerFSM, PlayMaker"
+msgstr "PlayMakerFSM, PlayMaker"
+
+#. src: us
+msgctxt "ui"
+msgid "PlaySoundFromCategory: '"
+msgstr "PlaySoundFromCategory: '"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Pocket Pussy Delux Edition"
+msgstr "Pocket Pussy: Deluxe-издание"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Prior exp-...?</color> No! This... This is not something I usually do!
+# rich_translation: <color=#EB83FF>Предыдущий опыт...?</color> Нет! Это... это не то, чем я обычно занимаюсь!
+msgctxt "ui"
+msgid "Prior exp-...? No! This... This is not something I usually do!"
+msgstr "Предыдущий опыт...? Нет! Это... это не то, чем я обычно занимаюсь!"
+
+#. src: us
+msgctxt "ui"
+msgid "Pulled Flaps"
+msgstr "Оттянутые губы"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Rat Out"
+msgstr "Сдать"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Really?! Oh my god, thank you so much! I was sure you'd tell the clerk..."
+msgstr "Правда?! О боже, спасибо огромное! Я был уверен, что ты расскажешь администратору..."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Refuse to help"
+msgstr "Отказываюсь помогать"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Remove phone"
+msgstr "Убери телефон"
+
+#. src: us
+msgctxt "ui"
+msgid "Renderers covering it, front-most first:"
+msgstr "Рендереры, покрывающие его, начиная с самого переднего:"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Reset guards"
+msgstr "Сбросить стражей"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Restrain and set pos"
+msgstr "Сдерживай и фиксируй положение"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Right Bark 2"
+msgstr "Правый лает"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Right... Sorry..."
+msgstr "Точно... Извини..."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Rooftops"
+msgstr "Крыши"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Room 204\\nUpper Floor"
+msgstr "Room 204\\\\nUpper Floor"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Rosie - 3 - 1 Ask how she likes the place"
+msgstr "Рози - 3 - 1 Спросить, нравится ли ей место"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Rungar doesn't cum quickly like other customers, darling. We'll need to give him the perfect titjob. Let's stroke it even faster!"
+msgstr "Рунгар не кончает так быстро, как другие клиенты, милая. Нам нужно сделать ему идеальный минет. Давай будем ласкать его ещё быстрее!"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "STOAN - @STOANGuy"
+msgstr "А-ах! — @STOANGuy"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Sad. Trying to calm her down because she lost her cat."
+msgstr "Печальна. Пытаюсь её успокоить, потому что она потеряла кошку."
+
+#. src: dialog
+msgctxt "ui"
+msgid "Sassy and flamboyent"
+msgstr "Дерзко и броско"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Scapefiend"
+msgstr "Скепфиэнд"
+
+#. src: us
+msgctxt "ui"
+msgid "ScrollToItem: scrollRect is null"
+msgstr "ScrollToItem: scrollRect равен нулю"
+
+#. src: us
+msgctxt "ui"
+msgid "SerializedVisualLayerInfo: VisualLayerInfo is null!"
+msgstr "SerializedVisualLayerInfo: VisualLayerInfo равен null!"
+
+#. src: dialog
+msgctxt "speaker:FINISHED"
+msgid "Set Save Key"
+msgstr "Установить ключ сохранения"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Set character sprite and populate"
+msgstr "Установить спрайт персонажа и заполнить данными"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Set open"
+msgstr "Откройте"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Set walk in save key"
+msgstr "Установите шаг при сохранении"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Setup State so Far"
+msgstr "Текущее состояние"
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "She's amazing! Nghh...!"
+msgstr "Она потрясающая! М-м-м...!"
+
+#. src: us
+msgctxt "ui"
+msgid "Shift Click GameObject"
+msgstr "Shift+Клик по GameObject"
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Short leather skirt"
+msgstr "Короткая кожаная юбка"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Show Hint Dialogue"
+msgstr "Показать подсказку"
+
+#. src: us
+msgctxt "ui"
+msgid "Show/Hide Debug Errors"
+msgstr "Показать/скрыть отладочные ошибки"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Shut up..."
+msgstr "Заткнись..."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Skin 6"
+msgstr "Кожа 6"
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Slu- I- Khh...</color>
+msgctxt "speaker:Zoey"
+msgid "Slu- I- Khh..."
+msgstr "Шлю- Я- Кх..."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SlutService_3_Hideable_1_BoxMoved Rewrite"
+msgstr "SlutService_3_Hideable_1_BoxMoved Переписать"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SlutService_3_Hideable_1_BoxMoved Rewrite 2"
+msgstr "SlutService_3_Hideable_1_BoxMoved Переписать 2"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SlutService_4 1"
+msgstr "SlutService_4 1"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SlutService_4 2"
+msgstr "SlutService_4 2"
+
+#. src: dialog
+msgctxt "ui"
+msgid "So it's a breaker issue? Sounds easy enough. Where is it?"
+msgstr "Значит, дело в автомате? Звучит не так уж и сложно. Где он находится?"
+
+#. src: dialog
+#. rich_text: So warm... a<color=#EB83FF>nd cozy... should I...?</color>
+# rich_translation: Так тепло... <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">и уютно... может мне...?</font></color>
+msgctxt "ui"
+msgid "So warm... and cozy... should I...?"
+msgstr "Так тепло... и уютно... может мне...?"
+
+#. src: dialog
+msgctxt "ui"
+msgid "So, what did you want to know about them?"
+msgstr "Итак, что ты хотела узнать?"
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Something like that."
+msgstr "Вроде того."
+
+#. src: us
+msgctxt "ui"
+msgid "Sound Files"
+msgstr "Аудиофайлы"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Speed"
+msgstr "Скорость"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Squish 3"
+msgstr "Хлюп 3"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Start Dialogue put lever in 1"
+msgstr "Начни диалог, поставь рычаг в положение «1»."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Start fuckin"
+msgstr "Начни, блядь."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "State 3"
+msgstr "Состояние 3"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Stop Phone animation 2"
+msgstr "Остановить анимацию телефона 2"
+
+#. src: us
+msgctxt "ui"
+msgid "Stopbark - ToStop is null!"
+msgstr "Stopbark - ToStop равен null!"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Strip Zoey"
+msgstr "Сними одежду с Зои"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Such a good girl~"
+msgstr "Какая умница~"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 10_line_13-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 10_line_13-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 10_line_15-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 10_line_15-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 10_line_3-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 10_line_3-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 10_line_4-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 10_line_4-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 10_line_7-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 10_line_7-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 11_line_10-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 11_line_10-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 13_line_3-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 13_line_3-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 13_line_7-FSM"
+msgstr "Неверный формат ответа."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 14_line_7-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 14_line_7-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 16_line_3-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 16_line_3-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 16_line_8-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 16_line_8-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 17_line_10-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 17_line_10-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 17_line_15-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 17_line_15-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 17_line_6-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 17_line_6-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 17_line_8-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 17_line_8-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 18_line_3-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 18_line_3-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 18_line_4-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 18_line_4-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 18_line_6-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 18_line_6-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 19_line_3-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 19_line_3-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 1_line_0-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 1_line_0-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 20_line_3-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 20_line_3-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 21_line_3-FSM"
+msgstr "SuitcaseBadend — CartelHideout — 21_line_3-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 21_line_6-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 21_line_6-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 22_line_2-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 22_line_2-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 22_line_6-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 22_line_6-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 22_line_7-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 22_line_7-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 22_line_9-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 22_line_9-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 23_line_2-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 23_line_2-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 23_line_6-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 23_line_6-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 23_line_7-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 23_line_7-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 25_line_9-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 25_line_9-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 26"
+msgstr "ЧемоданПлохаяКонцовка - УбежищеКартеля - 26"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 26_line_7-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 26_line_7-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 27_line_7-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 27_line_7-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 28_line_0-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 28_line_0-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 28_line_4-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 28_line_4-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 29_line_0-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 29_line_0-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 29_line_11-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 29_line_11-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 29_line_8-FSM"
+msgstr "SuitcaseBadend — CartelHideout — 29_line_8-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 29_line_9-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 29_line_9-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 2_line_0-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 2_line_0-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 30_line_0-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 30_line_0-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 31_line_0-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 31_line_0-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 31_line_4-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 31_line_4-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 32_line_0-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 32_line_0-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 32_line_9-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 32_line_9-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 33_line_0-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 33_line_0-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 33_line_10-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 33_line_10-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 3_line_1-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 3_line_1-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 4_line_1-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 4_line_1-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 6_line_0-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 6_line_0-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 7_line_11-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 7_line_11-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 8_line_0-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 8_line_0-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 8_line_6-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 8_line_6-FSM"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 9_line_7-FSM"
+msgstr "SuitcaseBadend - CartelHideout - 9_line_7-FSM"
+
+#. src: field:fsm
+msgctxt "ui"
+msgid "SuitcaseMinigame"
+msgstr "SuitcaseMinigame"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Suspicious Concoction"
+msgstr "Подозрительное варево"
+
+#. src: dialog
+#. rich_text: T-There used to be <color=#EB83FF>a dildo</color> here...
+# rich_translation: З-Здесь раньше был <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">дилдо</font></color>...
+msgctxt "ui"
+msgid "T-There used to be a dildo here..."
+msgstr "З-Здесь раньше был дилдо..."
+
+#. src: us
+msgctxt "ui"
+msgid "Take Memory Snapshot"
+msgstr "Сделать снимок памяти"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Talk to Calliach"
+msgstr "Поговори с Каллиачем"
+
+#. src: us
+msgctxt "ui"
+msgid "Task Name"
+msgstr "Название задачи"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Tell Max choice"
+msgstr "Скажи Максу"
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Th- That-... setting!"
+msgstr "Э- Этот—... режим!"
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Thanks so much, Lio! I owe you!"
+msgstr "Спасибо тебе, Лио! Я в долгу перед тобой!"
+
+#. src: dialog
+msgctxt "ui"
+msgid "That so, eh? Mana, you gave this puta cold feet."
+msgstr "Вот как, а? Мана, у тебя же от этой сучки ноги в холодный пот бросили."
+
+#. src: dialog
+msgctxt "ui"
+msgid "That's on a need to know basis."
+msgstr "Только посвящённым."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "The Glowing Hole"
+msgstr "Светящаяся дыра"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "The new Waitress"
+msgstr "Новая официантка"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Then you better make it quick, hmm?~"
+msgstr "Тогда давай побыстрее, хмм?~"
+
+#. src: dialog
+msgctxt "ui"
+msgid "There, it's open!"
+msgstr "Вот, открыто!"
+
+#. src: dialog
+msgctxt "ui"
+msgid "This ain't my first time finding a lost phone. The more I find, the easier it'll be to find yours."
+msgstr "Не в первый раз ищу пропавший телефон. Чем больше найду, тем проще будет отыскать твой."
+
+#. src: dialog
+msgctxt "ui"
+msgid "This one is very grateful for your selflessness. Thank you."
+msgstr "Этот очень благодарен за твою самоотверженность. Спасибо."
+
+#. src: us
+msgctxt "ui"
+msgid "Time Scale"
+msgstr "Масштаб времени"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Toggle Tool"
+msgstr "Переключить инструмент"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Top Hair"
+msgstr "Верхняя часть волос"
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Tsk. What do you Vultures want?"
+msgstr "Тц. Чего вам, стервятники, нужно?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Turn off bystander 2"
+msgstr "Отключите наблюдателя 2"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Ugh! Dream on. Are we done here?!"
+msgstr "Фу! Мечтай дальше. Мы закончили?!"
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Uhh..."
+msgstr "Эм..."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Ultra lube"
+msgstr "Супер-лубрикант"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Undress Tops"
+msgstr "Снимите верхнюю одежду"
+
+#. src: us
+msgctxt "ui"
+msgid "Unity Web Request is Null!"
+msgstr "Unity Web Request равен Null!"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Unlikely under current circumstances. Constant relocation remains a necessity."
+msgstr "В нынешних обстоятельствах это маловероятно. Постоянные перемещения по-прежнему необходимы."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Unsung Volpine"
+msgstr "Незнаменитый волпин"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Upstairs flavor no bunny 7"
+msgstr "Атмосфера наверху: без зайки 7"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Varen Koss"
+msgstr "Варен Косс"
+
+#. src: us
+msgctxt "ui"
+msgid "View item shop."
+msgstr "Посмотреть магазин предметов."
+
+#. src: dialog
+#. rich_text: W-Woah~! <color=#EB83FF>Tongues!</color>
+# rich_translation: О-Ого~! <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Язычки!</font></color>
+msgctxt "ui"
+msgid "W-Woah~! Tongues!"
+msgstr "О-Ого~! Язычки!"
+
+#. src: dialog
+#. rich_text: W-wait..! <color=#EB83FF>Nnnhh-..</color> I didn't-.. <color=#EB83FF>Khh Fhhaa...!</color>
+# rich_translation: П-погоди..! <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">М-м-м-..</font></color> Я не-.. <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">Кх Ахха...!</font></color>
+msgctxt "ui"
+msgid "W-wait..! Nnnhh-.. I didn't-.. Khh Fhhaa...!"
+msgstr "П-погоди..! М-м-м-.. Я не-.. Кх Ахха...!"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Wait 1 Frame for Player to be positioned"
+msgstr "Ждать 1 кадр для позиционирования игрока"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Wait for Dialogue to end"
+msgstr "Подождите, пока диалог закончится"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Wait for Sarah to finish showering?"
+msgstr "Подождать, пока Сара закончит мыться?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Wait for end"
+msgstr "Подожди конца"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Wait for pick or strip"
+msgstr "Жди выбора или раздеться"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Wait for trigger enter"
+msgstr "Подожди, пока сработает триггер входа"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Waitressing - Upgrade - 6 High Roller Customer"
+msgstr "Официантка — Улучшение — 6 клиент «Высокий игрок»"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Walk to out pos"
+msgstr "Иди к выходу."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Wayne"
+msgstr "Уэйн"
+
+#. src: dialog
+msgctxt "ui"
+msgid "We think it's time for a little~"
+msgstr "Мы думаем, пришло время для маленького~"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Well new or not, you look absolutely gorgeous!"
+msgstr "Новая или нет, выглядишь сногсшибательно!"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Well... I had a cat get into my place through the vents one time... Maybe she managed to get out that way?"
+msgstr "Ну... У меня однажды кошка залезла в дом через вентиляцию... Может, она и сама так выбралась?"
+
+#. src: field:DisplayName
+msgctxt "ui"
+msgid "Wet Pussy"
+msgstr "Мокрая киска"
+
+#. src: dialog
+msgctxt "ui"
+msgid "What are you doing here? Is she okay?"
+msgstr "Что ты здесь делаешь? С ней всё в порядке?"
+
+#. src: dialog
+msgctxt "ui"
+msgid "What kind of... service...?"
+msgstr "Какого рода... услуга...?"
+
+#. src: dialog
+#. rich_text: What- <b><size=55>You</b>?!</size>
+# rich_translation: Что- <b><size=55>Ты</b>?!</size>
+msgctxt "speaker:Klaudia"
+msgid "What- You?!"
+msgstr "Что- Ты?!"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Which one? You've recommended a few."
+msgstr "Какая именно? Ты же несколько раз упоминала разные игры."
+
+#. src: dialog
+msgctxt "ui"
+msgid "Whoa- This does taste good!"
+msgstr "Ого — а ведь правда вкусно!"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "William"
+msgstr "Уильям"
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Working as intended then, heh."
+msgstr "Значит, работает как задумано, хех."
+
+#. src: dialog
+#. rich_text: Y-yeahh..! I'd <color=#EB83FF>love</color> to.. come upstairs with you, heh!
+# rich_translation: Д-даа..! Я бы с <color=#B867FF><font="Roboto-Condensed_DialogueUI" material="Roboto-Condensed_DialogueUI_Perversion">удовольствием</font></color>.. поднялась с тобой наверх, хех!
+msgctxt "ui"
+msgid "Y-yeahh..! I'd love to.. come upstairs with you, heh!"
+msgstr "Д-даа..! Я бы с удовольствием.. поднялась с тобой наверх, хех!"
+
+#. src: dialog
+msgctxt "speaker:Max"
+msgid "Yeah, I mean- it was just a little black thing. Barely covered the knockers, you know how it is. He wanted the big tiddies too."
+msgstr "Ага, ну — маленькое такое, чёрненькое. Едва сиськи прикрывало, сам понимаешь. Он большие хотел."
+
+#. src: dialog
+msgctxt "ui"
+msgid "Yeah, yeah. I'll be right back."
+msgstr "Да-да. Скоро вернусь."
+
+#. src: dialog
+msgctxt "ui"
+msgid "Yeah? Watch your boney butt!"
+msgstr "Ага? Следи за своей костлявой задницей!"
+
+#. src: dialog
+msgctxt "speaker:Customer"
+msgid "Yes! Turn around for me, baby!"
+msgstr "Да! Повернись ко мне, детка!"
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Yess... fuck yes..."
+msgstr "Да... чёрт возьми, да..."
+
+#. src: dialog
+msgctxt "ui"
+msgid "You bet~"
+msgstr "Ещё бы~"
+
+#. src: dialog
+msgctxt "ui"
+msgid "You found the terrorists?! Get them boys!"
+msgstr "Вы нашли террористов?! Взять их, парни!"
+
+#. src: us
+msgctxt "ui"
+msgid "You must be new around here~"
+msgstr "Ты, видимо, новенькая~"
+
+#. src: dialog
+msgctxt "ui"
+msgid "You were about to get Brain Burn in that headset. But I was able to fix it and pull you out."
+msgstr "Ты чуть не получила Brain Burn от этого шлема. Но я смогла починить его и вытащить тебя."
+
+#. src: dialog
+msgctxt "ui"
+msgid "You're disappointed.C"
+msgstr "Ты разочарована."
+
+#. src: dialog
+msgctxt "ui"
+msgid "You're waiting for her to give in."
+msgstr "Ты ждёшь, когда она уступит."
+
+#. src: dialog
+msgctxt "ui"
+msgid "Your job, hmm...?"
+msgstr "Твоя работа, хм...?"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "ZenDots-Regular SDF"
+msgstr "ZenDots-Regular SDF"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Zoey and Sarah photos"
+msgstr "Фотографии Зои и Сары"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "bum - @bumdraws"
+msgstr "bum — @bumdraws"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "dOXA 9\\"
+msgstr "dOXA 9"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "got it"
+msgstr "Поняла."
+
+#. src: dialog
+msgctxt "ui"
+msgid "m just"
+msgstr "Я просто"
+
+#. src: dialog
+msgctxt "ui"
+msgid "no one else can make me me (as in make me like myself)"
+msgstr "никто другой не может сделать меня мной (в смысле — чтобы я себе нравилась)"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "play cutscene"
+msgstr "Воспроизвести катсцену"
+
+#. src: us
+msgctxt "ui"
+msgid "pts - Lorem ipsum dolor sit..."
+msgstr "pts - Lorem ipsum dolor sit..."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "right lock open event"
+msgstr "Событие открытия правого замка"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "sure did"
+msgstr "Ну да, конечно"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "turn on no smoking sign"
+msgstr "Включите знак «Не курить»."
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "we have not"
+msgstr "у нас нет"
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "yakiq - @therealyakiq"
+msgstr "Якик — @therealyakiq"
+
+#. src: us
+msgctxt "ui"
+msgid "yyyy-MM-dd HH:mm:ss"
+msgstr "yyyy-MM-dd HH:mm:ss"

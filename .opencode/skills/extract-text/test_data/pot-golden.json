@@ -1,0 +1,27 @@
+{
+  "_comment": "Золото POT (оракул). Снято с TS-эталона potgen.mts до его удаления 2026-11-24.",
+  "full": {
+    "path": "po/template.pot",
+    "bytes": 1853904,
+    "entries": 18445,
+    "sha256": "2bdb8931851b878b26581cdfcc3c89cc90d459dfcdba626efdb89df91f1c4b14",
+    "created": "2026-11-24 11:25+0000",
+    "source_dump": "tmp/dump-after",
+    "reproduce": "node scripts/text_cli.mts potgen --root . --dump tmp/dump-after --out tmp/pot-check.pot"
+  },
+  "small": {
+    "path": ".opencode/skills/extract-text/test_data/pot-golden-small.pot",
+    "bytes": 1063,
+    "entries": 10,
+    "sha256": "784cccac26fa6df6bf96edf3e3d6272bfa40aa198fc5bd2e3cc18574c4f863f6",
+    "created": "2026-01-02 03:04+0000",
+    "source_dump": ".opencode/skills/extract-text/test_data/tiny-dump",
+    "reproduce": "node scripts/text_cli.mts potgen --root tmp --dump .opencode/skills/extract-text/test_data/tiny-dump --out tmp/pot-golden-small.pot --created \"2026-01-02 03:04+0000\" --no-policy --no-skip-policy --no-skip-ids"
+  },
+  "po_update": {
+    "dir": ".opencode/skills/extract-text/test_data/po-update-golden",
+    "expected": "expected/ru.po",
+    "reproduce": "node scripts/text_cli.mts po_update ru --po-dir <копия po-update-golden/po>"
+  },
+  "captured": "2026-11-24"
+}

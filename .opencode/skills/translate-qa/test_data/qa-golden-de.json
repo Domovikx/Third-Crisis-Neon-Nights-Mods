@@ -1,0 +1,5231 @@
+{
+  "lang": "de",
+  "summary": {
+    "total": 1157,
+    "filled": 218,
+    "coverage": 18.84183232497839,
+    "errors": 722,
+    "warnings": 0,
+    "by_speaker": [
+      [
+        "Zoey",
+        {
+          "filled": 54,
+          "total": 312
+        }
+      ],
+      [
+        "Leona",
+        {
+          "filled": 1,
+          "total": 126
+        }
+      ],
+      [
+        "Woman",
+        {
+          "filled": 0,
+          "total": 71
+        }
+      ],
+      [
+        "Enforcer",
+        {
+          "filled": 0,
+          "total": 52
+        }
+      ],
+      [
+        "Varen",
+        {
+          "filled": 2,
+          "total": 46
+        }
+      ],
+      [
+        "Klaudia",
+        {
+          "filled": 3,
+          "total": 45
+        }
+      ],
+      [
+        "Trov",
+        {
+          "filled": 2,
+          "total": 41
+        }
+      ],
+      [
+        "Rugnar",
+        {
+          "filled": 1,
+          "total": 24
+        }
+      ],
+      [
+        "Brad",
+        {
+          "filled": 0,
+          "total": 11
+        }
+      ],
+      [
+        "Man",
+        {
+          "filled": 0,
+          "total": 7
+        }
+      ],
+      [
+        "Lio",
+        {
+          "filled": 2,
+          "total": 2
+        }
+      ],
+      [
+        "Salesman",
+        {
+          "filled": 1,
+          "total": 2
+        }
+      ],
+      [
+        "Femboy",
+        {
+          "filled": 2,
+          "total": 2
+        }
+      ],
+      [
+        "Max",
+        {
+          "filled": 2,
+          "total": 2
+        }
+      ],
+      [
+        "Machine",
+        {
+          "filled": 0,
+          "total": 2
+        }
+      ],
+      [
+        "FINISHED",
+        {
+          "filled": 2,
+          "total": 2
+        }
+      ],
+      [
+        "Idle",
+        {
+          "filled": 0,
+          "total": 1
+        }
+      ],
+      [
+        "Mira",
+        {
+          "filled": 1,
+          "total": 1
+        }
+      ],
+      [
+        "Sarah",
+        {
+          "filled": 1,
+          "total": 1
+        }
+      ],
+      [
+        "Decline",
+        {
+          "filled": 0,
+          "total": 1
+        }
+      ],
+      [
+        "Leave",
+        {
+          "filled": 0,
+          "total": 1
+        }
+      ],
+      [
+        "Customer",
+        {
+          "filled": 1,
+          "total": 1
+        }
+      ]
+    ],
+    "by_dir": [
+      [
+        "ui",
+        {
+          "filled": 218,
+          "total": 1157
+        }
+      ]
+    ]
+  },
+  "findings": [
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(\"Klaudia's bunny bitch\"...?! Wh-)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "(... )",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(... feel... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(A picture of my pussy with her fingers inside... That's-... Hhh... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "(Ahhh... )",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(All I want to think about are her lips... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(All part of the mission... It's just... a detour... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(All these perverts here... they really like my body so much...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Am I really going to work in the glowing hole as a waitress going forwards...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Are Lio and Nova-... I guess that's none of my business... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(At least I'm not a... skank... right?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(At least I've got the marker now... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Being a merc feels like it's getting me into more and more trouble... Maybe I'm just not-... hhh... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Black body markers...! They're just what Anne and Ashley are looking for!)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(But why... don't I... care...? )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Collection...? I'm not the only one-... making deals with her?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Doesn't feel all that different... Just a little warm. )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Ghh... I'm really getting groped by Rosie... In front of this guy... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Ghh... What am I... Doing... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(God, I-... I really d-drank... S-squirt...?!)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(God... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Gosh... She's so pretty... No! No. Bad Zoey. Fffh... It's getting so warm in here... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Guess I can at least some money off this creep, he's gonna run his mouth one way or another... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(H-here it goes... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "(Heh... Oh Sarah...)",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Her fingers feel so soft... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Her pussy is so hairy, khh... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Her tongue feels like heaven... warm... wet... heaven... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "(Hh.. )",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Hhh-! O-okay, I did it...!)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "(Hhh.. )",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "(Hhh... )",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "(Hm... )",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Hope this time he's not busy with his AI girlfriend... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(I can't afford it... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(I can't believe I'm still servicing this creep... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(I can't just... leak Ashley's plan like this-...! But- lying to Klaudia...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(I did it last time. What difference does it make anymore. )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(I don't want to think... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(I need... more... please don't stop... give me... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(I should trust Rosie. She's been nice to me. )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(I was hoping he'd forget about that with how drunk he was... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(I'll just... wash it off... m-mhm...)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(I'm really gonna... Inject glow...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(I'm really gonna... steal from Klaudia...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(I'm really helping with getting him off...? Didn't I say I'd stop after Varen...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(I'm sure she won't notice... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(I-... I guess Nova is in on it, but-... What if anyone tells Klaudia...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "(Idiot... )",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(If it's with Rosie...  )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Is it really working...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(It's just moving my hips a bit, nothing more... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "(Jaime... )",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Just a pic... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Just need to wait for Lio to deliver me the fake now. )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Just some writing, I can wash it off right away... n-no big deal... right?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Just this once... I'll feel better with it, right?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Kh-! It's cold!)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "(Kh... )",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Leaving the blocker in the locker was so fucking stupid, khh!)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Let them watch... I just want her.)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Maybe I could ask Leona about his favorite band?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Maybe it would... help with the itch...!)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Maybe, I could just... take one from her office...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(My bodyguard's fingers inside me... God-... I shouldn't-... I-... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(My head is so foggy... I can't... think... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(No way-! Rosie is so-  I can't imagine her prude!?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(No-...! I can't...!)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(No... Not think... just... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(People on this stuff look like they're feeling amazing... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Please don't let this be real... I can't lose her... Please... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Rosie really did this too...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Rosies tongue was inside her as well... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Rungar is staring at us... Mnh... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(She feels bad for this? But... it's not her fault... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(She said that it's for beginners and there's no crash after with this flavor, so-... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(She's in charge...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(She's really going to-... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(She's tearing up... but... why?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(So I could... Earn more tips if I just... make sure I'm in good standing with Nova...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(So these are the parts Lio needs to make a fake of the blocker?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Soooo I'll just slide this back in... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Swallowing squirt...?!)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(That was crazy... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(The whole town is on this stuff already, so-... why should I have to deal with the itch without it. I'll just take the edge off this once. )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Tipsy...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Ugh! These enforcers are a menace!)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Varen-... I'll really... Khh... Nova's into it...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Wh-! I completely forgot they were watching us... nngh... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(What is... wrong with me... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Why do I keep doing these things...?)",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "(Working in this place full of perverts... Klaudia wants to use my body as a tease for customers to-... )",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "...",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "... Honestly I have no idea, dear. I just know she liked coming here and curling up on the ledge. Maybe it was the view... or the smells.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "... I... Perhaps.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "... M-mhmmm...",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "... Please... play with me more... ma'am...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "... Right...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "... Yes?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "... Yes? But- You didn't tell me why the spirits are-",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "...Did any of my neighbors see you going down there?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "800 is a bit too much right now...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "A big load of spunk, warm from the oven! Coming right up.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "A filled condom? Ha! What d'ya need that for?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "A merc? Fuck yeah! Perfect. Have I got a job for you! Fix our power please. I'll pay!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "A-Arf... Arf...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "A-Arff... Rrrarf~!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Aaaahhh!! Fghhaaahhh! Hghhh...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Aaahh, fuck!!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Aaahhhh..!!! Mnghhhh... Fghhh...",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Aah-! Ashley!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Add a note to her file, K12. Obedient citizen. Potential candidate.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ah shit, who the fuck cares. Soon my cock is burried deep between your perfect cheeks and you'll fucking love it, whore! Ahaha!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ah, and don't tell the girl with the pink hair I sent you.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ah- n-no, I'm not- I didn't- Nhh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ah- uh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ah-! Fhuck-...! Nghh!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ah-...! Nghh... H-hey...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ah...! What the fuck?! You ripped it!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ahaha! Hear that K12? Bitch knows her place like a good citizen!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ahaha, whatever, bunny bitch. Just push your ass up already.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Ahh... Nghha...",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Ahh...! Fhahh...!",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Ahhh...! Fuck...!",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ahhhh...! Ffffuck...! Mnhhh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "All done.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "All thanks to you, Zoey. Ready to get the pic? We should hurry, before someone walks sees us, tehehe!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "All they've been sending recently has been glow addicts after they served their... prison sentence. They just don't cut it.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "All we need now is a black marker to write with... Do you have one, sis?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Alright, Zoey! Make sure that our eyes are just off frame, okay?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Alright, see you around, hun! And thanks for the help!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Amazing! This will definitely catch some eyes, ehehe!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "And I'm going to watch you.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "And about earlier... I uh... Sorry...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "And that would be...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "And who is this? Some online girlfriend?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "And yet, here you are. Posing for me like a good little bunny.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "And you obeyed. That's good. Let that reality sink into your bones. You can lie to yourself all you like, but I see that hunger in you.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "And you really think you're any better than them?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Are these ancient spirits in the room with us?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Are you going to-...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Are you sure you don't wanna help us?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "As my pet, of course. Would you like that, little doggy?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ashl- Sis! You can't just- make her run your errands!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ashley...! She already said no!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Asking someone at random?! But-",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Asshole? Hah! The asshole right in front of my nose, ngh! I wanna slather that perfect pucker of yours so bad, ahaha!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "At least I've got the parts for Lio, I guess...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "At least it's cheaper...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Atta girl. Good job, darling. How do you feel?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Aww come on, it was just getting fun, whore!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Aww, come on, I'm not that bad. You were happy enough to take my money last time, hah!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ayy, good choice, bunnybitch. Now lean over and show me that fat ass.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "B-but I thought-... We're not allowed to-...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Beating up those brainwashed idiots last night with this baton was so empowering... Rubbing it against your pussy now feels amazing, mhhh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Because her nails are like... really cute- and... We could like... frame it like she's another sister...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Being searched by your protectors should be an honor, heheh.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Bigger- I need something bigger...! Ffuck, I need it right now...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Bounce it and twenty fuckbucks could be yours. Don't be a boring bitch. Customer's king, right?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "But don't fret~ I'm in a good mood today. You can have it back, but I'm going to need... insurance. We'll have a little... photoshoot.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "But- I-",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "But- l-like what...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "But- that would mean we'd be flashing-",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "But... she has to stay inside. She can't be out there. Not with those Vultures out there.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "CAL! UGH!",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Can I- have the marker, please...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Candidate f-for-... ngh... what...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Check behind this... whatever this toy is, Lio.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Come closer, bitch. You took money to get your asshole spread so don't be shy.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Come closer, darling~",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Come here, pet.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Come on, chin up, bunny! I'm doing free advertisement for ya! Don't ya think I should get a reward for that, huh?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Come onn... You'll make such a cute little sister!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Cum for me, Zoey... Your excitement is going to send my K12 over the edge, ehehe!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Cute tummy, my bunny bitch.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Cute. You aren't exactly in a position to make demands. I've got the markers your want in my office. Now tell me.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Cypher Presets",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "D'awww! You're the one with the cute voice tho, eheh!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Damn, didn't think that she'd be a prude, hah!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Damn, that's the one you groped in that hallway?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Did Lio contact you?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Did things smooth over with your dad?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Did you enjoy your first shift working for me, hmm?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Did you find a marker?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Didn't Klaudia say-",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Didn't kill ya last time. Easy money, huh? Come ooonnn...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Do it! Cum for me, GAG slut!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Do not-...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Do you now, heh. What do you need it for?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Do you really leave your trash laying around like this, Lio?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Does her tit feel good on your cock, K12?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Does she now, ehehe. What's your full name, citizen?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Doesn't sound like no one to me, little man.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Dogs don't ask questions...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Don't be boring, I've got your 40 right here. Come on, I'll be nice, promise. Just a little spread.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Don't just-... say it like that...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Don't- khh... even think about it... hhh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Downstairs, in the basement. But everyone is saying they heard weird noises... down there...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Eheh. Trying so hard to reject the lewdness that came over us all. And yet, here you are.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ehehe. Why don't you ask Zoey to take the picture of our tits, Anne, hmm?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Enjoy it, sis, tehehe!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Especially down there, I-... hhh... I wanna...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Excellent behaviour, mhmm... I'll be sure to remember you for our next round of recommendations.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "F-fuck...! fuck, fuck, fuck! Hahh! Ngh! Yesss...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fashion, darling. I had my own designer line of all the need to have augmentations for andro and human alike.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Faster- hhh, right!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Felicia! No! Where'd she wander off to now?!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Felicia? Feliciaa?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Femboy Uwawa",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fff-! Fuck fuck fuck!! Hahh!! I'm- ngh- cumming...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ffuuuuck...! Holy shit that's incredible, god!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fghh-... it's not- khh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fghh... so s-sensitive... hahh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fh- fuck! I w-wanna cum! Cum, please, oh- g-god fhghh...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Fhhh... Mhhh...",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fhhuck that's what I wanted to hear! Faster, girl. Stroke my old fat cock harder. Make it-... spurt!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fhuckhh... Fingers never- nghh... felt this good... mnhhh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Filming who?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Finally some honesty, waitress girl. Whatever you did before you came here, you're not going back to it.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fine... But we need to be quick though, okay...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fine... this is crazy... Are you sure this will work...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Finger won't- nghh... fuck! Hhh... Cum, please- I have to- Hahh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Flashing is the point!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Found her in the gutter at my old office. She was just a helpless little thing... Laying there mewing... Then she looked up at me, and...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fourty Fuckbucks, if you let her grope your tits.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fuck baby, just like that, mhh... You're making me so fucking hard.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fuck yes, I am, ahaha!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fuck, hhh, keep going...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fuck, just like that!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fuck, there's nothing hotter than having a sluts asshole right in front of my face, ahhh! You're such a hot bunnyslut, fuck!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fucking anything, ngh! I- hahh! Fuck!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fucking god, look at that ass!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Fuuckhhh... Yess... Mmmhhhh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Gah! What am I doing...?!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Get to it, please. I can't watch my anime while the power is out.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ghh! Wh-... B-But...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Go and do a patrol round with the K-9 unit, 25.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "God all that andro cum looks so hot on you, ehehe... I haven't had enough yet...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "God you turned me on so much. I can't fucking wait to get out of this suit and let K12 ravage me... Soon...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Godhh... Hahhh... Fghh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Good choice. Here. Stuff that device between your breasts and hold this note for me.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Good girl. Get dried and dressed. We'll talk later.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Good girl. I'll call her.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Good girl. Show me your tummy, close your eyes and hold still.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Good girl. That'll do. You make a good puppy girl, darling.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Good girls. That's hot.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Good pet. Let's start simple then. You did so well barking earlier, so try barking for me again now, darling.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Good pet. Whine like a dog for me.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Good pup. You're gorgeous, pet. All wet and covered in suds...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Good service, good pay.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Gooood girl~ Barking for mommy so well.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Got attached to your protector, hmm?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Got it?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Graciously making me strip...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Great. Thank you.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "H-Heh! R-Right...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "H-Hhh... Y-Yes, ma'a-",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Have you ever made money as easily as here, hmm? Just moving your hand back and forth isn't exactly hard work, is it?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "He said you could help get some uh... parts I need.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hear that? What if we lean into that? You can be my little pretend sister! Two sisters doing stuff- that will definitely get us noticed!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Heavy sigh. You're really reluctant to talk.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Heh- hh, mnh, thank you, sir...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Heh...",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Heh... I can almost hear her purrs right now. Just how I remember...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hehe. See you around, darling.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hehe. Yeah, looks like it. Guess that's why she didn't come for her treats, huh baby? You mama's little outdoor kitty, hmm~?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hehe... Here's your pay, dear. Come talk to me if you want some more fun. Oh, and Zoey?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Heheh... So yeah, I fed her. Pampered her. Gave her everything she wanted. But she was always such an adventurous little thing.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hell yeah! Let me post it!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Her's seem quite different...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Here you go. Have fun.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Here's the cash.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Here's two hundred. Klaudia won't know and Nova is in on it.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Here's your money. Now stop making a scene. I'm just taking what I paid for, eheh.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Here. It's been so long and... this old gal can't remember her way around too well anymore.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Here. This old apartment building used to be where her and I lived.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Here. This old pole. She loved climbing it. Maybe she climbed it again. Do you think you can find it, darling?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Hey Max.",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hey Zoey! Looks like you found the marker, huh? Hahaha!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hey, did you take the lever for the lightbridge?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Hh- Khh... Nhh...",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hhh, hh!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hhh-... Ashley, I can- feel your piercing rub against my- nh-...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Hhh.. Hii.. Nghh.. Ffhha..",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Hhh... Hhhhh... I-... Fhhh...",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Hhh... Khh...",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Hhh... O-okay...",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Hi Felicia!",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Hi Sarah.",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hi dear~ Have you seen Felicia around back here? I've been looking all over for her. Did she manage to sneak back here?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hm. Your loss.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hm... Well it was when we first moved in here. You know... after the Crisis. Even with the nice little nest egg I had... still struggled.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hm? What is it, dear?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hmm. No, no time for that, dear. You don't mind, right, Zoey?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hmpf... I think that'd be cool...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hoes will be hoes, I guess. I can fill one up for you. 100 fuckbucks.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hold still for just a moment, little thief.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Hotter than the last waitress.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "How about this, hun... You volunteer to another search and I forget your suspicious behavior. After that, I'm sure we're done patroling this area for today as well.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "How are we looking, Zoey? Good enough to get some attention?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "How could I let Klaudia play me like that?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I can arrange for that. Come join me in my office.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I have a bunch, so you can have this one... if...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I have no clue, but we made Zoey go through all this trouble, we can't back now, can we?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I just... It's hard. I don't know who I am without her.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I knew we'd come to an understanding.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I know we've been naked before, but that was a bit of a different situation, hm? Little more nerve wracking when it's... intimate.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I know what we'll do! We'll write \"little one\" and \"big one\" on our boobs! Zoey will snap a pic! And we'll do it in some shady alley for the right mood!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I need a bit of time to get the cash.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I need to cum between your tits like a few days ago, Rosie.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I never offered it...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I only ever saw him interact with people above a million followers. God, I hope that these pics are good enough to convince him...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I really hope so, darling...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I saw a bunny wear writing and I-... I wanted to try it...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I saw you converse with Nova. She can be quite convincing, don't you think? Even spottet you two disappear into the bathroom together.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I think I saw a bunny in the Glowing Hole with body writing once...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I think Zoey here doesn't mind helping us, lil sis.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I thought this was- a search...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I told you that I'd have the money by the end of the week.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I told you to stop calling me that!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I won't let you go until you've cum with that nasty Andro semen all over your body! Does it feel good, huh?!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I'll even get it out for you.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I'll happily pay extra for the stuff off menu, looking at this ass, ahaha!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I'll just... take this off, mnh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I'm better than that! I'm not a pervert! Not a... skank- Argh!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I'm looking for, um-... a marker for like- skin...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I'm not a whore, you fucking asshole!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I'm sorry, Zoey.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I'm sorry, Zoey... I'm sorry...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I'm- ngh! a Gag- nghh! slut, hahh!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I'm... I'm really sorry, dear. You sure you're okay?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I, um-... this is- nice...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I- I do...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I- am...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I- ghh-... I-",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I- god... Are you really gonna call me that...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I- guess so...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I- um, it needs to rub more, right...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I- um. D'aww thanks...! That's so nice of you.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I-...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I-... I don't... sis...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I-... Khh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I-... Yeah- She's my... pet.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I-... khh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I-I just... Scared.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I-I'm okay!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I-if Zoey is um- like- okay with it-... She could like... do a V sign with her like... fingers...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I... Thank you, Zoey.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "I... Yeah... Yeah there's a spot she used to like going... Some sketchy place. Here.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "If it isn't my most annoying customer...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "If it isn't the fat ass bunny bitch waitress.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "In recent past, some waitresses have more freedom than others. Nova is the one you want to talk to, if you want to do your job here... properly.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "In trash bags?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Is that so? Heh... You'll get used to the tips fast. They all do.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Is that so? Hmm...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Is this good...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Is this why I've been getting blackouts? And that one electrical bill?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Isn't that only for... Service bunnies...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Isn't... Nova watching...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "It doesn't matter anymore. What's done is done, dear.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "It feels... really goodh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "It used to be nothing more than a charging plug. Thanks to new sensors however, I prefer the term \"emotional bonding device\".",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "It was always so soothing... Listening to her purr would remind me of those days... Before everything...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "It was when I moved into the place I'm at now, dear. About a year ago. There were a few... well- unsavory people around. I just...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "It's getting there. Had to do a little... detour, but things are on track.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "It's... It's alright, I guess, dear. You should have just kept your mouth shut. But... That's okay. I'm sure Felicia's home... Let's just... Go.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "It's... complicated, Sarah.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "It- um-... it's all messy, but- hh- you're really pretty...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Job...?",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Just like Rosies...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Just like that. Much better.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Just make it quick.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Just one thumb and you're already melting, hm? You're such a good puppy girl. That's right, darling. Let that warmth take over.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Just, um... out of curiosity... What do you mean by like... asking nicely...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Just... find me again. Gonna have to make my way up the Upper Red.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Just... go, Zoey. You've done enough.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Just... let me close my eyes... and listen to you purr one more time.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "K12 Unit",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "K12, release charging device.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Keep looking up at me. New one is so hot, she's gonna make me-",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Keep stroking... That's good.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Keep that- hhh- to yourself- khh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Kh- this stall is filthy...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Kh-... m-mhm...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Kh... No, ma'am...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Khh-.. Mnh.. M-mhmm..",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Khh-...! D-don't just... Say it like that...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Khh... hhh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Khhh-...! Mnghh...!",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Klaudia...? Isn't that the boss lady of the Glowing Hole?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Last night some of those traitorous terrorists were caught wearing AIRSHIP pins. Hah. Stupid idiots.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Last waitress licked it off, heheheh.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Later. Right now I want to find my Felicia.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Leona? Hi!",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Leona? Uhm, okay, thanks! Guess I could maybe give her a visit if I've got time.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Let's test it.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Lio? Is that your drone?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Listen to you... Feeling good?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Look at me when you say it, darling.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Look at those likes! Damn they're pouring in like crazy!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Look at you falling apart already. So adorable, pet.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Looks like your pussy is dripping wet too, ahaha! Fuck, I wanna lick your juices off your skin so fucking bad!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "M- mnhmm...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "M-mhm...",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "M-mhm... Thank you, Zoey!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "May I have the marker please-... ma'am...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Maybe it's time for you to... leave the nest, huh, baby? Time for you to go make new memories, my darling.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Maybe that blue haired chick here can help us!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Maybe... I haven't been around the district in a while... Hmm... I've got an old picture of my first apartment here. Maybe she's there?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Maybe... Wouldn't hurt to check. Come on, darling.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Me?! I'm the pervert? You're the one offering to show your asshole to a customer for money, ahaha!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Mfffh! Mmmf!",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mgh-! Mpghhh...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mhhh, working up a sweat for your favorite customer, ahaha! Keep going, just like that.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mhhh... Yes... Look at your pretty hand on my old cock, mhhh... wonderful.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Mhm, mhm!",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mhm. Take your time, dear. Get comfortable. I've seen it all already.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mhmm, yes we will! Take off your top so I can write on your pretty tits, sis!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mhmm... Just like that...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmhh fuck yes I am, ahaha! God I wanna lick that little asshole of yours.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmhh, I can't get enough of watching your fat ass waddle around this place.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmhh, I love it when you say dirty words like that, bunny.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmhh, can you feel it get excited, little waitress?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmhh, fuck... That's right... Yesss... Don't stop. Making me lose my fucking temper, ghh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmhh... Last bunny didn't have such a nice tight slap, you're just perfect, bunnybitch.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmhh... Look around. Nobody is batting an eye. Just serving your customers like a good waitress should.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmhhh, yes...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmhhh... Money is such a wonderful motivator. Keep going, girl.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmhhh... That's good... Ahh-... You could. But why would you.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmhm~ Are you a good girl, sweetheart~?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmm... You know, I was thinking it'd be fun to do some training with you. Like what I've been doing with Lio lately.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmmh, that's good. Soft Rosie.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmmhh... Hehehe!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmmhh... Nothing beats the real deal, don't you agree, citizen?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmmhhh... Godhhh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmmhhh... Say it one more time for me, slut.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmmhhhh... That's a good girl...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mmnhh fuck yes just like that...! Want me to cum, hmm? Say it, girl!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mnghhh... !",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mnghhhh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mnh- take the picture of our- tits, please...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mnhh... You're pretty too, hhh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Mnhhghhh... Hhh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "My favorite indeed, heh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "My, look at that... Didn't think you'd obey so easily.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "My, you again... Didn't expect to see you again so soon, citizen.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "My... Tongue...? Inside?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "N-Not that I'm scared or anything! But... Think you can check it out? I'll give you 50, no. 100 fuckbucks!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "N-nevermind,  um... I- I changed my mind...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "N-not so loud-... please... what if someone... hears us...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Neon Lime.",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ngh! Fuck-! Hahh! Nghh!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Nghh... it feels really different...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "No need to be insecure about your... abilities, young lady.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Not everyone gets me twitching like this, I can promise you that, eheh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Not in the slightest! Agh. It's like a pigsty in here!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Nova, right...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Nova.",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Now then, girl... I'll need you to do a little more than that. Stroke my cock.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Now then, miss waitress... Based on that, I think it's time our companionship got a little more... involved.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Now then, waitress. Let me feel your hand on it, if you want your tip.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Now we wait! See what happens and go from there!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "O-okay.",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "O-okay...! So-...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Of course you would...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Of course! That was the first thing I did. But ugh- She loves the little tuna flavored treats and usually she comes running, but she hasn't...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Of course. Happy to help.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Of course. No one will see your hand on my bare cock, waitress. Come sit on my lap.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Of course...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Off you go.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh come on, I know what kind of doujins are in your phone, little sister... ehehe!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh fuck you actually took it, ahaha! Taking money like a good whore!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh god that's crazy...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh god, we're like-... actually going to do this...?!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh my god you're such a fucking weirdo...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh really? Hehe. Well, if you liked that, maybe we can do it again sometime. That sound fun?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh there you are, my darling. Oh sweetheart. Mama missed you so much. Are you hungry?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh there you are... Oh my sweetie I was worried sick about you!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh yeah that's good. Nice and wide, mmhhh. Your ass looks even hotter like this.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh yeah? Taking my money and stretching your asshole in my face doesn't make you a whore?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh, look at you, darling. You want some fun with this old bird, hm?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh, my little angel. You can leave, sweetie. Mama's always going to love you, and always be here when you want to visit.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh, right!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh, uh... Okay.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh, uhh, I think you saw me last time I was here...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh, uhm-... She mentioned something about you picking up a black cage?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh- My little man doesn't even eat his food before testing it. As if I'd ever poison him. Tsk.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh-! Okay!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh... Okay.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Oh? Tell us!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Okay darling, we're going to help you get a little more comfortable around me. You're going to go use my shower.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Okay, darling.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Okay, dear...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "One of them had blue hair, just like you...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Only a little, huh? I meant the shower water. What did you mean?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Onward and upward. Talk to you later.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Open your eyes.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Or... I could give the Cartel a call... Tell them I found you carrying this little device they're after. Your choice, merc.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Pay Half",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Play along",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Please cum on Rosies... nice big tits, mr Rungar...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Please insert the semen-filled preservatives.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Please put your- um- cock between Rosies- boobs, s-sir...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Please what, pet?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Pleaseeee...! Help us take some spicier pics!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Pretty tits, waitress.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Pretty, hmm? You should get it tattoo'd, bunny, ehehe.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Profit was up today, waitress. You played your part in that.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Quite bold of you to bring it back here after you worked so hard to take it from that suitcase, merc.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "R-right, um... thanks...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "R-right...! Yeah!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Relaaax, ahaha! I'm not even touching your privates. You already took my money, so don't make this awkward, ya?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Remember when my friend thought we were sisters...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Right... I'm glad you understand, hun.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Right...! O-okay... Big- sis...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Rosie loves making me cum with her tits. She'd love to do it with you helping.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Rosie... protected me...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Rungar asked, if-... like... he wants you to grope my chest...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Sarah!",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Say. It.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "See those blue probes? They're for sensing arousal. That's where you come in.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "See you around, bunny.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "See you around, waitress.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "See...~ Besides, I think we have a bit of planning to do while Zoey is getting us a marker.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Seek her breast, K12.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Set Save Key",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "She did? Brave of you to wear it like this. I like brave, hehe.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "She gets customers off...? But-",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "She had a similar little vantage point back at my old office...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "She was just a bit unsure! What do you think? Maybe you could help us afterall?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "She'd come and go. Always getting into places she shouldn't. Climbing things she shouldn't. Biting things she shouldn't. Now this.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "She's amazing! Nghh...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "She's right though, Ashley... We shouldn't let him do that. What if he puts the pics up in Euphora?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "She's right, Anne! If we want to get noticed, we need to do something crazy!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Shh... It's bad enough you disrespected my establishment with your little antics. You're not going to disrespect me too.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Shh... Keep washing yourself, dear. You're doing so well for me.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Shhh... that's it. Let mama give you something to suckle on, pup.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Should get her to wrap her tits around me cock again.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Shouldn't you be happy to see your guardians?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Show inspection",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Show me, show me!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Shut up, 25. I'll handle this one.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Sis- nh-... I-... I have an, um- an idea...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "So fucking- hot inside- hahh! Nghh!!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "So quiet... anxious, hmm? Now, now, girl. It's not difficult to keep conversation flowing. Why don't you tell me how my old cock feels in your young hand.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "So soft, mmhhh.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "So warm and... mnhh... comfy...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "So warm... nhh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "So you managed to clean your room, huh?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "So- ngh- thick... Hahh...! Fghhh! So warm, nghh!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "So... warmhh...",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Soft and squishy and-... Hhh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Some err... private stuff.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Something about obedient citizens like you... Drives me crazy, ehehe.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Sometimes I'd just sit with her... close my eyes and listen to her purr.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Sorry for the trouble, Lio. How's the cleaning going?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Splendid... You have no idea how much I've been yearning this moment.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Start washing yourself, sweetheart. That's it. Good pet.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Still putting up an act, huh?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Stroke it. Give me a handjob, waitress. All the way.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Such a tame girl, yet such a wild body.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Sure as fuck I will watch that little shithole of yours, mhhhh. Start thrusting your hips already.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Surely that guy will get us featured with that, ehehe!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Surprised? You really thought I wouldn't be able to piece it together, merc? You really need to learn how to cover your tracks.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Take the 200 and help Rosie get me off.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Take the cash already.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Take the picture!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Tas-... Ty...?",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Tell her, Zoey.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Tell me who is protecting, you... Citizen.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Tell me, hun... Have you seen an android cock as mighty as this ones before?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Th-thanks, heh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Thank you Lio, you are the best!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Thank you for the deposit. Your compensation has been transferred.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Thanks again. For everything. I don't think Felicia and I would have had any closure without your help.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Thanks for the help, merc.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Thanks so much, Lio! I owe you!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Thanks, waitress. Say, have you made an arrangement with Nova yet?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Thanks- ma'am...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Thanks... So... Those ancient spirits are gone now right?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That feels so- intense... fuck-... nghh...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That hurt!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That is not on the menu!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That means 'good', I take it?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That sort of content is illegal, Ashley!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's \"big sister\" to you now, eheh!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's \"ma'am\" to you, bunny bitch.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's a good girl~ Let me feel your tongue, sweetness.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's a good pet. Hm, I'll consider it, darling. Whenever you want to have some fun, come see me and we can figure something out.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's an amazing idea, sis! Could caption it with \"Family matters\"! What do you think Zoey? Would you be okay with showing your fingers in the shot?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's convenient!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's crazy, Ashley...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's enough...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's exactly why it will get us noticed! Plus, I mean, we're not actually related. So it's totally legal, right?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's not what I- Khh...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's perfect!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's right, slut. I'll make you cum so my K12 unit can taste the excitement in your sweat, ehehe!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's right... Simple citizens like you... Blissfully unaware of the pain we go through to keep this district... clean.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's right... You're doing so good, pet...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That's right~ You're being so good for me, pet.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "That, my girl, is excitement manifested in flesh.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "The blue haired beauty shows up asking around and all of a sudden there's a robbery... Tsk. I don't believe in coincidences.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "The remote. Right.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Then you'd never forget who owns your ass.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "There she is. Keep going, pet.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "There you go. Now mine!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "This is the spot! But- she's not here...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "This is what you're looking for. Black marker. They make them just for skin these days, heh. It will come off, but not easily.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Time to get my moneys worth, ehehe.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Told my friends all about how I sniffed your nasty asshole before fucking the brains out of a bunny bitch!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Tsk tsk tsk... You're truly a special one.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Tsk. What do you Vultures want?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Tsk. Whatever, pet. Let's just find Felicia.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ugh fine... Move your ass up and down then, bitch. Give me a nice show!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ugh, FUCK you're hot, ahaha! Go fetch me a drink now.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ugh, fine. I'll just spread your pretty asshole then, bitch.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ugh... But you're just not happy like this, are you? Even with how hard I try to pamper you...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ugh... Felicia must've wandered home while those idiots were harassing us.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Uh huh. Zoey, dear. Get the lights please?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Uh... Yes?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Um- y-yeah...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Ungh... Fuck. I'll pay you double if you- ghh- make me cum.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Unsure what to do",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "copy-through",
+      "rel": "po",
+      "text": "Uwaa! Hey!",
+      "detail": "перевод совпадает с оригиналом"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Vividly, darling. What about it?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "W-watch your mouth...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "W-what now?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Wasn't expecting to have all my assets seized and be forced to retire... I just wish I could've had a choice where I ended up.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "We both know what this is really about.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "We both know why you went to the bathroom with Nova. Khh... I'll pay you- mnh- well. Just- hhh- stroke my old fat cock and make me fucking cum, waitress!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "We don't... Know, to be honest. Some guy fixed it last time, messing with the breaker box.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "We'll find out soon enough I hope, eheh. K12, prepare semination.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "We'll meet again, Zoey. See you around.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Wearing Andro semen like a good cum dump, ahaha! Take my baton like a good GAG slut!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Well if you insist to just leave it on, I love the messy look on you.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Well, dear... Just at least let us take a look around. Maybe your little security systems aren't as secure as you think.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Well, you help nice old ladies like me find their cats. That's quite the service you provide, darling. Something to be celebrated.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Well- No promises. Love ya, Sarah.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Well- Whatever it is. Just take a look for me, would you, dear?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Well... Here's your pay... Thanks again, dear.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Well... Needless to say I didn't take her to the pound. Guess I have a soft spot for helpless things. Like Lio... and you.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Well... Thank you for checking at least, dear.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Well... Yeah, actually. Lemme see...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Wh- You can't be serious.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Wh- but-!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Wh- wha...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Wha- ?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "What about you, Zoey? Could you get one for me and my... little sister? Ehehe!~",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "What do you mean?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "What do you think, Zoey? Could we pass as sisters?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "What is this whole setup back here, little man?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "What'd I do to deserve you, Sarah?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "What's that? Do you want a disobedience remark on your next Quota Fulfillment Report?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "What's with that face, citizen? Pay some respect to your protectors!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "What's wrong, hun? Got something to hide, hmm?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "What? No Moolah? I'm not a charity, brokie.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Whoop-de-doo, here is your goo. Nice and fresh.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Why chose the- mhhh... The hard life when you can-... Just come here and- fhhh... Be the center of attention.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Why don't you let me spread that tight little ass of yours, hmm? Nothing crazy, promise! I'll pay you 40 too!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Why don't you show me what you look like with those straps pulled down, hmm? You want to be on my good side, don't you?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Won't that make him- cum..?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Wonderful! Now about my dear Felicia. Have you see her?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Working in a sex club as a bunny...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Y-yes. Okay...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeah that's a good idea... Would you please help this old bird, Zoey? I... I don't know what I'd do without her. I'll make it worth your while!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeah! What's your name?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeah, I guess that's me.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeah, I- I did get them in the end.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeah, but that's not something you can explain to a cat. She was antsy at first, but... I thought it was enough. That I was enough...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeah, here... she used to like going to this... sketchy place.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeah, we were moved down here when GAG was shifting people around after the Crisis... Guess that even included older ladies like me.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeah, you got me real good. Now about my pay...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeah. I'll use that picture you gave me last time. It's gotten plenty of use already hehehe",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeah. It was a good life. Little extravagant for some, maybe... But for me, dear. It was just right.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeah. That's what I thought.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeah... Good thing we had a frame laying around... and a photo printer.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeah... I've heard of it.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeah... Right.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yeahhh... She's quite the character.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yes and you will too, little sis. Do you have one or not?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yes! This is the place! Atta girl! Heh- It's been a couple years since I've been down here. Let's leave some treats and wait for her.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yes! Your hand is super cute like that...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yes, yes. You can stay. And clean this mess up, dear. I want it spotless when I get back.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yess... fuck yes...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yesss! Think of that mighty Andro cock you made spurt like a good citizen, Zoey! Feel that warm Andro cum on you while you grind my baton to orgasm!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yesss... Hhh, that's good, little waitress. Stroke it with your nice petite fingers. Mmhhh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Yesss... I want you to mark this loyal citizen with your android cum, K12. Cum in her outfit, ehehe!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You and I will have words later, little man...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You better not. I'd hate to have to lock a hot citizen like you into that lab- I mean prison, ehehe.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You both make me hard.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You can see the GAG seal of approval right there on its thigh. My wares are always clean!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You can't just leave me like that... It's dangerous out there... Those Vultures could've gotten you, honey...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You close your eyes and let me write on your tummy.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You forgot, dear? He's just in the back, past my bed. Let's go talk to him quick so we can find my sweet Felicia.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You freaking did it. Legend! Here, take the fuckbucks.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You just think so because you're a nasty pervert...!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You know what comes next, don't you. I can feel your heart racing, waitress.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You mean like... actually flashing in public...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You really-... think so?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You said you wanted to try it. Here's your chance, hun.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You want the money, I know you do.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You'll be a good girl and come back to rile up even more lost souls. Understood?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You'll half the price, if I... let you-...?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You'll help me calibrate my K12 unit's sensors, ehehe.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You're a GAG slut! Say it!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You're a godsend, Sarah.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You're going to be all nice and clean for me just like a good pet.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You're nasty... Kh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You're questioning me?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You're such a weird fucking pervert, ugh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You're the one asking me for cum. If you're not buying, scram!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You're- ngh... such an asshole- khh...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "You've felt my cock already, so why not earn a nice double tip for the real deal, hmm?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Your body is the perfect bait to get them drunk and riled up, Zoey. It's your role in this forsaken world.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Your hand is so pretty on my old cock, ehehe.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Your pussy is oozing, Zoey... Does my baton feel that good, hmm?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Your tits are so... big...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Your young hand feels so good, ngh... Stroke it.",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Z-zoey-... Nghh... Madison...",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Zoey! You gotta help me. Have you seen her?",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Zoey, no!",
+      "detail": "пустой перевод в диалоге"
+    },
+    {
+      "level": "error",
+      "rule": "empty-dialogue",
+      "rel": "po",
+      "text": "Zoey... Let me handle them.",
+      "detail": "пустой перевод в диалоге"
+    }
+  ]
+}

@@ -1,0 +1,6279 @@
+
+#. src: us
+msgctxt "ui"
+msgid "! Was the mission ScriptableObject removed or the ID changed?"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: no-word
+#, skip
+msgctxt "ui"
+msgid "!A Z"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "!AL7"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "!AR"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: no-word
+#, skip
+msgctxt "ui"
+msgid "\"\"JO"
+msgstr ""
+
+#. src: us
+#. skip: hex-color
+#, skip
+msgctxt "ui"
+msgid "#8A8F98"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "' is not a Sound Category on '"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>("Klaudia's bunny bitch"...?! Wh-)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(\"Klaudia's bunny bitch\"...?! Wh-)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(... )</i>
+msgctxt "speaker:Zoey"
+msgid "(... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(... feel... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(... feel... )"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "(?P!A?;"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(A picture of my pussy with her fingers inside... That's-... Hhh... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(A picture of my pussy with her fingers inside... That's-... Hhh... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Ahhh... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Ahhh... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(All I want to think about are her lips... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(All I want to think about are her lips... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(All part of the mission... It's just... <color=#EB83FF>a detour</color>... )</i>
+msgctxt "speaker:Zoey"
+msgid "(All part of the mission... It's just... a detour... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(All the stuff up here is so rusty. Guess no one's been up here in a while. This rooftop's just a secluded little island.)</i>
+msgctxt "ui"
+msgid "(All the stuff up here is so rusty. Guess no one's been up here in a while. This rooftop's just a secluded little island.)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(All these perverts here... they really like my body so much...?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(All these perverts here... they really like my body so much...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Am I really going to work in the glowing hole as a waitress going forwards...?)</i>
+msgctxt "speaker:Zoey"
+msgid "(Am I really going to work in the glowing hole as a waitress going forwards...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Are Lio and Nova-... I guess that's none of my business... )</i>
+msgctxt "speaker:Zoey"
+msgid "(Are Lio and Nova-... I guess that's none of my business... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Asshole... )</i>
+msgctxt "ui"
+msgid "(Asshole... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(At least I'm not a... skank... right?)</i>
+msgctxt "speaker:Zoey"
+msgid "(At least I'm not a... skank... right?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(At least I've got the marker now... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(At least I've got the marker now... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Being a merc feels like it's getting me into more and more trouble... Maybe I'm just not-... hhh... )</i>
+msgctxt "speaker:Zoey"
+msgid "(Being a merc feels like it's getting me into more and more trouble... Maybe I'm just not-... hhh... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Black body markers...! They're just what Anne and Ashley are looking for!)</i>
+msgctxt "speaker:Zoey"
+msgid "(Black body markers...! They're just what Anne and Ashley are looking for!)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(But why... don't I... care...? )</i>
+msgctxt "speaker:Zoey"
+msgid "(But why... don't I... care...? )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Can a pelvis like that really have feelings...?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Can a pelvis like that really have feelings...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Collection...? I'm not the only one-... making deals with her?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Collection...? I'm not the only one-... making deals with her?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Does she even-... Know my-... Name-... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Does she even-... Know my-... Name-... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Doesn't feel all that different... Just a little warm. )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Doesn't feel all that different... Just a little warm. )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Finally he's done...)</i>
+msgctxt "speaker:Zoey"
+msgid "(Finally he's done...)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Ghh... I'm really getting groped by Rosie... In front of this guy... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Ghh... I'm really getting groped by Rosie... In front of this guy... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Ghh... What am I... Doing... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Ghh... What am I... Doing... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(God, I-... I really d-drank... S-squirt...?!)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(God, I-... I really d-drank... S-squirt...?!)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(God... )</i>
+msgctxt "speaker:Zoey"
+msgid "(God... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Gosh... She's s<color=#EB83FF>o pretty...</color> No! No. Bad Zoey. Fffh... It's get<color=#EB83FF>ting so warm in here</color>... )</i>
+msgctxt "speaker:Zoey"
+msgid "(Gosh... She's so pretty... No! No. Bad Zoey. Fffh... It's getting so warm in here... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Guess I can at least some money off this creep, he's gonna run his mouth one way or another... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Guess I can at least some money off this creep, he's gonna run his mouth one way or another... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Guess I can give it a try. )</i>
+msgctxt "ui"
+msgid "(Guess I can give it a try. )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(H-here it goes... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(H-here it goes... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(He's-... Groping my ass again...? Khh... )</i></color>
+msgctxt "ui"
+msgid "(He's-... Groping my ass again...? Khh... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Heh... Oh Sarah...)</i>
+msgctxt "speaker:Zoey"
+msgid "(Heh... Oh Sarah...)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Her fingers feel so soft... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Her fingers feel so soft... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Her pussy is so hairy, khh... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Her pussy is so hairy, khh... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Her tongue feels like heaven... warm... wet... heaven... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Her tongue feels like heaven... warm... wet... heaven... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Hh.. )</i>
+msgctxt "speaker:Zoey"
+msgid "(Hh.. )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Hhh-! O-okay, I did it...!)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Hhh-! O-okay, I did it...!)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Hhh.. )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Hhh.. )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Hhh... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Hhh... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Hhhh... what have I gotten myself into...)</i>
+msgctxt "speaker:Zoey"
+msgid "(Hhhh... what have I gotten myself into...)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Hm... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Hm... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Hope this time he's not busy with his AI girlfriend... )</i>
+msgctxt "speaker:Zoey"
+msgid "(Hope this time he's not busy with his AI girlfriend... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Huh? It's coming from her direction. That can't be right... Better return to her and see what's happening. )</i>
+msgctxt "ui"
+msgid "(Huh? It's coming from her direction. That can't be right... Better return to her and see what's happening. )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(I can't afford it... )</i>
+msgctxt "speaker:Zoey"
+msgid "(I can't afford it... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(I can't believe I'm still servicing this creep... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(I can't believe I'm still servicing this creep... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(I can't just... leak Ashley's plan like this-...! But- lying to Klaudia...?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(I can't just... leak Ashley's plan like this-...! But- lying to Klaudia...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(I did it last time. What difference does it make anymore. )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(I did it last time. What difference does it make anymore. )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(I don't <b>want</b> to think... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(I don't want to think... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(I need to be more careful.. This place is.. <color=#EB83FF>Affecting me</color>.. )</i>
+msgctxt "ui"
+msgid "(I need to be more careful.. This place is.. Affecting me.. )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(I need... more... please don't stop... give me... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(I need... more... please don't stop... give me... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(I should trust Rosie. She's been nice to me. )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(I should trust Rosie. She's been nice to me. )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(I sure wouldn't be able to live with myself in a ditch somewhere... I need that money bad.)</i>
+msgctxt "ui"
+msgid "(I sure wouldn't be able to live with myself in a ditch somewhere... I need that money bad.)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(I was hoping he'd forget about that with how drunk he was... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(I was hoping he'd forget about that with how drunk he was... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(I'll just... wash it off... m-mhm...)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(I'll just... wash it off... m-mhm...)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(I'm really going to help record porn for the Cartel...?)</i>
+msgctxt "ui"
+msgid "(I'm really going to help record porn for the Cartel...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(I'm really gonna... Inject glow...?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(I'm really gonna... Inject glow...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(I'm really gonna... steal from Klaudia...?)</i>
+msgctxt "speaker:Zoey"
+msgid "(I'm really gonna... steal from Klaudia...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(I'm really helping with getting him off...? Didn't I say I'd stop after Varen...?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(I'm really helping with getting him off...? Didn't I say I'd stop after Varen...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(I'm sure she won't notice... )</i>
+msgctxt "speaker:Zoey"
+msgid "(I'm sure she won't notice... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(I-.. I shouldn't take pictures of them being-.. <color=#EB83FF>Intimate</color>.. )</i>
+msgctxt "ui"
+msgid "(I-.. I shouldn't take pictures of them being-.. Intimate.. )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(I-... I guess Nova is in on it, but-... What if anyone tells Klaudia...?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(I-... I guess Nova is in on it, but-... What if anyone tells Klaudia...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(I... really shouldn't watch them... right?)</i>
+msgctxt "ui"
+msgid "(I... really shouldn't watch them... right?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Idiot... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Idiot... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(If it's with Rosie...  )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(If it's with Rosie...  )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Is it really working...?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Is it really working...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(It got... Even faster...?)</i>
+msgctxt "speaker:Zoey"
+msgid "(It got... Even faster...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(It's just moving my hips a bit, nothing more... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(It's just moving my hips a bit, nothing more... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(It's teasing my-... Ghhh... So wet... Fghhh... )</i></color>
+msgctxt "ui"
+msgid "(It's teasing my-... Ghhh... So wet... Fghhh... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Jaime... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Jaime... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Just a pic... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Just a pic... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Just need to wait for Lio to deliver me the fake now. )</i>
+msgctxt "speaker:Zoey"
+msgid "(Just need to wait for Lio to deliver me the fake now. )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Just some writing, I can wash it off right away... n-no big deal... right?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Just some writing, I can wash it off right away... n-no big deal... right?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Just this once... I'll feel better with it, right?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Just this once... I'll feel better with it, right?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Just... Making sure.. )</i>
+msgctxt "ui"
+msgid "(Just... Making sure.. )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Kh-! It's cold!)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Kh-! It's cold!)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Kh... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Kh... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Last time was just sweat... It- it had to be... right? )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Last time was just sweat... It- it had to be... right? )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Leaving the blocker in the locker was so fucking stupid, khh!)</i>
+msgctxt "speaker:Zoey"
+msgid "(Leaving the blocker in the locker was so fucking stupid, khh!)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Let them wa<color=#EB83FF>tch... I just want her.)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Let them watch... I just want her.)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Maybe I could ask Leona about his favorite band?)</i>
+msgctxt "speaker:Zoey"
+msgid "(Maybe I could ask Leona about his favorite band?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Maybe it would... help with the itch...!)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Maybe it would... help with the itch...!)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Maybe some kind of port for a vr thing...?)</i>
+msgctxt "speaker:Zoey"
+msgid "(Maybe some kind of port for a vr thing...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Maybe, I could just... <b>take</b> one from her office...?)</i>
+msgctxt "speaker:Zoey"
+msgid "(Maybe, I could just... take one from her office...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(My bodyguard's fingers inside me... God-... I shouldn't-... I-... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(My bodyguard's fingers inside me... God-... I shouldn't-... I-... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(My head is so foggy... I can't... think... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(My head is so foggy... I can't... think... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Need to... use the Blocker... Please work...)</i></color>
+msgctxt "ui"
+msgid "(Need to... use the Blocker... Please work...)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(No way-! Rosie is so-  I can't imagine her prude!?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(No way-! Rosie is so-  I can't imagine her prude!?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(No-...! I can't...!)</i>
+msgctxt "speaker:Zoey"
+msgid "(No-...! I can't...!)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(No... Not think... just... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(No... Not think... just... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Not only did I get him into trouble, but now I even missed my chance to sneak past Klaudia upstairs. )</i>
+msgctxt "ui"
+msgid "(Not only did I get him into trouble, but now I even missed my chance to sneak past Klaudia upstairs. )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Oooh~ A-Am I really doing this? Touching myself and thinking about how Sarah's in there... touching herself too...)</i>
+msgctxt "ui"
+msgid "(Oooh~ A-Am I really doing this? Touching myself and thinking about how Sarah's in there... touching herself too...)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(People on this stuff look like they're feeling amazing... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(People on this stuff look like they're feeling amazing... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Please don't let this be real... I can't lose her... Please... )</i>
+msgctxt "speaker:Zoey"
+msgid "(Please don't let this be real... I can't lose her... Please... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Right... I guess I should just put these in here?)</i>
+msgctxt "ui"
+msgid "(Right... I guess I should just put these in here?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Rosie really did this too...?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Rosie really did this too...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Rosies tongue was inside her as well... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Rosies tongue was inside her as well... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Rungar is staring at us... Mnh... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Rungar is staring at us... Mnh... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(She feels bad for this? But... it's not her fault... )</i>
+msgctxt "speaker:Zoey"
+msgid "(She feels bad for this? But... it's not her fault... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(She said that it's for beginners and there's no crash after with this flavor, so-... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(She said that it's for beginners and there's no crash after with this flavor, so-... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(She's gone... )</i>
+msgctxt "ui"
+msgid "(She's gone... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(She's in charge...?)</i>
+msgctxt "speaker:Zoey"
+msgid "(She's in charge...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(She's really going to-... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(She's really going to-... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(She's tearing up... but... why?)</i>
+msgctxt "speaker:Zoey"
+msgid "(She's tearing up... but... why?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Showing my tits to a man over twice my age...? Khh... How did I end up like this...?)</i></color>
+msgctxt "ui"
+msgid "(Showing my tits to a man over twice my age...? Khh... How did I end up like this...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(So I could... Earn more tips if I just... make sure I'm in good standing with Nova...?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(So I could... Earn more tips if I just... make sure I'm in good standing with Nova...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(So these are the parts Lio needs to make a fake of the blocker?)</i>
+msgctxt "speaker:Zoey"
+msgid "(So these are the parts Lio needs to make a fake of the blocker?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Soooo I'll just slide this back in... )</i>
+msgctxt "speaker:Zoey"
+msgid "(Soooo I'll just slide this back in... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Spit in the customers drink...? I-... I don't know... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Spit in the customers drink...? I-... I don't know... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Swallowing squirt...?!)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Swallowing squirt...?!)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(That was crazy... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(That was crazy... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(That's a big freaking hammer. )</i>
+msgctxt "ui"
+msgid "(That's a big freaking hammer. )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(The smell of the fog... It's still-... Khh-... I can't-... Nhh...)</i></color>
+msgctxt "ui"
+msgid "(The smell of the fog... It's still-... Khh-... I can't-... Nhh...)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(The whole town is on this stuff already, so-... why should I have to deal with the itch without it. I'll just take the edge off this once. )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(The whole town is on this stuff already, so-... why should I have to deal with the itch without it. I'll just take the edge off this once. )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(They're all staring at me- at my-)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(They're all staring at me- at my-)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Those guards are looking for anyone without a ticket. I better get moving.)</i>
+msgctxt "ui"
+msgid "(Those guards are looking for anyone without a ticket. I better get moving.)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Tipsy...?)</i>
+msgctxt "speaker:Zoey"
+msgid "(Tipsy...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Ugh! These enforcers are a menace!)</i>
+msgctxt "speaker:Zoey"
+msgid "(Ugh! These enforcers are a menace!)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Varen-... I'll really... Khh... Nova's into it...?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Varen-... I'll really... Khh... Nova's into it...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(W-wait... He's asking how much to tip me for that...? I-... I don't know...!)</i></color>
+msgctxt "ui"
+msgid "(W-wait... He's asking how much to tip me for that...? I-... I don't know...!)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Wh-! I completely for</color>got they were watching us... nngh... )</i>
+msgctxt "speaker:Zoey"
+msgid "(Wh-! I completely forgot they were watching us... nngh... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(What a subtle name for the place... )</i>
+msgctxt "ui"
+msgid "(What a subtle name for the place... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(What is... wrong with me... )</i></color>
+msgctxt "speaker:Zoey"
+msgid "(What is... wrong with me... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Where the hell is she?)</i>
+msgctxt "ui"
+msgid "(Where the hell is she?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i>(Why do I keep doing these things...?)</i></color>
+msgctxt "speaker:Zoey"
+msgid "(Why do I keep doing these things...?)"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>(Working in this place full of perverts... Klaudia wants to use my body as a tease for customers to-... )</i>
+msgctxt "speaker:Zoey"
+msgid "(Working in this place full of perverts... Klaudia wants to use my body as a tease for customers to-... )"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF><i><size=25>(Yes...  )</size></i></color>
+msgctxt "ui"
+msgid "(Yes...  )"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "+SA"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid ". State:"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>... </color>
+msgctxt "speaker:Zoey"
+msgid "..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "... Honestly I have no idea, dear. I just know she liked coming here and curling up on the ledge. Maybe it was the view... or the smells."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "... I... Perhaps."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>... M-mhmmm...</color>
+msgctxt "speaker:Zoey"
+msgid "... M-mhmmm..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "... Please... play with me more... ma'am..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "... Right..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "... Yes?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "... Yes? But- You didn't tell me why the spirits are-"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Brad"
+msgid "...Did any of my neighbors see you going down there?"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "/KA"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "0.3 - Residential - Cartel Event - 5 - Walk back"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
+msgctxt "ui"
+msgid "0.5 - Main Story - Buy Parts from Nova.PayForParts"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "2APG"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "5A33'A"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "800 is a bit too much right now..."
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid ":AB"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>> Cum inside-...! Cum inside andro-... andro pussy...!
+msgctxt "ui"
+msgid "> Cum inside-...! Cum inside andro-... andro pussy...!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>> I-... d-don't worry, it's-... It's just... new to me, I think... >
+msgctxt "ui"
+msgid "> I-... d-don't worry, it's-... It's just... new to me, I think... >"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>> So demanding all of a sudden.
+msgctxt "ui"
+msgid "> So demanding all of a sudden."
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "?)\\OB"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "?L73A\\"
+msgstr ""
+
+#. src: raw:SpriteRenderer
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "@(U@R"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "A Bad Good Time"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Man"
+msgid "A big load of spunk, warm from the oven! Coming right up."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Man"
+msgid "A filled condom? Ha! What d'ya need that for?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Brad"
+msgid "A merc? Fuck yeah! Perfect. Have I got a job for you! Fix our power please. I'll pay!"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "A\"d"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "A-Arf... Arf..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>A-Arff... Rrrarf~!</color>
+msgctxt "speaker:Zoey"
+msgid "A-Arff... Rrrarf~!"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "A8d]@"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "AF6"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "ANbH@"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "ARq"
+msgstr ""
+
+#. src: raw:RectTransform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "A^z"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Aaaahhh!! Fghhaaahhh! Hghhh...!</color>
+msgctxt "speaker:Zoey"
+msgid "Aaaahhh!! Fghhaaahhh! Hghhh...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Aaahh, fuck!!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Aaahhhh..!!! Mnghhhh... Fghhh...</color>
+msgctxt "speaker:Zoey"
+msgid "Aaahhhh..!!! Mnghhhh... Fghhh..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <b>Aah-! Ashley!</b>
+msgctxt "speaker:Woman"
+msgid "Aah-! Ashley!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Accepted Dialogue"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Activate challenge"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "Ad;"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Add a note to her file, K12. Obedient citizen. Potential candidate."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Add int and check"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Affection"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "AgrB"
+msgstr ""
+
+#. src: dialog
+#. rich_text: Ah shit, who the fuck cares. Soon my cock is burried deep between your perfect cheeks and you'll fucking love it, <b>whore</b>! Ahaha!
+msgctxt "speaker:Trov"
+msgid "Ah shit, who the fuck cares. Soon my cock is burried deep between your perfect cheeks and you'll fucking love it, whore! Ahaha!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Brad"
+msgid "Ah, and don't tell the girl with the pink hair I sent you."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Ah- I uh... I can't right now, Leona. I'll let you know when I can help."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Ah- n-no, I'm not- I didn't- Nhh...</color>
+msgctxt "speaker:Zoey"
+msgid "Ah- n-no, I'm not- I didn't- Nhh..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Ah- uh...</color>
+msgctxt "speaker:Zoey"
+msgid "Ah- uh..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Ah-! Fhuck-...! Nghh!</color>
+msgctxt "speaker:Zoey"
+msgid "Ah-! Fhuck-...! Nghh!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Ah-... S-sorry... Just, um... All the walking around...</color>
+msgctxt "speaker:Zoey"
+msgid "Ah-... S-sorry... Just, um... All the walking around..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Ah-...! Nghh... H-hey...!</color>
+msgctxt "speaker:Zoey"
+msgid "Ah-...! Nghh... H-hey...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Ah...! What the fuck?! You ripped it!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Ahaha! Hear that K12? Bitch knows her place like a good citizen!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Ahaha, whatever, bunny bitch. Just push your ass up already."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Ahh..! Fuck..!!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Ahh... Nghha...</color>
+msgctxt "speaker:Zoey"
+msgid "Ahh... Nghha..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Lio"
+msgid "Ahh...! Fhahh...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Salesman"
+msgid "Ahhh...! Fuck...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Ahhhh...! Ffffuck...! Mnhhh..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Alive"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "All done."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "All thanks to you, Zoey. Ready to get the pic? We should hurry, before someone walks sees us, tehehe!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: All they've been sending recently has been glow addicts after they served their... <i>prison</i> sentence. They just don't cut it.
+msgctxt "speaker:Enforcer"
+msgid "All they've been sending recently has been glow addicts after they served their... prison sentence. They just don't cut it."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "All we need now is a black marker to write with... Do you have one, sis?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Alright, Zoey! Make sure that our eyes are just off frame, okay?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Alright, see you around, hun! And thanks for the help!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Alright, then. Let me know how it goes, I'd love to come over when you're settled in!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Amazing! This will definitely catch some eyes, ehehe!"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "Amount of times Zoey has orgasmed."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "And I'm going to watch you."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "And about earlier... I uh... Sorry..."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "And next time you'll help me think of something fun we can do together."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "And that would be..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "And who is this? Some online girlfriend?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "And yet, here you are. Posing for me like a good little bunny."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "And you obeyed. That's good. Let that reality sink into your bones. You can lie to yourself all you like, but I see that hunger in you."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "And you really think you're any better than them?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Andro Idle Down"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Any idea where he is?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Apex Wet Long"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "Aq=="
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Are these ancient spirits in the room with us?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Are we on the Bunnysuit Mission?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Are you going to-...</color>
+msgctxt "speaker:Zoey"
+msgid "Are you going to-..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Are you sure you don't wanna help us?"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "Arh"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "As my pet, of course. Would you like that, little doggy?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Ashl- Sis! You can't just- make her run your errands!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Ashley...! She already said no!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Ask about Lio's place."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Ask to Go Upstairs"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Asking someone at random?! But-"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Asshole? Hah! The asshole right in front of my nose, ngh! I wanna slather that perfect pucker of yours so bad, ahaha!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "At least I've got the parts for Lio, I guess..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "At least it's cheaper..."
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "At=2A"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Atta girl. Good job, darling. How do you feel?"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "AwkGA"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Aww come on, it was just getting fun, whore!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Aww, come on, I'm not that bad. You were happy enough to take my money last time, hah!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Ay, waitress! I want 'nather drinkh!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Ayy, good choice, bunnybitch. Now lean over and show me that fat ass."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>B-but I thought-... We're not allowed to-...</color>
+msgctxt "speaker:Zoey"
+msgid "B-but I thought-... We're not allowed to-..."
+msgstr ""
+
+#. src: raw:Transform
+#. skip: no-word
+#, skip
+msgctxt "ui"
+msgid "B= i"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
+msgctxt "ui"
+msgid "BUU1C"
+msgstr ""
+
+#. src: field:m_text
+msgctxt "ui"
+msgid "Back"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Bare your Soul"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Base Salary"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Beating up those brainwashed idiots last night with this baton was so empowering... Rubbing it against your pussy now feels amazing, mhhh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Because her nails are like... really cute- and... We could like... frame it like she's another sister..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Become"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Being searched by your protectors should be an honor, heheh."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Bhair2_base2)\\"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Bigger- I need something bigger...! Ffuck, I need it right now...!</color>
+msgctxt "speaker:Zoey"
+msgid "Bigger- I need something bigger...! Ffuck, I need it right now...!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Blinded by hopes, wishing to the sky"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "BoolValue"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Bounce it and twenty fuckbucks could be yours. Don't be a boring bitch. Customer's king, right?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Breeding Like A Rabbit"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Bunny Rank F"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "But don't fret~ I'm in a good mood today. You can have it back, but I'm going to need... insurance. We'll have a little... photoshoot."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>But- I-</color>
+msgctxt "speaker:Zoey"
+msgid "But- I-"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "But- l-like what...?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "But- that would mean we'd be flashing-"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "But... she has to stay inside. She can't be out there. Not with those Vultures out there."
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "Bz\""
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "CAL! UGH!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
+msgctxt "ui"
+msgid "CC_OptionType_Dick Size"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
+msgctxt "ui"
+msgid "CC_Option_Headgear_Dark Beanie Damaged"
+msgstr ""
+
+#. src: raw:RectTransform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "CDhf"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
+msgctxt "ui"
+msgid "CUUOC"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Call her whatever you want. Just get her out."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Can I- have the marker, please...?</color>
+msgctxt "speaker:Zoey"
+msgid "Can I- have the marker, please...?"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Can you take a look at this headset for me?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Candidate f-for-... ngh... what...?</color>
+msgctxt "speaker:Zoey"
+msgid "Candidate f-for-... ngh... what...?"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "Carcen Joined Resistance"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Changed your mind about coming upstairs with me?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: save-key
+#, skip
+msgctxt "ui"
+msgid "Character Keys/Did stare at Lios Dick"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Check behind this... whatever this toy is, Lio."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Check for Cypher mission"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Choice Selected"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Clear Cleanup Animation 2"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "CloseUI"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
+msgctxt "ui"
+msgid "Collectibles_Kitty_Collect 2"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Come closer, bitch. You took money to get your asshole spread so don't be shy."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Come closer, darling~"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Come here, pet."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Come on, chin up, bunny! I'm doing free advertisement for ya! Don't ya think I should get a reward for that, huh?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Come onn... You'll make such a cute little sister!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Come with me, then. You can stay over at my place until you sort this out."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Construction Worker"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "CorrectGUID"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Cum Squirt"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Cum for me, Zoey... Your excitement is going to send my K12 over the edge, ehehe!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Cute tummy, my bunny bitch."
+msgstr ""
+
+#. src: dialog
+#. rich_text: Cute. You aren't exactly in a position to make <b>demands</b>. I've got the markers your want in my office. Now tell me.
+msgctxt "speaker:Klaudia"
+msgid "Cute. You aren't exactly in a position to make demands. I've got the markers your want in my office. Now tell me."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Idle"
+msgid "Cypher Presets"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
+msgctxt "ui"
+msgid "Cypher3"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "D'awww! You're the one with the cute voice tho, eheh!"
+msgstr ""
+
+#. src: raw:BoxCollider
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "DB+A"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Damn, didn't think that she'd be a prude, hah!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Damn, that's rough. I hope things get better for you."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Damn, that's the one you groped in that hallway?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Deactivate"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Decline to help Femboy Clean"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "DenyBedSleep1"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Dialogue for with Party"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Dick move. She's always had a stick up her ass."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Did Lio contact you?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Did already take pic"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Did talk to Cal already?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Did things smooth over with your dad?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Did we decline before?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Did wear Any Datachip? 2"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Did you enjoy your first shift working for me, hmm?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Did you find a marker?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Didn't Klaudia say-</color>
+msgctxt "speaker:Zoey"
+msgid "Didn't Klaudia say-"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Didn't kill ya last time. Easy money, huh? Come ooonnn..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Didn't really get a good look at your ass earlier. Why don't you turn around for me real quick? Maybe I'll drop a tip too, ahaha."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Disable Self"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Discarded Page"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <b>Do it! Cum for me, GAG slut!</b>
+msgctxt "speaker:Enforcer"
+msgid "Do it! Cum for me, GAG slut!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Do lockpicking"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Do not-...!</color>
+msgctxt "speaker:Zoey"
+msgid "Do not-...!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Do we have or need the mission?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Do we need to get the code?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Do you now, heh. What do you need it for?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Do you really leave your trash laying around like this, Lio?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "DoComplete"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Does her tit feel good on your cock, K12?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Does she now, ehehe. What's your full name, citizen?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Doesn't sound like no one to me, little man."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Dogs don't ask questions..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Don't be boring, I've got your 40 right here. Come on, I'll be nice, promise. Just a little spread."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Don't just-... say it like that...!</color>
+msgctxt "speaker:Zoey"
+msgid "Don't just-... say it like that...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Don't upload that... Without sending me the link~"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Don't- khh... even think about it... hhh...</color>
+msgctxt "speaker:Zoey"
+msgid "Don't- khh... even think about it... hhh..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: Downstairs, in the basement. But everyone is saying they heard weird noises... <size=28>down there... </size>
+msgctxt "speaker:Brad"
+msgid "Downstairs, in the basement. But everyone is saying they heard weird noises... down there..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Dpad Up"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "DrunkenFemboy - 5 Klaudia 2"
+msgstr ""
+
+#. src: raw:SpriteRenderer
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "E?)\\O?"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "E`A"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Eheh, that's right. Show me your little pussy."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Eheh. Trying so hard to reject the lewdness that came over us all. And yet, here you are."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Ehehe. Why don't you ask Zoey to take the picture of our tits, Anne, hmm?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Enable"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Enable kibby"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Enforcer Uniform"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Enjoy it, sis, tehehe!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Entered Secret Backroom"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Especially down there, I-... hhh... I wanna...</color>
+msgctxt "speaker:Zoey"
+msgid "Especially down there, I-... hhh... I wanna..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Evening Event Finished"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Excellent behaviour, mhmm... I'll be sure to remember you for our next round of recommendations."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Exhibitionist"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>F-Fine... I-... I'll work off my-... debt...</color>
+msgctxt "ui"
+msgid "F-Fine... I-... I'll work off my-... debt..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>F-fuck...! fuck, fuck, fuck! Hahh! Ngh! Yesss...!</color>
+msgctxt "speaker:Zoey"
+msgid "F-fuck...! fuck, fuck, fuck! Hahh! Ngh! Yesss...!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: fsm-label
+#, skip
+msgctxt "ui"
+msgid "FSM Sex XP"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Fade out Screen"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "Fallback caught fadein"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Fashion, darling. I had my own designer line of all the need to have augmentations for andro and human alike."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Faster- hhh, right!</color>
+msgctxt "speaker:Zoey"
+msgid "Faster- hhh, right!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Felicia! No! Where'd she wander off to now?!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Felicia? Feliciaa?"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Female Electrician Helmet"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker-name"
+msgid "Femboy"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Femboy Uwawa"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Fff-! Fuck fuck fuck!! Hahh!! I'm- ngh- cumming...!</color>
+msgctxt "speaker:Zoey"
+msgid "Fff-! Fuck fuck fuck!! Hahh!! I'm- ngh- cumming...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Ffuuuuck...! Holy shit that's incredible, god!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Fghh-... it's not- khh... </color>
+msgctxt "speaker:Zoey"
+msgid "Fghh-... it's not- khh..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Fghh... so s-sensitive... hahh...</color>
+msgctxt "speaker:Zoey"
+msgid "Fghh... so s-sensitive... hahh..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Fh- fuck! I w-wanna cum! Cum, please, oh- g-god fhghh...!</color>
+msgctxt "speaker:Zoey"
+msgid "Fh- fuck! I w-wanna cum! Cum, please, oh- g-god fhghh...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Fhhh, yesss... You're amazing, hun... Stroke his nice cock with my tits!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Fhhh... Mhhh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Fhhuck that's what I wanted to hear! Faster, girl. Stroke my old fat cock harder. Make it-... spurt!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Fhuckhh... Fingers never- nghh... felt this good... mnhhh...</color>
+msgctxt "speaker:Zoey"
+msgid "Fhuckhh... Fingers never- nghh... felt this good... mnhhh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Filming who?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Finally some honesty, waitress girl. Whatever you did before you came here, you're not going back to it."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Fine, I'll... I'll do it. Just get started on the thingie."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Fine... But we need to be quick though, okay...?</color>
+msgctxt "speaker:Zoey"
+msgid "Fine... But we need to be quick though, okay...?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Fine... this is crazy... Are you sure this will work...?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Finger won't- nghh... fuck! Hhh... Cum, please- I have to- Hahh...</color>
+msgctxt "speaker:Zoey"
+msgid "Finger won't- nghh... fuck! Hhh... Cum, please- I have to- Hahh..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Fix the Helper Bots"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Flashing is the point!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "FluffyBunny247"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Force Move Down and Fade Out"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Found her in the gutter at my old office. She was just a helpless little thing... Laying there mewing... Then she looked up at me, and..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Fourty Fuckbucks, if you let her grope your tits."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Friend Located!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Fuck baby, just like that, mhh... You're making me so fucking hard."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Fuck yes, I am, ahaha!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Fuck, hhh, keep going...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Fuck, just like that!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Fuck, there's nothing hotter than having a sluts asshole right in front of my face, ahhh! You're such a hot bunnyslut, fuck!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Fucking anything, ngh! I- hahh! Fuck!</color>
+msgctxt "speaker:Zoey"
+msgid "Fucking anything, ngh! I- hahh! Fuck!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Fucking god, look at that ass!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Fuuckhhh... Yess... Mmmhhhh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Fuuuck, man... *hic* not enough. Those glory holes? Not even close... *hic* not enough."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "GALLERY"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "Ga@^"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Gah! What am I doing...?!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: no-word
+#, skip
+msgctxt "ui"
+msgid "Gc?(gj@"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Get remote Winter Setting"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Brad"
+msgid "Get to it, please. I can't watch my anime while the power is out."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Ghh! Wh-... B-</color>But...
+msgctxt "speaker:Zoey"
+msgid "Ghh! Wh-... B-But..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Gib photo task"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "GlB"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: save-key
+#, skip
+msgctxt "ui"
+msgid "GlowingHoleKeys/105 Peeking Counter"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: save-key
+#, skip
+msgctxt "ui"
+msgid "GlowingHoleKeys/Picture Key 6"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Go and do a patrol round with the K-9 unit, 25."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Go unpack the bathroom, bestie! I'll deal with this bed."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "God all that andro cum looks so hot on you, ehehe... I haven't had enough yet..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "God you turned me on so much. I can't fucking wait to get out of this suit and let K12 ravage me... Soon..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Godhh... Hahhh... Fghh...</color>
+msgctxt "speaker:Zoey"
+msgid "Godhh... Hahhh... Fghh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Good choice. Here. Stuff that device between your breasts and hold this note for me."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Good girl. Get dried and dressed. We'll talk later."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Good girl. I'll call her."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Good girl. Just like that. Doing what you're told will make your life a lot easier, eheh."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Good girl. Show me your tummy, close your eyes and hold still."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Good girl. That'll do. You make a good puppy girl, darling."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Good girls. That's hot."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Good pet. Let's start simple then. You did so well barking earlier, so try barking for me again now, darling."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Good pet. Whine like a dog for me."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Good pup. You're gorgeous, pet. All wet and covered in suds..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Good service, good pay."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Gooood girl~ Barking for mommy so well."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Got attached to your protector, hmm?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Got it?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Graciously making me strip...?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Brad"
+msgid "Great. Thank you."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Grope Dialogue 1"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
+msgctxt "ui"
+msgid "Gvo"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "H-Heh! R-Right...!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>H-Hhh... Y-Yes, ma'a-</color>
+msgctxt "speaker:Zoey"
+msgid "H-Hhh... Y-Yes, ma'a-"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "HEY!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Hahaha!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "Hair_Female_13"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "HanakoxLilly"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Has Sucky Wig?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Have we talked to lio?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Have you ever made money as easily as here, hmm? Just moving your hand back and forth isn't exactly hard work, is it?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "He said you could help get some uh... parts I need."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Hear that? What if we lean into that? You can be my little pretend sister! Two sisters doing stuff- that will definitely get us noticed!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Hear us and do what, hm?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Heavy sigh. You're really reluctant to talk."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Heh- hh, mnh, thank you, sir...</color>
+msgctxt "speaker:Zoey"
+msgid "Heh- hh, mnh, thank you, sir..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Heh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Heh... I can almost hear her purrs right now. Just how I remember..."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Heh... I'll... I'll clean 'em up."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Hehe. See you around, darling."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Hehe. Yeah, looks like it. Guess that's why she didn't come for her treats, huh baby? You mama's little outdoor kitty, hmm~?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Hehe... Here's your pay, dear. Come talk to me if you want some more fun. Oh, and Zoey?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Heheh... So yeah, I fed her. Pampered her. Gave her everything she wanted. But she was always such an adventurous little thing."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Hell hath no fury like Auntie Sarah."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Hell yeah! Let me post it!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Her's seem quite different..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Here you go, sir."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Here you go. Have fun."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Here's the cash."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Here's two hundred. Klaudia won't know and Nova is in on it."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Here's your money. Now stop making a scene. I'm just taking what I paid for, eheh."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Here. It's been so long and... this old gal can't remember her way around too well anymore."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Here. This old apartment building used to be where her and I lived."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Here. This old pole. She loved climbing it. Maybe she climbed it again. Do you think you can find it, darling?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Hey Max, what's up?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Hey Max."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Hey Zoey! Looks like you found the marker, huh? Hahaha!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Hey, darling. Back already? How's my secret admirer doing?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Hey, did you take the lever for the lightbridge?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Hh- Khh... Nhh...</color>
+msgctxt "speaker:Zoey"
+msgid "Hh- Khh... Nhh..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Hhh, hh!</color>
+msgctxt "speaker:Zoey"
+msgid "Hhh, hh!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Hhh-... Ashley, I can- feel your piercing rub against my- nh-..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Femboy"
+msgid "Hhh.. Hii.. Nghh.. Ffhha.."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Hhh... Hhhhh... I-... Fhhh...</color>
+msgctxt "speaker:Zoey"
+msgid "Hhh... Hhhhh... I-... Fhhh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Hhh... Khh..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Hhh... O-okay...</color>
+msgctxt "speaker:Zoey"
+msgid "Hhh... O-okay..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Hi Felicia!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Hi Sarah."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Hi dear~ Have you seen Felicia around back here? I've been looking all over for her. Did she manage to sneak back here?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "HiJenx - CAL & MALE NPC"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Hm. Okay, I guess. What's the challenge?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Hm. Your loss."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Hm... Well it was when we first moved in here. You know... after the Crisis. Even with the nice little nest egg I had... still struggled."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Hm? What is it, dear?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Hmm. No, no time for that, dear. You don't mind, right, Zoey?"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Hmmm~ your tits look great in tight leather."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Hmpf... I think that'd be cool..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Man"
+msgid "Hoes will be hoes, I guess. I can fill one up for you. 100 fuckbucks."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Hold still for just a moment, little thief."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Hooligan"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Hotter than the last waitress."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "How about this, hun... You volunteer to another search and I forget your suspicious behavior. After that, I'm sure we're done patroling this area for today as well."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "How are we looking, Zoey? Good enough to get some attention?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "How could I let Klaudia play me like that?"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "How far can she fall? That"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Huh? My fingerprints are also keyed to your lock, silly!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "I can arrange for that. Come join me in my office."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "I can see that but-"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "I don't think it is."
+msgstr ""
+
+#. src: dialog
+#. rich_text: I have a bunch, so you can have this one... <b>if</b>...
+msgctxt "speaker:Klaudia"
+msgid "I have a bunch, so you can have this one... if..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "I have no clue, but we made Zoey go through all this trouble, we can't back now, can we?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: I ju<color=#EB83FF>st...</color> I can't... take it anymore... This heat is... it's ju<color=#EB83FF>st too much...</color>
+msgctxt "ui"
+msgid "I just... I can't... take it anymore... This heat is... it's just too much..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "I just... It's hard. I don't know who I am without her."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "I knew we'd come to an understanding."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "I know we've been naked before, but that was a bit of a different situation, hm? Little more nerve wracking when it's... intimate."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "I know what we'll do! We'll write \"little one\" and \"big one\" on our boobs! Zoey will snap a pic! And we'll do it in some shady alley for the right mood!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "I need a bit of time to get the cash."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "I need to cum between your tits like a few days ago, Rosie."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I never offered it...!</color>
+msgctxt "speaker:Zoey"
+msgid "I never offered it...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "I only ever saw him interact with people above a million followers. God, I hope that these pics are good enough to convince him..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "I really hope so, darling..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I saw a bunny wear writing and I-... I wanted to try it...</color>
+msgctxt "speaker:Zoey"
+msgid "I saw a bunny wear writing and I-... I wanted to try it..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "I saw you converse with Nova. She can be quite convincing, don't you think? Even spottet you two disappear into the bathroom together."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "I think I saw a bunny in the Glowing Hole with body writing once..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "I think Zoey here doesn't mind helping us, lil sis."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "I think that's actually working."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I thought this was- a search...</color>
+msgctxt "speaker:Zoey"
+msgid "I thought this was- a search..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "I told you that I'd have the money by the end of the week."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "I told you to stop calling me that!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "I won't let you go until you've cum with that nasty Andro semen all over your body! Does it feel good, huh?!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "I wonder what it'd be like to-"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "I'll even get it out for you."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "I'll happily pay extra for the stuff off menu, looking at this ass, ahaha!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I'll just... take this off, mnh...</color>
+msgctxt "speaker:Zoey"
+msgid "I'll just... take this off, mnh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "I'm better than that! I'm not a pervert! Not a... skank- Argh!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "I'm busy, come back later!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I'm looking for, um-... a marker for like- skin...</color>
+msgctxt "speaker:Zoey"
+msgid "I'm looking for, um-... a marker for like- skin..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "I'm not a whore, you fucking asshole!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <size=25>I'm sorry, Zoey.</size>
+msgctxt "speaker:Leona"
+msgid "I'm sorry, Zoey."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "I'm sorry, Zoey... I'm sorry..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I'm- ngh! a Gag- nghh! slut, hahh!</color>
+msgctxt "speaker:Zoey"
+msgid "I'm- ngh! a Gag- nghh! slut, hahh!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "I'm... I'm really sorry, dear. You sure you're okay?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I, um-... this is- nice...</color>
+msgctxt "speaker:Zoey"
+msgid "I, um-... this is- nice..."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "I- I can't do this."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I- I do...</color>
+msgctxt "speaker:Zoey"
+msgid "I- I do..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I- am...?</color>
+msgctxt "speaker:Zoey"
+msgid "I- am...?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I- ghh-... I-</color>
+msgctxt "speaker:Zoey"
+msgid "I- ghh-... I-"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "I- god... Are you really gonna call me that...?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I- guess so...</color>
+msgctxt "speaker:Zoey"
+msgid "I- guess so..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I- um, it needs to rub more, right...?</color>
+msgctxt "speaker:Zoey"
+msgid "I- um, it needs to rub more, right...?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "I- um. D'aww thanks...! That's so nice of you."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I- um... Hhh... n-no.</color>
+msgctxt "ui"
+msgid "I- um... Hhh... n-no."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I-... </color>
+msgctxt "speaker:Zoey"
+msgid "I-..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "I-... I don't... sis..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I-... Khh...</color>
+msgctxt "speaker:Zoey"
+msgid "I-... Khh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "I-... No, Ma'am."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "I-... Yeah- She's my... pet."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>I-... khh...</color>
+msgctxt "speaker:Zoey"
+msgid "I-... khh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "I-I just... Scared."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "I-I'm okay!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "I-if Zoey is um- like- okay with it-... She could like... do a V sign with her like... fingers...?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "I... Thank you, Zoey."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "I... Yeah... Yeah there's a spot she used to like going... Some sketchy place. Here."
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "IZ?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>If it isn't my most annoying customer...</color>
+msgctxt "speaker:Zoey"
+msgid "If it isn't my most annoying customer..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "If it isn't the fat ass bunny bitch waitress."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>If you want... I could... Turn around too...</color>
+msgctxt "speaker:Zoey"
+msgid "If you want... I could... Turn around too..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "In recent past, some waitresses have more freedom than others. Nova is the one you want to talk to, if you want to do your job here... properly."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "In trash bags?"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "InA"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Inspect - Holo-Plant"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Intro Dialogue - Did Groping Scene Before"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Is Sarah here?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Is it supposed to smell like that?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Is that so? Heh... You'll get used to the tips fast. They all do."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Is that so? Hmm..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Is the door placeholder locked?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Is this good...?</color>
+msgctxt "speaker:Zoey"
+msgid "Is this good...?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Is this why I've been getting blackouts? And that one electrical bill?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "IsComplete"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Isn't that only for... Service bunnies...?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Isn't... Nova watching...?</color>
+msgctxt "speaker:Zoey"
+msgid "Isn't... Nova watching...?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "It doesn't matter anymore. What's done is done, dear."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>It feels... really goodh...</color>
+msgctxt "speaker:Zoey"
+msgid "It feels... really goodh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "It used to be nothing more than a charging plug. Thanks to new sensors however, I prefer the term \"emotional bonding device\"."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "It was always so soothing... Listening to her purr would remind me of those days... Before everything..."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "It was an accident! I just fell..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "It was when I moved into the place I'm at now, dear. About a year ago. There were a few... well- unsavory people around. I just..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "It's getting there. Had to do a little... detour, but things are on track."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <size=25>It's okay... Just... Let's get this over with... for Felicia.</size>
+msgctxt "ui"
+msgid "It's okay... Just... Let's get this over with... for Felicia."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "It's... It's alright, I guess, dear. You should have just kept your mouth shut. But... That's okay. I'm sure Felicia's home... Let's just... Go."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "It's... complicated, Sarah."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>It- um-... it's all messy, but- hh- you're really pretty...</color>
+msgctxt "speaker:Zoey"
+msgid "It- um-... it's all messy, but- hh- you're really pretty..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "Item_Cancel"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "JBp="
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Jam Moves Aside 2"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Job...?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
+msgctxt "ui"
+msgid "Joob"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Just focus on our voices~"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Just like Rosies..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Just like that. Much better."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Just make it quick.</color>
+msgctxt "speaker:Zoey"
+msgid "Just make it quick."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Just one thumb and you're already melting, hm? You're such a good puppy girl. That's right, darling. Let that warmth take over."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Just, um... out of curiosity... What do you mean by like... asking nicely...?</color>
+msgctxt "speaker:Zoey"
+msgid "Just, um... out of curiosity... What do you mean by like... asking nicely...?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Just... find me again. Gonna have to make my way up the Upper Red."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Just... go, Zoey. You've done enough."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Just... let me close my eyes... and listen to you purr one more time."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "JustNox - Environment Artist"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "K12 Unit"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "K12, release charging device."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
+msgctxt "ui"
+msgid "Kaalikeijo"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Keep looking up at me. New one is so hot, she's gonna make me-"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Keep stroking... That's good."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Keep that- hhh- to yourself- khh...</color>
+msgctxt "speaker:Zoey"
+msgid "Keep that- hhh- to yourself- khh..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "Keypad_SaveKey"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Kh- this stall is filthy...!</color>
+msgctxt "speaker:Zoey"
+msgid "Kh- this stall is filthy...!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Kh-... m-mhm...</color>
+msgctxt "speaker:Zoey"
+msgid "Kh-... m-mhm..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Kh... No, ma'am..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Femboy"
+msgid "Khh-.. Mnh.. M-mhmm.."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <size=30><color=#EB83FF>Khh-...! D-don't just... Say it like that...</color>
+msgctxt "speaker:Zoey"
+msgid "Khh-...! D-don't just... Say it like that..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Khh... hhh...</color>
+msgctxt "speaker:Zoey"
+msgid "Khh... hhh..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Khhh-...! Mnghh...!</color>
+msgctxt "speaker:Zoey"
+msgid "Khhh-...! Mnghh...!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Kitchen 2"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Klaudia Heels FSM"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Klaudia...? Isn't that the boss lady of the Glowing Hole?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>L-like this...?</color>
+msgctxt "speaker:Zoey"
+msgid "L-like this...?"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "LOVENSE: Invalid Parameter."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Lashing out"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Last night some of those traitorous terrorists were caught wearing AIRSHIP pins. Hah. Stupid idiots."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Last waitress licked it off, heheheh."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Later. Right now I want to find my Felicia."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>Leave the train early and arrive at your destination?</i>
+msgctxt "ui"
+msgid "Leave the train early and arrive at your destination?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Leona? Hi!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Leona? Uhm, okay, thanks! Guess I could maybe give her a visit if I've got time."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "Leona_1_Outside"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Let's go!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Let's test it."
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "LevelTransition: Level does not exist at build index '"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Like I know!? What's this thing doing, Z?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Line 6"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Lio? Is that your drone?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Listen to you... Feeling good?"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "Lo@"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "LoginName"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Look at me when you say it, darling."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Look at those likes! Damn they're pouring in like crazy!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Look at you falling apart already. So adorable, pet."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Look who it is..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Looks like your pussy is dripping wet too, ahaha! Fuck, I wanna lick your juices off your skin so fucking bad!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Lost Journal #3"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: no-word
+#, skip
+msgctxt "ui"
+msgid "Lq$"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>M- mnhmm...</color>
+msgctxt "speaker:Zoey"
+msgid "M- mnhmm..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>M-mhm...</color>
+msgctxt "speaker:Zoey"
+msgid "M-mhm..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "M-mhm... Thank you, Zoey!"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "M4A1"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker-name"
+msgid "Machine"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
+msgctxt "ui"
+msgid "Male_Enforcer #1100"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "Master/Sounds Ducker/Sounds/Sex Sounds"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>May I have the marker please-... ma'am...</color>
+msgctxt "speaker:Zoey"
+msgid "May I have the marker please-... ma'am..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Maybe it's time for you to... leave the nest, huh, baby? Time for you to go make new memories, my darling."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Maybe that blue haired chick here can help us!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Maybe you could start the letter with..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Maybe... I haven't been around the district in a while... Hmm... I've got an old picture of my first apartment here. Maybe she's there?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Maybe... Wouldn't hurt to check. Come on, darling."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Me?! I'm the pervert? You're the one offering to show your asshole to a customer for money, ahaha!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Memories"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Lio"
+msgid "Mfffh! Mmmf!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Mgh-! Mpghhh...!</color>
+msgctxt "speaker:Zoey"
+msgid "Mgh-! Mpghhh...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Mhhh, working up a sweat for your favorite customer, ahaha! Keep going, just like that."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <size=27>Mhhh... Keep your thighs pressed nice and tight...
+msgctxt "ui"
+msgid "Mhhh... Keep your thighs pressed nice and tight..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Mhhh... Yes... Look at your pretty hand on my old cock, mhhh... wonderful."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Mhm, mhm!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Mhm. Take your time, dear. Get comfortable. I've seen it all already."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Mhmm, yes we will! Take off your top so I can write on your pretty tits, sis!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Mhmm... Just like that..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
+msgctxt "ui"
+msgid "Michael"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "Missing FsmComponent!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Mmhh fuck yes I am, ahaha! God I wanna lick that little asshole of yours."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Mmhh, I can't get enough of watching your fat ass waddle around this place."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Mmhh, I love it when you say dirty words like that, bunny."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Mmhh, can you feel it get excited, little waitress?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Mmhh, fuck... That's right... Yesss... Don't stop. Making me lose my fucking temper, ghh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Mmhh... Last bunny didn't have such a nice tight slap, you're just perfect, bunnybitch."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Mmhh... Look around. Nobody is batting an eye. Just serving your customers like a good waitress should."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Mmhhh, yes..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Mmhhh... Money is such a wonderful motivator. Keep going, girl."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Mmhhh... That's good... Ahh-... You could. But why would you."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Mmhm~ Are you a good girl, sweetheart~?"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Mmm... Much better... Stroke it nice and tight..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Mmm... You know, I was thinking it'd be fun to do some training with you. Like what I've been doing with Lio lately."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Mmmh, that's good. Soft Rosie."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Mmmhh... Hehehe!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: Mmmhh... Nothing beats the real deal, don't you agree, <i>citizen</i>?
+msgctxt "speaker:Enforcer"
+msgid "Mmmhh... Nothing beats the real deal, don't you agree, citizen?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Mmmhhh... Godhhh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Mmmhhh... Say it one more time for me, slut."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Mmmhhhh... That's a good girl..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Mmnhh fuck yes just like that...! Want me to cum, hmm? Say it, girl!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Mnghhh... !</color>
+msgctxt "speaker:Zoey"
+msgid "Mnghhh... !"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Mnghhhh... </color>
+msgctxt "speaker:Zoey"
+msgid "Mnghhhh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Mnh- take the picture of our- tits, please...!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Mnhh... You're pretty too, hhh...</color>
+msgctxt "speaker:Zoey"
+msgid "Mnhh... You're pretty too, hhh..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Mnhhghhh... Hhh...</color>
+msgctxt "speaker:Zoey"
+msgid "Mnhhghhh... Hhh..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "More sex scene 2"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Move Zoey away from Leona"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Move up Animation"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "My cuties know better than that, hun..~"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "My favorite indeed, heh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "My, look at that... Didn't think you'd obey so easily."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "My, you again... Didn't expect to see you again so soon, citizen."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>My... Tongue...? Inside?</color>
+msgctxt "speaker:Zoey"
+msgid "My... Tongue...? Inside?"
+msgstr ""
+
+#. src: raw:BoxCollider
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "N)b@"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Brad"
+msgid "N-Not that I'm scared or anything! But... Think you can check it out? I'll give you 50, no. 100 fuckbucks!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "N-nevermind,  um... I- I changed my mind..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <size=30><color=#EB83FF>N-not so loud-... please... what if someone... hears us...?</color>
+msgctxt "speaker:Zoey"
+msgid "N-not so loud-... please... what if someone... hears us...?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "NITA - Assistant Artist"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: save-key
+#, skip
+msgctxt "ui"
+msgid "Nail Salon Keys/DidWatchAlleySex"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Neck Chip - Lio's Data Gamma"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Neon Lime."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Never seen you take a drag before."
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "NewMission: Tried to start a new mission with null!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Ngh! Fuck-! Hahh! Nghh!</color>
+msgctxt "speaker:Zoey"
+msgid "Ngh! Fuck-! Hahh! Nghh!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Nghh... it feels really different...</color>
+msgctxt "speaker:Zoey"
+msgid "Nghh... it feels really different..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Nightmare Tentacles"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "No matching gallery image available for the notification test."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "No need to be insecure about your... abilities, young lady."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "No, I-... It's fine."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "No? Ghosts aren't real."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Not everyone gets me twitching like this, I can promise you that, eheh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Not in the slightest! Agh. It's like a pigsty in here!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Not since the crisis."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Nova - 12 After Nova leaves"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Nova's Deal"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Nova, right...?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Nova."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Now then, girl... I'll need you to do a little more than that. Stroke my cock."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Now then, miss waitress... Based on that, I think it's time our companionship got a little more... involved."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Now then, waitress. Let me feel your hand on it, if you want your tip."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Now we wait! See what happens and go from there!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Now... Let me show you how to do this, ehehe..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "O-okay."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>O-okay...! So-...</color>
+msgctxt "speaker:Zoey"
+msgid "O-okay...! So-..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Mira"
+msgid "O-other... things...?"
+msgstr ""
+
+#. src: field:m_text
+msgctxt "ui"
+msgid "OTHER"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Of course you would...</color>
+msgctxt "speaker:Zoey"
+msgid "Of course you would..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Of course! That was the first thing I did. But ugh- She loves the little tuna flavored treats and usually she comes running, but she hasn't..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Of course. Happy to help."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Of course. I think I've got juuuust the thing. All it needs are a few modifications and it should be a perfect vaginal-chip-removing tool."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Of course. No one will see your hand on my bare cock, waitress. Come sit on my lap."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Of course..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Off you go."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Oh come on, I know what kind of doujins are in your phone, little sister... ehehe!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Oh fuck you actually took it, ahaha! Taking money like a good whore!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Oh god that's crazy...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Oh god, we're like-... actually going to do this...?!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Oh hey there..~ Wow you're hot, ehehe. Sorry, but I just roped in a client.~"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Oh my god you're such a fucking weirdo...</color>
+msgctxt "speaker:Zoey"
+msgid "Oh my god you're such a fucking weirdo..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Oh really? Hehe. Well, if you liked that, maybe we can do it again sometime. That sound fun?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Oh there you are, my darling. Oh sweetheart. Mama missed you so much. Are you hungry?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Oh there you are... Oh my sweetie I was worried sick about you!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Oh yeah that's good. Nice and wide, mmhhh. Your ass looks even hotter like this."
+msgstr ""
+
+#. src: dialog
+#. rich_text: Oh yeah? Taking my money and stretching your asshole in my face doesn't make you a <b>whore</b>?
+msgctxt "speaker:Trov"
+msgid "Oh yeah? Taking my money and stretching your asshole in my face doesn't make you a whore?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Max"
+msgid "Oh, it's fine. I just take 'em off when they get uncomfortable. Like yeah they're sexy, but being flat is way more cozy."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Oh, look at you, darling. You want some fun with this old bird, hm?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Oh, my little angel. You can leave, sweetie. Mama's always going to love you, and always be here when you want to visit."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Oh, right!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Oh, uh... Okay."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Oh, uhh, I think you saw me last time I was here...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Oh, uhm-... She mentioned something about you picking up a black cage?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Oh- My little man doesn't even eat his food before testing it. As if I'd ever poison him. Tsk."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Oh- Secret door. Of course."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Oh-! Okay!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Oh-? Um- thanks.</color>
+msgctxt "ui"
+msgid "Oh-? Um- thanks."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Oh... Okay."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Oh? Tell us!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Okay darling, we're going to help you get a little more comfortable around me. You're going to go use my shower."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Okay, darling."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Okay, dear..."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Okay, it was my boyfriend who told me."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "On Table Was Served"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "OnDecrement"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "OnLerped"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "OnTurnStarted"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "One of them had blue hair, just like you..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Only a little, huh? I meant the shower water. What did you mean?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Onward and upward. Talk to you later."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Sarah"
+msgid "Oop, my dad's callin' me, one second, Z."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Open up! Let it heal your itch from within, Skank!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Open your eyes."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Or... I could give the Cartel a call... Tell them I found you carrying this little device they're after. Your choice, merc."
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "Orgasms Denied"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Overwhelmed"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "PATHFINDING -"
+msgstr ""
+
+#. src: us
+#. skip: snake-case
+#, skip
+msgctxt "ui"
+msgid "PMA_ClearSpineCharacterAnimation: '"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <i>Password recovery request... Your one-time passcode is <color=yellow>5297</color>.</i>
+msgctxt "ui"
+msgid "Password recovery request... Your one-time passcode is 5297."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Decline"
+msgid "Pay Half"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Peek Choice"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Perfect. I'll handle the rest. Go give her the treat, heh."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Pick up anim"
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "PlaidPLAY Classic Top"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Play No cutscene"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leave"
+msgid "Play along"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Play calm"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Play first key dialogue 3"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Play not enough Money"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Play show photo dialogue"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "PlayDeparting"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "PlayerSkel"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Please cum on Rosies... nice big tits, mr Rungar...</color>
+msgctxt "speaker:Zoey"
+msgid "Please cum on Rosies... nice big tits, mr Rungar..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Machine"
+msgid "Please insert the semen-filled preservatives."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Please put your- um- cock between Rosies- boobs, s-sir...</color>
+msgctxt "speaker:Zoey"
+msgid "Please put your- um- cock between Rosies- boobs, s-sir..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Please what, pet?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Pleaseeee...! Help us take some spicier pics!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Pocket Pussy Delux Edition"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "PpB"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Pretty tits, waitress."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Pretty, hmm? You should get it tattoo'd, bunny, ehehe."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Prior exp-...?</color> No! This... This is not something I usually do!
+msgctxt "ui"
+msgid "Prior exp-...? No! This... This is not something I usually do!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: Profit was up today, <i>waitress</i>. You played your part in that.
+msgctxt "speaker:Klaudia"
+msgid "Profit was up today, waitress. You played your part in that."
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "Pulled Flaps"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "PwB"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "QRd"
+msgstr ""
+
+#. src: dialog
+#. rich_text: Quite bold of you to bring it back here after you worked so hard to take it from that suitcase, <i>merc</i>.
+msgctxt "speaker:Klaudia"
+msgid "Quite bold of you to bring it back here after you worked so hard to take it from that suitcase, merc."
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "R'p?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>R-right, um... thanks...</color>
+msgctxt "speaker:Zoey"
+msgid "R-right, um... thanks..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "R-right...! Yeah!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: no-word
+#, skip
+msgctxt "ui"
+msgid "RA`^"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Rat Out"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Really?! Oh my god, thank you so much! I was sure you'd tell the clerk..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Refuse to help"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Relaaax, ahaha! I'm not even touching your privates. You already took my money, so don't make this awkward, ya?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Remember when my friend thought we were sisters...?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Remove phone"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "Renderers covering it, front-most first:"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: snake-case
+#, skip
+msgctxt "ui"
+msgid "Res_Manafactory_machine 3"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Reset guards"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Restrain and set pos"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Right Bark 2"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Right... I'm glad you understand, hun."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Right... Sorry..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Right...! O-okay... Big- sis..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Rooftops"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Rosie - 3 - 1 Ask how she likes the place"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Rosie loves making me cum with her tits. She'd love to do it with you helping."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Rosie... protected me...?</color>
+msgctxt "speaker:Zoey"
+msgid "Rosie... protected me...?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Rungar asked, if-... like... he wants you to grope my chest...! </color>
+msgctxt "speaker:Zoey"
+msgid "Rungar asked, if-... like... he wants you to grope my chest...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Rungar doesn't cum quickly like other customers, darling. We'll need to give him the perfect titjob. Let's stroke it even faster!"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "SAH"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Sad. Trying to calm her down because she lost her cat."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Sarah!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Sassy and flamboyent"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Say. It."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Scapefiend"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "SecondDialogue"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "See those blue probes? They're for sensing arousal. That's where you come in."
+msgstr ""
+
+#. src: dialog
+#. rich_text: See you around, <i>bunny</i>.
+msgctxt "speaker:Klaudia"
+msgid "See you around, bunny."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "See you around, waitress."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "See...~ Besides, I think we have a bit of planning to do while Zoey is getting us a marker."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Seek her breast, K12."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "SendEvent"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:FINISHED"
+msgid "Set Save Key"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Set character sprite and populate"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Set open"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Set walk in save key"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Setup State so Far"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "SexXP_6"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "She did? Brave of you to wear it like this. I like brave, hehe."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "She gets customers off...? But-"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "She had a similar little vantage point back at my old office..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "She was just a bit unsure! What do you think? Maybe you could help us afterall?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "She'd come and go. Always getting into places she shouldn't. Climbing things she shouldn't. Biting things she shouldn't. Now this."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "She's amazing! Nghh...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "She's right though, Ashley... We shouldn't let him do that. What if he puts the pics up in Euphora?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "She's right, Anne! If we want to get noticed, we need to do something crazy!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Shh... It's bad enough you disrespected my establishment with your little antics. You're not going to disrespect me too."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Shh... Keep washing yourself, dear. You're doing so well for me."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Shhh... that's it. Let mama give you something to suckle on, pup."
+msgstr ""
+
+#. src: field:ItemName
+msgctxt "ui"
+msgid "Short leather skirt"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Should get her to wrap her tits around me cock again."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Shouldn't you be happy to see your guardians?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Show Hint Dialogue"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:FINISHED"
+msgid "Show inspection"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Show me, show me!"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "Show/Hide Debug Errors"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Shut up, 25. I'll handle this one."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Shut up..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Sis- nh-... I-... I have an, um- an idea..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Skin 6"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Slu- I- Khh...</color>
+msgctxt "speaker:Zoey"
+msgid "Slu- I- Khh..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>So fucking- hot inside- hahh! Nghh!!</color>
+msgctxt "speaker:Zoey"
+msgid "So fucking- hot inside- hahh! Nghh!!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "So it's a breaker issue? Sounds easy enough. Where is it?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "So quiet... anxious, hmm? Now, now, girl. It's not difficult to keep conversation flowing. Why don't you tell me how my old cock feels in your young hand."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "So soft, mmhhh."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>So warm and... mnhh... comfy...</color>
+msgctxt "speaker:Zoey"
+msgid "So warm and... mnhh... comfy..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>So warm... nhh...</color>
+msgctxt "speaker:Zoey"
+msgid "So warm... nhh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "So you managed to clean your room, huh?"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "So, what did you want to know about them?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>So- ngh- thick... Hahh...! Fghhh! So warm, nghh!</color>
+msgctxt "speaker:Zoey"
+msgid "So- ngh- thick... Hahh...! Fghhh! So warm, nghh!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>So... warmhh...</color>
+msgctxt "speaker:Zoey"
+msgid "So... warmhh..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Soft and squishy and-... Hhh...</color>
+msgctxt "speaker:Zoey"
+msgid "Soft and squishy and-... Hhh..."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Some err... private stuff.</color>
+msgctxt "speaker:Zoey"
+msgid "Some err... private stuff."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Something about obedient citizens like you... Drives me crazy, ehehe."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Something like that."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Sometimes I'd just sit with her... close my eyes and listen to her purr."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Sorry for the trouble, Lio. How's the cleaning going?"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "Sound Files"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Speed"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Splendid... You have no idea how much I've been yearning this moment."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Squish 3"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Start Dialogue put lever in 1"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Start fuckin"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Start washing yourself, sweetheart. That's it. Good pet."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "State 3"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Still putting up an act, huh?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Stop Phone animation 2"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Strip Zoey"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Stroke it. Give me a handjob, waitress. All the way."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Such a good girl~"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Such a tame girl, yet such a wild body."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 13_line_7-FSM"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 26"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "SuitcaseBadend - CartelHideout - 7_line_11-FSM"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Sure as fuck I will watch that little shithole of yours, mhhhh. Start thrusting your hips already."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Surely that guy will get us featured with that, ehehe!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Surprised? You really thought I wouldn't be able to piece it together, merc? You really need to learn how to cover your tracks."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Suspicious Concoction"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
+msgctxt "ui"
+msgid "T@mVS@"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "Take Memory Snapshot"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Take the 200 and help Rosie get me off."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Take the cash already."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Take the picture!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Talk to Calliach"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Tas-... Ty...?</color>
+msgctxt "speaker:Zoey"
+msgid "Tas-... Ty...?"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "Task Name"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Tell Max choice"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Tell her, Zoey."
+msgstr ""
+
+#. src: dialog
+#. rich_text: Tell me who is protecting, you... <b>Citizen</b>.
+msgctxt "speaker:Enforcer"
+msgid "Tell me who is protecting, you... Citizen."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Tell me, hun... Have you seen an android cock as mighty as this ones before?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Th- That-... setting!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Th-thanks, heh...</color>
+msgctxt "speaker:Zoey"
+msgid "Th-thanks, heh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Thank you Lio, you are the best!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Machine"
+msgid "Thank you for the deposit. Your compensation has been transferred."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Thanks again. For everything. I don't think Felicia and I would have had any closure without your help."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Brad"
+msgid "Thanks for the help, merc."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Thanks so much, Lio! I owe you!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Thanks, waitress. Say, have you made an arrangement with Nova yet?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Thanks- ma'am...</color>
+msgctxt "speaker:Zoey"
+msgid "Thanks- ma'am..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Thanks... So... Those ancient spirits are gone now right?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>That feels so- intense... fuck-... nghh...!</color>
+msgctxt "speaker:Zoey"
+msgid "That feels so- intense... fuck-... nghh...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "That hurt!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>That is not on the menu!</color>
+msgctxt "speaker:Zoey"
+msgid "That is not on the menu!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "That means 'good', I take it?"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "That so, eh? Mana, you gave this puta cold feet."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "That sort of content is illegal, Ashley!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "That's \"big sister\" to you now, eheh!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: That's "ma'am" to you, <b>bunny bitch</b>.
+msgctxt "speaker:Klaudia"
+msgid "That's \"ma'am\" to you, bunny bitch."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "That's a good girl~ Let me feel your tongue, sweetness."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "That's a good pet. Hm, I'll consider it, darling. Whenever you want to have some fun, come see me and we can figure something out."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "That's an amazing idea, sis! Could caption it with \"Family matters\"! What do you think Zoey? Would you be okay with showing your fingers in the shot?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "That's convenient!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "That's crazy, Ashley..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "That's enough...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "That's exactly why it will get us noticed! Plus, I mean, we're not actually related. So it's totally legal, right?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>That's not what I- Khh...!</color>
+msgctxt "speaker:Zoey"
+msgid "That's not what I- Khh...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "That's on a need to know basis."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>That's perfect!</color>
+msgctxt "speaker:Zoey"
+msgid "That's perfect!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "That's right, slut. I'll make you cum so my K12 unit can taste the excitement in your sweat, ehehe!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: That's right... Simple citizens like you... Blissfully unaware of the pain we go through to keep this district... <i>clean</i>.
+msgctxt "speaker:Enforcer"
+msgid "That's right... Simple citizens like you... Blissfully unaware of the pain we go through to keep this district... clean."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "That's right... You're doing so good, pet..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "That's right~ You're being so good for me, pet."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "That, my girl, is excitement manifested in flesh."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "The Glowing Hole"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "The blue haired beauty shows up asking around and all of a sudden there's a robbery... Tsk. I don't believe in coincidences."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "The new Waitress"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>The remote. Right.</color>
+msgctxt "speaker:Zoey"
+msgid "The remote. Right."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Then you better make it quick, hmm?~"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Then you'd never forget who owns your ass."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "There she is. Keep going, pet."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "There you go. Now mine!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "There, it's open!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "This ain't my first time finding a lost phone. The more I find, the easier it'll be to find yours."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "This is the spot! But- she's not here..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "This is what you're looking for. Black marker. They make them just for skin these days, heh. It will come off, but not easily."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "This one is very grateful for your selflessness. Thank you."
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "Time Scale"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Time to get my moneys worth, ehehe."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "ToAdd"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Toggle Tool"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Told my friends all about how I sniffed your nasty asshole before fucking the brains out of a bunny bitch!"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Top Hair"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "Transit_Leave"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
+msgctxt "ui"
+msgid "Trrgrhhpy"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Tsk tsk tsk... You're truly a special one."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Tsk. What do you Vultures want?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Tsk. Whatever, pet. Let's just find Felicia."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Turn off bystander 2"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "TurnOff"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "UA9"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "UJ?("
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Ugh fine... Move your ass up and down then, bitch. Give me a nice show!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Ugh! Dream on. Are we done here?!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Ugh, FUCK you're hot, ahaha! Go fetch me a drink now."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Ugh, fine. I'll just spread your pretty asshole then, bitch."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Ugh... But you're just not happy like this, are you? Even with how hard I try to pamper you..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Ugh... Felicia must've wandered home while those idiots were harassing us."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Uh huh. Zoey, dear. Get the lights please?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Uh... Yes?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Uhh..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Ultra lube"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Um- y-yeah...?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Undress Tops"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Ungh... Fuck. I'll pay you double if you- ghh- make me cum."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Unlikely under current circumstances. Constant relocation remains a necessity."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Unsung Volpine"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Unsure what to do"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Upstairs flavor no bunny 7"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Uwaa! Hey!"
+msgstr ""
+
+#. src: raw:RectTransform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "V$?9I"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Varen Koss"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "View item shop."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Vividly, darling. What about it?"
+msgstr ""
+
+#. src: raw:SpriteRenderer
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "Vv?M"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>W-watch your mouth...!</color>
+msgctxt "speaker:Zoey"
+msgid "W-watch your mouth...!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "W-what now?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: no-word
+#, skip
+msgctxt "ui"
+msgid "W8a"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Wait 1 Frame for Player to be positioned"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Wait for Dialogue to end"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Wait for Sarah to finish showering?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Wait for end"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Wait for pick or strip"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Wait for trigger enter"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "WaitForItems"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Waitressing - Upgrade - 6 High Roller Customer"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Walk to out pos"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Wasn't expecting to have all my assets seized and be forced to retire... I just wish I could've had a choice where I ended up."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Wayne"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "We both know what this is really about."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "We both know why you went to the bathroom with Nova. Khh... I'll pay you- mnh- well. Just- hhh- stroke my old fat cock and make me fucking cum, waitress!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Brad"
+msgid "We don't... Know, to be honest. Some guy fixed it last time, messing with the breaker box."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "We think it's time for a little~"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "We'll find out soon enough I hope, eheh. K12, prepare semination."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "We'll meet again, Zoey. See you around."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Wearing Andro semen like a good cum dump, ahaha! Take my baton like a good GAG slut!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Well if you insist to just leave it on, I love the messy look on you."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Well new or not, you look absolutely gorgeous!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Well, dear... Just at least let us take a look around. Maybe your little security systems aren't as secure as you think."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Well, you help nice old ladies like me find their cats. That's quite the service you provide, darling. Something to be celebrated."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Well- No promises. Love ya, Sarah."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Well- Whatever it is. Just take a look for me, would you, dear?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Well... Here's your pay... Thanks again, dear."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Well... I had a cat get into my place through the vents one time... Maybe she managed to get out that way?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Well... Needless to say I didn't take her to the pound. Guess I have a soft spot for helpless things. Like Lio... and you."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Well... Thank you for checking at least, dear."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Well... Yeah, actually. Lemme see..."
+msgstr ""
+
+#. src: field:DisplayName
+msgctxt "ui"
+msgid "Wet Pussy"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Wh- You can't be serious."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Wh- but-!</color>
+msgctxt "speaker:Zoey"
+msgid "Wh- but-!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Wh- wha...?</color>
+msgctxt "speaker:Zoey"
+msgid "Wh- wha...?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Brad"
+msgid "Wha- ?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: What about you, Zoey? Could you get one for me and my... <b>little sister</b>? Ehehe!~
+msgctxt "speaker:Woman"
+msgid "What about you, Zoey? Could you get one for me and my... little sister? Ehehe!~"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "What are you doing here? Is she okay?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "What do you mean?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "What do you think, Zoey? Could we pass as sisters?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "What is this whole setup back here, little man?"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "What kind of... service...?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "What'd I do to deserve you, Sarah?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "What's that? Do you want a disobedience remark on your next Quota Fulfillment Report?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "What's with that face, citizen? Pay some respect to your protectors!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "What's wrong, hun? Got something to hide, hmm?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: What- <b><size=55>You</b>?!</size>
+msgctxt "speaker:Klaudia"
+msgid "What- You?!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Man"
+msgid "What? No Moolah? I'm not a charity, brokie."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Which one? You've recommended a few."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Whoa- This does taste good!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Man"
+msgid "Whoop-de-doo, here is your goo. Nice and fresh."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Why chose the- mhhh... The hard life when you can-... Just come here and- fhhh... Be the center of attention."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Trov"
+msgid "Why don't you let me spread that tight little ass of yours, hmm? Nothing crazy, promise! I'll pay you 40 too!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Why don't you show me what you look like with those straps pulled down, hmm? You want to be on my good side, don't you?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "William"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Won't that make him- cum..?</color>
+msgctxt "speaker:Zoey"
+msgid "Won't that make him- cum..?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Wonderful! Now about my dear Felicia. Have you see her?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Working as intended then, heh."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Working in a sex club as a bunny..."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "WrongOne"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "XVc"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: reviewed
+#, skip
+msgctxt "ui"
+msgid "Xvz"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Y-yes. Okay...</color>
+msgctxt "speaker:Zoey"
+msgid "Y-yes. Okay..."
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "YBgf~"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Yeah that's a good idea... Would you please help this old bird, Zoey? I... I don't know what I'd do without her. I'll make it worth your while!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Yeah! What's your name?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Yeah, I guess that's me."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Max"
+msgid "Yeah, I mean- it was just a little black thing. Barely covered the knockers, you know how it is. He wanted the big tiddies too."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Yeah, I- I did get them in the end."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Yeah, but that's not something you can explain to a cat. She was antsy at first, but... I thought it was enough. That I was enough..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Yeah, here... she used to like going to this... sketchy place."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Yeah, we were moved down here when GAG was shifting people around after the Crisis... Guess that even included older ladies like me."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Yeah, yeah. I'll be right back."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Yeah, you got me real good. Now about my pay..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Man"
+msgid "Yeah. I'll use that picture you gave me last time. It's gotten plenty of use already hehehe"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Yeah. It was a good life. Little extravagant for some, maybe... But for me, dear. It was just right."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Yeah. That's what I thought."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Yeah... Good thing we had a frame laying around... and a photo printer."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Yeah... I've heard of it."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Yeah... Right."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Yeah? Watch your boney butt!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "Yeahhh... She's quite the character."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Yes and you will too, little sis. Do you have one or not?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Yes! This is the place! Atta girl! Heh- It's been a couple years since I've been down here. Let's leave some treats and wait for her."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Customer"
+msgid "Yes! Turn around for me, baby!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "Yes! Your hand is super cute like that..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Yes, yes. You can stay. And clean this mess up, dear. I want it spotless when I get back."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "Yess... fuck yes..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Yesss! Think of that mighty Andro cock you made spurt like a good citizen, Zoey! Feel that warm Andro cum on you while you grind my baton to orgasm!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Yesss... Hhh, that's good, little waitress. Stroke it with your nice petite fingers. Mmhhh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Yesss... I want you to mark this loyal citizen with your android cum, K12. Cum in her outfit, ehehe!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "You and I will have words later, little man..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "You better not. I'd hate to have to lock a hot citizen like you into that lab- I mean prison, ehehe."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "You bet~"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Rugnar"
+msgid "You both make me hard."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Salesman"
+msgid "You can see the GAG seal of approval right there on its thigh. My wares are always clean!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "You can't just leave me like that... It's dangerous out there... Those Vultures could've gotten you, honey..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "You close your eyes and let me write on your tummy."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "You forgot, dear? He's just in the back, past my bed. Let's go talk to him quick so we can find my sweet Felicia."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "You found the terrorists?! Get them boys!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Brad"
+msgid "You freaking did it. Legend! Here, take the fuckbucks."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>You just think so because you're a nasty pervert...!</color>
+msgctxt "speaker:Zoey"
+msgid "You just think so because you're a nasty pervert...!"
+msgstr ""
+
+#. src: dialog
+#. rich_text: You know what comes next, don't you. I can feel your heart racing, <i>waitress</i>.
+msgctxt "speaker:Varen"
+msgid "You know what comes next, don't you. I can feel your heart racing, waitress."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Woman"
+msgid "You mean like... actually flashing in public...?"
+msgstr ""
+
+#. src: us
+msgctxt "ui"
+msgid "You must be new around here~"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>You really-... think so?</color>
+msgctxt "speaker:Zoey"
+msgid "You really-... think so?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "You said you wanted to try it. Here's your chance, hun."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "You want the money, I know you do."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "You were about to get Brain Burn in that headset. But I was able to fix it and pull you out."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "You'll be a good girl and come back to rile up even more lost souls. Understood?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: You'll half the price, if I... <color=#EB83FF>let you</color>-...?
+msgctxt "speaker:Zoey"
+msgid "You'll half the price, if I... let you-...?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "You'll help me calibrate my K12 unit's sensors, ehehe."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "You're a GAG slut! Say it!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Zoey"
+msgid "You're a godsend, Sarah."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "You're disappointed.C"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "You're going to be all nice and clean for me just like a good pet."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>You're nasty... Kh...</color>
+msgctxt "speaker:Zoey"
+msgid "You're nasty... Kh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "You're questioning me?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>You're such a weird fucking pervert, ugh...</color>
+msgctxt "speaker:Zoey"
+msgid "You're such a weird fucking pervert, ugh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Man"
+msgid "You're the one asking me for cum. If you're not buying, scram!"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "You're waiting for her to give in."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>You're- ngh... such an asshole- khh...</color>
+msgctxt "speaker:Zoey"
+msgid "You're- ngh... such an asshole- khh..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "You've felt my cock already, so why not earn a nice double tip for the real deal, hmm?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Klaudia"
+msgid "Your body is the perfect bait to get them drunk and riled up, Zoey. It's your role in this forsaken world."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Your hand is so pretty on my old cock, ehehe."
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "Your job, hmm...?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Enforcer"
+msgid "Your pussy is oozing, Zoey... Does my baton feel that good, hmm?"
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Your tits are so... big...</color>
+msgctxt "speaker:Zoey"
+msgid "Your tits are so... big..."
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Varen"
+msgid "Your young hand feels so good, ngh... Stroke it."
+msgstr ""
+
+#. src: dialog
+#. rich_text: <color=#EB83FF>Z-zoey-... Nghh... Madison...</color>
+msgctxt "speaker:Zoey"
+msgid "Z-zoey-... Nghh... Madison..."
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "Z5A"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "Zd?"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "Zoey and Sarah photos"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Zoey! You gotta help me. Have you seen her?"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Zoey, no!"
+msgstr ""
+
+#. src: dialog
+msgctxt "speaker:Leona"
+msgid "Zoey... Let me handle them."
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: identifier
+#, skip
+msgctxt "ui"
+msgid "ZoneName"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+#. skip: no-word
+#, skip
+msgctxt "ui"
+msgid "[@&SO@"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: short-token
+#, skip
+msgctxt "ui"
+msgid "`ZA"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "dOXA 9\\"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "got it"
+msgstr ""
+
+#. src: raw:Transform
+#. skip: no-word
+#, skip
+msgctxt "ui"
+msgid "k A"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "m just"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "no one else can make me me (as in make me like myself)"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "play cutscene"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "right lock open event"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "sure did"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "turn on no smoking sign"
+msgstr ""
+
+#. src: raw:MonoBehaviour
+msgctxt "ui"
+msgid "we have not"
+msgstr ""

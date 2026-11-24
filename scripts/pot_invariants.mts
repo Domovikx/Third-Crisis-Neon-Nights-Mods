@@ -16,8 +16,8 @@
  *   (POT = перегенерация), 3 полнота, 4 «нет выдуманного», 7 rich-значения,
  *   9 сходимость счётчиков/триажа, 13 битые строки дампа, 14 src = источник.
  *
- * 12 (паритет TS↔Rust) — единственный инвариант, который НЕ реализован здесь:
- * он уже покрыт `scripts/text_parity.test.mts` (мини-дамп + реальный дамп).
+ * 12 (паритет реализаций) — проверяется против золотого POT, а не второго
+ * TS-генератора (он удалён 2026-11-24): `scripts/text_parity.test.mts`.
  * Для разового прогона `checkPot` принимает `parityPot` (путь к POT второй
  * реализации) и сравнивает файлы побайтово, кроме `POT-Creation-Date`.
  *
@@ -60,7 +60,7 @@ import {
   type PotCatalog,
   type PotStats,
   type SkipPolicy,
-} from "../.opencode/skills/extract-text/scripts/potgen.mts";
+} from "../.opencode/skills/extract-text/scripts/pot_rules.mts";
 import {
   newEntry,
   poEscape,

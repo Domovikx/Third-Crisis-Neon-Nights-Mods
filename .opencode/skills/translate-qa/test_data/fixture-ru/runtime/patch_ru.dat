@@ -1,0 +1,521 @@
+{"t":"! Was the mission ScriptableObject removed or the ID changed?","x":"! Был ли ScriptableObject миссии удалён или изменён ID?"}
+{"t":"' in animMap!","x":"' в animMap!"}
+{"t":"' is not a Sound Category on '","x":"\"' не является звуковой категорией на '\""}
+{"t":"(... I shouldn't watch...  )","x":"(... Мне не стоит подглядывать...)","r":"<i>(<color=#EB83FF>... I shouldn't watch...  </color>)</i>","rt":"<i>(<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">... Мне не стоит подглядывать...</font></color>)</i>"}
+{"t":"(Agh- It sprayed me in the face. Need to... use the blocker...)","x":"(Ах- Она брызнула мне в лицо. Нужно... использовать блокиратор...)","r":"<i>(Agh- It sprayed me in the fa<color=#EB83FF>ce. Need to... use the blocker...)</color></i>","rt":"<i>(Ах- Она брызнула мне в ли<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">цо. Нужно... использовать блокиратор...)</font></color></i>"}
+{"t":"(All the stuff up here is so rusty. Guess no one's been up here in a while. This rooftop's just a secluded little island.)","x":"(Всё здесь так проржавело. Похоже, тут давно никто не был. Эта крыша — просто уединённый островок.)","r":"<i>(All the stuff up here is so rusty. Guess no one's been up here in a while. This rooftop's just a secluded little island.)</i>"}
+{"t":"(Asshole... )","x":"(Мудак...)","r":"<i>(Asshole... )</i>"}
+{"t":"(Been feeling the itch more on this ride too, but agh- I can't waste the blocker on it with no charger in sight.)","x":"(Зуд ощущается сильнее и в этой поездке, но ах- я не могу тратить блокиратор, когда зарядки рядом нет.)","r":"<i>(Been feeling the <color=#EB83FF>itch</color> more on this ride too, but agh- I can't waste the blocker on it with no charger in sight.)</i>","rt":"<i>(<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Зуд</font></color> ощущается сильнее и в этой поездке, но ах- я не могу тратить блокиратор, когда зарядки рядом нет.)</i>"}
+{"t":"(Can a pelvis like that really have feelings...?)","x":"(Может ли такой таз на самом деле чувствовать...?)","r":"<color=#EB83FF><i>(Can a pelvis like that really have feelings...?)</i></color>"}
+{"t":"(Deeper... No, I'm not into this, I wouldn't... This is... I'm just helping her!  )","x":"(Глубже... Нет, мне это не нравится, я бы никогда такого не сделала... Это просто... Я же только помогаю ей!)","r":"<i>(<color=#EB83FF>Deeper... </color>No, I'm not into this, <color=#EB83FF>I wouldn't...</color> This is... I'm j<color=#EB83FF>ust hel</color>ping he<color=#EB83FF>r</color>!  )</i>","rt":"<i>(<color=#EB83FF>Глубже... </color>Нет, мне это не нравится, <color=#EB83FF>я бы никогда такого не сделала...</color> Это просто... Я же только помогаю ей!)</i>"}
+{"t":"(Does he really feel... that good...?)","x":"(Неужели ему правда... так хорошо...?)","r":"<i>(Does he really feel... <color=#EB83FF>that good</color>...?)</i>","rt":"<i>(Неужели ему правда... <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">так хорошо</font></color>...?)</i>"}
+{"t":"(Does she even-... Know my-... Name-... )","x":"(Она вообще-... Знает моё-... Имя-...)","r":"<color=#EB83FF><i>(Does she even-... Know my-... Name-... )</i></color>"}
+{"t":"(Finally he's done...)","x":"(Наконец-то он закончил...)","r":"<i>(Finally he's done...)</i>"}
+{"t":"(Ghh... What am I... Doing... )","x":"(Ффф... Что я... делаю...?)","r":"<color=#EB83FF><i>(Ghh... What am I... Doing... )</i></color>"}
+{"t":"(Guess I can give it a try. )","x":"(Наверное, я могу попробовать.)","r":"<i>(Guess I can give it a try. )</i>"}
+{"t":"(He wants it... I wanna see-.. more... )","x":"(Он хочет этого... Я хочу увидеть-.. ещё...)","r":"<i>(<color=#EB83FF>He wants it... I wanna see-.. more...</color> )</i>","rt":"<i>(<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Он хочет этого... Я хочу увидеть-.. ещё...</font></color>)</i>"}
+{"t":"(He wants more... so bad... )","x":"(Он хочет больше... так отчаянно...)","r":"<i>(He wants more... <color=#EB83FF>so bad</color>... )</i>","rt":"<i>(Он хочет больше... <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">так отчаянно</font></color>...)</i>"}
+{"t":"(He's-... Groping my ass again...? Khh... )","x":"(Он-... Снова лапает мою задницу...? Кх... )","r":"<color=#EB83FF><i>(He's-... Groping my ass again...? Khh... )</i></color>"}
+{"t":"(Hhh... )","x":"(Ххх...)","r":"<color=#EB83FF><i>(Hhh... )</i></color>","rt":"<i>(<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Ххх...</font></color>)</i>"}
+{"t":"(Hhhh... what have I gotten myself into...)","x":"(Уф-ф... во что же я ввязалась...)","r":"<i>(Hhhh... what have I gotten myself into...)</i>"}
+{"t":"(Huh? It's coming from her direction. That can't be right... Better return to her and see what's happening. )","x":"(Хм? Идёт с её стороны. Этого не может быть... Лучше вернуться к ней и посмотреть, что происходит. )","r":"<i>(Huh? It's coming from her direction. That can't be right... Better return to her and see what's happening. )</i>"}
+{"t":"(I don't want to think... )","x":"(Я не хочу думать...)","r":"<color=#EB83FF><i>(I don't <b>want</b> to think... )</i></color>","rt":"<color=#EB83FF><i>(Я не <b>хочу</b> думать...)</i></color>"}
+{"t":"(I need to be more careful.. This place is.. Affecting me.. )","x":"(Нужно быть осторожнее.. Это место.. Влияет на меня..)","r":"<i>(I need to be more careful.. This place is.. <color=#EB83FF>Affecting me</color>.. )</i>","rt":"<i>(Нужно быть осторожнее.. Это место.. <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Влияет на меня</font></color>..)</i>"}
+{"t":"(I shouldn't draw any attention to myself with the blocker on me, right...? Just... Just ignore it... )","x":"(Мне не стоит привлекать внимание с блокиратором на мне, да...? Просто... Просто игнорировать...)","r":"<i>(I shouldn't draw any attention to myself with the blocker on me, right...? Just... Just <color=#EB83FF>ignore it...</color> )</i>","rt":"<i>(Мне не стоит привлекать внимание с блокиратором на мне, да...? Просто... Просто <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\\>игнорировать...</font></color>)</i>"}
+{"t":"(I shouldn't.. Have done.. That... )","x":"(Мне не стоило.. Этого.. Делать...)","r":"<i>(I shouldn't.. Have done.. <color=#EB83FF>That</color>... )</i>","rt":"<i>(Мне не стоило.. <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Этого</font></color>.. Делать...)</i>"}
+{"t":"(I sure wouldn't be able to live with myself in a ditch somewhere... I need that money bad.)","x":"(Точно не смогу жить с собой в какой-нибудь канаве... Мне отчаянно нужны эти деньги.)","r":"<i>(I sure wouldn't be able to live with myself in a ditch somewhere... I need that money bad.)</i>"}
+{"t":"(I'm really going to help record porn for the Cartel...?)","x":"(Я правда собираюсь помогать Картелю с записью порно...?)","r":"<i>(I'm really going to help record porn for the Cartel...?)</i>","rt":"<i>(Я правда собираюсь помогать Картелю с записью порно...?)</i>"}
+{"t":"(I-.. I shouldn't take pictures of them being-.. Intimate.. )","x":"(Я-.. Не стоит снимать их, когда они-.. Близки.. )","r":"<i>(I-.. I shouldn't take pictures of them being-.. <color=#EB83FF>Intimate</color>.. )</i>","rt":"<i>(Я-.. Не стоит снимать их, когда они-.. <color=#EB83FF>Близки</color>.. )</i>"}
+{"t":"(I-... I shouldn't let him talk to me like that... No matter the pay... Right...?)","x":"(Я-... Я не должна позволять ему так со мной разговаривать... Неважно, сколько платят... Ведь так...?)","r":"<i>(I-... I shouldn't let him talk to me like that... No matter the pay... <color=#EB83FF>Right</color>...?)</i>","rt":"<i>(Я-... Я не должна позволять ему так со мной разговаривать... Неважно, сколько платят... <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Ведь так</font></color>...?)</i>"}
+{"t":"(I-if that makes it go.. Faster.. S-sure.. )","x":"(Е-если так будет.. Быстрее.. Д-давай..)","r":"<i>(I-if that makes it go.. <color=#EB83FF>Faster..</color> S-sure.. )</i>","rt":"<i>(Е-если так будет.. <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Быстрее..</font></color> Д-давай..)</i>"}
+{"t":"(I... really shouldn't watch them... right?)","x":"(Мне... не стоит за ними подглядывать... ведь так?)","r":"<i>(I... really shouldn't watch them... right?)</i>"}
+{"t":"(If Sarah is enjoying it- I mean... It's no big deal... Right?)","x":"(Если Саре нравится— в смысле... Ничего страшного... Ведь так?)","r":"<i>(If Sarah is enjoying it- I mean... It's <color=#EB83FF>no big deal</color>... Right?)</i>","rt":"<i>(Если Саре нравится— в смысле... <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">ничего страшного</font></color>... Ведь так?)</i>"}
+{"t":"(It got... Even faster...?)","x":"(Оно... Ещё быстрее...?)","r":"<i>(It got... Even faster...?)</i>"}
+{"t":"(It shouldn't have been.. This hot... )","x":"(Это не должно было быть.. Таким горячим...)","r":"<i>(It shouldn't have been.. <color=#EB83FF>This hot</color>... )</i>","rt":"<i>(Это не должно было быть.. <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Таким горячим</font></color>...)</i>"}
+{"t":"(It's teasing my-... Ghhh... So wet... Fghhh... )","x":"(Оно дразнит мою-... Уух... Такая влажная... Ф-ф-ф... )","r":"<color=#EB83FF><i>(It's teasing my-... Ghhh... So wet... Fghhh... )</i></color>"}
+{"t":"(Just letting him... Scratch the... itch... Mhm... )","x":"(Просто позволяю ему... Унять... зуд... Мхм...)","r":"<color=#EB83FF><i>(Just letting him... Scratch the... <i>itch</i>... Mhm... )</i></color>","rt":"<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\"><i>(Просто позволяю ему... Унять... <i>зуд</i>... Мхм...)</i></font></color>"}
+{"t":"(Just... Making sure.. )","x":"(Просто... Проверяю.. )","r":"<i>(Just... Making sure.. )</i>"}
+{"t":"(Khh-.. I-.. Mnhh.. Hhh.. )","x":"(Кх-.. Я-.. М-м.. Хх..)","r":"<i>(<color=#EB83FF>Khh-.. I-.. Mnhh.. Hhh..</color> )</i>","rt":"<i>(<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Кх-.. Я-.. М-м.. Хх..</font></color>)</i>"}
+{"t":"(Khhh... I'll just.. Quickly... )","x":"(Кхх... Я просто.. Быстро...)","r":"<i>(<color=#EB83FF>Khhh... I'll just.. Quickly...</color> )</i>","rt":"<i>(<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Кхх... Я просто.. Быстро...</font></color>)</i>"}
+{"t":"(Last time was fine... right...?)","x":"(В прошлый раз всё было норм... да..?)","r":"<color=#EB83FF><i>(Last time was fine... right...?)</i></color>","rt":"<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\"><i>(В прошлый раз всё было нормально... ведь так...?)</i></font></color>"}
+{"t":"(Last time was just sweat... It- it had to be... right? )","x":"(В прошлый раз это был просто пот... Д-должно быть так... правда?)","r":"<color=#EB83FF><i>(Last time was just sweat... It- it had to be... right? )</i></color>"}
+{"t":"(Maybe I should like... find somewhere private or... one of those orgy carriages.)","x":"(Может, мне стоит... найти укромное место или... один из тех оргийных вагонов.)","r":"<i>(Maybe I should like... find somewhere private or... <color=#EB83FF>one of those orgy carriages</color>.)</i>","rt":"<i>(Может, мне стоит... найти укромное место или... <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">один из тех оргийных вагонов</font></color>.)</i>"}
+{"t":"(Maybe some kind of port for a vr thing...?)","x":"(Может, какой-то порт для VR-штуки...?)","r":"<i>(Maybe some kind of port for a vr thing...?)</i>"}
+{"t":"(Mnhh-.. I- it feels like.. warm gel.. )","x":"(М-м-.. О- ощущается как.. тёплый гель..)","r":"<i>(Mnhh-.. I- it feels like.. <color=#EB83FF>warm gel</color>.. )</i>","rt":"<i>(М-м-.. О- ощущается как.. <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">тёплый гель</font></color>..)</i>"}
+{"t":"(Need to... use the Blocker... Please work...)","x":"(Нужно... использовать Блокатор... Пожалуйста, сработай...)","r":"<color=#EB83FF><i>(Need to... use the Blocker... Please work...)</i></color>"}
+{"t":"(No-... I-... This is so-... wrong.. Why am I not-...)","x":"(Нет-... Я-... Это так-... неправильно.. Почему я не-...)","r":"<color=#EB83FF><i>(No-... I-... This is so-... <b>wrong</b>.. Why am I not-...)</i></color>","rt":"<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\"><i>(Нет-... Я-... Это так-... <b>неправильно</b>.. Почему я не-...)</i></font></color>"}
+{"t":"(Not only did I get him into trouble, but now I even missed my chance to sneak past Klaudia upstairs. )","x":"(Я не только втянула его в неприятности, но ещё и упустила шанс прошмыгнуть мимо Клавдии наверху. )","r":"<i>(Not only did I get him into trouble, but now I even missed my chance to sneak past Klaudia upstairs. )</i>"}
+{"t":"(Oooh~ A-Am I really doing this? Touching myself and thinking about how Sarah's in there... touching herself too...)","x":"(Ооо~ Я-Я правда это делаю? Ласкаю себя и думаю о том, как Сара там... тоже ласкает себя...)","r":"<i>(Oooh~ A-Am I really doing this? Touching myself and thinking about how Sarah's in there... touching herself too...)</i>"}
+{"t":"(Piston..? Ghh.. It's so.. Soft and.. Warm.. )","x":"(Поршень..? Кх.. Он такой.. Мягкий и.. Тёплый..)","r":"<i>(<color=#EB83FF>Piston..? Ghh..</color> It's so.. <color=#EB83FF>Soft and.. Warm..</color> )</i>","rt":"<i>(<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Поршень..? Кх..</font></color> Он такой.. <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Мягкий и.. Тёплый..</font></color>)</i>"}
+{"t":"(Right... I guess I should just put these in here?)","x":"(Ну... полагаю, мне просто нужно положить их сюда?)","r":"<i>(Right... I guess I should just put these in here?)</i>"}
+{"t":"(She's gone... )","x":"(Она ушла...)","r":"<i>(She's gone... )</i>"}
+{"t":"(Showing my tits to a man over twice my age...? Khh... How did I end up like this...?)","x":"(Показывать грудь мужчине вдвое старше меня...? Кх... Как я вообще тут оказалась...?)","r":"<color=#EB83FF><i>(Showing my tits to a man over twice my age...? Khh... How did I end up like this...?)</i></color>"}
+{"t":"(Spit in the customers drink...? I-... I don't know... )","x":"(Плюнуть в напиток клиента...? Я-... Я не знаю... )","r":"<color=#EB83FF><i>(Spit in the customers drink...? I-... I don't know... )</i></color>"}
+{"t":"(That doesn't feel accidental... I should say something... right?)","x":"(Это не похоже на случайность... Я должна что-то сказать... ведь так?)","r":"<i>(That doesn't feel accidental... I should say something... <color=#EB83FF>right</color>?)</i>","rt":"<i>(Это не похоже на случайность... Я должна что-то сказать... <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">ведь так</font></color>?)</i>"}
+{"t":"(That's a big freaking hammer. )","x":"(Это чертовски большой молоток.)","r":"<i>(That's a big freaking hammer. )</i>"}
+{"t":"(The smell of the fog... It's still-... Khh-... I can't-... Nhh...)","x":"(Запах тумана... Он всё ещё-... Кх-... Я не могу-... Н-н...)","r":"<color=#EB83FF><i>(The smell of the fog... It's still-... Khh-... I can't-... Nhh...)</i></color>"}
+{"t":"(The vibrator.. ! )","x":"(Вибратор.. !)","r":"<i>(<color=#EB83FF>The vibrator.. !</color> )</i>","rt":"<i>(<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Вибратор.. !</font></color>)</i>"}
+{"t":"(The vibrator.. He can.. Feel that.. when he goes in?)","x":"(Вибратор.. Он может.. Чувствовать это.. когда входит?)","r":"<i>(The vibrator.. He can.. <color=#EB83FF>Feel</color> that.. when he goes in?)</i>","rt":"<i>(Вибратор.. Он может.. <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Чувствовать</font></color> это.. когда входит?)</i>"}
+{"t":"(They're all staring at me- at my-)","x":"(Они все пялятся на меня- на моё-)","r":"<color=#EB83FF><i>(They're all staring at me- at my-)</i></color>"}
+{"t":"(This taste... It couldn't be... cum... right?)","x":"(Этот вкус... Не может быть... сперма... да?!)","r":"<i>(This <color=#EB83FF>taste</color>... It couldn't be... cum... right?)</i>","rt":"<i>(Этот <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">вкус</font></color>... Не может быть... сперма... правда?)</i>"}
+{"t":"(Those guards are looking for anyone without a ticket. I better get moving.)","x":"(Эти охранники ищут безбилетников. Лучше поторопиться.)","r":"<i>(Those guards are looking for anyone without a ticket. I better get moving.)</i>"}
+{"t":"(Ugh... much better...)","x":"(Уф... гораздо лучше...)","r":"<i><color=#EB83FF>(Ugh... mu</color>ch better...)</i>","rt":"<i><color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">(Уф... гора</font></color>здо лучше...)</i>"}
+{"t":"(W-wait... He's asking how much to tip me for that...? I-... I don't know...!)","x":"(П-подожди... Он спрашивает, сколько дать за это чаевых...? Я-... Я не знаю...!)","r":"<color=#EB83FF><i>(W-wait... He's asking how much to tip me for that...? I-... I don't know...!)</i></color>"}
+{"t":"(What a subtle name for the place... )","x":"(Какое тонкое название для этого места...)","r":"<i>(What a subtle name for the place... )</i>"}
+{"t":"(Where the hell is she?)","x":"(Где её черти носят?)","r":"<i>(Where the hell is she?)</i>"}
+{"t":"(Yes...  )","x":"(Да... )","r":"<color=#EB83FF><i><size=25>(Yes...  )</size></i></color>","rt":"<color=#EB83FF><i><size=25>(Да...  )</size></i></color>"}
+{"t":"- LoveSense Omnibuzz","x":"- LoveSense Omnibuzz"}
+{"t":". State:","x":"Состояние"}
+{"t":"...","x":"...","r":"<color=#EB83FF>... </color>"}
+{"t":"0.3 - Residential - Cartel Event - 5 - Walk back","x":"0.3 - Жилой район - Событие картеля - 5 - Возвращение назад"}
+{"t":"0.4 - GlowingHoleBartending - Nova - 2 - 3 - Agree","x":"0.4 - GlowingHoleBartending - Нова - 2 - 3 - Да"}
+{"t":"0.4 - GlowingHoleBartending - Nova - 2 - 5","x":"0.4 - GlowingHoleBartending - Нова - 2 - 5"}
+{"t":"0.4 - GlowingHoleBartending - Nova - 2 - 6","x":"0.4 - GlowingHoleBartending - Нова - 2 - 6"}
+{"t":"0.4 - PocketPussyVendor - 1","x":"0.4 - PocketPussyVendor - 1"}
+{"t":"0.4 - PocketPussyVendor - 2","x":"0.4 - PocketPussyVendor - 2"}
+{"t":"1500sumire - @1500sumire","x":"1500sumire - @1500sumire"}
+{"t":"3=D d3654b79-4b80-4b6e-87fe-d498dc61f0c7","x":"3=D d3654b79-4b80-4b6e-87fe-d498dc61f0c7"}
+{"t":"> Cum inside-...! Cum inside andro-... andro pussy...!","x":"> Кончи внутрь-...! Кончи в андро-... в андро-киску...!","r":"<i>> Cum inside-...! Cum inside andro-... andro pussy...!"}
+{"t":"> I-... d-don't worry, it's-... It's just... new to me, I think... >","x":"> Я-... н-не волнуйся, это-... Просто... ново для меня, наверное... >","r":"<i>> I-... d-don't worry, it's-... It's just... new to me, I think... >"}
+{"t":"> So demanding all of a sudden.","x":"> Какой вдруг требовательный.","r":"<i>> So demanding all of a sudden."}
+{"t":"A Bad Good Time","x":"Плохое хорошее время"}
+{"t":"A-Arff... Rrrarf~!","x":"А-а-арф... Рррарф~!","r":"<color=#EB83FF>A-Arff... Rrrarf~!</color>"}
+{"t":"AMD Custom APU 0405","x":"AMD Custom APU 0405"}
+{"t":"Accepted Dialogue","x":"Диалог согласия"}
+{"t":"Activate challenge","x":"Активировать вызов"}
+{"t":"Add int and check","x":"Добавить INT и проверить"}
+{"t":"Affection","x":"Симпатия"}
+{"t":"Ah fuck! Yes! Naughty bunny boy! Next round!","x":"Ах, чёрт! Да! Порочный кролик-мальчик! Следующий раунд!","r":"<size=30>Ah <size=37>fuck!</size> Yes! Naughty bunny boy!<size=37> Next round!","rt":"<size=30>Ах, чёрт!</size> <size=37>Да! Порочный кролик-мальчик!</size> Следующий раунд!"}
+{"t":"Ah- I uh... I can't right now, Leona. I'll let you know when I can help.","x":"Ах-... Э-э... Я не могу сейчас, Леона. Я сообщу тебе, когда смогу помочь."}
+{"t":"Ah-... S-sorry... Just, um... All the walking around...","x":"А-... П-прости... Просто, эм... Вся эта ходьба...","r":"<color=#EB83FF>Ah-... S-sorry... Just, um... All the walking around...</color>"}
+{"t":"Ahh-! Oh... It does!","x":"Ах-! О... И правда!","r":"Ahh-! Oh... <color=#EB83FF>It does</color>!","rt":"Ах-! О... <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">И правда</font></color>!"}
+{"t":"Ahh..! Fuck..!!","x":"Ах..! Бля..!!"}
+{"t":"Akeno Himejima21","x":"Akeno Himejima21"}
+{"t":"Alive","x":"Жива"}
+{"t":"Alright, then. Let me know how it goes, I'd love to come over when you're settled in!","x":"Ну ладно. Дай знать, как всё пойдет — я бы с удовольствием приехала, когда ты уже устроишься!"}
+{"t":"Amount of times Zoey has orgasmed.","x":"Сколько раз Зои кончала."}
+{"t":"And next time you'll help me think of something fun we can do together.","x":"А в следующий раз подкинешь идею, чем нам заняться вместе."}
+{"t":"Andro Idle Down","x":"Режим ожидания"}
+{"t":"Any idea where he is?","x":"Есть идеи, где он?"}
+{"t":"Apex Wet Long","x":"Вершина мокрая долго"}
+{"t":"Are we on the Bunnysuit Mission?","x":"Мы на миссии с кроличьими костюмами?"}
+{"t":"Ask about Lio's place.","x":"Спроси о месте Лио."}
+{"t":"Ask to Go Upstairs","x":"Попроси подняться наверх"}
+{"t":"Autumn Ivy - NOVA","x":"Autumn Ivy — NOVA"}
+{"t":"Ay, waitress! I want 'nather drinkh!","x":"Эй, фициантка! Налей ‘щё одну!"}
+{"t":"Back","x":"Назад"}
+{"t":"Bare your Soul","x":"Раскрой свою душу"}
+{"t":"Base Salary","x":"Базовая зарплата"}
+{"t":"Become","x":"Стань"}
+{"t":"Bhair2_base2)\\","x":"Bhair2_base2)\\\\"}
+{"t":"Blinded by hopes, wishing to the sky","x":"Ослеплён надеждами, загадывая в небо"}
+{"t":"Breeding Like A Rabbit","x":"Плодиться как кролики"}
+{"t":"Bunny Rank F","x":"Зайка (Ранг Ж)"}
+{"t":"But- l-like what...?","x":"Но... как бы это сказать...?"}
+{"t":"CG dialogue 2","x":"CG dialogue 2"}
+{"t":"Call her whatever you want. Just get her out.","x":"Называй её как хочешь. Просто выведи её отсюда."}
+{"t":"CallTimelineTrigger '","x":"CallTimelineTrigger '"}
+{"t":"Can you take a look at this headset for me?","x":"Можешь взглянуть на этот шлем?"}
+{"t":"Carcen Joined Resistance","x":"Карсен присоединился к Сопротивлению"}
+{"t":"Changed your mind about coming upstairs with me?","x":"Передумала насчёт подняться ко мне наверх?"}
+{"t":"Check for Cypher mission","x":"Проверь миссию Cypher?"}
+{"t":"Choice Selected","x":"Выбор сделан"}
+{"t":"Clear Cleanup Animation 2","x":"Анимация очистки 2"}
+{"t":"ClearSpineCharacterAnimation has no SkeletonAnimation on FSM:","x":"ClearSpineCharacterAnimation не имеет SkeletonAnimation в FSM:"}
+{"t":"Come with me, then. You can stay over at my place until you sort this out.","x":"Тогда пойдём со мной. Ты можешь остаться у меня, пока не разберёшься с этим."}
+{"t":"Construction Worker","x":"Строитель"}
+{"t":"Corrupt Technologies Advertisement","x":"Реклама Corrupt Technologies"}
+{"t":"Cum Squirt","x":"Брызги спермы"}
+{"t":"Cute. You aren't exactly in a position to make demands. I've got the markers your want in my office. Now tell me.","x":"Мило. Ты не в том положении, чтобы выдвигать требования. У меня в кабинете есть маркеры, которые тебе нужны. Ну-ка, говори.","r":"Cute. You aren't exactly in a position to make <b>demands</b>. I've got the markers your want in my office. Now tell me.","rt":"Мило. Ты не в том положении, чтобы выдвигать <b>требования</b>. У меня в кабинете есть маркеры, которые тебе нужны. Ну-ка, говори."}
+{"t":"Cypher3","x":"Cypher3"}
+{"t":"Damn, that's rough. I hope things get better for you.","x":"Чёрт, это жёстко. Надеюсь, у тебя всё наладится."}
+{"t":"Deactivate","x":"Деактивировать"}
+{"t":"Decline to help Femboy Clean","x":"Отказаться помогать фембою с уборкой"}
+{"t":"Dialogue for with Party","x":"Диалог с партнёром"}
+{"t":"Diana Lockhart - MYNX","x":"Diana Lockhart — MYNX"}
+{"t":"Dick move. She's always had a stick up her ass.","x":"Вот же сука. У неё вечно палка в заднице."}
+{"t":"Did already take pic","x":"Уже сфотографировала"}
+{"t":"Did talk to Cal already?","x":"Уже говорил с Калом?"}
+{"t":"Did we decline before?","x":"Мы уже отказывались раньше?"}
+{"t":"Did wear Any Datachip? 2","x":"Носил ли какую-либо Датачип? 2"}
+{"t":"Didn't really get a good look at your ass earlier. Why don't you turn around for me real quick? Maybe I'll drop a tip too, ahaha.","x":"Никак не получилось хорошо посмотреть на твою попку раньше. Почему бы тебе не обернуться ко мне прямо сейчас? Может, я ещё брошу пару советов, ахаха."}
+{"t":"Disable Self","x":"Выключить себя"}
+{"t":"Discarded Page","x":"Отброшенная страница"}
+{"t":"Do lockpicking","x":"Взломать замок"}
+{"t":"Do we have or need the mission?","x":"У нас есть миссия или она нам нужна?"}
+{"t":"Do we need to get the code?","x":"Нужно ли нам получить код?"}
+{"t":"Don't upload that... Without sending me the link~","x":"Не выкладывай это... Не отправив мне ссылку~"}
+{"t":"Dpad Up","x":"Вверх"}
+{"t":"DrunkenFemboy - 5 Klaudia 2","x":"ПьяныйФембой - 5 Клавдия 2"}
+{"t":"Eheh, that's right. Show me your little pussy.","x":"Хе-хе, так и есть. Покажи мне свою маленькую киску."}
+{"t":"Enable","x":"Включить"}
+{"t":"Enable kibby","x":"Включи Кибби"}
+{"t":"Enforcer Uniform","x":"Форма одежды силовика"}
+{"t":"Entered Secret Backroom","x":"Вошёл в секретную подсобку"}
+{"t":"Evening Event Finished","x":"Вечернее событие завершено"}
+{"t":"Exhibitionist","x":"Эксгибиционистка"}
+{"t":"F-Faster? It goes- faster? Hhhh~","x":"Б-Быстрее? Оно— быстрее? Х-х-х~","r":"F-Faster? It goes- <color=#EB83FF>faster</color>? Hhhh~","rt":"Б-Быстрее? Оно— <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">быстрее</font></color>? Х-х-х~"}
+{"t":"F-Fine... I-... I'll work off my-... debt...","x":"Х-Хорошо... Я-... Я отработаю свой-... долг...","r":"<color=#EB83FF>F-Fine... I-... I'll work off my-... debt...</color>"}
+{"t":"Fade out Screen","x":"Экран постепенно темнеет"}
+{"t":"Fallback caught fadein","x":"Обнаружено резервное срабатывание fadein"}
+{"t":"Female Electrician Helmet","x":"Шлем электрика (женский)"}
+{"t":"Femboy","x":"Фембой"}
+{"t":"Ffff... So hot...","x":"Ффф... Так жарко...","r":"Ff<color=#EB83FF>ff... So hot...</color>","rt":"Ф<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">фф... Так жарко...</font></color>"}
+{"t":"Fhair2_Fbase)\\","x":"Fhair2_Fbase)\\\\"}
+{"t":"Fhair2_bang1)\\","x":"Fhair2_bang1)\\\\"}
+{"t":"Fhair2_bang2)\\","x":"Fhair2_bang2)\\\\"}
+{"t":"Fhair2_bang3)\\","x":"Fhair2_bang3)\\\\"}
+{"t":"Fhair2_bang4)\\","x":"Fhair2_bang4)\\\\"}
+{"t":"Fhair2_bang5)\\","x":"Fhair2_bang5)\\\\"}
+{"t":"Fhhh, yesss... You're amazing, hun... Stroke his nice cock with my tits!","x":"Фф-ф, дааа... Ты просто потрясающий, милый... Поглаживай его прекрасный член своими сиськами!"}
+{"t":"FilteredList is 0!","x":"FilteredList равен 0!"}
+{"t":"Fine, I'll... I'll do it. Just get started on the thingie.","x":"Ладно, я... я сделаю это. Просто начинай с этой штуковины."}
+{"t":"Fix the Helper Bots","x":"Исправь вспомогательных ботов"}
+{"t":"Force Move Down and Fade Out","x":"Принудительно переместить вниз и затемнить экран"}
+{"t":"Friend Located!","x":"Друг обнаружен!"}
+{"t":"Fuck, hhh, keep going...!","x":"Чёрт, х-х-х, продолжай...!"}
+{"t":"Futereswear Skintightv2 2","x":"Futureswear Skintightv2 2"}
+{"t":"Futereswear Skintightv2 Gloves","x":"Перчатки Futereswear Skintightv2"}
+{"t":"Fuuuck, man... *hic* not enough. Those glory holes? Not even close... *hic* not enough.","x":"Бля-а-а, мужик... *ик* мало. Эти дырки в стене? Даже близко... *ик* мало."}
+{"t":"GALLERY","x":"GALLERY"}
+{"t":"GAUSSIAN13X13","x":"GAUSSIAN13X13"}
+{"t":"GAUSSIAN5X5","x":"GAUSSIAN5X5"}
+{"t":"GAUSSIAN9X9","x":"GAUSSIAN9X9"}
+{"t":"Gah-..! Woah..! Hey..! That's- Khh-..","x":"Ах-..! Ого..! Эй..! Это- Кх-..","r":"Gah-..! Woah..! Hey..! That's- <color=#EB83FF>Khh-..</color>","rt":"Ах-..! Ого..! Эй..! Это- <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Кх-..</font></color>"}
+{"t":"GameObject doesn't have FsmComponent:","x":"GameObject не имеет FsmComponent:"}
+{"t":"Get remote Winter Setting","x":"Загрузить удалённую зимнюю обстановку"}
+{"t":"Gib photo task","x":"Отправь фото-задание"}
+{"t":"Go unpack the bathroom, bestie! I'll deal with this bed.","x":"Иди распакуй ванную, лучшая подруга! Я разберусь с этой кроватью."}
+{"t":"Good girl. Just like that. Doing what you're told will make your life a lot easier, eheh.","x":"Хорошая девочка. Вот так-то. Если будешь делать то, что тебе говорят, жизнь станет намного проще, эхе-хе."}
+{"t":"Got attached to your protector, hmm?","x":"Привязалась к своему защитнику, хм? (спикер: Силовик)"}
+{"t":"Grope Dialogue 1","x":"Диалог с пощупыванием 1"}
+{"t":"HEY!","x":"ЭЙ!"}
+{"t":"HVDComicSerifPro SDFFg","x":"HVDComicSerifPro SDFFg"}
+{"t":"Hahaha!","x":"Ха-ха-ха!"}
+{"t":"Hahh~! Oh my god they're spinning~!","x":"Ах~! О боже, они крутятся~!","r":"<color=#EB83FF>Hahh~!</color> Oh my god they're spinning~!","rt":"<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Ах~!</font></color> О боже, они крутятся~!"}
+{"t":"Has Sucky Wig?","x":"У тебя есть паршивый парик?"}
+{"t":"Have we talked to lio?","x":"Мы уже разговаривали с Лио?"}
+{"t":"Hear us and do what, hm?","x":"Услышат нас — и что тогда, хм?"}
+{"t":"Heh... I'll... I'll clean 'em up.","x":"Хе-хе... Я... я их почистю."}
+{"t":"Hell hath no fury like Auntie Sarah.","x":"Нет ярости страшнее, чем ярость тёти Сары."}
+{"t":"Here you go, sir.","x":"Вот, держите, сэр."}
+{"t":"Hey Max, what's up?","x":"Эй, Макс, как дела?"}
+{"t":"Hey, darling. Back already? How's my secret admirer doing?","x":"О, дорогуша. Уже вернулась? Как там мой тайный поклонник?"}
+{"t":"Hhh, hh!","x":"Х-х, х-х!","r":"<color=#EB83FF>Hhh, hh!</color>"}
+{"t":"HiJenx - CAL & MALE NPC","x":"ХайДженкс — КАЛ и МУЖСКОЙ NPC"}
+{"t":"His... lap...?","x":"К нему на колени..?","r":"<color=#EB83FF>His... lap...?</color>","rt":"<color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">К нему... на колени...?</font></color>"}
+{"t":"Hm. Okay, I guess. What's the challenge?","x":"Хм... Ладно, полагаю. В чём сложность?"}
+{"t":"Hmmm~ your tits look great in tight leather.","x":"Хммм~ твои сиськи отлично смотрятся в обтягивающей коже."}
+{"t":"HoneyScript-Light SDF","x":"HoneyScript-Light SDF"}
+{"t":"HoneyScript-SemiBold SDF","x":"HoneyScript-SemiBold SDF"}
+{"t":"Hooligan","x":"Хулиган"}
+{"t":"How far can she fall? That","x":"Как низко она может пасть? Это"}
+{"t":"Huh? My fingerprints are also keyed to your lock, silly!","x":"А? Мой отпечаток тоже привязан к твоему замку, глупышка!"}
+{"t":"I can see that but-","x":"Я вижу, но-"}
+{"t":"I don't think it is.","x":"Думаю, нет."}
+{"t":"I just... I can't... take it anymore... This heat is... it's just too much...","x":"Я просто... я больше не могу... Эта жара... она просто невыносима...","r":"I ju<color=#EB83FF>st...</color> I can't... take it anymore... This heat is... it's ju<color=#EB83FF>st too much...</color>","rt":"Я пр<color=#EB83FF>осто...</color> я больше не могу... Эта жара... она пр<color=#EB83FF>осто невыносима...</color>"}
+{"t":"I need a bit of time to get the cash.","x":"Мне нужно немного времени, чтобы достать деньги."}
+{"t":"I think that's actually working.","x":"Кажется, это реально работает."}
+{"t":"I wonder what it'd be like to-","x":"Интересно, каково это —"}
+{"t":"I'm busy, come back later!","x":"Я занят, приходи позже!"}
+{"t":"I'm sorry, Zoey... I'm sorry...","x":"Прости, Зои... Прости..."}
+{"t":"I- I can't do this.","x":"Я- Я не могу так."}
+{"t":"I- um... Hhh... n-no.","x":"Я… эм… х-х-х… н-нет.","r":"<color=#EB83FF>I- um... Hhh... n-no.</color>"}
+{"t":"I-... No, Ma'am.","x":"Я-... Нет, мэм."}
+{"t":"I... Thank you, Zoey.","x":"Я... Спасибо тебе, Зои."}
+{"t":"INSANITORIUM STUDIOS!","x":"INSANITORIUM STUDIOS!"}
+{"t":"Iceagi - @Iceagi_","x":"Iceagi — @Iceagi_"}
+{"t":"If you want... I could... Turn around too...","x":"Если хочешь... могу... тоже повернуться...","r":"<color=#EB83FF>If you want... I could... Turn around too...</color>"}
+{"t":"InputManager: Axis '","x":"InputManager: Ось '"}
+{"t":"Inspect - Holo-Plant","x":"Осмотреть: голо-растение"}
+{"t":"Intro Dialogue - Did Groping Scene Before","x":"Вводный диалог — Была ли сцена пощупываний до этого?"}
+{"t":"Is Sarah here?","x":"Сара здесь?"}
+{"t":"Is it supposed to smell like that?","x":"Оно должно так пахнуть?"}
+{"t":"Is the door placeholder locked?","x":"Дверь заблокирована?"}
+{"t":"It was an accident! I just fell...","x":"Это была случайность! Я просто упала..."}
+{"t":"It's okay... Just... Let's get this over with... for Felicia.","x":"Ничего страшного... Просто... Давай покончим с этим... ради Фелиции.","r":"<size=25>It's okay... Just... Let's get this over with... for Felicia.</size>"}
+{"t":"Jam Moves Aside 2","x":"Джем отходит в сторону 2"}
+{"t":"Just focus on our voices~","x":"Просто сосредоточься на наших голосах~"}
+{"t":"JustNox - Environment Artist","x":"JustNox — художник окружения"}
+{"t":"Kitchen 2","x":"Кухня 2"}
+{"t":"Klaudia Heels FSM","x":"FSM туфель Клавдии"}
+{"t":"L-like this...?","x":"Т-так...?","r":"<color=#EB83FF>L-like this...?</color>"}
+{"t":"LOVENSE: Invalid Parameter.","x":"LOVENSE: Неверный параметр."}
+{"t":"Lashing out","x":"Выплескивая гнев"}
+{"t":"Leave the train early and arrive at your destination?","x":"Покинуть поезд раньше и прибыть в пункт назначения?","r":"<i>Leave the train early and arrive at your destination?</i>"}
+{"t":"Let's go!","x":"Погнали!"}
+{"t":"LevelTransition: Level does not exist at build index '","x":"LevelTransition: Уровень не существует по индексу сборки '"}
+{"t":"LiberationSans SDF","x":"LiberationSans SDF"}
+{"t":"Like I know!? What's this thing doing, Z?","x":"А я знаю!? Что эта штука делает, Зет?"}
+{"t":"Line 6","x":"6."}
+{"t":"LittleLing - @littleling_","x":"LittleLing — @littleling_"}
+{"t":"LockpickingManager: LockIndicator is null! Wtf? '","x":"LockpickingManager: LockIndicator равен null! Какого? '"}
+{"t":"LockpickingManager: LockIndicatorPrefab is null! Wtf? '","x":"LockpickingManager: LockIndicatorPrefab равен null! Какого? '"}
+{"t":"Look who it is...","x":"Смотри-ка, кто это здесь..."}
+{"t":"Lost Journal #3","x":"Потерянный дневник №3"}
+{"t":"Lovense I P","x":"Lovense: IP"}
+{"t":"Lovense Use H T T P","x":"Lovense: HTTP"}
+{"t":"Machine","x":"Аппарат"}
+{"t":"Master/Sounds Ducker/Sounds/Sex Sounds","x":"Мастер/Звуки Дакер/Звуки/Сексуальные звуки"}
+{"t":"MasterKey F04","x":"MasterKey F04"}
+{"t":"Maybe you could start the letter with...","x":"Может, начать письмо с..."}
+{"t":"Memories","x":"Воспоминания"}
+{"t":"Mhhh... Keep your thighs pressed nice and tight...","x":"Мхх... Держи бёдра плотно сжатыми...","r":"<size=27>Mhhh... Keep your thighs pressed nice and tight..."}
+{"t":"Missing FsmComponent!","x":"Отсутствует FsmComponent!"}
+{"t":"Mmhh fuck yes I am, ahaha! God I wanna lick that little asshole of yours.","x":"М-м-х... Чёрт, да, я такой, ахаха! Боже, как же мне хочется облизать твою маленькую дырочку."}
+{"t":"Mmm... Much better... Stroke it nice and tight...","x":"Ммм... Намного лучше... Води рукой крепко и плотно..."}
+{"t":"Mmnhh fuck yes just like that...! Want me to cum, hmm? Say it, girl!","x":"М-м-н-н... Чёрт, да, именно так... Хочешь, чтобы я кончил, хм? Скажи это, девочка!"}
+{"t":"More sex scene 2","x":"Ещё одна сцена секса 2"}
+{"t":"Move Zoey away from Leona","x":"Убери Зои от Леоны"}
+{"t":"Move up Animation","x":"Анимация подъёма"}
+{"t":"My cuties know better than that, hun..~","x":"Мои красавчики знают своё дело, милашка..~"}
+{"t":"N-Nails, heh... Yeah... Mmm~!","x":"Н-Ногти, хе... Ага... М-м-м~!","r":"N-Nails, heh... Yeah... <color=#EB83FF>Mmm~!</color>","rt":"Н-Ногти, хе... Ага... <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">М-м-м~!</font></color>"}
+{"t":"N-New? Wait- Mnhh~ What's new?","x":"Н-Новое? Погоди- М-н-н~ Что новое?","r":"N-New? Wait- <color=#EB83FF>Mnhh~</color> What's new?","rt":"Н-Новое? Погоди- <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">М-н-н~</font></color> Что новое?"}
+{"t":"NITA - Assistant Artist","x":"NITA — ассистент художника"}
+{"t":"Neck Chip - Lio's Data Gamma","x":"Шейный чип — данные Лио, гамма"}
+{"t":"Never seen you take a drag before.","x":"Никогда не видела, чтобы ты затягивалась."}
+{"t":"NewMission: Tried to start a new mission with null!","x":"NewMission: Попытка запустить новую миссию с null!"}
+{"t":"Nightmare Tentacles","x":"Кошмарные щупальца"}
+{"t":"No TextMeshProUGUI on","x":"Нет TextMeshProUGUI"}
+{"t":"No matching gallery image available for the notification test.","x":"Для тестового уведомления не найдено подходящего изображения в галерее."}
+{"t":"No, I-... It's fine.","x":"Нет, я-... Всё нормально."}
+{"t":"No? Ghosts aren't real.","x":"Нет? Призраки не существуют."}
+{"t":"Not since the crisis.","x":"Со времён кризиса."}
+{"t":"NotoSansSC-Medium SDF","x":"NotoSansSC-Medium SDF"}
+{"t":"NotoSerifSC-Black SDF","x":"NotoSerifSC-Black SDF"}
+{"t":"NotoSerifSC-Medium SDF","x":"NotoSerifSC-Medium SDF"}
+{"t":"NotoSerifSC-Regular SDF","x":"NotoSerifSC-Regular SDF"}
+{"t":"NotoSerifSC-Regular SDF 1","x":"NotoSerifSC-Regular SDF 1"}
+{"t":"NotoSerifSC-Regular SDF Play","x":"NotoSerifSC-Regular SDF Играть"}
+{"t":"Nova - 12 After Nova leaves","x":"Нова - 12 После ухода Новы"}
+{"t":"Nova's Deal","x":"Сделка Новы"}
+{"t":"Now... Let me show you how to do this, ehehe...","x":"А теперь... Дай покажу, как это делается, ехехе..."}
+{"t":"O-other... things...?","x":"К-кое-что... другое...?"}
+{"t":"OTHER","x":"OTHER"}
+{"t":"Of course. I think I've got juuuust the thing. All it needs are a few modifications and it should be a perfect vaginal-chip-removing tool.","x":"Конечно. Думаю, у меня есть самое то. Нужно лишь внести пару изменений, и это станет идеальным инструментом для удаления вагинальных чипов."}
+{"t":"Oh hey there..~ Wow you're hot, ehehe. Sorry, but I just roped in a client.~","x":"О, привет..~ Ого, ты горячий, хе-хе. Извини, я только что подцепила клиента.~"}
+{"t":"Oh yeah? Taking my money and stretching your asshole in my face doesn't make you a whore?","x":"Ага, да? То, что ты забираешь мои деньги и растягиваешь свою задницу прямо у меня перед лицом, ещё не делает тебя шлюхой?","r":"Oh yeah? Taking my money and stretching your asshole in my face doesn't make you a <b>whore</b>?","rt":"Ага, да? То, что ты забираешь мои деньги и <b>растягиваешь</b> свою задницу прямо у меня перед лицом, ещё не делает тебя шлюхой?"}
+{"t":"Oh, it's fine. I just take 'em off when they get uncomfortable. Like yeah they're sexy, but being flat is way more cozy.","x":"Ой, да нормально. Я их снимаю, когда неудобно. Да, они сексуальные, но без груди гораздо уютнее."}
+{"t":"Oh- Secret door. Of course.","x":"О- Секретная дверь. Ну конечно."}
+{"t":"Oh-? Um- thanks.","x":"О-? Эм- спасибо.","r":"<color=#EB83FF>Oh-? Um- thanks.</color>"}
+{"t":"Okay, it was my boyfriend who told me.","x":"Ладно, это мой парень велел мне."}
+{"t":"On Table Was Served","x":"На столе было подано"}
+{"t":"OnAnyLatchUnlocked","x":"OnAnyLatchUnlocked"}
+{"t":"OnAnyNumberEntered","x":"OnAnyNumberEntered"}
+{"t":"OnInjectorPickedUp","x":"OnInjectorPickedUp"}
+{"t":"OnNumbersEntered","x":"OnNumbersEntered"}
+{"t":"Oop, my dad's callin' me, one second, Z.","x":"Ой, папа звонит, секунду, З."}
+{"t":"Open up! Let it heal your itch from within, Skank!","x":"Откройся! Пусть это излечит твой зуд изнутри, Сканк!"}
+{"t":"Orbitron-Bold SDF","x":"Orbitron-Bold SDF"}
+{"t":"Orbitron-ExtraBold SDF","x":"Orbitron-ExtraBold SDF"}
+{"t":"Orbitron-Medium SDF","x":"Orbitron-Medium SDF"}
+{"t":"Orbitron-Regular SDF","x":"Orbitron-Regular SDF"}
+{"t":"Orgasms Denied","x":"Отказано в оргазме"}
+{"t":"Overwhelmed","x":"Я в шоке."}
+{"t":"OverworldAnimationTranslator: Animation '","x":"OverworldAnimationTranslator: Анимация '"}
+{"t":"PATHFINDING -","x":"ПОИСК ПУТИ -"}
+{"t":"Password recovery request... Your one-time passcode is 5297.","x":"Запрос на восстановление пароля... Ваш одноразовый код: 5297.","r":"<i>Password recovery request... Your one-time passcode is <color=yellow>5297</color>.</i>","rt":"<i>Запрос на восстановление пароля... Ваш одноразовый код: <color=yellow>5297</color>.</i>"}
+{"t":"Pathfinding FollowerEntity was null on FSM:","x":"Pathfinding FollowerEntity был равен null на FSM:"}
+{"t":"Peek Choice","x":"Выбор: подсмотреть"}
+{"t":"Perfect. I'll handle the rest. Go give her the treat, heh.","x":"Идеально. Я займусь остальным. Ступай, дай ей лакомство, хех."}
+{"t":"Pick up anim","x":"Подними аниме"}
+{"t":"PixieWillow - ZOEY","x":"PixieWillow — ЗОИ"}
+{"t":"PlaidPLAY Classic Top","x":"Классическая топка от PlaidPLAY"}
+{"t":"PlaidPLAY Mk-5 Top","x":"Топ PlaidPLAY Mk-5"}
+{"t":"Play No cutscene","x":"Играть — без кат-сцены"}
+{"t":"Play calm","x":"Играть спокойно"}
+{"t":"Play first key dialogue 3","x":"Играть первую ключевую реплику 3"}
+{"t":"Play not enough Money","x":"Играть без достаточного количества денег"}
+{"t":"Play show photo dialogue","x":"Запустить показ фото с диалогом"}
+{"t":"PlayMakerFSM, PlayMaker","x":"PlayMakerFSM, PlayMaker"}
+{"t":"PlaySoundFromCategory: '","x":"PlaySoundFromCategory: '"}
+{"t":"Pocket Pussy Delux Edition","x":"Pocket Pussy: Deluxe-издание"}
+{"t":"Prior exp-...? No! This... This is not something I usually do!","x":"Предыдущий опыт...? Нет! Это... это не то, чем я обычно занимаюсь!","r":"<color=#EB83FF>Prior exp-...?</color> No! This... This is not something I usually do!","rt":"<color=#EB83FF>Предыдущий опыт...?</color> Нет! Это... это не то, чем я обычно занимаюсь!"}
+{"t":"Pulled Flaps","x":"Оттянутые губы"}
+{"t":"Rat Out","x":"Сдать"}
+{"t":"Really?! Oh my god, thank you so much! I was sure you'd tell the clerk...","x":"Правда?! О боже, спасибо огромное! Я был уверен, что ты расскажешь администратору..."}
+{"t":"Refuse to help","x":"Отказываюсь помогать"}
+{"t":"Remove phone","x":"Убери телефон"}
+{"t":"Renderers covering it, front-most first:","x":"Рендереры, покрывающие его, начиная с самого переднего:"}
+{"t":"Reset guards","x":"Сбросить стражей"}
+{"t":"Restrain and set pos","x":"Сдерживай и фиксируй положение"}
+{"t":"Right Bark 2","x":"Правый лает"}
+{"t":"Right... Sorry...","x":"Точно... Извини..."}
+{"t":"Rooftops","x":"Крыши"}
+{"t":"Room 204\\nUpper Floor","x":"Room 204\\\\nUpper Floor"}
+{"t":"Rosie - 3 - 1 Ask how she likes the place","x":"Рози - 3 - 1 Спросить, нравится ли ей место"}
+{"t":"Rungar doesn't cum quickly like other customers, darling. We'll need to give him the perfect titjob. Let's stroke it even faster!","x":"Рунгар не кончает так быстро, как другие клиенты, милая. Нам нужно сделать ему идеальный минет. Давай будем ласкать его ещё быстрее!"}
+{"t":"STOAN - @STOANGuy","x":"А-ах! — @STOANGuy"}
+{"t":"Sad. Trying to calm her down because she lost her cat.","x":"Печальна. Пытаюсь её успокоить, потому что она потеряла кошку."}
+{"t":"Sassy and flamboyent","x":"Дерзко и броско"}
+{"t":"Scapefiend","x":"Скепфиэнд"}
+{"t":"ScrollToItem: scrollRect is null","x":"ScrollToItem: scrollRect равен нулю"}
+{"t":"SerializedVisualLayerInfo: VisualLayerInfo is null!","x":"SerializedVisualLayerInfo: VisualLayerInfo равен null!"}
+{"t":"Set Save Key","x":"Установить ключ сохранения"}
+{"t":"Set character sprite and populate","x":"Установить спрайт персонажа и заполнить данными"}
+{"t":"Set open","x":"Откройте"}
+{"t":"Set walk in save key","x":"Установите шаг при сохранении"}
+{"t":"Setup State so Far","x":"Текущее состояние"}
+{"t":"She's amazing! Nghh...!","x":"Она потрясающая! М-м-м...!"}
+{"t":"Shift Click GameObject","x":"Shift+Клик по GameObject"}
+{"t":"Short leather skirt","x":"Короткая кожаная юбка"}
+{"t":"Show Hint Dialogue","x":"Показать подсказку"}
+{"t":"Show/Hide Debug Errors","x":"Показать/скрыть отладочные ошибки"}
+{"t":"Shut up...","x":"Заткнись..."}
+{"t":"Skin 6","x":"Кожа 6"}
+{"t":"Slu- I- Khh...","x":"Шлю- Я- Кх...","r":"<color=#EB83FF>Slu- I- Khh...</color>"}
+{"t":"SlutService_3_Hideable_1_BoxMoved Rewrite","x":"SlutService_3_Hideable_1_BoxMoved Переписать"}
+{"t":"SlutService_3_Hideable_1_BoxMoved Rewrite 2","x":"SlutService_3_Hideable_1_BoxMoved Переписать 2"}
+{"t":"SlutService_4 1","x":"SlutService_4 1"}
+{"t":"SlutService_4 2","x":"SlutService_4 2"}
+{"t":"So it's a breaker issue? Sounds easy enough. Where is it?","x":"Значит, дело в автомате? Звучит не так уж и сложно. Где он находится?"}
+{"t":"So warm... and cozy... should I...?","x":"Так тепло... и уютно... может мне...?","r":"So warm... a<color=#EB83FF>nd cozy... should I...?</color>","rt":"Так тепло... <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">и уютно... может мне...?</font></color>"}
+{"t":"So, what did you want to know about them?","x":"Итак, что ты хотела узнать?"}
+{"t":"Something like that.","x":"Вроде того."}
+{"t":"Sound Files","x":"Аудиофайлы"}
+{"t":"Speed","x":"Скорость"}
+{"t":"Squish 3","x":"Хлюп 3"}
+{"t":"Start Dialogue put lever in 1","x":"Начни диалог, поставь рычаг в положение «1»."}
+{"t":"Start fuckin","x":"Начни, блядь."}
+{"t":"State 3","x":"Состояние 3"}
+{"t":"Stop Phone animation 2","x":"Остановить анимацию телефона 2"}
+{"t":"Stopbark - ToStop is null!","x":"Stopbark - ToStop равен null!"}
+{"t":"Strip Zoey","x":"Сними одежду с Зои"}
+{"t":"Such a good girl~","x":"Какая умница~"}
+{"t":"SuitcaseBadend - CartelHideout - 10_line_13-FSM","x":"SuitcaseBadend - CartelHideout - 10_line_13-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 10_line_15-FSM","x":"SuitcaseBadend - CartelHideout - 10_line_15-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 10_line_3-FSM","x":"SuitcaseBadend - CartelHideout - 10_line_3-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 10_line_4-FSM","x":"SuitcaseBadend - CartelHideout - 10_line_4-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 10_line_7-FSM","x":"SuitcaseBadend - CartelHideout - 10_line_7-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 11_line_10-FSM","x":"SuitcaseBadend - CartelHideout - 11_line_10-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 13_line_3-FSM","x":"SuitcaseBadend - CartelHideout - 13_line_3-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 13_line_7-FSM","x":"Неверный формат ответа."}
+{"t":"SuitcaseBadend - CartelHideout - 14_line_7-FSM","x":"SuitcaseBadend - CartelHideout - 14_line_7-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 16_line_3-FSM","x":"SuitcaseBadend - CartelHideout - 16_line_3-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 16_line_8-FSM","x":"SuitcaseBadend - CartelHideout - 16_line_8-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 17_line_10-FSM","x":"SuitcaseBadend - CartelHideout - 17_line_10-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 17_line_15-FSM","x":"SuitcaseBadend - CartelHideout - 17_line_15-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 17_line_6-FSM","x":"SuitcaseBadend - CartelHideout - 17_line_6-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 17_line_8-FSM","x":"SuitcaseBadend - CartelHideout - 17_line_8-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 18_line_3-FSM","x":"SuitcaseBadend - CartelHideout - 18_line_3-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 18_line_4-FSM","x":"SuitcaseBadend - CartelHideout - 18_line_4-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 18_line_6-FSM","x":"SuitcaseBadend - CartelHideout - 18_line_6-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 19_line_3-FSM","x":"SuitcaseBadend - CartelHideout - 19_line_3-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 1_line_0-FSM","x":"SuitcaseBadend - CartelHideout - 1_line_0-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 20_line_3-FSM","x":"SuitcaseBadend - CartelHideout - 20_line_3-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 21_line_3-FSM","x":"SuitcaseBadend — CartelHideout — 21_line_3-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 21_line_6-FSM","x":"SuitcaseBadend - CartelHideout - 21_line_6-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 22_line_2-FSM","x":"SuitcaseBadend - CartelHideout - 22_line_2-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 22_line_6-FSM","x":"SuitcaseBadend - CartelHideout - 22_line_6-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 22_line_7-FSM","x":"SuitcaseBadend - CartelHideout - 22_line_7-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 22_line_9-FSM","x":"SuitcaseBadend - CartelHideout - 22_line_9-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 23_line_2-FSM","x":"SuitcaseBadend - CartelHideout - 23_line_2-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 23_line_6-FSM","x":"SuitcaseBadend - CartelHideout - 23_line_6-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 23_line_7-FSM","x":"SuitcaseBadend - CartelHideout - 23_line_7-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 25_line_9-FSM","x":"SuitcaseBadend - CartelHideout - 25_line_9-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 26","x":"ЧемоданПлохаяКонцовка - УбежищеКартеля - 26"}
+{"t":"SuitcaseBadend - CartelHideout - 26_line_7-FSM","x":"SuitcaseBadend - CartelHideout - 26_line_7-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 27_line_7-FSM","x":"SuitcaseBadend - CartelHideout - 27_line_7-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 28_line_0-FSM","x":"SuitcaseBadend - CartelHideout - 28_line_0-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 28_line_4-FSM","x":"SuitcaseBadend - CartelHideout - 28_line_4-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 29_line_0-FSM","x":"SuitcaseBadend - CartelHideout - 29_line_0-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 29_line_11-FSM","x":"SuitcaseBadend - CartelHideout - 29_line_11-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 29_line_8-FSM","x":"SuitcaseBadend — CartelHideout — 29_line_8-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 29_line_9-FSM","x":"SuitcaseBadend - CartelHideout - 29_line_9-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 2_line_0-FSM","x":"SuitcaseBadend - CartelHideout - 2_line_0-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 30_line_0-FSM","x":"SuitcaseBadend - CartelHideout - 30_line_0-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 31_line_0-FSM","x":"SuitcaseBadend - CartelHideout - 31_line_0-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 31_line_4-FSM","x":"SuitcaseBadend - CartelHideout - 31_line_4-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 32_line_0-FSM","x":"SuitcaseBadend - CartelHideout - 32_line_0-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 32_line_9-FSM","x":"SuitcaseBadend - CartelHideout - 32_line_9-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 33_line_0-FSM","x":"SuitcaseBadend - CartelHideout - 33_line_0-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 33_line_10-FSM","x":"SuitcaseBadend - CartelHideout - 33_line_10-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 3_line_1-FSM","x":"SuitcaseBadend - CartelHideout - 3_line_1-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 4_line_1-FSM","x":"SuitcaseBadend - CartelHideout - 4_line_1-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 6_line_0-FSM","x":"SuitcaseBadend - CartelHideout - 6_line_0-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 7_line_11-FSM","x":"SuitcaseBadend - CartelHideout - 7_line_11-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 8_line_0-FSM","x":"SuitcaseBadend - CartelHideout - 8_line_0-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 8_line_6-FSM","x":"SuitcaseBadend - CartelHideout - 8_line_6-FSM"}
+{"t":"SuitcaseBadend - CartelHideout - 9_line_7-FSM","x":"SuitcaseBadend - CartelHideout - 9_line_7-FSM"}
+{"t":"SuitcaseMinigame","x":"SuitcaseMinigame"}
+{"t":"Suspicious Concoction","x":"Подозрительное варево"}
+{"t":"T-There used to be a dildo here...","x":"З-Здесь раньше был дилдо...","r":"T-There used to be <color=#EB83FF>a dildo</color> here...","rt":"З-Здесь раньше был <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">дилдо</font></color>..."}
+{"t":"Take Memory Snapshot","x":"Сделать снимок памяти"}
+{"t":"Talk to Calliach","x":"Поговори с Каллиачем"}
+{"t":"Task Name","x":"Название задачи"}
+{"t":"Tell Max choice","x":"Скажи Максу"}
+{"t":"Th- That-... setting!","x":"Э- Этот—... режим!"}
+{"t":"Thanks so much, Lio! I owe you!","x":"Спасибо тебе, Лио! Я в долгу перед тобой!"}
+{"t":"That so, eh? Mana, you gave this puta cold feet.","x":"Вот как, а? Мана, у тебя же от этой сучки ноги в холодный пот бросили."}
+{"t":"That's on a need to know basis.","x":"Только посвящённым."}
+{"t":"The Glowing Hole","x":"Светящаяся дыра"}
+{"t":"The new Waitress","x":"Новая официантка"}
+{"t":"Then you better make it quick, hmm?~","x":"Тогда давай побыстрее, хмм?~"}
+{"t":"There, it's open!","x":"Вот, открыто!"}
+{"t":"This ain't my first time finding a lost phone. The more I find, the easier it'll be to find yours.","x":"Не в первый раз ищу пропавший телефон. Чем больше найду, тем проще будет отыскать твой."}
+{"t":"This one is very grateful for your selflessness. Thank you.","x":"Этот очень благодарен за твою самоотверженность. Спасибо."}
+{"t":"Time Scale","x":"Масштаб времени"}
+{"t":"Toggle Tool","x":"Переключить инструмент"}
+{"t":"Top Hair","x":"Верхняя часть волос"}
+{"t":"Tsk. What do you Vultures want?","x":"Тц. Чего вам, стервятники, нужно?"}
+{"t":"Turn off bystander 2","x":"Отключите наблюдателя 2"}
+{"t":"Ugh! Dream on. Are we done here?!","x":"Фу! Мечтай дальше. Мы закончили?!"}
+{"t":"Uhh...","x":"Эм..."}
+{"t":"Ultra lube","x":"Супер-лубрикант"}
+{"t":"Undress Tops","x":"Снимите верхнюю одежду"}
+{"t":"Unity Web Request is Null!","x":"Unity Web Request равен Null!"}
+{"t":"Unlikely under current circumstances. Constant relocation remains a necessity.","x":"В нынешних обстоятельствах это маловероятно. Постоянные перемещения по-прежнему необходимы."}
+{"t":"Unsung Volpine","x":"Незнаменитый волпин"}
+{"t":"Upstairs flavor no bunny 7","x":"Атмосфера наверху: без зайки 7"}
+{"t":"Varen Koss","x":"Варен Косс"}
+{"t":"View item shop.","x":"Посмотреть магазин предметов."}
+{"t":"W-Woah~! Tongues!","x":"О-Ого~! Язычки!","r":"W-Woah~! <color=#EB83FF>Tongues!</color>","rt":"О-Ого~! <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Язычки!</font></color>"}
+{"t":"W-wait..! Nnnhh-.. I didn't-.. Khh Fhhaa...!","x":"П-погоди..! М-м-м-.. Я не-.. Кх Ахха...!","r":"W-wait..! <color=#EB83FF>Nnnhh-..</color> I didn't-.. <color=#EB83FF>Khh Fhhaa...!</color>","rt":"П-погоди..! <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">М-м-м-..</font></color> Я не-.. <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">Кх Ахха...!</font></color>"}
+{"t":"Wait 1 Frame for Player to be positioned","x":"Ждать 1 кадр для позиционирования игрока"}
+{"t":"Wait for Dialogue to end","x":"Подождите, пока диалог закончится"}
+{"t":"Wait for Sarah to finish showering?","x":"Подождать, пока Сара закончит мыться?"}
+{"t":"Wait for end","x":"Подожди конца"}
+{"t":"Wait for pick or strip","x":"Жди выбора или раздеться"}
+{"t":"Wait for trigger enter","x":"Подожди, пока сработает триггер входа"}
+{"t":"Waitressing - Upgrade - 6 High Roller Customer","x":"Официантка — Улучшение — 6 клиент «Высокий игрок»"}
+{"t":"Walk to out pos","x":"Иди к выходу."}
+{"t":"Wayne","x":"Уэйн"}
+{"t":"We think it's time for a little~","x":"Мы думаем, пришло время для маленького~"}
+{"t":"Well new or not, you look absolutely gorgeous!","x":"Новая или нет, выглядишь сногсшибательно!"}
+{"t":"Well... I had a cat get into my place through the vents one time... Maybe she managed to get out that way?","x":"Ну... У меня однажды кошка залезла в дом через вентиляцию... Может, она и сама так выбралась?"}
+{"t":"Wet Pussy","x":"Мокрая киска"}
+{"t":"What are you doing here? Is she okay?","x":"Что ты здесь делаешь? С ней всё в порядке?"}
+{"t":"What kind of... service...?","x":"Какого рода... услуга...?"}
+{"t":"What- You?!","x":"Что- Ты?!","r":"What- <b><size=55>You</b>?!</size>","rt":"Что- <b><size=55>Ты</b>?!</size>"}
+{"t":"Which one? You've recommended a few.","x":"Какая именно? Ты же несколько раз упоминала разные игры."}
+{"t":"Whoa- This does taste good!","x":"Ого — а ведь правда вкусно!"}
+{"t":"William","x":"Уильям"}
+{"t":"Working as intended then, heh.","x":"Значит, работает как задумано, хех."}
+{"t":"Y-yeahh..! I'd love to.. come upstairs with you, heh!","x":"Д-даа..! Я бы с удовольствием.. поднялась с тобой наверх, хех!","r":"Y-yeahh..! I'd <color=#EB83FF>love</color> to.. come upstairs with you, heh!","rt":"Д-даа..! Я бы с <color=#B867FF><font=\"Roboto-Condensed_DialogueUI\" material=\"Roboto-Condensed_DialogueUI_Perversion\">удовольствием</font></color>.. поднялась с тобой наверх, хех!"}
+{"t":"Yeah, I mean- it was just a little black thing. Barely covered the knockers, you know how it is. He wanted the big tiddies too.","x":"Ага, ну — маленькое такое, чёрненькое. Едва сиськи прикрывало, сам понимаешь. Он большие хотел."}
+{"t":"Yeah, yeah. I'll be right back.","x":"Да-да. Скоро вернусь."}
+{"t":"Yeah? Watch your boney butt!","x":"Ага? Следи за своей костлявой задницей!"}
+{"t":"Yes! Turn around for me, baby!","x":"Да! Повернись ко мне, детка!"}
+{"t":"Yess... fuck yes...","x":"Да... чёрт возьми, да..."}
+{"t":"You bet~","x":"Ещё бы~"}
+{"t":"You found the terrorists?! Get them boys!","x":"Вы нашли террористов?! Взять их, парни!"}
+{"t":"You must be new around here~","x":"Ты, видимо, новенькая~"}
+{"t":"You were about to get Brain Burn in that headset. But I was able to fix it and pull you out.","x":"Ты чуть не получила Brain Burn от этого шлема. Но я смогла починить его и вытащить тебя."}
+{"t":"You're disappointed.C","x":"Ты разочарована."}
+{"t":"You're waiting for her to give in.","x":"Ты ждёшь, когда она уступит."}
+{"t":"Your job, hmm...?","x":"Твоя работа, хм...?"}
+{"t":"ZenDots-Regular SDF","x":"ZenDots-Regular SDF"}
+{"t":"Zoey and Sarah photos","x":"Фотографии Зои и Сары"}
+{"t":"bum - @bumdraws","x":"bum — @bumdraws"}
+{"t":"dOXA 9\\","x":"dOXA 9"}
+{"t":"got it","x":"Поняла."}
+{"t":"m just","x":"Я просто"}
+{"t":"no one else can make me me (as in make me like myself)","x":"никто другой не может сделать меня мной (в смысле — чтобы я себе нравилась)"}
+{"t":"play cutscene","x":"Воспроизвести катсцену"}
+{"t":"pts - Lorem ipsum dolor sit...","x":"pts - Lorem ipsum dolor sit..."}
+{"t":"right lock open event","x":"Событие открытия правого замка"}
+{"t":"sure did","x":"Ну да, конечно"}
+{"t":"turn on no smoking sign","x":"Включите знак «Не курить»."}
+{"t":"we have not","x":"у нас нет"}
+{"t":"yakiq - @therealyakiq","x":"Якик — @therealyakiq"}
+{"t":"yyyy-MM-dd HH:mm:ss","x":"yyyy-MM-dd HH:mm:ss"}

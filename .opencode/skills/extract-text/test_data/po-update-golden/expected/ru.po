@@ -1,0 +1,28 @@
+# Russian translation.
+msgid ""
+msgstr ""
+"Project-Id-Version: NeonTranslator 1.0\n"
+"Last-Translator: fixture\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#. src: dialog
+msgctxt "ui"
+msgid "Brand new line"
+msgstr ""
+
+#. src: dialog
+msgctxt "ui"
+msgid "He said \"hi\"\nbye"
+msgstr "Он сказал \"привет\"\nпока"
+
+#. src: dialog
+#, fuzzy
+msgctxt "ui"
+msgid "Kept line"
+msgstr "Оставленная строка"
+
+#. src: dialog
+# rich: <b>Переведи меня</b>
+msgctxt "speaker:Zed"
+msgid "Retarget me"
+msgstr "Переведи меня"

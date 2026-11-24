@@ -7,8 +7,10 @@
  */
 import { after, before, test } from "node:test";
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
+import process from "node:process";
 
 import {
   richNestingProblems,
@@ -25,11 +27,24 @@ import { newEntry, renderPo } from "../.opencode/skills/extract-text/scripts/po_
 import {
   potHeaderLines,
   parseSkipPolicy,
-  runPotgen,
-} from "../.opencode/skills/extract-text/scripts/potgen.mts";
+} from "../.opencode/skills/extract-text/scripts/pot_rules.mts";
+import { l10nBinary } from "./text_cli.mts";
 
 const REPO = resolve(import.meta.dirname, "..");
 const CREATED = "2026-01-02 03:04+0000";
+const CLI = join(REPO, "scripts", "text_cli.mts");
+const bin = l10nBinary(REPO);
+const rustSkip = bin ? false : "rust-l10n не собран (npm run l10n:build)";
+
+/** POT рабочей Rust-реализации (TS-эталон potgen.mts удалён 2026-11-24). */
+function generatePot(dumpDir: string, outPath: string): void {
+  const run = spawnSync(
+    process.execPath,
+    [CLI, "potgen", "--root", REPO, "--dump", dumpDir, "--out", outPath, "--created", CREATED],
+    { encoding: "utf8" },
+  );
+  if (run.status !== 0) throw new Error(`text_cli potgen: ${run.stderr}`);
+}
 
 let root: string;
 before(() => {
@@ -153,7 +168,7 @@ async function generate(
 ): Promise<{ dir: string; path: string; text: string }> {
   const dir = writeDump(name, files);
   const path = join(dir, "template.pot");
-  await runPotgen({ dumpDir: dir, outPath: path, created: CREATED });
+  generatePot(dir, path);
   return { dir, path, text: readFileSync(path, "utf8") };
 }
 
@@ -192,47 +207,55 @@ test("инвариант 8: кавычки, \\n, \\t, не-ASCII и обратн
   );
 });
 
-test("инвариант 1: порядок элементов дампа не должен менять POT (ловится конфликт rich)", async () => {
-  const files = cleanDumpFiles();
-  const level = files["level0.jsonl"] as Array<Record<string, unknown>>;
-  level.push(
-    {
-      asset: "level0",
-      path_id: 100,
-      dialogues: [
-        { speaker: "Zoey", text: "Conflicted line.", rich_text: "<i>Conflicted line.</i>" },
-      ],
-    },
-    {
-      asset: "level0",
-      path_id: 101,
-      dialogues: [
-        { speaker: "Zoey", text: "Conflicted line.", rich_text: "<b>Conflicted line.</b>" },
-      ],
-    },
-  );
-  const { dir, path } = await generate("order-conflict", files);
-  const violations = await checkPot(path, { dumpPath: dir });
-  expectCaught(violations, 1, "order-dependent");
+test(
+  "инвариант 1: порядок элементов дампа не должен менять POT (ловится конфликт rich)",
+  { skip: rustSkip },
+  async () => {
+    const files = cleanDumpFiles();
+    const level = files["level0.jsonl"] as Array<Record<string, unknown>>;
+    level.push(
+      {
+        asset: "level0",
+        path_id: 100,
+        dialogues: [
+          { speaker: "Zoey", text: "Conflicted line.", rich_text: "<i>Conflicted line.</i>" },
+        ],
+      },
+      {
+        asset: "level0",
+        path_id: 101,
+        dialogues: [
+          { speaker: "Zoey", text: "Conflicted line.", rich_text: "<b>Conflicted line.</b>" },
+        ],
+      },
+    );
+    const { dir, path } = await generate("order-conflict", files);
+    const violations = await checkPot(path, { dumpPath: dir });
+    expectCaught(violations, 1, "order-dependent");
 
-  // Чистый дамп того же состава, но без конфликта rich — предупреждения нет.
-  const clean = cleanDumpFiles();
-  const cleanRun = await generate("order-clean", clean);
-  expectNoCode(await checkPot(cleanRun.path, { dumpPath: cleanRun.dir }), 1, "order-dependent");
-});
+    // Чистый дамп того же состава, но без конфликта rich — предупреждения нет.
+    const clean = cleanDumpFiles();
+    const cleanRun = await generate("order-clean", clean);
+    expectNoCode(await checkPot(cleanRun.path, { dumpPath: cleanRun.dir }), 1, "order-dependent");
+  },
+);
 
-test("инвариант 2: POT, разошедшийся с дампом, — stale; перегенерация дважды побайтовая", async () => {
-  const first = await generate("idempotent", cleanDumpFiles());
-  const twice = await generate("idempotent-2", cleanDumpFiles());
-  assert.equal(first.text, twice.text, "два прогона одного дампа обязаны совпасть");
+test(
+  "инвариант 2: POT, разошедшийся с дампом, — stale; перегенерация дважды побайтовая",
+  { skip: rustSkip },
+  async () => {
+    const first = await generate("idempotent", cleanDumpFiles());
+    const twice = await generate("idempotent-2", cleanDumpFiles());
+    assert.equal(first.text, twice.text, "два прогона одного дампа обязаны совпасть");
 
-  const drifted = first.text.replace("Narration line here.", "Narration line here!");
-  const path = join(root, "idempotent", "drifted.pot");
-  writeFileSync(path, drifted, "utf8");
-  expectCaught(await checkPot(path, { dumpPath: first.dir }), 2, "stale");
-});
+    const drifted = first.text.replace("Narration line here.", "Narration line here!");
+    const path = join(root, "idempotent", "drifted.pot");
+    writeFileSync(path, drifted, "utf8");
+    expectCaught(await checkPot(path, { dumpPath: first.dir }), 2, "stale");
+  },
+);
 
-test("инвариант 3: пропавшая запись в POT — missing-entry", async () => {
+test("инвариант 3: пропавшая запись в POT — missing-entry", { skip: rustSkip }, async () => {
   const run = await generate("complete", cleanDumpFiles());
   const blocks = run.text.split("\n\n");
   const withoutOne = [...blocks.slice(0, 5), ...blocks.slice(6)].join("\n\n");
@@ -243,7 +266,7 @@ test("инвариант 3: пропавшая запись в POT — missing-e
   expectCaught(violations, 9, "entry-count");
 });
 
-test("инвариант 4: выдуманный msgid — invented-entry", async () => {
+test("инвариант 4: выдуманный msgid — invented-entry", { skip: rustSkip }, async () => {
   const run = await generate("invented", cleanDumpFiles());
   const forged = pot([{ id: "Fabricated question?", ctx: "speaker:Ghost" }]);
   const path = join(run.dir, "forged.pot");
@@ -274,28 +297,32 @@ test("инвариант 6: записи обязаны быть отсорти�
   expectCaught(await checkPotText(unsorted), 6, "unsorted");
 });
 
-test("инвариант 7: rich_text — наличие по источнику, без <font>, не обрезан", async () => {
-  const run = await generate("rich", cleanDumpFiles());
-  const baseline = await checkPot(run.path, { dumpPath: run.dir });
-  assert.equal(baseline.filter((v) => v.invariant === 7).length, 0);
+test(
+  "инвариант 7: rich_text — наличие по источнику, без <font>, не обрезан",
+  { skip: rustSkip },
+  async () => {
+    const run = await generate("rich", cleanDumpFiles());
+    const baseline = await checkPot(run.path, { dumpPath: run.dir });
+    assert.equal(baseline.filter((v) => v.invariant === 7).length, 0);
 
-  const withRich = run.text;
-  const withoutRich = withRich.replace(/#\. rich_text: .*\n/g, "");
-  const noRichPath = join(run.dir, "no-rich.pot");
-  writeFileSync(noRichPath, withoutRich, "utf8");
-  expectCaught(await checkPot(noRichPath, { dumpPath: run.dir }), 7, "rich-missing");
+    const withRich = run.text;
+    const withoutRich = withRich.replace(/#\. rich_text: .*\n/g, "");
+    const noRichPath = join(run.dir, "no-rich.pot");
+    writeFileSync(noRichPath, withoutRich, "utf8");
+    expectCaught(await checkPot(noRichPath, { dumpPath: run.dir }), 7, "rich-missing");
 
-  const truncated = withRich.replace(
-    "#. rich_text: <color=#EB83FF>Welcome back, Sarah.</color>",
-    "#. rich_text: <color=#EB83FF>Welcome back",
-  );
-  const truncPath = join(run.dir, "truncated.pot");
-  writeFileSync(truncPath, truncated, "utf8");
-  expectCaught(await checkPot(truncPath, { dumpPath: run.dir }), 7, "rich-mismatch");
+    const truncated = withRich.replace(
+      "#. rich_text: <color=#EB83FF>Welcome back, Sarah.</color>",
+      "#. rich_text: <color=#EB83FF>Welcome back",
+    );
+    const truncPath = join(run.dir, "truncated.pot");
+    writeFileSync(truncPath, truncated, "utf8");
+    expectCaught(await checkPot(truncPath, { dumpPath: run.dir }), 7, "rich-mismatch");
 
-  const fontTag = pot([{ id: "Hi", rich: '<font="F" material="M">Hi</font>' }]);
-  expectCaught(await checkPotText(fontTag), 7, "rich-font-tag");
-});
+    const fontTag = pot([{ id: "Hi", rich: '<font="F" material="M">Hi</font>' }]);
+    expectCaught(await checkPotText(fontTag), 7, "rich-font-tag");
+  },
+);
 
 test("инвариант 8: битое экранирование и неканоничный формат", async () => {
   const ok = pot([{ id: 'He said "hi"' }]);
@@ -325,7 +352,7 @@ test("инвариант 8: битое экранирование и некан�
   expectCaught(await checkPotText(withRefs), 8, "refs");
 });
 
-test("инвариант 9: счётчики rich/mergedTwins сходятся с фактом", async () => {
+test("инвариант 9: счётчики rich/mergedTwins сходятся с фактом", { skip: rustSkip }, async () => {
   // ui-двойник с rich: генератор пишет rich в ui-запись, затем удаляет её как
   // двойника — счётчик rich обязан это учитывать (сейчас предупреждает).
   const files = cleanDumpFiles();
@@ -402,43 +429,47 @@ test("инвариант 12: POT второй реализации сравни�
   expectCaught(await checkPot(path, { parityPot: diffPath }), 12, "parity-diff");
 });
 
-test("инвариант 13: битая JSONL-строка не роняет генерацию и не даёт записей", async () => {
-  const files = cleanDumpFiles();
-  const brokenDir = writeDump("robust", files);
-  const path = join(brokenDir, "template.pot");
-  await runPotgen({ dumpDir: brokenDir, outPath: path, created: CREATED });
-  const cleanText = readFileSync(path, "utf8");
-  const cleanKeys = new Set(
-    parsePotText(cleanText)
-      .entries.slice(1)
-      .map((e) => JSON.stringify([e.fields.msgid?.value, e.fields.msgctxt?.value ?? ""])),
-  );
+test(
+  "инвариант 13: битая JSONL-строка не роняет генерацию и не даёт записей",
+  { skip: rustSkip },
+  async () => {
+    const files = cleanDumpFiles();
+    const brokenDir = writeDump("robust", files);
+    const path = join(brokenDir, "template.pot");
+    generatePot(brokenDir, path);
+    const cleanText = readFileSync(path, "utf8");
+    const cleanKeys = new Set(
+      parsePotText(cleanText)
+        .entries.slice(1)
+        .map((e) => JSON.stringify([e.fields.msgid?.value, e.fields.msgctxt?.value ?? ""])),
+    );
 
-  // Тот же дамп + обрезанная строка, строка-не-объект и пустая строка.
-  const noisyDir = writeDump("robust-noisy", files);
-  writeFileSync(
-    join(noisyDir, "level0.jsonl"),
-    `${readFileSync(join(noisyDir, "level0.jsonl"), "utf8")}{"asset": "level0", "dialogues": [\nnull\n\n`,
-    "utf8",
-  );
-  const noisyPath = join(noisyDir, "template.pot");
-  await runPotgen({ dumpDir: noisyDir, outPath: noisyPath, created: CREATED });
-  const noisyText = readFileSync(noisyPath, "utf8");
-  const noisyKeys = new Set(
-    parsePotText(noisyText)
-      .entries.slice(1)
-      .map((e) => JSON.stringify([e.fields.msgid?.value, e.fields.msgctxt?.value ?? ""])),
-  );
-  assert.deepEqual(
-    [...noisyKeys].sort(),
-    [...cleanKeys].sort(),
-    "битые строки не порождают записей",
-  );
+    // Тот же дамп + обрезанная строка, строка-не-объект и пустая строка.
+    const noisyDir = writeDump("robust-noisy", files);
+    writeFileSync(
+      join(noisyDir, "level0.jsonl"),
+      `${readFileSync(join(noisyDir, "level0.jsonl"), "utf8")}{"asset": "level0", "dialogues": [\nnull\n\n`,
+      "utf8",
+    );
+    const noisyPath = join(noisyDir, "template.pot");
+    generatePot(noisyDir, noisyPath);
+    const noisyText = readFileSync(noisyPath, "utf8");
+    const noisyKeys = new Set(
+      parsePotText(noisyText)
+        .entries.slice(1)
+        .map((e) => JSON.stringify([e.fields.msgid?.value, e.fields.msgctxt?.value ?? ""])),
+    );
+    assert.deepEqual(
+      [...noisyKeys].sort(),
+      [...cleanKeys].sort(),
+      "битые строки не порождают записей",
+    );
 
-  const violations = await checkPot(noisyPath, { dumpPath: noisyDir });
-  expectCaught(violations, 13, "dump-ignored-lines");
-  assert.equal(violations.filter((v) => v.severity === "error").length, 0);
-});
+    const violations = await checkPot(noisyPath, { dumpPath: noisyDir });
+    expectCaught(violations, 13, "dump-ignored-lines");
+    assert.equal(violations.filter((v) => v.severity === "error").length, 0);
+  },
+);
 
 test("CLI-обвязка: пустой POT, нет файла POT, нет дампа — понятные ошибки", async () => {
   expectCaught(await checkPotText(""), 11, "empty-file");
@@ -492,7 +523,7 @@ test("инвариант 14: провенанс обязателен и толь
   expectCaught(await checkPotText(renderPo([a], potHeaderLines(CREATED))), 14, "src-duplicate");
 });
 
-test("инвариант 14: метка POT сверяется с генератором (с дампом)", async () => {
+test("инвариант 14: метка POT сверяется с генератором (с дампом)", { skip: rustSkip }, async () => {
   const files = cleanDumpFiles();
   const run = await generate("provenance", files);
   const violations = await checkPot(run.path, { dumpPath: run.dir });

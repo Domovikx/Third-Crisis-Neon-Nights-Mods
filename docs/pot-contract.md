@@ -350,3 +350,6 @@ E2E-тест с реальным дампом в `pot_contract.test.mts` — opt
 - `.opencode/skills/extract-text/SKILL.md` — формат POT и правила генерации.
 - `docs/migration.md` — инварианты миграции Python → TS.
 - `tasks/2026-11-22-pot-formation-contract.md` — журнал этой задачи.
+
+> Обновление 2026-11-24: TS-эталоны удалены, рабочая реализация — Rust,
+> паритет проверяется золотыми фикстурами (см. `docs/rust-vs-ts.md`, раздел 8).

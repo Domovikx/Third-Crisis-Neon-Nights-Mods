@@ -8,7 +8,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { scanGlobalStrings } from "../scripts/rawscan.mts";
 import {
   capList,
   createTruncationReport,
@@ -74,23 +73,4 @@ test("parseLimit: число, all/none/0 — без лимита, мусор —
   assert.equal(parseLimit("-1"), null);
   assert.equal(parseLimit("abc"), undefined);
   assert.equal(parseLimit("-5"), undefined);
-});
-
-test("scanGlobalStrings: без лимита отдаёт всех кандидатов, с лимитом — считает", () => {
-  // Печатные ASCII-строки через NUL: все проходят isGlobalStringCandidate.
-  const encoder = new TextEncoder();
-  const bytes: number[] = [];
-  for (const text of ["New Game", "Dialogue Log", "Save Game"]) {
-    for (const b of encoder.encode(text)) bytes.push(b);
-    bytes.push(0);
-  }
-  const data = new Uint8Array(bytes);
-
-  const all = scanGlobalStrings(data, null);
-  assert.equal(all.length, 3);
-
-  const report = createTruncationReport();
-  const capped = scanGlobalStrings(data, 2, report.globalStrings);
-  assert.equal(capped.length, 2);
-  assert.deepEqual(report.globalStrings, { units: 1, dropped: 1, limit: 2 });
 });

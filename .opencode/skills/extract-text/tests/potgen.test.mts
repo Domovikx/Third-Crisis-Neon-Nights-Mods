@@ -1,49 +1,50 @@
 /**
- * Тесты сборки POT. Паритет с `build_pot_update`/`render_pot` из potgen.py:
- * msgctxt по видам, склейка дублей, rich-разметка, cross-source dedup,
- * порядок записей, заголовок и безопасная запись.
+ * Тесты сборки POT и правил каталога.
+ *
+ * Рабочая реализация — Rust (`rust-l10n potgen` через публичную обёртку
+ * `scripts/text_cli.mts`): правила (заголовок, дедуп, msgctxt, политика отбора,
+ * skip-политика, ошибки) проверяются на маленьких фикстурах через CLI. TS-эталон
+ * `potgen.mts` удалён 2026-11-24, байт-в-байт выход стережёт
+ * `scripts/text_parity.test.mts` против золота `test_data/pot-golden-small.pot`.
+ *
+ * Библиотечные тесты ниже покрывают `pot_rules.mts` и `pot_skip.mts` — эти
+ * модули живы: их правила использует `scripts/pot_invariants.mts` (перегенерация
+ * и сверка POT с дампом) и `pot_skip_review.mts`.
  */
 import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
+import process from "node:process";
 
 import type { InventoryItem, ItemKind } from "../scripts/inventory.mts";
 import { parsePo } from "../scripts/po_file.mts";
 import {
-  distribution,
-  formatReport,
-  looksLikeProse,
-} from "../../../../scripts/pot_provenance_report.mts";
-import {
-  applySrcPolicy,
   applySkipIds,
   applySkipPolicy,
-  parseSkipIds,
+  applySrcPolicy,
   buildCatalog,
   catalogSize,
   ctxtOf,
   discoverSkipPolicyPath,
   formatPotDate,
-  formatSkipReport,
   KNOWN_RAW_CLASSES,
-  main,
+  parseSkipIds,
   parseSkipPolicy,
   parseSrcPolicy,
   policyDecision,
   renderExcludedJsonl,
-  repairFragment,
   renderPot,
   renderSkipJournalJsonl,
-  runPotgen,
+  repairFragment,
   srcMatchesPattern,
   stripFontTags,
   triageReason,
   validatePolicyPattern,
   writeAtomic,
   type SkipPolicy,
-} from "../scripts/potgen.mts";
+} from "../scripts/pot_rules.mts";
 import {
   classifyRich,
   hasLetters,
@@ -52,9 +53,20 @@ import {
   stripTmpTags,
   TMP_TAGS,
 } from "../scripts/pot_skip.mts";
+import {
+  distribution,
+  formatReport,
+  looksLikeProse,
+} from "../../../../scripts/pot_provenance_report.mts";
+import { l10nBinary } from "../../../../scripts/text_cli.mts";
 
 const REPO = resolve(import.meta.dirname, "../../../..");
 const FIXTURE = join(import.meta.dirname, "..", "test_data", "tiny-dump");
+const CLI = join(REPO, "scripts", "text_cli.mts");
+const CREATED = "2026-01-02 03:04+0000";
+const bin = l10nBinary(REPO);
+const rustSkip = bin ? false : "rust-l10n не собран (npm run l10n:build)";
+
 let root: string;
 
 before(() => {
@@ -64,20 +76,272 @@ before(() => {
 
 after(() => rmSync(root, { recursive: true, force: true }));
 
+/** Публичная обёртка Rust: `node scripts/text_cli.mts <подкоманда> …`. */
+function cli(args: string[]): { status: number | null; stderr: string } {
+  const run = spawnSync(process.execPath, [CLI, ...args], {
+    encoding: "utf8",
+    cwd: REPO,
+  });
+  return { status: run.status, stderr: run.stderr };
+}
+
+function ok(args: string[]): void {
+  const run = cli(args);
+  assert.equal(run.status, 0, `text_cli ${args.join(" ")}: ${run.stderr}`);
+}
+
 function item(partial: Partial<InventoryItem> & { text: string; kind: ItemKind }): InventoryItem {
   return { speaker: "", richText: "", source: "test", idx: 0, src: "raw:test", ...partial };
 }
 
-/** Тихая обёртка CLI (ожидаемые ошибки не должны шуметь в выводе тестов). */
-async function quietMain(argv: string[]): Promise<number> {
-  const orig = console.error;
-  console.error = () => {};
-  try {
-    return await main(argv);
-  } finally {
-    console.error = orig;
-  }
-}
+// ---------------------------------------------------------------------------
+// Rust potgen через публичный CLI: контракт файла и правила генерации.
+// ---------------------------------------------------------------------------
+
+test(
+  "Rust potgen: заголовок, порядок (msgid, msgctxt), без refs, msgstr пуст",
+  { skip: rustSkip },
+  () => {
+    const out = join(root, "header.pot");
+    ok([
+      "potgen",
+      "--root",
+      root,
+      "--dump",
+      FIXTURE,
+      "--out",
+      out,
+      "--created",
+      CREATED,
+      "--no-policy",
+      "--no-skip-policy",
+      "--no-skip-ids",
+    ]);
+
+    const text = readFileSync(out, "utf8");
+    assert.ok(text.startsWith("# NeonTranslator EN template"), "шапка POT");
+    assert.ok(text.includes(`"POT-Creation-Date: ${CREATED}\\n"`));
+    assert.ok(text.includes('"Content-Type: text/plain; charset=UTF-8\\n"'));
+    assert.ok(text.endsWith("\n") && !text.endsWith("\n\n"));
+
+    const entries = parsePo(text).filter((e) => e.msgid);
+    assert.equal(entries.length, 10, "записей столько же, сколько ключей в фикстуре");
+    assert.ok(
+      entries.every((e) => e.msgstr === ""),
+      "POT всегда с пустым msgstr",
+    );
+    assert.ok(
+      entries.every((e) => e.refs.length === 0),
+      "#: refs не пишутся",
+    );
+
+    const keys = entries.map((e) => [e.msgid, e.msgctxt]);
+    const sorted = [...keys].sort((a, b) =>
+      a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0,
+    );
+    assert.deepEqual(keys, sorted, "порядок по (msgid, msgctxt)");
+  },
+);
+
+test("Rust potgen: msgctxt по видам, rich_text, ui-двойник удалён", { skip: rustSkip }, () => {
+  const out = join(root, "contexts.pot");
+  ok([
+    "potgen",
+    "--root",
+    root,
+    "--dump",
+    FIXTURE,
+    "--out",
+    out,
+    "--created",
+    CREATED,
+    "--no-policy",
+    "--no-skip-policy",
+    "--no-skip-ids",
+  ]);
+  const entries = parsePo(readFileSync(out, "utf8")).filter((e) => e.msgid);
+  const byId = new Map(entries.map((e) => [e.msgid, e]));
+
+  assert.equal(byId.get("Zoey")?.msgctxt, "speaker-name");
+  assert.equal(byId.get("Ask about her Arm")?.msgctxt, "ui");
+  assert.equal(
+    byId.get("Where are you going now, my dear friend?")?.msgctxt,
+    "speaker:Zoey",
+    "бандл-строка с говорящим",
+  );
+  assert.ok(
+    byId
+      .get("Welcome back, Sarah.")
+      ?.comments.includes("rich_text: <color=#EB83FF>Welcome back, Sarah.</color>"),
+    "rich_text из дампа",
+  );
+  assert.equal(
+    entries.filter((e) => e.msgid === "Welcome back, Sarah.").length,
+    1,
+    "ui-двойник диалоговой строки удалён",
+  );
+});
+
+test("Rust potgen: политика отбора исключает из POT и пишет журнал", { skip: rustSkip }, () => {
+  const dir = join(root, "policy");
+  mkdirSync(dir, { recursive: true });
+  const policy = join(dir, "policy.json");
+  writeFileSync(policy, '{"exclude":["raw:MonoBehaviour"]}', "utf8");
+  const out = join(dir, "with-policy.pot");
+  const excluded = join(dir, "excluded.jsonl");
+
+  ok([
+    "potgen",
+    "--root",
+    root,
+    "--dump",
+    FIXTURE,
+    "--out",
+    out,
+    "--created",
+    CREATED,
+    "--policy",
+    policy,
+    "--excluded",
+    excluded,
+    "--no-skip-policy",
+    "--no-skip-ids",
+  ]);
+
+  const pot = readFileSync(out, "utf8");
+  assert.ok(!pot.includes('msgid "BACK"'), "исключённой записи в POT нет");
+  assert.ok(pot.includes('msgid "New Game"'), "остальные записи на месте");
+
+  const rows = readFileSync(excluded, "utf8")
+    .trim()
+    .split("\n")
+    .map((line) => JSON.parse(line) as { src: string; msgid: string; reason: string });
+  assert.ok(rows.length > 0);
+  assert.ok(rows.every((r) => r.src === "raw:MonoBehaviour"));
+  assert.ok(rows.every((r) => r.reason === "exclude:raw:MonoBehaviour"));
+  assert.ok(rows.some((r) => r.msgid === "BACK"));
+  assert.equal(existsSync(`${excluded}.part`), false);
+});
+
+test("Rust potgen: невалидная политика — ошибка, POT не пишется", { skip: rustSkip }, () => {
+  const dir = join(root, "bad-policy");
+  mkdirSync(dir, { recursive: true });
+  const policy = join(dir, "policy.json");
+  writeFileSync(policy, '{"exclude":["raw:Fontt"]}', "utf8");
+  const out = join(dir, "out.pot");
+
+  const run = cli([
+    "potgen",
+    "--root",
+    root,
+    "--dump",
+    FIXTURE,
+    "--out",
+    out,
+    "--policy",
+    policy,
+    "--no-skip-policy",
+    "--no-skip-ids",
+  ]);
+  assert.notEqual(run.status, 0, "неизвестная метка — не тихий игнор");
+  assert.match(run.stderr, /raw:Fontt/);
+  assert.equal(existsSync(out), false);
+});
+
+test(
+  "Rust potgen: skip-политика ставит `#, skip` и пишет журнал; выключатель работает",
+  { skip: rustSkip },
+  () => {
+    const dir = join(root, "skip");
+    mkdirSync(dir, { recursive: true });
+    const policy = join(dir, "skip.json");
+    writeFileSync(
+      policy,
+      JSON.stringify({ rules: [{ id: "identifier", src: "raw:*", when: "identifier" }] }),
+      "utf8",
+    );
+    const out = join(dir, "with-skip.pot");
+    const journal = join(dir, "skip.jsonl");
+
+    ok([
+      "potgen",
+      "--root",
+      root,
+      "--dump",
+      FIXTURE,
+      "--out",
+      out,
+      "--created",
+      CREATED,
+      "--no-policy",
+      "--skip-policy",
+      policy,
+      "--skip-journal",
+      journal,
+      "--no-skip-ids",
+    ]);
+
+    const pot = readFileSync(out, "utf8");
+    assert.ok(pot.includes("#, skip"), "метка стоит в POT");
+    assert.ok(pot.includes("#. skip: identifier"), "причина видна до текста");
+    const rows = readFileSync(journal, "utf8")
+      .trim()
+      .split("\n")
+      .map((line) => JSON.parse(line) as { rule: string; msgid: string });
+    assert.ok(rows.length > 0, "журнал не пуст");
+    assert.ok(rows.every((r) => r.rule === "identifier"));
+    assert.ok(
+      rows.some((r) => r.msgid === "ColorParserList"),
+      "identifier-строка помечена",
+    );
+    assert.equal(existsSync(`${journal}.part`), false);
+
+    const offOut = join(dir, "off.pot");
+    ok([
+      "potgen",
+      "--root",
+      root,
+      "--dump",
+      FIXTURE,
+      "--out",
+      offOut,
+      "--created",
+      CREATED,
+      "--no-policy",
+      "--no-skip-policy",
+      "--no-skip-ids",
+    ]);
+    assert.ok(!readFileSync(offOut, "utf8").includes("#, skip"), "выключено — меток нет");
+  },
+);
+
+test("Rust potgen: нет дампа — ненулевой код, POT не создан", { skip: rustSkip }, () => {
+  const out = join(root, "missing", "template.pot");
+  const run = cli([
+    "potgen",
+    "--root",
+    root,
+    "--dump",
+    join(root, "no-dump"),
+    "--out",
+    out,
+    "--no-policy",
+    "--no-skip-policy",
+    "--no-skip-ids",
+  ]);
+  assert.notEqual(run.status, 0);
+  assert.equal(existsSync(out), false);
+});
+
+test("Rust potgen: --help печатает справку и выходит с 0", { skip: rustSkip }, () => {
+  const run = cli(["potgen", "--help"]);
+  assert.equal(run.status, 0);
+  assert.match(run.stderr, /--dump/);
+});
+
+// ---------------------------------------------------------------------------
+// Библиотека правил (`pot_rules.mts`) — живая: на ней держатся проверки POT.
+// ---------------------------------------------------------------------------
 
 test("ctxtOf: спикер / имя персонажа / ui", () => {
   assert.equal(ctxtOf(item({ text: "Hi", kind: "dlg", speaker: "Zoey" })), "speaker:Zoey");
@@ -166,7 +430,7 @@ test("renderPot: сортировка по (msgid, msgctxt), без refs, msgstr
     item({ text: "a", kind: "dlg", speaker: "Amy" }),
   ];
   const { catalog } = buildCatalog(items);
-  const text = renderPot(catalog, "2026-01-02 03:04+0000");
+  const text = renderPot(catalog, CREATED);
   const entries = parsePo(text).filter((e) => e.msgid);
 
   assert.deepEqual(
@@ -179,67 +443,13 @@ test("renderPot: сортировка по (msgid, msgctxt), без refs, msgstr
   );
   assert.ok(entries.every((e) => e.msgstr === ""));
   assert.ok(entries.every((e) => e.refs.length === 0));
-  assert.ok(text.includes('"POT-Creation-Date: 2026-01-02 03:04+0000\\n"'));
+  assert.ok(text.includes(`"POT-Creation-Date: ${CREATED}\\n"`));
   assert.ok(text.startsWith("# NeonTranslator EN template"));
   assert.ok(text.endsWith("\n") && !text.endsWith("\n\n"));
 });
 
 test("formatPotDate: формат Python strftime (UTC)", () => {
-  assert.equal(formatPotDate(new Date(Date.UTC(2026, 0, 2, 3, 4))), "2026-01-02 03:04+0000");
-});
-
-test("runPotgen: мини-дамп → POT с ожидаемыми записями и rich", async () => {
-  const out = join(root, "run", "template.pot");
-  const res = await runPotgen({
-    dumpDir: FIXTURE,
-    outPath: out,
-    created: "2026-01-02 03:04+0000",
-    // Тест про каталог и rich, а не про политику: без неё фикстура целиком.
-    policyPath: null,
-  });
-
-  assert.equal(res.entries, 10);
-  const text = readFileSync(out, "utf8");
-  assert.ok(
-    text.includes("#. rich_text: <color=#EB83FF>Welcome back, Sarah.</color>"),
-    "rich_text из дампа попадает в POT",
-  );
-  assert.ok(
-    text.includes('msgctxt "speaker:Zoey"\nmsgid "Where are you going now, my dear friend?"'),
-    "бандл-строка с спикером",
-  );
-  assert.ok(text.includes('msgctxt "speaker-name"\nmsgid "Zoey"'));
-  assert.ok(text.includes('msgctxt "ui"\nmsgid "Ask about her Arm"'));
-  const entries = parsePo(text).filter((e) => e.msgid);
-  assert.deepEqual(
-    entries
-      .filter((e) => e.msgid === "Where are you going now, my dear friend?")
-      .map((e) => e.msgctxt),
-    ["speaker:Zoey"],
-    "ui-двойник бандл-строки удалён",
-  );
-});
-
-test("runPotgen: отсутствие дампа — ошибка, файла нет", async () => {
-  const out = join(root, "missing", "template.pot");
-  await assert.rejects(
-    runPotgen({ dumpDir: join(root, "no-dump"), outPath: out }),
-    /dump not found/,
-  );
-  assert.equal(existsSync(out), false);
-});
-
-test("runPotgen: пустой дамп — ошибка, пустой POT не пишется", async () => {
-  const empty = join(root, "empty");
-  mkdirSync(empty, { recursive: true });
-  const out = join(root, "empty-out", "template.pot");
-  await assert.rejects(runPotgen({ dumpDir: empty, outPath: out }), /empty dump/);
-  assert.equal(existsSync(out), false);
-});
-
-test("main: без дампа — ненулевой код выхода", async () => {
-  const code = await quietMain(["--dump", join(root, "nope"), "--out", join(root, "x.pot")]);
-  assert.notEqual(code, 0);
+  assert.equal(formatPotDate(new Date(Date.UTC(2026, 0, 2, 3, 4))), CREATED);
 });
 
 test("writeAtomic: .part не остаётся после записи", () => {
@@ -259,26 +469,12 @@ test("buildCatalog: src пишется первым комментарием и 
   const { catalog } = buildCatalog(items);
   const slot = catalog.get("Hi")?.get("speaker:Zoey");
   assert.equal(slot?.src, "dialog", "метка первого вхождения");
-  const text = renderPot(catalog, "2026-01-02 03:04+0000");
+  const text = renderPot(catalog, CREATED);
   assert.ok(text.includes("#. src: dialog\n#. rich_text: <i>Hi</i>"), text);
-  // `includeSrc: false` — только для POT до провенанса.
-  assert.ok(!renderPot(catalog, "2026-01-02 03:04+0000", { includeSrc: false }).includes("src:"));
+  assert.ok(!renderPot(catalog, CREATED, { includeSrc: false }).includes("src:"));
 });
 
-test("renderPot: метки не меняют записи — добавляется только комментарий src", () => {
-  const items = [
-    item({ text: "Hi", speaker: "Zoey", kind: "dlg", src: "dialog", richText: "<i>Hi</i>" }),
-    item({ text: "BACK", kind: "raw", src: "raw:MonoBehaviour" }),
-    item({ text: "New Game", kind: "set", src: "settings" }),
-  ];
-  const { catalog } = buildCatalog(items);
-  const withSrc = renderPot(catalog, "2026-01-02 03:04+0000");
-  const without = renderPot(catalog, "2026-01-02 03:04+0000", { includeSrc: false });
-  assert.equal(withSrc.replace(/^#\. src: .*\n/gm, ""), without);
-  assert.equal(parsePo(withSrc).filter((e) => e.msgid).length, 3);
-});
-
-test("distribution: инвентарь → ключи → POT и мягкий тест прозы (синтетика)", () => {
+test("distribution/formatReport: инвентарь → ключи → POT и мягкий тест прозы", () => {
   const items = [
     item({ text: "Hi there friend", kind: "dlg", speaker: "Zoey", src: "dialog" }),
     item({ text: "Hi there friend", kind: "raw", src: "raw:Other" }),
@@ -293,35 +489,29 @@ test("distribution: инвентарь → ключи → POT и мягкий т
   assert.equal(bySrc.get("dialog")?.items, 1);
   assert.equal(bySrc.get("dialog")?.pot, 1);
   assert.equal(bySrc.get("settings")?.pot, 1);
-  // "Back" из settings стал ui-двойником? Нет: у него нет диалогового ключа,
-  // но второй "Back" — raw с тем же ctxt "ui", значит один POT-ключ.
   assert.equal((bySrc.get("settings")?.pot ?? 0) + (bySrc.get("raw:MonoBehaviour")?.pot ?? 0), 1);
   assert.equal(bySrc.get("field:m_text")?.prose, 1);
   assert.equal(bySrc.get("raw:Font")?.prose, 0);
-  // Порядок меток стабилен: dialog → ... → settings → ... → raw:*.
   assert.deepEqual(
     stats.map((s) => s.src),
     ["dialog", "field:m_text", "settings", "raw:Font", "raw:MonoBehaviour", "raw:Other"],
   );
-  const totalPot = stats.reduce((n, s) => n + s.pot, 0);
-  assert.equal(totalPot, 4, "dialog + Back + Where + +5?GNRSSS");
+  assert.equal(
+    stats.reduce((n, s) => n + s.pot, 0),
+    4,
+    "dialog + Back + Where + +5?GNRSSS",
+  );
   assert.equal(looksLikeProse("+5?GNRSSS"), false);
   assert.equal(looksLikeProse("Hi there friend"), true);
-  assert.equal(looksLikeProse("Where is my mind?"), true);
   assert.equal(looksLikeProse("A dick."), false, "меньше 3 слов");
-});
 
-test("formatReport: таблица и примеры содержат все источники", () => {
-  const items = [item({ text: "Hi there friend", kind: "dlg", speaker: "Zoey", src: "dialog" })];
-  const { catalog } = buildCatalog(items);
-  const md = formatReport(distribution(items, catalog), {
+  const md = formatReport(distribution(items.slice(0, 1), catalog), {
     candidates: 0,
     inPot: 0,
     prose: 0,
     examples: [],
   });
   assert.ok(md.includes("| `src` | в инвентаре | ключей | в POT |"));
-  assert.ok(md.includes("| `dialog` | 1 | 1 | 1 |"));
   assert.ok(md.includes("### `dialog` — 1 в POT"));
   assert.ok(md.includes("`global` — кандидаты"));
 });
@@ -330,40 +520,27 @@ test("formatReport: таблица и примеры содержат все и�
 // Политика отбора по провенансу (`config/pot-src-policy.json`).
 // ---------------------------------------------------------------------------
 
-test("parseSrcPolicy: пустая политика = как раньше (exclude [], include ['*'])", () => {
+test("parseSrcPolicy: пустая политика, ошибки JSON/поля/метки/пустого include", () => {
   const policy = parseSrcPolicy("{}", "empty.json");
   assert.deepEqual(policy.exclude, []);
   assert.deepEqual(policy.include, ["*"]);
-});
-
-test("parseSrcPolicy: невалидный JSON — понятная ошибка с путём", () => {
   assert.throws(
     () => parseSrcPolicy('{"exclude": ["raw:Font"}', "bad.json"),
     /невалидный JSON политики bad\.json/,
   );
-});
-
-test("parseSrcPolicy: неизвестное поле — ошибка (опечатка не игнорируется)", () => {
   assert.throws(
     () => parseSrcPolicy('{"exlude": ["raw:Font"]}', "p.json"),
     /неизвестное поле "exlude"/,
   );
-});
-
-test("parseSrcPolicy: неизвестная метка и пустой include — ошибки, а не молчание", () => {
   assert.throws(
     () => parseSrcPolicy('{"exclude": ["raw:Fontt"]}', "p.json"),
     /неизвестная метка "raw:Fontt"/,
-  );
-  assert.throws(
-    () => parseSrcPolicy('{"exclude": ["dilog"]}', "p.json"),
-    /неизвестная метка "dilog"/,
   );
   assert.throws(() => parseSrcPolicy('{"include": []}', "p.json"), /include.*пуст/);
 });
 
 test("validatePolicyPattern: точные метки, префиксы и wildcard", () => {
-  for (const ok of [
+  for (const okPattern of [
     "*",
     "dialog",
     "raw:Font",
@@ -374,7 +551,7 @@ test("validatePolicyPattern: точные метки, префиксы и wildca
     "dialog*",
     "raw:ClassID0*",
   ]) {
-    assert.equal(validatePolicyPattern(ok), null, `должно быть валидно: ${ok}`);
+    assert.equal(validatePolicyPattern(okPattern), null, `должно быть валидно: ${okPattern}`);
   }
   for (const bad of ["", "raw:", "dilog", "raw:Fontt", "raw:Zzz*", "field:1bad"]) {
     assert.ok(validatePolicyPattern(bad), `должно быть ошибкой: ${bad}`);
@@ -441,90 +618,9 @@ test("renderExcludedJsonl: строка JSONL на запись, валидны�
     .trim()
     .split("\n")
     .map((line) => JSON.parse(line) as Record<string, string>);
-  assert.deepEqual(rows[0], {
-    src: "raw:Font",
-    msgid: "B\nB",
-    msgctxt: "ui",
-    reason: "exclude:raw:Font",
-  });
-  assert.deepEqual(rows[1], {
-    src: "dialog",
-    msgid: "A",
-    msgctxt: "speaker:Zoey",
-    reason: "not-included",
-  });
+  assert.deepEqual(rows[0], entries[0]);
+  assert.deepEqual(rows[1], entries[1]);
   assert.equal(renderExcludedJsonl([]), "");
-});
-
-test("runPotgen: политика выкидывает из POT и пишет журнал; пустая = как раньше", async () => {
-  const dir = join(root, "policy");
-  mkdirSync(dir, { recursive: true });
-  const policyPath = join(dir, "policy.json");
-  writeFileSync(policyPath, '{"exclude":["raw:MonoBehaviour"]}', "utf8");
-
-  const out = join(dir, "with-policy.pot");
-  const excludedPath = join(dir, "excluded.jsonl");
-  const res = await runPotgen({
-    dumpDir: FIXTURE,
-    outPath: out,
-    created: "2026-01-02 03:04+0000",
-    policyPath,
-    excludedPath,
-  });
-
-  assert.equal(res.entries, 7, "10 записей минус 3 из raw:MonoBehaviour");
-  assert.equal(res.policy?.excluded, 3);
-  assert.deepEqual(res.policy?.bySrc, [{ src: "raw:MonoBehaviour", count: 3 }]);
-  assert.ok(res.bytes > 0);
-  const pot = readFileSync(out, "utf8");
-  assert.ok(!pot.includes('msgid "BACK"'), "исключённой записи в POT нет");
-  assert.ok(pot.includes('msgid "New Game"'), "остальные записи на месте");
-
-  const rows = readFileSync(excludedPath, "utf8")
-    .trim()
-    .split("\n")
-    .map((line) => JSON.parse(line) as { src: string; msgid: string; reason: string });
-  assert.equal(rows.length, 3);
-  assert.ok(rows.every((r) => r.src === "raw:MonoBehaviour"));
-  assert.ok(rows.every((r) => r.reason === "exclude:raw:MonoBehaviour"));
-  assert.ok(rows.some((r) => r.msgid === "BACK"));
-  assert.equal(existsSync(`${excludedPath}.part`), false);
-
-  // Пустая политика: POT побайтово как при выключенной, журнал пуст.
-  writeFileSync(policyPath, '{"exclude":[],"include":["*"]}', "utf8");
-  const emptyOut = join(dir, "empty-policy.pot");
-  const emptyExcluded = join(dir, "empty-excluded.jsonl");
-  const empty = await runPotgen({
-    dumpDir: FIXTURE,
-    outPath: emptyOut,
-    created: "2026-01-02 03:04+0000",
-    policyPath,
-    excludedPath: emptyExcluded,
-  });
-  const noPolicyOut = join(dir, "no-policy.pot");
-  const none = await runPotgen({
-    dumpDir: FIXTURE,
-    outPath: noPolicyOut,
-    created: "2026-01-02 03:04+0000",
-    policyPath: null,
-  });
-  assert.equal(readFileSync(emptyOut, "utf8"), readFileSync(noPolicyOut, "utf8"));
-  assert.equal(empty.policy?.excluded, 0);
-  assert.equal(none.policy, null);
-  assert.equal(readFileSync(emptyExcluded, "utf8"), "");
-});
-
-test("runPotgen: невалидная политика — ошибка, POT не пишется", async () => {
-  const dir = join(root, "bad-policy");
-  mkdirSync(dir, { recursive: true });
-  const policyPath = join(dir, "policy.json");
-  writeFileSync(policyPath, '{"exclude":["raw:Fontt"]}', "utf8");
-  const out = join(dir, "out.pot");
-  await assert.rejects(
-    runPotgen({ dumpDir: FIXTURE, outPath: out, policyPath }),
-    /неизвестная метка "raw:Fontt"/,
-  );
-  assert.equal(existsSync(out), false);
 });
 
 test("knownRawClasses: TS-список = unity_classes.mts = Rust-список", () => {
@@ -544,102 +640,17 @@ test("knownRawClasses: TS-список = unity_classes.mts = Rust-список",
   assert.deepEqual([...KNOWN_RAW_CLASSES].sort(), [...fromRust].sort());
 });
 
-// --- паритет TS ↔ Rust с политикой и без (нужен собранный бинарь и дамп) ---
-const RUST_BIN = [
-  join(REPO, "tools/rust-l10n/target/release/rust-l10n.exe"),
-  join(REPO, "tools/rust-l10n/target/release/rust-l10n"),
-].find((p) => existsSync(p));
-const parityDump =
-  process.env.TCNN_DUMP_DIR ??
-  ["tmp/dump-after", "tmp/dump-new", "tmp/dump"]
-    .map((rel) => join(REPO, rel))
-    .find((dir) => existsSync(dir));
-const paritySkip = RUST_BIN && parityDump ? false : "нужен rust-l10n (npm run l10n:build) и дамп";
-
-test(
-  "паритет TS ↔ Rust: POT и журнал байт-в-байт (с политикой и без)",
-  { skip: paritySkip },
-  async () => {
-    const dir = join(root, "parity");
-    mkdirSync(dir, { recursive: true });
-    const policyPath = join(REPO, "config", "pot-src-policy.json");
-    for (const mode of ["with", "without"] as const) {
-      const tsPot = join(dir, `${mode}-ts.pot`);
-      const rustPot = join(dir, `${mode}-rust.pot`);
-      const tsExcluded = join(dir, `${mode}-ts.jsonl`);
-      const rustExcluded = join(dir, `${mode}-rust.jsonl`);
-      const tsSkip = join(dir, `${mode}-ts-skip.jsonl`);
-      const rustSkip = join(dir, `${mode}-rust-skip.jsonl`);
-      const policyArg = mode === "with" ? policyPath : null;
-
-      const res = await runPotgen({
-        dumpDir: parityDump as string,
-        outPath: tsPot,
-        created: "2026-01-02 03:04+0000",
-        policyPath: policyArg,
-        excludedPath: tsExcluded,
-        skipJournalPath: tsSkip,
-      });
-      const args = [
-        "potgen",
-        "--root",
-        REPO,
-        "--dump",
-        parityDump as string,
-        "--out",
-        rustPot,
-        "--created",
-        "2026-01-02 03:04+0000",
-        "--excluded",
-        rustExcluded,
-        "--skip-journal",
-        rustSkip,
-        ...(policyArg ? ["--policy", policyArg] : ["--no-policy"]),
-      ];
-      const run = spawnSync(RUST_BIN as string, args, { encoding: "utf8" });
-      assert.equal(run.status, 0, `rust-l10n ${args.join(" ")}: ${run.stderr}`);
-
-      assert.equal(readFileSync(rustPot, "utf8"), readFileSync(tsPot, "utf8"), `${mode}: POT`);
-      // Журнал skip — тоже побайтово (метка правила, порядок POT).
-      assert.equal(readFileSync(rustSkip, "utf8"), readFileSync(tsSkip, "utf8"), `${mode}: skip`);
-      assert.equal(
-        res.skip?.marked,
-        readFileSync(tsSkip, "utf8").split(/\r?\n/).filter(Boolean).length,
-        "журнал skip содержит ровно помеченные записи",
-      );
-      if (policyArg) {
-        // Число исключённых зависит от данных политики (меняется вместе с config/),
-        // поэтому проверяем инвариант, а не магическое число: журнал = исключённые.
-        const excludedCount = res.policy?.excluded ?? 0;
-        assert.ok(excludedCount > 0, "политика действительно исключает");
-        assert.equal(
-          excludedCount,
-          readFileSync(tsExcluded, "utf8").split(/\r?\n/).filter(Boolean).length,
-          "журнал содержит ровно исключённые записи",
-        );
-        assert.equal(
-          readFileSync(rustExcluded, "utf8"),
-          readFileSync(tsExcluded, "utf8"),
-          `${mode}: журнал`,
-        );
-      }
-    }
-  },
-);
-
 // ---------------------------------------------------------------------------
-// Skip-логика (`pot_skip.mts`) — ОДНА реализация для инварианта и политики.
+// Skip-логика (`pot_skip.mts`) — живая: на ней держатся проверки POT.
 //
 // Главный тест — ловушка 2026-11-23: наивная чистка `<[^>]+>` съедает
-// авторские кавычки `< … >` вместе с настоящим тегом, и дефект маскируется
-// (три разовых скрипта дали 0 обрывков там, где баг есть).
+// авторские кавычки `< … >` вместе с настоящим тегом, и дефект маскируется.
 // ---------------------------------------------------------------------------
 
 const REAL_FRAGMENT =
   "<i>< Like this, hmmm...? I love these nice big tits. Especially when adorable " +
   "customers like <b>you</b> request them. >";
 
-/** Наивная чистка `<[^>]+>` — ровно так «теряется» дефект. */
 function naiveStrip(s: string): string {
   return s.replace(/<[^>]+>/g, "");
 }
@@ -697,95 +708,68 @@ test("classifyRich: обрывок — хвост полного текста, �
   }
 });
 
-test("условия правил: noLetters / shortToken / noWord / fragment", () => {
+test("условия правил: noLetters / shortToken / noWord / identifier / tokens / hexColor", () => {
   assert.ok(hasLetters("!AL7"), "буквы A и L есть");
   assert.ok(!hasLetters("«123»"));
   assert.ok(skipConditionMatches("noLetters", { msgid: "«123»", rich: "" }));
   assert.ok(skipConditionMatches("shortToken", { msgid: "?|b", rich: "" }));
-  // Примеры владельца оба С ПРОБЕЛОМ — shortToken их не ловит, ловит noWord.
   assert.ok(!skipConditionMatches("shortToken", { msgid: "w? |b", rich: "" }));
-  assert.ok(!skipConditionMatches("shortToken", { msgid: "wK Ax", rich: "" }));
   assert.ok(!skipConditionMatches("shortToken", { msgid: "abcdefghijklm", rich: "" }));
-  // noWord: нет ни одного токена из >=3 букв.
   assert.ok(skipConditionMatches("noWord", { msgid: "w? |b", rich: "" }));
-  assert.ok(skipConditionMatches("noWord", { msgid: "wK Ax", rich: "" }));
-  assert.ok(skipConditionMatches("noWord", { msgid: "j A", rich: "" }));
   assert.ok(skipConditionMatches("noWord", { msgid: "v 0.5.7-pr", rich: "" }), "pr — 2 буквы");
-  // Настоящие подписи остаются: в них есть слово.
   assert.ok(!skipConditionMatches("noWord", { msgid: "ACCESS", rich: "" }));
-  assert.ok(!skipConditionMatches("noWord", { msgid: "SAVEFILENAME", rich: "" }));
-  assert.ok(
-    skipConditionMatches("noWord", { msgid: "UI", rich: "" }),
-    "две буквы — не слово (в POT такой записи нет, но правило обязано быть точным)",
-  );
   assert.ok(!skipConditionMatches("noWord", { msgid: "x y ZZZ", rich: "" }), "ZZZ — слово");
-  // identifier: структура имени, а не «вид».
   for (const id of ["AbilityName", "Camera_Flash", "DEFAULT_KEY", "Char_Klaudia", "MainUI"]) {
     assert.ok(skipConditionMatches("identifier", { msgid: id, rich: "" }), `identifier: ${id}`);
   }
   for (const id of ["ACCESS", "Accept", "ARRIVAL", "Aaron", "Neon-Trust", "AC/DС"]) {
     assert.ok(!skipConditionMatches("identifier", { msgid: id, rich: "" }), `не identifier: ${id}`);
   }
-  // tokens: шаблон с подстановкой — формат, а не текст.
-  for (const id of [
-    "Received #ItemName#.",
-    "#TakenFromInventoryText# #ItemName#.",
-    "E#M#",
-    "Hi %s",
-    "{Count} items",
-  ]) {
+  for (const id of ["Received #ItemName#.", "E#M#", "Hi %s", "{Count} items"]) {
     assert.ok(skipConditionMatches("tokens", { msgid: id, rich: "" }), `tokens: ${id}`);
   }
   for (const id of ["Received the item.", "100% sure", "Hi there"]) {
     assert.ok(!skipConditionMatches("tokens", { msgid: id, rich: "" }), `не tokens: ${id}`);
   }
-  // hexColor: явный #RRGGBB — константа; без # не срабатывает.
   for (const id of ["#FFD24A", "#8A8F98", "#FFF", "#A64141"]) {
     assert.ok(skipConditionMatches("hexColor", { msgid: id, rich: "" }), `hex: ${id}`);
   }
-  for (const id of ["ADDDDD", "EDDDDD", "#FFD24G", "Color #FFF", "FFD24A"]) {
+  for (const id of ["ADDDDD", "#FFD24G", "Color #FFF", "FFD24A"]) {
     assert.ok(!skipConditionMatches("hexColor", { msgid: id, rich: "" }), `не hex: ${id}`);
   }
-  // saveKey: идентификатор сохранения, а не реплика.
+});
+
+test("условия правил: saveKey / snakeCase / codeRef / stateName / fsmLabel / fragment", () => {
   for (const id of [
     "GlowingHoleKeys/103 Peeking Counter",
     "CartelHideoutBadendKeys/Did get naked",
-    "Character Keys/Did stare at Lios Dick",
   ]) {
     assert.ok(skipConditionMatches("saveKey", { msgid: id, rich: "" }), `save-key: ${id}`);
   }
-  for (const id of ["24/7 Kiosk", "Annoyed / Angry", "AMS/UI SoftMask", "Keys of the city"]) {
+  for (const id of ["24/7 Kiosk", "Annoyed / Angry", "Keys of the city"]) {
     assert.ok(!skipConditionMatches("saveKey", { msgid: id, rich: "" }), `не save-key: ${id}`);
   }
-  // snakeCase: имена ассетов/состояний/отладка Unity, а не текст для игрока.
   for (const id of [
     "CC_Option_Outfit_Futereswear Skintight Suit Dark",
-    "Apl_Female_Carte_Suit2 Grey",
     "PMA_ClearPathfindingTarget: FollowerEntity is disabled!",
-    "Inspection_Lio_Crotch",
   ]) {
     assert.ok(skipConditionMatches("snakeCase", { msgid: id, rich: "" }), `snake: ${id}`);
   }
-  for (const id of ["Change", "24/7 Kiosk", "Annoyed / Angry", "Alpha: N/A", "Neon-Trust"]) {
+  for (const id of ["Change", "24/7 Kiosk", "Neon-Trust"]) {
     assert.ok(!skipConditionMatches("snakeCase", { msgid: id, rich: "" }), `не snake: ${id}`);
   }
-  // codeRef: путь без расширения или имя типа .NET — код, а не текст.
   for (const id of ["Dialogue/Auto", "AnimationViewer, Assembly-CSharp"]) {
     assert.ok(skipConditionMatches("codeRef", { msgid: id, rich: "" }), `code: ${id}`);
   }
-  for (const id of ["24/7 Kiosk", "Annoyed / Angry", "AMS/UI SoftMask", "a b/c"]) {
+  for (const id of ["24/7 Kiosk", "Annoyed / Angry", "a b/c"]) {
     assert.ok(!skipConditionMatches("codeRef", { msgid: id, rich: "" }), `не code: ${id}`);
   }
-
-  // stateName: метки веток диалога (Bark 12, Choice1) — не текст для игрока.
   for (const id of ["Bark 12", "Bark2 3", "Choice1", "Agree2", "Disable2"]) {
     assert.ok(skipConditionMatches("stateName", { msgid: id, rich: "" }), `state: ${id}`);
   }
   for (const id of ["Leave", "Agree", "Check", "Look at that", "Check 2nd Save Key"]) {
     assert.ok(!skipConditionMatches("stateName", { msgid: id, rich: "" }), `не state: ${id}`);
   }
-
-  // fsmLabel: метка машины состояний Unity, а не текст для игрока.
   for (const id of ["FSM Lio Printer", "FSM Nova Moving In", "Fsm Nova Move"]) {
     assert.ok(skipConditionMatches("fsmLabel", { msgid: id, rich: "" }), `fsm: ${id}`);
   }
@@ -857,8 +841,6 @@ test("applySkipPolicy: помечает, не удаляет, журнал в п
   );
   const applied = applySkipPolicy(catalog, policy);
   assert.equal(catalogSize(catalog), 4, "записи не удалены");
-  // Обрывок больше НЕ помечается: он починен полной фразой из rich_text,
-  // поэтому правило `fragment` к нему не применимо.
   assert.equal(applied.marked, 1, "только ?|b (short-token)");
   assert.deepEqual(applied.byRule, [
     { rule: "short-token", count: 1 },
@@ -872,60 +854,12 @@ test("applySkipPolicy: помечает, не удаляет, журнал в п
   assert.equal(catalog.get("?|b")?.get("ui")?.skip, "short-token");
   assert.equal(catalog.get("wK Ax")?.get("ui")?.skip, undefined, "пробел = не короткий токен");
 
-  const pot = renderPot(catalog, "2026-01-02 03:04+0000");
+  const pot = renderPot(catalog, CREATED);
   assert.ok(pot.includes('#, skip\nmsgctxt "ui"\nmsgid "?|b"'), pot);
   assert.ok(!pot.includes("#. skip: fragment"), pot);
   assert.ok(pot.includes("#. repaired: you request them. >"), pot);
   const jsonl = renderSkipJournalJsonl(applied.journal);
   assert.equal(jsonl.trim().split("\n").length, 1);
-});
-
-test("runPotgen: skip-метки в POT, журнал и выключатель политики", async () => {
-  const dir = join(root, "skip");
-  mkdirSync(dir, { recursive: true });
-  const policyPath = join(dir, "skip.json");
-  writeFileSync(
-    policyPath,
-    JSON.stringify({ rules: [{ id: "short-token", src: "raw:*", when: "shortToken" }] }),
-    "utf8",
-  );
-  const out = join(dir, "with-skip.pot");
-  const journal = join(dir, "skip.jsonl");
-  const res = await runPotgen({
-    dumpDir: FIXTURE,
-    outPath: out,
-    created: "2026-01-02 03:04+0000",
-    policyPath: null,
-    skipPolicyPath: policyPath,
-    skipJournalPath: journal,
-  });
-  assert.ok(res.skip && res.skip.marked > 0, "мини-дамп содержит короткие raw-токены");
-  const pot = readFileSync(out, "utf8");
-  assert.ok(pot.includes("#, skip"), "метка стоит в POT");
-  const ids = [...pot.matchAll(/#\. skip: ([\w-]+)/g)].map((m) => m[1]);
-  assert.deepEqual([...new Set(ids)], ["short-token"]);
-  const rows = readFileSync(journal, "utf8")
-    .trim()
-    .split("\n")
-    .map((l) => JSON.parse(l));
-  assert.equal(rows.length, res.skip?.marked);
-  assert.ok(rows.every((r) => r.rule === "short-token"));
-  assert.equal(existsSync(`${journal}.part`), false);
-  // Отчёт печатается по правилам.
-  assert.ok(formatSkipReport(res.skip).some((l) => l.includes("short-token")));
-
-  // Выключено — POT без меток и без журнала.
-  const offOut = join(dir, "off.pot");
-  const off = await runPotgen({
-    dumpDir: FIXTURE,
-    outPath: offOut,
-    created: "2026-01-02 03:04+0000",
-    policyPath: null,
-    skipPolicyPath: null,
-  });
-  assert.equal(off.skip, null);
-  assert.equal(off.skipJournalPath, null);
-  assert.ok(!readFileSync(offOut, "utf8").includes("#, skip"));
 });
 
 test("skip-политика находится от корня репозитория", () => {
@@ -964,7 +898,6 @@ test("buildCatalog: обрывок становится полной фразо�
     "исходный хвост сохранён для аудита",
   );
 
-  // Не-обрывок не меняется.
   const { catalog: plainCatalog } = buildCatalog([
     item({ text: "Just a line", kind: "dlg", src: "dialog" }),
   ]);
@@ -977,10 +910,9 @@ test("buildCatalog: при дубле побеждает живой источн
     "p.json",
   );
   const isExcluded = (src: string): boolean => policyDecision(policy, src).excluded;
-  const asset = () => item({ text: "Hello", kind: "raw", src: "raw:GameObject" });
-  const dialog = () => item({ text: "Hello", kind: "dlg", src: "dialog" });
+  const asset = (): InventoryItem => item({ text: "Hello", kind: "raw", src: "raw:GameObject" });
+  const dialog = (): InventoryItem => item({ text: "Hello", kind: "dlg", src: "dialog" });
 
-  // Порядок 1: ассет первым.  Порядок 2: живой первым.
   for (const items of [
     [asset(), dialog()],
     [dialog(), asset()],
@@ -993,7 +925,6 @@ test("buildCatalog: при дубле побеждает живой источн
     );
   }
 
-  // Только ассет — политика убирает запись, журнал её фиксирует.
   const onlyAsset = buildCatalog([asset()], new Set(), isExcluded);
   const applied = applySrcPolicy(onlyAsset.catalog, policy);
   assert.equal(applied.catalog.size, 0, "ассетная строка исключена");

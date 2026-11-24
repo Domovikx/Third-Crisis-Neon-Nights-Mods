@@ -34,7 +34,7 @@ jobs:
       - name: POT contract
         run: npm run pot:check || true
 
-      - name: Dump tests (container, serialized, extraction)
+      - name: Dump tests (discovery, truncation)
         run: npm run test:dump
 
       - name: E2E pipeline (dump -> POT -> DAT)
@@ -125,8 +125,8 @@ jobs:
         working-directory: tools/rust-l10n
         run: cargo test
 
-      # Паритет с TS-эталоном: POT мини-дампа и .dat всех языков репозитория.
-      # Реальный дамп в CI отсутствует — тест на нём пропускается.
+      # Золото вместо TS-эталона (2026-11-24): POT мини-дампа, .dat всех языков,
+      # сборка дампа и отчёт QA. Реальный дамп в CI отсутствует — пропускается.
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
@@ -135,6 +135,14 @@ jobs:
         working-directory: tools/rust-l10n
         run: cargo build --release
 
-      - name: Parity (TS oracle vs Rust)
+      - name: Golden (POT, .dat)
         working-directory: .
         run: node --test scripts/text_parity.test.mts
+
+      - name: Golden (dump assembly)
+        working-directory: .
+        run: node --test scripts/assemble_parity.test.mts
+
+      - name: Golden (QA report)
+        working-directory: .
+        run: node --test .opencode/skills/translate-qa/tests/qa_golden.test.mts

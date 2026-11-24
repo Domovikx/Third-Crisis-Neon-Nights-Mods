@@ -25,7 +25,7 @@ import {
   loadSrcPolicy,
   policyDecision,
   type SrcPolicy,
-} from "../.opencode/skills/extract-text/scripts/potgen.mts";
+} from "../.opencode/skills/extract-text/scripts/pot_rules.mts";
 
 const REPO = resolve(import.meta.dirname, "..");
 const POT = join(REPO, "po", "template.pot");

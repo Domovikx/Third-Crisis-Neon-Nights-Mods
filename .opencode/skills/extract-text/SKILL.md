@@ -1,6 +1,6 @@
 ---
 name: extract-text
-description: PO-пайплайн текста игры (inventory, potgen, po_update, po_file, skip-политика). Рабочие команды — Rust (`rust-l10n`, обёртка `scripts/text_cli.mts`); TS-эталоны остались только у potgen и po_update. Строки берутся из дампа JSONL; YAML-дерево translations/ удалено.
+description: PO-пайплайн текста игры (inventory, pot_rules, po_file, skip-политика). Рабочие команды — Rust (`rust-l10n`, обёртка `scripts/text_cli.mts`); TS-эталоны potgen/po_update удалены 2026-11-24, их выход заморожен в золотых фикстурах. Строки берутся из дампа JSONL; YAML-дерево translations/ удалено.
 ---
 
 # extract-text — PO-пайплайн текста
@@ -11,11 +11,18 @@ description: PO-пайплайн текста игры (inventory, potgen, po_up
 - Строки берутся **из дампа** `tmp/dump/*.jsonl` (выход `dump-assets`),
   не из YAML: дерево `translations/` удалено. `#: translations/*` в старых PO —
   историческое происхождение, не существующие файлы.
-- TS-модули: `po_file`, `inventory`, `potgen`, `po_update`, `pot_skip`,
-  `pot_skip_review`. Из них **эталонами** остались `potgen` и `po_update`
-  (рабочий путь — Rust, паритет — `scripts/text_parity.test.mts`);
-  `po2dat`, `prefill` и `find_source` уже без TS-дублей — их стерегут тесты
-  Rust и слепки `scripts/text_golden.test.mts`.
+- TS-модули: `po_file`, `inventory`, `pot_rules`, `pot_skip`,
+  `pot_skip_review`. **Сборщика POT в TS больше нет**: `potgen.mts` и
+  `po_update.mts` удалены 2026-11-24, единственная рабочая реализация — Rust
+  (`tools/rust-l10n`, обёртка `scripts/text_cli.mts`). `pot_rules.mts` —
+  правила каталога для ПРОВЕРОК (`scripts/pot_invariants.mts`: перегенерация и
+  сверка POT с дампом); `po2dat`, `prefill` и `find_source` тоже без TS-дублей.
+- **Золото выхода** (оракул вместо эталона): `po/template.pot` + метаданные
+  (`sha256`, размер, число записей, исходный дамп) в
+  `test_data/pot-golden.json`; мини-дамп — `test_data/pot-golden-small.pot`;
+  `po_update` — `test_data/po-update-golden/` (вход `po/` + `expected/ru.po`).
+  Паритет с золотом стерегут `scripts/text_parity.test.mts` и
+  `tests/po_update.test.mts`.
 - Правило миграции (владелец, 2026-11-23): как только Rust-реализация
   доказана и протестирована, старый аналог **удаляется в том же коммите** —
   см. `docs/rust-vs-ts.md`.
@@ -28,15 +35,15 @@ description: PO-пайплайн текста игры (inventory, potgen, po_up
 
 - `inventory.mts` — потоковое чтение дампа → плоский список строк
   (`text, speaker, richText, kind, source, idx`). 319 МБ в память не грузятся.
-- `potgen.mts` — каталог `(msgid, msgctxt)` → `po/template.pot`.
-- `po_update.mts` — аналог `msgmerge -U`: перенос `msgstr` в новый POT
-  (точный ключ / ретаргет при смене `msgctxt` / новые пустые / `legacy`-хвост).
+- `pot_rules.mts` — правила каталога `(msgid, msgctxt)` (политика отбора,
+  skip-политика, дедуп, `renderPot`) — ТОЛЬКО для проверок POT; генератора и
+  CLI здесь нет (рабочий — Rust).
 - `po_file.mts` — парсер/рендер PO (детерминированный round-trip).
 - `pot_skip.mts` — условия skip-политики (что переводить не нужно) и чистка
   TMP-тегов; `pot_skip_review.mts` — отчёт для ревью правил.
 
 Удалены после миграции на Rust (брать из `rust-l10n`): `prefill_po.mts`,
-`po2dat.mts`, `find_source.mts`.
+`po2dat.mts`, `find_source.mts`, `potgen.mts`, `po_update.mts` (2026-11-24).
 
 ## Команды
 
@@ -49,21 +56,21 @@ npm run dump:ts         # эталон-образец, без Rust-тулчей�
 npm run potgen
 
 # Явный дамп (например, старый кэш в папке игры)
-node .opencode/skills/extract-text/scripts/potgen.mts \
-  --dump "<Steam>/…/NeonTranslator/tmp/dump" --out tmp/check.pot
+npm run potgen -- --dump "<Steam>/…/NeonTranslator/tmp/dump" --out tmp/check.pot
+#   то же напрямую: node scripts/text_cli.mts potgen --dump … --out …
 
 # Политика отбора по провенансу (данные): по умолчанию config/pot-src-policy.json
-node .opencode/skills/extract-text/scripts/potgen.mts --no-policy         # POT как до политики
-node .opencode/skills/extract-text/scripts/potgen.mts --policy <path>     # другая политика
-node .opencode/skills/extract-text/scripts/potgen.mts --excluded <path>   # свой журнал
+npm run potgen -- --no-policy         # POT как до политики
+npm run potgen -- --policy <path>     # другая политика
+npm run potgen -- --excluded <path>   # свой журнал
 #   исключённые → tmp/pot-excluded.jsonl, состав обоснован в docs/pot-provenance.md
 
 # Обновление EN-шаблона (единственный флаг, меняющий po/)
-node .opencode/skills/extract-text/scripts/potgen.mts --update
+npm run potgen -- --update
 
 # Перенос переводов в обновлённый POT (бэкап po/<lang>.po.bak)
-node .opencode/skills/extract-text/scripts/po_update.mts ru
-#   флаги: [lang] (по умолчанию ru), --po-dir <dir>
+npm run po:update -- ru
+#   флаги: [lang] (по умолчанию ru), --po-dir <dir>, --json <path>
 
 # Предзаполнение PO из YAML-корпуса (легаси-вход translations/, см. ниже)
 npm run po:prefill -- ru
@@ -173,23 +180,41 @@ POT. Причины и цифры — `tasks/2026-11-21-pot-coverage-gaps.md`:
 бинарные фрагменты (1 545), пересечение 293, их переводить не нужно:
 `tasks/2026-11-21-pot-noise-cleanup.md`.
 
-## Тесты
+## Золото и тесты
+
+Золото — это снятые с TS-эталона байты, закоммиченные как оракул. Пересобирать
+его вручную нельзя: любое расхождение Rust с золотом — сигнал, что изменилось
+поведение генератора (данные политики, дедуп, порядок).
+
+- `test_data/pot-golden.json` — паспорт полного POT: `sha256`, размер, число
+  записей, дата и дамп (`tmp/dump-after`), команда воспроизведения.
+- `test_data/pot-golden-small.pot` — POT мини-дампа `test_data/tiny-dump`
+  (воспроизводим без игры, `--created 2026-01-02 03:04+0000`,
+  `--no-policy --no-skip-policy --no-skip-ids`).
+- `test_data/po-update-golden/` — вход `po/` (template.pot + ru.po) и
+  `expected/ru.po` + `expected/stats.json` для `po_update`.
 
 ```bash
-# Вся TS-матрица (включая паритет potgen/po_update и слепки po2dat/prefill/
-# find_source)
+# Вся TS-матрица (правила POT через Rust CLI + золотые слепки)
 npm test
 
 # Сквозной: дамп → POT → .dat на мини-фикстуре (без игры и сети)
 npm run test:e2e
 
-# Слепки выхода (обновление — только осознанно, дифф виден):
+# Слепки остальных команд (обновление — только осознанно, дифф виден):
 npm run test:golden
 GOLDEN_UPDATE=1 npm run test:golden
 ```
 
+Проверка золота вручную:
+
+```bash
+npm run potgen -- --dump tmp/dump-after --out tmp/pot-check.pot
+# сравнить с po/template.pot, игнорируя строку POT-Creation-Date
+```
+
 Фикстура — `test_data/tiny-dump/`. Rust-сторона: `cargo test -p rust-l10n`
-(`tools/rust-l10n/tests/`) — те же кейсы, что были у TS-тестов, плюс паритет.
+(`tools/rust-l10n/tests/`).
 
 История паритета с Python и TS (цифры, даты, чем сверяли) — `docs/rust-vs-ts.md`
 и `tasks/2026-11-22-*`. Здесь остаётся только то, что действует сейчас.

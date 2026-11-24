@@ -16,11 +16,15 @@ import { join, resolve } from "node:path";
 
 import { checkPot, summarizePot } from "../../../../scripts/pot_invariants.mts";
 import { parsePotText } from "../../../../scripts/pot_invariants.mts";
-import { runPotgen } from "../scripts/potgen.mts";
+import { l10nBinary } from "../../../../scripts/text_cli.mts";
+import { spawnSync } from "node:child_process";
+import process from "node:process";
 
 const REPO = resolve(import.meta.dirname, "../../../..");
 const CREATED = "2026-01-02 03:04+0000";
 const FIXTURE = join(import.meta.dirname, "..", "test_data", "tiny-dump");
+const CLI = join(REPO, "scripts", "text_cli.mts");
+const bin = l10nBinary(REPO);
 
 let root: string;
 before(() => {
@@ -28,6 +32,16 @@ before(() => {
   root = mkdtempSync(join(REPO, "tmp", "pot-contract-"));
 });
 after(() => rmSync(root, { recursive: true, force: true }));
+
+/** POT рабочей Rust-реализации (публичная обёртка `scripts/text_cli.mts`). */
+function generatePot(dumpDir: string, outPath: string): void {
+  const run = spawnSync(
+    process.execPath,
+    [CLI, "potgen", "--root", REPO, "--dump", dumpDir, "--out", outPath, "--created", CREATED],
+    { encoding: "utf8" },
+  );
+  if (run.status !== 0) throw new Error(`text_cli potgen: ${run.stderr}`);
+}
 
 /** Скопировать коммитимый mini-дамп в tmp (проверки не пишут в фикстуру). */
 function copyFixture(name: string): string {
@@ -46,56 +60,67 @@ function keysOf(text: string): string[] {
     .sort();
 }
 
-test("E2E синтетика: дамп → POT → инварианты, нарушений нет", async () => {
-  const dir = copyFixture("synthetic");
-  const pot = join(dir, "template.pot");
-  const result = await runPotgen({ dumpDir: dir, outPath: pot, created: CREATED });
-  assert.ok(result.entries > 0);
+test(
+  "E2E синтетика: дамп → POT → инварианты, нарушений нет",
+  { skip: bin ? false : "rust-l10n не собран (npm run l10n:build)" },
+  async () => {
+    const dir = copyFixture("synthetic");
+    const pot = join(dir, "template.pot");
+    generatePot(dir, pot);
+    const summary = summarizePot(readFileSync(pot, "utf8"));
+    assert.ok(summary.entries > 0);
 
-  const violations = await checkPot(pot, { dumpPath: dir });
-  assert.deepEqual(violations, [], `нарушения: ${JSON.stringify(violations, null, 2)}`);
+    const violations = await checkPot(pot, { dumpPath: dir });
+    assert.deepEqual(violations, [], `нарушения: ${JSON.stringify(violations, null, 2)}`);
 
-  const summary = summarizePot(readFileSync(pot, "utf8"));
-  assert.equal(summary.entries, result.entries);
-  assert.ok(summary.rich > 0, "rich_text из дампа доходит до POT");
-});
+    assert.ok(summary.rich > 0, "rich_text из дампа доходит до POT");
+  },
+);
 
-test("E2E идемпотентность: повторный прогон не меняет файл", async () => {
-  const dir = copyFixture("idempotent");
-  const pot = join(dir, "template.pot");
-  await runPotgen({ dumpDir: dir, outPath: pot, created: CREATED });
-  const first = readFileSync(pot, "utf8");
-  await runPotgen({ dumpDir: dir, outPath: pot, created: CREATED });
-  const second = readFileSync(pot, "utf8");
-  assert.equal(second, first);
-  assert.deepEqual(await checkPot(pot, { dumpPath: dir }), []);
-});
+test(
+  "E2E идемпотентность: повторный прогон не меняет файл",
+  { skip: bin ? false : "rust-l10n не собран (npm run l10n:build)" },
+  async () => {
+    const dir = copyFixture("idempotent");
+    const pot = join(dir, "template.pot");
+    generatePot(dir, pot);
+    const first = readFileSync(pot, "utf8");
+    generatePot(dir, pot);
+    const second = readFileSync(pot, "utf8");
+    assert.equal(second, first);
+    assert.deepEqual(await checkPot(pot, { dumpPath: dir }), []);
+  },
+);
 
-test("E2E устойчивость: битая JSONL-строка не роняет и не порождает записей", async () => {
-  const clean = copyFixture("robust-clean");
-  const cleanPot = join(clean, "template.pot");
-  await runPotgen({ dumpDir: clean, outPath: cleanPot, created: CREATED });
-  const expected = keysOf(readFileSync(cleanPot, "utf8"));
+test(
+  "E2E устойчивость: битая JSONL-строка не роняет и не порождает записей",
+  { skip: bin ? false : "rust-l10n не собран (npm run l10n:build)" },
+  async () => {
+    const clean = copyFixture("robust-clean");
+    const cleanPot = join(clean, "template.pot");
+    generatePot(clean, cleanPot);
+    const expected = keysOf(readFileSync(cleanPot, "utf8"));
 
-  const noisy = copyFixture("robust-noisy");
-  const level = join(noisy, "level0.jsonl");
-  // Обрезанная строка + не-объект + мусор посреди валидных строк.
-  writeFileSync(
-    level,
-    `${readFileSync(level, "utf8")}{"asset": "level0", "dialogues": [\nnull\n0.5\n`,
-    "utf8",
-  );
-  const noisyPot = join(noisy, "template.pot");
-  await runPotgen({ dumpDir: noisy, outPath: noisyPot, created: CREATED });
+    const noisy = copyFixture("robust-noisy");
+    const level = join(noisy, "level0.jsonl");
+    // Обрезанная строка + не-объект + мусор посреди валидных строк.
+    writeFileSync(
+      level,
+      `${readFileSync(level, "utf8")}{"asset": "level0", "dialogues": [\nnull\n0.5\n`,
+      "utf8",
+    );
+    const noisyPot = join(noisy, "template.pot");
+    generatePot(noisy, noisyPot);
 
-  assert.deepEqual(keysOf(readFileSync(noisyPot, "utf8")), expected, "фантомных записей нет");
-  const violations = await checkPot(noisyPot, { dumpPath: noisy });
-  assert.equal(violations.filter((v) => v.severity === "error").length, 0);
-  assert.ok(
-    violations.some((v) => v.invariant === 13 && v.code === "dump-ignored-lines"),
-    "битые строки должны попадать в отчёт (иначе потеря данных незаметна)",
-  );
-});
+    assert.deepEqual(keysOf(readFileSync(noisyPot, "utf8")), expected, "фантомных записей нет");
+    const violations = await checkPot(noisyPot, { dumpPath: noisy });
+    assert.equal(violations.filter((v) => v.severity === "error").length, 0);
+    assert.ok(
+      violations.some((v) => v.invariant === 13 && v.code === "dump-ignored-lines"),
+      "битые строки должны попадать в отчёт (иначе потеря данных незаметна)",
+    );
+  },
+);
 
 // Дамп, из которого собран текущий po/template.pot: сначала актуальный (после снятия
 // лимитов и политики), затем прежний. Переопределяется TCNN_DUMP_DIR.

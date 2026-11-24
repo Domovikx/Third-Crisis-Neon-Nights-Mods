@@ -945,3 +945,6 @@ node scripts/pot_invariants.mts tmp/pot-labels.pot --dump tmp/dump-after
 - `docs/pot-contract.md` — инвариант 14 (`#. src:`), спецификация метки.
 - `docs/pot-coverage-audit.md` — что не доходит до POT (другой срез: покрытие).
 - `scripts/pot_provenance_report.mts` — генератор таблиц этого документа.
+
+> Обновление 2026-11-24: TS-эталоны удалены, рабочая реализация — Rust,
+> паритет проверяется золотыми фикстурами (см. `docs/rust-vs-ts.md`, раздел 8).

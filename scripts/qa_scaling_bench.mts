@@ -1,8 +1,8 @@
 /**
- * qa_scaling_bench.mts — замер масштабирования QA перевода: TS-эталон против Rust.
+ * qa_scaling_bench.mts — замер масштабирования QA перевода на Rust.
  *
- * Задача не «кто быстрее на 40 тысячах строк», а «что будет на корпусе в 10 и
- * 100 раз больше» (следующая новелла). Поэтому:
+ * Задача не «сколько миллисекунд на 40 тысячах строк», а «что будет на корпусе
+ * в 10 и 100 раз больше» (следующая новелла). Поэтому:
  *
  *   1×   — текущие данные из репозитория (как есть);
  *   10×  — синтетика: каждая запись POT повторена 10 раз с уникальным ключом;
@@ -14,18 +14,19 @@
  * (не-буквенный хвост — не меняет долю кириллицы), для не-спикерских
  * `msgctxt` — тоже `~k`, чтобы ключ `(msgctxt, msgid)` не мог схлопнуться.
  *
- * Замер: каждый инструмент — отдельным процессом (иначе старт Node смешается
- * с работой), wall time вокруг `spawnSync`, два прогона на точку. МБ/с —
- * входные байты (POT + PO + DAT) на время процесса: это то, что видит
- * пользователь CLI, включая старт рантайма.
+ * Замер: движок — отдельным процессом (стенд не смешивает своё время с работой),
+ * wall time вокруг `spawnSync`, два прогона на точку. МБ/с — входные байты
+ * (POT + PO + DAT) на время процесса: это то, что видит пользователь CLI.
  *
- * Гейт: отчёты TS и Rust на каждой точке обязаны совпасть ПОБАЙТОВО (JSON
- * со сводкой и находками). Расхождение = код 1.
+ * Гейт детерминизма: два прогона на точке обязаны дать побайтово одинаковый
+ * отчёт (иначе порядок находок не воспроизводим). Расхождение = код 1.
+ *
+ * Эталон-оракул — не этот стенд, а золотой отчёт
+ * (`.opencode/skills/translate-qa/test_data/qa-golden-<lang>.json`).
  *
  * CLI:
  *   node scripts/qa_scaling_bench.mts [--scales 1,10,100] [--runs 2]
- *        [--lang ru] [--parity-langs ru,de] [--regen]
- *   node scripts/qa_scaling_bench.mts --worker ts --root <dir> --lang ru --out <json>
+ *        [--lang ru] [--regen]
  */
 import { spawnSync } from "node:child_process";
 import {
@@ -43,7 +44,6 @@ import { dirname, join, resolve } from "node:path";
 import process from "node:process";
 
 import { parsePo, poEscape } from "../.opencode/skills/extract-text/scripts/po_file.mts";
-import { check } from "../.opencode/skills/translate-qa/scripts/qa_translate.mts";
 
 export const REPO_ROOT = resolve(import.meta.dirname, "..");
 const BENCH_ROOT = join(REPO_ROOT, "tmp", "qa-bench");
@@ -68,10 +68,9 @@ interface Measurement {
   scale: number;
   lang: string;
   inputBytes: number;
-  tsMs: number[];
   rustMs: number[];
   findings: number;
-  parity: boolean;
+  deterministic: boolean;
 }
 
 function argValue(argv: string[], name: string): string | null {
@@ -235,72 +234,17 @@ function prepareScale(
   return { root, bytes: files.pot + files.po + files.dat };
 }
 
-/** TS-исполнитель в отдельном процессе: тот же отчёт, что пишет Rust. */
-function tsWorker(argv: string[]): number {
-  const root = resolve(argValue(argv, "--root") ?? REPO_ROOT);
-  const lang = argValue(argv, "--lang") ?? "ru";
-  const out = resolve(argValue(argv, "--out") ?? join(BENCH_ROOT, "ts.json"));
-  const { summary, findings } = check(lang, root);
-  const report = {
-    lang,
-    summary: {
-      total: summary.total,
-      filled: summary.filled,
-      coverage: summary.coverage,
-      errors: summary.errors,
-      warnings: summary.warnings,
-      by_speaker: [...summary.bySpeaker],
-      by_dir: [...summary.byDir],
-    },
-    findings,
-  };
-  mkdirSync(dirname(out), { recursive: true });
-  writeFileSync(out, JSON.stringify(report), "utf8");
-  return 0;
-}
-
-/** Heap для TS-процесса: 100× (4 млн записей) в дефолтные ~4 ГБ не влезает. */
-let tsHeapMb = 8192;
-
-function runTool(tool: "ts" | "rust", root: string, lang: string, out: string): number {
+/** Прогон движка отдельным процессом; код 1 = «есть error-находки», не падение. */
+function runTool(root: string, lang: string, out: string): number {
   const started = performance.now();
-  const child =
-    tool === "ts"
-      ? spawnSync(
-          process.execPath,
-          [import.meta.filename, "--worker", "ts", "--root", root, "--lang", lang, "--out", out],
-          // 100× (4 млн записей) в дефолтные ~4 ГБ heap не влезает: Node падает.
-          // Это часть результата (Rust таких флагов не требует), но чтобы
-          // измерить ВРЕМЯ TS, даём ему заведомо достаточный heap.
-          { env: { ...process.env, NODE_OPTIONS: `--max-old-space-size=${tsHeapMb}` } },
-        )
-      : spawnSync(RUST_BIN, ["--root", root, "--lang", lang, "--json", out, "--quiet"]);
+  const child = spawnSync(RUST_BIN, ["--root", root, "--lang", lang, "--json", out, "--quiet"]);
   const ms = performance.now() - started;
-  // У rust-qa код 1 = «есть error-находки» (как у TS-эталона), это не падение.
   if (child.status !== 0 && child.status !== 1) {
     throw new Error(
-      `${tool} упал (код ${child.status}): ${String(child.stderr ?? "").slice(0, 500)}`,
+      `rust-qa упал (код ${child.status}): ${String(child.stderr ?? "").slice(0, 500)}`,
     );
   }
   return ms;
-}
-
-function compareReports(left: string, right: string): { same: boolean; detail: string } {
-  if (!existsSync(left) || !existsSync(right)) return { same: false, detail: "нет отчёта" };
-  const a = readFileSync(left);
-  const b = readFileSync(right);
-  if (a.equals(b)) return { same: true, detail: `${a.length} байт побайтово` };
-  const leftLines = a.toString("utf8").split("\n");
-  const rightLines = b.toString("utf8").split("\n");
-  for (let i = 0; i < Math.max(leftLines.length, rightLines.length); i++) {
-    if (leftLines[i] !== rightLines[i]) {
-      return {
-        same: false,
-        detail: `строка ${i + 1}: TS=${String(leftLines[i]).slice(0, 160)} RUST=${String(rightLines[i]).slice(0, 160)}`,
-      };
-    }
-  }
-  return { same: false, detail: "содержимое различается" };
 }
 
 function mbps(bytes: number, ms: number): number {
@@ -308,28 +252,20 @@ function mbps(bytes: number, ms: number): number {
 }
 
 function printTable(rows: Measurement[]): void {
-  const header =
-    "| Объём | Вход, МБ | TS, мс (1/2) | Rust, мс (1/2) | × (1/2) | TS, МБ/с | Rust, МБ/с | Находок | Паритет |";
-  const sep = "| --- | --- | --- | --- | --- | --- | --- | --- | --- |";
+  const header = "| Объём | Вход, МБ | Прогоны, мс | МБ/с | Находок | Детерминизм |";
+  const sep = "| --- | --- | --- | --- | --- | --- |";
   const lines = rows.map((m) => {
-    const ratio1 = m.tsMs[0] / m.rustMs[0];
-    const ratio2 = m.tsMs[1] / m.rustMs[1];
     return (
       `| ${m.scale}× ${m.lang} | ${(m.inputBytes / 2 ** 20).toFixed(1)} | ` +
-      `${m.tsMs[0].toFixed(0)} / ${m.tsMs[1].toFixed(0)} | ` +
-      `${m.rustMs[0].toFixed(0)} / ${m.rustMs[1].toFixed(0)} | ` +
-      `${ratio1.toFixed(2)} / ${ratio2.toFixed(2)} | ` +
-      `${mbps(m.inputBytes, m.tsMs[1]).toFixed(1)} | ` +
-      `${mbps(m.inputBytes, m.rustMs[1]).toFixed(1)} | ` +
-      `${m.findings} | ${m.parity ? "OK" : "РАСХОЖДЕНИЕ"} |`
+      `${m.rustMs.map((ms) => ms.toFixed(0)).join(" / ")} | ` +
+      `${mbps(m.inputBytes, m.rustMs[m.rustMs.length - 1]).toFixed(1)} | ` +
+      `${m.findings} | ${m.deterministic ? "OK" : "РАСХОЖДЕНИЕ"} |`
     );
   });
   console.log(`\n${header}\n${sep}\n${lines.join("\n")}`);
 }
 
 function main(argv: string[]): number {
-  if (argv.includes("--worker")) return tsWorker(argv);
-
   if (!existsSync(RUST_BIN)) {
     console.error(
       `нет бинаря Rust: ${RUST_BIN}\nсоберите: cd tools/rust-qa && cargo build --release`,
@@ -339,12 +275,7 @@ function main(argv: string[]): number {
 
   const regen = argv.includes("--regen");
   const runs = Number(argValue(argv, "--runs") ?? 2);
-  tsHeapMb = Number(argValue(argv, "--ts-heap-mb") ?? 8192);
   const lang = argValue(argv, "--lang") ?? "ru";
-  const parityLangs = (argValue(argv, "--parity-langs") ?? "ru,de")
-    .split(",")
-    .map((s) => s.trim())
-    .filter(Boolean);
   const scales = (argValue(argv, "--scales") ?? "1,10,100")
     .split(",")
     .map((s) => Number(s.trim()))
@@ -352,28 +283,7 @@ function main(argv: string[]): number {
 
   mkdirSync(BENCH_ROOT, { recursive: true });
   const results: Measurement[] = [];
-  let parityOk = true;
-
-  // Паритет на реальных данных — отдельно по каждому языку (гейт задачи).
-  console.log("Паритет на текущих данных:");
-  for (const parityLang of parityLangs) {
-    const outDir = join(BENCH_ROOT, "parity");
-    const tsOut = join(outDir, `ts-${parityLang}.json`);
-    const rustOut = join(outDir, `rust-${parityLang}.json`);
-    runTool("ts", REPO_ROOT, parityLang, tsOut);
-    runTool("rust", REPO_ROOT, parityLang, rustOut);
-    const cmp = compareReports(tsOut, rustOut);
-    parityOk &&= cmp.same;
-    const report = JSON.parse(readFileSync(rustOut, "utf8")) as {
-      summary: { filled: number; total: number; errors: number; warnings: number };
-      findings: unknown[];
-    };
-    const s = report.summary;
-    console.log(
-      `  ${parityLang}: ${s.filled}/${s.total}, errors=${s.errors}, warnings=${s.warnings}, ` +
-        `находок=${report.findings.length} — ${cmp.same ? "побайтово OK" : `РАСХОЖДЕНИЕ (${cmp.detail})`}`,
-    );
-  }
+  let deterministic = true;
 
   for (const scale of scales) {
     const prepared =
@@ -390,32 +300,27 @@ function main(argv: string[]): number {
         : prepareScale(scale, lang, regen);
 
     const outDir = join(BENCH_ROOT, "out", `${scale}x-${lang}`);
-    const tsMs: number[] = [];
+    mkdirSync(outDir, { recursive: true }); // rust-qa каталоги не создаёт
     const rustMs: number[] = [];
+    const outs: string[] = [];
     for (let run = 1; run <= runs; run++) {
-      tsMs.push(runTool("ts", prepared.root, lang, join(outDir, `ts-${run}.json`)));
-      rustMs.push(runTool("rust", prepared.root, lang, join(outDir, `rust-${run}.json`)));
+      const out = join(outDir, `rust-${run}.json`);
+      rustMs.push(runTool(prepared.root, lang, out));
+      outs.push(out);
     }
-    const cmp = compareReports(join(outDir, "ts-1.json"), join(outDir, "rust-1.json"));
-    parityOk &&= cmp.same;
-    // Второй прогон тоже обязан совпасть (детерминизм, а не кэш).
-    const cmp2 = compareReports(join(outDir, "ts-2.json"), join(outDir, "rust-2.json"));
-    parityOk &&= cmp2.same;
-    const report = JSON.parse(readFileSync(join(outDir, "rust-1.json"), "utf8")) as {
-      findings: unknown[];
-    };
+    // Детерминизм: повторный прогон обязан дать тот же отчёт.
+    const same = runs < 2 || readFileSync(outs[0]).equals(readFileSync(outs[outs.length - 1]));
+    deterministic &&= same;
+    const report = JSON.parse(readFileSync(outs[0], "utf8")) as { findings: unknown[] };
     results.push({
       scale,
       lang,
       inputBytes: prepared.bytes,
-      tsMs,
       rustMs,
       findings: report.findings.length,
-      parity: cmp.same && cmp2.same,
+      deterministic: same,
     });
-    console.log(
-      `  ${scale}×: паритет ${cmp.same && cmp2.same ? "OK" : "РАСХОЖДЕНИЕ"} — ${cmp.detail}`,
-    );
+    console.log(`  ${scale}×: детерминизм ${same ? "OK" : "РАСХОЖДЕНИЕ"}`);
   }
 
   printTable(results);
@@ -429,10 +334,10 @@ function main(argv: string[]): number {
         platform: `${platform()} ${release()}`,
         cpu: cpus()[0]?.model ?? "?",
         ramGb: Math.round(totalmem() / 2 ** 30),
-        langs: { bench: lang, parity: parityLangs },
+        lang,
         runs,
         results,
-        parityOk,
+        deterministic,
       },
       null,
       2,
@@ -440,7 +345,7 @@ function main(argv: string[]): number {
     "utf8",
   );
   console.log(`\nрезультат: ${outPath}`);
-  return parityOk ? 0 : 1;
+  return deterministic ? 0 : 1;
 }
 
 if (import.meta.filename === process.argv[1]) {

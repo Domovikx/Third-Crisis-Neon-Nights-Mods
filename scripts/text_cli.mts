@@ -2,10 +2,10 @@
  * text_cli.mts — обёртка над `rust-l10n` (рабочий текстовый пайплайн:
  * potgen, po2dat, po_update).
  *
- * Считает Rust (`tools/rust-l10n`) — единственная рабочая реализация. У `potgen`
- * и `po_update` TS-эталоны ещё живут (`potgen:ts`, `po:update:ts`) и стерегут
- * паритет в `scripts/text_parity.test.mts`; `po2dat`/`prefill`/`find_source`
- * уже без TS-дублей (правило — `docs/rust-vs-ts.md`).
+ * Считает Rust (`tools/rust-l10n`) — единственная рабочая реализация. TS-эталоны
+ * `potgen`/`po_update` удалены 2026-11-24: их выход заморожен в золотых
+ * фикстурах (`test_data/pot-golden*.pot`, `test_data/po-update-golden/`) и
+ * стережётся `scripts/text_parity.test.mts`. Правило — `docs/rust-vs-ts.md`.
  *
  * Замер (2026-11-22): potgen 2.0× на реальном дампе (124 МБ/с против 61),
  * po2dat 4.4×, po_update 4.2×, prefill ~4× на реальных po/
@@ -63,7 +63,7 @@ const USAGE = `rust-l10n (обёртка)
   node scripts/text_cli.mts find_source "<msgid text>" [--first] [--dump <dir>]
 
 Дамп для find_source сканируется тем же Rust-инвентарём, что у potgen.
-Эталоны TS остались только у potgen и po_update: npm run potgen:ts / npm run po:update:ts.
+TS-эталонов больше нет (удалены 2026-11-24), оракул — золотые фикстуры.
 Сборка: npm run l10n:build.`;
 
 function main(argv: string[]): number {
@@ -81,9 +81,6 @@ function main(argv: string[]): number {
   const bin = l10nBinary();
   if (!bin) {
     console.error("rust-l10n не собран. Соберите: npm run l10n:build");
-    console.error(
-      "Без Rust работает только паритетный эталон: npm run potgen:ts / npm run po:update:ts",
-    );
     return 2;
   }
 

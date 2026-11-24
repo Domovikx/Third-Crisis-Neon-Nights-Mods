@@ -2,7 +2,7 @@
  * pot_skip_review.mts — отчёт для человека: по каждому правилу skip-политики
  * сколько записей и 20 примеров (`tmp/pot-skip-review.md`).
  *
- * Считает то же, что запишет `potgen`: правило берётся из
+ * Считает то же, что запишет `potgen` (Rust): правило берётся из
  * `config/pot-skip-policy.json`, условия — из `pot_skip.mts` (одна
  * реализация). POT читается как есть (`#. src:` и `#. rich_text:`), поэтому
  * отчёт работает и на файле, сгенерированном ДО появления skip-меток.
@@ -36,7 +36,7 @@ import {
   writeAtomic,
   type SkipPolicy,
   type SkipRule,
-} from "./potgen.mts";
+} from "./pot_rules.mts";
 
 export const REPO_ROOT = resolve(import.meta.dirname, "../../../..");
 

@@ -7,7 +7,7 @@
  * `raw:MonoBehaviour`. Человек отличает мгновенно, локальная модель — почти
  * так же, если спросить по одной строке с провенансом. Модель НЕ правит POT:
  * она предлагает вердикт, человек подтверждает, и только подтверждённый список
- * попадает в `config/pot-skip-ids.json` (его читает potgen).
+ * попадает в `config/pot-skip-ids.json` (его читает potgen в Rust).
  *
  * CLI:
  *   node .opencode/skills/extract-text/scripts/pot_llm_skip.mts [--pot <p>]
@@ -24,7 +24,7 @@ import process from "node:process";
 
 import { pyStrip } from "./inventory.mts";
 import { parsePo } from "./po_file.mts";
-import { POT_PATH, writeAtomic } from "./potgen.mts";
+import { POT_PATH, writeAtomic } from "./pot_rules.mts";
 import { readFileSync } from "node:fs";
 
 /** Кандидат: что показываем модели. */

@@ -1,0 +1,19 @@
+{
+  "carried": 3,
+  "new": 1,
+  "obsolete": 0,
+  "retargeted": 1,
+  "orphanDropped": 1,
+  "skipped": 1,
+  "skipDropped": 0,
+  "cutDropped": 0,
+  "orphanItems": [
+    {
+      "key": [
+        "Gone orphan",
+        "ui"
+      ],
+      "msgstr": "Сирота"
+    }
+  ]
+}

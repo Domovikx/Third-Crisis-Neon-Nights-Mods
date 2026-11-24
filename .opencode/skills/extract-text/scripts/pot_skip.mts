@@ -9,7 +9,7 @@
  *      или норма;
  *   3. условия правил skip-политики (`SKIP_CONDITIONS`,
  *      `skipConditionMatches`) — данные правил лежат в
- *      `config/pot-skip-policy.json`, разбор политики — в `potgen.mts`.
+ *      `config/pot-skip-policy.json`, разбор политики — в `pot_rules.mts`.
  *
  * Почему чистка по списку, а не `<[^>]+>`: в данных игры `<` и `>` работают
  * авторскими кавычками («< Like this, ... request them. >»). Регекс «любой

@@ -10,3 +10,6 @@ package-lock.json
 *.po
 *.pot
 *.jsonl
+# золотые фикстуры: байты важнее стиля
+.opencode/skills/dump-assets/test_data/assemble-golden-small/
+.opencode/skills/extract-text/test_data/po-update-golden/

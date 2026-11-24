@@ -39,7 +39,7 @@ import process from "node:process";
 
 import { parsePo, type PoEntry } from "./po_file.mts";
 import { TMP_TAGS, classifyRich, isMeaningfulText, stripTmpTags } from "./pot_skip.mts";
-import { POT_PATH, writeAtomic } from "./potgen.mts";
+import { POT_PATH, writeAtomic } from "./pot_rules.mts";
 
 /** Один распознанный тег. */
 interface Tag {

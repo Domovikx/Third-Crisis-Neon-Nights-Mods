@@ -1,27 +1,39 @@
 /**
- * Тесты `po_update.mts` (порт `po_update.test.py` + границы).
+ * Тесты `po_update` (перенос переводов в новый POT) — через рабочую
+ * Rust-реализацию (`rust-l10n po_update`, обёртка `scripts/text_cli.mts`).
  *
- * Покрыто: перенос/новые записи, legacy вместо `#~`, ретаргет при смене
- * контекста, пустые переводы, комментарии переводчика, дубликаты msgid,
- * кавычки/переводы строк, PO без заголовка, атомарная запись (в т.ч. обрыв).
+ * TS-эталон `po_update.mts` удалён 2026-11-24. Золото (выход TS-эталона,
+ * снятый до удаления) лежит в `test_data/po-update-golden/`: вход `po/`
+ * (template.pot + ru.po) и ожидаемый `expected/ru.po`. Тест гоняет Rust на
+ * копии входа и сравнивает байт-в-байт.
+ *
+ * Дополнительно правила проверяются на маленьких локальных фикстурах: шапка,
+ * дубликаты ключа, `#, skip`, сироты, идемпотентность, `.bak`, ошибки CLI.
  */
 import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
-import { join, resolve } from "node:path";
-
-import { newEntry, parsePo, renderPo, type PoEntry } from "../scripts/po_file.mts";
+import { spawnSync } from "node:child_process";
 import {
-  extractHeader,
-  main,
-  mergePot,
-  renderMerged,
-  runPoUpdate,
-  type MergedEntry,
-} from "../scripts/po_update.mts";
-import { writeAtomic } from "../scripts/potgen.mts";
+  cpSync,
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
+import { join, resolve } from "node:path";
+import process from "node:process";
+
+import { parsePo } from "../scripts/po_file.mts";
+import { l10nBinary } from "../../../../scripts/text_cli.mts";
 
 const REPO = resolve(import.meta.dirname, "../../../..");
+const CLI = join(REPO, "scripts", "text_cli.mts");
+const GOLDEN = join(import.meta.dirname, "..", "test_data", "po-update-golden");
+const bin = l10nBinary(REPO);
+const skip = bin ? false : "rust-l10n не собран (npm run l10n:build)";
+
 let root: string;
 
 before(() => {
@@ -31,361 +43,222 @@ before(() => {
 
 after(() => rmSync(root, { recursive: true, force: true }));
 
-/** Запись PO для тестов. */
-function e(msgid: string, ctxt = "", msgstr = "", refs: string[] = []): PoEntry {
-  const entry = newEntry();
-  entry.msgid = msgid;
-  entry.msgctxt = ctxt;
-  entry.msgstr = msgstr;
-  entry.refs = refs;
-  return entry;
+/** Публичная обёртка Rust: `node scripts/text_cli.mts …`. */
+function cli(args: string[], cwd = REPO): { status: number | null; stderr: string } {
+  const run = spawnSync(process.execPath, [CLI, ...args], { encoding: "utf8", cwd });
+  return { status: run.status, stderr: run.stderr };
 }
 
-test("mergePot: перенос существующего + новая пустая запись, refs обновлены из POT", () => {
-  const pot = [e("A", "ui"), e("B", "ui")];
-  const po = [e("A", "ui", "А", ["f1"])];
-  const { merged, stats } = mergePot(po, pot);
+/** Разложить фикстуру `template.pot` + `<lang>.po` в свежий каталог. */
+function fixture(poText: string, potText: string, lang = "ru"): string {
+  const dir = join(root, `case-${Math.random().toString(36).slice(2)}`, "po");
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, "template.pot"), potText, "utf8");
+  writeFileSync(join(dir, `${lang}.po`), poText, "utf8");
+  return dir;
+}
 
-  assert.equal(stats.carried, 1);
-  assert.equal(stats.new, 1);
-  assert.equal(stats.obsolete, 0);
-  const byId = new Map(merged.map((x) => [x.msgid, x]));
-  assert.equal(byId.get("A")?.msgstr, "А");
-  assert.deepEqual(byId.get("A")?.refs, [], "refs берутся из POT, а не из старого PO");
-  assert.equal(byId.get("B")?.msgstr, "");
+function pot(entries: string[]): string {
+  return `msgid ""\nmsgstr ""\n"Content-Type: text/plain; charset=UTF-8\\n"\n\n${entries.join("\n\n")}\n`;
+}
+
+function po(
+  entries: string[],
+  header = '# RU\nmsgid ""\nmsgstr ""\n"Content-Type: text/plain; charset=UTF-8\\n"',
+): string {
+  return `${header}\n\n${entries.join("\n\n")}\n`;
+}
+
+function entry(msgid: string, msgstr = "", ctxt = "ui"): string {
+  return `msgctxt "${ctxt}"\nmsgid "${msgid}"\nmsgstr "${msgstr}"`;
+}
+
+// ---------------------------------------------------------------------------
+// Золото: выход TS-эталона, снятый 2026-11-24.
+// ---------------------------------------------------------------------------
+
+test("золото: Rust po_update байт-в-байт с expected/ru.po", { skip }, () => {
+  const dir = join(root, "golden", "po");
+  cpSync(join(GOLDEN, "po"), dir, { recursive: true });
+  const report = join(root, "golden", "report.json");
+
+  const run = cli(["po_update", "ru", "--po-dir", dir, "--json", report]);
+  assert.equal(run.status, 0, run.stderr);
+
+  assert.equal(
+    readFileSync(join(dir, "ru.po"), "utf8"),
+    readFileSync(join(GOLDEN, "expected", "ru.po"), "utf8"),
+    "выход не совпал с золотом",
+  );
+
+  const expected = JSON.parse(
+    readFileSync(join(GOLDEN, "expected", "stats.json"), "utf8"),
+  ) as Record<string, unknown>;
+  const actual = JSON.parse(readFileSync(report, "utf8")) as Record<string, unknown>;
+  for (const field of ["carried", "new", "obsolete", "retargeted", "orphanDropped", "skipped"]) {
+    assert.equal(actual[field], expected[field], `счётчик ${field}`);
+  }
+  const orphans = actual.orphanItems as Array<{ key: [string, string]; msgstr: string }>;
+  assert.deepEqual(orphans, [{ key: ["Gone orphan", "ui"], msgstr: "Сирота" }]);
+  assert.ok(existsSync(join(dir, "ru.po.bak")), "бэкап рядом с PO");
+  assert.equal(existsSync(join(dir, "ru.po.part")), false, "атомарная запись без .part");
 });
 
-test("mergePot: ключа нет в POT — перевод выпиливается, а не живёт сиротой", () => {
-  // POT — единственный источник «что нужно игре». Сирота в PO некому отдавать,
-  // а её присутствие маскирует дыру экстрактора (решение владельца 2026-11-23).
-  const pot = [e("A", "ui")];
-  const gone = e("Gone", "ui", "Ушло");
-  const { merged, stats } = mergePot([e("A", "ui", "А"), gone], pot);
+// ---------------------------------------------------------------------------
+// Правила на маленьких фикстурах.
+// ---------------------------------------------------------------------------
 
-  assert.equal(stats.orphanDropped, 1);
-  assert.equal(stats.obsolete, 0);
-  assert.equal(
-    merged.some((x) => x.msgid === "Gone"),
-    false,
-    "сироты в выходном PO нет",
+test("перенос существующего + новая пустая запись, refs/comments из POT", { skip }, () => {
+  const dir = fixture(
+    po([entry("A", "А")]),
+    pot([`#. src: dialog\n${entry("A")}`, `#. src: dialog\n${entry("B")}`]),
   );
+  const run = cli(["po_update", "ru", "--po-dir", dir]);
+  assert.equal(run.status, 0, run.stderr);
+
+  const back = parsePo(readFileSync(join(dir, "ru.po"), "utf8")).filter((e) => e.msgid);
   assert.deepEqual(
-    stats.orphanItems.map((x) => x.key[0]),
+    back.map((e) => [e.msgid, e.msgstr, e.comments]),
+    [
+      ["A", "А", ["src: dialog"]],
+      ["B", "", ["src: dialog"]],
+    ],
+    "перевод перенесён, refs-комментарии взяты из POT",
+  );
+});
+
+test("ключ исчез из POT — перевод выпиливается (не legacy-сирота)", { skip }, () => {
+  const dir = fixture(po([entry("A", "А"), entry("Gone", "Ушло")]), pot([entry("A")]));
+  const report = join(root, "orphan-report.json");
+  const run = cli(["po_update", "ru", "--po-dir", dir, "--json", report]);
+  assert.equal(run.status, 0, run.stderr);
+
+  const text = readFileSync(join(dir, "ru.po"), "utf8");
+  assert.ok(!text.includes("Gone"), "сироты в выходном PO нет");
+  assert.ok(!text.includes("#~"), "архивных блоков нет");
+  const stats = JSON.parse(readFileSync(report, "utf8")) as Record<string, unknown>;
+  assert.equal(stats.orphanDropped, 1);
+  assert.deepEqual(
+    (stats.orphanItems as Array<{ key: [string, string] }>).map((x) => x.key[0]),
     ["Gone"],
-    "что выпало — видно",
   );
 });
 
-test("mergePot: ключ вернулся в POT — протухший флаг legacy снимается", () => {
-  // На 2026-11-23 таких «протухших» меток было 128: текст вернулся в POT,
-  // а в po/ru.po запись осталась помеченной сиротой. Метка должна уйти вместе
-  // с её пояснением, иначе запись навсегда выглядит как потерянная.
-  const pot = [e("Back", "ui")];
-  const stale = e("Back", "ui", "Вернулось");
-  stale.flags = ["legacy"];
-  stale.translator = ["legacy: text vanished from POT, kept for runtime lookup"];
+test("ретаргет: перевод спасается при смене msgctxt", { skip }, () => {
+  const dir = fixture(
+    po([`# rich: <b>Иди</b>\n${entry("Go", "Иди")}`]),
+    pot([entry("Go", "", "speaker:Zed")]),
+  );
+  const report = join(root, "retarget-report.json");
+  const run = cli(["po_update", "ru", "--po-dir", dir, "--json", report]);
+  assert.equal(run.status, 0, run.stderr);
 
-  const { merged, stats } = mergePot([stale], pot);
-  const out = merged.find((x) => x.msgid === "Back") as MergedEntry;
-  assert.equal(out.msgstr, "Вернулось");
-  assert.deepEqual(out.flags, []);
-  assert.deepEqual(out.translator, []);
-  assert.equal(stats.carried, 1);
-});
-
-test("mergePot: выпиливаются ВСЕ сироты, независимо от качества перевода", () => {
-  const pot = [e("A", "ui")];
-  const junk = e('Wv"?$', "ui", "Wv\\");
-  const same = e("12345", "ui", "12345");
-  const alive = e("APP NOT FOUND", "ui", "ПРИЛОЖЕНИЕ НЕ НАЙДЕНО");
-  const { merged, stats } = mergePot([e("A", "ui", "А"), junk, same, alive], pot);
-
-  assert.equal(stats.orphanDropped, 3);
-  assert.equal(merged.length, 1);
+  const back = parsePo(readFileSync(join(dir, "ru.po"), "utf8")).filter((e) => e.msgid);
   assert.deepEqual(
-    stats.orphanItems.map((x) => x.key[0]).sort(),
-    ["12345", "APP NOT FOUND", 'Wv"?$'].sort(),
+    back.map((e) => [e.msgid, e.msgctxt, e.msgstr]),
+    [["Go", "speaker:Zed", "Иди"]],
   );
-});
-
-test("mergePot: ретаргет — перевод спасается при смене msgctxt", () => {
-  const pot = [e("Go", "speaker:Zed")];
-  const old = e("Go", "ui", "Иди", ["translations/old.yaml"]);
-  old.translator = ["rich: <b>Иди</b>"];
-  const { merged, stats } = mergePot([old], pot);
-
+  assert.deepEqual(back[0].translator, ["rich: <b>Иди</b>"]);
+  const stats = JSON.parse(readFileSync(report, "utf8")) as Record<string, unknown>;
   assert.equal(stats.retargeted, 1);
-  assert.equal(stats.obsolete, 0);
-  assert.equal(merged.length, 1);
-  assert.equal(merged[0].msgctxt, "speaker:Zed");
-  assert.equal(merged[0].msgstr, "Иди");
-  assert.deepEqual(merged[0].translator, ["rich: <b>Иди</b>"]);
-  assert.deepEqual(merged[0].refs, [], "refs спасённой записи — из POT");
 });
 
-test("mergePot: ретаргет не срабатывает, если одноимённый ключ уже переведён", () => {
-  const pot = [e("Go", "speaker:Zed"), e("Go", "speaker:Amy")];
-  const po = [e("Go", "speaker:Amy", "Иди"), e("Go", "ui", "Ступай")];
-  const { merged, stats } = mergePot(po, pot);
-
-  assert.equal(stats.retargeted, 0);
-  const zed = merged.find((x) => x.msgctxt === "speaker:Zed");
-  assert.equal(zed?.msgstr, "", "второй одноимённый ключ остаётся пустым");
-  assert.equal(merged.find((x) => x.msgctxt === "speaker:Amy")?.msgstr, "Иди");
-  // Странность оригинала 1:1: текст «Go» есть в POT (под другими ctxt), поэтому
-  // ui-перевод не спасается и НЕ остаётся legacy — он выпадает (merge_pot:
-  // `if old["msgid"] in pot_by_text: continue`).
-  assert.equal(
-    merged.find((x) => x.msgctxt === "ui"),
-    undefined,
-  );
+test("ключ вернулся в POT — протухший флаг legacy снимается", { skip }, () => {
+  const dir = fixture(po([`#, legacy\n${entry("Back", "Вернулось")}`]), pot([entry("Back")]));
+  const run = cli(["po_update", "ru", "--po-dir", dir]);
+  assert.equal(run.status, 0, run.stderr);
+  const back = parsePo(readFileSync(join(dir, "ru.po"), "utf8")).filter((e) => e.msgid);
+  assert.equal(back[0].msgstr, "Вернулось");
+  assert.deepEqual(back[0].flags, []);
 });
 
-test("mergePot: пустые переводы молча выпадают, obsolete всегда 0", () => {
-  const pot = [e("A", "ui")];
-  const po = [e("A", "ui", ""), e("Gone", "ui", "")];
-  const { merged, stats } = mergePot(po, pot);
-  assert.equal(stats.obsolete, 0);
-  assert.equal(merged.length, 1);
+test("auto-normalized не переезжает в новый POT", { skip }, () => {
+  const dir = fixture(po([`#, fuzzy, auto-normalized\n${entry("A", "А")}`]), pot([entry("A")]));
+  const run = cli(["po_update", "ru", "--po-dir", dir]);
+  assert.equal(run.status, 0, run.stderr);
+  const back = parsePo(readFileSync(join(dir, "ru.po"), "utf8")).filter((e) => e.msgid);
+  assert.deepEqual(back[0].flags, ["fuzzy"]);
 });
 
-test("mergePot: старая запись с флагом legacy тоже выпиливается", () => {
-  const pot = [e("A", "ui")];
-  const stale = e("Triaged", "ui", "Мусор");
-  stale.flags = ["legacy"];
-  const { merged, stats } = mergePot([e("A", "ui", "А"), stale], pot);
-  assert.equal(stats.orphanDropped, 1);
-  assert.equal(merged.length, 1, "в PO остаётся только то, что есть в POT");
-});
-
-test("mergePot: auto-normalized не переезжает в новый POT", () => {
-  const pot = [e("A", "ui")];
-  const po = [e("A", "ui", "А")];
-  po[0].flags = ["fuzzy", "auto-normalized"];
-  const { merged } = mergePot(po, pot);
-  assert.deepEqual(merged[0].flags, ["fuzzy"]);
-});
-
-test("mergePot: дубликаты msgid в PO — побеждает последний (как dict в Python)", () => {
-  const pot = [e("A", "ui")];
-  const { merged } = mergePot([e("A", "ui", "первый"), e("A", "ui", "второй")], pot);
-  assert.equal(merged[0].msgstr, "второй");
-});
-
-test("mergePot: кавычки и \\n в тексте переживают merge + render + parse", () => {
-  const pot = [e('He said "hi"\nbye', "ui")];
-  const po = [e('He said "hi"\nbye', "ui", 'Он сказал "привет"\nпока')];
-  const { merged } = mergePot(po, pot);
-  const text = renderMerged(merged, ["# header"]);
-  const back = parsePo(text).filter((x) => x.msgid);
-
+test("дубликаты msgid в PO — побеждает последний (как dict)", { skip }, () => {
+  const dir = fixture(po([entry("A", "первый"), entry("A", "второй")]), pot([entry("A")]));
+  const report = join(root, "dup-report.json");
+  const run = cli(["po_update", "ru", "--po-dir", dir, "--json", report]);
+  assert.equal(run.status, 0, run.stderr);
+  const back = parsePo(readFileSync(join(dir, "ru.po"), "utf8")).filter((e) => e.msgid);
   assert.equal(back.length, 1);
+  assert.equal(back[0].msgstr, "второй");
+  const stats = JSON.parse(readFileSync(report, "utf8")) as Record<string, unknown>;
+  assert.equal(stats.dupKeys, 1);
+});
+
+test("кавычки и \\n переживают merge + render + parse", { skip }, () => {
+  const id = 'He said \\"hi\\"\\nbye';
+  const tr = 'Он сказал \\"привет\\"\\nпока';
+  const dir = fixture(po([entry(id, tr)]), pot([entry(id)]));
+  const run = cli(["po_update", "ru", "--po-dir", dir]);
+  assert.equal(run.status, 0, run.stderr);
+  const text = readFileSync(join(dir, "ru.po"), "utf8");
+  assert.ok(text.includes('msgid "He said \\"hi\\"\\nbye"'));
+  const back = parsePo(text).filter((e) => e.msgid);
   assert.equal(back[0].msgid, 'He said "hi"\nbye');
   assert.equal(back[0].msgstr, 'Он сказал "привет"\nпока');
-  assert.ok(text.includes('msgid "He said \\"hi\\"\\nbye"'));
 });
 
-test("renderMerged: комментарии переводчика сохраняются, пустой комментарий = '#'", () => {
-  const pot = [e("A", "ui")];
-  const old = e("A", "ui", "А");
-  old.translator = ["rich: <b>А</b>", "note for humans", ""];
-  const { merged } = mergePot([old], pot);
-  const out = renderMerged(merged, []);
-  assert.ok(out.includes("# rich: <b>А</b>"));
-  assert.ok(out.includes("# note for humans"));
-  assert.ok(out.includes("\n#\n"), "пустой комментарий рендерится как голая решётка");
-
-  const back = parsePo(out).filter((x) => x.msgid);
-  assert.deepEqual(back[0].translator, ["rich: <b>А</b>", "note for humans"]);
-  assert.equal(back[0].msgstr, "А");
+test("шапка переносится дословно (первый блок до пустой строки)", { skip }, () => {
+  const header = '# RU\n# note\nmsgid ""\nmsgstr ""\n"Last-Translator: Я\\n"';
+  const dir = fixture(po([entry("A", "А")], header), pot([entry("A")]));
+  const run = cli(["po_update", "ru", "--po-dir", dir]);
+  assert.equal(run.status, 0, run.stderr);
+  const out = readFileSync(join(dir, "ru.po"), "utf8");
+  assert.ok(out.startsWith(`${header}\n\n`), "шапка дословно");
 });
 
-test("renderMerged: obsolete-запись рендерится блоками #~", () => {
-  const entry = e("Old", "ui", "Старое");
-  const text = renderMerged([{ ...entry, obsolete: true }], []);
-  assert.ok(text.includes('#~ msgid "Old"'));
-  assert.ok(text.includes('#~ msgstr "Старое"'));
-});
-
-test("extractHeader: первый блок до пустой строки, CRLF нормализуется", () => {
-  const raw = '# RU\r\nmsgid ""\r\nmsgstr "X\\n"\r\n\r\nmsgid "A"\r\nmsgstr "Б"\r\n';
-  assert.deepEqual(extractHeader(raw), ["# RU", 'msgid ""', 'msgstr "X\\n"']);
-});
-
-test("extractHeader: PO без пустой строки — в шапку уходит весь файл (странность 1:1)", () => {
-  const raw = 'msgid "A"\nmsgstr "Б"\n';
-  assert.deepEqual(extractHeader(raw), ['msgid "A"', 'msgstr "Б"']);
-});
-
-test("runPoUpdate: CLI-цикл с бэкапом и сохранённой шапкой", () => {
-  const dir = join(root, "cli", "po");
-  mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, "template.pot"), renderPo([e("A", "ui"), e("B", "ui")], []), "utf8");
-  writeFileSync(join(dir, "de.po"), renderPo([e("A", "ui", "Ä", ["old"])], ["# de"]), "utf8");
-
-  const res = runPoUpdate({ lang: "de", poDir: dir });
-  assert.equal(res.stats.carried, 1);
-  assert.equal(res.stats.new, 1);
-  assert.ok(existsSync(join(dir, "de.po.bak")));
-
-  const out = readFileSync(join(dir, "de.po"), "utf8");
-  assert.ok(out.startsWith("# de\n\n"), "шапка переносится дословно");
-  const back = parsePo(out).filter((x) => x.msgid);
-  assert.deepEqual(
-    back.map((x) => [x.msgid, x.msgstr]),
-    [
-      ["A", "Ä"],
-      ["B", ""],
-    ],
+test("`#, skip`: пустые и переведённые skip-строки в PO не заводятся", { skip }, () => {
+  const skipEntry = (id: string): string =>
+    `#. skip: short-token\n#, skip\nmsgctxt "ui"\nmsgid "${id}"\nmsgstr ""`;
+  const dir = fixture(
+    po([entry("kept-key", "уже есть")]),
+    pot([skipEntry("junk-key"), entry("Normal line"), skipEntry("kept-key")]),
   );
-});
-
-test("runPoUpdate: пустой PO — только новые записи, ведущая пустая строка", () => {
-  const dir = join(root, "empty", "po");
-  mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, "template.pot"), renderPo([e("A", "ui")], ["# pot"]), "utf8");
-  writeFileSync(join(dir, "ru.po"), "", "utf8");
-
-  const res = runPoUpdate({ lang: "ru", poDir: dir });
-  assert.equal(res.stats.new, 1);
-  const raw = readFileSync(join(dir, "ru.po"), "utf8");
-  assert.ok(raw.startsWith("\n"), "заголовка нет — вывод начинается с пустой строки");
-  assert.equal(parsePo(raw).filter((x) => x.msgid).length, 1);
-});
-
-test("runPoUpdate: повторный прогон не меняет файл (кроме .bak) и не оставляет .part", () => {
-  const dir = join(root, "twice", "po");
-  mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, "template.pot"), renderPo([e("A", "ui")], ["# pot"]), "utf8");
-  writeFileSync(join(dir, "ru.po"), renderPo([e("A", "ui", "А")], ["# ru"]), "utf8");
-
-  runPoUpdate({ lang: "ru", poDir: dir });
-  const first = readFileSync(join(dir, "ru.po"), "utf8");
-  runPoUpdate({ lang: "ru", poDir: dir });
-  const second = readFileSync(join(dir, "ru.po"), "utf8");
-
-  assert.equal(second, first);
-  assert.equal(existsSync(join(dir, "ru.po.part")), false);
-});
-
-test("runPoUpdate: отсутствующий PO — ошибка, файл не создаётся", () => {
-  const dir = join(root, "missing", "po");
-  mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, "template.pot"), renderPo([e("A", "ui")], []), "utf8");
-  assert.throws(() => runPoUpdate({ lang: "ru", poDir: dir }), /missing/);
-  assert.equal(existsSync(join(dir, "ru.po")), false);
-});
-
-test("writeAtomic: обрыв записи не обнуляет существующий файл", () => {
-  const target = join(root, "atomic", "ru.po");
-  mkdirSync(join(root, "atomic"), { recursive: true });
-  writeFileSync(target, "СТАРОЕ СОДЕРЖИМОЕ\n", "utf8");
-  // Эмулируем обрыв: `.part` уже занят каталогом — запись/переименование падает.
-  const part = `${target}.part`;
-  mkdirSync(part, { recursive: true });
-  writeFileSync(join(part, "junk"), "x", "utf8");
-
-  assert.throws(() => writeAtomic(target, "НОВОЕ\n"));
-  assert.equal(readFileSync(target, "utf8"), "СТАРОЕ СОДЕРЖИМОЕ\n");
-  rmSync(part, { recursive: true, force: true });
-});
-
-test("main: отсутствующий PO → код 1, справка → 0, мусор → 2", () => {
-  const dir = join(root, "main", "po");
-  mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, "template.pot"), renderPo([e("A", "ui")], []), "utf8");
-
-  const origErr = console.error;
-  console.error = () => {};
-  try {
-    assert.equal(main(["ru", "--po-dir", dir]), 1);
-    assert.equal(main(["--help"]), 0);
-    assert.equal(main(["--bogus"]), 2);
-  } finally {
-    console.error = origErr;
-  }
-});
-
-// ---------------------------------------------------------------------------
-// `#, skip`: пустых строк в PO не создаём, живой перевод сохраняем.
-// ---------------------------------------------------------------------------
-
-/** Запись POT с `#, skip` (решение skip-политики). */
-function skip(id: string): PoEntry {
-  const entry = e(id, "ui");
-  entry.flags = ["skip"];
-  return entry;
-}
-
-test("mergePot: skip-запись без перевода не попадает в PO вовсе", () => {
-  const { merged, stats } = mergePot([], [skip("junk"), e("Kept line", "ui")]);
-  assert.equal(merged.length, 1);
-  assert.equal(merged[0].msgid, "Kept line");
-  assert.equal(stats.skipped, 1);
-  assert.equal(stats.new, 1);
-  assert.ok(!renderMerged(merged, ['msgid ""', 'msgstr ""']).includes("junk"));
-});
-
-test("mergePot: переведённая skip-запись в PO не попадает вовсе", () => {
-  const { merged, stats } = mergePot([e("junk", "ui", "мусор")], [skip("junk")]);
-  assert.equal(merged.length, 0, "ни строки, ни перевода: это инфошум");
-  assert.equal(stats.skipped, 1);
-  assert.equal(stats.carried, 0);
-});
-
-test("mergePot: перевод вырезанного политикой текста не остаётся legacy", () => {
-  const { merged, stats } = mergePot(
-    [e("Gone asset name", "ui", "Мусорный перевод")],
-    [],
-    new Set(["Gone asset name"]),
-  );
-  assert.equal(merged.length, 0, "ассетный текст вырезан — перевод не тянем");
-  assert.equal(stats.cutDropped, 1, "потеря видна в счётчике");
-});
-
-test("mergePot: пустой POT — всё становится сиротами и выпиливается", () => {
-  const { merged, stats } = mergePot([e("Gone", "ui", "Ушло")], []);
-  assert.equal(merged.length, 0);
-  assert.equal(stats.orphanDropped, 1);
-});
-
-test("mergePot: снятый skip убирает метку из PO", () => {
-  const old = e("line", "ui", "строка");
-  old.flags = ["skip"];
-  const { merged } = mergePot([old], [e("line", "ui")]);
-  assert.deepEqual(merged[0].flags, [], "POT больше не помечает — метке в PO не место");
-});
-
-test("mergePot: перевод под skip-текстом не остаётся ни живым, ни legacy", () => {
-  const { merged, stats } = mergePot([e("Gone text", "speaker:Zoey", "Ушло")], [skip("Gone text")]);
-  assert.equal(merged.length, 0, "skip-текст не тянет за собой перевод");
-  assert.equal(stats.skipped, 1, "в POT это одна skip-запись");
-  assert.equal(stats.skipDropped, 1, "перевод под ней отброшен осознанно");
-});
-
-test("runPoUpdate: skip не создаёт строк в PO, переведённая остаётся с меткой", () => {
-  const dir = join(root, "skip-run", "po");
-  mkdirSync(dir, { recursive: true });
-  writeFileSync(
-    join(dir, "template.pot"),
-    renderPo([skip("junk-key"), e("Normal line", "ui"), skip("kept-key")], []),
-    "utf8",
-  );
-  // Заголовок обязателен: в PO без шапки первый блок считается шапкой
-  // (задокументированная странность оригинала) — фикстура не про это.
-  writeFileSync(
-    join(dir, "ru.po"),
-    renderPo([e("kept-key", "ui", "уже есть")], ['msgid ""', 'msgstr ""']),
-    "utf8",
-  );
-
-  const res = runPoUpdate({ lang: "ru", poDir: dir });
-  assert.equal(res.stats.skipped, 2, "оба skip-ключа не заведены");
+  const report = join(root, "skip-report.json");
+  const run = cli(["po_update", "ru", "--po-dir", dir, "--json", report]);
+  assert.equal(run.status, 0, run.stderr);
 
   const out = readFileSync(join(dir, "ru.po"), "utf8");
   assert.ok(!out.includes("junk-key"), "пустого skip-ключа в PO нет");
   assert.ok(!out.includes("kept-key"), "переведённый skip-ключ тоже не попадает");
-  assert.ok(!out.includes('msgstr "уже есть"'), "его перевод не тянется в PO");
+  assert.ok(!out.includes("уже есть"), "его перевод не тянется в PO");
   assert.ok(out.includes('msgid "Normal line"\nmsgstr ""'), "обычная строка на месте");
   assert.ok(!/#, skip/.test(out), "ни одной skip-метки в PO");
+  const stats = JSON.parse(readFileSync(report, "utf8")) as Record<string, unknown>;
+  assert.equal(stats.skipped, 2);
+  assert.equal(stats.skipDropped, 0, "их ключи есть в POT — хвостом ничего не шло");
+});
+
+test("повторный прогон не меняет файл и не оставляет .part", { skip }, () => {
+  const dir = fixture(po([entry("A", "А")]), pot([entry("A")]));
+  assert.equal(cli(["po_update", "ru", "--po-dir", dir]).status, 0);
+  const first = readFileSync(join(dir, "ru.po"), "utf8");
+  assert.equal(cli(["po_update", "ru", "--po-dir", dir]).status, 0);
+  assert.equal(readFileSync(join(dir, "ru.po"), "utf8"), first);
+  assert.equal(existsSync(join(dir, "ru.po.part")), false);
+});
+
+test("отсутствующий PO — ошибка, файл не создаётся", { skip }, () => {
+  const dir = fixture("", pot([entry("A")])); // заглушка, перезапишем ниже
+  const noPoDir = join(root, "missing", "po");
+  mkdirSync(noPoDir, { recursive: true });
+  writeFileSync(join(noPoDir, "template.pot"), pot([entry("A")]), "utf8");
+
+  const run = cli(["po_update", "ru", "--po-dir", noPoDir]);
+  assert.notEqual(run.status, 0);
+  assert.match(run.stderr, /missing/i);
+  assert.equal(existsSync(join(noPoDir, "ru.po")), false);
+  rmSync(dir, { recursive: true, force: true });
+});
+
+test("--help — 0, неизвестный аргумент — 2", { skip }, () => {
+  assert.equal(cli(["po_update", "--help"]).status, 0);
+  assert.equal(cli(["po_update", "--bogus"]).status, 2);
 });
