@@ -403,10 +403,25 @@ export function batchPrompt(
  * Отличие от обычного перевода — модель видит текущий вариант и правит его,
  * а не переводит заново: так меньше дрейфа смысла (TSSR делает то же).
  */
+const TARGET_LABEL: Record<string, string> = {
+  ru: "Russian",
+  en: "English",
+  de: "German",
+  es: "Spanish",
+  pt: "Portuguese",
+  fr: "French",
+  it: "Italian",
+  pl: "Polish",
+  zh: "Chinese",
+  ja: "Japanese",
+  ko: "Korean",
+};
+
 export function improvePrompt(
   items: PoEntry[],
   context?: ReadonlyMap<string, string[]>,
   genders?: ReadonlyMap<string, "female" | "male">,
+  lang = "ru",
 ): string {
   const ctxLines: string[] = [];
   items.forEach((e, i) => {
@@ -422,7 +437,7 @@ export function improvePrompt(
     : "";
   return (
     contextBlock +
-    `Improve each Russian translation: keep the same meaning and facts, keep the adult register exactly as explicit as the English source (no softening, no clinical terms), ` +
+    `Improve each ${TARGET_LABEL[lang] ?? "target-language"} translation: keep the same meaning and facts, keep the adult register exactly as explicit as the English source (no softening, no clinical terms), ` +
     `never change the gender of second-person forms («ты пришла» follows the person ADDRESSED, not the speaker), ` +
     `make the language natural, preserve markup tags. Reply with exactly ${items.length} lines in format "N. improved translation".\n` +
     lines.join("\n")
@@ -499,7 +514,10 @@ export function parseResponse(text: string, n: number): string[] | null {
  * (проверено 2026-11-23: 6 строк из 10). Метка срезается только в начале.
  */
 export function stripEchoLabel(text: string): string {
-  return text.replace(/^(?:RU|EN|RUS|ENG)\s*:\s*/iu, "").trim();
+  return text
+    .replace(/^(?:RU|EN|RUS|ENG)\s*:\s*/iu, "")
+    .replace(/^N\s*[.:]\s*/u, "")
+    .trim();
 }
 
 /**
@@ -558,6 +576,21 @@ export function restoreFraming(src: string, tr: string, lang: string): string {
   if (/^["“]/.test(s) && !/^["“«]/.test(out) && !/^[(（]/.test(out)) out = `${openQuote}${out}`;
   if (/["”]$/.test(s) && !/["”»]$/.test(out) && !/[)）]$/.test(out)) out = `${out}${closeQuote}`;
   return out;
+}
+
+/**
+ * Все ли числа старого перевода остались в новом?
+ *
+ * Пасс улучшения умеет терять числовой префикс метки (`0.3 Residential…` → текст без
+ * `0.3`), и это не ловится валидацией: источник тоже начинается с числа, правило
+ * «номер строки не протёк» такую потерю не видит (2026-11-24, zh).
+ */
+export function keepsDigits(oldText: string, newText: string): boolean {
+  const digits = (x: string): string[] => (x.match(/\d+/g) ?? []).sort();
+  const before = digits(oldText);
+  if (before.length === 0) return true;
+  const after = new Set(digits(newText));
+  return before.every((d) => after.has(d));
 }
 
 /**
@@ -999,7 +1032,7 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
               model,
               formatPromptN(system, sub.length),
               opts.improve
-                ? improvePrompt(sub, sceneContext, genders)
+                ? improvePrompt(sub, sceneContext, genders, lang)
                 : batchPrompt(sub, sceneContext, genders),
               timeoutMs,
               maxTokens,
@@ -1086,8 +1119,12 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
             const oldGender = person2Gender(e.msgstr);
             const newGender = person2Gender(leak.clean);
             const flipsGender = oldGender !== null && newGender !== null && oldGender !== newGender;
-            if (leak.clean && leak.clean.trim() !== e.msgstr.trim() && !flipsGender) {
-              updates.set(entryKey(e), leak.clean);
+            if (
+              framed.trim() !== e.msgstr.trim() &&
+              !flipsGender &&
+              keepsDigits(e.msgstr, framed)
+            ) {
+              updates.set(entryKey(e), framed);
               translatedKeys.push(entryKey(e));
               summary.done += 1;
             } else {
