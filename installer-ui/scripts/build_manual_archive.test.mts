@@ -3,10 +3,14 @@
  * в `manual_e2e.mts` (нужен 7-Zip и собранный payload).
  */
 import assert from "node:assert/strict";
+import { mkdtempSync, rmSync, unlinkSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { test } from "node:test";
 
 import {
   FORBIDDEN_EXTENSIONS,
+  forbiddenDistEntries,
   expectedEntries,
   fomodInfo,
   fomodModule,
@@ -65,6 +69,8 @@ test("FOMOD раскладывает те же пути и не содержит
 test("README: 3 шага, манифест рантайма, DLL-предупреждение, без запуска скриптов", () => {
   const readme = manualReadme("2026.11.25");
   assert.match(readme, /Установка \(3 шага\)/);
+  assert.match(readme, /2026\.11\.25/);
+  assert.doesNotMatch(readme, /\{\{VERSION\}\}/);
   assert.match(readme, /install-manifest\.json/);
   assert.match(readme, /запустите игру \*\*один раз\*\*/i);
   assert.match(readme, /dwmapi\.dll/);
@@ -73,6 +79,22 @@ test("README: 3 шага, манифест рантайма, DLL-предупр�
   assert.match(readme, /Распакуйте новый архив \*\*поверх\*\*/);
   assert.match(readme, /Удаление/);
   assert.doesNotMatch(readme, /powershell/i);
+});
+
+test("dist: исполняемые артефакты запрещены, exe менеджера — исключение", () => {
+  const dir = mkdtempSync(join(tmpdir(), "ntdx-dist-"));
+  try {
+    writeFileSync(join(dir, "archive.7z"), "");
+    writeFileSync(join(dir, "NeonTranslatorDXManager.exe"), "");
+    writeFileSync(join(dir, "setup.ps1"), "");
+    writeFileSync(join(dir, "run.cmd"), "");
+    assert.deepEqual(forbiddenDistEntries(dir).sort(), ["run.cmd", "setup.ps1"]);
+    unlinkSync(join(dir, "setup.ps1"));
+    unlinkSync(join(dir, "run.cmd"));
+    assert.deepEqual(forbiddenDistEntries(dir), []);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
 });
 
 test("parseArgs: версия и каталог", () => {

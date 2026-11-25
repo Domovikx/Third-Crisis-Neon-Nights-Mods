@@ -229,7 +229,7 @@ signtool sign /fd SHA256 /tr http://timestamp.digicert.com /td SHA256 `
 - Вшить `payload/` в NSIS-бандл (resource) вместо папки рядом с exe.
 - Обновление «по кнопке» из сети (сейчас — новый payload рядом с exe).
 - `--migrate` со старых раскладок (`Managed/`, `NeonTranslator/`).
-- Легаси `scripts/package_release.mts` (single-lang zip с `install.ps1`) —
-  выпилить: канонический ручной путь теперь `npm run manual` (без скриптов).
+- `scripts/package_release.mts` — теперь тонкая обёртка над `npm run manual`
+  (все языки, 7z, без скриптов); старый single-lang zip с `install.ps1` удалён.
 - Подпись и проверка антивирусов (см. выше).
 - Портативный режим (папка мода вне игры) — по отзывам.

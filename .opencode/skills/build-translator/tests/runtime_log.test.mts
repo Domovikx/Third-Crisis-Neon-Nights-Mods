@@ -12,11 +12,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 
-const LOG = join(
-  resolve(import.meta.dirname, ".."),
-  "test_data",
-  "runtime-font.log",
-);
+const LOG = join(resolve(import.meta.dirname, ".."), "test_data", "runtime-font.log");
 const lines = readFileSync(LOG, "utf8").split(/\r?\n/);
 
 test("лог: статический атлас игры больше не растят", () => {
@@ -24,10 +20,7 @@ test("лог: статический атлас игры больше не ра�
     !lines.some((l) => /preload Roboto-Condensed_DialogueUI .* = False/.test(l)),
     "старая строка preload ... = False chars 236->236 не должна появляться",
   );
-  assert.ok(
-    !lines.some((l) => /chars 236->236/.test(l)),
-    "нет прироста 236->236",
-  );
+  assert.ok(!lines.some((l) => /chars 236->236/.test(l)), "нет прироста 236->236");
 });
 
 test("лог: кириллица — клон игрового ассета с его TTF/материалом", () => {

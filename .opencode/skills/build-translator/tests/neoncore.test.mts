@@ -122,11 +122,10 @@ test("NeonFontCore: fit rule + fallback chain (compiled C#)", (t) => {
     const harness = join(dir, "Harness.cs");
     const exe = join(dir, "neoncore.exe");
     writeFileSync(harness, HARNESS);
-    const compile = spawnSync(
-      csc,
-      ["/nologo", "/target:exe", `/out:${exe}`, CORE, harness],
-      { encoding: "utf8", timeout: 60_000 },
-    );
+    const compile = spawnSync(csc, ["/nologo", "/target:exe", `/out:${exe}`, CORE, harness], {
+      encoding: "utf8",
+      timeout: 60_000,
+    });
     assert.equal(compile.status, 0, `csc: ${compile.stdout ?? ""}${compile.stderr ?? ""}`);
     const run = spawnSync(exe, [], { encoding: "utf8", timeout: 60_000 });
     assert.equal(run.status, 0, `harness: ${run.stdout ?? ""}${run.stderr ?? ""}`);

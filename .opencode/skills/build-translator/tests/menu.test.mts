@@ -34,7 +34,10 @@ function priority(): string[] {
 /** Коды из таблицы `Langs` в C#-исходнике, в порядке объявления. */
 function switcherCodes(): string[] {
   const src = readFileSync(SWITCHER, "utf8");
-  const block = src.slice(src.indexOf("private static readonly string[][] Langs"), src.indexOf("};", src.indexOf("private static readonly string[][] Langs")));
+  const block = src.slice(
+    src.indexOf("private static readonly string[][] Langs"),
+    src.indexOf("};", src.indexOf("private static readonly string[][] Langs")),
+  );
   return [...block.matchAll(/new string\[\]\s*\{\s*"([a-z]{2})"/g)].map((m) => m[1]);
 }
 
@@ -82,10 +85,7 @@ test("панель языка не заходит на кнопки главно
     // Панель висит НАД мини-кнопкой, не перекрывая её.
     const panelBottom = (margin + miniH + 20) * scale;
     assert.ok(panelBottom > (margin + miniH) * scale, `${w}x${h}: панель выше мини-кнопки`);
-    assert.ok(
-      panelBottom + panelH * scale <= h,
-      `${w}x${h}: панель целиком в экране по высоте`,
-    );
+    assert.ok(panelBottom + panelH * scale <= h, `${w}x${h}: панель целиком в экране по высоте`);
   }
 });
 
