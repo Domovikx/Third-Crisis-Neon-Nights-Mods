@@ -1,98 +1,298 @@
 <!doctype html>
-<html lang="ru">
+<html lang="{{LANG}}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Third Crisis: Neon Nights — локализация</title>
-    <meta
-      name="description"
-      content="Неофициальный мультиязычный перевод Third Crisis: Neon Nights. Только текст, никакой озвучки."
-    />
+    <title>{{meta.title}}</title>
+    <meta name="description" content="{{meta.description}}" />
+    <meta name="theme-color" content="#0b0d12" />
+    <link rel="alternate" hreflang="{{ALT_LANG}}" href="{{ALT_HREF}}" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero">
-      <div class="wrap">
-        <p class="badge">18+ · неофициальный перевод</p>
-        <h1>Third Crisis: Neon Nights</h1>
-        <p class="lead">
-          Мультиязычный <strong>текстовый</strong> перевод. Оригинал не модифицируется: строки
-          подменяются в памяти игры, язык переключается своей панелью прямо в игре.
-        </p>
-        <nav class="actions">
-          <a class="btn" href="https://github.com/Domovikx/Third-Crisis-Neon-Nights-Mods"
-            >Исходники</a
-          >
-          <a class="btn ghost" href="#install">Как установить</a>
+    <a class="skip" href="#main">{{nav.skip}}</a>
+
+    <header class="topbar">
+      <div class="wrap topbar-inner">
+        <a class="brand" href="index.html">NeonTranslatorDX</a>
+        <nav class="nav" aria-label="{{nav.label}}">
+          <a href="#features">{{nav.features}}</a>
+          <a href="#languages">{{nav.languages}}</a>
+          <a href="#shots">{{nav.shots}}</a>
+          <a href="#install">{{nav.install}}</a>
+          <a href="#faq">{{nav.faq}}</a>
+          <a class="lang-switch" href="{{ALT_HREF}}" title="{{nav.switchTitle}}">{{nav.switch}}</a>
         </nav>
       </div>
     </header>
 
-    <main class="wrap">
-      <section>
-        <h2>Языки и покрытие</h2>
-        <p class="muted">
-          Порядок языков — по языковой статистике Steam. Цифры пересобираются из
-          <code>po/&lt;lang&gt;.po</code> при каждой сборке страницы.
-        </p>
-        <div class="table-scroll">
-          <table>
-            <thead>
-              <tr>
-                <th>Язык</th>
-                <th>Код</th>
-                <th>Переведено</th>
-                <th>Покрытие</th>
-              </tr>
-            </thead>
-            <tbody>
-              {{LANG_ROWS}}
-            </tbody>
-          </table>
-        </div>
-        <p class="muted small">Обновлено: {{GENERATED_AT}} · языков в списке: {{LANG_COUNT}}</p>
-      </section>
-
-      <section id="install">
-        <h2>Установка</h2>
-        <ol class="steps">
-          <li>Купить и установить игру в Steam (нужна лицензионная копия).</li>
-          <li>Скачать релиз мода и распаковать в папку игры.</li>
-          <li>Запустить игру — панель выбора языка открывается клавишей <kbd>F9</kbd>.</li>
-        </ol>
-        <p class="muted small">
-          Инсталлятор и мод-менеджер в разработке. Путь к игре определяется автоматически по
-          Steam-библиотекам.
-        </p>
-      </section>
-
-      <section>
-        <h2>Что внутри</h2>
-        <ul class="features">
-          <li>
-            <strong>Только текст.</strong> Озвучка не затрагивается — студийные голоса остаются.
-          </li>
-          <li><strong>Один словарь на язык.</strong> Компилируется из PO, читается в памяти.</li>
-          <li><strong>Живое переключение.</strong> Без перезапуска игры.</li>
-          <li><strong>Кириллица и CJK.</strong> Шрифты дополняются в рантайме.</li>
+    <header class="hero">
+      <div class="wrap">
+        <p class="kicker">{{hero.kicker}}</p>
+        <h1>NeonTranslatorDX</h1>
+        <p class="lead">{{hero.lead}}</p>
+        <ul class="badges">
+          <li class="badge badge-accent">{{hero.badge.langs}}</li>
+          <li class="badge badge-adult">{{hero.badge.adult}}</li>
+          <li class="badge">{{hero.badge.version}}</li>
+          <li class="badge">{{hero.badge.text}}</li>
         </ul>
+        <nav class="actions">
+          <a class="btn" href="https://github.com/Domovikx/Third-Crisis-Neon-Nights-Mods/releases"
+            >{{hero.btn.exe}}</a
+          >
+          <a
+            class="btn ghost"
+            href="https://github.com/Domovikx/Third-Crisis-Neon-Nights-Mods/releases"
+            >{{hero.btn.manual}}</a
+          >
+        </nav>
+        <p class="note">{{hero.note}}</p>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="stats wrap" aria-label="{{stats.label}}">
+        <div class="stat">
+          <span class="stat-value">{{LINES}}</span>
+          <span class="stat-label">{{stats.lines}}</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">{{RICH}}</span>
+          <span class="stat-label">{{stats.rich}}</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">{{LANGS}}</span>
+          <span class="stat-label">{{stats.langs}}</span>
+        </div>
+        <div class="stat stat-clean">
+          <span class="stat-value">{{MISSING}}</span>
+          <span class="stat-label">{{stats.missing}}</span>
+        </div>
       </section>
 
-      <section class="fine">
-        <h2>Правовая оговорка</h2>
-        <p class="muted small">
-          Неофициальная фанатская работа, не связанная с разработчиками. Все права на игру
-          принадлежат Anduo Games. Для использования нужна лицензионная копия. Контент 18+.
-        </p>
+      <section id="features" class="wrap section">
+        <h2>{{features.title}}</h2>
+        <p class="section-lead">{{features.lead}}</p>
+        <div class="cards">
+          <article class="card">
+            <h3>{{features.menu.title}}</h3>
+            <p>{{features.menu.text}}</p>
+          </article>
+          <article class="card">
+            <h3>{{features.dialog.title}}</h3>
+            <p>{{features.dialog.text}}</p>
+          </article>
+          <article class="card">
+            <h3>{{features.rich.title}}</h3>
+            <p>{{features.rich.text}}</p>
+          </article>
+          <article class="card">
+            <h3>{{features.fonts.title}}</h3>
+            <p>{{features.fonts.text}}</p>
+          </article>
+          <article class="card">
+            <h3>{{features.live.title}}</h3>
+            <p>{{features.live.text}}</p>
+          </article>
+          <article class="card">
+            <h3>{{features.safe.title}}</h3>
+            <p>{{features.safe.text}}</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="languages" class="wrap section">
+        <h2>{{languages.title}}</h2>
+        <p class="section-lead">{{languages.lead}}</p>
+        <ul class="lang-grid">
+          {{LANG_ROWS}}
+        </ul>
+        <p class="muted small">{{languages.source}}</p>
+      </section>
+
+      <section id="shots" class="wrap section">
+        <h2>{{shots.title}}</h2>
+        <p class="section-lead">{{shots.lead}}</p>
+        <div class="gallery">
+          <figure class="shot">
+            <a href="shots/menu-en.jpg"
+              ><img
+                src="shots/menu-en.jpg"
+                width="1440"
+                height="810"
+                loading="lazy"
+                decoding="async"
+                alt="{{shots.menuEn}}"
+            /></a>
+            <figcaption>{{shots.menuEn}}</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="shots/menu-ru.jpg"
+              ><img
+                src="shots/menu-ru.jpg"
+                width="1440"
+                height="810"
+                loading="lazy"
+                decoding="async"
+                alt="{{shots.menuRu}}"
+            /></a>
+            <figcaption>{{shots.menuRu}}</figcaption>
+          </figure>
+          <figure class="shot shot-panel">
+            <a href="shots/language-panel.jpg"
+              ><img
+                src="shots/language-panel.jpg"
+                width="597"
+                height="528"
+                loading="lazy"
+                decoding="async"
+                alt="{{shots.panel}}"
+            /></a>
+            <figcaption>{{shots.panel}}</figcaption>
+          </figure>
+          <figure class="shot shot-wide">
+            <a href="shots/specimen-zh.jpg"
+              ><img
+                src="shots/specimen-zh.jpg"
+                width="1440"
+                height="810"
+                loading="lazy"
+                decoding="async"
+                alt="{{shots.specimen}}"
+            /></a>
+            <figcaption>{{shots.specimen}}</figcaption>
+          </figure>
+          <figure class="shot shot-full">
+            <a href="shots/font-demo-ru.jpg"
+              ><img
+                src="shots/font-demo-ru.jpg"
+                width="1440"
+                height="810"
+                loading="lazy"
+                decoding="async"
+                alt="{{shots.font}}"
+            /></a>
+            <figcaption>{{shots.font}}</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="install" class="wrap section">
+        <h2>{{install.title}}</h2>
+        <p class="section-lead">{{install.lead}}</p>
+        <div class="install-grid">
+          <article class="card card-install">
+            <div class="card-head">
+              <h3>{{install.exe.title}}</h3>
+              <span class="tag">{{install.exe.badge}}</span>
+            </div>
+            <p>{{install.exe.text}}</p>
+          </article>
+          <article class="card card-install">
+            <div class="card-head">
+              <h3>{{install.manual.title}}</h3>
+            </div>
+            <p>{{install.manual.text}}</p>
+            <a
+              class="text-link"
+              href="https://github.com/Domovikx/Third-Crisis-Neon-Nights-Mods/releases"
+              >{{install.manual.link}}</a
+            >
+          </article>
+        </div>
+
+        <h3 class="subhead">{{install.steps.title}}</h3>
+        <ol class="steps">
+          <li>{{install.step1}}</li>
+          <li>{{install.step2}}</li>
+          <li>{{install.step3}}</li>
+        </ol>
+
+        <h3 class="subhead">{{install.layout.title}}</h3>
+        <pre class="tree"><code>&lt;game&gt;/
+  dwmapi.dll
+  mods/NeonTranslatorDX/
+    NeonTranslatorDX.dll
+    dwmapi_real.dll
+    patch_zh.dat … patch_it.dat
+    fonts/
+    active_lang.txt
+    install-manifest.json
+    NeonTranslatorDX.log
+</code></pre>
+        <p class="muted small">{{install.layout.note}}</p>
+
+        <div class="two-col">
+          <div class="callout">
+            <h3>{{install.remove.title}}</h3>
+            <p>{{install.remove.text}}</p>
+          </div>
+          <div class="callout">
+            <h3>{{install.steam.title}}</h3>
+            <p>{{install.steam.text}}</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="wrap section">
+        <h2>{{faq.title}}</h2>
+        <div class="faq">
+          <details>
+            <summary>{{faq.av.q}}</summary>
+            <p>{{faq.av.a}}</p>
+          </details>
+          <details>
+            <summary>{{faq.steam.q}}</summary>
+            <p>{{faq.steam.a}}</p>
+          </details>
+          <details>
+            <summary>{{faq.switch.q}}</summary>
+            <p>{{faq.switch.a}}</p>
+          </details>
+          <details>
+            <summary>{{faq.logs.q}}</summary>
+            <p>{{faq.logs.a}}</p>
+          </details>
+          <details>
+            <summary>{{faq.exe.q}}</summary>
+            <p>{{faq.exe.a}}</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="wrap section fine">
+        <h2>{{legal.title}}</h2>
+        <p class="muted small">{{legal.text}}</p>
+
+        <h2 class="links-title">{{links.title}}</h2>
+        <ul class="links">
+          <li>
+            <a href="https://github.com/Domovikx/Third-Crisis-Neon-Nights-Mods">{{links.github}}</a>
+            <span class="muted small">{{links.github.note}}</span>
+          </li>
+          <li>
+            <a href="https://www.nexusmods.com/">{{links.nexus}}</a>
+            <span class="muted small">{{links.nexus.note}}</span>
+          </li>
+          <li>
+            <a href="https://boosty.to/domovikx">{{links.boosty}}</a>
+            <span class="muted small">{{links.boosty.note}}</span>
+          </li>
+          <li>
+            <a href="https://ko-fi.com/domovikx">{{links.kofi}}</a>
+            <span class="muted small">{{links.kofi.note}}</span>
+          </li>
+        </ul>
       </section>
     </main>
 
     <footer class="wrap">
       <p class="muted small">
-        Собрано из репозитория
         <a href="https://github.com/Domovikx/Third-Crisis-Neon-Nights-Mods"
           >Third-Crisis-Neon-Nights-Mods</a
-        >.
+        >
+        · {{footer.built}}
       </p>
     </footer>
   </body>

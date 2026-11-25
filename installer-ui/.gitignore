@@ -1,0 +1,7 @@
+node_modules/
+dist/
+payload/
+tmp/
+src-tauri/target/
+src-tauri/gen/
+*.7z

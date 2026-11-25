@@ -1,0 +1,41 @@
+import * as stylex from "@stylexjs/stylex";
+
+export const styles = stylex.create({
+  app: { minHeight: "100%", display: "flex", flexDirection: "column" },
+  header: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 16,
+    paddingBlock: 14,
+    paddingInline: 24,
+    borderBottom: "1px solid var(--border)",
+    background: "var(--panel)",
+  },
+  brand: { display: "flex", flexDirection: "column", gap: 2 },
+  brandTitle: { fontSize: 16, fontWeight: 800, letterSpacing: "0.01em" },
+  brandSub: { fontSize: 12, color: "var(--muted)" },
+  headerRight: { display: "flex", alignItems: "center", gap: 8 },
+  langLabel: { fontSize: 12, color: "var(--muted)", marginInlineEnd: 2 },
+  main: {
+    flex: 1,
+    width: "100%",
+    maxWidth: 880,
+    margin: "0 auto",
+    paddingBlock: 22,
+    paddingInline: 24,
+    display: "flex",
+    flexDirection: "column",
+    gap: 14,
+  },
+  footer: {
+    paddingBlock: 10,
+    paddingInline: 24,
+    borderTop: "1px solid var(--border)",
+    color: "var(--muted)",
+    fontSize: 11.5,
+    display: "flex",
+    justifyContent: "space-between",
+    gap: 12,
+  },
+});

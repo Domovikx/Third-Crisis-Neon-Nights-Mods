@@ -5,6 +5,8 @@ runtime/
 output/
 tmp/
 node_modules/
+site/index.html
+site/en.html
 package-lock.json
 *.dat
 *.po
@@ -13,3 +15,10 @@ package-lock.json
 # золотые фикстуры: байты важнее стиля
 .opencode/skills/dump-assets/test_data/assemble-golden-small/
 .opencode/skills/extract-text/test_data/po-update-golden/
+
+# Установщик: артефакты сборки, payload и сгенерированные схемы Tauri
+installer-ui/dist/
+installer-ui/target/
+installer-ui/payload/
+installer-ui/src-tauri/gen/
+installer-ui/node_modules/

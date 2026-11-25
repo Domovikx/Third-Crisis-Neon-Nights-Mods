@@ -12825,7 +12825,7 @@ msgstr "啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ACCESS"
-msgstr "ACCESS"
+msgstr "访问"
 
 #. src: us
 msgctxt "ui"
@@ -12922,12 +12922,12 @@ msgstr "未找到应用程序"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ARRIVAL"
-msgstr "ARRIVAL"
+msgstr "到达"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ARRIVING"
-msgstr "ARRIVING"
+msgstr "即将到达"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Aaaahhh!! Fghhaaahhh! Hghhh...!</color>
@@ -16945,7 +16945,7 @@ msgstr "但——我本来以为……我们不是不允许……"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "BACK"
-msgstr "BACK"
+msgstr "返回"
 
 #. src: raw:RectTransform
 msgctxt "ui"
@@ -16965,7 +16965,7 @@ msgstr "生物增强"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "BOARDING"
-msgstr "BOARDING"
+msgstr "登车"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21055,7 +21055,7 @@ msgstr "D13……它在……D13……呃……我……不……行……嗯…
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DEFEAT"
-msgstr "DEFEAT"
+msgstr "失败"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21090,12 +21090,12 @@ msgstr "对话日志"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DISABLE"
-msgstr "DISABLE"
+msgstr "禁用"
 
 #. src: us
 msgctxt "ui"
 msgid "DISABLED"
-msgstr "DISABLED"
+msgstr "已禁用"
 
 #. src: us
 msgctxt "ui"
@@ -21120,7 +21120,7 @@ msgstr "别忘了在这里填点东西！！！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DRESSED"
-msgstr "DRESSED"
+msgstr "已着装"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -24608,7 +24608,7 @@ msgstr "演示版结束"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ENTERING"
-msgstr "ENTERING"
+msgstr "进入"
 
 #. src: us
 msgctxt "ui"
@@ -28214,7 +28214,7 @@ msgstr "光……？但——"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GAG"
-msgstr "GAG"
+msgstr "塞口"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -28246,12 +28246,12 @@ msgstr "该死！我的真爱难道永远都要受挫吗？！邪恶真的已经
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GALLERY"
-msgstr "GALLERY"
+msgstr "画廊"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GAME"
-msgstr "GAME"
+msgstr "游戏"
 
 #. src: us
 msgctxt "ui"
@@ -28271,7 +28271,7 @@ msgstr "GAUSSIAN9X9"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GET"
-msgstr "GET"
+msgstr "获取"
 
 #. src: us
 msgctxt "ui"
@@ -30156,7 +30156,7 @@ msgstr "按住以跳过"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "HORNY"
-msgstr "HORNY"
+msgstr "发情"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -30166,7 +30166,7 @@ msgstr "HORNY:"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "HUNK"
-msgstr "HUNK"
+msgstr "帅哥"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -36049,7 +36049,7 @@ msgstr "无效的样式已选择//未找到该样式"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ITEMS"
-msgstr "ITEMS"
+msgstr "物品"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -38092,7 +38092,7 @@ msgstr "立即加入抢先体验！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "JOURNAL"
-msgstr "JOURNAL"
+msgstr "日志"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39497,7 +39497,7 @@ msgstr "标签内容"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "LEAVE"
-msgstr "LEAVE"
+msgstr "离开"
 
 #. src: us
 msgctxt "ui"
@@ -41875,7 +41875,7 @@ msgstr "记忆卡：已超过最大数量！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "MENU"
-msgstr "MENU"
+msgstr "菜单"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41890,7 +41890,7 @@ msgstr "菜单 - 向上滚动"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "MISSIONS"
-msgstr "MISSIONS"
+msgstr "任务"
 
 #. src: us
 msgctxt "ui"
@@ -44891,7 +44891,7 @@ msgstr "NPC 佐伊对话预设"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "NUDITY"
-msgstr "NUDITY"
+msgstr "裸露"
 
 #. src: us
 msgctxt "ui"
@@ -47069,7 +47069,7 @@ msgstr "选项名称："
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "OPTIONS"
-msgstr "OPTIONS"
+msgstr "设置"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -47079,7 +47079,7 @@ msgstr "操作系统：操作系统版本 [平台]"
 #. src: field:m_text
 msgctxt "ui"
 msgid "OTHER"
-msgstr "OTHER"
+msgstr "其他"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49524,17 +49524,17 @@ msgstr "原型"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "PUB"
-msgstr "PUB"
+msgstr "酒吧"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "PURCHASE"
-msgstr "PURCHASE"
+msgstr "购买"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "PUSSY"
-msgstr "PUSSY"
+msgstr "小穴"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -52677,7 +52677,7 @@ msgstr "红灯区"
 #. src: us
 msgctxt "ui"
 msgid "REDRESS"
-msgstr "REDRESS"
+msgstr "换装"
 
 #. src: dialog
 msgctxt "ui"
@@ -52719,12 +52719,12 @@ msgstr "住宅区"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "RESUME"
-msgstr "RESUME"
+msgstr "继续"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "RETRY"
-msgstr "RETRY"
+msgstr "重试"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -54900,7 +54900,7 @@ msgstr "SKANK"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SKIP"
-msgstr "SKIP"
+msgstr "跳过"
 
 #. src: dialog
 #. rich_text: <i>SLUT (Sexual Logistics and Utility Transport) Service
@@ -54917,7 +54917,7 @@ msgstr "SOA 5"
 #. src: us
 msgctxt "ui"
 msgid "SPEED"
-msgstr "SPEED"
+msgstr "速度"
 
 #. src: us
 msgctxt "ui"
@@ -54927,12 +54927,12 @@ msgstr "SPEEEEED!"
 #. src: us
 msgctxt "ui"
 msgid "START"
-msgstr "START"
+msgstr "开始"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "STATS"
-msgstr "STATS"
+msgstr "属性"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -61122,7 +61122,7 @@ msgstr "TCNN 开发团队"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "TEST"
-msgstr "TEST"
+msgstr "测试"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -61167,7 +61167,7 @@ msgstr "工具 - 三级操作"
 #. src: us
 msgctxt "ui"
 msgid "TRADE"
-msgstr "TRADE"
+msgstr "交易"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -65280,7 +65280,7 @@ msgstr "导航 上"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "UNDRESS"
-msgstr "UNDRESS"
+msgstr "脱衣"
 
 #. src: us
 msgctxt "ui"
@@ -66730,7 +66730,7 @@ msgstr "超长的动画名称"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "VICTORY"
-msgstr "VICTORY"
+msgstr "胜利"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67242,12 +67242,12 @@ msgstr "我为什么给她写信！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "WIP"
-msgstr "WIP"
+msgstr "开发中"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "WISHLIST"
-msgstr "WISHLIST"
+msgstr "愿望清单"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -71714,7 +71714,7 @@ msgstr "你——你已经看够了！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "YAH"
-msgstr "YAH"
+msgstr "嗯"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -71724,7 +71724,7 @@ msgstr "我早就知道了"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "YES"
-msgstr "YES"
+msgstr "是"
 
 #. src: dialog
 msgctxt "speaker:Zoey"

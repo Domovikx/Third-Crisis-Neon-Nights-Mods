@@ -12827,7 +12827,7 @@ msgstr "아아아아아아아아아아아아아아아아아아아아아아아아
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ACCESS"
-msgstr "ACCESS"
+msgstr "접근"
 
 #. src: us
 msgctxt "ui"
@@ -12924,12 +12924,12 @@ msgstr "앱이 발견되지 않았습니다."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ARRIVAL"
-msgstr "ARRIVAL"
+msgstr "도착"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ARRIVING"
-msgstr "ARRIVING"
+msgstr "도착 중"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Aaaahhh!! Fghhaaahhh! Hghhh...!</color>
@@ -16947,7 +16947,7 @@ msgstr "그-그런데 난... 우린 그러면 안 돼..."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "BACK"
-msgstr "BACK"
+msgstr "뒤로"
 
 #. src: raw:RectTransform
 msgctxt "ui"
@@ -16967,7 +16967,7 @@ msgstr "바이오 아우멘타"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "BOARDING"
-msgstr "BOARDING"
+msgstr "탑승"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21056,7 +21056,7 @@ msgstr "D13... 그건... D13-... 흐흐... 못... 으으... (발신: 인터콤)"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DEFEAT"
-msgstr "DEFEAT"
+msgstr "패배"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21091,12 +21091,12 @@ msgstr "대화 로그"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DISABLE"
-msgstr "DISABLE"
+msgstr "비활성화"
 
 #. src: us
 msgctxt "ui"
 msgid "DISABLED"
-msgstr "DISABLED"
+msgstr "비활성"
 
 #. src: us
 msgctxt "ui"
@@ -21121,7 +21121,7 @@ msgstr "여기에 무언가를 넣는 것을 잊지 마세요!!!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DRESSED"
-msgstr "DRESSED"
+msgstr "착의"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -24611,7 +24611,7 @@ msgstr "시연 버전 끝"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ENTERING"
-msgstr "ENTERING"
+msgstr "입장"
 
 #. src: us
 msgctxt "ui"
@@ -28218,7 +28218,7 @@ msgstr "G-글로우...? 하지만..."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GAG"
-msgstr "GAG"
+msgstr "재갈"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -28250,12 +28250,12 @@ msgstr "아악! 내 진정한 사랑은 언제나 좌절되는 건가?! 정말�
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GALLERY"
-msgstr "GALLERY"
+msgstr "갤러리"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GAME"
-msgstr "GAME"
+msgstr "게임"
 
 #. src: us
 msgctxt "ui"
@@ -28275,7 +28275,7 @@ msgstr "GAUSSIAN9X9"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GET"
-msgstr "GET"
+msgstr "획득"
 
 #. src: us
 msgctxt "ui"
@@ -30161,7 +30161,7 @@ msgstr "누르면 건너뜁니다"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "HORNY"
-msgstr "HORNY"
+msgstr "흥분"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -30171,7 +30171,7 @@ msgstr "HORNY:"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "HUNK"
-msgstr "HUNK"
+msgstr "미남"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -36059,7 +36059,7 @@ msgstr "유효하지 않은 스타일이 선택되었습니다//스타일을 찾
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ITEMS"
-msgstr "ITEMS"
+msgstr "아이템"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -38103,7 +38103,7 @@ msgstr "조기 액세스에 지금 참여하세요!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "JOURNAL"
-msgstr "JOURNAL"
+msgstr "일지"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39508,7 +39508,7 @@ msgstr "레이블 내용"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "LEAVE"
-msgstr "LEAVE"
+msgstr "나가기"
 
 #. src: us
 msgctxt "ui"
@@ -41888,7 +41888,7 @@ msgstr "메모리 카드: 최대 개수를 초과했습니다!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "MENU"
-msgstr "MENU"
+msgstr "메뉴"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41903,7 +41903,7 @@ msgstr "메뉴 - 위로 스크롤"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "MISSIONS"
-msgstr "MISSIONS"
+msgstr "임무"
 
 #. src: us
 msgctxt "ui"
@@ -44904,7 +44904,7 @@ msgstr "NPC 조이 대화 프리셋"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "NUDITY"
-msgstr "NUDITY"
+msgstr "노출"
 
 #. src: us
 msgctxt "ui"
@@ -47084,7 +47084,7 @@ msgstr "옵션 이름:"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "OPTIONS"
-msgstr "OPTIONS"
+msgstr "설정"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -47094,7 +47094,7 @@ msgstr "OS: OS 버전 [플랫폼]"
 #. src: field:m_text
 msgctxt "ui"
 msgid "OTHER"
-msgstr "OTHER"
+msgstr "기타"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49539,17 +49539,17 @@ msgstr "프로토타입"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "PUB"
-msgstr "PUB"
+msgstr "술집"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "PURCHASE"
-msgstr "PURCHASE"
+msgstr "구매"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "PUSSY"
-msgstr "PUSSY"
+msgstr "보지"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -52692,7 +52692,7 @@ msgstr "레드라이트"
 #. src: us
 msgctxt "ui"
 msgid "REDRESS"
-msgstr "REDRESS"
+msgstr "갈아입기"
 
 #. src: dialog
 msgctxt "ui"
@@ -52734,12 +52734,12 @@ msgstr "주거 지역"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "RESUME"
-msgstr "RESUME"
+msgstr "계속"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "RETRY"
-msgstr "RETRY"
+msgstr "재시도"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -54915,7 +54915,7 @@ msgstr "SKANK"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SKIP"
-msgstr "SKIP"
+msgstr "건너뛰기"
 
 #. src: dialog
 #. rich_text: <i>SLUT (Sexual Logistics and Utility Transport) Service
@@ -54932,7 +54932,7 @@ msgstr "SOA 5"
 #. src: us
 msgctxt "ui"
 msgid "SPEED"
-msgstr "SPEED"
+msgstr "속도"
 
 #. src: us
 msgctxt "ui"
@@ -54942,12 +54942,12 @@ msgstr "SPEEEEED!"
 #. src: us
 msgctxt "ui"
 msgid "START"
-msgstr "START"
+msgstr "시작"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "STATS"
-msgstr "STATS"
+msgstr "능력치"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57741,7 +57741,7 @@ msgstr "사이먼"
 #. src: us
 msgctxt "ui"
 msgid "Simplified Chinese Machine Translated / 中文机器翻译"
-msgstr "简化中文机器翻译"
+msgstr "중국어(간체) 기계 번역"
 
 #. src: dialog
 #. rich_text: <i>Simply fill the SLUT Box
@@ -61137,7 +61137,7 @@ msgstr "TCNN 개발팀"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "TEST"
-msgstr "TEST"
+msgstr "테스트"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -61182,7 +61182,7 @@ msgstr "도구 - 3차 행동"
 #. src: us
 msgctxt "ui"
 msgid "TRADE"
-msgstr "TRADE"
+msgstr "교환"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -65296,7 +65296,7 @@ msgstr "탐색 상단"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "UNDRESS"
-msgstr "UNDRESS"
+msgstr "탈의"
 
 #. src: us
 msgctxt "ui"
@@ -66746,7 +66746,7 @@ msgstr "매우 긴 애니메이션 이름"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "VICTORY"
-msgstr "VICTORY"
+msgstr "승리"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67258,12 +67258,12 @@ msgstr "왜 내가 그녀에게 편지를 쓰겠어!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "WIP"
-msgstr "WIP"
+msgstr "개발 중"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "WISHLIST"
-msgstr "WISHLIST"
+msgstr "위시리스트"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -71729,7 +71729,7 @@ msgstr "너... 넌 이미 충분히 봤잖아!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "YAH"
-msgstr "YAH"
+msgstr "응"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -71739,7 +71739,7 @@ msgstr "이미 알고 있어"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "YES"
-msgstr "YES"
+msgstr "예"
 
 #. src: dialog
 msgctxt "speaker:Zoey"

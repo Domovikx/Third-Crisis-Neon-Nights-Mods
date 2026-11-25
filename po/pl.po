@@ -12809,7 +12809,7 @@ msgstr "AAAAAWOOOOOGAA!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ACCESS"
-msgstr "ACCESS"
+msgstr "DOSTĘP"
 
 #. src: us
 msgctxt "ui"
@@ -12906,12 +12906,12 @@ msgstr "NIE ZNALEZIONO APLIKACJI"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ARRIVAL"
-msgstr "ARRIVAL"
+msgstr "PRZYJAZD"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ARRIVING"
-msgstr "ARRIVING"
+msgstr "PRZYBYWA"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Aaaahhh!! Fghhaaahhh! Hghhh...!</color>
@@ -16929,7 +16929,7 @@ msgstr "A-ale myślałam... Nie wolno nam..."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "BACK"
-msgstr "BACK"
+msgstr "WSTECZ"
 
 #. src: raw:RectTransform
 msgctxt "ui"
@@ -16949,7 +16949,7 @@ msgstr "BIO Augmentacja"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "BOARDING"
-msgstr "BOARDING"
+msgstr "WSIADANIE"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21038,7 +21038,7 @@ msgstr "D13... Jest w... D13-... Khhh... Nie mogę-... nghhh..."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DEFEAT"
-msgstr "DEFEAT"
+msgstr "PORAŻKA"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21073,12 +21073,12 @@ msgstr "DZIENNIK DIALOGÓW"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DISABLE"
-msgstr "DISABLE"
+msgstr "WYŁĄCZ"
 
 #. src: us
 msgctxt "ui"
 msgid "DISABLED"
-msgstr "DISABLED"
+msgstr "WYŁĄCZONE"
 
 #. src: us
 msgctxt "ui"
@@ -21103,7 +21103,7 @@ msgstr "NIE ZAPOMNIJ TUTAJ COŚ WSTAWIĆ!!!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DRESSED"
-msgstr "DRESSED"
+msgstr "UBRANA"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -24593,7 +24593,7 @@ msgstr "KONIEC DEMA"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ENTERING"
-msgstr "ENTERING"
+msgstr "WEJŚCIE"
 
 #. src: us
 msgctxt "ui"
@@ -28201,7 +28201,7 @@ msgstr "G-Glow...? Ale-"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GAG"
-msgstr "GAG"
+msgstr "KNEBBEL"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -28233,12 +28233,12 @@ msgstr "GAH! Czy moja prawdziwa miłość zawsze będzie udaremniana?! Zaprawdę
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GALLERY"
-msgstr "GALLERY"
+msgstr "GALERIA"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GAME"
-msgstr "GAME"
+msgstr "GRA"
 
 #. src: us
 msgctxt "ui"
@@ -28258,7 +28258,7 @@ msgstr "GAUSSIAN9X9"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GET"
-msgstr "GET"
+msgstr "WEŹ"
 
 #. src: us
 msgctxt "ui"
@@ -30154,7 +30154,7 @@ msgstr "HORNY:"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "HUNK"
-msgstr "HUNK"
+msgstr "PRZYSTOJNIAK"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -36038,7 +36038,7 @@ msgstr "Nieważny styl wybrany//Styl nie znaleziony"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ITEMS"
-msgstr "ITEMS"
+msgstr "PRZEDMIOTY"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41879,7 +41879,7 @@ msgstr "MENU - PRZEŚCIER W GÓRĘ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "MISSIONS"
-msgstr "MISSIONS"
+msgstr "ZADANIA"
 
 #. src: us
 msgctxt "ui"
@@ -44880,7 +44880,7 @@ msgstr "NPC Zoey Dialogue Presets"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "NUDITY"
-msgstr "NUDITY"
+msgstr "NAGOŚĆ"
 
 #. src: us
 msgctxt "ui"
@@ -47067,7 +47067,7 @@ msgstr "System operacyjny: Wersja systemu operacyjnego [Platforma]"
 #. src: field:m_text
 msgctxt "ui"
 msgid "OTHER"
-msgstr "OTHER"
+msgstr "INNE"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49521,7 +49521,7 @@ msgstr "KUP"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "PUSSY"
-msgstr "PUSSY"
+msgstr "CIPKA"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -52664,7 +52664,7 @@ msgstr "DZIELNICA CZERWONYCH LATARNI"
 #. src: us
 msgctxt "ui"
 msgid "REDRESS"
-msgstr "REDRESS"
+msgstr "PRZEBIERZ SIĘ"
 
 #. src: dialog
 msgctxt "ui"
@@ -52711,7 +52711,7 @@ msgstr "WZNÓW"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "RETRY"
-msgstr "RETRY"
+msgstr "POWTÓRZ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -54887,7 +54887,7 @@ msgstr "DZIWKA"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SKIP"
-msgstr "SKIP"
+msgstr "POMIŃ"
 
 #. src: dialog
 #. rich_text: <i>SLUT (Sexual Logistics and Utility Transport) Service
@@ -54904,7 +54904,7 @@ msgstr "SOA 5"
 #. src: us
 msgctxt "ui"
 msgid "SPEED"
-msgstr "SPEED"
+msgstr "PRĘDKOŚĆ"
 
 #. src: us
 msgctxt "ui"
@@ -54919,7 +54919,7 @@ msgstr "START"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "STATS"
-msgstr "STATS"
+msgstr "STATYSTYKI"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -61153,7 +61153,7 @@ msgstr "NARZĘDZIE - DZIAŁANIE TRZECIORZĘDNE"
 #. src: us
 msgctxt "ui"
 msgid "TRADE"
-msgstr "TRADE"
+msgstr "HANDEL"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -65266,7 +65266,7 @@ msgstr "Nawigacja — Góra"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "UNDRESS"
-msgstr "UNDRESS"
+msgstr "ROZBIERZ SIĘ"
 
 #. src: us
 msgctxt "ui"
@@ -66716,7 +66716,7 @@ msgstr "BARDZO DŁUGA NAZWA ANIMACJI"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "VICTORY"
-msgstr "VICTORY"
+msgstr "ZWYCIĘSTWO"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67227,7 +67227,7 @@ msgstr "DLATEGO NAPISZĘ DO NIEJ LIST!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "WIP"
-msgstr "WIP"
+msgstr "W TOKU"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -71699,7 +71699,7 @@ msgstr "W-widziałaś już dość!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "YAH"
-msgstr "YAH"
+msgstr "TAK"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

@@ -1,0 +1,24 @@
+[package]
+name = "neon-installer"
+version = "0.1.0"
+edition = "2021"
+description = "NeonTranslatorDX installer (Tauri 2 shell over neon-installer-core)"
+license = "MIT"
+
+[lib]
+# `_lib`, чтобы имя библиотеки не конфликтовало с бинарём на Windows.
+name = "neon_installer_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+neon-installer-core = { path = "../core" }
+
+[target.'cfg(windows)'.dependencies]
+winreg = "0.55"

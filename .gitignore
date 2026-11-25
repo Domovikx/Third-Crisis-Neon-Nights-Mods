@@ -17,6 +17,7 @@ runtime/*.dll
 
 # Сайт собирается из site/template.html (в CI перед Pages, локально — npm run build:site)
 site/index.html
+site/en.html
 
 # Python-остров (dump-assets/UnityPy) — кэши
 __pycache__/

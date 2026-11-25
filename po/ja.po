@@ -12825,7 +12825,7 @@ msgstr "アアアアアウウウウウガァッ！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ACCESS"
-msgstr "ACCESS"
+msgstr "アクセス"
 
 #. src: us
 msgctxt "ui"
@@ -12922,12 +12922,12 @@ msgstr "アプリが見つかりません"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ARRIVAL"
-msgstr "ARRIVAL"
+msgstr "到着"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ARRIVING"
-msgstr "ARRIVING"
+msgstr "到着中"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Aaaahhh!! Fghhaaahhh! Hghhh...!</color>
@@ -16945,7 +16945,7 @@ msgstr "で、でも、私…お客様をイかせるなんて、許されてな
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "BACK"
-msgstr "BACK"
+msgstr "戻る"
 
 #. src: raw:RectTransform
 msgctxt "ui"
@@ -16965,7 +16965,7 @@ msgstr "バイオ・オーグメンタ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "BOARDING"
-msgstr "BOARDING"
+msgstr "乗車"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21054,7 +21054,7 @@ msgstr "D13…それは…D13の…クッ…できない…んっ…（インタ
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DEFEAT"
-msgstr "DEFEAT"
+msgstr "敗北"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21089,12 +21089,12 @@ msgstr "ダイアログログ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DISABLE"
-msgstr "DISABLE"
+msgstr "無効にする"
 
 #. src: us
 msgctxt "ui"
 msgid "DISABLED"
-msgstr "DISABLED"
+msgstr "無効"
 
 #. src: us
 msgctxt "ui"
@@ -21119,7 +21119,7 @@ msgstr "ここに何か入れるのを忘れないで！！！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DRESSED"
-msgstr "DRESSED"
+msgstr "着衣"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -24609,7 +24609,7 @@ msgstr "デモ終了"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ENTERING"
-msgstr "ENTERING"
+msgstr "入場"
 
 #. src: us
 msgctxt "ui"
@@ -28215,7 +28215,7 @@ msgstr "グ…グロウ…？でも…"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GAG"
-msgstr "GAG"
+msgstr "ギャグ"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -28247,12 +28247,12 @@ msgstr "うわっ！私の真実の愛は、いつも阻まれるの！？本当
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GALLERY"
-msgstr "GALLERY"
+msgstr "ギャラリー"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GAME"
-msgstr "GAME"
+msgstr "ゲーム"
 
 #. src: us
 msgctxt "ui"
@@ -28272,7 +28272,7 @@ msgstr "GAUSSIAN9X9"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "GET"
-msgstr "GET"
+msgstr "入手"
 
 #. src: us
 msgctxt "ui"
@@ -30156,7 +30156,7 @@ msgstr "押してスキップ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "HORNY"
-msgstr "HORNY"
+msgstr "発情"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -30166,7 +30166,7 @@ msgstr "HORNY:"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "HUNK"
-msgstr "HUNK"
+msgstr "イケメン"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -36053,7 +36053,7 @@ msgstr "無効なスタイルが選択されました//スタイルが見つか�
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ITEMS"
-msgstr "ITEMS"
+msgstr "アイテム"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -38096,7 +38096,7 @@ msgstr "早期アクセスに今すぐ参加しよう！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "JOURNAL"
-msgstr "JOURNAL"
+msgstr "ジャーナル"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39501,7 +39501,7 @@ msgstr "ラベルの内容"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "LEAVE"
-msgstr "LEAVE"
+msgstr "退室"
 
 #. src: us
 msgctxt "ui"
@@ -41880,7 +41880,7 @@ msgstr "メモリカード：最大数を超えました！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "MENU"
-msgstr "MENU"
+msgstr "メニュー"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41895,7 +41895,7 @@ msgstr "メニュー - 上にスクロール"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "MISSIONS"
-msgstr "MISSIONS"
+msgstr "ミッション"
 
 #. src: us
 msgctxt "ui"
@@ -44896,7 +44896,7 @@ msgstr "NPCゾーイの会話プリセット"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "NUDITY"
-msgstr "NUDITY"
+msgstr "裸"
 
 #. src: us
 msgctxt "ui"
@@ -47075,7 +47075,7 @@ msgstr "オプション名："
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "OPTIONS"
-msgstr "OPTIONS"
+msgstr "設定"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -47085,7 +47085,7 @@ msgstr "OS: OSバージョン [プラットフォーム]"
 #. src: field:m_text
 msgctxt "ui"
 msgid "OTHER"
-msgstr "OTHER"
+msgstr "その他"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49531,17 +49531,17 @@ msgstr "プロトタイプ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "PUB"
-msgstr "PUB"
+msgstr "パブ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "PURCHASE"
-msgstr "PURCHASE"
+msgstr "購入"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "PUSSY"
-msgstr "PUSSY"
+msgstr "マンコ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -52684,7 +52684,7 @@ msgstr "レッドライト地区"
 #. src: us
 msgctxt "ui"
 msgid "REDRESS"
-msgstr "REDRESS"
+msgstr "着替え"
 
 #. src: dialog
 msgctxt "ui"
@@ -52726,12 +52726,12 @@ msgstr "住宅地"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "RESUME"
-msgstr "RESUME"
+msgstr "再開"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "RETRY"
-msgstr "RETRY"
+msgstr "再試行"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -54907,7 +54907,7 @@ msgstr "SKANK"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SKIP"
-msgstr "SKIP"
+msgstr "スキップ"
 
 #. src: dialog
 #. rich_text: <i>SLUT (Sexual Logistics and Utility Transport) Service
@@ -54924,7 +54924,7 @@ msgstr "SOA 5"
 #. src: us
 msgctxt "ui"
 msgid "SPEED"
-msgstr "SPEED"
+msgstr "速度"
 
 #. src: us
 msgctxt "ui"
@@ -54934,12 +54934,12 @@ msgstr "SPEEEEED!"
 #. src: us
 msgctxt "ui"
 msgid "START"
-msgstr "START"
+msgstr "スタート"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "STATS"
-msgstr "STATS"
+msgstr "ステータス"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56867,7 +56867,7 @@ msgstr "彼女は彼の肉棒に手を置く。"
 #. src: dialog
 msgctxt "ui"
 msgid "She really thinks she can speak up against the Vulture Cartel like that."
-msgstr "彼女は本気で、そんな風に秃鹫カルテルに逆らえると思ってるの？"
+msgstr "彼女は本気で、そんな風にハゲワシ・カルテルに逆らえると思ってるの？"
 
 #. src: dialog
 msgctxt "ui"
@@ -57733,7 +57733,7 @@ msgstr "サイモン"
 #. src: us
 msgctxt "ui"
 msgid "Simplified Chinese Machine Translated / 中文机器翻译"
-msgstr "中文机器翻译"
+msgstr "簡体字中国語の機械翻訳"
 
 #. src: dialog
 #. rich_text: <i>Simply fill the SLUT Box
@@ -61130,7 +61130,7 @@ msgstr "TCNN開発チーム"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "TEST"
-msgstr "TEST"
+msgstr "テスト"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -61175,7 +61175,7 @@ msgstr "ツール - 三次元アクション"
 #. src: us
 msgctxt "ui"
 msgid "TRADE"
-msgstr "TRADE"
+msgstr "取引"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -65288,7 +65288,7 @@ msgstr "ナビゲーション：上"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "UNDRESS"
-msgstr "UNDRESS"
+msgstr "脱衣"
 
 #. src: us
 msgctxt "ui"
@@ -66738,7 +66738,7 @@ msgstr "超長編アニメーション名"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "VICTORY"
-msgstr "VICTORY"
+msgstr "勝利"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67250,12 +67250,12 @@ msgstr "なぜ彼女に手紙を書くんだ！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "WIP"
-msgstr "WIP"
+msgstr "開発中"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "WISHLIST"
-msgstr "WISHLIST"
+msgstr "ウィッシュリスト"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -71722,7 +71722,7 @@ msgstr "見…見飽きたでしょ！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "YAH"
-msgstr "YAH"
+msgstr "うん"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -71732,7 +71732,7 @@ msgstr "もう知ってるよ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "YES"
-msgstr "YES"
+msgstr "はい"
 
 #. src: dialog
 msgctxt "speaker:Zoey"

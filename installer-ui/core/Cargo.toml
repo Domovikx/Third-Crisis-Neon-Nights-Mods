@@ -1,0 +1,18 @@
+[package]
+name = "neon-installer-core"
+version = "0.1.0"
+edition = "2021"
+description = "Install/uninstall/verify logic for the NeonTranslatorDX installer (no Tauri in this crate)"
+license = "MIT"
+
+[lib]
+name = "neon_installer_core"
+path = "src/lib.rs"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+
+[target.'cfg(windows)'.dependencies]
+winreg = "0.55"
