@@ -52,8 +52,6 @@ namespace NeonTranslatorDX
         private static IDictionary _guidDict;
         private static bool _reflectionReady = false;
 
-        private static string _menuProbeLang = null;
-
 
         // All runtime assets live next to the DLL (one mod folder), fonts in
         // its `fonts/` subfolder. Nothing is looked up in Managed/ any more.
@@ -83,144 +81,58 @@ namespace NeonTranslatorDX
             RegisterFontFile(dllDir, "RobotoCondensed-Regular.ttf");
             RegisterFontFile(dllDir, "NotoSansSC.ttf");
             RegisterFontFile(dllDir, "NotoSansJP.ttf");
+            RegisterFontFile(dllDir, "NotoSansKR.ttf");
+            RegisterFontFile(dllDir, "NotoSansMarks.ttf");
         }
 
         private static void PreloadTranslationCharset(TMP_FontAsset target)
         {
-            // Exact glyph set for the active language, derived from the loaded
-            // dictionary (PO/.dat are only read, never modified by font code).
-            if (target == null || _translations == null) return;
-            try
+            // Dictionary charset warm-up for the active language. The glyphs go
+            // into our own dynamic face (NeonFonts), not into the game's static
+            // atlas: TMP cannot grow it (FontEngine cannot re-read an OS font).
+            if (_translations == null) return;
+            TMP_FontAsset primary = target;
+            if (primary == null)
             {
-                var seen = new HashSet<uint>();
-                foreach (var kv in _translations)
-                {
-                    string s = kv.Value;
-                    if (string.IsNullOrEmpty(s)) continue;
-                    for (int i = 0; i < s.Length; i++)
-                    {
-                        char ch = s[i];
-                        if (ch >= 0xD800 && ch <= 0xDBFF && i + 1 < s.Length) { i++; continue; } // surrogate half
-                        if (ch < 128) continue; // ASCII already baked
-                        seen.Add((uint)ch);
-                        if (seen.Count >= 20000) break;
-                    }
-                    if (seen.Count >= 20000) break;
-                }
-                if (seen.Count == 0) return;
-                uint[] arr = new uint[seen.Count];
-                seen.CopyTo(arr);
-                int before = 0, atlasW = 0, atlasH = 0;
                 try
                 {
-                    before = target.characterTable != null ? target.characterTable.Count : -1;
-                    var tex = target.atlasTexture;
-                    if (tex != null) { atlasW = tex.width; atlasH = tex.height; }
+                    var all = Resources.FindObjectsOfTypeAll<TMP_FontAsset>();
+                    foreach (var f in all) if (f.name == "Roboto-Condensed_DialogueUI") { primary = f; break; }
+                    if (primary == null && all.Length > 0) primary = all[0];
                 }
                 catch { }
-                bool ok = target.TryAddCharacters(arr);
-                int after = before;
-                try { after = target.characterTable != null ? target.characterTable.Count : -1; }
-                catch { }
-                Log("Font: preload " + target.name + " (" + arr.Length + ") = " + ok
-                    + " chars " + before + "->" + after + " atlas " + atlasW + "x" + atlasH);
             }
-            catch (Exception ex) { Log("Font: preload error - " + ex.Message); }
+            NeonFonts.PreloadChain(_currentLang, primary, _translations);
         }
 
-        private static void TryInstallCyrillicFont()
+        private static void TryInstallFonts()
         {
             if (_cyrillicFont != null) return;
-
             try
             {
-                string dllDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                string fontPath = Path.Combine(FontsDir(dllDir), "RobotoCondensed-Regular.ttf");
+                TMP_FontAsset primary = null;
+                var all = Resources.FindObjectsOfTypeAll<TMP_FontAsset>();
+                foreach (var f in all) if (f.name == "Roboto-Condensed_DialogueUI") { primary = f; break; }
+                if (primary == null && all.Length > 0) primary = all[0];
 
-                // Register our TTF with Windows so Unity can use it
-                Font unityFont = null;
-                if (File.Exists(fontPath))
-                {
-                    byte[] fontData = File.ReadAllBytes(fontPath);
-                    uint fontsAdded;
-                    IntPtr fontHandle = NativeMethods.AddFontMemResourceEx(
-                        fontData, (uint)fontData.Length, IntPtr.Zero, out fontsAdded);
-                    if (fontHandle != IntPtr.Zero)
-                        unityFont = Font.CreateDynamicFontFromOSFont("Roboto Condensed", 30);
-                }
+                TMP_FontAsset face = NeonFonts.AssetForLang(_currentLang, primary);
+                if (face == null) { _fontInitDelay = 10; return; }
 
-                if (unityFont == null)
-                {
-                    Log("Font: Roboto Condensed unavailable, using Arial");
-                    unityFont = Font.CreateDynamicFontFromOSFont("Arial", 30);
-                }
-                if (unityFont == null) { Log("Font: no font available"); return; }
+                if (primary != null) NeonFonts.AttachFallbacks(primary, _currentLang);
+                PreloadTranslationCharset(primary);
 
-                // Find existing font asset to patch
-                var allFonts = Resources.FindObjectsOfTypeAll<TMP_FontAsset>();
-                TMP_FontAsset target = null;
-                foreach (var f in allFonts)
-                    if (f.name == "Roboto-Condensed_DialogueUI") { target = f; break; }
-
-                if (target == null) { Log("Font: target not found"); _fontInitDelay = 10; return; }
-
-                // One-shot introspection for the baked-atlas path (field names
-                // for texture/table assignment differ across TMP versions).
-                try
-                {
-                    var names = new List<string>();
-                    foreach (var fld in typeof(TMP_FontAsset).GetFields(
-                        BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
-                        names.Add(fld.Name + ":" + fld.FieldType.Name);
-                    Log("Font: TMP_FontAsset fields: " + string.Join(",", names.ToArray()));
-                }
-                catch (Exception ex) { Log("Font: introspect error - " + ex.Message); }
-
-                // Single atlas: material presets (dialogue glow) stay bound to the
-                // one texture. Multi-atlas would move new glyphs to extra textures
-                // the presets cannot see (styles break on patched glyphs).
-                // NOTE: atlas size is NOT resized here (read-only in this TMP);
-                // shipped 1024 is tried as-is, result is logged for UI review.
-                try { target.atlasPopulationMode = AtlasPopulationMode.Dynamic; } catch { }
-                try { target.isMultiAtlasTexturesEnabled = false; } catch { }
-
-                // Set source font file via reflection (setter may not be public)
-                var sffField = typeof(TMP_FontAsset).GetField("sourceFontFile",
-                    BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-                if (sffField != null && sffField.FieldType == typeof(Font))
-                    sffField.SetValue(target, unityFont);
-                Log("Font: set source font to " + unityFont.name);
-
-                // Convert string to uint[] for TryAddCharacters.
-                // Cyrillic (RU) + Latin-1 Supplement + Latin Extended-A (DE äöüß,
-                // PL ąćęłńśźż, future FR/ES). Source TTF covers all of these.
-                string cyrillicStr = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
-                uint[] unicodes = new uint[cyrillicStr.Length + 64 + 128];
-                int n = 0;
-                for (int i = 0; i < cyrillicStr.Length; i++)
-                    unicodes[n++] = (uint)cyrillicStr[i];
-                for (uint c = 0x00C0; c <= 0x00FF; c++)
-                    unicodes[n++] = c;
-                for (uint c = 0x0100; c <= 0x017F; c++)
-                    unicodes[n++] = c;
-                bool added = target.TryAddCharacters(unicodes);
-                Log("Font: TryAddCharacters extended (" + n + ") = " + added);
-
-                if (added)
-                {
-                    target.ReadFontAssetDefinition();
-                    Log("Font: Cyrillic glyphs added to Roboto-Condensed_DialogueUI");
-                }
-                try { Log("Font: atlas " + target.atlasWidth + "x" + target.atlasHeight); }
-                catch { }
-                PreloadTranslationCharset(target);
-
-                _cyrillicFont = target; // mark as done
-                Log("Font: initialization complete");
+                _cyrillicFont = face;
+                NeonTypography.LogPolicy(_currentLang);
+                int baked = primary != null && primary.characterTable != null ? primary.characterTable.Count : 0;
+                int dynamicChars = face.characterTable != null ? face.characterTable.Count : 0;
+                Log("Font: chain '" + (primary != null ? primary.name : "?") + "' baked " + baked
+                    + " -> dynamic " + face.name + " " + dynamicChars
+                    + " (total " + (baked + dynamicChars) + " glyphs)");
+                Log("Font: initialization complete (" + face.name + " chars " + dynamicChars + ")");
             }
             catch (Exception ex)
             {
-                Log("Font: error - " + ex.Message);
+                Log("Font: error - " + ex);
                 _fontInitDelay = 10;
             }
         }
@@ -287,7 +199,8 @@ namespace NeonTranslatorDX
                 {
                     _initialized = true;
                     string dllDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                    string gameDir = Path.GetDirectoryName(dllDir);
+                    // <game>/mods/NeonTranslatorDX -> <game>
+                    string gameDir = Path.GetDirectoryName(Path.GetDirectoryName(dllDir));
                     string lang = "en";
                     try
                     {
@@ -305,6 +218,8 @@ namespace NeonTranslatorDX
                     Log("Lang: " + lang + ", source: " + TranslationLoader.LoadedSource);
                     Log("Translations: " + (_translations != null ? _translations.Count.ToString() : "null"));
                     RegisterShippedFonts(dllDir);
+                    NeonFonts.Configure(dllDir);
+                    NeonTypography.Configure(dllDir);
                 }
 
                 InitReflection();
@@ -344,7 +259,6 @@ namespace NeonTranslatorDX
             InvalidateCache();
             ScanAllUiLocs();
             PopulateAllText();
-            NeonCjkOverlay.Sweep();
             DumpTranslationsToFile();
         }
 
@@ -549,12 +463,6 @@ namespace NeonTranslatorDX
             }
         }
 
-        private static bool IsOverlayLabel(Component c)
-        {
-            try { return c != null && c.gameObject != null && c.gameObject.name == "NeonCJKOverlay"; }
-            catch { return false; }
-        }
-
         private static List<Component> FindAllTextComponents()
         {
             var result = new List<Component>();
@@ -563,9 +471,7 @@ namespace NeonTranslatorDX
                 var found = UnityEngine.Object.FindObjectsOfType(_tmpType);
                 foreach (var obj in found)
                 {
-                    var c = (Component)obj;
-                    if (IsOverlayLabel(c)) continue;
-                    result.Add(c);
+                    result.Add((Component)obj);
                 }
             }
             if (_legacyType != null)
@@ -573,9 +479,7 @@ namespace NeonTranslatorDX
                 var found = UnityEngine.Object.FindObjectsOfType(_legacyType);
                 foreach (var obj in found)
                 {
-                    var c = (Component)obj;
-                    if (IsOverlayLabel(c)) continue;
-                    result.Add(c);
+                    result.Add((Component)obj);
                 }
             }
             return result;
@@ -607,10 +511,7 @@ namespace NeonTranslatorDX
             {
                 if (c == null) continue;
                 if (IsSwitcherOwned(c)) continue;
-                // Owned by the CJK overlay (holds a space) or an overlay
-                // label itself: skip, the label already shows the translation.
-                if (NeonCjkOverlay.IsOwned(c)) continue;
-                if (c.gameObject != null && c.gameObject.name == "NeonCJKOverlay") continue;
+                if (NeonFontDebug.Owns(c)) continue;
                 string current = GetText(c);
                 string lookup = StripRichTags(current).Trim();
                 if (string.IsNullOrEmpty(lookup))
@@ -637,75 +538,74 @@ namespace NeonTranslatorDX
                         _logDetailCount++;
                         Log("Populate: '" + Truncate(lookup, 60) + "' -> '" + Truncate(translated, 80) + "' on " + GetTransformPath(c.transform));
                     }
-                    // CJK menu + dialogue go through the overlay (their TMP
-                    // fonts have no CJK glyphs); everything else is direct.
+                    // Missing glyphs (cyrillic, CJK, accents) come from our
+                    // runtime faces through TMP's fallback chain.
                     string popPath = GetTransformPath(c.transform);
-                    if (!NeonCjkOverlay.TryOverlay(c, popPath, lookup, translated))
-                        SetTextFieldDirect(c, translated);
-                    ProbeMenuCjk(c, popPath, translated);
+                    var tmpComp = c as TMP_Text;
+                    if (tmpComp != null)
+                    {
+                        NeonFonts.EnsureText(tmpComp, _currentLang, translated);
+                        NeonFonts.AssignFace(tmpComp, _currentLang, translated, popPath);
+                    }
+                    SetTextFieldDirect(c, translated);
+                    ApplyTypography(c, popPath, lookup);
                     replaced++;
                 }
             }
             if (replaced > 0)
                 Log("Populate: replaced " + replaced + " texts");
-            NeonCjkOverlay.Sweep();
         }
 
-        private static void ProbeMenuCjk(Component c, string path, string translated)
+        private static int _renderProofCount;
+
+        /// Proof of WHICH font asset actually rasterises the translated glyphs:
+        /// TMP resolves fallbacks during mesh generation, so `textInfo` is the
+        /// only honest answer (the component's `font` stays the game's asset).
+        private static void ProveRender(TMP_Text tmp, string path, string value)
         {
-            // Once per language per area (menu button / dialogue line):
-            // font + overlay state. Enough to tell "dictionary ok, label
-            // shown" apart from "font missing".
+            if (tmp == null || value == null || _renderProofCount >= 12) return;
+            bool nonAscii = false;
+            for (int i = 0; i < value.Length; i++) if (value[i] > 127) { nonAscii = true; break; }
+            if (!nonAscii) return;
             try
             {
-                string area = null;
-                if (path != null && path.IndexOf("Start Game Button") >= 0) area = "menu";
-                else if (path != null && path.IndexOf("DialogueCanvas/Menu/TextBox/Text") >= 0
-                    && path.IndexOf("ButtonPanel") < 0) area = "dlg";
-                if (area == null) return;
-                string key = _currentLang + "|" + area;
-                if (_menuProbeLang == key) return;
-                var tmp = c as TMP_Text;
-                if (tmp == null) return;
-                _menuProbeLang = key;
-                string fontName = tmp.font != null ? tmp.font.name : "?";
-                bool owned = NeonCjkOverlay.IsOwned(c);
-                string labelInfo = "overlay=" + owned;
-                try
+                tmp.ForceMeshUpdate();
+                var ti = tmp.textInfo;
+                if (ti == null) return;
+                for (int i = 0; i < ti.characterCount; i++)
                 {
-                    if (owned && c.gameObject != null)
-                    {
-                        var t = c.transform.Find("NeonCJKOverlay");
-                        if (t == null && c.transform.childCount > 0)
-                        {
-                            for (int i = 0; i < c.transform.childCount; i++)
-                            {
-                                var ch = c.transform.GetChild(i);
-                                if (ch != null && ch.name == "NeonCJKOverlay") { t = ch; break; }
-                            }
-                        }
-                        if (t != null)
-                        {
-                            var lbl = t.GetComponent<UnityEngine.UI.Text>();
-                            if (lbl != null)
-                                labelInfo += " label='" + Truncate(lbl.text, 40) + "' font="
-                                    + (lbl.font != null ? lbl.font.name : "?")
-                                    + " active=" + t.gameObject.activeSelf;
-                            else
-                                labelInfo += " label=?";
-                        }
-                        else
-                        {
-                            labelInfo += " labelChild=?";
-                        }
-                    }
+                    var ci = ti.characterInfo[i];
+                    if (ci.character <= 127) continue;
+                    _renderProofCount++;
+                    Log("RenderProof: '" + ci.character + "' U+" + ((int)ci.character).ToString("X4")
+                        + " asset='" + (ci.fontAsset != null ? ci.fontAsset.name : "?") + "'"
+                        + " component.font='" + (tmp.font != null ? tmp.font.name : "?") + "'"
+                        + " on " + path);
+                    return;
                 }
-                catch (Exception ex) { labelInfo += " err=" + ex.Message; }
-                Log("MenuProbe: [" + path + "] lang=" + _currentLang
-                    + " font=" + fontName + " " + labelInfo
-                    + " (" + FontStatus(_currentLang) + ")");
             }
-            catch { }
+            catch (Exception ex) { Log("RenderProof: error - " + ex.Message); }
+        }
+
+        private static void ApplyTypography(Component c, string path, string englishOriginal)
+        {
+            // Every replaced UI string goes through the typography policy (CJK
+            // size/line) and then the fit rule. Dialogue wraps freely, so its
+            // width is the box: the fit rule is a no-op there, the CJK size
+            // bonus still applies.
+            if (c == null) return;
+            var tmp = c as TMP_Text;
+            if (tmp != null)
+            {
+                // Fixed-width plates are the main-menu buttons; everything else
+                // gets the CJK size/line bonus but keeps its authored size.
+                bool plate = path != null && path.IndexOf("Main Menu") >= 0;
+                NeonFit.ApplyTmp(tmp, _currentLang, plate, englishOriginal);
+                ProveRender(tmp, path, tmp.text);
+                return;
+            }
+            var legacy = c as UnityEngine.UI.Text;
+            if (legacy != null) NeonFit.ApplyLegacy(legacy, _currentLang);
         }
 
         private static string Truncate(string s, int max)
@@ -729,39 +629,6 @@ namespace NeonTranslatorDX
         public static string CurrentLanguage
         {
             get { return _currentLang; }
-        }
-
-        internal static string FontStatus(string lang)
-        {
-            // Decisive availability probe: can Unity rasterize one char?
-            // GetCharacterInfo returns false when the glyph is missing.
-            try
-            {
-                string dllDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                string file = lang == "ja" ? "NotoSansJP.ttf"
-                    : lang == "zh" ? "NotoSansSC.ttf"
-                    : lang == "ko" ? "NotoSansKR.ttf"
-                    : "RobotoCondensed-Regular.ttf";
-                bool exists = File.Exists(Path.Combine(FontsDir(dllDir), file));
-                string[] families = lang == "ja" ? new string[] { "Noto Sans JP" }
-                    : lang == "zh" ? new string[] { "Noto Sans SC" }
-                    : lang == "ko" ? new string[] { "Noto Sans KR", "Malgun Gothic" }
-                    : new string[] { "Roboto Condensed" };
-                char probe = lang == "ja" ? 'あ' : lang == "zh" ? '新' : lang == "ko" ? '네' : 'Ж';
-                foreach (string family in families)
-                {
-                    Font dyn = null;
-                    try { dyn = Font.CreateDynamicFontFromOSFont(family, 32); } catch { }
-                    if (dyn == null) continue;
-                    CharacterInfo ci;
-                    bool ok = false;
-                    try { dyn.RequestCharactersInTexture(probe.ToString(), 32); } catch { }
-                    try { ok = dyn.GetCharacterInfo(probe, out ci, 32); } catch { }
-                    return lang + " file=" + exists + " dyn=" + family + " glyph=" + ok;
-                }
-                return lang + " file=" + exists + " dyn=False";
-            }
-            catch (Exception ex) { return lang + " ERR " + ex.Message; }
         }
 
         internal static void SetSwitcherRoot(Transform root)
@@ -791,18 +658,17 @@ namespace NeonTranslatorDX
                 _currentLang = lang;
                 _logDetailCount = 0;
                 _translations = TranslationLoader.Reload(lang);
+                NeonFonts.ResetEnsured();
                 Log("Lang switched: " + lang + ", source: " + TranslationLoader.LoadedSource);
                 Log("Translations: " + (_translations != null ? _translations.Count.ToString() : "null"));
                 if (_cyrillicFont != null) PreloadTranslationCharset(_cyrillicFont);
 
                 RestoreOriginalTexts();
-                NeonCjkOverlay.ClearAll();
                 RefreshGuidTranslations();
                 InvalidateCache();
                 ScanAllUiLocs();
                 PopulateAllText();
-                NeonCjkOverlay.Sweep();
-            }
+                }
             catch (Exception ex)
             {
                 Log("SetLanguage error: " + ex.Message);
@@ -881,7 +747,14 @@ namespace NeonTranslatorDX
             {
                 _fontInitDelay--;
                 if (_fontInitDelay == 0)
-                    TryInstallCyrillicFont();
+                {
+                    TryInstallFonts();
+                    string modDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                    // UI-metric dump (uiprobe.txt) and hidden font page
+                    // (fontdebug.txt) are debug-only; normal play logs neither.
+                    if (File.Exists(Path.Combine(modDir, "uiprobe.txt"))) NeonUiProbe.Run();
+                    NeonFontDebug.OpenIfConfigured(modDir);
+                }
             }
             InvalidateCache();
             ScanAllUiLocs();

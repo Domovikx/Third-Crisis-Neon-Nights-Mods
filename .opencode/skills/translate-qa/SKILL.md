@@ -106,7 +106,7 @@ node .opencode/skills/translate-qa/test_data/build_golden.mts
 - **Компиляция** — отчёт `po2dat` (dupes/legacy/gated) + A/B словаря.
 - **Качество** — `node scripts/qa.mts` + `tmp/qa.html`: 6 правил, exit 1 при errors.
 - **Очередь человеку** — `review_queue.mts` → `tmp/review_queue.html`.
-- **Игра** — `NeonTranslatorDX/NeonTranslatorDX.log` (`Lang`, `Translations: N`) + киноплёнка (потом).
+- **Игра** — `mods/NeonTranslatorDX/NeonTranslatorDX.log` (`Lang`, `Translations: N`) + киноплёнка (потом).
 
 ## Тесты
 

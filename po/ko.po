@@ -397,10 +397,10 @@ msgstr "(토끼 수트잖아!)"
 
 #. src: dialog
 #. rich_text: <i>(A bunnysuit..? )</i>
-#. rich_translation: <i>(토끼슈트..? )</i>
+#. rich_translation: <i>(버니슈트..? )</i>
 msgctxt "ui"
 msgid "(A bunnysuit..? )"
-msgstr "(토끼슈트..? )"
+msgstr "(버니슈트..? )"
 
 #. src: dialog
 #. rich_text: <i>(A dildo... Well, the chip is inside her. I guess it makes sense... )</i>
@@ -643,8 +643,7 @@ msgstr "(내가 생각하고 싶은 건 오직 그녀의 입술뿐이야...)"
 
 #. src: dialog
 #. rich_text: <i>(All part of the mission... It's just... <color=#EB83FF>a detour</color>... )</i>
-#. rich_translation: <i>(전부 임무의 일부야... 그냥... 우회로일 뿐이라고...)</i>
-#, rt-review
+#. rich_translation: <i>(전부 임무의 일부야... 그냥... <color=#EB83FF>우회로일 뿐이라고</color>...)</i>
 msgctxt "speaker:Zoey"
 msgid "(All part of the mission... It's just... a detour... )"
 msgstr "(전부 임무의 일부야... 그냥... 우회로일 뿐이라고...)"
@@ -871,8 +870,7 @@ msgstr "(그리고 그들은 나만을 위해 남았다고 했잖아...? 어... 
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(And they're gonna write on their bodies too, so-... it won't be <b>that</b> weird... right...?)</i></color>
-#. rich_translation: <color=#EB83FF><i>(그리고 그들도 자기 몸에 글씨를 쓰게 될 거니까... 그렇게 이상하진 않을 거야... 그렇지...?)</i></color>
-#, rt-review
+#. rich_translation: <color=#EB83FF><i>(그리고 그들도 자기 몸에 글씨를 쓰게 될 거니까... <b>그렇게</b> 이상하진 않을 거야... 그렇지...?)</i></color>
 msgctxt "ui"
 msgid "(And they're gonna write on their bodies too, so-... it won't be that weird... right...?)"
 msgstr "(그리고 그들도 자기 몸에 글씨를 쓰게 될 거니까... 그렇게 이상하진 않을 거야... 그렇지...?)"
@@ -1111,10 +1109,10 @@ msgstr "(블로커라... 그럼 이 가방에 있는 이 작은 장치겠군. �
 
 #. src: dialog
 #. rich_text: <i>(Bunnysuit? Where do I get one of those from? )</i>
-#. rich_translation: <i>(토끼 옷? 그건 어디서 구하는 거지? )</i>
+#. rich_translation: <i>(버니슈트? 그건 어디서 구하는 거지? )</i>
 msgctxt "ui"
 msgid "(Bunnysuit? Where do I get one of those from? )"
-msgstr "(토끼 옷? 그건 어디서 구하는 거지? )"
+msgstr "(버니슈트? 그건 어디서 구하는 거지? )"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(But I did all that nasty stuff with Nova... For what if not-... )</i></color>
@@ -1202,8 +1200,7 @@ msgstr "(하지만... 그녀는 처음으로 좀 착하게 대하는 고객인�
 
 #. src: dialog
 #. rich_text: <i>(By fingering her... <color=#EB83FF>pussy... </color>)</i>
-#. rich_translation: <i>(손가락으로 그녀의... 보지를... )</i>
-#, rt-review
+#. rich_translation: <i>(손가락으로 그녀의... <color=#EB83FF>보지</color>를... )</i>
 msgctxt "ui"
 msgid "(By fingering her... pussy... )"
 msgstr "(손가락으로 그녀의... 보지를... )"
@@ -1351,8 +1348,7 @@ msgstr "(정말... 이런... 대우를... 즐기는 걸까...?)"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Could've taken care of my problem...</color> Agh-! No- Just... tough it out until the ride's over...)</i>
-#. rich_translation: <i>(내 문제를 해결할 수도 있었는데... 아악! 안 돼... 그냥... 이 기차가 멈출 때까지 버텨내야겠어...)</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>(내 문제를 해결할 수도 있었는데... 아악! 안 돼... 그냥... 이 기차가 멈출 때까지 버텨내야겠어...)</color></i>
 msgctxt "ui"
 msgid "(Could've taken care of my problem... Agh-! No- Just... tough it out until the ride's over...)"
 msgstr "(내 문제를 해결할 수도 있었는데... 아악! 안 돼... 그냥... 이 기차가 멈출 때까지 버텨내야겠어...)"
@@ -1380,8 +1376,7 @@ msgstr "(미친... 이건... 흐흐... 미쳤어...)"
 
 #. src: dialog
 #. rich_text: <i>(Customers... <color=#EB83FF>Will-...?</color> Khh... )</i>
-#. rich_translation: <i>(손님들이... 좋아할...? 흐음...)</i>
-#, rt-review
+#. rich_translation: <i>(손님들이... <color=#EB83FF>좋아할...?</color> 흐음...)</i>
 msgctxt "ui"
 msgid "(Customers... Will-...? Khh... )"
 msgstr "(손님들이... 좋아할...? 흐음...)"
@@ -1508,8 +1503,7 @@ msgstr "(클라우디아가 이 장소에서 일어나는 모든 것을 녹음�
 
 #. src: dialog
 #. rich_text: <i>(Does he really feel... <color=#EB83FF>that good</color>...?)</i>
-#. rich_translation: <i>(정말 그렇게... 기분 좋은 건가...?)</i>
-#, rt-review
+#. rich_translation: <i>(<color=#EB83FF>정말 그렇게... 기분 좋은 건가...?</color>)</i>
 msgctxt "speaker:Zoey"
 msgid "(Does he really feel... that good...?)"
 msgstr "(정말 그렇게... 기분 좋은 건가...?)"
@@ -1656,8 +1650,7 @@ msgstr "(나를... 즐기는 건가...?)"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Even harder... To ge</color>t that c<color=#EB83FF>hip, Zoe</color>y. You almost got it!)</i>
-#. rich_translation: <i>(더 힘들어지는데... 그 칩을 얻으려면, 조이. 거의 다 됐잖아!)</i>
-#, rt-review
+#. rich_translation: <i>(더 힘들어지는데... <color=#EB83FF>그 칩을 얻으려면</color>, <color=#EB83FF>조이</color>. 거의 다 됐잖아!)</i>
 msgctxt "ui"
 msgid "(Even harder... To get that chip, Zoey. You almost got it!)"
 msgstr "(더 힘들어지는데... 그 칩을 얻으려면, 조이. 거의 다 됐잖아!)"
@@ -1728,16 +1721,14 @@ msgstr "(정말 좋았어... 으- 안 돼! 으어...)"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Fffh... </color> I don't think she noticed me. Gosh, she's gorgeous...)</i>
-#. rich_translation: <i>(흐읍... 그녀가 나를 눈치채지 못한 것 같아. 세상에, 정말 아름다워...)</i>
-#, rt-review
+#. rich_translation: <i>(<color=#EB83FF>흐읍...</color> 그녀가 나를 눈치채지 못한 것 같아. 세상에, 정말 아름다워...)</i>
 msgctxt "ui"
 msgid "(Fffh...  I don't think she noticed me. Gosh, she's gorgeous...)"
 msgstr "(흐읍... 그녀가 나를 눈치채지 못한 것 같아. 세상에, 정말 아름다워...)"
 
 #. src: dialog
 #. rich_text: <i>(Fffh... It's cold... So why do I feel <color=#EB83FF>so hot...?</color> )</i>
-#. rich_translation: <i>(흐읍... 추워... 그런데 왜 이렇게 더워지는 거지...?)</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>(흐읍... 추워... 그런데 왜 이렇게 더워지는 거지...?)</color></i>
 msgctxt "ui"
 msgid "(Fffh... It's cold... So why do I feel so hot...? )"
 msgstr "(흐읍... 추워... 그런데 왜 이렇게 더워지는 거지...?)"
@@ -1925,8 +1916,7 @@ msgstr "(젠장, 이 멍청한 놈. 깨닫지도 못했잖아.)"
 
 #. src: dialog
 #. rich_text: <i>(Fucking asshole. What does <b>she</b> know about Sarah and I?)</i>
-#. rich_translation: <i>(젠장, 이 자식. 저 여자가 사라랑 나에 대해 뭘 알겠어?)</i>
-#, rt-review
+#. rich_translation: <i>(젠장, 이 자식. <b>저 여자가</b> 사라랑 나에 대해 뭘 알겠어?)</i>
 msgctxt "ui"
 msgid "(Fucking asshole. What does she know about Sarah and I?)"
 msgstr "(젠장, 이 자식. 저 여자가 사라랑 나에 대해 뭘 알겠어?)"
@@ -2193,8 +2183,7 @@ msgstr "(세상에, 젖어... 정말 부드럽네... 나... 흐흐...)"
 
 #. src: dialog
 #. rich_text: <i>(God, this is so stupid... <color=#EB83FF>Fffh...</color> )</i>
-#. rich_translation: <i>(세상에, 이거 너무 멍청한데... 흐흐...)</i>
-#, rt-review
+#. rich_translation: <i>(세상에, 이거 너무 멍청한데... <color=#EB83FF>흐흐...</color>)</i>
 msgctxt "ui"
 msgid "(God, this is so stupid... Fffh... )"
 msgstr "(세상에, 이거 너무 멍청한데... 흐흐...)"
@@ -2292,8 +2281,7 @@ msgstr "(옛날 네온 시티 지하철이네... 누가 내 티켓이 없는 걸
 
 #. src: dialog
 #. rich_text: <i>(Gosh... She's s<color=#EB83FF>o pretty...</color> No! No. Bad Zoey. Fffh... It's get<color=#EB83FF>ting so warm in here</color>... )</i>
-#. rich_translation: <i>(세상에... 그녀는 정말 예쁘다... 아니! 안 돼. 나쁜 조이. 흐흐... 여기가 점점 더 따뜻해지는데... )</i>
-#, rt-review
+#. rich_translation: <i>(<color=#EB83FF>세상에... 그녀는 정말 예쁘다...</color> 아니! 안 돼. 나쁜 조이. 흐흐... <color=#EB83FF>여기가 점점 더 따뜻해지는데...</color> )</i>
 msgctxt "speaker:Zoey"
 msgid "(Gosh... She's so pretty... No! No. Bad Zoey. Fffh... It's getting so warm in here... )"
 msgstr "(세상에... 그녀는 정말 예쁘다... 아니! 안 돼. 나쁜 조이. 흐흐... 여기가 점점 더 따뜻해지는데... )"
@@ -2784,8 +2772,7 @@ msgstr "(그녀의 손이 정말 따뜻하...)"
 
 #. src: dialog
 #. rich_text: <i>(Her hands.. So.. <color=#EB83FF>Warm</color>.. )</i>
-#. rich_translation: <i>(그녀의 손.. 정말.. 따뜻해..)</i>
-#, rt-review
+#. rich_translation: <i>(그녀의 손.. 정말.. <color=#EB83FF>따뜻해</color>..)</i>
 msgctxt "ui"
 msgid "(Her hands.. So.. Warm.. )"
 msgstr "(그녀의 손.. 정말.. 따뜻해..)"
@@ -2869,8 +2856,7 @@ msgstr "(흐읍! 아직 안에 있잖아.. 캐리어가 그들 곁에 있는지 
 
 #. src: dialog
 #. rich_text: <i>(Hhh- It smells so... <color=#EB83FF>sweet...</color> khh...)</i>
-#. rich_translation: <i>(흐흐... 냄새가 너무... 달콤해... 흐...)</i>
-#, rt-review
+#. rich_translation: <i>(흐흐... 냄새가 너무... <color=#EB83FF>달콤해...</color> 흐...)</i>
 msgctxt "ui"
 msgid "(Hhh- It smells so... sweet... khh...)"
 msgstr "(흐흐... 냄새가 너무... 달콤해... 흐...)"
@@ -3094,8 +3080,7 @@ msgstr "(아무도 못 봤으면 좋겠는데...)"
 
 #. src: dialog
 #. rich_text: <i>(Hopefully nobody sees... <color=#EB83FF>Fffh...</color> )</i>
-#. rich_translation: <i>(아무도 못 봤으면 좋겠는데... 흐흐...)</i>
-#, rt-review
+#. rich_translation: <i>(아무도 못 봤으면 좋겠는데... <color=#EB83FF>흐흐...</color>)</i>
 msgctxt "ui"
 msgid "(Hopefully nobody sees... Fffh... )"
 msgstr "(아무도 못 봤으면 좋겠는데... 흐흐...)"
@@ -3320,8 +3305,7 @@ msgstr "(그건 감당할 수가 없는데...)"
 
 #. src: dialog
 #. rich_text: <i>(I can't believe I <color=#EB83FF>did that</color>... )</i>
-#. rich_translation: <i>(내가 그런 짓을 했다는 게 믿기지 않아...)</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>(내가 그런 짓을 했다는 게 믿기지 않아...)</color></i>
 msgctxt "ui"
 msgid "(I can't believe I did that... )"
 msgstr "(내가 그런 짓을 했다는 게 믿기지 않아...)"
@@ -3591,8 +3575,7 @@ msgstr "(사라가 오기 전에 안에 들어가서 옷을 갈아입고 정리�
 
 #. src: dialog
 #. rich_text: (I guess I'm really <color=#EB83FF>doing this... again</color>...)
-#. rich_translation: (이번에도 진짜 이걸 하는 건가...)
-#, rt-review
+#. rich_translation: <color=#EB83FF>(이번에도 진짜 이걸 하는 건가...)</color>
 msgctxt "ui"
 msgid "(I guess I'm really doing this... again...)"
 msgstr "(이번에도 진짜 이걸 하는 건가...)"
@@ -4077,8 +4060,7 @@ msgstr "(그와 함께 앉으면 안 돼... 그는 단지... 나를 이용해 �
 
 #. src: dialog
 #. rich_text: <i>(I shouldn't.. Have done.. <color=#EB83FF>That</color>... )</i>
-#. rich_translation: <i>(안 그랬어야 했는데.. 그랬어야 했는데.. 그랬잖아... )</i>
-#, rt-review
+#. rich_translation: <i>(안 그랬어야 했는데.. 그랬어야 했는데.. <color=#EB83FF>그랬잖아</color>... )</i>
 msgctxt "ui"
 msgid "(I shouldn't.. Have done.. That... )"
 msgstr "(안 그랬어야 했는데.. 그랬어야 했는데.. 그랬잖아... )"
@@ -4295,8 +4277,7 @@ msgstr "(난 그냥 내 일만 하는 거야... 이... 이 고객들이... 이�
 
 #. src: dialog
 #. rich_text: <i>(I'm just gonna.. <color=#EB83FF>Play along</color>.. For a bit.. )</i>
-#. rich_translation: <i>(그냥... 잠시... 맞춰주기로 하지...)</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>(그냥... 잠시... 맞춰주기로 하지...)</color></i>
 msgctxt "ui"
 msgid "(I'm just gonna.. Play along.. For a bit.. )"
 msgstr "(그냥... 잠시... 맞춰주기로 하지...)"
@@ -4535,8 +4516,7 @@ msgstr "(오늘 그녀에게 충분히 상처를 줬어.)"
 
 #. src: dialog
 #. rich_text: <i>(I've even spilled Lio's... <color=#EB83FF>s-stuff</color> all over myself... )</i>
-#. rich_translation: <i>(리오의... 그, 그걸까지 온몸에 쏟아버렸어...)</i>
-#, rt-review
+#. rich_translation: <i>(리오의... 그, <color=#EB83FF>그걸까지</color> 온몸에 쏟아버렸어...)</i>
 msgctxt "ui"
 msgid "(I've even spilled Lio's... s-stuff all over myself... )"
 msgstr "(리오의... 그, 그걸까지 온몸에 쏟아버렸어...)"
@@ -4776,8 +4756,7 @@ msgstr "(나... 나는 노바와의 거래를 활용해야겠지...?)"
 
 #. src: dialog
 #. rich_text: <i>(I-... I should <b>never</b> do that again...!)</i>
-#. rich_translation: <i>(나... 난 다시는 그런 짓 안 할 거야...!)</i>
-#, rt-review
+#. rich_translation: <i>(나... 난 <b>다시는</b> 그런 짓 안 할 거야...!)</i>
 msgctxt "ui"
 msgid "(I-... I should never do that again...!)"
 msgstr "(나... 난 다시는 그런 짓 안 할 거야...!)"
@@ -6048,8 +6027,7 @@ msgstr "(크... 이건 역겹다...! 나-나 이걸 손에서 벗겨내야겠어
 
 #. src: dialog
 #. rich_text: <i>(Khh... This is... <color=#EB83FF>Wrong</color>... )</i>
-#. rich_translation: <i>(크... 이건... 잘못된 거야...)</i>
-#, rt-review
+#. rich_translation: <i>(크... 이건... <color=#EB83FF>잘못된 거야</color>...)</i>
 msgctxt "ui"
 msgid "(Khh... This is... Wrong... )"
 msgstr "(크... 이건... 잘못된 거야...)"
@@ -6309,8 +6287,7 @@ msgstr "(어쩌면 이쪽으로 위층으로 가는 길을 찾을 수 있을지�
 
 #. src: dialog
 #. rich_text: <i>(Maybe I can show her that <color=#EB83FF>chair</color> in the nail salon. )</i>
-#. rich_translation: <i>(아마도 네일 살롱에 있는 저 의자를 그녀에게 보여줄 수 있겠지.)</i>
-#, rt-review
+#. rich_translation: <i>(아마도 네일 살롱에 있는 <color=#EB83FF>저 의자</color>를 그녀에게 보여줄 수 있겠지.)</i>
 msgctxt "speaker:Zoey"
 msgid "(Maybe I can show her that chair in the nail salon. )"
 msgstr "(아마도 네일 살롱에 있는 저 의자를 그녀에게 보여줄 수 있겠지.)"
@@ -6626,8 +6603,7 @@ msgstr "(아... 아니, 나... 흐... 나... 으윽...)"
 
 #. src: dialog
 #. rich_text: <i>(N-No! Someone saw me! They... They know <color=#EB83FF>what I am...</color> )</i>
-#. rich_translation: <i>(안 돼! 누가 날 봤어! 그들... 그들은 내가 뭔지 알잖아...)</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>(안 돼! 누가 날 봤어! 그들... 그들은 내가 뭔지 알잖아...)</color></i>
 msgctxt "ui"
 msgid "(N-No! Someone saw me! They... They know what I am... )"
 msgstr "(안 돼! 누가 날 봤어! 그들... 그들은 내가 뭔지 알잖아...)"
@@ -7112,8 +7088,7 @@ msgstr "(젠장—방금 그녀가 나한테 해도 된다고 한 건가—)"
 
 #. src: dialog
 #. rich_text: <i>(Oh fuck... They have <color=#EB83FF>no idea</color>... )</i>
-#. rich_translation: <i>(젠장... 그들은 전혀 모르고 있어...)</i>
-#, rt-review
+#. rich_translation: <i>(<color=#EB83FF>젠장... 그들은 전혀 모르고 있어...</color>)</i>
 msgctxt "ui"
 msgid "(Oh fuck... They have no idea... )"
 msgstr "(젠장... 그들은 전혀 모르고 있어...)"
@@ -7141,8 +7116,7 @@ msgstr "(세상에... 내가 지금 뭘 하고 있는 거지...?)"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Oh god~</color> Please don't notice... )</i>
-#. rich_translation: <i>(세상에~ 제발 눈치채지 마세요...)</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>(세상에~ 제발 눈치채지 마세요...)</color></i>
 msgctxt "ui"
 msgid "(Oh god~ Please don't notice... )"
 msgstr "(세상에~ 제발 눈치채지 마세요...)"
@@ -7254,8 +7228,7 @@ msgstr "(앞으로, 그리고 위로.)"
 
 #. src: dialog
 #. rich_text: <i>(Oohh <color=#EB83FF>fuck~ Thi</color>s is still wet from when <color=#EB83FF>she was sitting on it~</color>)</i>
-#. rich_translation: <i>(오오, 젖었잖아~ 그녀가 그 위에 앉아 있었을 때부터 아직 젖은 상태라고~)</i>
-#, rt-review
+#. rich_translation: <i>(오오, <color=#EB83FF>젖었잖아~</color> 그녀가 <color=#EB83FF>그 위에 앉아 있었을 때부터 아직 젖은 상태라고~</color>)</i>
 msgctxt "ui"
 msgid "(Oohh fuck~ This is still wet from when she was sitting on it~)"
 msgstr "(오오, 젖었잖아~ 그녀가 그 위에 앉아 있었을 때부터 아직 젖은 상태라고~)"
@@ -7408,8 +7381,7 @@ msgstr "(젖꼭지 피어싱... 그의 미학에는 어울리겠네.)"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Piston..? Ghh..</color> It's so.. <color=#EB83FF>Soft and.. Warm..</color> )</i>
-#. rich_translation: <i>(피스톤..? 흐으.. 정말.. 부드럽고.. 따뜻해.. )</i>
-#, rt-review
+#. rich_translation: <i>(<color=#EB83FF>피스톤..? 흐으..</color> 정말.. <color=#EB83FF>부드럽고.. 따뜻해..</color> )</i>
 msgctxt "ui"
 msgid "(Piston..? Ghh.. It's so.. Soft and.. Warm.. )"
 msgstr "(피스톤..? 흐으.. 정말.. 부드럽고.. 따뜻해.. )"
@@ -7633,8 +7605,7 @@ msgstr "(힘... 하지만-)"
 
 #. src: dialog
 #. rich_text: <i>(Satisfaction? She's <color=#EB83FF>enjoying</color> it?)</i>
-#. rich_translation: <i>(만족스러운 거야? 얘, 즐기고 있잖아?)</i>
-#, rt-review
+#. rich_translation: <i>(만족스러운 거야? 얘, <color=#EB83FF>즐기고 있잖아</color>?)</i>
 msgctxt "ui"
 msgid "(Satisfaction? She's enjoying it?)"
 msgstr "(만족스러운 거야? 얘, 즐기고 있잖아?)"
@@ -7865,8 +7836,7 @@ msgstr "(그녀가 책임자인가...?)"
 
 #. src: dialog
 #. rich_text: <i>(She's just-.. <b>Groping</b> me.. ! In front of everyone.. ! )</i>
-#. rich_translation: <i>(그녀가 방금... 날 더듬고 있어..! 모두 앞에서..!)</i>
-#, rt-review
+#. rich_translation: <i>(그녀가 방금... <b>날 더듬고 있어</b>..! 모두 앞에서..!)</i>
 msgctxt "ui"
 msgid "(She's just-.. Groping me.. ! In front of everyone.. ! )"
 msgstr "(그녀가 방금... 날 더듬고 있어..! 모두 앞에서..!)"
@@ -7984,8 +7954,7 @@ msgstr "(그녀는.. 정말 신경 쓰지 않는 것 같네.. )"
 
 #. src: dialog
 #. rich_text: <i>(She-.. Really doesn't seem to mind.. <color=#EB83FF>One bit..</color> )</i>
-#. rich_translation: <i>(그녀는... 정말 신경 쓰지 않는 것 같아... 조금도...)</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>(그녀는... 정말 신경 쓰지 않는 것 같아... 조금도...)</color></i>
 msgctxt "ui"
 msgid "(She-.. Really doesn't seem to mind.. One bit.. )"
 msgstr "(그녀는... 정말 신경 쓰지 않는 것 같아... 조금도...)"
@@ -8521,8 +8490,7 @@ msgstr "(분사되는 걸 삼키는 건가...?!)"
 
 #. src: dialog
 #. rich_text: (T-this <color=#EB83FF>lewd stuff</color>... )
-#. rich_translation: (이… 음란한 거라니…)
-#, rt-review
+#. rich_translation: <color=#EB83FF>(이… 음란한 거라니…)</color>
 msgctxt "speaker:Zoey"
 msgid "(T-this lewd stuff... )"
 msgstr "(이… 음란한 거라니…)"
@@ -8843,10 +8811,10 @@ msgstr "(블로커-...!)"
 
 #. src: dialog
 #. rich_text: <i>(The box is shaking! Is it moving upstairs by itself?)</i>
-#. rich_translation: <i>(상자가 흔들리고 있어! 저층으로 저절로 이동하는 건가?)</i>
+#. rich_translation: <i>(상자가 흔들리고 있어! 저층으로 저절로 움직이는 건가?)</i>
 msgctxt "speaker:Zoey"
 msgid "(The box is shaking! Is it moving upstairs by itself?)"
-msgstr "(상자가 흔들리고 있어! 저층으로 저절로 이동하는 건가?)"
+msgstr "(상자가 흔들리고 있어! 저층으로 저절로 움직이는 건가?)"
 
 #. src: dialog
 #. rich_text: <i>(The bunnysuit... Right... )</i>
@@ -9221,8 +9189,7 @@ msgstr "(그걸 신고 걷는 건 전혀 편안해 보이지도 않는데.. )"
 
 #. src: dialog
 #. rich_text: <i>(They look so.. <color=#EB83FF>Soft</color>.. )</i>
-#. rich_translation: <i>(정말.. 부드럽게 생겼네..)</i>
-#, rt-review
+#. rich_translation: <i>(정말.. <color=#EB83FF>부드럽게 생겼네</color>..)</i>
 msgctxt "ui"
 msgid "(They look so.. Soft.. )"
 msgstr "(정말.. 부드럽게 생겼네..)"
@@ -9265,8 +9232,7 @@ msgstr "(그들은 섹시한 부분에 진심이었어...)"
 
 #. src: dialog
 #. rich_text: <i>(They won't go at it for <b>too</b> long, right?)</i>
-#. rich_translation: <i>(그들이 그렇게 오래 하지는 않을 거지?)</i>
-#, rt-review
+#. rich_translation: <i>(그들이 <b>그렇게 오래</b> 하지는 않을 거지?)</i>
 msgctxt "speaker:Zoey"
 msgid "(They won't go at it for too long, right?)"
 msgstr "(그들이 그렇게 오래 하지는 않을 거지?)"
@@ -9485,8 +9451,7 @@ msgstr "(이게 분명 그 여행 가방이겠지. 와, 엄청 무거워 보이�
 
 #. src: dialog
 #. rich_text: <i>(This outfit is <b>way</b> too.. revealing... )</i>
-#. rich_translation: <i>(이 옷은 너무.. 노출이 심한데...)</i>
-#, rt-review
+#. rich_translation: <i>(이 옷은 너무.. <b>노출이 심한</b>데...)</i>
 msgctxt "ui"
 msgid "(This outfit is way too.. revealing... )"
 msgstr "(이 옷은 너무.. 노출이 심한데...)"
@@ -9635,8 +9600,7 @@ msgstr "(혀...! 그녀의 혀가...! 흐으...)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Touch an old man's... <b>thing</b>... for money...?)</i></color>
-#. rich_translation: <color=#EB83FF><i>(늙은 남자의... 그걸... 돈 때문에 만지는 거야...?)</i></color>
-#, rt-review
+#. rich_translation: <color=#EB83FF><i>(늙은 남자의... <b>그걸...</b> 돈 때문에 만지는 거야...?)</i></color>
 msgctxt "ui"
 msgid "(Touch an old man's... thing... for money...?)"
 msgstr "(늙은 남자의... 그걸... 돈 때문에 만지는 거야...?)"
@@ -9803,8 +9767,7 @@ msgstr "(위층..! 클라우디아를 지나갈 수 있을까? )"
 
 #. src: dialog
 #. rich_text: <i>(Using my... body...? N-no, I-... I will <b>not</b> do that...!)</i>
-#. rich_translation: <i>(내... 몸을...? 아-아니, 나... 난 절대 안 해...!)</i>
-#, rt-review
+#. rich_translation: <i>(내... 몸을...? 아-아니, 나... 난 <b>절대 안 해</b>...!)</i>
 msgctxt "speaker:Zoey"
 msgid "(Using my... body...? N-no, I-... I will not do that...!)"
 msgstr "(내... 몸을...? 아-아니, 나... 난 절대 안 해...!)"
@@ -10114,10 +10077,10 @@ msgstr "(정말 대단한 밤이네... 레드라이트 지구에 있는 사람�
 
 #. src: dialog
 #. rich_text: <i>(What a night... I've basically pissed off everyone in the redlight district, and now I smell like a dumpster. Just my luck.)</i>
-#. rich_translation: <i>(정말 대단한 밤이었어... 적신구 전체에 다들 화를 내게 만들었고, 지금은 쓰레기통 같은 냄새까지 나는데. 정말 운이 좋구나.)</i>
+#. rich_translation: <i>(정말 대단한 밤이었어... 레드라이트 전체에 다들 화를 내게 만들었고, 지금은 쓰레기통 같은 냄새까지 나는데. 정말 운이 좋구나.)</i>
 msgctxt "speaker:Zoey"
 msgid "(What a night... I've basically pissed off everyone in the redlight district, and now I smell like a dumpster. Just my luck.)"
-msgstr "(정말 대단한 밤이었어... 적신구 전체에 다들 화를 내게 만들었고, 지금은 쓰레기통 같은 냄새까지 나는데. 정말 운이 좋구나.)"
+msgstr "(정말 대단한 밤이었어... 레드라이트 전체에 다들 화를 내게 만들었고, 지금은 쓰레기통 같은 냄새까지 나는데. 정말 운이 좋구나.)"
 
 #. src: dialog
 #. rich_text: <i>(What a subtle name for the place... )</i>
@@ -10392,8 +10355,7 @@ msgstr "(뭐... 뭐였지... 그건...?)"
 
 #. src: dialog
 #. rich_text: <i>(When I'm home, I'll just quickly take care of this..  <color=#EB83FF>itch</color>..  And then I'll forget this ever happened.. ! )</i>
-#. rich_translation: <i>(집에 도착하면 이걸 빨리 해결해 버릴 거야.. 이 가려움.. 그리고 이 일이 있었던 걸로 기억하지도 않을 거야..!)</i>
-#, rt-review
+#. rich_translation: <i>(집에 도착하면 이걸 빨리 해결해 버릴 거야.. <color=#EB83FF>이 가려움..</color> 그리고 이 일이 있었던 걸로 기억하지도 않을 거야..!)</i>
 msgctxt "ui"
 msgid "(When I'm home, I'll just quickly take care of this..  itch..  And then I'll forget this ever happened.. ! )"
 msgstr "(집에 도착하면 이걸 빨리 해결해 버릴 거야.. 이 가려움.. 그리고 이 일이 있었던 걸로 기억하지도 않을 거야..!)"
@@ -11207,17 +11169,17 @@ msgstr "0.3 - 네온 라이즈 - 집행관 구역 - 01"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Neon Rise - Enforcer Block - 02 - Has Party"
-msgstr "0.3 - 네온 라이즈 - 집행자 구역 - 02 - 파티가 있네"
+msgstr "0.3 - 네온 라이즈 - 집행관 구역 - 02 - 파티가 있네"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Neon Rise - Enforcer Block - Rat Out - 01"
-msgstr "0.3 - 네온 라이즈 - 집행자 구역 - 쥐 퇴치 - 01"
+msgstr "0.3 - 네온 라이즈 - 집행관 구역 - 쥐 퇴치 - 01"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Neon Rise - Enforcer Block - Rat Out - 02"
-msgstr "0.3 - 네온 라이즈 - 집행자 구역 - 쥐를 몰아내다 - 02"
+msgstr "0.3 - 네온 라이즈 - 집행관 구역 - 쥐를 몰아내다 - 02"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11658,8 +11620,7 @@ msgstr ":: 재계산 중... 경로를 유지하세요... 재계산 중... 경로
 
 #. src: dialog
 #. rich_text: <i>:: Sexual preparations b-b-beginning shortly... Sexual force set to... <color=red>MAXIMUM</color>. Warning! Safety limits:  <color=red>DISABLED</color>. ::</i>
-#. rich_translation: <i>:: 성적인 준비가 곧 시작됩니다... 성적 강도는... 최대로 설정됨. 경고! 안전 제한: 비활성화됨. ::</i>
-#, rt-review
+#. rich_translation: <i>:: 성적인 준비가 곧 시작됩니다... 성적 강도는... <color=red>최대로 설정됨</color>. 경고! 안전 제한: <color=red>비활성화됨</color>. ::</i>
 msgctxt "ui"
 msgid ":: Sexual preparations b-b-beginning shortly... Sexual force set to... MAXIMUM. Warning! Safety limits:  DISABLED. ::"
 msgstr ":: 성적인 준비가 곧 시작됩니다... 성적 강도는... 최대로 설정됨. 경고! 안전 제한: 비활성화됨. ::"
@@ -13027,8 +12988,7 @@ msgstr "아~ 마음껏 사진 찍어~"
 
 #. src: dialog
 #. rich_text: Aah~ You really are <color=#EB83FF>wet</color> down here, hun~
-#. rich_translation: 아~ 넌 정말 젖어있구나, 자기~
-#, rt-review
+#. rich_translation: 아~ 넌 정말 <color=#EB83FF>젖어있구나</color>, 자기~
 msgctxt "ui"
 msgid "Aah~ You really are wet down here, hun~"
 msgstr "아~ 넌 정말 젖어있구나, 자기~"
@@ -14478,8 +14438,7 @@ msgstr "아아— 아니, 부인! 저... 흐음... 사-사실... 부인...!"
 
 #. src: dialog
 #. rich_text: Ahh-! Oh... <color=#EB83FF>It does</color>!
-#. rich_translation: 아아-! 오... 정말이네!
-#, rt-review
+#. rich_translation: <color=#EB83FF>아아-! 오... 정말이네!</color>
 msgctxt "speaker:Zoey"
 msgid "Ahh-! Oh... It does!"
 msgstr "아아-! 오... 정말이네!"
@@ -15942,7 +15901,7 @@ msgstr "지금 두 번째 랩에 있는 거야?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Are we on the Bunnysuit Mission?"
-msgstr "지금 버니스위트 미션 중이야?"
+msgstr "지금 버니슈트 미션 중이야?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -16711,10 +16670,10 @@ msgstr "오스틴"
 
 #. src: dialog
 #. rich_text: <i>Authorities are saying that a GAG-approved establishment known as the 'Glowing Hole' had a recent robbery.</i>
-#. rich_translation: <i>당국은 '글로잉 홀'이라는 GAG 승인 업소에서 최근 강도 사건이 발생했다고 밝혔습니다.</i>
+#. rich_translation: <i>당국은 '빛나는 구멍'이라는 GAG 승인 업소에서 최근 강도 사건이 발생했다고 밝혔습니다.</i>
 msgctxt "ui"
 msgid "Authorities are saying that a GAG-approved establishment known as the 'Glowing Hole' had a recent robbery."
-msgstr "당국은 '글로잉 홀'이라는 GAG 승인 업소에서 최근 강도 사건이 발생했다고 밝혔습니다."
+msgstr "당국은 '빛나는 구멍'이라는 GAG 승인 업소에서 최근 강도 사건이 발생했다고 밝혔습니다."
 
 #. src: settings
 msgctxt "ui"
@@ -17158,7 +17117,7 @@ msgstr "때려"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Bang 2"
-msgstr "때려"
+msgstr "때려."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18050,7 +18009,7 @@ msgstr "브라운"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Brown Cartel Pants"
-msgstr "브라운 카텔 팬츠"
+msgstr "브라운 카르텔 팬츠"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -19101,8 +19060,7 @@ msgstr "창을 화면 상단 중앙에 위치시킵니다."
 
 #. src: dialog
 #. rich_text: Certainly. If you do a little... <b>Job</b> for me.
-#. rich_translation: 물론이죠. 저를 위해 작은... 일만 해주시면요.
-#, rt-review
+#. rich_translation: 물론이죠. 저를 위해 <b>작은... 일만</b> 해주시면요.
 msgctxt "speaker:Klaudia"
 msgid "Certainly. If you do a little... Job for me."
 msgstr "물론이죠. 저를 위해 작은... 일만 해주시면요."
@@ -20103,8 +20061,7 @@ msgstr "자, 네 실력을 보여줘. 그리고 웃는 것도 잊지 말고."
 
 #. src: dialog
 #. rich_text: Come on, slut! Fucking <b>beg</b> him!
-#. rich_translation: 어서, 음란녀야! 빌어먹을, 그에게 빌어!
-#, rt-review
+#. rich_translation: 어서, 음란녀야! <b>빌어먹을</b>, 그에게 빌어!
 msgctxt "ui"
 msgid "Come on, slut! Fucking beg him!"
 msgstr "어서, 음란녀야! 빌어먹을, 그에게 빌어!"
@@ -20132,7 +20089,7 @@ msgstr "이리 와, 자기."
 #. src: dialog
 msgctxt "ui"
 msgid "Come stay with me."
-msgstr "내게서 지내다 가."
+msgstr "내게서 지내다 와."
 
 #. src: dialog
 msgctxt "ui"
@@ -22826,7 +22783,7 @@ msgstr "두 사람, 안에서 재밌었어? 소리는 아주 즐거워 보이던
 #. src: dialog
 msgctxt "ui"
 msgid "Did you two see that Slutbox? Thing looked like it was gonna explode. Had the enforcers chasing after it."
-msgstr "너희 둘 다 그 슬럿박스 봤어? 그거 폭발할 것처럼 보였는데. 집행관들이 뒤쫓아오기도 했고."
+msgstr "너희 둘 다 그 Slutbox 봤어? 그거 폭발할 것처럼 보였는데. 집행관들이 뒤쫓아오기도 했고."
 
 #. src: dialog
 msgctxt "ui"
@@ -24326,8 +24283,7 @@ msgstr "아래로 내려가는 소리"
 
 #. src: dialog
 #. rich_text: Downstairs, in the basement. But everyone is saying they heard weird noises... <size=28>down there... </size>
-#. rich_translation: 아래층, 지하실이야. 근데 다들 거기서 이상한 소리가 난다고 하던데...
-#, rt-review
+#. rich_translation: <size=28>아래층, 지하실이야. 근데 다들 거기서 이상한 소리가 난다고 하던데...</size>
 msgctxt "speaker:Brad"
 msgid "Downstairs, in the basement. But everyone is saying they heard weird noises... down there..."
 msgstr "아래층, 지하실이야. 근데 다들 거기서 이상한 소리가 난다고 하던데..."
@@ -25410,7 +25366,7 @@ msgstr "집행관 짖음 5"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enforcer Mech"
-msgstr "집행자 메크"
+msgstr "집행관 메크"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -26132,8 +26088,7 @@ msgstr "더-빨라진다고? 더-빠르게? 흐흐흐~"
 
 #. src: dialog
 #. rich_text: F-Fine! Just... <color=#EB83FF>do it already</color>...
-#. rich_translation: 알-알았어! 그냥... 빨리 해...
-#, rt-review
+#. rich_translation: <color=#EB83FF>알-알았어! 그냥... 빨리 해...</color>
 msgctxt "ui"
 msgid "F-Fine! Just... do it already..."
 msgstr "알-알았어! 그냥... 빨리 해..."
@@ -27483,8 +27438,7 @@ msgstr "평평한 창"
 
 #. src: dialog
 #. rich_text: Flatmate? Eheh. My tastes are a little too... unique for a <i>flatmate</i>.
-#. rich_translation: 룸메이트? 에헤헤. 내 취향은 룸메이트를 사귀기엔 좀... 독특하거든.
-#, rt-review
+#. rich_translation: <i>룸메이트</i>? 에헤헤. 내 취향은 룸메이트를 사귀기엔 좀... 독특하거든.
 msgctxt "speaker:Leona"
 msgid "Flatmate? Eheh. My tastes are a little too... unique for a flatmate."
 msgstr "룸메이트? 에헤헤. 내 취향은 룸메이트를 사귀기엔 좀... 독특하거든."
@@ -27685,8 +27639,7 @@ msgstr "시각적 상태를 설정하기 위해"
 
 #. src: dialog
 #. rich_text: For some~ <b>macro</b> photography~
-#. rich_translation: 어떤 거시 촬영 같은 거 말이야~
-#, rt-review
+#. rich_translation: 어떤 <b>거시 촬영</b> 같은 거 말이야~
 msgctxt "ui"
 msgid "For some~ macro photography~"
 msgstr "어떤 거시 촬영 같은 거 말이야~"
@@ -28186,22 +28139,22 @@ msgstr "Futereswear Skintightv2 2"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintightv2 Gloves"
-msgstr "퓨처스위어 스킨타이트v2 장갑"
+msgstr "Futereswear 스킨타이트v2 장갑"
 
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Straps Black"
-msgstr "퓨처스위어 스트랩 블랙"
+msgstr "Futereswear 스트랩 블랙"
 
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Straps Light"
-msgstr "퓨처스위어 스트랩 라이트"
+msgstr "Futereswear 스트랩 라이트"
 
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Underwear Black"
-msgstr "퓨처스위어 언더웨어 블랙"
+msgstr "Futereswear 언더웨어 블랙"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -28781,8 +28734,7 @@ msgstr "두 여자한테 더듬기고 있어"
 
 #. src: dialog
 #. rich_text: Getting just a little personal with customers will earn you an absolute <b>ton</b> of cash, ehehe!
-#. rich_translation: 고객과 조금만 친밀해져도 엄청난 돈을 벌 수 있을 거야, 에헤헤!
-#, rt-review
+#. rich_translation: 고객과 조금만 친밀해져도 <b>엄청난 돈을</b> 벌 수 있을 거야, 에헤헤!
 msgctxt "speaker:Rosie"
 msgid "Getting just a little personal with customers will earn you an absolute ton of cash, ehehe!"
 msgstr "고객과 조금만 친밀해져도 엄청난 돈을 벌 수 있을 거야, 에헤헤!"
@@ -28804,8 +28756,7 @@ msgstr "으-... 세상에, 나... 내가 대체 무슨 짓을 한 거야..."
 
 #. src: dialog
 #. rich_text: Ghahh... you look so... hot...! Please, help me-... I need to-... need to <b>cum</b>...!
-#. rich_translation: 으악... 너 진짜... 섹시해...! 제발, 도와줘... 나... 나 사정해야 돼...!
-#, rt-review
+#. rich_translation: 으악... 너 진짜... 섹시해...! 제발, 도와줘... 나... 나 <b>사정해야 돼</b>...!
 msgctxt "ui"
 msgid "Ghahh... you look so... hot...! Please, help me-... I need to-... need to cum...!"
 msgstr "으악... 너 진짜... 섹시해...! 제발, 도와줘... 나... 나 사정해야 돼...!"
@@ -28915,7 +28866,7 @@ msgstr "소녀들의 노출 임무"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Girls Night Out - Slutbox Race"
-msgstr "소녀들의 밤 외출 - 슬럿박스 레이스"
+msgstr "소녀들의 밤 외출 - Slutbox 레이스"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -29175,17 +29126,17 @@ msgstr "빛나는 구멍 욕실 스프라이트 모양 프로필"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Glowing Hole Room 103 Peeking Perversion"
-msgstr "빛나는 구멍의 방 103 엿보는 변태"
+msgstr "빛나는 구멍의 방 103 엿보는 변태성"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Glowing Hole Room 105 Peeking Perversion"
-msgstr "빛나는 구멍의 방 105 엿보는 변태"
+msgstr "빛나는 구멍의 방 105 엿보는 변태성"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Glowing Hole Room 201 Peeking Perversion"
-msgstr "빛나는 구멍의 방 201 엿보는 변태"
+msgstr "빛나는 구멍의 방 201 엿보는 변태성"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -29871,7 +29822,7 @@ msgstr "그레이 카르텔 슈트"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Grey Cartel Suit 2"
-msgstr "그레이 카텔 수트 2"
+msgstr "그레이 카르텔 수트 2"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -31951,7 +31902,7 @@ msgstr "어이, 조이! 마커를 찾은 것 같네, 응? 하하하!"
 #. src: dialog
 msgctxt "ui"
 msgid "Hey Zoey! There's been some buzz about ya since your last Xhibition Run. The readers are loving it!"
-msgstr "헤이 조이! 지난번 전시회 런 이후로 네에 대해 소문이 좀 돌았어. 독자들도 정말 좋아하고 있다고!"
+msgstr "헤이 조이! 지난번 Xhibition Run 이후로 네에 대해 소문이 좀 돌았어. 독자들도 정말 좋아하고 있다고!"
 
 #. src: dialog
 msgctxt "ui"
@@ -32701,7 +32652,7 @@ msgstr "그의 발기가 조이의 몸에 밀착되어 있다."
 #. src: dialog
 msgctxt "ui"
 msgid "His cock is now hard, Zoey is looking down, kinda surprised at the massive nasty cock."
-msgstr "그의 자지가 이미 단단해졌다. 조이는 아래를 내려다보며, 그 거대하고 음란한 자지에 약간 놀란 표정을 짓고 있었다."
+msgstr "그의 자지가 이미 단단해졌다. 조이는 아래를 내려다보며 그 거대하고 음란한 자지에 약간 놀란 표정을 짓고 있었다."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>His- cock... It's-</color>
@@ -33098,8 +33049,7 @@ msgstr "깡패"
 
 #. src: dialog
 #. rich_text: <color=#B867FF>Hoooo</color>ly shit!
-#. rich_translation: 와, 대박!
-#, rt-review
+#. rich_translation: <color=#B867FF>와, 대박!</color>
 msgctxt "speaker:Zoey"
 msgid "Hooooly shit!"
 msgstr "와, 대박!"
@@ -35080,8 +35030,7 @@ msgstr "정말 미안해, 조이... 나-"
 
 #. src: dialog
 #. rich_text: I'm shorryy, miss..!  <i>hic</i>-.. Really..!
-#. rich_translation: 죄송해요, 아가씨..! 흐흑.. 정말로요..!
-#, rt-review
+#. rich_translation: <i>죄송해요</i>, 아가씨..! 흐흑.. 정말로요..!
 msgctxt "ui"
 msgid "I'm shorryy, miss..!  hic-.. Really..!"
 msgstr "죄송해요, 아가씨..! 흐흑.. 정말로요..!"
@@ -40128,7 +40077,7 @@ msgstr "레스드로우즈 - 보조 아티스트"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Let Enforcer Grope ZoeyTimeline"
-msgstr "집행관이 조이를 더듬게 해라."
+msgstr "집행관이 조이를 더듬게 해."
 
 #. src: dialog
 msgctxt "ui"
@@ -41421,8 +41370,7 @@ msgstr "내 가슴에서 딱히 찾는 거라도 있어, 자기?"
 
 #. src: dialog
 #. rich_text: Looking for <b>this</b>?
-#. rich_translation: 이거 찾고 있었어?
-#, rt-review
+#. rich_translation: <b>이거</b> 찾고 있었어?
 msgctxt "speaker:Klaudia"
 msgid "Looking for this?"
 msgstr "이거 찾고 있었어?"
@@ -42420,8 +42368,7 @@ msgstr "'네가 좀 더 허리를 숙이면... 네 엉덩이가 쟤 것보다 �
 
 #. src: dialog
 #. rich_text: Maybe if I go a little... <color=#EB83FF>faster</color>?
-#. rich_translation: 조금... 더 빨리 하면 어떨까?
-#, rt-review
+#. rich_translation: 조금... <color=#EB83FF>더 빨리</color> 하면 어떨까?
 msgctxt "ui"
 msgid "Maybe if I go a little... faster?"
 msgstr "조금... 더 빨리 하면 어떨까?"
@@ -42448,8 +42395,7 @@ msgstr "어쩌면 집으로 돌아갔을지도 모르지?"
 
 #. src: dialog
 #. rich_text: Maybe she should <color=#EB83FF>beg for it</color> first.
-#. rich_translation: 어쩌면 그녀가 먼저 빌어야 할지도 몰라.
-#, rt-review
+#. rich_translation: <color=#EB83FF>어쩌면 그녀가 먼저 빌어야 할지도 몰라.</color>
 msgctxt "ui"
 msgid "Maybe she should beg for it first."
 msgstr "어쩌면 그녀가 먼저 빌어야 할지도 몰라."
@@ -42629,7 +42575,7 @@ msgstr "중간"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Medium Slutbox"
-msgstr "중간 슬럿박스"
+msgstr "중간 Slutbox"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -44650,8 +44596,7 @@ msgstr "어머, 꽤 순한 타입이네..~ 네가 이렇게 있는 걸 보면, �
 
 #. src: dialog
 #. rich_text: My, hear that, Zoey? Press my tits together. Make it nice and tight for our <i>customer</i>, ehehe.
-#. rich_translation: 어이, 들었어, 조이? 내 가슴을 붙여줘. 우리 손님 위해 단단하고 꽉꽉 눌러줘, 에헤헤.
-#, rt-review
+#. rich_translation: 어이, 들었어, 조이? 내 가슴을 붙여줘. 우리 <i>손님 위해</i> 단단하고 꽉꽉 눌러줘, 에헤헤.
 msgctxt "ui"
 msgid "My, hear that, Zoey? Press my tits together. Make it nice and tight for our customer, ehehe."
 msgstr "어이, 들었어, 조이? 내 가슴을 붙여줘. 우리 손님 위해 단단하고 꽉꽉 눌러줘, 에헤헤."
@@ -46267,8 +46212,7 @@ msgstr "데모 버전에서는 사용할 수 없습니다."
 
 #. src: dialog
 #. rich_text: Not backing out of our deal <i>now</i>, are we? I thought you needed that battery.
-#. rich_translation: 지금 우리 거래를 번복할 생각은 없지? 그 배터리 필요하다고 했잖아.
-#, rt-review
+#. rich_translation: <i>지금</i> 우리 거래를 번복할 생각은 없지? 그 배터리 필요하다고 했잖아.
 msgctxt "speaker:Man"
 msgid "Not backing out of our deal now, are we? I thought you needed that battery."
 msgstr "지금 우리 거래를 번복할 생각은 없지? 그 배터리 필요하다고 했잖아."
@@ -46628,7 +46572,7 @@ msgstr "노바 - 5번 버니슈트 획득"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Nova - 5 Put on Bunnysuit"
-msgstr "노바 - 5 토끼 옷 입기"
+msgstr "노바 - 5 버니슈트 입기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -47521,8 +47465,7 @@ msgstr "세상에, 목소리가 너무 귀여운 거 아니야, 에헤헤!"
 
 #. src: dialog
 #. rich_text: Oh my god you're so <b>fucking</b> hot!
-#. rich_translation: 세상에, 너 진짜 존나 섹시하잖아!
-#, rt-review
+#. rich_translation: 세상에, 너 진짜 <b>존나</b> 섹시하잖아!
 msgctxt "speaker:Customer"
 msgid "Oh my god you're so fucking hot!"
 msgstr "세상에, 너 진짜 존나 섹시하잖아!"
@@ -47691,8 +47634,7 @@ msgstr "오, 그래? 멋지네!"
 
 #. src: dialog
 #. rich_text: Oh yeah? Taking my money and stretching your asshole in my face doesn't make you a <b>whore</b>?
-#. rich_translation: 어, 그래? 내 돈을 받고 내 앞에서 네 항문을 벌리는 게 너를 창녀로 만들지 않는다고?
-#, rt-review
+#. rich_translation: 어, 그래? 내 돈을 받고 내 앞에서 네 항문을 벌리는 게 너를 <b>창녀로 만들지</b> 않는다고?
 msgctxt "speaker:Trov"
 msgid "Oh yeah? Taking my money and stretching your asshole in my face doesn't make you a whore?"
 msgstr "어, 그래? 내 돈을 받고 내 앞에서 네 항문을 벌리는 게 너를 창녀로 만들지 않는다고?"
@@ -49552,7 +49494,7 @@ msgstr "개인 칩"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "PERVERSION"
-msgstr "변태"
+msgstr "변태성"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -50074,7 +50016,7 @@ msgstr "변태 대화"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Perversion Event Finished"
-msgstr "변태 이벤트 완료"
+msgstr "변태성 이벤트 완료"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50084,12 +50026,12 @@ msgstr "변태적 간섭 프로필"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Perversion LVL:"
-msgstr "변태 레벨:"
+msgstr "변태성 레벨:"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Perversion:"
-msgstr "변태:"
+msgstr "변태성:"
 
 #. src: us
 msgctxt "ui"
@@ -52174,8 +52116,7 @@ msgstr "모든 플레이어의 LimbEffects를 출력 중:"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Prior exp-...?</color> No! This... This is not something I usually do!
-#. rich_translation: 이전 경험...? 아니! 이건... 이건 내가 보통 하는 일이 아니라고!
-#, rt-review
+#. rich_translation: <color=#EB83FF>이전 경험...? 아니! 이건... 이건 내가 보통 하는 일이 아니라고!</color>
 msgctxt "ui"
 msgid "Prior exp-...? No! This... This is not something I usually do!"
 msgstr "이전 경험...? 아니! 이건... 이건 내가 보통 하는 일이 아니라고!"
@@ -52299,8 +52240,7 @@ msgstr "속성은 getter나 setter가 없습니다."
 
 #. src: dialog
 #. rich_text: Protecting. That's right. The average citizen has no clue how many terrorists we <b>protect</b> you from every day.
-#. rich_translation: 보호하는 거지. 맞아. 평범한 시민들은 우리가 매일 얼마나 많은 테러리스트로부터 당신들을 보호하는지 전혀 몰라.
-#, rt-review
+#. rich_translation: <b>보호하는 거지</b>. 맞아. 평범한 시민들은 우리가 매일 얼마나 많은 테러리스트로부터 당신들을 보호하는지 전혀 몰라.
 msgctxt "speaker:Enforcer"
 msgid "Protecting. That's right. The average citizen has no clue how many terrorists we protect you from every day."
 msgstr "보호하는 거지. 맞아. 평범한 시민들은 우리가 매일 얼마나 많은 테러리스트로부터 당신들을 보호하는지 전혀 몰라."
@@ -52747,7 +52687,7 @@ msgstr "RAM: #### MB"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "REDLIGHT DISTRICT"
-msgstr "적신구"
+msgstr "레드라이트"
 
 #. src: us
 msgctxt "ui"
@@ -53055,8 +52995,7 @@ msgstr "진짜?! 세상에, 응! 정말 좋겠어!"
 
 #. src: dialog
 #. rich_text: Really?! We're just throwing our stuff at anything you find hot now, do we?! <b>You</b> are going to explain this to the boss!
-#. rich_translation: 진짜?! 우리가 지금 그냥 네가 섹시하다고 생각하는 건 뭐든지 다 덤벼대는 거야?! 이거 상사한테 설명해야 할 거야!
-#, rt-review
+#. rich_translation: <b>진짜?!</b> 우리가 지금 그냥 네가 섹시하다고 생각하는 건 뭐든지 다 덤벼대는 거야?! 이거 상사한테 설명해야 할 거야!
 msgctxt "ui"
 msgid "Really?! We're just throwing our stuff at anything you find hot now, do we?! You are going to explain this to the boss!"
 msgstr "진짜?! 우리가 지금 그냥 네가 섹시하다고 생각하는 건 뭐든지 다 덤벼대는 거야?! 이거 상사한테 설명해야 할 거야!"
@@ -53820,7 +53759,7 @@ msgstr "주거 / 유지보수"
 #. src: dialog
 msgctxt "ui"
 msgid "Residential District"
-msgstr "주택가"
+msgstr "주거 지역"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58141,22 +58080,22 @@ msgstr "SlutService_4 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Slutbox - Insert"
-msgstr "슬럿박스 - 삽입"
+msgstr "Slutbox - 삽입"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Slutbox - Sex Fast"
-msgstr "슬럿박스 - 섹스 패스트"
+msgstr "Slutbox - 섹스 패스트"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Slutbox - Sex Slow"
-msgstr "슬럿박스 - 섹스 슬로우"
+msgstr "Slutbox - 섹스 슬로우"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Slutbox Sensations"
-msgstr "슬럿박스 센세이션"
+msgstr "Slutbox 센세이션"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58344,8 +58283,7 @@ msgstr "정말 따뜻하고... 음... 편안해..."
 
 #. src: dialog
 #. rich_text: So <color=#EB83FF>warm</color> too~ How do <color=#EB83FF>my fingers</color> feel~?
-#. rich_translation: 정말 따뜻하네~ 내 손가락이 어떤 느낌이야~?
-#, rt-review
+#. rich_translation: <color=#EB83FF>정말 따뜻하네~</color> <color=#EB83FF>내 손가락</color>이 어떤 느낌이야~?
 msgctxt "ui"
 msgid "So warm too~ How do my fingers feel~?"
 msgstr "정말 따뜻하네~ 내 손가락이 어떤 느낌이야~?"
@@ -58709,8 +58647,7 @@ msgstr "집에서 소파에 누워 있을 수 있게 해주는 거요."
 
 #. src: dialog
 #. rich_text: Something that <b>your</b> kind of body would look incredible in, hehehe.
-#. rich_translation: 네 몸매라면 정말 멋지게 어울릴 만한 거 말이야, 헤헤헤.
-#, rt-review
+#. rich_translation: <b>네 몸매라면</b> 정말 멋지게 어울릴 만한 거 말이야, 헤헤헤.
 msgctxt "ui"
 msgid "Something that your kind of body would look incredible in, hehehe."
 msgstr "네 몸매라면 정말 멋지게 어울릴 만한 거 말이야, 헤헤헤."
@@ -58752,8 +58689,7 @@ msgstr "그러니까... *히크* 우리가 이렇게 오랫동안 얘기하면�
 
 #. src: dialog
 #. rich_text: Sooo... Is that a <i>no</i>?
-#. rich_translation: 으음... 거절이야?
-#, rt-review
+#. rich_translation: 으음... <i>거절이야</i>?
 msgctxt "speaker:Trov"
 msgid "Sooo... Is that a no?"
 msgstr "으음... 거절이야?"
@@ -61001,8 +60937,7 @@ msgstr "네, 분명히 찾을 수 있을 거예요...!"
 
 #. src: dialog
 #. rich_text: Sure, babe. Some customers will pay waitresses a nice tip for <i>personal</i> service, eheh. Maybe you should look into that.
-#. rich_translation: 물론이지, 자기. 어떤 손님들은 웨이트리스에게 개인적인 서비스에 대한 좋은 팁을 주기도 하거든, 에헴. 그쪽도 한번 알아보는 게 어때?
-#, rt-review
+#. rich_translation: 물론이지, 자기. 어떤 손님들은 웨이트리스에게 <i>개인적인 서비스</i>에 대한 좋은 팁을 주기도 하거든, 에헴. 그쪽도 한번 알아보는 게 어때?
 msgctxt "ui"
 msgid "Sure, babe. Some customers will pay waitresses a nice tip for personal service, eheh. Maybe you should look into that."
 msgstr "물론이지, 자기. 어떤 손님들은 웨이트리스에게 개인적인 서비스에 대한 좋은 팁을 주기도 하거든, 에헴. 그쪽도 한번 알아보는 게 어때?"
@@ -62292,8 +62227,7 @@ msgstr "너무 강렬해... 씨발... 으윽...!"
 
 #. src: dialog
 #. rich_text: That guy said... to come to him when I feel... <color=#EB83FF>like this</color>... right...?
-#. rich_translation: 그 남자가... 내가 이런... 느낌이 들면... 그에게 오라고... 했어...?
-#, rt-review
+#. rich_translation: 그 남자가... 내가 <color=#EB83FF>이런... 느낌</color>이 들면... 그에게 오라고... 했어...?
 msgctxt "ui"
 msgid "That guy said... to come to him when I feel... like this... right...?"
 msgstr "그 남자가... 내가 이런... 느낌이 들면... 그에게 오라고... 했어...?"
@@ -62980,8 +62914,7 @@ msgstr "음란한 기운이 그녀를 집어삼켰어.."
 
 #. src: dialog
 #. rich_text: The life of a mercenary didn't exactly pan out for you. Why not dip your toes into a different line of... <b>work</b>, hm?
-#. rich_translation: 용병 생활이 그다지 잘 풀리지 않았나 보네. 그러니 다른 종류의... 일로 발을 담가보는 건 어때?
-#, rt-review
+#. rich_translation: 용병 생활이 그다지 잘 풀리지 않았나 보네. 그러니 다른 종류의... <b>일</b>로 발을 담가보는 건 어때?
 msgctxt "ui"
 msgid "The life of a mercenary didn't exactly pan out for you. Why not dip your toes into a different line of... work, hm?"
 msgstr "용병 생활이 그다지 잘 풀리지 않았나 보네. 그러니 다른 종류의... 일로 발을 담가보는 건 어때?"
@@ -63592,7 +63525,7 @@ msgstr "우리한테 추적기 제거를 도와줄 만한 장치를 뚝딱 만�
 #. src: dialog
 msgctxt "ui"
 msgid "Think you could get us in that Slutbox, Z?"
-msgstr "그 슬럿박스 안에 우리도 넣을 수 있을 것 같아, Z?"
+msgstr "그 Slutbox 안에 우리도 넣을 수 있을 것 같아, Z?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -65222,8 +65155,7 @@ msgstr "어... 어... 안녕하세요? 누구세요?"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>U-Uh</color>m! I uh- I gotta get goin'! Places to be- uhm- here's your picture!
-#. rich_translation: 어-어라! 저, 저 이제 가봐야겠어요! 갈 곳이 있어서- 어- 여기 사진이에요!
-#, rt-review
+#. rich_translation: <color=#EB83FF>어-어라!</color> 저, 저 이제 가봐야겠어요! 갈 곳이 있어서- 어- 여기 사진이에요!
 msgctxt "ui"
 msgid "U-Uhm! I uh- I gotta get goin'! Places to be- uhm- here's your picture!"
 msgstr "어-어라! 저, 저 이제 가봐야겠어요! 갈 곳이 있어서- 어- 여기 사진이에요!"
@@ -67191,8 +67123,7 @@ msgstr "잠-잠깐만! 난 이런 사람 아니라고!"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>W-Wait... That was</color>n't- I didn't mean to-
-#. rich_translation: 잠-잠깐... 그건 아니었어... 그럴 의도가 아니었는데...
-#, rt-review
+#. rich_translation: <color=#EB83FF>잠-잠깐... 그건 아니었어... 그럴 의도가 아니었는데...</color>
 msgctxt "ui"
 msgid "W-Wait... That wasn't- I didn't mean to-"
 msgstr "잠-잠깐... 그건 아니었어... 그럴 의도가 아니었는데..."
@@ -68568,8 +68499,7 @@ msgstr "잠깐. 그게, 가려움을 멈추게 한다는 거야? 완전히?"
 
 #. src: dialog
 #. rich_text: Wait..! Am I hearing music? <b>You're</b> out having fun?! Tell me where!
-#. rich_translation: 잠깐..! 음악이 들리는 거야? 너 놀러 나갔었잖아?! 어디 갔었는지 말해봐!
-#, rt-review
+#. rich_translation: <b>잠깐..!</b> 음악이 들리는 거야? 너 놀러 나갔었잖아?! 어디 갔었는지 말해봐!
 msgctxt "ui"
 msgid "Wait..! Am I hearing music? You're out having fun?! Tell me where!"
 msgstr "잠깐..! 음악이 들리는 거야? 너 놀러 나갔었잖아?! 어디 갔었는지 말해봐!"
@@ -69043,8 +68973,7 @@ msgstr "정말 갖고 싶어서 안달이 났나 보네, 응?"
 
 #. src: dialog
 #. rich_text: Want me to feel <color=#EB83FF>somewhere else?</color>
-#. rich_translation: 다른 곳도 느끼게 해줄까?
-#, rt-review
+#. rich_translation: <color=#EB83FF>다른 곳도 느끼게 해줄까?</color>
 msgctxt "ui"
 msgid "Want me to feel somewhere else?"
 msgstr "다른 곳도 느끼게 해줄까?"
@@ -69431,7 +69360,7 @@ msgstr "안드로 정액을 좋은 정액받이처럼 입고 있네, 아하하! 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wearing Bunnysuit?"
-msgstr "토끼 옷 입고 있어?"
+msgstr "버니슈트 입고 있어?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -69857,8 +69786,7 @@ msgstr "음... 글로잉 홀에서는 봤지만, 그 누구도 저렇게... 생�
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Well... you two <b>do</b> look similar...</color>
-#. rich_translation: <color=#EB83FF>음... 두 사람, 정말 비슷하게 생겼네요...</color>
-#, rt-review
+#. rich_translation: <color=#EB83FF>음... <b>두 사람</b>, 정말 비슷하게 생겼네요...</color>
 msgctxt "ui"
 msgid "Well... you two do look similar..."
 msgstr "음... 두 사람, 정말 비슷하게 생겼네요..."
@@ -70151,8 +70079,7 @@ msgstr "정말 지-"
 
 #. src: dialog
 #. rich_text: What about you, Zoey? Could you get one for me and my... <b>little sister</b>? Ehehe!~
-#. rich_translation: 조이, 넌 어때? 나랑 내... 여동생한테 하나 구해줄 수 있어? 에헤헤!~
-#, rt-review
+#. rich_translation: <b>조이, 넌 어때? 나랑 내... 여동생한테 하나 구해줄 수 있어? 에헤헤!~</b>
 msgctxt "speaker:Woman"
 msgid "What about you, Zoey? Could you get one for me and my... little sister? Ehehe!~"
 msgstr "조이, 넌 어때? 나랑 내... 여동생한테 하나 구해줄 수 있어? 에헤헤!~"
@@ -70381,8 +70308,7 @@ msgstr "여긴 대체 뭐야, 꼬마야?"
 
 #. src: dialog
 #. rich_text: What kind of <i>goods</i> are you talking about exactly?
-#. rich_translation: 정확히 어떤 물건에 대해 말하고 있는 거야?
-#, rt-review
+#. rich_translation: 정확히 <i>어떤 물건</i>에 대해 말하고 있는 거야?
 msgctxt "speaker:Zoey"
 msgid "What kind of goods are you talking about exactly?"
 msgstr "정확히 어떤 물건에 대해 말하고 있는 거야?"
@@ -71049,8 +70975,7 @@ msgstr "왜 ‘하지만’이 나올 것 같은 느낌이 들지?"
 
 #. src: dialog
 #. rich_text: Why do I wish he w<color=#EB83FF>as fucking me instead?</color> Agh! Stupid, stupid...
-#. rich_translation: 왜 그가 나를 범하는 게 아니란 말인가? 아악! 멍청해, 멍청해...
-#, rt-review
+#. rich_translation: <color=#EB83FF>왜 그가 나를 범하는 게 아니란 말인가? 아악! 멍청해, 멍청해...</color>
 msgctxt "ui"
 msgid "Why do I wish he was fucking me instead? Agh! Stupid, stupid..."
 msgstr "왜 그가 나를 범하는 게 아니란 말인가? 아악! 멍청해, 멍청해..."
@@ -71970,8 +71895,7 @@ msgstr "응, 알았어!"
 
 #. src: dialog
 #. rich_text: Yeah, I got them. Thanks. Am I ever glad to <i>not</i> go outside.
-#. rich_translation: 응, 받았어. 고마워. 밖에 안 나가는 게 얼마나 다행인지 몰라.
-#, rt-review
+#. rich_translation: 응, 받았어. <i>고마워.</i> 밖에 안 나가는 게 얼마나 다행인지 몰라.
 msgctxt "ui"
 msgid "Yeah, I got them. Thanks. Am I ever glad to not go outside."
 msgstr "응, 받았어. 고마워. 밖에 안 나가는 게 얼마나 다행인지 몰라."
@@ -72073,8 +71997,7 @@ msgstr "응, 여기... 그녀는 예전에 이런... 수상한 곳에 가는 걸
 
 #. src: dialog
 #. rich_text: Yeah, <color=#EB83FF>it looks really good</color>... I mean- good attention to detail!
-#. rich_translation: 네, 정말 잘 만들어졌네요... 제 말은, 디테일이 정말 뛰어나다는 뜻이에요!
-#, rt-review
+#. rich_translation: <color=#EB83FF>네, 정말 잘 만들어졌네요... 제 말은, 디테일이 정말 뛰어나다는 뜻이에요!</color>
 msgctxt "ui"
 msgid "Yeah, it looks really good... I mean- good attention to detail!"
 msgstr "네, 정말 잘 만들어졌네요... 제 말은, 디테일이 정말 뛰어나다는 뜻이에요!"
@@ -72308,8 +72231,7 @@ msgstr "응..."
 
 #. src: dialog
 #. rich_text: Yeah... Draws attention from the-... <i>less</i> fun kind sometimes.
-#. rich_translation: 응... 가끔은 별로 재미없는 종류의 관심이라도 끌게 되니까.
-#, rt-review
+#. rich_translation: 응... 가끔은 <i>별로 재미없는</i> 종류의 관심이라도 끌게 되니까.
 msgctxt "ui"
 msgid "Yeah... Draws attention from the-... less fun kind sometimes."
 msgstr "응... 가끔은 별로 재미없는 종류의 관심이라도 끌게 되니까."
@@ -72572,7 +72494,7 @@ msgstr "네, 뭐라고요?"
 #. src: dialog
 msgctxt "speaker:Lio"
 msgid "Yes! Ah-...! Hurry! Nhhh!"
-msgstr "맞아! 아...! 서둘러! 흐으...! 그중 하나가... 아...! 그 코드가...!"
+msgstr "네! 아...! 서둘러! 흐으...! 그중 하나가... 아...! 그 코드가...!"
 
 #. src: dialog
 msgctxt "ui"
@@ -73034,8 +72956,7 @@ msgstr "유혹하고, 놀리고, 신체적으로 친밀하게 대하고, 팁을 
 
 #. src: dialog
 #. rich_text: You can <color=#EB83FF>let it out~</color> Just relax~
-#. rich_translation: 마음껏 내보내~ 그냥 편안하게~
-#, rt-review
+#. rich_translation: <color=#EB83FF>마음껏 내보내~ 그냥 편안하게~</color>
 msgctxt "ui"
 msgid "You can let it out~ Just relax~"
 msgstr "마음껏 내보내~ 그냥 편안하게~"
@@ -73565,8 +73486,7 @@ msgstr "네가 말벌집을 건드렸잖아, 조이. 그래도 가방은 가지�
 
 #. src: dialog
 #. rich_text: You sure did, darling. That was <b>so</b> hot...
-#. rich_translation: 정말 그랬어, 자기야. 그거 정말 뜨거웠어...
-#, rt-review
+#. rich_translation: <b>정말 그랬어</b>, 자기야. 그거 정말 뜨거웠어...
 msgctxt "ui"
 msgid "You sure did, darling. That was so hot..."
 msgstr "정말 그랬어, 자기야. 그거 정말 뜨거웠어..."
@@ -73734,8 +73654,7 @@ msgstr "내 자판기 중 하나를 이용하면 여길 올 수 있을 거야."
 
 #. src: dialog
 #. rich_text: You'll half the price, if I... <color=#EB83FF>let you</color>-...?
-#. rich_translation: 만약 내가... 널... 허락한다면, 가격을 절반으로 내려줄 거야.
-#, rt-review
+#. rich_translation: 만약 내가... 널... <color=#EB83FF>허락한다면</color>, 가격을 절반으로 내려줄 거야.
 msgctxt "speaker:Zoey"
 msgid "You'll half the price, if I... let you-...?"
 msgstr "만약 내가... 널... 허락한다면, 가격을 절반으로 내려줄 거야."
@@ -74329,8 +74248,7 @@ msgstr "당신 집이라고요...? 그 너그러움에 진심으로 감사하지
 
 #. src: dialog
 #. rich_text: Your position is called <b>waitress bunny</b>. The others are <b>service bunnies</b>.
-#. rich_translation: 네 위치는 웨이트리스 버니라고 불려. 다른 애들은 서비스 버니들이고.
-#, rt-review
+#. rich_translation: 네 위치는 <b>웨이트리스 버니</b>라고 불려. 다른 애들은 <b>서비스 버니들</b>이고.
 msgctxt "speaker:Klaudia"
 msgid "Your position is called waitress bunny. The others are service bunnies."
 msgstr "네 위치는 웨이트리스 버니라고 불려. 다른 애들은 서비스 버니들이고."
@@ -76783,4 +76701,3 @@ msgstr "제인 드래그코"
 msgctxt "ui"
 msgid "| GetDataFromItem: Item doesn't exist! Returning empty DynamicTable."
 msgstr "| GetDataFromItem: 아이템이 존재하지 않습니다! 빈 DynamicTable을 반환합니다."
-

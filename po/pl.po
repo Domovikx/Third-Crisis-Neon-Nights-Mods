@@ -232,8 +232,7 @@ msgstr "'Ej, kelnerkooo... Całą noc patrzę, jak twoje cycki się trzęsą..."
 
 #. src: dialog
 #. rich_text: 'Means using your body is what really pays in here. Don't worry, you don't <b>have</b> to spread out your little 'vayvay-... Uh-... not that you're allowed to-!! But... you know...
-#. rich_translation: 'To znaczy, że tutaj naprawdę płaci się ciałem. Nie martw się, nie musisz rozkładać swojej małej 'cipci-... Uh-... nie to, że ci wolno-!! Ale... wiesz...
-#, rt-review
+#. rich_translation: 'To znaczy, że tutaj naprawdę <b>płaci się ciałem</b>. Nie martw się, nie musisz rozkładać swojej małej 'cipci-... Uh-... nie to, że ci wolno-!! Ale... wiesz...
 msgctxt "speaker:Rosie"
 msgid "'Means using your body is what really pays in here. Don't worry, you don't have to spread out your little 'vayvay-... Uh-... not that you're allowed to-!! But... you know..."
 msgstr "'To znaczy, że tutaj naprawdę płaci się ciałem. Nie martw się, nie musisz rozkładać swojej małej 'cipci-... Uh-... nie to, że ci wolno-!! Ale... wiesz..."
@@ -248,7 +247,7 @@ msgstr "'Potrzebowałam szmalu, więc... Nie odmówiłam, ehehe... Dość gorąc
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "'Yer way hotter than 'er..."
-msgstr "PL: „Jesteś o wiele gorętszy od niej...”"
+msgstr "„Jesteś o wiele gorętszy od niej...”"
 
 #. src: dialog
 #. rich_text: <i>( 205? Wait.. That's the room I'm supposed to get into! )</i>
@@ -933,8 +932,7 @@ msgstr "(Ashley naprawdę naciska na Anne, żeby to zrobiła, heh...)"
 
 #. src: dialog
 #. rich_text: <i>(Asshole <b>and</b> pervert... )</i>
-#. rich_translation: <i>(Dupek i zbok... )</i>
-#, rt-review
+#. rich_translation: <i>(<b>Dupek i zbok</b>... )</i>
 msgctxt "ui"
 msgid "(Asshole and pervert... )"
 msgstr "(Dupek i zbok... )"
@@ -1348,8 +1346,7 @@ msgstr "(Czy to naprawdę może... cieszyć się tym-... traktowaniem...?)"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Could've taken care of my problem...</color> Agh-! No- Just... tough it out until the ride's over...)</i>
-#. rich_translation: <i>(Mogłam załatwić swój problem... Agh-! Nie- Po prostu... wytrzymaj do końca jazdy...)</i>
-#, rt-review
+#. rich_translation: <i>(Mogłam <color=#EB83FF>załatwić swój problem</color>... Agh-! Nie- Po prostu... wytrzymaj do końca jazdy...)</i>
 msgctxt "ui"
 msgid "(Could've taken care of my problem... Agh-! No- Just... tough it out until the ride's over...)"
 msgstr "(Mogłam załatwić swój problem... Agh-! Nie- Po prostu... wytrzymaj do końca jazdy...)"
@@ -1651,8 +1648,7 @@ msgstr "(Cieszy się... mną...?)"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Even harder... To ge</color>t that c<color=#EB83FF>hip, Zoe</color>y. You almost got it!)</i>
-#. rich_translation: <i>(Jeszcze mocniej... Żeby zdobyć ten c<color=#EB83FF>hip, Zoe</color>y. Prawie ci się udało!)</i>
-#, rt-review
+#. rich_translation: <i>(Jeszcze mocniej... <color=#EB83FF>Żeby zdobyć ten chip</color>, <color=#EB83FF>Zoey</color>. Prawie ci się udało!)</i>
 msgctxt "ui"
 msgid "(Even harder... To get that chip, Zoey. You almost got it!)"
 msgstr "(Jeszcze mocniej... Żeby zdobyć ten chip, Zoey. Prawie ci się udało!)"
@@ -1680,8 +1676,7 @@ msgstr "(K-Kurwa! Ten dźwięk mi się wymsknął... Fhh... )"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>F-Fuck!</color> That was too close!)</i>
-#. rich_translation: <i>(Kurwa! To było zbyt blisko!)</i>
-#, rt-review
+#. rich_translation: <i>(<color=#EB83FF>Kurwa!</color> To było zbyt blisko!)</i>
 msgctxt "ui"
 msgid "(F-Fuck! That was too close!)"
 msgstr "(Kurwa! To było zbyt blisko!)"
@@ -3507,8 +3502,7 @@ msgstr "(Chyba ona nie nosi stanika-.. )"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(I don't <b>want</b> to think... )</i></color>
-#. rich_translation: <color=#EB83FF><i>(Nie chcę o tym myśleć...)</i></color>
-#, rt-review
+#. rich_translation: <color=#EB83FF><i>(<b>Nie chcę</b> o tym myśleć...)</i></color>
 msgctxt "speaker:Zoey"
 msgid "(I don't want to think... )"
 msgstr "(Nie chcę o tym myśleć...)"
@@ -3578,8 +3572,7 @@ msgstr "(Chyba powinnam wejść do środka, przebrać się i ogarnąć, zanim pr
 
 #. src: dialog
 #. rich_text: (I guess I'm really <color=#EB83FF>doing this... again</color>...)
-#. rich_translation: (Chyba naprawdę to robię... znowu...)
-#, rt-review
+#. rich_translation: (<color=#EB83FF>Chyba naprawdę to robię... znowu...</color>)
 msgctxt "ui"
 msgid "(I guess I'm really doing this... again...)"
 msgstr "(Chyba naprawdę to robię... znowu...)"
@@ -4062,8 +4055,7 @@ msgstr "(Nie powinnam z nim siadać-... On po prostu-... używa mnie, żeby się
 
 #. src: dialog
 #. rich_text: <i>(I shouldn't.. Have done.. <color=#EB83FF>That</color>... )</i>
-#. rich_translation: <i>(Nie powinnam.. Robić.. Tego... )</i>
-#, rt-review
+#. rich_translation: <i>(Nie powinnam.. Robić.. <color=#EB83FF>Tego</color>... )</i>
 msgctxt "ui"
 msgid "(I shouldn't.. Have done.. That... )"
 msgstr "(Nie powinnam.. Robić.. Tego... )"
@@ -4357,8 +4349,7 @@ msgstr "(Nie zamierzam iść zmywać naczyń. )"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(I'm <b>not</b> selling my body...! Gah-... Fucking pervert...!)</i></color>
-#. rich_translation: <color=#EB83FF><i>(Nie sprzedaję swojego ciała...! Gah-... Pieprzony zboczeniec...!)</i></color>
-#, rt-review
+#. rich_translation: <color=#EB83FF><i>(<b>Nie sprzedaję</b> swojego ciała...! Gah-... Pieprzony zboczeniec...!)</i></color>
 msgctxt "speaker:Zoey"
 msgid "(I'm not selling my body...! Gah-... Fucking pervert...!)"
 msgstr "(Nie sprzedaję swojego ciała...! Gah-... Pieprzony zboczeniec...!)"
@@ -4967,8 +4958,7 @@ msgstr "(Idiota... )"
 
 #. src: dialog
 #. rich_text: <i>(If I can find a replacement <b>Andro Battery</b>, I'd be able to resuscitate her. Then she'd be able to get to a charging station.)</i>
-#. rich_translation: <i>(Jeśli znajdę zapasową baterię Andro, będę mogła ją ocucić. Wtedy dotrze do stacji ładowania.)</i>
-#, rt-review
+#. rich_translation: <i>(Jeśli znajdę zapasową <b>baterię Andro</b>, będę mogła ją ocucić. Wtedy dotrze do stacji ładowania.)</i>
 msgctxt "ui"
 msgid "(If I can find a replacement Andro Battery, I'd be able to resuscitate her. Then she'd be able to get to a charging station.)"
 msgstr "(Jeśli znajdę zapasową baterię Andro, będę mogła ją ocucić. Wtedy dotrze do stacji ładowania.)"
@@ -5331,8 +5321,7 @@ msgstr "(Zranię ją, jeśli po prostu to zerwę. Muszę to jakoś opanować... 
 
 #. src: dialog
 #. rich_text: <i>(It's a <b>lot</b> of money for just wearing an outfit... Maybe I wouldn't need to ask Sarah for help so much...)</i>
-#. rich_translation: <i>(Sporo kasy za samo noszenie stroju... Może nie musiałabym tak często prosić Sarah o pomoc...)</i>
-#, rt-review
+#. rich_translation: <i>(<b>Sporo kasy</b> za samo noszenie stroju... Może nie musiałabym tak często prosić Sarah o pomoc...)</i>
 msgctxt "speaker:Zoey"
 msgid "(It's a lot of money for just wearing an outfit... Maybe I wouldn't need to ask Sarah for help so much...)"
 msgstr "(Sporo kasy za samo noszenie stroju... Może nie musiałabym tak często prosić Sarah o pomoc...)"
@@ -6869,8 +6858,7 @@ msgstr "(Nie, nie zrobimy...!)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(No-... I-... This is so-... <b>wrong</b>.. Why am I not-...)</i></color>
-#. rich_translation: <color=#EB83FF><i>(Nie-... J-ja-... To jest tak-... złe.. Dlaczego ja nie-...)</i></color>
-#, rt-review
+#. rich_translation: <color=#EB83FF><i>(Nie-... J-ja-... To jest tak-... <b>złe</b>.. Dlaczego ja nie-...)</i></color>
 msgctxt "ui"
 msgid "(No-... I-... This is so-... wrong.. Why am I not-...)"
 msgstr "(Nie-... J-ja-... To jest tak-... złe.. Dlaczego ja nie-...)"
@@ -7115,8 +7103,7 @@ msgstr "(O Boże... Co ja właściwie robię...? )"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Oh god~</color> Please don't notice... )</i>
-#. rich_translation: <i>(O rany~ Proszę, nie zauważaj...)</i>
-#, rt-review
+#. rich_translation: <i>(<color=#EB83FF>O rany~</color> Proszę, nie zauważaj...)</i>
 msgctxt "ui"
 msgid "(Oh god~ Please don't notice... )"
 msgstr "(O rany~ Proszę, nie zauważaj...)"
@@ -7243,11 +7230,11 @@ msgstr "(Oooh~ C-czy ja naprawdę to robię? Dotykam siebie i myślę o tym, jak
 
 #. src: dialog
 #. rich_text: <i>(Oookay, time to stop thinking about your friend's... <b>Thing</b>, Zoey... )</i>
-#. rich_translation: <i>(Ookej, czas przestać myśleć o... sprzęcie twojej przyjaciółki, Zoey...)</i>
+#. rich_translation: <i>(Okeej, czas przestać myśleć o... sprzęcie twojej przyjaciółki, Zoey...)</i>
 #, rt-review
 msgctxt "speaker:Zoey"
 msgid "(Oookay, time to stop thinking about your friend's... Thing, Zoey... )"
-msgstr "(Ookej, czas przestać myśleć o... sprzęcie twojej przyjaciółki, Zoey...)"
+msgstr "(Okeej, czas przestać myśleć o... sprzęcie twojej przyjaciółki, Zoey...)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Oozing... It's oozing with-... fghhh... I-... N-nhh... I-... )</i></color>
@@ -7382,8 +7369,7 @@ msgstr "(Przekłute sutki... Chyba pasują do jego estetyki. )"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Piston..? Ghh..</color> It's so.. <color=#EB83FF>Soft and.. Warm..</color> )</i>
-#. rich_translation: <i>(Tłok..? Ghh.. Jest taki.. Miękki i.. Ciepły.. )</i>
-#, rt-review
+#. rich_translation: <i>(<color=#EB83FF>Tłok..? Ghh..</color> Jest taki.. <color=#EB83FF>Miękki i.. Ciepły..</color> )</i>
 msgctxt "ui"
 msgid "(Piston..? Ghh.. It's so.. Soft and.. Warm.. )"
 msgstr "(Tłok..? Ghh.. Jest taki.. Miękki i.. Ciepły.. )"
@@ -8492,8 +8478,7 @@ msgstr "(Połykam strumień...?!)"
 
 #. src: dialog
 #. rich_text: (T-this <color=#EB83FF>lewd stuff</color>... )
-#. rich_translation: (T-te sprośne rzeczy... )
-#, rt-review
+#. rich_translation: (T-te <color=#EB83FF>sprośne rzeczy</color>... )
 msgctxt "speaker:Zoey"
 msgid "(T-this lewd stuff... )"
 msgstr "(T-te sprośne rzeczy... )"
@@ -9205,8 +9190,7 @@ msgstr "(Narobili takiego bałaganu.. W tylu miejscach.. )"
 
 #. src: dialog
 #. rich_text: <i>(They really wanna be famous on this Smutgram app...? Not sure some teasing pics are gonna-... <color=#EB83FF>cut it for that</color>... )</i>
-#. rich_translation: <i>(Naprawdę chcą być sławni w tej aplikacji Smutgram...? Nie jestem pewien, czy kilka prowokacyjnych zdjęć wystarczy, żeby to osiągnąć...)</i>
-#, rt-review
+#. rich_translation: <i>(Naprawdę chcą być sławni w tej aplikacji Smutgram...? <color=#EB83FF>Nie jestem pewien</color>, czy kilka prowokacyjnych zdjęć wystarczy, żeby to osiągnąć...)</i>
 msgctxt "ui"
 msgid "(They really wanna be famous on this Smutgram app...? Not sure some teasing pics are gonna-... cut it for that... )"
 msgstr "(Naprawdę chcą być sławni w tej aplikacji Smutgram...? Nie jestem pewien, czy kilka prowokacyjnych zdjęć wystarczy, żeby to osiągnąć...)"
@@ -9255,8 +9239,7 @@ msgstr "(Wszyscy-... gapią się na-... m-mnie...?)"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>They're hard... </color>)</i>
-#. rich_translation: <i>(Są twarde...)</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>(Są twarde...)</color></i>
 msgctxt "ui"
 msgid "(They're hard... )"
 msgstr "(Są twarde...)"
@@ -9482,8 +9465,7 @@ msgstr "(To naprawdę nie.. Zakrywa wiele... )"
 
 #. src: dialog
 #. rich_text: <i>(This <color=#EB83FF>taste</color>... It couldn't be... cum... right?)</i>
-#. rich_translation: <i>(Ten smak... To nie może być... sperma... prawda?)</i>
-#, rt-review
+#. rich_translation: <i>(Ten <color=#EB83FF>smak</color>... To nie może być... sperma... prawda?)</i>
 msgctxt "ui"
 msgid "(This taste... It couldn't be... cum... right?)"
 msgstr "(Ten smak... To nie może być... sperma... prawda?)"
@@ -11070,42 +11052,42 @@ msgstr "0.3 - Salon paznokci - Powiedziano Maxowi - Porno - 1 - 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 1"
-msgstr "0.3 - Salon Paznokci Porn - 1 - 1"
+msgstr "0.3 - Salon paznokci Porn - 1 - 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 2 - 1"
-msgstr "0.3 - Salon Paznokci Porn - 1 - 2 - 1"
+msgstr "0.3 - Salon paznokci Porn - 1 - 2 - 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 2 - 2"
-msgstr "0.3 - Salon Paznokci Porn - 1 - 2 - 2"
+msgstr "0.3 - Salon paznokci Porn - 1 - 2 - 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 2 - 3"
-msgstr "0.3 - Salon Paznokci Porn - 1 - 2 - 3"
+msgstr "0.3 - Salon paznokci Porn - 1 - 2 - 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 2 - 4"
-msgstr "0.3 - Salon Manicury Porn - 1 - 2 - 4"
+msgstr "0.3 - Salon paznokci Porn - 1 - 2 - 4"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 2 - 5"
-msgstr "0.3 - Salon Paznokci Porn - 1 - 2 - 5"
+msgstr "0.3 - Salon paznokci Porn - 1 - 2 - 5"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 2 - 6"
-msgstr "0.3 - Salon Paznokci Porn - 1 - 2 - 6"
+msgstr "0.3 - Salon paznokci Porn - 1 - 2 - 6"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 3"
-msgstr "0.3 - Salon Paznokci Porn - 1 - 3"
+msgstr "0.3 - Salon paznokci Porn - 1 - 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11115,17 +11097,17 @@ msgstr "0.3 - Salon paznokci porn - 1 - 4 - 1"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 4 - 2"
-msgstr "0.3 - Salon Paznokci Porn - 1 - 4 - 2"
+msgstr "0.3 - Salon paznokci Porn - 1 - 4 - 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 4 - 3"
-msgstr "0.3 - Salon Paznokci Porn - 1 - 4 - 3"
+msgstr "0.3 - Salon paznokci Porn - 1 - 4 - 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 5 - 1"
-msgstr "0.3 - Salon Paznokci Porn - 1 - 5 - 1"
+msgstr "0.3 - Salon paznokci Porn - 1 - 5 - 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11135,17 +11117,17 @@ msgstr "Nail Salon Porn"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 6"
-msgstr "0.3 - Salon Paznokci Porn - 1 - 6"
+msgstr "0.3 - Salon paznokci Porn - 1 - 6"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 7"
-msgstr "0.3 - Salon Paznokci Porn - 1 - 7"
+msgstr "0.3 - Salon paznokci Porn - 1 - 7"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 8"
-msgstr "0.3 - Salon Paznokci Porn - 1 - 8"
+msgstr "0.3 - Salon paznokci Porn - 1 - 8"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11155,7 +11137,7 @@ msgstr "0.3 - NailSalon - Backroom - 1 - Początkowa rozmowa z Maxem"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - NailSalon - Backroom - 1 - Secret Door - 0"
-msgstr "0.3 - Salon Paznokci - Tylny Pokój - 1 - Tajne Drzwi - 0"
+msgstr "0.3 - Salon Paznokci - Zaplecze - 1 - Tajne Drzwi - 0"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11628,10 +11610,10 @@ msgstr ":: Przygotowania seksualne z-z-zaraz się rozpoczną... Siła seksualna 
 
 #. src: dialog
 #. rich_text: <i>:: T-T-T-T- Welcome to- Welc- Welcome to Slutbox! Error: No destination... Correc- Correcting- ::</i>
-#. rich_translation: <i>:: W-w-w-witaj w- Wit- Witaj w Dziwkopudełku! Błąd: Brak celu... Popraw- Poprawianie- ::</i>
+#. rich_translation: <i>:: W-w-w-witaj w- Wit- Witaj w Slutboxu! Błąd: Brak celu... Popraw- Poprawianie- ::</i>
 msgctxt "ui"
 msgid ":: T-T-T-T- Welcome to- Welc- Welcome to Slutbox! Error: No destination... Correc- Correcting- ::"
-msgstr ":: W-w-w-witaj w- Wit- Witaj w Dziwkopudełku! Błąd: Brak celu... Popraw- Poprawianie- ::"
+msgstr ":: W-w-w-witaj w- Wit- Witaj w Slutboxu! Błąd: Brak celu... Popraw- Poprawianie- ::"
 
 #. src: dialog
 #. rich_text: <i>:: Undressing process beginning shortly... Returning to route... Sexual preparations will begin after undressing... :: </i>
@@ -11724,8 +11706,7 @@ msgstr "> Ahh- !"
 
 #. src: dialog
 #. rich_text: <i>> All <b>you</b> get to do is to surrender your meatstick to my whims. Isn't that right, fleshy?
-#. rich_translation: <i>> Jedyne, co ci wolno, to oddać swojego mięsnego kutasa moim zachciankom. Prawda, mięsniaku?
-#, rt-review
+#. rich_translation: <i>> Jedyne, co ci wolno, to oddać swojego mięsnego kutasa moim zachciankom. Prawda, <b>mięsniaku</b>?
 msgctxt "ui"
 msgid "> All you get to do is to surrender your meatstick to my whims. Isn't that right, fleshy?"
 msgstr "> Jedyne, co ci wolno, to oddać swojego mięsnego kutasa moim zachciankom. Prawda, mięsniaku?"
@@ -13652,17 +13633,17 @@ msgstr "Dodaj perwersję"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Add perversion 2"
-msgstr "Dodaj znieczyszczenie 2"
+msgstr "Dodaj perwersja 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Add perversion 3"
-msgstr "Dodaj znieczyszczenie 3"
+msgstr "Dodaj perwersja 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Add perversion 4"
-msgstr "Dodaj znieczyszczenie 4"
+msgstr "Dodaj perwersję 4"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -15903,7 +15884,7 @@ msgstr "Jesteśmy już na drugim okrążeniu?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Are we on the Bunnysuit Mission?"
-msgstr "Czy jesteśmy na misji w Bunnysuit?"
+msgstr "Czy jesteśmy na misji w Kostium króliczka?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -16615,8 +16596,7 @@ msgstr "Przynajmniej wciąż go masz."
 
 #. src: dialog
 #. rich_text: At least you-... You are better than them. One of those fanatics wouldn't offer themselves to the cities protectors so <b>willingly</b>.
-#. rich_translation: Przynajmniej ty... Jesteś od nich lepszy. Żaden z tych fanatyków nie oddałby się tak chętnie obrońcom miasta.
-#, rt-review
+#. rich_translation: Przynajmniej ty... Jesteś od nich lepszy. Żaden z tych fanatyków nie oddałby się <b>tak chętnie</b> obrońcom miasta.
 msgctxt "speaker:Enforcer"
 msgid "At least you-... You are better than them. One of those fanatics wouldn't offer themselves to the cities protectors so willingly."
 msgstr "Przynajmniej ty... Jesteś od nich lepszy. Żaden z tych fanatyków nie oddałby się tak chętnie obrońcom miasta."
@@ -17597,10 +17577,10 @@ msgstr "Podejdź bliżej, proszęę... I wypnij pierś... *hic*"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Bl-... Blocker-... Khhh-... Mnnhhh...</color>
-#. rich_translation: <color=#EB83FF>Bl-... Blocker-... Chhh-... Mmnnhhh...</color>
+#. rich_translation: <color=#EB83FF>Bl-... Bloker-... Chhh-... Mmnnhhh...</color>
 msgctxt "ui"
 msgid "Bl-... Blocker-... Khhh-... Mnnhhh..."
-msgstr "Bl-... Blocker-... Chhh-... Mmnnhhh..."
+msgstr "Bl-... Bloker-... Chhh-... Mmnnhhh..."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19062,8 +19042,7 @@ msgstr "Wyśrodkowuje okno u góry ekranu"
 
 #. src: dialog
 #. rich_text: Certainly. If you do a little... <b>Job</b> for me.
-#. rich_translation: Oczywiście. Jeśli zrobisz dla mnie małą... przysługę.
-#, rt-review
+#. rich_translation: Oczywiście. Jeśli zrobisz dla mnie małą... <b>przysługę</b>.
 msgctxt "speaker:Klaudia"
 msgid "Certainly. If you do a little... Job for me."
 msgstr "Oczywiście. Jeśli zrobisz dla mnie małą... przysługę."
@@ -22594,7 +22573,7 @@ msgstr "Czy udało nam się pokazać jej cycki?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did we grab the Bunnysuit already?"
-msgstr "Czy już zdobyliśmy Bunnysuit?"
+msgstr "Czy już zdobyliśmy Kostium króliczka?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22619,7 +22598,7 @@ msgstr "Podglądaliśmy się?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did we pick up Bunnysuit?"
-msgstr "Czy podnieśliśmy Bunnysuit?"
+msgstr "Czy podnieśliśmy Kostium króliczka?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22906,7 +22885,7 @@ msgstr "Wyłącz dołączenie"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Blocker"
-msgstr "Wyłącz blokowanie"
+msgstr "Wyłącz bloker"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23116,7 +23095,7 @@ msgstr "Wyłącz siebie"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable the Bunnysuit Visuals"
-msgstr "Wyłącz wizualizację Bunnysuit"
+msgstr "Wyłącz wizualizację Kostium króliczka"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -27642,8 +27621,7 @@ msgstr "W celu ustawienia ich stanu wizualnego"
 
 #. src: dialog
 #. rich_text: For some~ <b>macro</b> photography~
-#. rich_translation: Do~ makrofotografii~
-#, rt-review
+#. rich_translation: Do~ <b>makrofotografii</b>~
 msgctxt "ui"
 msgid "For some~ macro photography~"
 msgstr "Do~ makrofotografii~"
@@ -28114,32 +28092,32 @@ msgstr "Reklama Furline"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Gloves"
-msgstr "Rękawice Przysięgi Przyszłości"
+msgstr "Rękawice Futereswear"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Futereswear Gloves 2"
-msgstr "Rękawice Przysięgi Przyszłości 2"
+msgstr "Rękawice Futereswear 2"
 
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintight Suit Dark"
-msgstr "Przysięga przyszłości Obcisły strój Ciemny"
+msgstr "Futereswear Obcisły strój Ciemny"
 
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintight Suit Light"
-msgstr "Przysięga przyszłości: obcisły strój, jasny"
+msgstr "Futereswear: obcisły strój, jasny"
 
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintightv2"
-msgstr "Przysięga przyszłości: Skóropodobna v2"
+msgstr "Futereswear: Skóropodobna v2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Futereswear Skintightv2 2"
-msgstr "Przysięga przyszłości Obcisła v2 2"
+msgstr "Futereswear Obcisła v2 2"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -28154,7 +28132,7 @@ msgstr "Futurowe pasy przysięgi, czarne"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Straps Light"
-msgstr "Przysięga przyszłości: lekkie pasy"
+msgstr "Futereswear: lekkie pasy"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -28164,7 +28142,7 @@ msgstr "Futereswear — czarne bielizna"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Underwear White"
-msgstr "Przysięga przyszłości — bielizna biała"
+msgstr "Futereswear — bielizna biała"
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -28738,8 +28716,7 @@ msgstr "Obmacywana przez 2 dziewczyny"
 
 #. src: dialog
 #. rich_text: Getting just a little personal with customers will earn you an absolute <b>ton</b> of cash, ehehe!
-#. rich_translation: Odrobina osobistego podejścia do klientów przyniesie ci mnóstwo kasy, ehehe!
-#, rt-review
+#. rich_translation: Odrobina osobistego podejścia do klientów przyniesie ci <b>mnóstwo kasy</b>, ehehe!
 msgctxt "speaker:Rosie"
 msgid "Getting just a little personal with customers will earn you an absolute ton of cash, ehehe!"
 msgstr "Odrobina osobistego podejścia do klientów przyniesie ci mnóstwo kasy, ehehe!"
@@ -31749,8 +31726,7 @@ msgstr "Oto twój drink..."
 
 #. src: dialog
 #. rich_text: Here's your drink... <i>Sir</i>...
-#. rich_translation: Oto twój drink... Proszę pana...
-#, rt-review
+#. rich_translation: Oto twój drink... <i>Proszę pana</i>...
 msgctxt "speaker:Zoey"
 msgid "Here's your drink... Sir..."
 msgstr "Oto twój drink... Proszę pana..."
@@ -33054,8 +33030,7 @@ msgstr "Chuligan"
 
 #. src: dialog
 #. rich_text: <color=#B867FF>Hoooo</color>ly shit!
-#. rich_translation: O jaaa pierdolę!
-#, rt-review
+#. rich_translation: <color=#B867FF>O jaaa pierdolę!</color>
 msgctxt "speaker:Zoey"
 msgid "Hooooly shit!"
 msgstr "O jaaa pierdolę!"
@@ -34969,8 +34944,7 @@ msgstr "Nie jestem prostytutką, ty pieprzony dupku!"
 
 #. src: dialog
 #. rich_text: I'm <b>not</b> eager to... show off!
-#. rich_translation: Nie mam ochoty... się popisywać!
-#, rt-review
+#. rich_translation: <b>Nie mam ochoty</b>... się popisywać!
 msgctxt "ui"
 msgid "I'm not eager to... show off!"
 msgstr "Nie mam ochoty... się popisywać!"
@@ -35036,8 +35010,7 @@ msgstr "Tak mi przykro, Zoey... Ja-"
 
 #. src: dialog
 #. rich_text: I'm shorryy, miss..!  <i>hic</i>-.. Really..!
-#. rich_translation: Pprzepraszam, proszę paani..! czk-.. Naprawdę..!
-#, rt-review
+#. rich_translation: Pprzepraszam, proszę paani..! czk-.. <i>Naprawdę..!</i>
 msgctxt "ui"
 msgid "I'm shorryy, miss..!  hic-.. Really..!"
 msgstr "Pprzepraszam, proszę paani..! czk-.. Naprawdę..!"
@@ -36080,7 +36053,7 @@ msgstr "Iceagi - @Iceagi_"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Ich f"
-msgstr "PL: Ich f"
+msgstr "Ich f"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -36965,7 +36938,7 @@ msgstr "Czy jest na górze?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Is Use Blocker in progress?"
-msgstr "Czy blokowanie jest w toku?"
+msgstr "Czy bloker jest w toku?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -37170,7 +37143,7 @@ msgstr "Czy misja jest w toku?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Is on Mission to find Bunnysuit"
-msgstr "Jesteś na misji, by znaleźć Bunnysuit."
+msgstr "Jesteś na misji, by znaleźć Kostium króliczka."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -37488,7 +37461,7 @@ msgstr "Czy ma na sobie Bodywriting?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Is wearing Bunnysuit?"
-msgstr "Czy ma na sobie Bunnysuit?"
+msgstr "Czy ma na sobie Kostium króliczka?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -38303,7 +38276,7 @@ msgstr "Jane Doe"
 #. src: us
 msgctxt "ui"
 msgid "Japanese Machine Translated / 日本の機械翻訳"
-msgstr "Japoński maszynowy tłumaczenie / Japoński tłumaczenie maszynowe"
+msgstr "Japoński maszynowy tłumaczenie / Japońskie tłumaczenie maszynowe"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39263,7 +39236,7 @@ msgstr "Poproś Klaudię o wejście na górę – powtórka"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Klaudia Blocker In Hand"
-msgstr "Klaudia Blocker In Hand"
+msgstr "Klaudia Bloker In Hand"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41374,8 +41347,7 @@ msgstr "Szukasz czegoś konkretnego na moich cyckach, skarbie?"
 
 #. src: dialog
 #. rich_text: Looking for <b>this</b>?
-#. rich_translation: Tego szukasz?
-#, rt-review
+#. rich_translation: <b>Tego szukasz?</b>
 msgctxt "speaker:Klaudia"
 msgid "Looking for this?"
 msgstr "Tego szukasz?"
@@ -41672,17 +41644,17 @@ msgstr "Dolny Dystrykt"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Lower Redlight District"
-msgstr "Dolny Dzielnica Czerwonego Światła"
+msgstr "Dolny Dzielnica Czerwonych Latarni"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Lower Redlight District - Girls Flashing - 1"
-msgstr "Niższa Dzielnica Czerwonego Światła - Dziewczyny pokazujące się - 1"
+msgstr "Niższa Dzielnica Czerwonych Latarni - Dziewczyny pokazujące się - 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Lower Redlight District - Girls Flashing - 2"
-msgstr "Niższa Dzielnica Czerwonego Światła - Dziewczyny pokazujące się - 2"
+msgstr "Niższa Dzielnica Czerwonych Latarni - Dziewczyny pokazujące się - 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -44599,8 +44571,7 @@ msgstr "No no, ale z ciebie potulna...~ Znam kilku klientów, którzy zapłacili
 
 #. src: dialog
 #. rich_text: My, hear that, Zoey? Press my tits together. Make it nice and tight for our <i>customer</i>, ehehe.
-#. rich_translation: Słyszysz to, Zoey? Złóż moje cycki razem. Zrób to ładnie i ciasno dla naszego klienta, ehehe.
-#, rt-review
+#. rich_translation: Słyszysz to, Zoey? Złóż moje cycki razem. Zrób to ładnie i ciasno dla <i>naszego klienta</i>, ehehe.
 msgctxt "ui"
 msgid "My, hear that, Zoey? Press my tits together. Make it nice and tight for our customer, ehehe."
 msgstr "Słyszysz to, Zoey? Złóż moje cycki razem. Zrób to ładnie i ciasno dla naszego klienta, ehehe."
@@ -44692,8 +44663,7 @@ msgstr "Tajemnicza Kobieta"
 
 #. src: dialog
 #. rich_text: My~ look at how much there is in that condom, ehehe. You made him cum hard, <i>merc</i>.
-#. rich_translation: No~ spójrz, ile tego jest w tej prezerwatywie, ehehe. Sprawiłaś, że mocno doszedł, najemniczko.
-#, rt-review
+#. rich_translation: No~ spójrz, ile tego jest w tej prezerwatywie, ehehe. Sprawiłaś, że mocno doszedł, <i>najemniczko</i>.
 msgctxt "ui"
 msgid "My~ look at how much there is in that condom, ehehe. You made him cum hard, merc."
 msgstr "No~ spójrz, ile tego jest w tej prezerwatywie, ehehe. Sprawiłaś, że mocno doszedł, najemniczko."
@@ -44935,27 +44905,27 @@ msgstr "Salon paznokci"
 #. src: bundle
 msgctxt "speaker:Cocky"
 msgid "Nail Salon Clerk"
-msgstr "PL: Pracowniczka salonu paznokci (głos: Zadufany)"
+msgstr "Pracowniczka salonu paznokci (głos: Zadufany)"
 
 #. src: bundle
 msgctxt "speaker:Lewd"
 msgid "Nail Salon Clerk"
-msgstr "PL: Pracownica salonu paznokci"
+msgstr "Pracownica salonu paznokci"
 
 #. src: bundle
 msgctxt "speaker:Mewing"
 msgid "Nail Salon Clerk"
-msgstr "PL: Pracownica salonu paznokci (głos: Miauczenie)"
+msgstr "Pracownica salonu paznokci (głos: Miauczenie)"
 
 #. src: bundle
 msgctxt "speaker:Scheming"
 msgid "Nail Salon Clerk"
-msgstr "PL: Pracownica salonu paznokci (głos: Knucie)"
+msgstr "Pracownica salonu paznokci (głos: Knucie)"
 
 #. src: dialog
 msgctxt "speaker:Surprised"
 msgid "Nail Salon Clerk"
-msgstr "PL: Pracownica salonu paznokci (głos: Zaskoczona)"
+msgstr "Pracownica salonu paznokci (głos: Zaskoczona)"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -46332,8 +46302,7 @@ msgstr "Nie żebym miała coś przeciwko, ale myślałam, że chcesz wiedzieć, 
 
 #. src: dialog
 #. rich_text: Not <b>that</b> kind of job!
-#. rich_translation: Nie taka praca!
-#, rt-review
+#. rich_translation: <b>Nie taka praca!</b>
 msgctxt "ui"
 msgid "Not that kind of job!"
 msgstr "Nie taka praca!"
@@ -46563,7 +46532,7 @@ msgstr "Nova - 4 RoomIsLocked"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Nova - 5 - Got Bunnysuit before Quest"
-msgstr "Nova - 5 - Got Bunnysuit before Quest"
+msgstr "Nova - 5 - Got Kostium króliczka before Quest"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -46573,12 +46542,12 @@ msgstr "Nova - 5 - Walk into Shower"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Nova - 5 Got Bunnysuit"
-msgstr "Nova - 5 Got Bunnysuit"
+msgstr "Nova - 5 Got Kostium króliczka"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Nova - 5 Put on Bunnysuit"
-msgstr "Nova - 5 Put on Bunnysuit"
+msgstr "Nova - 5 Put on Kostium króliczka"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -46794,8 +46763,7 @@ msgstr "Skoro mi pomogłaś, co mogę zrobić, by spłacić ci dług?~"
 
 #. src: dialog
 #. rich_text: Now <b>that's</b> a bunnygirl, ehehe.
-#. rich_translation: Oto prawdziwa króliczka, ehehe.
-#, rt-review
+#. rich_translation: Oto prawdziwa króliczka, <b>ehehe</b>.
 msgctxt "ui"
 msgid "Now that's a bunnygirl, ehehe."
 msgstr "Oto prawdziwa króliczka, ehehe."
@@ -46879,8 +46847,7 @@ msgstr "A teraz rusz tyłek na górę do pokoju personelu. Zmyj ten smród, zani
 
 #. src: dialog
 #. rich_text: Now, now. Short on cash, hm? I'm happy to discuss a... <i>unique</i> price for someone of your... <b>proportions</b>.
-#. rich_translation: No no. Krótko z kasą, hmm? Chętnie omówię... wyjątkową cenę dla kogoś o twoich... proporcjach.
-#, rt-review
+#. rich_translation: No no. Krótko z kasą, hmm? Chętnie omówię... <i>wyjątkową cenę</i> dla kogoś o twoich... <b>proporcjach</b>.
 msgctxt "ui"
 msgid "Now, now. Short on cash, hm? I'm happy to discuss a... unique price for someone of your... proportions."
 msgstr "No no. Krótko z kasą, hmm? Chętnie omówię... wyjątkową cenę dla kogoś o twoich... proporcjach."
@@ -46967,8 +46934,7 @@ msgstr "O-och! Przepraszam!"
 
 #. src: dialog
 #. rich_text: O-Oh! Uh- <color=#EB83FF>I guess... I can do th</color>at-...
-#. rich_translation: O-och! Ech- chyba... mogę to zrobić-...
-#, rt-review
+#. rich_translation: O-och! Ech- chyba... <color=#EB83FF>mogę to zrobić</color>-...
 msgctxt "ui"
 msgid "O-Oh! Uh- I guess... I can do that-..."
 msgstr "O-och! Ech- chyba... mogę to zrobić-..."
@@ -47440,7 +47406,7 @@ msgstr "Och, cześć, Zoey! Mały świat- albo małe miasto, chyba."
 #. src: dialog
 msgctxt "ui"
 msgid "Oh hon, I'll be fine. This is why I get paid the... well I was gonna say big bucks, but... average sized bucks is more accurate."
-msgstr "PL: Och, kochanie, nic mi nie będzie. Dlatego mi płacą te... no, miałam powiedzieć grube dolary, ale... średniej wielkości dolary to trafniej."
+msgstr "Och, kochanie, nic mi nie będzie. Dlatego mi płacą te... no, miałam powiedzieć grube dolary, ale... średniej wielkości dolary to trafniej."
 
 #. src: dialog
 msgctxt "ui"
@@ -47464,8 +47430,7 @@ msgstr "O mój Boże, jesteś taka urocza, Zoey... Może osłodzisz trochę ukł
 
 #. src: dialog
 #. rich_text: Oh my god you sound <b>so</b> cute, eheh!
-#. rich_translation: O mój Boże, brzmisz tak słodko, eheh!
-#, rt-review
+#. rich_translation: O mój Boże, brzmisz <b>tak słodko</b>, eheh!
 msgctxt "ui"
 msgid "Oh my god you sound so cute, eheh!"
 msgstr "O mój Boże, brzmisz tak słodko, eheh!"
@@ -51708,10 +51673,10 @@ msgstr "Proszę, kochanie. Czuj się jak u siebie. Naprawdę nie przeszkadza mi,
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Please, sir...! Please- Please cum-! Cumm...!</color>
-#. rich_translation: <color=#EB83FF>PL: Proszę, panie...! Proszę... dojdź...! Dojdź...!</color>
+#. rich_translation: <color=#EB83FF>Proszę, panie...! Proszę... dojdź...! Dojdź...!</color>
 msgctxt "ui"
 msgid "Please, sir...! Please- Please cum-! Cumm...!"
-msgstr "PL: Proszę, panie...! Proszę... dojdź...! Dojdź...!"
+msgstr "Proszę, panie...! Proszę... dojdź...! Dojdź...!"
 
 #. src: dialog
 msgctxt "ui"
@@ -52123,8 +52088,7 @@ msgstr "Wyświetlanie wszystkich efektów kończyn gracza:"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Prior exp-...?</color> No! This... This is not something I usually do!
-#. rich_translation: Doświadczenie wstępne...? Nie! To... to nie jest coś, co zwykle robię!
-#, rt-review
+#. rich_translation: <color=#EB83FF>Doświadczenie wstępne...?</color> Nie! To... to nie jest coś, co zwykle robię!
 msgctxt "ui"
 msgid "Prior exp-...? No! This... This is not something I usually do!"
 msgstr "Doświadczenie wstępne...? Nie! To... to nie jest coś, co zwykle robię!"
@@ -54732,10 +54696,10 @@ msgstr "Runy... No dobrze. Chyba po prostu... zostawię cię w spokoju?"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Rungar asked, if-... like... he wants you to grope my chest...! </color>
-#. rich_translation: <color=#EB83FF>[Rungar] Zapytał, czy... no... chce, żebym go pogłaskała po piersi...!</color>
+#. rich_translation: <color=#EB83FF>Zapytał, czy... no... chce, żebym go pogłaskała po piersi...!</color>
 msgctxt "speaker:Zoey"
 msgid "Rungar asked, if-... like... he wants you to grope my chest...!"
-msgstr "[Rungar] Zapytał, czy... no... chce, żebym go pogłaskała po piersi...!"
+msgstr "Zapytał, czy... no... chce, żebym go pogłaskała po piersi...!"
 
 #. src: dialog
 msgctxt "ui"
@@ -58516,7 +58480,7 @@ msgstr "Więc... chcesz, żebym odwróciła ich uwagę na chwilę i tyle?"
 #. src: dialog
 msgctxt "ui"
 msgid "So? I said I'm thirsty."
-msgstr "PL: No? Powiedziałem, że jestem spragniony."
+msgstr "No? Powiedziałem, że jestem spragniony."
 
 #. src: field:DisplayName
 msgctxt "ui"
@@ -61111,8 +61075,7 @@ msgstr "R-rób tyle zdjęć, ile potrrzebujesz, kotku!"
 
 #. src: dialog
 #. rich_text: T-There used to be <color=#EB83FF>a dildo</color> here...
-#. rich_translation: T-tutaj kiedyś było dildo...
-#, rt-review
+#. rich_translation: T-tutaj kiedyś było <color=#EB83FF>dildo</color>...
 msgctxt "ui"
 msgid "T-There used to be a dildo here..."
 msgstr "T-tutaj kiedyś było dildo..."
@@ -63532,7 +63495,7 @@ msgstr "Myślisz, że dasz radę szybko skleić jakiś gadżet, który pomoże n
 #. src: dialog
 msgctxt "ui"
 msgid "Think you could get us in that Slutbox, Z?"
-msgstr "Myślisz, że wkręcisz nas do tej Dziwkomaty, Z?"
+msgstr "Myślisz, że wkręcisz nas do tej Slutboxy, Z?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -65162,8 +65125,7 @@ msgstr "U-uh... halo? Kto tam?"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>U-Uh</color>m! I uh- I gotta get goin'! Places to be- uhm- here's your picture!
-#. rich_translation: U-yhm! Ja yhm- muszę lecieć! Mam sprawy- yhm- oto twoje zdjęcie!
-#, rt-review
+#. rich_translation: <color=#EB83FF>U-yhm!</color> Ja yhm- muszę lecieć! Mam sprawy- yhm- oto twoje zdjęcie!
 msgctxt "ui"
 msgid "U-Uhm! I uh- I gotta get goin'! Places to be- uhm- here's your picture!"
 msgstr "U-yhm! Ja yhm- muszę lecieć! Mam sprawy- yhm- oto twoje zdjęcie!"
@@ -65751,7 +65713,7 @@ msgstr "Uhm... Hej, nie dotykaj, proszę."
 #. src: dialog
 msgctxt "ui"
 msgid "Uhm... I had to take a picture of you while you were out... It was the only way I could get you the battery you needed."
-msgstr "PL: Uhm... Musiałam zrobić ci zdjęcie, kiedy byłaś nieprzytomna... Tylko tak mogłam zdobyć baterię, której potrzebowałaś."
+msgstr "Uhm... Musiałam zrobić ci zdjęcie, kiedy byłaś nieprzytomna... Tylko tak mogłam zdobyć baterię, której potrzebowałaś."
 
 #. src: dialog
 msgctxt "ui"
@@ -67131,8 +67093,7 @@ msgstr "C-Czekaj! Ja taka nie jestem!"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>W-Wait... That was</color>n't- I didn't mean to-
-#. rich_translation: C-Czekaj... To nie było- Nie chciałam-
-#, rt-review
+#. rich_translation: <color=#EB83FF>C-Czekaj... To nie było-</color> Nie chciałam-
 msgctxt "ui"
 msgid "W-Wait... That wasn't- I didn't mean to-"
 msgstr "C-Czekaj... To nie było- Nie chciałam-"
@@ -68046,7 +68007,7 @@ msgstr "Czekaj na obiekt interaktywny 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for interactable or horny drop"
-msgstr "PL: Poczekaj na interaktywny obiekt albo spadek napalenia."
+msgstr "Poczekaj na interaktywny obiekt albo spadek napalenia."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68507,8 +68468,7 @@ msgstr "Czekaj. To jakby zatrzymuje swędzenie? Na dobre?"
 
 #. src: dialog
 #. rich_text: Wait..! Am I hearing music? <b>You're</b> out having fun?! Tell me where!
-#. rich_translation: Czekaj..! Czy słyszę muzykę? Bawisz się na mieście?! Mów gdzie!
-#, rt-review
+#. rich_translation: Czekaj..! Czy słyszę muzykę? <b>Bawisz się</b> na mieście?! Mów gdzie!
 msgctxt "ui"
 msgid "Wait..! Am I hearing music? You're out having fun?! Tell me where!"
 msgstr "Czekaj..! Czy słyszę muzykę? Bawisz się na mieście?! Mów gdzie!"
@@ -69124,8 +69084,7 @@ msgstr "Obaj wiemy, dlaczego poszedłeś do łazienki z Novą. Khh... Zapłacę 
 
 #. src: dialog
 #. rich_text: We both know you don't have that kind of money to make up for your failure. Don't we, <i>merc</i>?
-#. rich_translation: Obaj wiemy że nie masz tyle kasy żeby odpokutować porażkę. Prawda, najemniku?
-#, rt-review
+#. rich_translation: Obaj wiemy że nie masz tyle kasy żeby odpokutować porażkę. Prawda, <i>najemniku</i>?
 msgctxt "ui"
 msgid "We both know you don't have that kind of money to make up for your failure. Don't we, merc?"
 msgstr "Obaj wiemy że nie masz tyle kasy żeby odpokutować porażkę. Prawda, najemniku?"
@@ -69370,7 +69329,7 @@ msgstr "Nosisz nasienie Andro jak porządny zbiornik na spermę, ahaha! Weź mó
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wearing Bunnysuit?"
-msgstr "Nosisz Bunnysuit?"
+msgstr "Nosisz Kostium króliczka?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -70729,7 +70688,7 @@ msgstr "Skąd w ogóle masz to ustrojstwo?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Where's my Bunnysuit?"
-msgstr "Gdzie jest mój Bunnysuit?"
+msgstr "Gdzie jest mój Kostium króliczka?"
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -70985,8 +70944,7 @@ msgstr "Czemu czuję, że zaraz będzie jakieś ale?"
 
 #. src: dialog
 #. rich_text: Why do I wish he w<color=#EB83FF>as fucking me instead?</color> Agh! Stupid, stupid...
-#. rich_translation: Czemu chcę, żeby to mnie pieprzył? Agh! Głupia, głupia...
-#, rt-review
+#. rich_translation: Czemu chcę, żeby to mnie <color=#EB83FF>pieprzył</color>? Agh! Głupia, głupia...
 msgctxt "ui"
 msgid "Why do I wish he was fucking me instead? Agh! Stupid, stupid..."
 msgstr "Czemu chcę, żeby to mnie pieprzył? Agh! Głupia, głupia..."
@@ -73176,8 +73134,7 @@ msgstr "Rozumiem."
 
 #. src: dialog
 #. rich_text: You got it~ <color=#EB83FF>Mmm~</color> Look at you <color=#EB83FF>squirm~</color>
-#. rich_translation: Masz~ <color=#EB83FF>Mmm~</color> Popatrz, jak się wijesz~
-#, rt-review
+#. rich_translation: Masz~ <color=#EB83FF>Mmm~</color> Popatrz, jak się <color=#EB83FF>wijesz~</color>
 msgctxt "ui"
 msgid "You got it~ Mmm~ Look at you squirm~"
 msgstr "Masz~ Mmm~ Popatrz, jak się wijesz~"
@@ -73242,7 +73199,7 @@ msgstr "Słyszałaś mnie. Pozwól, że to zrobię, a dostaniesz to, czego chces
 #. src: dialog
 msgctxt "ui"
 msgid "You heard me. Not like we enjoy standing around here all day either. Should be halfway through a free-use session with one of the district"
-msgstr "PL: Słyszałaś mnie. Nie żebyśmy też lubili tu stać cały dzień. Powinniśmy być już w połowie darmowej sesji z kimś z dzielnicy."
+msgstr "Słyszałaś mnie. Nie żebyśmy też lubili tu stać cały dzień. Powinniśmy być już w połowie darmowej sesji z kimś z dzielnicy."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>You just think so because you're a nasty pervert...!</color>
@@ -73667,8 +73624,7 @@ msgstr "Trafisz tu przez każdy mój automat, który znajdziesz."
 
 #. src: dialog
 #. rich_text: You'll half the price, if I... <color=#EB83FF>let you</color>-...?
-#. rich_translation: Złóżesz cenę o połowę, jeśli... pozwolę ci...?
-#, rt-review
+#. rich_translation: Złóżesz cenę o połowę, jeśli... <color=#EB83FF>pozwolę ci</color>...?
 msgctxt "speaker:Zoey"
 msgid "You'll half the price, if I... let you-...?"
 msgstr "Złóżesz cenę o połowę, jeśli... pozwolę ci...?"
@@ -76536,7 +76492,7 @@ msgstr "dryfowałam daleko, stoję sama"
 #. src: dialog
 msgctxt "ui"
 msgid "vibrator still going)"
-msgstr "Wibrator wciąż działa.）"
+msgstr "Wibrator wciąż działa.)"
 
 #. src: dialog
 msgctxt "ui"
@@ -76712,4 +76668,3 @@ msgstr "zane dragco"
 msgctxt "ui"
 msgid "| GetDataFromItem: Item doesn't exist! Returning empty DynamicTable."
 msgstr "| GetDataFromItem: Przedmiot nie istnieje! Zwracanie pustej DynamicTable."
-

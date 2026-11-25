@@ -136,7 +136,7 @@ potgen ─→ po/template.pot (источник правды)
 po/<lang>.po ─→ po2dat ─→ runtime/patch_<lang>.dat (JSON-lines)
         │
         ▼
-deploy ─→ <игра>/dwmapi.dll + <игра>/NeonTranslatorDX/ (DLL + patch + шрифты + active_lang.txt + манифест)
+deploy ─→ <игра>/dwmapi.dll + <игра>/mods/NeonTranslatorDX/ (DLL + patch + шрифты + active_lang.txt + манифест)
 ```
 
 Рантайм читает **один** `patch_<lang>.dat` (UTF-8, один JSON-объект на строку).
@@ -290,7 +290,7 @@ npm run verify         # всё вместе
 
 `NeonTranslatorDX.dll` — рантайм-плагин: перехватывает отрисовку и подменяет текст в памяти.
 Все его файлы (шрифты, словари, `active_lang.txt`, лог) живут в
-`<игра>/NeonTranslatorDX/`; вне папки — только лоадер `dwmapi.dll`.
+`<игра>/mods/NeonTranslatorDX/`; вне папки — только лоадер `dwmapi.dll`.
 Кириллица добавляется в TMP-атлас в рантайме (`TryAddCharacters`), CJK для ja/zh/ko рисуется
 оверлеем UGUI. Штатного переключателя языка в игре нет — свой оверлей (`F9`).
 Подробности — `AGENTS.md` старого репозитория (архив) и `docs/`.

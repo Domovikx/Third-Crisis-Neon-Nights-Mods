@@ -4,16 +4,16 @@
  * Раскладка «одна папка» (2026-11-24):
  *
  *   <игра>/dwmapi.dll                     лоадер (единственный файл вне папки)
- *   <игра>/NeonTranslatorDX/
+ *   <игра>/mods/NeonTranslatorDX/
  *     NeonTranslatorDX.dll
- *     fonts/{RobotoCondensed-Regular,NotoSansSC,NotoSansJP}.ttf
+ *     fonts/{RobotoCondensed-Regular,NotoSansSC,NotoSansJP,...}.ttf
  *     patch_<lang>.dat
  *     active_lang.txt
  *     install-manifest.json               что поставлено: файл, размер, sha256
  *
  * Рантайм разрешает шрифты/словарь/`active_lang.txt` относительно
  * собственной сборки (`Assembly.Location`), прокси грузит DLL по пути
- * `<игра>/NeonTranslatorDX/NeonTranslatorDX.dll`.
+ * `<игра>/mods/NeonTranslatorDX/NeonTranslatorDX.dll`.
  *
  * Команды:
  *   deploy (по умолчанию) — поставить;
@@ -53,14 +53,17 @@ import { l10nBinary } from "../../../../scripts/text_cli.mts";
 import { buildRuntime, resolveGame } from "../../build-translator/scripts/build.mts";
 import { buildProxy } from "../../build-translator/scripts/build_proxy.mts";
 
-/** Папка мода в установке: сюда идёт ВСЁ, кроме лоадера. */
+/** Папка модов в установке (единая конвенция с TSSR). */
+export const MODS_FOLDER = "mods";
+
+/** Папка мода внутри `mods/`: сюда идёт ВСЁ, кроме лоадера. */
 export const MOD_FOLDER = "NeonTranslatorDX";
 
 /** Имя рантайм-сборки внутри папки мода. */
 export const RUNTIME_DLL = "NeonTranslatorDX.dll";
 
-/** Прежняя (до бренда NeonTranslatorDX) папка установки — только для `--migrate`. */
-export const LEGACY_MOD_FOLDER = "NeonTranslator";
+/** Прежние папки установки в корне игры — только для `--migrate`. */
+export const LEGACY_MOD_FOLDERS = ["NeonTranslatorDX", "NeonTranslator"];
 
 /** Имя файла установки: список поставленного + хэши (для uninstall). */
 export const MANIFEST_NAME = "install-manifest.json";
@@ -69,14 +72,31 @@ export const MANIFEST_NAME = "install-manifest.json";
 export const FONT_SUBDIR = "fonts";
 
 /** Шрифты, которые кладутся в `fonts/` (CJK — необязательные). */
-export const CJK_FONTS = ["NotoSansSC.ttf", "NotoSansJP.ttf"];
+export const CJK_FONTS = [
+  "NotoSansSC.ttf",
+  "NotoSansJP.ttf",
+  "NotoSansKR.ttf",
+  "NotoSansMarks.ttf",
+];
 
 /** Основной шрифт с кириллицей (обязателен). */
 export const MAIN_FONT = "RobotoCondensed-Regular.ttf";
 
+/** Политика CJK-типографики: кладётся рядом со шрифтами, читается рантаймом. */
+export const TYPOGRAPHY = "typography.json";
+
+/** Шрифты-кандидаты для скрытой страницы сравнения (Ctrl+F12 -> Compare). */
+export const DEMO_FONTS = [
+  "Roboto-Regular.ttf",
+  "Inter.ttf",
+  "NotoSans-Regular.ttf",
+  "IBMPlexSans-Regular.ttf",
+  "SourceSans3-Regular.ttf",
+];
+
 /** Целевой каталог рантайма и его данных. */
 export function modDir(gameDir: string): string {
-  return join(gameDir, MOD_FOLDER);
+  return join(gameDir, MODS_FOLDER, MOD_FOLDER);
 }
 
 export function manifestPath(gameDir: string): string {
@@ -154,6 +174,22 @@ export function planDeploy(
       optional: true,
     });
   }
+  for (const font of DEMO_FONTS) {
+    add({
+      what: `шрифт-кандидат ${font} (demo)`,
+      from: join(repoRoot, "fonts", font),
+      to: join(fontsTarget, font),
+      kind: "copy",
+      optional: true,
+    });
+  }
+  add({
+    what: `типографика ${TYPOGRAPHY}`,
+    from: join(repoRoot, "fonts", TYPOGRAPHY),
+    to: join(fontsTarget, TYPOGRAPHY),
+    kind: "copy",
+    optional: true,
+  });
   // Необязательный, но нужный, если игра/мод вызывают прочие экспорты
   // dwmapi: прокси форвардит их сюда. Лежит в папке мода, чтобы в корне
   // оставался ровно один файл.
@@ -579,7 +615,7 @@ export function executeUninstall(plan: UninstallPlan): UninstallResult {
   // Сначала подпапки (fonts), затем папка мода. Только пустые: rmdir не
   // рекурсивен, поэтому чужие файлы внутри сохраняют папку.
   const removedDirs: string[] = [];
-  for (const dir of [join(plan.modDir, FONT_SUBDIR), plan.modDir]) {
+  for (const dir of [join(plan.modDir, FONT_SUBDIR), plan.modDir, join(plan.game, MODS_FOLDER)]) {
     if (!existsSync(dir)) continue;
     if (readdirSync(dir).length === 0) {
       rmdirSync(dir);
@@ -612,13 +648,16 @@ const LEGACY_MANAGED_FILES = [
   ...CJK_FONTS,
 ];
 
-/** Имена, которые могли остаться в прежней папке `<игра>/NeonTranslator/`. */
+/** Имена, которые могли остаться в прежних папках `<игра>/<mod>/`. */
 const LEGACY_OLD_MOD_FILES = [
   "NeonTranslatorRuntime.dll",
+  "NeonTranslatorDX.dll",
   "NeonTranslator.log",
+  "NeonTranslatorDX.log",
   "dump_GUIDictionary.json",
   "active_lang.txt",
   "install-manifest.json",
+  "dwmapi_real.dll",
 ];
 
 /** Мусор в корне игры от наших сборок (не файлы игры). */
@@ -631,7 +670,6 @@ const LEGACY_ROOT_FILES = ["dwmapi.exp", "dwmapi.lib", "dwmapi_real.dll", "nul"]
 export function planMigrate(gameDir: string): LegacyFile[] {
   const out: LegacyFile[] = [];
   const managed = join(gameDir, GAME_DATA_FOLDER, "Managed");
-  const oldMod = join(gameDir, LEGACY_MOD_FOLDER);
   const push = (abs: string) => {
     if (existsSync(abs) && !out.some((f) => f.abs === abs))
       out.push({ path: relative(gameDir, abs).replaceAll("\\", "/"), abs });
@@ -641,11 +679,16 @@ export function planMigrate(gameDir: string): LegacyFile[] {
   for (const name of safeReaddir(managed)) {
     if (/^patch_[a-z]{2}\.dat$/i.test(name)) push(join(managed, name));
   }
-  for (const name of LEGACY_OLD_MOD_FILES) push(join(oldMod, name));
-  for (const name of safeReaddir(oldMod)) {
-    if (/^patch_[a-z]{2}\.dat$/i.test(name)) push(join(oldMod, name));
+  for (const folder of LEGACY_MOD_FOLDERS) {
+    const oldMod = join(gameDir, folder);
+    for (const name of LEGACY_OLD_MOD_FILES) push(join(oldMod, name));
+    for (const name of safeReaddir(oldMod)) {
+      if (/^patch_[a-z]{2}\.dat$/i.test(name)) push(join(oldMod, name));
+    }
+    for (const name of safeReaddir(join(oldMod, FONT_SUBDIR))) {
+      if (/\.(ttf|json)$/i.test(name)) push(join(oldMod, FONT_SUBDIR, name));
+    }
   }
-  for (const name of [MAIN_FONT, ...CJK_FONTS]) push(join(oldMod, FONT_SUBDIR, name));
   for (const name of LEGACY_ROOT_FILES) push(join(gameDir, name));
   return out;
 }
@@ -656,10 +699,59 @@ export interface MigrateResult {
   removedDirs: string[];
 }
 
-/** Удалить артефакты прежней раскладки + опустевшую старую папку; всё — в логе. */
+export interface MigrateCopy {
+  from: string;
+  to: string;
+}
+
+/**
+ * Что перенести из старых раскладок в новую папку перед удалением: словари,
+ * шрифты, типографика и `dwmapi_real.dll`. Копируем только отсутствующее —
+ * свежая сборка деплоя имеет приоритет. Не переносим рантайм/лог/дамп:
+ * рантайм ставит деплой, лог и дамп создаст игра заново.
+ */
+export function planMigrateCopies(gameDir: string): MigrateCopy[] {
+  const dest = modDir(gameDir);
+  const destFonts = join(dest, FONT_SUBDIR);
+  const sources = [
+    join(gameDir, GAME_DATA_FOLDER, "Managed"),
+    ...LEGACY_MOD_FOLDERS.map((folder) => join(gameDir, folder)),
+  ];
+  const copies: MigrateCopy[] = [];
+  const add = (from: string, to: string) => {
+    if (existsSync(from) && !existsSync(to) && !copies.some((c) => c.to === to)) {
+      copies.push({ from, to });
+    }
+  };
+  for (const src of sources) {
+    for (const name of safeReaddir(src)) {
+      if (/^patch_[a-z]{2}\.dat$/i.test(name)) add(join(src, name), join(dest, name));
+    }
+    for (const name of safeReaddir(join(src, FONT_SUBDIR))) {
+      if (/\.(ttf|json)$/i.test(name)) add(join(src, FONT_SUBDIR, name), join(destFonts, name));
+    }
+    add(join(src, "dwmapi_real.dll"), join(dest, "dwmapi_real.dll"));
+  }
+  return copies;
+}
+
+/** Удалить артефакты прежней раскладки + опустевшие старые папки; всё — в логе. */
 export function executeMigrate(files: LegacyFile[], gameDir: string): MigrateResult {
   const deleted: string[] = [];
   const failed: string[] = [];
+
+  // Сначала переносим то, чего нет в новой папке (словари других языков и пр.).
+  for (const copy of planMigrateCopies(gameDir)) {
+    try {
+      copyAtomic(copy.from, copy.to);
+      console.log(`  + migrated: ${relative(gameDir, copy.to).replaceAll("\\", "/")}`);
+    } catch (e) {
+      failed.push(
+        `${relative(gameDir, copy.from).replaceAll("\\", "/")}: ${e instanceof Error ? e.message : String(e)}`,
+      );
+    }
+  }
+
   for (const file of files) {
     try {
       rmSync(file.abs, { force: true });
@@ -670,15 +762,17 @@ export function executeMigrate(files: LegacyFile[], gameDir: string): MigrateRes
     }
   }
 
-  // Старая папка удаляется только если опустела: чужие файлы её сохранят.
+  // Старые папки удаляются только если опустели: чужие файлы их сохранят.
   const removedDirs: string[] = [];
-  const oldMod = join(gameDir, LEGACY_MOD_FOLDER);
-  for (const dir of [join(oldMod, FONT_SUBDIR), oldMod]) {
-    if (!existsSync(dir)) continue;
-    if (readdirSync(dir).length === 0) {
-      rmdirSync(dir);
-      removedDirs.push(dir);
-      console.log(`  - папка: ${relative(gameDir, dir).replaceAll("\\", "/")}`);
+  for (const folder of LEGACY_MOD_FOLDERS) {
+    const oldMod = join(gameDir, folder);
+    for (const dir of [join(oldMod, FONT_SUBDIR), oldMod]) {
+      if (!existsSync(dir)) continue;
+      if (readdirSync(dir).length === 0) {
+        rmdirSync(dir);
+        removedDirs.push(dir);
+        console.log(`  - папка: ${relative(gameDir, dir).replaceAll("\\", "/")}`);
+      }
     }
   }
   return { deleted, failed, removedDirs };
@@ -745,10 +839,10 @@ const USAGE = `Установка/удаление рантайм-перевод
   --rebuild      перед деплоем собрать runtime/NeonTranslatorDX.dll
   --proxy        перед деплоем собрать dwmapi.dll (нужен MSVC)
   --uninstall    удалить ровно поставленное (файлы из манифеста + пустые папки)
-  --migrate      после установки убрать артефакты прежней раскладки (Managed/)
+  --migrate      после установки убрать артефакты прежней раскладки (Managed/, старые папки)
   --help, -h     эта справка
 
-  Раскладка: <игра>/dwmapi.dll + <игра>/${MOD_FOLDER}/ (всё остальное).
+  Раскладка: <игра>/dwmapi.dll + <игра>/${MODS_FOLDER}/${MOD_FOLDER}/ (всё остальное).
   Игра: TCNN_GAME_DIR=<папка игры> (иначе автопоиск по Steam-библиотекам).
 `;
 
@@ -842,6 +936,16 @@ function main(argv: string[]): number {
       return 1;
     }
     if (args.dryRun) {
+      if (args.migrate) {
+        const copies = planMigrateCopies(gameDir);
+        const deletes = planMigrate(gameDir);
+        console.log(`\nMigrate: перенести ${copies.length}, удалить ${deletes.length}`);
+        for (const c of copies) {
+          console.log(`  + ${relative(gameDir, c.from).replaceAll("\\", "/")}`);
+          console.log(` -> ${relative(gameDir, c.to).replaceAll("\\", "/")}`);
+        }
+        for (const f of deletes) console.log(`  - ${f.path}`);
+      }
       console.log("\nDry-run: ничего не записано. Для деплоя уберите --dry-run.");
       return 0;
     }

@@ -25,10 +25,11 @@ import { GAME_DATA_FOLDER } from "../../../../scripts/game_dir.mts";
 import { l10nBinary } from "../../../../scripts/text_cli.mts";
 import {
   CJK_FONTS,
-  LEGACY_MOD_FOLDER,
+  LEGACY_MOD_FOLDERS,
   MAIN_FONT,
   MANIFEST_NAME,
   MOD_FOLDER,
+  MODS_FOLDER,
   RUNTIME_DLL,
   copyAtomic,
   executeDeploy,
@@ -93,6 +94,7 @@ function fakeRepo(
   }
   writeFileSync(join(dir, "fonts", MAIN_FONT), "ttf");
   for (const font of CJK_FONTS) writeFileSync(join(dir, "fonts", font), "ttf");
+  writeFileSync(join(dir, "fonts", "typography.json"), "{}");
   writeFileSync(join(dir, "po", "template.pot"), POT);
   writeFileSync(join(dir, "po", "ru.po"), RU_PO);
   if (options.proxy !== false) writeFileSync(join(dir, "dwmapi.dll"), "MZ fake proxy");
@@ -137,27 +139,27 @@ test("planDeploy(ru): всё в NeonTranslatorDX, прокси — в корен
 
   assert.equal(plan.native, false);
   assert.deepEqual(plan.missing, []);
-  assert.equal(plan.modDir, join(game, MOD_FOLDER));
+  assert.equal(plan.modDir, join(game, MODS_FOLDER, MOD_FOLDER));
   const kinds = plan.ops.map((o) => o.kind);
   assert.ok(kinds.includes("build-dat"));
   assert.ok(kinds.includes("write-active-lang"));
   assert.ok(kinds.includes("write-manifest"));
 
   const runtime = plan.ops.find((o) => o.what.includes("рантайм"));
-  assert.equal(runtime?.to, join(game, MOD_FOLDER, RUNTIME_DLL));
+  assert.equal(runtime?.to, join(game, MODS_FOLDER, MOD_FOLDER, RUNTIME_DLL));
 
   const dat = plan.ops.find((o) => o.kind === "build-dat");
   assert.equal(dat?.from, join(repo, "po", "ru.po"));
-  assert.equal(dat?.to, join(game, MOD_FOLDER, "patch_ru.dat"));
+  assert.equal(dat?.to, join(game, MODS_FOLDER, MOD_FOLDER, "patch_ru.dat"));
 
   const font = plan.ops.find((o) => o.what.includes(MAIN_FONT));
-  assert.equal(font?.to, join(game, MOD_FOLDER, "fonts", MAIN_FONT));
+  assert.equal(font?.to, join(game, MODS_FOLDER, MOD_FOLDER, "fonts", MAIN_FONT));
 
   const proxy = plan.ops.find((o) => o.what.includes("dwmapi.dll"));
   assert.equal(proxy?.to, join(game, "dwmapi.dll"), "прокси — в корень игры");
 
   const manifest = plan.ops.find((o) => o.kind === "write-manifest");
-  assert.equal(manifest?.to, join(game, MOD_FOLDER, MANIFEST_NAME));
+  assert.equal(manifest?.to, join(game, MODS_FOLDER, MOD_FOLDER, MANIFEST_NAME));
 });
 
 test("planDeploy(en): native-режим без словаря", () => {
@@ -242,7 +244,7 @@ test("planDeploy: не пишет в игру и в репо (dry-run-семан
     ["Assembly-CSharp.dll"],
     "в Managed/ ничего не появилось",
   );
-  assert.deepEqual(readdirSafe(join(game, MOD_FOLDER)), [], "папки мода ещё нет");
+  assert.deepEqual(readdirSafe(join(game, MODS_FOLDER, MOD_FOLDER)), [], "папки мода ещё нет");
   assert.equal(existsSync(join(repo, "runtime", "patch_ru.dat")), false);
 });
 
@@ -252,9 +254,14 @@ test("executeDeploy(ru): новая раскладка + манифест; в Ma
   const plan = planDeploy(game, "ru", repo);
   const result = executeDeploy(plan, repo);
   const mod = plan.modDir;
+  assert.equal(mod, join(game, "mods", MOD_FOLDER));
+
+  // Приёмка: в корне игры НЕТ папки NeonTranslatorDX — только mods/NeonTranslatorDX.
+  assert.equal(existsSync(join(game, MOD_FOLDER)), false, "в корне нет NeonTranslatorDX/");
+  assert.ok(existsSync(join(game, MODS_FOLDER, MOD_FOLDER)), "есть mods/NeonTranslatorDX/");
 
   for (const name of [RUNTIME_DLL, "patch_ru.dat", "active_lang.txt", MANIFEST_NAME]) {
-    assert.ok(existsSync(join(mod, name)), `${name} в ${MOD_FOLDER}/`);
+    assert.ok(existsSync(join(mod, name)), `${name} в ${MODS_FOLDER}/${MOD_FOLDER}/`);
   }
   for (const name of [MAIN_FONT, ...CJK_FONTS]) {
     assert.ok(existsSync(join(mod, "fonts", name)), `fonts/${name}`);
@@ -263,7 +270,11 @@ test("executeDeploy(ru): новая раскладка + манифест; в Ma
   assert.equal(result.dat?.rows, 2);
   assert.ok(existsSync(join(game, "dwmapi.dll")), "прокси в корне игры");
   assert.ok(existsSync(join(mod, "dwmapi_real.dll")), "dwmapi_real внутри папки мода");
-  assert.deepEqual(result.copied.length, plan.ops.length, "все операции выполнены");
+  assert.equal(
+    result.copied.length,
+    plan.ops.filter((o) => o.exists).length,
+    "выполнены все операции с существующими источниками",
+  );
   assert.deepEqual(
     readdirSafe(mod).filter((f) => f.endsWith(".part")),
     [],
@@ -283,10 +294,10 @@ test("executeDeploy(ru): новая раскладка + манифест; в Ma
   assert.equal(manifest.lang, "ru");
   const paths = manifest.files.map((f: { path: string }) => f.path);
   assert.ok(paths.includes("dwmapi.dll"));
-  assert.ok(paths.includes(`${MOD_FOLDER}/${RUNTIME_DLL}`));
-  assert.ok(paths.includes(`${MOD_FOLDER}/fonts/${MAIN_FONT}`));
-  assert.ok(paths.includes(`${MOD_FOLDER}/patch_ru.dat`));
-  assert.ok(paths.includes(`${MOD_FOLDER}/active_lang.txt`));
+  assert.ok(paths.includes(`${MODS_FOLDER}/${MOD_FOLDER}/${RUNTIME_DLL}`));
+  assert.ok(paths.includes(`${MODS_FOLDER}/${MOD_FOLDER}/fonts/${MAIN_FONT}`));
+  assert.ok(paths.includes(`${MODS_FOLDER}/${MOD_FOLDER}/patch_ru.dat`));
+  assert.ok(paths.includes(`${MODS_FOLDER}/${MOD_FOLDER}/active_lang.txt`));
   for (const file of manifest.files) {
     assert.ok(file.size > 0, `${file.path}: размер > 0`);
     assert.match(file.sha256, /^[0-9a-f]{64}$/);
@@ -303,7 +314,7 @@ test("executeDeploy(ru): .dat байт-в-байт равен независим
   const repo = fakeRepo("parity-repo");
   executeDeploy(planDeploy(game, "ru", repo), repo);
 
-  const installed = readFileSync(join(game, MOD_FOLDER, "patch_ru.dat"));
+  const installed = readFileSync(join(game, MODS_FOLDER, MOD_FOLDER, "patch_ru.dat"));
   const staged = readFileSync(join(repo, "runtime", "patch_ru.dat"));
 
   const reference = join(repo, "reference.dat");
@@ -355,10 +366,11 @@ test("uninstall: в игре остаются ровно исходные фай
   const removed = executeUninstall(plan);
 
   assert.deepEqual(snapshot(game), original, "после uninstall — только исходные файлы");
-  assert.equal(existsSync(join(game, MOD_FOLDER)), false, "папка мода удалена");
+  assert.equal(existsSync(join(game, MODS_FOLDER, MOD_FOLDER)), false, "папка мода удалена");
   assert.equal(existsSync(join(game, "dwmapi.dll")), false, "лоадер удалён");
   assert.equal(removed.manifestDeleted, true);
-  assert.ok(removed.removedDirs.length >= 2, "удалены fonts/ и папка мода");
+  assert.equal(existsSync(join(game, MODS_FOLDER)), false, "опустевшая mods/ удалена");
+  assert.ok(removed.removedDirs.length >= 3, "удалены fonts/, папка мода и mods/");
 });
 
 test("uninstall: чужие файлы не трогает (в Managed и в папке мода)", () => {
@@ -367,7 +379,7 @@ test("uninstall: чужие файлы не трогает (в Managed и в п�
   executeDeploy(planDeploy(game, "ru", repo), repo);
 
   const foreignManaged = join(game, GAME_DATA_FOLDER, "Managed", "user-mod.dll");
-  const foreignMod = join(game, MOD_FOLDER, "user-note.txt");
+  const foreignMod = join(game, MODS_FOLDER, MOD_FOLDER, "user-note.txt");
   writeFileSync(foreignManaged, "user");
   writeFileSync(foreignMod, "user");
 
@@ -375,8 +387,8 @@ test("uninstall: чужие файлы не трогает (в Managed и в п�
 
   assert.ok(existsSync(foreignManaged), "чужой файл в Managed сохранён");
   assert.ok(existsSync(foreignMod), "чужой файл в папке мода сохранён");
-  assert.equal(existsSync(join(game, MOD_FOLDER, RUNTIME_DLL)), false);
-  assert.equal(existsSync(join(game, MOD_FOLDER)), true, "непустая папка осталась");
+  assert.equal(existsSync(join(game, MODS_FOLDER, MOD_FOLDER, RUNTIME_DLL)), false);
+  assert.equal(existsSync(join(game, MODS_FOLDER, MOD_FOLDER)), true, "непустая папка осталась");
 });
 
 test("uninstall: изменённый вручную файл остаётся (хэш не совпал)", () => {
@@ -384,7 +396,7 @@ test("uninstall: изменённый вручную файл остаётся (
   const repo = fakeRepo("unin-modified-repo");
   executeDeploy(planDeploy(game, "ru", repo), repo);
 
-  const runtime = join(game, MOD_FOLDER, RUNTIME_DLL);
+  const runtime = join(game, MODS_FOLDER, MOD_FOLDER, RUNTIME_DLL);
   writeFileSync(runtime, "patched by user");
 
   const plan = planUninstall(game);
@@ -399,14 +411,14 @@ test("uninstall: удаляет журнал и дамп рантайма, па�
   const repo = fakeRepo("unin-runtime-artifacts-repo");
   executeDeploy(planDeploy(game, "ru", repo), repo);
 
-  writeFileSync(join(game, MOD_FOLDER, "NeonTranslatorDX.log"), "log");
-  writeFileSync(join(game, MOD_FOLDER, "dump_GUIDictionary.json"), "{}");
+  writeFileSync(join(game, MODS_FOLDER, MOD_FOLDER, "NeonTranslatorDX.log"), "log");
+  writeFileSync(join(game, MODS_FOLDER, MOD_FOLDER, "dump_GUIDictionary.json"), "{}");
 
   const plan = planUninstall(game);
   assert.ok(plan.targets.some((t) => t.path.endsWith("NeonTranslatorDX.log")));
   executeUninstall(plan);
 
-  assert.equal(existsSync(join(game, MOD_FOLDER)), false, "папка мода удалена");
+  assert.equal(existsSync(join(game, MODS_FOLDER, MOD_FOLDER)), false, "папка мода удалена");
 });
 
 test("uninstall: словари других языков тоже удаляются (смена языка после установки)", () => {
@@ -416,11 +428,15 @@ test("uninstall: словари других языков тоже удаляю�
 
   executeDeploy(planDeploy(game, "ru", repo), repo);
   executeDeploy(planDeploy(game, "de", repo), repo);
-  assert.ok(existsSync(join(game, MOD_FOLDER, "patch_ru.dat")));
-  assert.ok(existsSync(join(game, MOD_FOLDER, "patch_de.dat")));
+  assert.ok(existsSync(join(game, MODS_FOLDER, MOD_FOLDER, "patch_ru.dat")));
+  assert.ok(existsSync(join(game, MODS_FOLDER, MOD_FOLDER, "patch_de.dat")));
 
   executeUninstall(planUninstall(game));
-  assert.equal(existsSync(join(game, MOD_FOLDER)), false, "папка мода удалена целиком");
+  assert.equal(
+    existsSync(join(game, MODS_FOLDER, MOD_FOLDER)),
+    false,
+    "папка мода удалена целиком",
+  );
 });
 
 test("uninstall без манифеста: отказ, ничего не удаляет", () => {
@@ -435,7 +451,7 @@ test("migrate: старая раскладка (Managed + NeonTranslator/) уд�
   const game = fakeGame("migrate-game");
   const repo = fakeRepo("migrate-repo");
   const managed = join(game, GAME_DATA_FOLDER, "Managed");
-  const oldMod = join(game, LEGACY_MOD_FOLDER);
+  const oldMod = join(game, LEGACY_MOD_FOLDERS[0]);
 
   // Имитация прежней установки: файлы в Managed + старая папка.
   writeFileSync(join(managed, "NeonTranslatorRuntime.dll"), "old");
@@ -467,13 +483,41 @@ test("migrate: старая раскладка (Managed + NeonTranslator/) уд�
     ["Assembly-CSharp.dll"],
     "в Managed не осталось наших файлов",
   );
-  assert.ok(existsSync(join(game, MOD_FOLDER, RUNTIME_DLL)), "новая установка на месте");
+  assert.ok(
+    existsSync(join(game, MODS_FOLDER, MOD_FOLDER, RUNTIME_DLL)),
+    "новая установка на месте",
+  );
+});
+
+test("migrate: корневая NeonTranslatorDX/ переносится в mods/NeonTranslatorDX/", () => {
+  const game = fakeGame("migrate-root-brand");
+  const repo = fakeRepo("migrate-root-brand-repo");
+  const oldMod = join(game, MOD_FOLDER); // корневая папка прошлой раскладки
+  mkdirSync(join(oldMod, "fonts"), { recursive: true });
+  writeFileSync(join(oldMod, RUNTIME_DLL), "old");
+  writeFileSync(join(oldMod, "patch_ru.dat"), "old");
+  writeFileSync(join(oldMod, "patch_fr.dat"), "OLD-FR");
+  writeFileSync(join(oldMod, "NeonTranslatorDX.log"), "old");
+  writeFileSync(join(oldMod, "fonts", MAIN_FONT), "old");
+
+  executeDeploy(planDeploy(game, "ru", repo), repo);
+  const moved = executeMigrate(planMigrate(game), game);
+
+  assert.equal(moved.failed.length, 0);
+  assert.equal(existsSync(oldMod), false, "корневая папка удалена (опустела)");
+  assert.ok(existsSync(join(game, MODS_FOLDER, MOD_FOLDER, RUNTIME_DLL)), "новая папка на месте");
+  assert.ok(existsSync(join(game, MODS_FOLDER, MOD_FOLDER, "patch_ru.dat")));
+  assert.equal(
+    readFileSync(join(game, MODS_FOLDER, MOD_FOLDER, "patch_fr.dat"), "utf8"),
+    "OLD-FR",
+    "словарь другого языка перенесён, а не потерян",
+  );
 });
 
 test("migrate: чужой файл в старой папке сохраняет её", () => {
   const game = fakeGame("migrate-foreign");
   const repo = fakeRepo("migrate-foreign-repo");
-  const oldMod = join(game, LEGACY_MOD_FOLDER);
+  const oldMod = join(game, LEGACY_MOD_FOLDERS[0]);
   mkdirSync(oldMod, { recursive: true });
   writeFileSync(join(oldMod, "NeonTranslatorRuntime.dll"), "old");
   writeFileSync(join(oldMod, "keep-me.txt"), "user");

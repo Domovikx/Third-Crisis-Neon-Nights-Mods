@@ -10,7 +10,7 @@ agent: build
 npm run build            # NeonTranslatorDX.dll (нужен csc.exe от .NET Framework)
 npm run build:proxy      # dwmapi.dll (нужен MSVC Build Tools)
 npm run deploy -- --dry-run --lang ru   # план без записи
-npm run deploy -- --lang ru             # папка NeonTranslatorDX/ + лоадер + манифест
+npm run deploy -- --lang ru             # папка mods/NeonTranslatorDX/ + лоадер + манифест
 npm run deploy -- --lang en             # native-режим: словаря нет
 npm run deploy -- --uninstall           # удалить ровно поставленное
 npm run deploy -- --lang ru --migrate   # + чистка прежней раскладки (Managed/)
@@ -19,7 +19,7 @@ npm run deploy -- --lang ru --migrate   # + чистка прежней раск
 Что делает деплой:
 
 - собирает `po/<lang>.po` → `patch_<lang>.dat` через `rust-l10n po2dat` (одна реализация, не копия);
-- кладёт в `<игра>/NeonTranslatorDX/`: DLL рантайма, шрифты в `fonts/` (кириллица + CJK),
+- кладёт в `<игра>/mods/NeonTranslatorDX/`: DLL рантайма, шрифты в `fonts/` (кириллица + CJK),
   словарь (кроме `en`), `active_lang.txt` и `install-manifest.json` (файл, размер, sha256);
 - прокси `dwmapi.dll` — в корень игры: единственный файл вне папки мода.
 

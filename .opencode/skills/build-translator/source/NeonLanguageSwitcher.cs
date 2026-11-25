@@ -9,30 +9,58 @@ using UnityEngine.UI;
 
 namespace NeonTranslatorDX
 {
-    // In-game language switcher: F9 (or the mini-button) opens a panel with
-    // one button per patch_*.dat found next to the runtime DLL (mod folder),
-    // + native English.
-    // Switching is live: dictionary reload + UI repopulate, no restart.
+    // In-game language switcher (F9 / the mini-button in the corner).
+    //
+    // Layout (2026-11-25 redesign): a rounded neon card docked to the BOTTOM
+    // RIGHT corner, two columns of language rows, native names only, current
+    // language highlighted in the game's pink accent. It is sized and anchored
+    // so it never covers the main-menu buttons, at 1920x1080 and 1600x900.
+    // Language order comes from config/language-priority.json (guarded by
+    // .opencode/skills/build-translator/tests/menu.test.mts).
     // Own texts are excluded from scan-and-replace via SetSwitcherRoot.
     public class NeonLanguageSwitcher : MonoBehaviour
     {
-        // One row per language: code + native name + English name (a player
-        // who cannot read the script still finds their language).
+        // code, native name, English name — in language-priority order.
         private static readonly string[][] Langs = new string[][]
         {
             new string[] { "en", "English", "English" },
-            new string[] { "ru", "Русский", "Russian" },
+            new string[] { "zh", "\u4e2d\u6587", "Chinese" },
+            new string[] { "ru", "\u0420\u0443\u0441\u0441\u043a\u0438\u0439", "Russian" },
+            new string[] { "es", "Espa\u00f1ol", "Spanish" },
+            new string[] { "pt", "Portugu\u00eas", "Portuguese" },
             new string[] { "de", "Deutsch", "German" },
+            new string[] { "ja", "\u65e5\u672c\u8a9e", "Japanese" },
+            new string[] { "fr", "Fran\u00e7ais", "French" },
             new string[] { "pl", "Polski", "Polish" },
-            new string[] { "fr", "Français", "French" },
-            new string[] { "es", "Español", "Spanish" },
-            new string[] { "pt", "Português", "Portuguese" },
+            new string[] { "ko", "\ud55c\uad6d\uc5b4", "Korean" },
             new string[] { "it", "Italiano", "Italian" },
-            new string[] { "uk", "Українська", "Ukrainian" },
-            new string[] { "ja", "日本語", "Japanese" },
-            new string[] { "zh", "中文", "Chinese" },
-            new string[] { "ko", "한국어", "Korean" },
         };
+
+        // Game metrics (docs/ui-kit.md): buttons 420x72, gap 9, sharp corners,
+        // black shadow, white plate + black Orbitron text. Our panel uses the
+        // same rhythm on an 8 px grid: row 48, gap 8, padding 16/24.
+        private const float PanelW = 360f;
+        private const float PanelH = 436f;
+        private const float Margin = 24f;
+        private const float MiniH = 40f;
+        private const float RowH = 48f;
+        private const float RowGap = 8f;
+
+        private readonly KeyCode _toggleKey = KeyCode.F9;
+        private readonly List<string> _available = new List<string>();
+        private readonly Dictionary<string, Button> _buttons = new Dictionary<string, Button>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, Image> _rowImgs = new Dictionary<string, Image>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, Text> _rowLabels = new Dictionary<string, Text>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, Image> _rowAccents = new Dictionary<string, Image>(StringComparer.OrdinalIgnoreCase);
+
+        private Canvas _canvas;
+        private GameObject _panel;
+        private Text _miniLabel;
+        private Image _miniDot;
+        private Text _title;
+        private Text _hint;
+        private Font _font;
+        private Font _fontBold;
 
         private static string[] FindLang(string code)
         {
@@ -40,31 +68,6 @@ namespace NeonTranslatorDX
                 if (string.Equals(row[0], code, StringComparison.OrdinalIgnoreCase))
                     return row;
             return null;
-        }
-
-        private static readonly Color PanelColor = new Color(0.07f, 0.08f, 0.09f, 0.95f);
-        private static readonly Color BorderColor = new Color(0f, 0f, 0f, 0.95f);
-        private static readonly Color ButtonColor = new Color(0.16f, 0.17f, 0.19f, 1f);
-        private static readonly Color ButtonHiColor = new Color(0.24f, 0.25f, 0.28f, 1f);
-        private static readonly Color ButtonPressColor = new Color(0.1f, 0.11f, 0.12f, 1f);
-        private static readonly Color ActiveButtonColor = new Color(0.13f, 0.45f, 0.24f, 1f);
-        private static readonly Color MiniColor = new Color(0f, 0f, 0f, 0.6f);
-        private static readonly Color HintColor = new Color(0.7f, 0.7f, 0.7f, 1f);
-
-        private readonly KeyCode _toggleKey = KeyCode.F9;
-        private List<string> _langs = new List<string>();
-        private Canvas _canvas;
-        private GameObject _panel;
-        private Text _miniLabel;
-        private readonly Dictionary<string, Button> _buttons = new Dictionary<string, Button>(StringComparer.OrdinalIgnoreCase);
-        private Font _font;
-
-        private static string RowLabel(string code)
-        {
-            string[] row = FindLang(code);
-            if (row == null) return code.ToUpperInvariant();
-            if (row[1] == row[2]) return row[1];
-            return row[1] + " \u00b7 " + row[2];
         }
 
         private void Start()
@@ -77,7 +80,15 @@ namespace NeonTranslatorDX
                 EnsureEventSystem();
                 SceneManager.sceneLoaded += OnSceneLoaded;
                 RefreshHighlight();
-                TranslatorPlugin.Log("Switcher: ready (" + string.Join(",", _langs.ToArray()) + ")");
+                TranslatorPlugin.Log("Switcher: ready (" + string.Join(",", _available.ToArray()) + ")");
+                // Debug/screenshot flag: `langpanel.txt` next to the DLL opens
+                // the panel at start (normal play keeps it closed until F9).
+                try
+                {
+                    string dllDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                    if (File.Exists(Path.Combine(dllDir, "langpanel.txt"))) TogglePanel();
+                }
+                catch { }
             }
             catch (Exception ex)
             {
@@ -89,8 +100,12 @@ namespace NeonTranslatorDX
         {
             try
             {
-                if (Input.GetKeyDown(_toggleKey) && _panel != null)
-                    _panel.SetActive(!_panel.activeSelf);
+                if (Input.GetKeyDown(KeyCode.Escape) && _panel != null && _panel.activeSelf)
+                {
+                    _panel.SetActive(false);
+                    return;
+                }
+                if (Input.GetKeyDown(_toggleKey)) TogglePanel();
             }
             catch { }
         }
@@ -111,32 +126,32 @@ namespace NeonTranslatorDX
             return row != null ? row[1] : code.ToUpperInvariant();
         }
 
+        /// Languages that actually have a dictionary next to the DLL (+ English).
         private void DiscoverLanguages()
         {
-            _langs.Clear();
-            _langs.Add("en");
+            _available.Clear();
+            var have = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            have.Add("en");
             try
             {
                 string dllDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                string[] files = Directory.GetFiles(dllDir, "patch_*.dat");
-                var codes = new List<string>();
-                foreach (string f in files)
+                foreach (string f in Directory.GetFiles(dllDir, "patch_*.dat"))
                 {
                     string name = Path.GetFileNameWithoutExtension(f);
                     if (name != null && name.Length > 6)
                     {
                         string code = name.Substring(6).Trim().ToLowerInvariant();
-                        if (code.Length == 2 && code != "en" && !codes.Contains(code))
-                            codes.Add(code);
+                        if (code.Length == 2) have.Add(code);
                     }
                 }
-                codes.Sort();
-                _langs.AddRange(codes);
             }
             catch (Exception ex)
             {
                 TranslatorPlugin.Log("Switcher discover error: " + ex.Message);
             }
+            foreach (string[] row in Langs)
+                if (have.Contains(row[0])) _available.Add(row[0]);
+            if (!_available.Contains("en")) _available.Insert(0, "en");
         }
 
         private void EnsureEventSystem()
@@ -155,98 +170,7 @@ namespace NeonTranslatorDX
             }
         }
 
-        private Text MakeText(GameObject parent, string content, int size, TextAnchor align, bool bold, Font font)
-        {
-            var go = new GameObject("Text");
-            go.transform.SetParent(parent.transform, false);
-            var t = go.AddComponent<Text>();
-            t.font = font != null ? font : _font;
-            t.fontSize = size;
-            t.color = Color.white;
-            t.alignment = align;
-            if (bold) t.fontStyle = FontStyle.Bold;
-            t.text = content;
-            return t;
-        }
-
-        private static void Place(RectTransform rt, float ax, float ay, float x, float y, float w, float h)
-        {
-            rt.anchorMin = new Vector2(ax, ay);
-            rt.anchorMax = new Vector2(ax, ay);
-            rt.anchoredPosition = new Vector2(x, y);
-            rt.sizeDelta = new Vector2(w, h);
-        }
-
-        private static void Fill(RectTransform rt)
-        {
-            rt.anchorMin = Vector2.zero;
-            rt.anchorMax = Vector2.one;
-            rt.offsetMin = Vector2.zero;
-            rt.offsetMax = Vector2.zero;
-        }
-
-        private Text MakeLabel(GameObject parent, string content, int size, TextAnchor align, bool bold, float padLeft, Font font)
-        {
-            Text t = MakeText(parent, content, size, align, bold, font);
-            RectTransform rt = t.GetComponent<RectTransform>();
-            Fill(rt);
-            if (padLeft > 0f) rt.offsetMin = new Vector2(padLeft, 0f);
-            return t;
-        }
-
-        private Button MakeButtonShell(GameObject parent, string name, Color bg, UnityEngine.Events.UnityAction onClick)
-        {
-            var go = new GameObject(name);
-            go.transform.SetParent(parent.transform, false);
-            var img = go.AddComponent<Image>();
-            img.color = bg;
-            var btn = go.AddComponent<Button>();
-            var cb = btn.colors;
-            cb.normalColor = bg;
-            cb.highlightedColor = ButtonHiColor;
-            cb.pressedColor = ButtonPressColor;
-            cb.selectedColor = bg;
-            cb.fadeDuration = 0f;
-            btn.colors = cb;
-            btn.onClick.AddListener(onClick);
-            return btn;
-        }
-
-        private static Font RowFont(string code, Font fallback)
-        {
-            // Each row renders in its own script: the row itself proves
-            // whether that language's font is available (tofu = missing).
-            try
-            {
-                if (code == "zh")
-                {
-                    Font f = Font.CreateDynamicFontFromOSFont("Noto Sans SC", 18);
-                    if (f != null) return f;
-                }
-                if (code == "ja")
-                {
-                    Font f = Font.CreateDynamicFontFromOSFont("Noto Sans JP", 18);
-                    if (f != null) return f;
-                }
-                if (code == "ko")
-                {
-                    Font f = Font.CreateDynamicFontFromOSFont("Noto Sans KR", 18);
-                    if (f != null) return f;
-                    f = Font.CreateDynamicFontFromOSFont("Malgun Gothic", 18);
-                    if (f != null) return f;
-                }
-            }
-            catch { }
-            return fallback;
-        }
-
-        private Button MakeButton(GameObject parent, string label, float w, float h, UnityEngine.Events.UnityAction onClick, Font labelFont)
-        {
-            Button btn = MakeButtonShell(parent, "Button", ButtonColor, onClick);
-            MakeLabel(btn.gameObject, label, 18, TextAnchor.MiddleLeft, false, 20f, labelFont);
-            btn.GetComponent<RectTransform>().sizeDelta = new Vector2(w, h);
-            return btn;
-        }
+        // ---------------------------------------------------------------- fonts
 
         private static Font FindLegacyFont(string name)
         {
@@ -259,17 +183,46 @@ namespace NeonTranslatorDX
             return null;
         }
 
+        private static Font RowFont(string code, Font fallback)
+        {
+            // Each row renders in its own script: the row itself proves the
+            // font is available (tofu would be visible immediately).
+            try
+            {
+                if (code == "zh")
+                {
+                    Font f = Font.CreateDynamicFontFromOSFont("Noto Sans SC", 18);
+                    if (f != null) return f;
+                }
+                else if (code == "ja")
+                {
+                    Font f = Font.CreateDynamicFontFromOSFont("Noto Sans JP", 18);
+                    if (f != null) return f;
+                }
+                else if (code == "ko")
+                {
+                    Font f = Font.CreateDynamicFontFromOSFont("Noto Sans KR", 18);
+                    if (f != null) return f;
+                    f = Font.CreateDynamicFontFromOSFont("Malgun Gothic", 18);
+                    if (f != null) return f;
+                }
+            }
+            catch { }
+            return fallback;
+        }
+
+        // ------------------------------------------------------------------- ui
+
         private void BuildUi()
         {
-            // CJK-capable UI font first (menu shows 日本語/中文/한국어 labels):
-            // shipped TTFs are GDI-registered at Initialize, before any Start.
-            _font = Font.CreateDynamicFontFromOSFont("Noto Sans SC", 16);
-            if (_font == null)
-                _font = FindLegacyFont("NotoSansSC-Medium");
-            if (_font == null)
-                _font = Font.CreateDynamicFontFromOSFont("Arial", 16);
-            if (_font == null)
-                _font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+            // Roboto Condensed is the game's dialogue face (bundled with the mod
+            // and GDI-registered at init): latin + cyrillic here, Noto per row
+            // for CJK.
+            _fontBold = Font.CreateDynamicFontFromOSFont("Roboto Condensed", 20);
+            _font = _fontBold;
+            if (_font == null) _font = FindLegacyFont("Roboto-Condensed");
+            if (_font == null) _font = Font.CreateDynamicFontFromOSFont("Arial", 18);
+            if (_font == null) _font = Resources.GetBuiltinResource<Font>("Arial.ttf");
             if (_font != null) TranslatorPlugin.Log("Switcher: UI font = " + _font.name);
 
             var canvasGo = new GameObject("NeonTranslator_LangUI");
@@ -277,81 +230,242 @@ namespace NeonTranslatorDX
             _canvas = canvasGo.AddComponent<Canvas>();
             _canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             _canvas.sortingOrder = 32767;
+            var scaler = canvasGo.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1920f, 1080f);
+            scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
+            scaler.matchWidthOrHeight = 0.5f;
             canvasGo.AddComponent<GraphicRaycaster>();
 
-            // Mini-button, bottom-right, always visible.
-            var miniBtn = MakeButtonShell(canvasGo, "MiniButton", MiniColor,
-                delegate { if (_panel != null) _panel.SetActive(!_panel.activeSelf); });
-            _miniLabel = MakeLabel(miniBtn.gameObject, "RU", 16, TextAnchor.MiddleCenter, true, 0f, _font);
-            Place(miniBtn.GetComponent<RectTransform>(), 1f, 0f, -48f, 28f, 72f, 36f);
+            BuildMiniButton(canvasGo);
+            BuildPanel(canvasGo);
+        }
 
-            // Border INSIDE the panel (first child = drawn behind content,
-            // hidden together with it: no hanging square).
-            float panelW = 400f;
-            float panelH = 150f + _langs.Count * 48f;
+        private void BuildMiniButton(GameObject canvasGo)
+        {
+            RectTransform rt = NeonUiKit.Node("MiniButton", canvasGo.transform);
+            NeonUiKit.Place(rt, 1f, 0f, -Margin, Margin, 104f, MiniH);
+            var bg = rt.gameObject.AddComponent<Image>();
+            bg.sprite = NeonUiKit.Rounded(2, 64);
+            bg.type = Image.Type.Sliced;
+            bg.color = Color.white;
+            var btn = rt.gameObject.AddComponent<Button>();
+            var cb = btn.colors;
+            cb.normalColor = Color.white;
+            cb.highlightedColor = new Color(1.35f, 1.35f, 1.4f, 1f);
+            cb.pressedColor = new Color(0.8f, 0.8f, 0.85f, 1f);
+            cb.selectedColor = Color.white;
+            cb.fadeDuration = 0.08f;
+            btn.colors = cb;
+            btn.targetGraphic = bg;
+            btn.onClick.AddListener(TogglePanel);
 
-            // Panel, centered, hidden by default.
+            // Cyan hairline border, like the panel.
+            RectTransform borderRt = NeonUiKit.Node("MiniButton Border", canvasGo.transform);
+            NeonUiKit.Place(borderRt, 1f, 0f, -Margin - 1.5f, Margin - 1.5f, 107f, MiniH + 3f);
+            var border = borderRt.gameObject.AddComponent<Image>();
+            border.sprite = NeonUiKit.Rounded(3, 64);
+            border.type = Image.Type.Sliced;
+            border.color = new Color(0f, 0f, 0f, 0.9f);
+            border.raycastTarget = false;
+            borderRt.SetSiblingIndex(rt.GetSiblingIndex());
+
+            RectTransform dotRt = NeonUiKit.Node("MiniDot", rt);
+            NeonUiKit.Place(dotRt, 0f, 0.5f, 12f, -4f, 8f, 8f);
+            _miniDot = dotRt.gameObject.AddComponent<Image>();
+            _miniDot.sprite = NeonUiKit.Rounded(2, 32);
+            _miniDot.type = Image.Type.Sliced;
+            _miniDot.color = NeonUiKit.Pink;
+            _miniDot.raycastTarget = false;
+
+            _miniLabel = NeonUiKit.Label("MiniLabel", rt, "RU", 20, Color.black,
+                TextAnchor.MiddleCenter, _fontBold, true);
+            NeonUiKit.Fill(_miniLabel.rectTransform).offsetMin = new Vector2(20f, 0f);
+        }
+
+        private void BuildPanel(GameObject canvasGo)
+        {
             _panel = new GameObject("Panel");
             _panel.transform.SetParent(canvasGo.transform, false);
-            var panelImg = _panel.AddComponent<Image>();
-            panelImg.color = PanelColor;
-            var panelRt = _panel.GetComponent<RectTransform>();
-            Place(panelRt, 0.5f, 0.5f, 0f, 0f, panelW, panelH);
+            var panelRt = _panel.AddComponent<RectTransform>();
+            // Docked bottom-right. Height 392 keeps the top edge below the
+            // menu buttons' right margin: the panel is right of x=0.79*W,
+            // the buttons end at ~0.76*W at every tested aspect.
+            NeonUiKit.Place(panelRt, 1f, 0f, -Margin, Margin + MiniH + 20f, PanelW, PanelH);
 
-            var borderGo = new GameObject("Border");
-            borderGo.transform.SetParent(_panel.transform, false);
-            var borderImg = borderGo.AddComponent<Image>();
-            borderImg.color = BorderColor;
-            var borderRt = borderGo.GetComponent<RectTransform>();
-            borderRt.anchorMin = Vector2.zero;
-            borderRt.anchorMax = Vector2.one;
-            borderRt.offsetMin = new Vector2(-4f, -4f);
-            borderRt.offsetMax = new Vector2(4f, 4f);
-            borderGo.transform.SetAsFirstSibling();
+            // Soft shadow behind the card.
+            RectTransform shRt = NeonUiKit.Node("Panel Shadow", _panel.transform);
+            var sh = shRt.gameObject.AddComponent<Image>();
+            sh.sprite = NeonUiKit.Shadow(14, 96, 10);
+            sh.type = Image.Type.Sliced;
+            sh.color = new Color(0f, 0f, 0f, 0.55f);
+            sh.raycastTarget = false;
+            NeonUiKit.Fill(shRt).offsetMin = new Vector2(-10f, -16f);
+            shRt.offsetMax = new Vector2(10f, 6f);
 
-            // Plain neutral title (no accent strips: nothing alien to the game).
-            var title = MakeText(_panel, "Language", 20, TextAnchor.MiddleLeft, true, _font);
-            var titleRt = title.GetComponent<RectTransform>();
-            titleRt.anchorMin = new Vector2(0f, 1f);
-            titleRt.anchorMax = new Vector2(1f, 1f);
-            titleRt.offsetMin = new Vector2(24f, -54f);
-            titleRt.offsetMax = new Vector2(-68f, -14f);
+            // Card + neon hairline.
+            var body = NeonUiKit.MakeCard("Panel Body", _panel.transform, NeonUiKit.PanelBg, 2);
+            NeonUiKit.Fill(body.rectTransform);
+            // The game outlines plates with a BLACK hairline; no cyan glow.
+            NeonUiKit.Border(body.rectTransform, new Color(0f, 0f, 0f, 0.9f), 1.5f);
 
-            var closeBtn = MakeButtonShell(_panel, "Close", ButtonColor,
-                delegate { _panel.SetActive(false); });
-            MakeLabel(closeBtn.gameObject, "X", 18, TextAnchor.MiddleCenter, true, 0f, _font);
-            var closeRt = closeBtn.GetComponent<RectTransform>();
-            closeRt.anchorMin = new Vector2(1f, 1f);
-            closeRt.anchorMax = new Vector2(1f, 1f);
-            closeRt.anchoredPosition = new Vector2(-34f, -34f);
-            closeRt.sizeDelta = new Vector2(44f, 36f);
+            // Accent stripe at the top of the card (pink -> cyan gradient is
+            // faked with two solid segments, no shaders).
+            RectTransform accent = NeonUiKit.Node("Accent", _panel.transform);
+            NeonUiKit.Place(accent, 0f, 1f, 0f, 0f, 108f, 3f);
+            var accentImg = accent.gameObject.AddComponent<Image>();
+            accentImg.color = NeonUiKit.Pink;
+            accentImg.raycastTarget = false;
 
-            // One row per language: native name + English name (a player who
-            // cannot read the script still finds their language).
-            float y = -80f;
-            foreach (string lang in _langs)
+            _title = NeonUiKit.Label("Title", _panel.transform, NeonUiStrings.Title(TranslatorPlugin.CurrentLanguage),
+                22, NeonUiKit.TextColor, TextAnchor.MiddleLeft, _fontBold, true);
+            NeonUiKit.Place(_title.rectTransform, 0f, 1f, 20f, -30f, 240f, 30f);
+
+            var sub = NeonUiKit.Label("Sub", _panel.transform, "F9", 13,
+                new Color(NeonUiKit.Cyan.r, NeonUiKit.Cyan.g, NeonUiKit.Cyan.b, 0.9f),
+                TextAnchor.MiddleLeft, _font, false);
+            NeonUiKit.Place(sub.rectTransform, 0f, 1f, 128f, -32f, 120f, 24f);
+
+            BuildCloseButton();
+
+            // Two columns, six rows (11 languages max today).
+            float top = -68f;
+            float cellW = (PanelW - 2f * 16f - 8f) / 2f;
+            float cellH = RowH;
+            float gapY = RowGap;
+            for (int i = 0; i < Langs.Length; i++)
             {
-                string code = lang;
-                Button btn = MakeButton(_panel, RowLabel(code),
-                    panelW - 48f, 40f, delegate { OnLangClicked(code); }, RowFont(code, _font));
-                Place(btn.GetComponent<RectTransform>(), 0.5f, 1f, 0f, y, panelW - 48f, 40f);
-                _buttons[code] = btn;
-                y -= 48f;
+                string code = Langs[i][0];
+                int col = i % 2;
+                int row = i / 2;
+                float x = 16f + col * (cellW + 8f);
+                float y = top - row * (cellH + gapY);
+                BuildRow(code, x, y, cellW, cellH);
             }
 
-            var hint = MakeText(_panel, "Choose a language \u2022 F9 to close", 14, TextAnchor.MiddleCenter, false, _font);
-            hint.color = HintColor;
-            Place(hint.GetComponent<RectTransform>(), 0.5f, 0f, 0f, 26f, panelW - 20f, 24f);
+            var hint = NeonUiKit.Label("Hint", _panel.transform,
+                "F9 \u2014 close  \u00b7  click to switch", 12, NeonUiKit.MutedColor,
+                TextAnchor.MiddleCenter, _font, false);
+            NeonUiKit.Place(_hint.rectTransform, 0f, 0f, 0f, 14f, PanelW, 18f);
 
             _panel.SetActive(false);
+        }
+
+        private void BuildCloseButton()
+        {
+            RectTransform rt = NeonUiKit.Node("Close", _panel.transform);
+            NeonUiKit.Place(rt, 1f, 1f, -20f, -20f, 30f, 30f);
+            var bg = rt.gameObject.AddComponent<Image>();
+            bg.sprite = NeonUiKit.Rounded(8, 64);
+            bg.type = Image.Type.Sliced;
+            bg.color = new Color(NeonUiKit.CardBg.r, NeonUiKit.CardBg.g, NeonUiKit.CardBg.b, 0.9f);
+            var btn = rt.gameObject.AddComponent<Button>();
+            var cb = btn.colors;
+            cb.normalColor = Color.white;
+            cb.highlightedColor = new Color(1.6f, 0.75f, 0.95f, 1f);
+            cb.pressedColor = new Color(0.7f, 0.5f, 0.6f, 1f);
+            cb.selectedColor = Color.white;
+            cb.fadeDuration = 0.08f;
+            btn.colors = cb;
+            btn.targetGraphic = bg;
+            btn.onClick.AddListener(delegate { if (_panel != null) _panel.SetActive(false); });
+
+            var x = NeonUiKit.Label("CloseLabel", rt, "\u00d7", 20, NeonUiKit.MutedColor,
+                TextAnchor.MiddleCenter, _font, false);
+            NeonUiKit.Fill(x.rectTransform).offsetMin = new Vector2(0f, 2f);
+        }
+
+        private void BuildRow(string code, float x, float y, float w, float h)
+        {
+            bool available = _available.Contains(code);
+
+            RectTransform rt = NeonUiKit.Node("Lang " + code, _panel.transform);
+            NeonUiKit.Place(rt, 0f, 1f, x, y, w, h);
+            var bg = rt.gameObject.AddComponent<Image>();
+            bg.sprite = NeonUiKit.Rounded(2, 64);
+            bg.type = Image.Type.Sliced;
+            bg.color = available ? Color.white : new Color(1f, 1f, 1f, 0.35f);
+            var hair = rt.gameObject.AddComponent<Outline>();
+            hair.effectColor = new Color(0f, 0f, 0f, 0.85f);
+            hair.effectDistance = new Vector2(1.5f, -1.5f);
+
+            // Selected-state accent bar on the left (pink).
+            RectTransform accentRt = NeonUiKit.Node("Accent", rt);
+            accentRt.anchorMin = new Vector2(0f, 0f);
+            accentRt.anchorMax = new Vector2(0f, 1f);
+            accentRt.pivot = new Vector2(0f, 0.5f);
+            accentRt.offsetMin = new Vector2(0f, 7f);
+            accentRt.offsetMax = new Vector2(3f, -7f);
+            var accent = accentRt.gameObject.AddComponent<Image>();
+            accent.sprite = NeonUiKit.Rounded(2, 32);
+            accent.type = Image.Type.Sliced;
+            accent.color = new Color(NeonUiKit.Pink.r, NeonUiKit.Pink.g, NeonUiKit.Pink.b, 0f);
+            accent.raycastTarget = false;
+
+            string[] row = FindLang(code);
+            // Game menu text = 36 px on a 72 px plate; our row is 48 -> 24 px
+            // (CJK scale is applied on top by NeonFit).
+            var label = NeonUiKit.Label("Label", rt, row != null ? row[1] : code.ToUpperInvariant(),
+                Mathf.RoundToInt(RowH / 2f),
+                available ? Color.black : new Color(0f, 0f, 0f, 0.4f),
+                TextAnchor.MiddleLeft, RowFont(code, _font), false);
+            NeonUiKit.Fill(label.rectTransform).offsetMin = new Vector2(14f, 0f);
+            label.rectTransform.offsetMax = new Vector2(-34f, 0f);
+
+            var badge = NeonUiKit.Label("Code", rt, code.ToUpperInvariant(), 12, new Color(0f, 0f, 0f, 0.45f),
+                TextAnchor.MiddleRight, _font, false);
+            NeonUiKit.Fill(badge.rectTransform).offsetMax = new Vector2(-10f, 0f);
+            badge.rectTransform.offsetMin = new Vector2(0f, 0f);
+
+            if (available)
+            {
+                var btn = rt.gameObject.AddComponent<Button>();
+                var cb = btn.colors;
+                cb.normalColor = Color.white;
+                cb.highlightedColor = new Color(1.25f, 1.35f, 1.5f, 1f);
+                cb.pressedColor = new Color(0.75f, 0.8f, 0.9f, 1f);
+                cb.selectedColor = Color.white;
+                cb.fadeDuration = 0.08f;
+                btn.colors = cb;
+                btn.targetGraphic = bg;
+                string captured = code;
+                btn.onClick.AddListener(delegate { OnLangClicked(captured); });
+                _buttons[code] = btn;
+            }
+
+            _rowImgs[code] = bg;
+            _rowLabels[code] = label;
+            _rowAccents[code] = accent;
+        }
+
+        /// Open/close the panel. Row labels are fitted on open, when the layout
+        /// already has a width (they carry the per-language CJK scale).
+        private void TogglePanel()
+        {
+            if (_panel == null) return;
+            _panel.SetActive(!_panel.activeSelf);
+            if (_panel.activeSelf) FitRows();
+        }
+
+        // Row labels are fitted once the layout has a width (first open).
+        private void FitRows()
+        {
+            foreach (var kv in _rowLabels)
+                if (kv.Value != null) NeonFit.ApplyLegacy(kv.Value, kv.Key);
         }
 
         private void OnLangClicked(string code)
         {
             try
             {
+                if (string.Equals(code, TranslatorPlugin.CurrentLanguage, StringComparison.OrdinalIgnoreCase))
+                {
+                    if (_panel != null) _panel.SetActive(false);
+                    return;
+                }
                 TranslatorPlugin.SetLanguage(code);
                 RefreshHighlight();
+                FitRows();
             }
             catch (Exception ex)
             {
@@ -363,18 +477,45 @@ namespace NeonTranslatorDX
         {
             try
             {
-                string cur = TranslatorPlugin.CurrentLanguage;
-                if (_miniLabel != null)
-                    _miniLabel.text = cur != null ? cur.ToUpperInvariant() : "?";
-                foreach (var kv in _buttons)
+                string cur = TranslatorPlugin.CurrentLanguage ?? "en";
+                if (_miniLabel != null) _miniLabel.text = cur.ToUpperInvariant();
+                // Our own UI is localized too: the game gives the word for
+                // "Language"; hint/apply live in NeonUiStrings.
+                if (_title != null) _title.text = NeonUiStrings.Title(cur);
+                if (_hint != null) _hint.text = NeonUiStrings.Hint(cur);
+                if (_miniDot != null)
+                    _miniDot.color = IsCjk(cur) ? NeonUiKit.Cyan : NeonUiKit.Pink;
+
+                foreach (var kv in _rowImgs)
                 {
-                    var colors = kv.Value.colors;
-                    colors.normalColor = string.Equals(kv.Key, cur, StringComparison.OrdinalIgnoreCase)
-                        ? ActiveButtonColor : ButtonColor;
-                    kv.Value.colors = colors;
+                    bool selected = string.Equals(kv.Key, cur, StringComparison.OrdinalIgnoreCase);
+                    bool available = _available.Contains(kv.Key);
+                    var img = kv.Value;
+                    if (img != null)
+                    {
+                        Color baseColor = available ? Color.white : new Color(1f, 1f, 1f, 0.35f);
+                        img.color = selected ? new Color(1f, 0.94f, 0.97f, 1f) : baseColor;
+                    }
+                    Image accent;
+                    if (_rowAccents.TryGetValue(kv.Key, out accent) && accent != null)
+                        accent.color = new Color(NeonUiKit.Pink.r, NeonUiKit.Pink.g, NeonUiKit.Pink.b, selected ? 1f : 0f);
+
+                    Text label;
+                    if (_rowLabels.TryGetValue(kv.Key, out label) && label != null)
+                    {
+                        label.color = selected ? new Color(0.78f, 0.06f, 0.35f)
+                            : available ? Color.black
+                            : new Color(0f, 0f, 0f, 0.4f);
+                        label.fontStyle = selected ? FontStyle.Bold : FontStyle.Normal;
+                    }
                 }
             }
             catch { }
+        }
+
+        private static bool IsCjk(string lang)
+        {
+            return lang == "zh" || lang == "ja" || lang == "ko";
         }
     }
 }

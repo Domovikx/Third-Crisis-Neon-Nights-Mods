@@ -41,17 +41,17 @@ msgstr "“鸡巴”……？真的吗……？"
 
 #. src: dialog
 #. rich_text: <i>"However, the Blocker can deliver an infinite number of injections. Just needs a day to recharge between each dose."
-#. rich_translation: <i>“不过，Blocker 可以无限次注射，只是每次注射之间需要一天时间充能。”
+#. rich_translation: <i>“不过，阻断器 可以无限次注射，只是每次注射之间需要一天时间充能。”
 msgctxt "ui"
 msgid "\"However, the Blocker can deliver an infinite number of injections. Just needs a day to recharge between each dose.\""
-msgstr "“不过，Blocker 可以无限次注射，只是每次注射之间需要一天时间充能。”"
+msgstr "“不过，阻断器 可以无限次注射，只是每次注射之间需要一天时间充能。”"
 
 #. src: dialog
 #. rich_text: <i>"However, the Blocker can deliver an infinite number of injections. Just needs to recharge between each dose."
-#. rich_translation: <i>“不过，Blocker 可以无限次注射，只是每次注射之间需要重新充能。”
+#. rich_translation: <i>“不过，阻断器 可以无限次注射，只是每次注射之间需要重新充能。”
 msgctxt "ui"
 msgid "\"However, the Blocker can deliver an infinite number of injections. Just needs to recharge between each dose.\""
-msgstr "“不过，Blocker 可以无限次注射，只是每次注射之间需要重新充能。”"
+msgstr "“不过，阻断器 可以无限次注射，只是每次注射之间需要重新充能。”"
 
 #. src: dialog
 #. rich_text: <i>"I just... couldn't perfect the antidote, so it's temporary. It only heals Crush buildup... or in layman's terms... reverses arousal."
@@ -86,10 +86,10 @@ msgstr "“我”……嗯。"
 
 #. src: dialog
 #. rich_text: <i>"Now I'm sure you have many questions... like "What even is Peitho?"-</i>
-#. rich_translation: <i>“现在，我敢肯定你有很多问题……比如‘Peitho 到底是个什么鬼？’”</i>
+#. rich_translation: <i>“现在，我敢肯定你有很多问题……比如‘佩伊索 到底是个什么鬼？’”</i>
 msgctxt "ui"
 msgid "\"Now I'm sure you have many questions... like \"What even is Peitho?\"-"
-msgstr "“现在，我敢肯定你有很多问题……比如‘Peitho 到底是个什么鬼？’”"
+msgstr "“现在，我敢肯定你有很多问题……比如‘佩伊索 到底是个什么鬼？’”"
 
 #. src: dialog
 #. rich_text: <i>"So... I've created an antidote. The 'Crush Blocker' in this suitcase should innoculate someone against my poison."</i>
@@ -246,8 +246,7 @@ msgstr "在这里，用身体赚钱才是真的划算。别担心，你不用非
 
 #. src: dialog
 #. rich_text: 'Was <b>desperate</b> for cashh, so... Didn't say no, ehehe... Pr'tty hot too, buuuthh... Fuck, look a yahh...
-#. rich_translation: “当时急需用钱，所以……就没拒绝，嘿嘿……而且也挺性感的，但……该死，看看你……”
-#, rt-review
+#. rich_translation: “当时<b>急需用钱</b>，所以……就没拒绝，嘿嘿……而且也挺性感的，但……该死，看看你……”
 msgctxt "speaker:Customer"
 msgid "'Was desperate for cashh, so... Didn't say no, ehehe... Pr'tty hot too, buuuthh... Fuck, look a yahh..."
 msgstr "“当时急需用钱，所以……就没拒绝，嘿嘿……而且也挺性感的，但……该死，看看你……”"
@@ -1111,10 +1110,10 @@ msgstr "（黑色身体标记……！这正是安妮和艾什莉在寻找的东
 
 #. src: dialog
 #. rich_text: <i>(Blocker... That must be this little device in the suitcase. Looks like a little cylinder thing.)</i>
-#. rich_translation: <i>（阻断剂……那应该就是箱子里这个小装置了。看起来像个小圆柱体。）</i>
+#. rich_translation: <i>（阻断器……那应该就是箱子里这个小装置了。看起来像个小圆柱体。）</i>
 msgctxt "speaker:Zoey"
 msgid "(Blocker... That must be this little device in the suitcase. Looks like a little cylinder thing.)"
-msgstr "（阻断剂……那应该就是箱子里这个小装置了。看起来像个小圆柱体。）"
+msgstr "（阻断器……那应该就是箱子里这个小装置了。看起来像个小圆柱体。）"
 
 #. src: dialog
 #. rich_text: <i>(Bunnysuit? Where do I get one of those from? )</i>
@@ -1209,8 +1208,7 @@ msgstr "（但是……她是第一个还算友善的顾客……我可不想让
 
 #. src: dialog
 #. rich_text: <i>(By fingering her... <color=#EB83FF>pussy... </color>)</i>
-#. rich_translation: <i>（用手指刺激她的……小穴……）</i>
-#, rt-review
+#. rich_translation: <i>（用手指刺激她的……<color=#EB83FF>小穴</color>……）</i>
 msgctxt "ui"
 msgid "(By fingering her... pussy... )"
 msgstr "（用手指刺激她的……小穴……）"
@@ -1274,8 +1272,7 @@ msgstr "（客户让我去取回来，不是让我乱动。）"
 
 #. src: dialog
 #. rich_text: <i>(Collars really aren't much of a  <i>dog</i> thing anymore, are they... )</i>
-#. rich_translation: <i>（项圈这种东西，现在真的跟狗没什么关系了，对吧……）</i>
-#, rt-review
+#. rich_translation: <i>（项圈这种东西，现在真的跟<i>狗</i>没什么关系了，对吧……）</i>
 msgctxt "ui"
 msgid "(Collars really aren't much of a  dog thing anymore, are they... )"
 msgstr "（项圈这种东西，现在真的跟狗没什么关系了，对吧……）"
@@ -1359,8 +1356,7 @@ msgstr "（难道我真的在……享受这种……待遇吗……？）"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Could've taken care of my problem...</color> Agh-! No- Just... tough it out until the ride's over...)</i>
-#. rich_translation: <i>（本可以解决我的问题……啊——！不——只能……硬撑到车开完为止……）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（本可以解决我的问题……啊——！不——只能……硬撑到车开完为止……）</color></i>
 msgctxt "ui"
 msgid "(Could've taken care of my problem... Agh-! No- Just... tough it out until the ride's over...)"
 msgstr "（本可以解决我的问题……啊——！不——只能……硬撑到车开完为止……）"
@@ -1388,8 +1384,7 @@ msgstr "（疯了……这简直……啊啊啊……太疯狂了……）"
 
 #. src: dialog
 #. rich_text: <i>(Customers... <color=#EB83FF>Will-...?</color> Khh... )</i>
-#. rich_translation: <i>（顾客……会……？嗯……）</i>
-#, rt-review
+#. rich_translation: <i>（<color=#EB83FF>顾客……会……？</color>嗯……）</i>
 msgctxt "ui"
 msgid "(Customers... Will-...? Khh... )"
 msgstr "（顾客……会……？嗯……）"
@@ -1424,8 +1419,7 @@ msgstr "（该死。得再试一次。）"
 
 #. src: dialog
 #. rich_text: <i>(Damn it. One Lio's... <color=#EB83FF>Condoms...</color> Is empty now... )</i>
-#. rich_translation: <i>（该死。利奥的……安全套……现在空了……）</i>
-#, rt-review
+#. rich_translation: <i>（该死。利奥的……<color=#EB83FF>安全套</color>……现在空了……）</i>
 msgctxt "ui"
 msgid "(Damn it. One Lio's... Condoms... Is empty now... )"
 msgstr "（该死。利奥的……安全套……现在空了……）"
@@ -1517,8 +1511,7 @@ msgstr "（克劳迪娅会记录这里发生的一切吗？谁知道她能用这
 
 #. src: dialog
 #. rich_text: <i>(Does he really feel... <color=#EB83FF>that good</color>...?)</i>
-#. rich_translation: <i>（他真的……有那么爽吗……？）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（他真的……有那么爽吗……？）</color></i>
 msgctxt "speaker:Zoey"
 msgid "(Does he really feel... that good...?)"
 msgstr "（他真的……有那么爽吗……？）"
@@ -1737,16 +1730,14 @@ msgstr "（感觉太爽了……啊——不！我——嗯……）"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Fffh... </color> I don't think she noticed me. Gosh, she's gorgeous...)</i>
-#. rich_translation: <i>（啊啊……她好像没注意到我。天哪，她真美……）</i>
-#, rt-review
+#. rich_translation: <i>（<color=#EB83FF>啊啊……</color>她好像没注意到我。天哪，她真美……）</i>
 msgctxt "ui"
 msgid "(Fffh...  I don't think she noticed me. Gosh, she's gorgeous...)"
 msgstr "（啊啊……她好像没注意到我。天哪，她真美……）"
 
 #. src: dialog
 #. rich_text: <i>(Fffh... It's cold... So why do I feel <color=#EB83FF>so hot...?</color> )</i>
-#. rich_translation: <i>（Fffh……好冷……那为什么我会觉得这么热……？）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（Fffh……好冷……那为什么我会觉得这么热……？）</color></i>
 msgctxt "ui"
 msgid "(Fffh... It's cold... So why do I feel so hot...? )"
 msgstr "（Fffh……好冷……那为什么我会觉得这么热……？）"
@@ -1935,8 +1926,7 @@ msgstr "（他妈的白痴。他根本没意识到。）"
 
 #. src: dialog
 #. rich_text: <i>(Fucking asshole. What does <b>she</b> know about Sarah and I?)</i>
-#. rich_translation: <i>（他妈的混蛋。她凭什么对我和莎拉指手画脚？）</i>
-#, rt-review
+#. rich_translation: <i>（他妈的混蛋。<b>她</b>凭什么对我和莎拉指手画脚？）</i>
 msgctxt "ui"
 msgid "(Fucking asshole. What does she know about Sarah and I?)"
 msgstr "（他妈的混蛋。她凭什么对我和莎拉指手画脚？）"
@@ -2302,8 +2292,7 @@ msgstr "（老牌的霓虹城地铁……我得赶紧往前走，免得有人发
 
 #. src: dialog
 #. rich_text: <i>(Gosh... She's s<color=#EB83FF>o pretty...</color> No! No. Bad Zoey. Fffh... It's get<color=#EB83FF>ting so warm in here</color>... )</i>
-#. rich_translation: <i>（天哪……她真漂亮……不！不行。坏佐伊。嗯……这里越来越热了……）</i>
-#, rt-review
+#. rich_translation: <i>（天哪……<color=#EB83FF>她真漂亮</color>……不！不行。坏佐伊。嗯……<color=#EB83FF>这里越来越热了</color>……）</i>
 msgctxt "speaker:Zoey"
 msgid "(Gosh... She's so pretty... No! No. Bad Zoey. Fffh... It's getting so warm in here... )"
 msgstr "（天哪……她真漂亮……不！不行。坏佐伊。嗯……这里越来越热了……）"
@@ -2562,8 +2551,7 @@ msgstr "（他想要……我想看……更多……）"
 
 #. src: dialog
 #. rich_text: <i>(He wants more... <color=#EB83FF>so bad</color>... )</i>
-#. rich_translation: <i>（他想要更多……太想要了……）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（他想要更多……太想要了……）</color></i>
 msgctxt "speaker:Zoey"
 msgid "(He wants more... so bad... )"
 msgstr "（他想要更多……太想要了……）"
@@ -2794,8 +2782,7 @@ msgstr "（她的手好温暖啊啊啊……）"
 
 #. src: dialog
 #. rich_text: <i>(Her hands.. So.. <color=#EB83FF>Warm</color>.. )</i>
-#. rich_translation: <i>（她的手……好……温暖……）</i>
-#, rt-review
+#. rich_translation: <i>（她的手……好……<color=#EB83FF>温暖</color>……）</i>
 msgctxt "ui"
 msgid "(Her hands.. So.. Warm.. )"
 msgstr "（她的手……好……温暖……）"
@@ -3329,8 +3316,7 @@ msgstr "（我可负担不起那东西……）"
 
 #. src: dialog
 #. rich_text: <i>(I can't believe I <color=#EB83FF>did that</color>... )</i>
-#. rich_translation: <i>（真不敢相信我居然做了那种事……）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（真不敢相信我居然做了那种事……）</color></i>
 msgctxt "ui"
 msgid "(I can't believe I did that... )"
 msgstr "（真不敢相信我居然做了那种事……）"
@@ -4084,8 +4070,7 @@ msgstr "（我不该和他坐下来……他只是在……利用我来满足自
 
 #. src: dialog
 #. rich_text: <i>(I shouldn't.. Have done.. <color=#EB83FF>That</color>... )</i>
-#. rich_translation: <i>（我不该……那样做的……）</i>
-#, rt-review
+#. rich_translation: <i>（我不该……<color=#EB83FF>那样做</color>的……）</i>
 msgctxt "ui"
 msgid "(I shouldn't.. Have done.. That... )"
 msgstr "（我不该……那样做的……）"
@@ -4302,8 +4287,7 @@ msgstr "（我只是在干我的本职工作……这、这不是我的错，是
 
 #. src: dialog
 #. rich_text: <i>(I'm just gonna.. <color=#EB83FF>Play along</color>.. For a bit.. )</i>
-#. rich_translation: <i>（我打算……先配合一下……暂时这样……）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（我打算……先配合一下……暂时这样……）</color></i>
 msgctxt "ui"
 msgid "(I'm just gonna.. Play along.. For a bit.. )"
 msgstr "（我打算……先配合一下……暂时这样……）"
@@ -4542,8 +4526,7 @@ msgstr "（我今天已经对她造成足够的伤害了。）"
 
 #. src: dialog
 #. rich_text: <i>(I've even spilled Lio's... <color=#EB83FF>s-stuff</color> all over myself... )</i>
-#. rich_translation: <i>（我甚至把利奥的……那玩意儿弄得到处都是……）</i>
-#, rt-review
+#. rich_translation: <i>（我甚至把利奥的……<color=#EB83FF>那玩意儿</color>弄得到处都是……）</i>
 msgctxt "ui"
 msgid "(I've even spilled Lio's... s-stuff all over myself... )"
 msgstr "（我甚至把利奥的……那玩意儿弄得到处都是……）"
@@ -4585,8 +4568,7 @@ msgstr "（我在军队里见过这种刀。这东西可不是闹着玩的。）
 
 #. src: dialog
 #. rich_text: <i>(I- I could just... Spend some time with her on a quick... <color=#EB83FF>break</color>... instead.)</i>
-#. rich_translation: <i>（我……我其实可以……就和她一起，短暂地……休息一下……）</i>
-#, rt-review
+#. rich_translation: <i>（我……我其实可以……就和她一起，短暂地……<color=#EB83FF>休息一下</color>……）</i>
 msgctxt "ui"
 msgid "(I- I could just... Spend some time with her on a quick... break... instead.)"
 msgstr "（我……我其实可以……就和她一起，短暂地……休息一下……）"
@@ -4684,16 +4666,14 @@ msgstr "（我……我不该再看了……她可能会注意到……）"
 
 #. src: dialog
 #. rich_text: <i>(I-.. I shouldn't take pictures of them being-.. <color=#EB83FF>Intimate</color>.. )</i>
-#. rich_translation: <i>（我……我不该拍他们这么……亲密的照片……）</i>
-#, rt-review
+#. rich_translation: <i>（我……我不该拍他们这么……<color=#EB83FF>亲密</color>的照片……）</i>
 msgctxt "ui"
 msgid "(I-.. I shouldn't take pictures of them being-.. Intimate.. )"
 msgstr "（我……我不该拍他们这么……亲密的照片……）"
 
 #. src: dialog
 #. rich_text: <i>(I-.. I shouldn't.. <color=#EB83FF>Stare</color> like this.. Mh.. It's not-.. )</i>
-#. rich_translation: <i>（我……我不该……这样盯着看……嗯……这并不……）</i>
-#, rt-review
+#. rich_translation: <i>（我……我不该……<color=#EB83FF>这样盯着看</color>……嗯……这并不……）</i>
 msgctxt "ui"
 msgid "(I-.. I shouldn't.. Stare like this.. Mh.. It's not-.. )"
 msgstr "（我……我不该……这样盯着看……嗯……这并不……）"
@@ -5850,8 +5830,7 @@ msgstr "（就……就像罗茜演示的那样把它们捏碎……我……我
 
 #. src: dialog
 #. rich_text: <i>(Just... a picture... I... <color=#EB83FF>I need to</color>... for the- battery...)</i>
-#. rich_translation: <i>（就……拍张照片……我……我得……为了……电池……）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（就……拍张照片……我……我得……为了……电池……）</color></i>
 msgctxt "ui"
 msgid "(Just... a picture... I... I need to... for the- battery...)"
 msgstr "（就……拍张照片……我……我得……为了……电池……）"
@@ -5977,8 +5956,7 @@ msgstr "（呼——！它……在动……！）"
 
 #. src: dialog
 #. rich_text: <i>(Khh.. Just.. <color=#EB83FF>Just a peek</color>. )</i>
-#. rich_translation: <i>（嗯……就……就偷偷看一眼。）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（嗯……就……就偷偷看一眼。）</color></i>
 msgctxt "ui"
 msgid "(Khh.. Just.. Just a peek. )"
 msgstr "（嗯……就……就偷偷看一眼。）"
@@ -6055,8 +6033,7 @@ msgstr "（嘶……真恶心……！我——我得把手上这东西弄掉！
 
 #. src: dialog
 #. rich_text: <i>(Khh... This is... <color=#EB83FF>Wrong</color>... )</i>
-#. rich_translation: <i>（嗯……这……不对……）</i>
-#, rt-review
+#. rich_translation: <i>（嗯……这……<color=#EB83FF>不对</color>……）</i>
 msgctxt "ui"
 msgid "(Khh... This is... Wrong... )"
 msgstr "（嗯……这……不对……）"
@@ -6316,8 +6293,7 @@ msgstr "（或许我能从这儿找到上楼的路。只要保持低调，表现
 
 #. src: dialog
 #. rich_text: <i>(Maybe I can show her that <color=#EB83FF>chair</color> in the nail salon. )</i>
-#. rich_translation: <i>（或许我可以给她看看美甲店里的那把椅子。）</i>
-#, rt-review
+#. rich_translation: <i>（或许我可以给她看看美甲店里的那把<color=#EB83FF>椅子</color>。）</i>
 msgctxt "speaker:Zoey"
 msgid "(Maybe I can show her that chair in the nail salon. )"
 msgstr "（或许我可以给她看看美甲店里的那把椅子。）"
@@ -6443,8 +6419,7 @@ msgstr "（也许这里并没有想象中那么糟？）"
 
 #. src: dialog
 #. rich_text: <i>(Maybe, I could just... <b>take</b> one from her office...?)</i>
-#. rich_translation: <i>（或许，我可以直接……从她办公室拿一个……？）</i>
-#, rt-review
+#. rich_translation: <i>（或许，我可以直接……从她办公室<b>拿一个</b>……？）</i>
 msgctxt "speaker:Zoey"
 msgid "(Maybe, I could just... take one from her office...?)"
 msgstr "（或许，我可以直接……从她办公室拿一个……？）"
@@ -6633,8 +6608,7 @@ msgstr "（不……不，我……嗯……我……嗯……）"
 
 #. src: dialog
 #. rich_text: <i>(N-No! Someone saw me! They... They know <color=#EB83FF>what I am...</color> )</i>
-#. rich_translation: <i>（不——不！有人看见我了！他们……他们知道我的真实身份……）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（不——不！有人看见我了！他们……他们知道我的真实身份……）</color></i>
 msgctxt "ui"
 msgid "(N-No! Someone saw me! They... They know what I am... )"
 msgstr "（不——不！有人看见我了！他们……他们知道我的真实身份……）"
@@ -6902,8 +6876,7 @@ msgstr "（不，我们不会……！）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(No-... I-... This is so-... <b>wrong</b>.. Why am I not-...)</i></color>
-#. rich_translation: <color=#EB83FF><i>（不……我……这太……不对了……为什么我却没有……）</i></color>
-#, rt-review
+#. rich_translation: <color=#EB83FF><i>（不……我……这太……<b>不对了</b>……为什么我却没有……）</i></color>
 msgctxt "ui"
 msgid "(No-... I-... This is so-... wrong.. Why am I not-...)"
 msgstr "（不……我……这太……不对了……为什么我却没有……）"
@@ -7120,8 +7093,7 @@ msgstr "（哦，操——她是不是说我可以——）"
 
 #. src: dialog
 #. rich_text: <i>(Oh fuck... They have <color=#EB83FF>no idea</color>... )</i>
-#. rich_translation: <i>（该死的……他们根本不知道……）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（该死的……他们根本不知道……）</color></i>
 msgctxt "ui"
 msgid "(Oh fuck... They have no idea... )"
 msgstr "（该死的……他们根本不知道……）"
@@ -7142,16 +7114,14 @@ msgstr "（天哪——那也太冒险了……）"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Oh god...</color> What am I doing...? )</i>
-#. rich_translation: <i>（天哪……我到底在做什么……？）</i>
-#, rt-review
+#. rich_translation: <i>（<color=#EB83FF>天哪……</color>我到底在做什么……？）</i>
 msgctxt "ui"
 msgid "(Oh god... What am I doing...? )"
 msgstr "（天哪……我到底在做什么……？）"
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Oh god~</color> Please don't notice... )</i>
-#. rich_translation: <i>（天哪~ 求求你别注意到……）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（天哪~ 求求你别注意到……）</color></i>
 msgctxt "ui"
 msgid "(Oh god~ Please don't notice... )"
 msgstr "（天哪~ 求求你别注意到……）"
@@ -7278,8 +7248,7 @@ msgstr "（哦哦~ 我我真的在这么做吗？一边摸自己，一边想着�
 
 #. src: dialog
 #. rich_text: <i>(Oookay, time to stop thinking about your friend's... <b>Thing</b>, Zoey... )</i>
-#. rich_translation: <i>（嗯……好了，该别再想朋友的那个……东西了，佐伊……）</i>
-#, rt-review
+#. rich_translation: <i>（嗯……好了，该别再想朋友的那个……<b>东西</b>了，佐伊……）</i>
 msgctxt "speaker:Zoey"
 msgid "(Oookay, time to stop thinking about your friend's... Thing, Zoey... )"
 msgstr "（嗯……好了，该别再想朋友的那个……东西了，佐伊……）"
@@ -7417,8 +7386,7 @@ msgstr "（被穿刺的乳头……不过，这倒符合他的审美风格。）
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Piston..? Ghh..</color> It's so.. <color=#EB83FF>Soft and.. Warm..</color> )</i>
-#. rich_translation: <i>（活塞……？嗯……它真……柔软又……温暖……）</i>
-#, rt-review
+#. rich_translation: <i>（<color=#EB83FF>活塞……？嗯……</color>它真……<color=#EB83FF>柔软又……温暖……</color>）</i>
 msgctxt "ui"
 msgid "(Piston..? Ghh.. It's so.. Soft and.. Warm.. )"
 msgstr "（活塞……？嗯……它真……柔软又……温暖……）"
@@ -7502,8 +7470,7 @@ msgstr "（小声点……要安静……嗯……）"
 
 #. src: dialog
 #. rich_text: <i>(R-Right! Sorry- I'll- I'll <color=#EB83FF>be still-</color> )</i>
-#. rich_translation: <i>（向右！抱歉——我会——我会保持不动的……）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（向右！抱歉——我会——我会保持不动的……）</color></i>
 msgctxt "ui"
 msgid "(R-Right! Sorry- I'll- I'll be still- )"
 msgstr "（向右！抱歉——我会——我会保持不动的……）"
@@ -7643,8 +7610,7 @@ msgstr "（力……但是——）"
 
 #. src: dialog
 #. rich_text: <i>(Satisfaction? She's <color=#EB83FF>enjoying</color> it?)</i>
-#. rich_translation: <i>（她在享受吗？她感到满足？）</i>
-#, rt-review
+#. rich_translation: <i>（她在<color=#EB83FF>享受</color>吗？她感到满足？）</i>
 msgctxt "ui"
 msgid "(Satisfaction? She's enjoying it?)"
 msgstr "（她在享受吗？她感到满足？）"
@@ -7876,8 +7842,7 @@ msgstr "（她当领导……？）"
 
 #. src: dialog
 #. rich_text: <i>(She's just-.. <b>Groping</b> me.. ! In front of everyone.. ! )</i>
-#. rich_translation: <i>（她刚刚……在摸我……！当着所有人的面……！）</i>
-#, rt-review
+#. rich_translation: <i>（她刚刚……在<b>摸我</b>……！当着所有人的面……！）</i>
 msgctxt "ui"
 msgid "(She's just-.. Groping me.. ! In front of everyone.. ! )"
 msgstr "（她刚刚……在摸我……！当着所有人的面……！）"
@@ -7995,8 +7960,7 @@ msgstr "（她……真的好像不介意呢……）"
 
 #. src: dialog
 #. rich_text: <i>(She-.. Really doesn't seem to mind.. <color=#EB83FF>One bit..</color> )</i>
-#. rich_translation: <i>（她……好像真的完全不在意呢……一点都没有……）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（她……好像真的完全不在意呢……一点都没有……）</color></i>
 msgctxt "ui"
 msgid "(She-.. Really doesn't seem to mind.. One bit.. )"
 msgstr "（她……好像真的完全不在意呢……一点都没有……）"
@@ -8419,8 +8383,7 @@ msgstr "（听起来她好像很享受……）"
 
 #. src: dialog
 #. rich_text: (<color=#EB83FF>Special...?</color> Does he really think... )
-#. rich_translation: （特别的……？他真的这么想吗……）
-#, rt-review
+#. rich_translation: （<color=#EB83FF>特别的……？</color>他真的这么想吗……）
 msgctxt "ui"
 msgid "(Special...? Does he really think... )"
 msgstr "（特别的……？他真的这么想吗……）"
@@ -8476,8 +8439,7 @@ msgstr "（蠢，蠢，真蠢。我到底在干什么？我真的会考虑放弃
 
 #. src: dialog
 #. rich_text: <i>(<color=#EB83FF>Stupid. We</color>ak. Weak! )</i>
-#. rich_translation: <i>（蠢货。软弱。软弱！）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（蠢货。软弱。软弱！）</color></i>
 msgctxt "ui"
 msgid "(Stupid. Weak. Weak! )"
 msgstr "（蠢货。软弱。软弱！）"
@@ -8533,8 +8495,7 @@ msgstr "（吞下射出的液体……？！）"
 
 #. src: dialog
 #. rich_text: (T-this <color=#EB83FF>lewd stuff</color>... )
-#. rich_translation: （这……这淫秽的东西……）
-#, rt-review
+#. rich_translation: <color=#EB83FF>（这……这淫秽的东西……）</color>
 msgctxt "speaker:Zoey"
 msgid "(T-this lewd stuff... )"
 msgstr "（这……这淫秽的东西……）"
@@ -9043,8 +9004,7 @@ msgstr "（他们的手好……粗糙……）"
 
 #. src: dialog
 #. rich_text: <i>(Their hands feel <color=#EB83FF>kinda good-...</color> I-... Nh... )</i>
-#. rich_translation: <i>（他们的手感觉有点好……我……嗯……）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（他们的手感觉有点好……我……嗯……）</color></i>
 msgctxt "ui"
 msgid "(Their hands feel kinda good-... I-... Nh... )"
 msgstr "（他们的手感觉有点好……我……嗯……）"
@@ -9247,8 +9207,7 @@ msgstr "（他们把这里弄得一团糟……到处都是……）"
 
 #. src: dialog
 #. rich_text: <i>(They really wanna be famous on this Smutgram app...? Not sure some teasing pics are gonna-... <color=#EB83FF>cut it for that</color>... )</i>
-#. rich_translation: <i>（他们真的想靠这个Smutgram app出名吗……？不确定几张挑逗的照片就……能行……）</i>
-#, rt-review
+#. rich_translation: <i><color=#EB83FF>（他们真的想靠这个Smutgram app出名吗……？不确定几张挑逗的照片就……能行……）</color></i>
 msgctxt "ui"
 msgid "(They really wanna be famous on this Smutgram app...? Not sure some teasing pics are gonna-... cut it for that... )"
 msgstr "（他们真的想靠这个Smutgram app出名吗……？不确定几张挑逗的照片就……能行……）"
@@ -9494,8 +9453,7 @@ msgstr "（这应该就是那个行李箱了。哇，感觉他妈的挺重的。
 
 #. src: dialog
 #. rich_text: <i>(This outfit is <b>way</b> too.. revealing... )</i>
-#. rich_translation: <i>（这身衣服也太……暴露了吧……）</i>
-#, rt-review
+#. rich_translation: <i>（这身衣服也太……<b>暴露</b>了吧……）</i>
 msgctxt "ui"
 msgid "(This outfit is way too.. revealing... )"
 msgstr "（这身衣服也太……暴露了吧……）"
@@ -9509,8 +9467,7 @@ msgstr "（这个地方看起来……不太安全……）"
 
 #. src: dialog
 #. rich_text: <i>(This place, it's so lewd... No one would.. <color=#EB83FF>know</color>.. if I-... )</i>
-#. rich_translation: <i>（这个地方……真淫秽……要是我……也没人……会知道……）</i>
-#, rt-review
+#. rich_translation: <i>（这个地方……真淫秽……要是我……也没人……会<color=#EB83FF>知道</color>……）</i>
 msgctxt "ui"
 msgid "(This place, it's so lewd... No one would.. know.. if I-... )"
 msgstr "（这个地方……真淫秽……要是我……也没人……会知道……）"
@@ -9524,8 +9481,7 @@ msgstr "（这真的不是……能涵盖很多……）"
 
 #. src: dialog
 #. rich_text: <i>(This <color=#EB83FF>taste</color>... It couldn't be... cum... right?)</i>
-#. rich_translation: <i>（这味道……该不会是……精液……吧？）</i>
-#, rt-review
+#. rich_translation: <i>（这味道……该不会是……<color=#EB83FF>精液</color>……吧？）</i>
 msgctxt "ui"
 msgid "(This taste... It couldn't be... cum... right?)"
 msgstr "（这味道……该不会是……精液……吧？）"
@@ -9560,8 +9516,7 @@ msgstr "（这……这简直太疯狂了，啊啊啊……！我们真的就要
 
 #. src: dialog
 #. rich_text: <i>(This-... This is the <color=#EB83FF>right</color> thing to do...)</i>
-#. rich_translation: <i>（这……这是正确的做法……）</i>
-#, rt-review
+#. rich_translation: <i>（这……这是<color=#EB83FF>正确的做法</color>……）</i>
 msgctxt "speaker:Zoey"
 msgid "(This-... This is the right thing to do...)"
 msgstr "（这……这是正确的做法……）"
@@ -9582,8 +9537,7 @@ msgstr "（那些守卫正在寻找任何没有票的人。我最好赶紧走。
 
 #. src: dialog
 #. rich_text: <i>(Those look like hard drives... a <b>lot</b> of hard drives.)</i>
-#. rich_translation: <i>（这些看起来像是硬盘……好多硬盘。）</i>
-#, rt-review
+#. rich_translation: <i>（这些看起来像是硬盘……<b>好多硬盘</b>。）</i>
 msgctxt "ui"
 msgid "(Those look like hard drives... a lot of hard drives.)"
 msgstr "（这些看起来像是硬盘……好多硬盘。）"
@@ -9644,8 +9598,7 @@ msgstr "（舌……！她的舌头……！啊啊……！）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Touch an old man's... <b>thing</b>... for money...?)</i></color>
-#. rich_translation: <color=#EB83FF><i>（为了钱，去碰一个老男人的……那玩意儿……？）</i></color>
-#, rt-review
+#. rich_translation: <color=#EB83FF><i>（为了钱，去碰一个老男人的……<b>那玩意儿</b>……？）</i></color>
 msgctxt "ui"
 msgid "(Touch an old man's... thing... for money...?)"
 msgstr "（为了钱，去碰一个老男人的……那玩意儿……？）"
@@ -11109,7 +11062,7 @@ msgstr "0.3 - 美甲沙龙 - 告诉马克斯 - 色情 - 1 - 1"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon - Told Max - Porn - 1 - 2"
-msgstr "0.3 - 美甲沙龙 - 告诉马克斯 - 色情 - 1 - 2"
+msgstr "0.3 - 美甲店 - 告诉马克斯 - 色情 - 1 - 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11209,12 +11162,12 @@ msgstr "0.3 - 美甲沙龙 - 后室 - 1 - 秘密门 - 1"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Neon Rise - Enforcer Block - 01"
-msgstr "0.3 - Neon Rise - 执法者区块 - 01"
+msgstr "0.3 - 霓虹崛起 - 执法者区块 - 01"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Neon Rise - Enforcer Block - 02 - Has Party"
-msgstr "0.3 - Neon Rise - 执法者区域 - 02 - 有派对"
+msgstr "0.3 - 霓虹崛起 - 执法者区域 - 02 - 有派对"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11224,7 +11177,7 @@ msgstr "0.3 - 霓虹崛起 - 执法者街区 - 老鼠出没 - 01"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Neon Rise - Enforcer Block - Rat Out - 02"
-msgstr "0.3 - Neon Rise - 执法者街区 - 老鼠出没 - 02"
+msgstr "0.3 - 霓虹崛起 - 执法者街区 - 老鼠出没 - 02"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -12518,8 +12471,7 @@ msgstr "> 从我的男性部件上，你随便要什么都行，亲爱的。"
 
 #. src: dialog
 #. rich_text: <i> > You're <b>such</b> a good girl, Val.
-#. rich_translation: <i>> 你真是个乖女孩啊，瓦尔。
-#, rt-review
+#. rich_translation: <i>> 你真是个<b>乖女孩</b>啊，瓦尔。
 msgctxt "ui"
 msgid "> You're such a good girl, Val."
 msgstr "> 你真是个乖女孩啊，瓦尔。"
@@ -13034,8 +12986,7 @@ msgstr "啊~尽管拍吧~"
 
 #. src: dialog
 #. rich_text: Aah~ You really are <color=#EB83FF>wet</color> down here, hun~
-#. rich_translation: 啊~你下面真的湿透了，亲爱的~
-#, rt-review
+#. rich_translation: 啊~你下面真的<color=#EB83FF>湿透了</color>，亲爱的~
 msgctxt "ui"
 msgid "Aah~ You really are wet down here, hun~"
 msgstr "啊~你下面真的湿透了，亲爱的~"
@@ -15161,7 +15112,7 @@ msgstr "还有之前那件事……我，呃……对不起……"
 #. src: dialog
 msgctxt "speaker:Klaudia"
 msgid "And at the Glowing Hole, we keep that promise."
-msgstr "而在“发光之穴”，我们始终信守承诺。"
+msgstr "而在“发光洞穴”，我们始终信守承诺。"
 
 #. src: dialog
 msgctxt "ui"
@@ -15721,8 +15672,7 @@ msgstr "话说，如果你有兴趣参加 Xhibition Run，就尽管来找我吧�
 
 #. src: dialog
 #. rich_text: Anyway, once you're in the building, find Leona. Code phrase is <b>French Kiss</b>. That was her idea.
-#. rich_translation: 总之，进了大楼之后，去找莉昂娜。暗号是“法式热吻”。这主意是她出的。
-#, rt-review
+#. rich_translation: 总之，进了大楼之后，去找莉昂娜。暗号是“<b>法式热吻</b>”。这主意是她出的。
 msgctxt "ui"
 msgid "Anyway, once you're in the building, find Leona. Code phrase is French Kiss. That was her idea."
 msgstr "总之，进了大楼之后，去找莉昂娜。暗号是“法式热吻”。这主意是她出的。"
@@ -16911,8 +16861,7 @@ msgstr "啊哈～我可爱的小男孩因为有人看着我摸他，就害羞了
 
 #. src: dialog
 #. rich_text: Aww.~ No need to be all <i> flustered</i>, hun.
-#. rich_translation: 哎呀～别这么紧张嘛，亲爱的。
-#, rt-review
+#. rich_translation: 哎呀～<i>别这么紧张嘛</i>，亲爱的。
 msgctxt "speaker:Klaudia"
 msgid "Aww.~ No need to be all  flustered, hun."
 msgstr "哎呀～别这么紧张嘛，亲爱的。"
@@ -20111,8 +20060,7 @@ msgstr "来嘛，给我们看看你的本事，别忘了笑哦。"
 
 #. src: dialog
 #. rich_text: Come on, slut! Fucking <b>beg</b> him!
-#. rich_translation: 来吧，贱货！他妈的求他啊！
-#, rt-review
+#. rich_translation: 来吧，贱货！他妈的<b>求他啊</b>！
 msgctxt "ui"
 msgid "Come on, slut! Fucking beg him!"
 msgstr "来吧，贱货！他妈的求他啊！"
@@ -22816,8 +22764,7 @@ msgstr "你知道他的地方原来是这样的吗？"
 
 #. src: dialog
 #. rich_text: Did you really think you'd be the first to get to cum here, huh? Already forgot <b>why</b> you're here?!
-#. rich_translation: 你真以为自己能第一个在这儿高潮吗？都忘了自己来这儿是为了什么了？！
-#, rt-review
+#. rich_translation: 你真以为自己能第一个在这儿高潮吗？都忘了自己来这儿是<b>为了什么</b>了？！
 msgctxt "ui"
 msgid "Did you really think you'd be the first to get to cum here, huh? Already forgot why you're here?!"
 msgstr "你真以为自己能第一个在这儿高潮吗？都忘了自己来这儿是为了什么了？！"
@@ -24333,8 +24280,7 @@ msgstr "低沉的声响"
 
 #. src: dialog
 #. rich_text: Downstairs, in the basement. But everyone is saying they heard weird noises... <size=28>down there... </size>
-#. rich_translation: 在楼下，地下室里。但大家都说他们在那下面听到了奇怪的噪音……
-#, rt-review
+#. rich_translation: <size=28>在楼下，地下室里。但大家都说他们在那下面听到了奇怪的噪音……</size>
 msgctxt "speaker:Brad"
 msgid "Downstairs, in the basement. But everyone is saying they heard weird noises... down there..."
 msgstr "在楼下，地下室里。但大家都说他们在那下面听到了奇怪的噪音……"
@@ -26131,8 +26077,7 @@ msgstr "再——再快点……嗯……是……是……啊……"
 
 #. src: dialog
 #. rich_text: F-Faster? It goes- <color=#EB83FF>faster</color>? Hhhh~
-#. rich_translation: 更——更快？还能更快吗？嗯嗯~
-#, rt-review
+#. rich_translation: 更——<color=#EB83FF>更快</color>？还能更快吗？嗯嗯~
 msgctxt "ui"
 msgid "F-Faster? It goes- faster? Hhhh~"
 msgstr "更——更快？还能更快吗？嗯嗯~"
@@ -26586,8 +26531,7 @@ msgstr "快速队列是空的！"
 
 #. src: dialog
 #. rich_text: Faster! Come on, slut! Give me a fucking <b>show</b>! I wanna see him cum!
-#. rich_translation: 快点！来吧，贱货！给我好好表演！我要看他射精！
-#, rt-review
+#. rich_translation: 快点！来吧，贱货！给我<b>好好表演</b>！我要看他射精！
 msgctxt "ui"
 msgid "Faster! Come on, slut! Give me a fucking show! I wanna see him cum!"
 msgstr "快点！来吧，贱货！给我好好表演！我要看他射精！"
@@ -26595,7 +26539,7 @@ msgstr "快点！来吧，贱货！给我好好表演！我要看他射精！"
 #. src: dialog
 msgctxt "ui"
 msgid "Faster! Stroke his cock faster, whore!"
-msgstr "快点！快给他操，婊子！"
+msgstr "快！快操他的鸡巴，婊子！"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Faster- Yess...</color>
@@ -27490,8 +27434,7 @@ msgstr "扁平窗口"
 
 #. src: dialog
 #. rich_text: Flatmate? Eheh. My tastes are a little too... unique for a <i>flatmate</i>.
-#. rich_translation: 室友？呵呵……我的品味有点太……“独特”了，不适合找室友。
-#, rt-review
+#. rich_translation: <i>室友</i>？呵呵……我的品味有点太……“独特”了，不适合找室友。
 msgctxt "speaker:Leona"
 msgid "Flatmate? Eheh. My tastes are a little too... unique for a flatmate."
 msgstr "室友？呵呵……我的品味有点太……“独特”了，不适合找室友。"
@@ -28172,47 +28115,47 @@ msgstr "未来誓言手套 2"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintight Suit Dark"
-msgstr "未来誓约 紧身暗装"
+msgstr "Futereswear 紧身暗装"
 
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintight Suit Light"
-msgstr "未来誓约 紧身服 光"
+msgstr "Futereswear 紧身服 光"
 
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintightv2"
-msgstr "未来誓言·紧身衣V2"
+msgstr "Futereswear·紧身衣V2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Futereswear Skintightv2 2"
-msgstr "未来誓言 紧身版2"
+msgstr "Futereswear 紧身版2"
 
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Skintightv2 Gloves"
-msgstr "未来誓约·紧身V2手套"
+msgstr "Futereswear·紧身V2手套"
 
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Straps Black"
-msgstr "未来誓言 黑色束缚带"
+msgstr "Futereswear 黑色束缚带"
 
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Straps Light"
-msgstr "未来誓言 轻束带"
+msgstr "Futereswear 轻束带"
 
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Underwear Black"
-msgstr "未来誓言 黑色内衣"
+msgstr "Futereswear 黑色内衣"
 
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Underwear White"
-msgstr "未来誓言 白色内衣"
+msgstr "Futereswear 白色内衣"
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -28775,8 +28718,7 @@ msgstr "正在从 Lovense API 获取玩具。"
 
 #. src: dialog
 #. rich_text: Getting close~? I can feel you <color=#EB83FF>tightening around my fingers~</color>
-#. rich_translation: 越来越接近了~？我能感觉到你正围绕着我的手指收紧~
-#, rt-review
+#. rich_translation: <color=#EB83FF>越来越接近了~？我能感觉到你正围绕着我的手指收紧~</color>
 msgctxt "ui"
 msgid "Getting close~? I can feel you tightening around my fingers~"
 msgstr "越来越接近了~？我能感觉到你正围绕着我的手指收紧~"
@@ -28811,8 +28753,7 @@ msgstr "天……天哪……我……我到底干了什么……"
 
 #. src: dialog
 #. rich_text: Ghahh... you look so... hot...! Please, help me-... I need to-... need to <b>cum</b>...!
-#. rich_translation: 哈……你看起来……好……性感……！求你，帮帮我……我需要……需要高潮……！
-#, rt-review
+#. rich_translation: 哈……你看起来……<b>好……性感……！</b>求你，帮帮我……我需要……需要高潮……！
 msgctxt "ui"
 msgid "Ghahh... you look so... hot...! Please, help me-... I need to-... need to cum...!"
 msgstr "哈……你看起来……好……性感……！求你，帮帮我……我需要……需要高潮……！"
@@ -29096,7 +29037,7 @@ msgstr "格洛。就在按摩油罐里。他们要求的。"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Glowing Hole"
-msgstr "发光的洞"
+msgstr "发光洞穴"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -29200,10 +29141,10 @@ msgstr "发光孔洞图块精灵形状配置"
 
 #. src: dialog
 #. rich_text: Glowing Hole? Who cares about that old used hole, <b>Euphora </b>is where the money
-#. rich_translation: 发光洞？谁在乎那个破旧的洞啊，<b>尤芙拉才是有钱的地方！</b>
+#. rich_translation: 发光洞穴？谁在乎那个破旧的洞啊，<b>尤芙拉才是有钱的地方！</b>
 msgctxt "ui"
 msgid "Glowing Hole? Who cares about that old used hole, Euphora is where the money"
-msgstr "发光洞？谁在乎那个破旧的洞啊，尤芙拉才是有钱的地方！"
+msgstr "发光洞穴？谁在乎那个破旧的洞啊，尤芙拉才是有钱的地方！"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -29703,8 +29644,7 @@ msgstr "天啊，那可太常了。"
 
 #. src: dialog
 #. rich_text: Gosh, the vibrator goes up <b>another</b> level?! Mnhh..!
-#. rich_translation: 天哪，振动棒又升级了？！嗯嗯……！
-#, rt-review
+#. rich_translation: 天哪，振动棒<b>又升级了？！</b>嗯嗯……！
 msgctxt "ui"
 msgid "Gosh, the vibrator goes up another level?! Mnhh..!"
 msgstr "天哪，振动棒又升级了？！嗯嗯……！"
@@ -30319,8 +30259,7 @@ msgstr "哈——！谢——谢，但——但……我……不……呃……
 
 #. src: dialog
 #. rich_text: Hah. Look at that. You <b>are</b> in need of cash.
-#. rich_translation: 哈。看那儿。你正缺钱呢。
-#, rt-review
+#. rich_translation: 哈。看那儿。你正<b>缺钱</b>呢。
 msgctxt "ui"
 msgid "Hah. Look at that. You are in need of cash."
 msgstr "哈。看那儿。你正缺钱呢。"
@@ -32239,7 +32178,7 @@ msgstr "嘿，马克斯~！快看看。我这次选了点小疯狂的设计哦�
 #. src: dialog
 msgctxt "ui"
 msgid "Heya Zoey! Got another challenge for ya. This one's sponsored. You ever heard of the Glowing Hole?"
-msgstr "嘿，佐伊！又有个挑战要给你了。这次是赞助的。你听说过“发光之穴”吗？"
+msgstr "嘿，佐伊！又有个挑战要给你了。这次是赞助的。你听说过“发光洞穴”吗？"
 
 #. src: dialog
 msgctxt "speaker:Max"
@@ -32705,7 +32644,7 @@ msgstr "他的凸起正顶在佐伊身上"
 #. src: dialog
 msgctxt "ui"
 msgid "His cock is now hard, Zoey is looking down, kinda surprised at the massive nasty cock."
-msgstr "他的鸡巴现在硬邦邦的，佐伊正低头看着，对这根巨大又恶心的鸡巴有点惊讶。"
+msgstr "他的肉棒现在硬邦邦的，佐伊正低头看着，对这根巨大又恶心的肉棒有点惊讶。"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>His- cock... It's-</color>
@@ -32788,8 +32727,7 @@ msgstr "嗯？你们两个认识吗？"
 
 #. src: dialog
 #. rich_text: Hm? Oh- Well... If you aren't feeling up to it, that's okay... All good... I mean it should be simple... Just like... rub your... <size=30>pussy</size>... until... yeah.
-#. rich_translation: 嗯？哦——好吧……如果你没那个状态，也没关系……完全没问题……我的意思是，这应该很简单……就像……揉你的……小穴……直到……嗯。
-#, rt-review
+#. rich_translation: 嗯？哦——好吧……如果你没那个状态，也没关系……完全没问题……我的意思是，这应该很简单……就像……揉你的……<size=30>小穴</size>……直到……嗯。
 msgctxt "ui"
 msgid "Hm? Oh- Well... If you aren't feeling up to it, that's okay... All good... I mean it should be simple... Just like... rub your... pussy... until... yeah."
 msgstr "嗯？哦——好吧……如果你没那个状态，也没关系……完全没问题……我的意思是，这应该很简单……就像……揉你的……小穴……直到……嗯。"
@@ -32827,7 +32765,7 @@ msgstr "嗯，看来阀门不见了。"
 #. src: dialog
 msgctxt "ui"
 msgid "Hmm, maybe I should order a Slutbox tonight."
-msgstr "嗯，今晚或许该订个“荡妇盒”了。"
+msgstr "嗯，今晚或许该订个“Slutbox”了。"
 
 #. src: dialog
 msgctxt "ui"
@@ -33103,8 +33041,7 @@ msgstr "流氓"
 
 #. src: dialog
 #. rich_text: <color=#B867FF>Hoooo</color>ly shit!
-#. rich_translation: 我靠！
-#, rt-review
+#. rich_translation: <color=#B867FF>我靠！</color>
 msgctxt "speaker:Zoey"
 msgid "Hooooly shit!"
 msgstr "我靠！"
@@ -33116,8 +33053,7 @@ msgstr "快过来这儿~"
 
 #. src: dialog
 #. rich_text: Hope Klaudia doesn fin out, heh..! <i> Hic.. !</i>
-#. rich_translation: 希望克劳迪娅别发现，嘿嘿……！呃……！
-#, rt-review
+#. rich_translation: <i>希望克劳迪娅别发现，嘿嘿……！呃……！</i>
 msgctxt "ui"
 msgid "Hope Klaudia doesn fin out, heh..!  Hic.. !"
 msgstr "希望克劳迪娅别发现，嘿嘿……！呃……！"
@@ -33784,8 +33720,7 @@ msgstr "我可不"
 
 #. src: dialog
 #. rich_text: I don't care about the intruiges between you and the cartel. However. You <b>will</b> make up for the damage you caused me, Madison. <b>Understood</b>?!
-#. rich_translation: 我不管你和贩毒集团之间的那些勾当。不过，你必须弥补你给我造成的损失，麦迪逊。听明白了吗？！
-#, rt-review
+#. rich_translation: <b>我不管</b>你和贩毒集团之间的那些勾当。不过，你必须弥补你给我造成的损失，麦迪逊。<b>听明白了吗？！</b>
 msgctxt "speaker:Klaudia"
 msgid "I don't care about the intruiges between you and the cartel. However. You will make up for the damage you caused me, Madison. Understood?!"
 msgstr "我不管你和贩毒集团之间的那些勾当。不过，你必须弥补你给我造成的损失，麦迪逊。听明白了吗？！"
@@ -36416,8 +36351,7 @@ msgstr "想要去别的区域，就等火车来了再上车吧！每次旅程都
 
 #. src: dialog
 #. rich_text: In other words, <b>it can feel you</b>.
-#. rich_translation: 换句话说，它能感知到你。
-#, rt-review
+#. rich_translation: <b>换句话说，它能感知到你。</b>
 msgctxt "speaker:Salesman"
 msgid "In other words, it can feel you."
 msgstr "换句话说，它能感知到你。"
@@ -37668,8 +37602,7 @@ msgstr "这能帮你对付噩梦吗？"
 
 #. src: dialog
 #. rich_text: It looks so... <color=#EB83FF>good...</color>
-#. rich_translation: 看起来……真不错……
-#, rt-review
+#. rich_translation: 看起来……<color=#EB83FF>真不错……</color>
 msgctxt "ui"
 msgid "It looks so... good..."
 msgstr "看起来……真不错……"
@@ -39087,8 +39020,7 @@ msgstr "嘿嘿嘿……看看这个跪在巨大肉棒前的佣兵女孩。连这
 
 #. src: dialog
 #. rich_text: Khh-.. It's really-.. <color=#B867FF>Stretching me..</color>
-#. rich_translation: 呃……真的……在拉扯我……
-#, rt-review
+#. rich_translation: <color=#B867FF>呃……真的……在拉扯我……</color>
 msgctxt "speaker:Zoey"
 msgid "Khh-.. It's really-.. Stretching me.."
 msgstr "呃……真的……在拉扯我……"
@@ -39439,8 +39371,7 @@ msgstr "克劳迪娅·坦萨"
 
 #. src: dialog
 #. rich_text: Klaudia forced us to pay up 100k to cover up for <b>your</b> fuckup!
-#. rich_translation: 克劳迪娅逼我们交了10万块，用来掩盖你犯下的那个破事！
-#, rt-review
+#. rich_translation: 克劳迪娅逼我们交了10万块，用来掩盖<b>你</b>犯下的那个破事！
 msgctxt "ui"
 msgid "Klaudia forced us to pay up 100k to cover up for your fuckup!"
 msgstr "克劳迪娅逼我们交了10万块，用来掩盖你犯下的那个破事！"
@@ -39500,7 +39431,7 @@ msgstr "克劳迪娅，"
 #. src: dialog
 msgctxt "speaker:Woman"
 msgid "Klaudia...? Isn't that the boss lady of the Glowing Hole?"
-msgstr "克劳迪娅……？那不是“发光之洞”里的女老板吗？"
+msgstr "克劳迪娅……？那不是“发光洞穴”里的女老板吗？"
 
 #. src: dialog
 msgctxt "ui"
@@ -40065,7 +39996,7 @@ msgstr "莉昂娜"
 #. src: dialog
 msgctxt "ui"
 msgid "Leona Dialogue Preset"
-msgstr "佐伊的对话预设"
+msgstr "莉昂娜对话预设"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -40314,8 +40245,7 @@ msgstr "继续拆包吧，闺蜜！"
 
 #. src: dialog
 #. rich_text: Let's say I <b>was</b> interested... What would I need to do?
-#. rich_translation: 假设我感兴趣的话……我需要怎么做？
-#, rt-review
+#. rich_translation: 假设我感兴趣的话……<b>我需要怎么做？</b>
 msgctxt "speaker:Zoey"
 msgid "Let's say I was interested... What would I need to do?"
 msgstr "假设我感兴趣的话……我需要怎么做？"
@@ -41521,7 +41451,7 @@ msgstr "这是一段测试文本，包含重复的拉丁文短语，用于模拟
 #. src: field:m_text
 msgctxt "ui"
 msgid "Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adipiscing elit, Lorem ipsum dolor sit amet, consecterur adip"
-msgstr "劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆"
+msgstr "劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔·阿迪平辛·埃利特，劳伦·伊普索姆·多洛尔·西特·阿梅特，康塞克特鲁尔"
 
 #. src: field:TakenFromInventoryText
 msgctxt "ui"
@@ -42145,7 +42075,7 @@ msgstr "男人开始往上扯佐伊的裙子。"
 #. src: dialog
 msgctxt "ui"
 msgid "Man cums between her thighs with the cum squirting on her thighs3"
-msgstr "男人射精在她的大腿之间，精液溅满了她的大腿。"
+msgstr "男人射精在她的大腿之间，精液喷溅满她的大腿。"
 
 #. src: dialog
 msgctxt "ui"
@@ -42425,8 +42355,7 @@ msgstr "要是你稍微弯下腰来……你的屁股说不定会比她的还要
 
 #. src: dialog
 #. rich_text: Maybe if I go a little... <color=#EB83FF>faster</color>?
-#. rich_translation: 或许我稍微……快一点？
-#, rt-review
+#. rich_translation: 或许我稍微……<color=#EB83FF>快一点</color>？
 msgctxt "ui"
 msgid "Maybe if I go a little... faster?"
 msgstr "或许我稍微……快一点？"
@@ -44769,8 +44698,7 @@ msgstr "绝——对——不——可！"
 
 #. src: dialog
 #. rich_text: N-New? Wait- <color=#EB83FF>Mnhh~</color> What's new?
-#. rich_translation: 新——的？等等——嗯嗯~ 有什么新花样？
-#, rt-review
+#. rich_translation: 新——的？等等——<color=#EB83FF>嗯嗯~</color> 有什么新花样？
 msgctxt "ui"
 msgid "N-New? Wait- Mnhh~ What's new?"
 msgstr "新——的？等等——嗯嗯~ 有什么新花样？"
@@ -44983,7 +44911,7 @@ msgstr "不，没什么但。反正我更喜欢看奶子。"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Nail Salon"
-msgstr "美甲沙龙"
+msgstr "美甲店"
 
 #. src: bundle
 msgctxt "speaker:Cocky"
@@ -45230,7 +45158,7 @@ msgstr "霓虹崛起 / 2楼"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Neon Rise / Lobby"
-msgstr "Neon Rise / 大厅"
+msgstr "霓虹崛起 / 大厅"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -46271,8 +46199,7 @@ msgstr "试玩版中不可用"
 
 #. src: dialog
 #. rich_text: Not backing out of our deal <i>now</i>, are we? I thought you needed that battery.
-#. rich_translation: 现在可别反悔哦？我记得你可是需要那块电池的。
-#, rt-review
+#. rich_translation: <i>现在可别反悔哦？</i>我记得你可是需要那块电池的。
 msgctxt "speaker:Man"
 msgid "Not backing out of our deal now, are we? I thought you needed that battery."
 msgstr "现在可别反悔哦？我记得你可是需要那块电池的。"
@@ -46386,8 +46313,7 @@ msgstr "倒也不是我特别在意，不过我觉得你应该知道，你那些
 
 #. src: dialog
 #. rich_text: Not <b>that</b> kind of job!
-#. rich_translation: 不是那种工作！
-#, rt-review
+#. rich_translation: <b>不是那种工作！</b>
 msgctxt "ui"
 msgid "Not that kind of job!"
 msgstr "不是那种工作！"
@@ -46848,8 +46774,7 @@ msgstr "既然你已经帮了我，我还能做些什么来偿还对你的债务
 
 #. src: dialog
 #. rich_text: Now <b>that's</b> a bunnygirl, ehehe.
-#. rich_translation: 这才叫兔女郎嘛，嘿嘿。
-#, rt-review
+#. rich_translation: <b>这才叫兔女郎嘛</b>，嘿嘿。
 msgctxt "ui"
 msgid "Now that's a bunnygirl, ehehe."
 msgstr "这才叫兔女郎嘛，嘿嘿。"
@@ -47517,8 +47442,7 @@ msgstr "天啊，你真是太可爱了，佐伊……要不你再让这桩交易
 
 #. src: dialog
 #. rich_text: Oh my god you sound <b>so</b> cute, eheh!
-#. rich_translation: 天啊，你听起来真可爱，嘿嘿！
-#, rt-review
+#. rich_translation: <b>天啊</b>，你听起来真可爱，嘿嘿！
 msgctxt "ui"
 msgid "Oh my god you sound so cute, eheh!"
 msgstr "天啊，你听起来真可爱，嘿嘿！"
@@ -51755,8 +51679,7 @@ msgstr "求你了！求你让我射出来吧~ 求你了——我会乖乖的—�
 
 #. src: dialog
 #. rich_text: Please, darling. Make yourself a home. I <b>really</b> don't mind having you around, eheheh.
-#. rich_translation: 求你了，亲爱的。就当自己家一样吧。我一点也不介意你待在这里，嘿嘿嘿。
-#, rt-review
+#. rich_translation: <b>求你了，亲爱的。</b>就当自己家一样吧。我一点也不介意你待在这里，嘿嘿嘿。
 msgctxt "speaker:Leona"
 msgid "Please, darling. Make yourself a home. I really don't mind having you around, eheheh."
 msgstr "求你了，亲爱的。就当自己家一样吧。我一点也不介意你待在这里，嘿嘿嘿。"
@@ -52178,8 +52101,7 @@ msgstr "正在打印所有玩家的身体部位效果："
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Prior exp-...?</color> No! This... This is not something I usually do!
-#. rich_translation: 有过经验吗？不！这……这可不是我通常会做的事！
-#, rt-review
+#. rich_translation: <color=#EB83FF>有过经验吗？不！这……这可不是我通常会做的事！</color>
 msgctxt "ui"
 msgid "Prior exp-...? No! This... This is not something I usually do!"
 msgstr "有过经验吗？不！这……这可不是我通常会做的事！"
@@ -52274,7 +52196,7 @@ msgstr "项目：旋律 - 美甲沙龙机器人 2号"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Project Peitho : Entry 43"
-msgstr "Project Peitho：第43条记录"
+msgstr "Project 佩伊索：第43条记录"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -52303,8 +52225,7 @@ msgstr "该属性没有getter或setter"
 
 #. src: dialog
 #. rich_text: Protecting. That's right. The average citizen has no clue how many terrorists we <b>protect</b> you from every day.
-#. rich_translation: 保护。没错。普通公民根本不知道，我们每天要保护你们免受多少恐怖分子的侵害。
-#, rt-review
+#. rich_translation: <b>保护</b>。没错。普通公民根本不知道，我们每天要保护你们免受多少恐怖分子的侵害。
 msgctxt "speaker:Enforcer"
 msgid "Protecting. That's right. The average citizen has no clue how many terrorists we protect you from every day."
 msgstr "保护。没错。普通公民根本不知道，我们每天要保护你们免受多少恐怖分子的侵害。"
@@ -53059,8 +52980,7 @@ msgstr "真的吗？！天哪，当然！我太愿意了！"
 
 #. src: dialog
 #. rich_text: Really?! We're just throwing our stuff at anything you find hot now, do we?! <b>You</b> are going to explain this to the boss!
-#. rich_translation: 真的吗？！我们现在就随便把东西扔给任何你觉得性感的东西，对吗？！你得跟老板解释清楚！
-#, rt-review
+#. rich_translation: <b>真的吗？！</b>我们现在就随便把东西扔给任何你觉得性感的东西，对吗？！你得跟老板解释清楚！
 msgctxt "ui"
 msgid "Really?! We're just throwing our stuff at anything you find hot now, do we?! You are going to explain this to the boss!"
 msgstr "真的吗？！我们现在就随便把东西扔给任何你觉得性感的东西，对吗？！你得跟老板解释清楚！"
@@ -56917,8 +56837,7 @@ msgstr "她肯定吸了不少那种发光药剂。几天前刚接这活儿的时
 
 #. src: dialog
 #. rich_text: <i>She</i> never gets me this hard... Not that she even cares.
-#. rich_translation: 她从未让我如此兴奋过……不过她根本不在乎。
-#, rt-review
+#. rich_translation: <i>她</i>从未让我如此兴奋过……不过她根本不在乎。
 msgctxt "speaker:Varen"
 msgid "She never gets me this hard... Not that she even cares."
 msgstr "她从未让我如此兴奋过……不过她根本不在乎。"
@@ -58348,8 +58267,7 @@ msgstr "好温暖……而且……嗯……好舒服……"
 
 #. src: dialog
 #. rich_text: So <color=#EB83FF>warm</color> too~ How do <color=#EB83FF>my fingers</color> feel~?
-#. rich_translation: 好温暖啊~ 我的手指感觉怎么样~？
-#, rt-review
+#. rich_translation: <color=#EB83FF>好温暖啊~</color> <color=#EB83FF>我的手指</color>感觉怎么样~？
 msgctxt "ui"
 msgid "So warm too~ How do my fingers feel~?"
 msgstr "好温暖啊~ 我的手指感觉怎么样~？"
@@ -58756,8 +58674,7 @@ msgstr "所以……*hic* 既然我们已经聊了那么久，现在基本上是
 
 #. src: dialog
 #. rich_text: Sooo... Is that a <i>no</i>?
-#. rich_translation: 所以……这是拒绝吗？
-#, rt-review
+#. rich_translation: 所以……这是<i>拒绝吗？</i>
 msgctxt "speaker:Trov"
 msgid "Sooo... Is that a no?"
 msgstr "所以……这是拒绝吗？"
@@ -60384,7 +60301,7 @@ msgstr "行李箱 坏 结束 1 开场动画 时间线"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Suitcase bad End 3 Sit on Lap CutsceneTimeline"
-msgstr "行李箱 坏了 结束 3 坐在腿上 过场动画时间线"
+msgstr "行李箱坏了 结束 3 坐在腿上 过场动画时间线"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -61005,8 +60922,7 @@ msgstr "当然，我肯定能找到一个……！"
 
 #. src: dialog
 #. rich_text: Sure, babe. Some customers will pay waitresses a nice tip for <i>personal</i> service, eheh. Maybe you should look into that.
-#. rich_translation: 当然啦，亲爱的。有些顾客会为了私人服务给女服务员留下丰厚的小费呢，嘿嘿。或许你可以考虑一下。
-#, rt-review
+#. rich_translation: 当然啦，亲爱的。有些顾客会为了<i>私人服务</i>给女服务员留下丰厚的小费呢，嘿嘿。或许你可以考虑一下。
 msgctxt "ui"
 msgid "Sure, babe. Some customers will pay waitresses a nice tip for personal service, eheh. Maybe you should look into that."
 msgstr "当然啦，亲爱的。有些顾客会为了私人服务给女服务员留下丰厚的小费呢，嘿嘿。或许你可以考虑一下。"
@@ -61173,8 +61089,7 @@ msgstr "T-想拍多少照片就拍多少，宝贝！"
 
 #. src: dialog
 #. rich_text: T-There used to be <color=#EB83FF>a dildo</color> here...
-#. rich_translation: 这里以前有个假阳具……
-#, rt-review
+#. rich_translation: <color=#EB83FF>这里以前有个假阳具……</color>
 msgctxt "ui"
 msgid "T-There used to be a dildo here..."
 msgstr "这里以前有个假阳具……"
@@ -61802,7 +61717,7 @@ msgstr "告诉她，佐伊。"
 #. src: dialog
 msgctxt "ui"
 msgid "Tell him to stick his money up his ass."
-msgstr "叫他把钱塞进自己的屁股里。"
+msgstr "叫他把钱他妈的塞进自己屁股里。"
 
 #. src: dialog
 msgctxt "ui"
@@ -62798,7 +62713,7 @@ msgstr "兔子们要开始玩了"
 #. src: dialog
 msgctxt "ui"
 msgid "The Cartel? San? But-"
-msgstr "贩毒集团？桑？但是——"
+msgstr "卡特尔？桑？但是——"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -62808,7 +62723,7 @@ msgstr "母老虎的巢穴"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "The Glowing Hole"
-msgstr "发光之穴"
+msgstr "发光洞穴"
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -63440,8 +63355,7 @@ msgstr "他们会帮你消除所有烦恼。~"
 
 #. src: dialog
 #. rich_text: They can also go <b>bigger</b>, ehehe.
-#. rich_translation: 也可以变得更大哦，嘿嘿。
-#, rt-review
+#. rich_translation: 也可以变得<b>更大</b>哦，嘿嘿。
 msgctxt "speaker:Salesman"
 msgid "They can also go bigger, ehehe."
 msgstr "也可以变得更大哦，嘿嘿。"
@@ -63595,7 +63509,7 @@ msgstr "你真能捣鼓出什么玩意儿来帮我们把它拆掉吗？"
 #. src: dialog
 msgctxt "ui"
 msgid "Think you could get us in that Slutbox, Z?"
-msgstr "你觉得能让我们进那个“荡妇箱”吗，佐伊？"
+msgstr "你觉得能让我们进那个“Slutbox”吗，佐伊？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -65225,8 +65139,7 @@ msgstr "呃……喂？谁在那儿？"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>U-Uh</color>m! I uh- I gotta get goin'! Places to be- uhm- here's your picture!
-#. rich_translation: 呃——！我、我得走了！还有地方要去——呃——这是你的照片！
-#, rt-review
+#. rich_translation: <color=#EB83FF>呃——！</color>我、我得走了！还有地方要去——呃——这是你的照片！
 msgctxt "ui"
 msgid "U-Uhm! I uh- I gotta get goin'! Places to be- uhm- here's your picture!"
 msgstr "呃——！我、我得走了！还有地方要去——呃——这是你的照片！"
@@ -66167,8 +66080,7 @@ msgstr "唔！诶——！那个——"
 
 #. src: dialog
 #. rich_text: Unhh... Your cock is so <i>meaty</i>..~ Mmhh..~
-#. rich_translation: 嗯……你的肉棒好粗大啊……~ 嗯嗯……~
-#, rt-review
+#. rich_translation: 嗯……你的<i>肉棒</i>好粗大啊……~ 嗯嗯……~
 msgctxt "ui"
 msgid "Unhh... Your cock is so meaty..~ Mmhh..~"
 msgstr "嗯……你的肉棒好粗大啊……~ 嗯嗯……~"
@@ -66684,7 +66596,7 @@ msgstr "使用"
 #. src: us
 msgctxt "ui"
 msgid "Use Blocker"
-msgstr "使用“Blocker”"
+msgstr "使用“阻断器”"
 
 #. src: settings
 msgctxt "ui"
@@ -66714,7 +66626,7 @@ msgstr "使用正确的偏移量"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Use the Blocker"
-msgstr "使用“Blocker”"
+msgstr "使用“阻断器”"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -66888,7 +66800,7 @@ msgstr "瓦伦 订单 2 - 1 货币"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Varen Order 2 - 2 Currency"
-msgstr "瓦伦 命令 2 - 2 货币"
+msgstr "瓦伦 订单 2 - 2 货币"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67195,8 +67107,7 @@ msgstr "等、等一下！我、我不是这样的！"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>W-Wait... That was</color>n't- I didn't mean to-
-#. rich_translation: 等……那并不是……我不是那个意思……
-#, rt-review
+#. rich_translation: <color=#EB83FF>等……那并不是……我不是那个意思……</color>
 msgctxt "ui"
 msgid "W-Wait... That wasn't- I didn't mean to-"
 msgstr "等……那并不是……我不是那个意思……"
@@ -68681,7 +68592,7 @@ msgstr "当服务员——特罗夫，点餐2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing - Trov Order 3"
-msgstr "当服务员——特罗夫，点餐 3"
+msgstr "当服务员——特罗夫，订单 3"
 
 #. src: dialog
 msgctxt "ui"
@@ -68691,7 +68602,7 @@ msgstr "当服务生 - 特罗夫点单 3 - 1"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing - Trov Order 3 - 2"
-msgstr "服务员 - 特罗夫 点单 3 - 2"
+msgstr "服务员 - 特罗夫 订单 3 - 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68741,17 +68652,17 @@ msgstr "服务生 - 升级 - 6 豪客"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing - Varen Order 1"
-msgstr "服务生 - 瓦伦 点单 1"
+msgstr "服务生 - 瓦伦 订单 1"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Waitressing - Varen Order 2"
-msgstr "当服务生——瓦伦，点单 2"
+msgstr "当服务生——瓦伦，订单 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing - Varen Order 3"
-msgstr "当服务生 - 瓦伦，点餐 3"
+msgstr "当服务生 - 瓦伦，订单 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68761,7 +68672,7 @@ msgstr "当服务生——瓦伦，点单4"
 #. src: dialog
 msgctxt "ui"
 msgid "Waitressing - Varen Order 5"
-msgstr "服务生 - 瓦伦 点单 5"
+msgstr "服务生 - 瓦伦 订单 5"
 
 #. src: dialog
 msgctxt "ui"
@@ -68776,7 +68687,7 @@ msgstr "服务生 - 瓦伦订单 5 - 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing - Varen Order 5 - 3"
-msgstr "服务生 - 瓦伦 点单 5 - 3"
+msgstr "服务生 - 瓦伦 订单 5 - 3"
 
 #. src: us
 msgctxt "ui"
@@ -68811,17 +68722,17 @@ msgstr "服务生赚钱 - 特罗夫 订单 3 - 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing Money - Varen Order 5 - 1"
-msgstr "服务生赚钱 - 瓦伦 点餐 5 - 1"
+msgstr "服务生赚钱 - 瓦伦 订单 5 - 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing Money - Varen Order 5 - 2"
-msgstr "服务员赚钱 - 瓦伦 点单 5 - 2"
+msgstr "服务员赚钱 - 瓦伦 订单 5 - 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing Money - Varen Order 5 - 3"
-msgstr "服务生小费 - 瓦伦 点单 5 - 3"
+msgstr "服务生小费 - 瓦伦 订单 5 - 3"
 
 #. src: us
 msgctxt "ui"
@@ -69047,8 +68958,7 @@ msgstr "这么想要，嗯？"
 
 #. src: dialog
 #. rich_text: Want me to feel <color=#EB83FF>somewhere else?</color>
-#. rich_translation: 想让我在别的地方也感受到吗？
-#, rt-review
+#. rich_translation: <color=#EB83FF>想让我在别的地方也感受到吗？</color>
 msgctxt "ui"
 msgid "Want me to feel somewhere else?"
 msgstr "想让我在别的地方也感受到吗？"
@@ -69598,8 +69508,7 @@ msgstr "好吧，克劳迪娅也受不了一个家伙在顶头上冲“阿沃加
 
 #. src: dialog
 #. rich_text: Well, Zoey... Maybe I... overlook a few things here or there. If you ask... <b>nicely</b>.
-#. rich_translation: 嗯，佐伊……也许我……偶尔会忽略一些事。只要你……好好求我的话。
-#, rt-review
+#. rich_translation: 嗯，佐伊……也许我……偶尔会忽略一些事。只要你……<b>好好求我</b>的话。
 msgctxt "ui"
 msgid "Well, Zoey... Maybe I... overlook a few things here or there. If you ask... nicely."
 msgstr "嗯，佐伊……也许我……偶尔会忽略一些事。只要你……好好求我的话。"
@@ -69857,12 +69766,11 @@ msgstr "嗯……那个……我需要根据这个我找到的玩意儿做个假
 #. src: dialog
 msgctxt "ui"
 msgid "Well... yeah, at the Glowing Hole, but none of them looked that... lifelike."
-msgstr "嗯……倒是在“发光之穴”见过，但那些可没看起来这么……栩栩如生。"
+msgstr "嗯……倒是在“发光洞穴”见过，但那些可没看起来这么……栩栩如生。"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Well... you two <b>do</b> look similar...</color>
-#. rich_translation: <color=#EB83FF>嗯……你们俩看起来确实有点像……</color>
-#, rt-review
+#. rich_translation: <color=#EB83FF>嗯……你们俩看起来<b>确实</b>有点像……</color>
 msgctxt "ui"
 msgid "Well... you two do look similar..."
 msgstr "嗯……你们俩看起来确实有点像……"
@@ -70442,8 +70350,7 @@ msgstr "我他妈现在到底该干啥？"
 
 #. src: dialog
 #. rich_text: What the <b>fuck</b> are you doing in here?! What is this mess?!
-#. rich_translation: 你他妈的在这里搞什么鬼？！这都他妈的什么乱七八糟的玩意儿？！
-#, rt-review
+#. rich_translation: <b>你他妈的</b>在这里搞什么鬼？！这都他妈的什么乱七八糟的玩意儿？！
 msgctxt "speaker:Klaudia"
 msgid "What the fuck are you doing in here?! What is this mess?!"
 msgstr "你他妈的在这里搞什么鬼？！这都他妈的什么乱七八糟的玩意儿？！"
@@ -71052,8 +70959,7 @@ msgstr "为什么我感觉后面好像还有话没说完？"
 
 #. src: dialog
 #. rich_text: Why do I wish he w<color=#EB83FF>as fucking me instead?</color> Agh! Stupid, stupid...
-#. rich_translation: 为什么我会希望是他来干我而不是别人？啊！真蠢，真蠢……
-#, rt-review
+#. rich_translation: <color=#EB83FF>为什么我会希望是他来干我而不是别人？啊！真蠢，真蠢……</color>
 msgctxt "ui"
 msgid "Why do I wish he was fucking me instead? Agh! Stupid, stupid..."
 msgstr "为什么我会希望是他来干我而不是别人？啊！真蠢，真蠢……"
@@ -71504,7 +71410,7 @@ msgstr "哇！太令人印象深刻了！我简直无法想象那是什么感觉
 #. src: dialog
 msgctxt "ui"
 msgid "Wow, look at you, Zoey. Got a job at the Glowing Hole, huh?"
-msgstr "哇，看看你，佐伊。在“发光之洞”找到工作啦，是吧？"
+msgstr "哇，看看你，佐伊。在“发光洞穴”找到工作啦，是吧？"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -72077,8 +71983,7 @@ msgstr "是啊，这里……她以前喜欢去一个……有点可疑的地方
 
 #. src: dialog
 #. rich_text: Yeah, <color=#EB83FF>it looks really good</color>... I mean- good attention to detail!
-#. rich_translation: 是啊，看起来真的不错……我的意思是——细节处理得非常到位！
-#, rt-review
+#. rich_translation: <color=#EB83FF>是啊，看起来真的不错……我的意思是——细节处理得非常到位！</color>
 msgctxt "ui"
 msgid "Yeah, it looks really good... I mean- good attention to detail!"
 msgstr "是啊，看起来真的不错……我的意思是——细节处理得非常到位！"
@@ -72312,8 +72217,7 @@ msgstr "是啊……"
 
 #. src: dialog
 #. rich_text: Yeah... Draws attention from the-... <i>less</i> fun kind sometimes.
-#. rich_translation: 是啊……有时确实会招来那种……不太有趣的关注。
-#, rt-review
+#. rich_translation: 是啊……有时确实会招来那种……<i>不太有趣</i>的关注。
 msgctxt "ui"
 msgid "Yeah... Draws attention from the-... less fun kind sometimes."
 msgstr "是啊……有时确实会招来那种……不太有趣的关注。"
@@ -73038,8 +72942,7 @@ msgstr "你可以调情、挑逗、动手动脚，想怎么赚小费都行……
 
 #. src: dialog
 #. rich_text: You can <color=#EB83FF>let it out~</color> Just relax~
-#. rich_translation: 你可以释放出来~ 放松就好~
-#, rt-review
+#. rich_translation: <color=#EB83FF>你可以释放出来~ 放松就好~</color>
 msgctxt "ui"
 msgid "You can let it out~ Just relax~"
 msgstr "你可以释放出来~ 放松就好~"
@@ -73266,8 +73169,7 @@ msgstr "佐伊，你行的！我知道你能做到！"
 
 #. src: dialog
 #. rich_text: You had an entire <b>floor</b> to yourself?
-#. rich_translation: 你独占了一整层楼？
-#, rt-review
+#. rich_translation: 你独占了<b>一整层楼</b>？
 msgctxt "ui"
 msgid "You had an entire floor to yourself?"
 msgstr "你独占了一整层楼？"
@@ -73740,8 +73642,7 @@ msgstr "你可以通过我所有的售货机来到这里。"
 
 #. src: dialog
 #. rich_text: You'll half the price, if I... <color=#EB83FF>let you</color>-...?
-#. rich_translation: 如果你……让我……的话，就半价？
-#, rt-review
+#. rich_translation: <color=#EB83FF>如果你……让我……的话，就半价？</color>
 msgctxt "speaker:Zoey"
 msgid "You'll half the price, if I... let you-...?"
 msgstr "如果你……让我……的话，就半价？"
@@ -73916,8 +73817,7 @@ msgstr "你今天比那些服务生还性感。"
 
 #. src: dialog
 #. rich_text: You're just... so... like... <size=25>hot</size>...
-#. rich_translation: 你真是……太……嗯……性感了……
-#, rt-review
+#. rich_translation: 你真是……太……嗯……<size=25>性感</size>了……
 msgctxt "speaker:Mira"
 msgid "You're just... so... like... hot..."
 msgstr "你真是……太……嗯……性感了……"
@@ -74198,8 +74098,7 @@ msgstr "你……把钥匙弄丢了？"
 
 #. src: dialog
 #. rich_text: You?! What are <b>you</b> doing here?!
-#. rich_translation: 你？！你来这里做什么？！
-#, rt-review
+#. rich_translation: <b>你？！</b>你来这里做什么？！
 msgctxt "speaker:Klaudia"
 msgid "You?! What are you doing here?!"
 msgstr "你？！你来这里做什么？！"
@@ -74261,8 +74160,7 @@ msgstr "你的朋友 Mynx 让我来找你，然后把你送给他！"
 
 #. src: dialog
 #. rich_text: Your front side is hot too. You're so good at customer service, <b>waitress</b>, ahaha!
-#. rich_translation: 你的正面也很热啊。你当服务员的水平真高，哈哈！
-#, rt-review
+#. rich_translation: 你的正面也很热啊。你当<b>服务员的水平真高</b>，哈哈！
 msgctxt "speaker:Trov"
 msgid "Your front side is hot too. You're so good at customer service, waitress, ahaha!"
 msgstr "你的正面也很热啊。你当服务员的水平真高，哈哈！"
@@ -76226,7 +76124,7 @@ msgstr "正在发生，但我得确保他们不会。"
 #. src: dialog
 msgctxt "ui"
 msgid "s got to do with something called Peitho. Does that name ring any bells?"
-msgstr "这肯定跟某个叫“皮索”的东西有关。这个名字听起来有点耳熟吗？"
+msgstr "这肯定跟某个叫“佩伊索”的东西有关。这个名字听起来有点耳熟吗？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76790,4 +76688,3 @@ msgstr "赞恩·德拉科"
 msgctxt "ui"
 msgid "| GetDataFromItem: Item doesn't exist! Returning empty DynamicTable."
 msgstr "| GetDataFromItem: 物品不存在！返回空 DynamicTable。"
-

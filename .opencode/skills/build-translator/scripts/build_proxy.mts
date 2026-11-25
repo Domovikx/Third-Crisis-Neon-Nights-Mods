@@ -17,7 +17,7 @@
  *   node .opencode/skills/build-translator/scripts/build_proxy.mts
  *   TCNN_MSVC_TOOLS="<...>/VC/Tools/MSVC/14.50.35717" node .../build_proxy.mts
  *
- * Результат: `<игра>/dwmapi.dll` + `<игра>/NeonTranslatorDX/dwmapi_real.dll`; копия
+ * Результат: `<игра>/dwmapi.dll` + `<игра>/mods/NeonTranslatorDX/dwmapi_real.dll`; копия
  * прокси синхронизируется в корень репозитория (`dwmapi.dll`, трекается).
  */
 import { copyFileSync, existsSync, mkdirSync, readdirSync, statSync } from "node:fs";
@@ -32,6 +32,7 @@ export const PROXY_SOURCE = join(import.meta.dirname, "..", "source", "dwmapi_pr
 export const PROXY_NAME = "dwmapi.dll";
 export const REAL_COPY_NAME = "dwmapi_real.dll";
 /** Папка мода: всё, кроме лоадера `dwmapi.dll`, живёт здесь. */
+export const MODS_FOLDER = "mods";
 export const MOD_FOLDER = "NeonTranslatorDX";
 
 /** Легаси-лоадеры прошлых версий: только предупреждаем, не удаляем. */
@@ -233,7 +234,7 @@ export interface ProxyBuildResult {
   layout: MsvcLayout;
 }
 
-/** Собрать прокси и разложить: `<игра>/dwmapi.dll`, `<игра>/NeonTranslatorDX/dwmapi_real.dll`, репо-копии. */
+/** Собрать прокси и разложить: `<игра>/dwmapi.dll`, `<игра>/mods/NeonTranslatorDX/dwmapi_real.dll`, репо-копии. */
 export function buildProxy(o: ProxyBuildOptions = {}): ProxyBuildResult {
   const repoRoot = o.repoRoot ?? REPO_ROOT;
   const source = o.source ?? PROXY_SOURCE;
@@ -251,14 +252,16 @@ export function buildProxy(o: ProxyBuildOptions = {}): ProxyBuildResult {
   if (!o.skipRealCopy) {
     const systemDwmapi = join(process.env.SystemRoot ?? "C:\\Windows", "System32", PROXY_NAME);
     if (!existsSync(systemDwmapi)) throw new Error(`не найдена системная DLL: ${systemDwmapi}`);
-    const modDir = join(gameDir, MOD_FOLDER);
+    const modDir = join(gameDir, MODS_FOLDER, MOD_FOLDER);
     mkdirSync(modDir, { recursive: true });
     realCopy = join(modDir, REAL_COPY_NAME);
     copyWithHint(systemDwmapi, realCopy, "скопировать системную dwmapi.dll");
     repoSyncReal = join(repoRoot, REAL_COPY_NAME);
     copyFileSync(realCopy, repoSyncReal);
     console.log(`  системная DLL: ${systemDwmapi}`);
-    console.log(`  -> ${MOD_FOLDER}/${REAL_COPY_NAME} в папке мода (цель форвардов)`);
+    console.log(
+      `  -> ${MODS_FOLDER}/${MOD_FOLDER}/${REAL_COPY_NAME} в папке мода (цель форвардов)`,
+    );
   }
 
   // 2. Легаси прошлых версий: не трогаем, но говорим вслух.

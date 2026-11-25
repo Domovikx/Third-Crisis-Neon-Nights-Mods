@@ -1,8 +1,10 @@
 # MAP — deploy-translator (факты и грабли)
 
 Установка NeonTranslatorDX в игру. Порт `deploy.ps1` на `.mts` — 2026-11-21;
-раскладка «одна папка» + бренд NeonTranslatorDX — 2026-11-25, проверено прогоном
-на живой установке (RU): install → игра → uninstall → diff с чистым снимком = 0.
+раскладка «одна папка» + бренд NeonTranslatorDX — 2026-11-25;
+конвенция TSSR `<игра>/mods/NeonTranslatorDX/` — 2026-11-25, проверено прогоном
+на живой установке: migrate со старой корневой папки → игра → uninstall → diff
+с чистым снимком = 0/0/0.
 
 ## Готчи
 
@@ -13,11 +15,16 @@
   `C:\temp\dwmapi_proxy.log` и пустой `NeonTranslatorDX.log` → проверено
   2026-11-25 (русское меню, `Font: preload ... = False` — отдельный баг TMP).
 
-- ⚠️ **Рантайм разрешает ассеты от `Assembly.Location`**, поэтому переезд не
-  требует правок в `TranslationLoader`: `dllDir` = папка мода, шрифты — в
-  `dllDir/fonts`, `patch_*.dat`/`active_lang.txt` — рядом с DLL. `gameDir` для
-  legacy-YAML = `Path.GetDirectoryName(dllDir)` (в Managed-раскладке было два
-  уровня) → не возвращать двойной `GetDirectoryName`.
+- ⚠️ **Рантайм разрешает ассеты от `Assembly.Location`**: `dllDir` = папка мода
+  (`<игра>/mods/NeonTranslatorDX`), шрифты — в `dllDir/fonts`, остальное рядом с
+  DLL. `gameDir` только для legacy-YAML `translations/` — это ДВА уровня вверх
+  (`<game>/mods/NeonTranslatorDX` → `<game>`); в раскладке без `mods/` было
+  достаточно одного → не упрощать обратно.
+
+- ⚠️ **Деплой и прокси знают путь `<игра>/mods/NeonTranslatorDX/`** (прокси строит
+  от каталога exe, не от cwd). Смена конвенции = одновременно
+  `deploy.mts` (`MODS_FOLDER`/`MOD_FOLDER`), `dwmapi_proxy.c` (две строки) и
+  `build_proxy.mts` (`MODS_FOLDER`), иначе прокси молча ищет старую папку.
 
 - ⚠️ **`install-manifest.json` пишется последним**, после всех копий: в нём
   размер и sha256 каждого файла. Uninstall удаляет файл только при совпадении
@@ -46,29 +53,32 @@
 - ⚠️ **Steam «verify integrity» удаляет `dwmapi.dll`** → деплой просто
   повторяют; проверять наличие `dwmapi.dll` рядом с exe, а не в папке мода.
 
-- ⚠️ **`--migrate` не рекурсивный**: удаляет известные имена и `patch_*.dat`
-  в `Managed/` и в старой папке `NeonTranslator/`; старая папка исчезает только
-  если опустела. Чужой файл внутри → папка остаётся (проверено тестом).
+- ⚠️ **`--migrate` не рекурсивный и сначала ПЕРЕНОСИТ, потом удаляет**:
+  `planMigrateCopies` копирует из `Managed/` и старых корневых
+  `NeonTranslatorDX/`, `NeonTranslator/` недостающие `patch_*.dat`, шрифты,
+  `typography.json`, `dwmapi_real.dll`; только затем известные имена удаляются.
+  Старые папки исчезают лишь если опустели (чужой файл сохранит) → проверено
+  2026-11-25 переносом 9 словарей из корневой папки без потерь.
 
-## Проверенные цифры (2026-11-25, RU)
+- ⚠️ **Uninstall удаляет `mods/` только если она опустела** → если в `mods/` есть
+  другие моды, папка остаётся; `rmdir` не рекурсивный. `patch_*.dat` всех языков
+  удаляются по маске (после смены языка манифест знает только последний).
 
-- установка: 9 файлов = `dwmapi.dll` + 8 в `NeonTranslatorDX/` (DLL 44 032 б,
-  `dwmapi_real.dll` 195 032 б, 3 шрифта, `patch_ru.dat` 2 098 692 б,
-  `active_lang.txt`, `install-manifest.json`);
-- `patch_ru.dat`: 14 330 строк; `Translations: 14 007` в логе игры;
-- E2E: игра стартует, лог в `NeonTranslatorDX/NeonTranslatorDX.log`, меню
+## Проверенные цифры (2026-11-25, финальная раскладка mods/)
+
+- деплой RU: 16 файлов в манифесте (`dwmapi.dll` + `NeonTranslatorDX.dll`
+  87 040 б, `dwmapi_real.dll` 195 032 б, 11 файлов `fonts/` включая
+  `typography.json` и кандидаты шрифтов, `patch_ru.dat` 2 098 653 б,
+  `active_lang.txt`); после `--migrate` и деплоя 10 языков в папке 25 файлов
+  (+ лоадер в корне = 26 добавленных к чистому снимку);
+- `patch_ru.dat`: 14 330 строк; `Translations: 14 006` в логе игры;
+- E2E: игра стартует, лог в `mods/NeonTranslatorDX/NeonTranslatorDX.log`, меню
   русское (Продолжить / Новая игра / Загрузить файл сохранения / НАСТРОЙКИ /
-  Выход);
-- `clean_room`: `game-clean → installed` = добавлено 9, изменено 0, удалено 0;
-  `game-clean → uninstalled` = 0/0/0;
-- `--lang en`: 8 файлов, словаря нет, `active_lang.txt` = `en`, 2 байта.
+  Выход), индикатор `RU`; скриншоты `tmp/shots/mods-menu-final2.png`;
+- `Font: preload chain ru = True: needed 72 ... covered 72, unrenderable 0`
+  (старый баг атласа 1024×1024 закрыт новым контуром шрифтов);
+- `clean_room`: `game-clean → installed` = добавлено 26, изменено 0, удалено 0;
+  `game-clean → uninstalled` = 0/0/0 (удалены `dwmapi.dll`, папка мода и
+  опустевшая `mods/`);
 - `TCNN_GAME_DIR=C:\no\such\game` → понятная ошибка, код 1 (без тихого отката
   на Steam).
-
-## Открытый баг (не блокирует приёмку)
-
-`Font: preload Roboto-Condensed_DialogueUI (83) = False chars 236->236 atlas
-1024x1024` — `TryAddCharacters` не добавляет кириллицу в статический атлас
-1024×1024. Меню при этом рендерится по-русски (динамические глифы TMP), но
-предзагрузка не работает; отдельная задача — увеличить/сделать динамическим
-атлас или пересоздавать `TMP_FontAsset` из `RobotoCondensed-Regular.ttf`.

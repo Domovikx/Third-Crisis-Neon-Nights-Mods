@@ -31,10 +31,24 @@ export function expectedEntries(lang: string): string[] {
     "dwmapi.dll",
     "install.ps1",
     "README-INSTALL.md",
-    "NeonTranslatorDX/NeonTranslatorDX.dll",
-    `NeonTranslatorDX/patch_${lang}.dat`,
-    "NeonTranslatorDX/fonts/RobotoCondensed-Regular.ttf",
+    "mods/NeonTranslatorDX/NeonTranslatorDX.dll",
+    `mods/NeonTranslatorDX/patch_${lang}.dat`,
+    ...fontEntries(lang),
   ];
+}
+
+/**
+ * Шрифты релиза. Основной шрифт (Roboto Condensed) нужен всегда: на нём
+ * латиница/кириллица. SC — запасной для иероглифов, которые встречаются в
+ * переводах на любые языки (и основной для zh); JP/KR — только своему языку;
+ * Marks — пять комбинируемых штрихов «глитч»-строки (в латинских переводах).
+ */
+export function fontEntries(lang: string): string[] {
+  const fonts = ["RobotoCondensed-Regular.ttf", "NotoSansSC.ttf"];
+  if (lang === "ja") fonts.push("NotoSansJP.ttf");
+  if (lang === "ko") fonts.push("NotoSansKR.ttf");
+  if (!["zh", "ja", "ko"].includes(lang)) fonts.push("NotoSansMarks.ttf");
+  return fonts.map((f) => `mods/NeonTranslatorDX/fonts/${f}`);
 }
 
 export interface SourcePlan {
@@ -48,13 +62,13 @@ export function planSources(lang: string): SourcePlan[] {
     { from: "dwmapi.dll", to: "dwmapi.dll" },
     {
       from: "runtime/NeonTranslatorDX.dll",
-      to: "NeonTranslatorDX/NeonTranslatorDX.dll",
+      to: "mods/NeonTranslatorDX/NeonTranslatorDX.dll",
     },
-    { from: `runtime/patch_${lang}.dat`, to: `NeonTranslatorDX/patch_${lang}.dat` },
-    {
-      from: "fonts/RobotoCondensed-Regular.ttf",
-      to: "NeonTranslatorDX/fonts/RobotoCondensed-Regular.ttf",
-    },
+    { from: `runtime/patch_${lang}.dat`, to: `mods/NeonTranslatorDX/patch_${lang}.dat` },
+    ...fontEntries(lang).map((to) => ({
+      from: to.replace(/^mods\/NeonTranslatorDX\//, ""),
+      to,
+    })),
     { from: "README-INSTALL.md", to: "README-INSTALL.md" },
   ];
 }
@@ -89,7 +103,7 @@ export function installScript(lang: string): string {
   Install the ${lang} translation patch into the game folder (idempotent).
 .DESCRIPTION
   Run AFTER extracting the release archive into the game folder (the folder that
-  contains the game exe). Copies everything into "<game>/NeonTranslatorDX/"
+  contains the game exe). Copies everything into "<game>/mods/NeonTranslatorDX/"
   (fonts in its "fonts/" subfolder), writes active_lang.txt and
   install-manifest.json. The only file outside that folder is dwmapi.dll.
   Safe to re-run: all operations overwrite.
@@ -101,7 +115,7 @@ param([string]$GameDir = "")
 $ErrorActionPreference = 'Stop'
 if ([string]::IsNullOrWhiteSpace($GameDir)) { $GameDir = $PSScriptRoot }
 $DATA = Join-Path $GameDir 'Third Crisis Neon Nights_Data'
-$MOD = Join-Path $GameDir 'NeonTranslatorDX'
+$MOD = Join-Path $GameDir 'mods/NeonTranslatorDX'
 $FONTS = Join-Path $MOD 'fonts'
 $LANG = '${lang}'
 
@@ -117,9 +131,9 @@ if (-not (Test-Path -LiteralPath (Join-Path $DATA 'Managed'))) {
 }
 
 Need-File (Join-Path $GameDir 'dwmapi.dll') 'dwmapi.dll must sit next to install.ps1'
-$SRC_DLL = Join-Path $PSScriptRoot 'NeonTranslatorDX/NeonTranslatorDX.dll'
-$SRC_DAT = Join-Path $PSScriptRoot ('NeonTranslatorDX/patch_' + $LANG + '.dat')
-$SRC_TTF = Join-Path $PSScriptRoot 'NeonTranslatorDX/fonts/RobotoCondensed-Regular.ttf'
+$SRC_DLL = Join-Path $PSScriptRoot 'mods/NeonTranslatorDX/NeonTranslatorDX.dll'
+$SRC_DAT = Join-Path $PSScriptRoot ('mods/NeonTranslatorDX/patch_' + $LANG + '.dat')
+$SRC_TTF = Join-Path $PSScriptRoot 'mods/NeonTranslatorDX/fonts/RobotoCondensed-Regular.ttf'
 Need-File $SRC_DLL 'archive payload is missing'
 Need-File $SRC_DAT 'archive payload is missing'
 Need-File $SRC_TTF 'archive payload is missing'
@@ -141,10 +155,10 @@ Set-Content -Path (Join-Path $MOD 'active_lang.txt') -Value $LANG -NoNewline
 # Manifest for the uninstaller: file, size, sha256 (paths relative to game dir).
 $payload = @(
   @{ rel='dwmapi.dll'; abs=(Join-Path $GameDir 'dwmapi.dll') },
-  @{ rel='NeonTranslatorDX/NeonTranslatorDX.dll'; abs=$DST_DLL },
-  @{ rel='NeonTranslatorDX/fonts/RobotoCondensed-Regular.ttf'; abs=$DST_TTF },
-  @{ rel=('NeonTranslatorDX/patch_' + $LANG + '.dat'); abs=$DST_DAT },
-  @{ rel='NeonTranslatorDX/active_lang.txt'; abs=(Join-Path $MOD 'active_lang.txt') }
+  @{ rel='mods/NeonTranslatorDX/NeonTranslatorDX.dll'; abs=$DST_DLL },
+  @{ rel='mods/NeonTranslatorDX/fonts/RobotoCondensed-Regular.ttf'; abs=$DST_TTF },
+  @{ rel=('mods/NeonTranslatorDX/patch_' + $LANG + '.dat'); abs=$DST_DAT },
+  @{ rel='mods/NeonTranslatorDX/active_lang.txt'; abs=(Join-Path $MOD 'active_lang.txt') }
 )
 $list = @()
 foreach ($p in $payload) {
@@ -166,7 +180,7 @@ $manifest = @{
 $manifest | ConvertTo-Json -Depth 5 | Set-Content -Path (Join-Path $MOD 'install-manifest.json') -Encoding UTF8
 
 Step 'Done'
-Write-Host ('Lang: ' + $LANG + ' installed. Restart the game and check NeonTranslatorDX\\NeonTranslatorDX.log')
+Write-Host ('Lang: ' + $LANG + ' installed. Restart the game and check mods\\NeonTranslatorDX\\NeonTranslatorDX.log')
 Write-Host 'NOTE: Steam "Verify integrity of game files" deletes dwmapi.dll; re-run install.ps1.'
 `;
 }

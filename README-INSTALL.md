@@ -7,24 +7,24 @@
 
 ## Что внутри архива
 
-| Файл в архиве                                        | Куда попадает при распаковке в папку игры                |
-| ---------------------------------------------------- | -------------------------------------------------------- |
-| `dwmapi.dll`                                         | В корень игры, рядом с exe (загрузчик перевода)          |
-| `NeonTranslatorDX/NeonTranslatorDX.dll`              | В `<игра>\NeonTranslatorDX\` (сам переводчик)            |
-| `NeonTranslatorDX/patch_ru.dat`                      | В `<игра>\NeonTranslatorDX\` (словарь перевода)          |
-| `NeonTranslatorDX/fonts/RobotoCondensed-Regular.ttf` | В `<игра>\NeonTranslatorDX\fonts\` (кириллический шрифт) |
-| `install.ps1`                                        | Скрипт установки (запускается один раз из папки игры)    |
-| `README-INSTALL.md`                                  | Этот файл                                                |
+| Файл в архиве                                | Куда попадает при распаковке в папку игры                                     |
+| -------------------------------------------- | ----------------------------------------------------------------------------- |
+| `dwmapi.dll`                                 | В корень игры, рядом с exe (загрузчик перевода)                               |
+| `mods/NeonTranslatorDX/NeonTranslatorDX.dll` | В `<игра>\mods\NeonTranslatorDX\` (сам переводчик)                            |
+| `mods/NeonTranslatorDX/patch_ru.dat`         | В `<игра>\mods\NeonTranslatorDX\` (словарь перевода)                          |
+| `mods/NeonTranslatorDX/fonts/`               | Шрифты мода: Roboto Condensed + Noto (латиница, кириллица, CJK) и их лицензии |
+| `install.ps1`                                | Скрипт установки (запускается один раз из папки игры)                         |
+| `README-INSTALL.md`                          | Этот файл                                                                     |
 
 Установка не трогает сохранения и файлы игры: добавляется только `dwmapi.dll`
-и папка `NeonTranslatorDX\`. Удаление этих двух мест полностью возвращает
+и папка `mods\NeonTranslatorDX\`. Удаление этих двух мест полностью возвращает
 оригинальный английский текст.
 
 ## Установка за 3 шага
 
 **Шаг 1.** Распакуйте ВЕСЬ zip в папку игры — туда, где лежит exe игры.
 После распаковки рядом с exe должны появиться `dwmapi.dll`, `install.ps1`
-и папка `NeonTranslatorDX\`.
+и папка `mods\NeonTranslatorDX\`.
 Пример пути папки игры:
 
 ```text
@@ -39,7 +39,7 @@ C:\Program Files (x86)\Steam\steamapps\common\Third Crisis Neon Nights
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-Скрипт проверит файлы в `NeonTranslatorDX\` (распаковка уже положила их на
+Скрипт проверит файлы в `mods\NeonTranslatorDX\` (распаковка уже положила их на
 место), при необходимости скопирует их из папки архива, запишет
 `active_lang.txt` и `install-manifest.json` (список поставленного). Его можно
 безопасно запускать повторно.
@@ -49,11 +49,11 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 ## Как проверить, что перевод работает
 
 1. Запустите игру и дойдите до любого диалога.
-2. Откройте файл `<игра>\NeonTranslatorDX\NeonTranslatorDX.log`.
+2. Откройте файл `<игра>\mods\NeonTranslatorDX\NeonTranslatorDX.log`.
 3. В нём должны быть строки вида:
 
 ```text
-Lang: ru, source: ...\NeonTranslatorDX\patch_ru.dat
+Lang: ru, source: ...\mods\NeonTranslatorDX\patch_ru.dat
 Translations: <число больше нуля>
 ```
 
@@ -66,7 +66,7 @@ Translations: <число больше нуля>
 Удалите ровно два места (игра вернётся на английский):
 
 - `<игра>\dwmapi.dll`
-- папку `<игра>\NeonTranslatorDX\` целиком
+- папку `<игра>\mods\NeonTranslatorDX\` целиком (пустая `mods\` тоже удаляется)
 
 Если ставили через `install.ps1`, можно удалить и два файла в корне игры
 (безвредны): `install.ps1` и `README-INSTALL.md`. Либо переустановите мод и
@@ -79,7 +79,7 @@ Translations: <число больше нуля>
 
 **После «Проверить целостность файлов» в Steam пропал перевод.**
 Это нормально: Steam удаляет `dwmapi.dll` из папки игры (этот файл не входит
-в состав игры). Папка `NeonTranslatorDX\` обычно остаётся на месте, но без
+в состав игры). Папка `mods\NeonTranslatorDX\` обычно остаётся на месте, но без
 загрузчика перевод не стартует. Лечение: заново выполните шаг 2
 (`install.ps1`) — переустановка занимает минуту и ничего не ломает.
 
@@ -103,7 +103,7 @@ Translations: <число больше нуля>
 повторите шаг 2.
 
 **Русского текста нет, в логе `Translations: 0` или другой язык.**
-Проверьте, что `<игра>\NeonTranslatorDX\active_lang.txt` содержит ровно `ru`
+Проверьте, что `<игра>\mods\NeonTranslatorDX\active_lang.txt` содержит ровно `ru`
 без пробелов и переносов строк, затем повторно запустите `install.ps1`.
 
 ## Повторная установка после проверки Steam

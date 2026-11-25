@@ -15,8 +15,8 @@ description: Компиляция NeonTranslatorDX (C# → DLL через csc.ex
   перехватывает; без него рантайм в игре не загружается.
 
 ```text
-source/*.cs ──csc.exe──▶ runtime/NeonTranslatorDX.dll ──deploy──▶ <игра>/NeonTranslatorDX/
-source/dwmapi_proxy.c ──cl.exe──▶ <игра>/dwmapi.dll + <игра>/NeonTranslatorDX/dwmapi_real.dll (+ копии в репо)
+source/*.cs ──csc.exe──▶ runtime/NeonTranslatorDX.dll ──deploy──▶ <игра>/mods/NeonTranslatorDX/
+source/dwmapi_proxy.c ──cl.exe──▶ <игра>/dwmapi.dll + <игра>/mods/NeonTranslatorDX/dwmapi_real.dll (+ копии в репо)
 ```
 
 ## Скрипты (`scripts/`)
@@ -31,6 +31,25 @@ source/dwmapi_proxy.c ──cl.exe──▶ <игра>/dwmapi.dll + <игра>/N
   только `TCNN_GAME_DIR` и хардкодят MSVC 14.50.35717). Не править и не звать;
   удаление — решение владельца.
 - `tests/build.test.mts` — `node --test`, без игры и компиляторов.
+- `tests/neoncore.test.mts` — компилирует `source/NeonFontCore.cs` настоящим `csc.exe`
+  и проверяет свойства подбора кегля (не растёт, пол 60 %, влезает), типографику
+  (zh/ja/ko/лат) и цепочку фолбэков `lat → SC → JP → KR → marks`.
+- `tests/menu.test.mts` — порядок языков = `config/language-priority.json`, геометрия
+  панели (не наезжает на кнопки на 1600×900 / 1920×1080 / 2560×1080 / 1440×1080),
+  значения `fonts/typography.json`.
+
+## Рантайм-модули шрифтов и меню
+
+- `NeonFontCore.cs` — чистые функции (кегль, лицо по языку, цепочка, CJK-масштаб).
+- `NeonFonts.cs` — динамические TMP-лица из TTF, клонирование игровых ассетов
+  (`CloneGameFace`), fallback-цепочка, preload по объединению cmap цепочки.
+- `NeonTypography.cs` — читает `fonts/typography.json` (кегль/интерлиньяж по языкам).
+- `NeonFit.cs` — CJK-масштаб + авто-подгонка кегля (пол 60 %) для подписей.
+- `NeonLanguageSwitcher.cs` — панель языка (F9), метрики — `docs/ui-kit.md`.
+- `NeonUiKit.cs` — процедурные скругления/тени/палитра.
+- `NeonFontDebug.cs` — скрытая страница `Ctrl+F12` (Font specimen; вкладка Compare —
+  кандидаты шрифтов, применение только на сессию) и флаг `fontdebug.txt`.
+- `NeonUiProbe.cs` — временный дамп метрик UI игры (F10), удалить после приёмки.
 
 ## Команды
 
@@ -59,7 +78,7 @@ Steam-копию (иначе сборка уходит в другую уста�
 ### Куда что пишется
 
 - `runtime/NeonTranslatorDX.dll` — артефакт сборки (в git не попадает);
-- `<игра>/dwmapi.dll`, `<игра>/NeonTranslatorDX/dwmapi_real.dll`;
+- `<игра>/dwmapi.dll`, `<игра>/mods/NeonTranslatorDX/dwmapi_real.dll`;
 - копия прокси в корень репозитория (`dwmapi.dll`) — её ставит `deploy.mts`;
 - `tmp/build_proxy/` — `.obj/.lib/.exp` (в корне репозитория не мусорим).
 

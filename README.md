@@ -78,7 +78,7 @@ npm run potgen ──→ po/template.pot (источник правды, ~18k з
 po/<lang>.po ──→ npm run po2dat ──→ runtime/patch_<lang>.dat (JSON-lines)
         │
         ▼
-npm run deploy ──→ <игра>/dwmapi.dll + <игра>/NeonTranslatorDX/ (DLL + patch + шрифты + active_lang.txt + манифест)
+npm run deploy ──→ <игра>/dwmapi.dll + <игра>/mods/NeonTranslatorDX/ (DLL + patch + шрифты + active_lang.txt + манифест)
 ```
 
 Рантайм читает **один** `patch_<lang>.dat`; переводы живут в памяти, бинарники игры не

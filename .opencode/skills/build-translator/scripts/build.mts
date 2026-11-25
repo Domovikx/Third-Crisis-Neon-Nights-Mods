@@ -33,7 +33,14 @@ export const SOURCE_FILES = [
   "TranslatorPlugin.cs",
   "NeonLateUpdate.cs",
   "NeonLanguageSwitcher.cs",
-  "NeonCjkOverlay.cs",
+  "NeonFontCore.cs",
+  "NeonFonts.cs",
+  "NeonTypography.cs",
+  "NeonFit.cs",
+  "NeonUiKit.cs",
+  "NeonUiStrings.cs",
+  "NeonFontDebug.cs",
+  "NeonUiProbe.cs",
 ];
 
 /** Сборки Unity/BCL, без которых рантайм не собрать. */

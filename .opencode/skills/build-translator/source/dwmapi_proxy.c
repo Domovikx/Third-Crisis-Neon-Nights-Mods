@@ -97,8 +97,8 @@ static void BootstrapTranslator(void)
     wchar_t* exeSlash = wcsrchr(exePath, L'\\');
     if (!exeSlash) { DebugLog("FAIL: exe path has no separator"); return; }
     *exeSlash = L'\0';
-    // Everything the mod ships lives in <game>/NeonTranslatorDX/.
-    swprintf_s(dllPath, MAX_PATH, L"%s\\NeonTranslatorDX\\NeonTranslatorDX.dll", exePath);
+    // Everything the mod ships lives in <game>/mods/NeonTranslatorDX/.
+    swprintf_s(dllPath, MAX_PATH, L"%s\\mods\\NeonTranslatorDX\\NeonTranslatorDX.dll", exePath);
 
     char dllPathUtf8[MAX_PATH * 2];
     WideCharToMultiByte(CP_UTF8, 0, dllPath, -1, dllPathUtf8, (int)sizeof(dllPathUtf8), NULL, NULL);
@@ -160,7 +160,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
             {
                 *slash = L'\0';
                 wchar_t realPath[MAX_PATH];
-                swprintf_s(realPath, MAX_PATH, L"%s\\NeonTranslatorDX\\dwmapi_real.dll", self);
+                swprintf_s(realPath, MAX_PATH, L"%s\\mods\\NeonTranslatorDX\\dwmapi_real.dll", self);
                 LoadLibraryW(realPath);
             }
         }

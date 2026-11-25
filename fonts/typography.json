@@ -1,0 +1,22 @@
+{
+  "_comment": "CJK-типографика мода: на язык — масштаб кегля и межстрочный интервал. Иероглифы плотнее латиницы при том же кегле, поэтому CJK-текст увеличивается: те же цифры, что на сайте TSSR (W3C CLReq/JLReq, WCAG). Менять только вместе с docs/fonts.md.",
+  "source": "W3C CLReq/JLReq + WCAG; TSSR site (zh +8% / ja +7% / ko +4%)",
+  "updated": "2026-11-25",
+  "default": {
+    "scale": 1.0,
+    "lineHeight": 1.0
+  },
+  "languages": {
+    "en": { "scale": 1.0, "lineHeight": 1.0 },
+    "ru": { "scale": 1.0, "lineHeight": 1.0 },
+    "de": { "scale": 1.0, "lineHeight": 1.0 },
+    "es": { "scale": 1.0, "lineHeight": 1.0 },
+    "pt": { "scale": 1.0, "lineHeight": 1.0 },
+    "fr": { "scale": 1.0, "lineHeight": 1.0 },
+    "it": { "scale": 1.0, "lineHeight": 1.0 },
+    "pl": { "scale": 1.0, "lineHeight": 1.0 },
+    "zh": { "scale": 1.08, "lineHeight": 1.6 },
+    "ja": { "scale": 1.07, "lineHeight": 1.5 },
+    "ko": { "scale": 1.04, "lineHeight": 1.5 }
+  }
+}

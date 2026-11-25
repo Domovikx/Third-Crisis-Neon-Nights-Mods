@@ -1,0 +1,111 @@
+Init at 25.11.2026 12:23:31
+Lang: ru, source: C:\Program Files (x86)\Steam\steamapps\common\Third Crisis Neon Nights\mods\NeonTranslatorDX\patch_ru.dat
+Translations: 14006
+Font: registered RobotoCondensed-Regular.ttf (9)
+Font: registered NotoSansSC.ttf (2)
+Font: registered NotoSansJP.ttf (2)
+Font: registered NotoSansKR.ttf (1)
+Font: registered NotoSansMarks.ttf (1)
+Fonts: TryAddGlyphToTexture ok
+Font face: C:\Program Files (x86)\Steam\steamapps\common\Third Crisis Neon Nights\mods\NeonTranslatorDX\fonts\RobotoCondensed-Regular.ttf exists=True
+Font face: C:\Program Files (x86)\Steam\steamapps\common\Third Crisis Neon Nights\mods\NeonTranslatorDX\fonts\NotoSansSC.ttf exists=True
+Font face: C:\Program Files (x86)\Steam\steamapps\common\Third Crisis Neon Nights\mods\NeonTranslatorDX\fonts\NotoSansJP.ttf exists=True
+Font face: C:\Program Files (x86)\Steam\steamapps\common\Third Crisis Neon Nights\mods\NeonTranslatorDX\fonts\NotoSansKR.ttf exists=True
+Font face: C:\Program Files (x86)\Steam\steamapps\common\Third Crisis Neon Nights\mods\NeonTranslatorDX\fonts\NotoSansMarks.ttf exists=True
+Font face: C:\Program Files (x86)\Steam\steamapps\common\Third Crisis Neon Nights\mods\NeonTranslatorDX\fonts\typography.json exists=True
+typography: loaded 11 languages from typography.json
+Refl: ready
+Init done
+Dump: found 0 text components
+DumpTranslations: wrote C:\Program Files (x86)\Steam\steamapps\common\Third Crisis Neon Nights\mods\NeonTranslatorDX\dump_GUIDictionary.json
+Scene loaded: MainMenu
+Populate: 'Preloading Content' -> 'Предзагрузка контента' on PreloadingUI(Clone)/Parent/Text (TMP)
+Fonts: built DX-lat from RobotoCondensed-Regular.ttf point=64 padding=5 atlas=2048x2048 family='Roboto Condensed'
+Fonts: DX-lat seeded 97 primary glyphs
+Fonts: built DX-zh from NotoSansSC.ttf point=64 padding=5 atlas=2048x2048 family='Noto Sans SC'
+Fonts: DX-zh seeded 97 primary glyphs
+Fonts: built DX-ja from NotoSansJP.ttf point=64 padding=5 atlas=2048x2048 family='Noto Sans JP'
+Fonts: DX-ja seeded 97 primary glyphs
+Fonts: built DX-ko from NotoSansKR.ttf point=64 padding=5 atlas=2048x2048 family='Noto Sans KR'
+Fonts: DX-ko seeded 97 primary glyphs
+Fonts: built DX-marks from NotoSansMarks.ttf point=64 padding=5 atlas=2048x2048 family='Noto Sans'
+Fonts: fallbacks on 'Sentinel Type - BigNoodleToo SDF With Shadow' -> [DX-lat:109,DX-zh:97,DX-ja:97,DX-ko:97,DX-marks:0]
+Fonts: cloned 'Sentinel Type - BigNoodleToo SDF With Shadow' -> 'DXclone-Sentinel Type - BigNoodleToo SDF With Shadow' source='Sentinel Type - BigNoodleToo' point=89 padding=5 render=16426 material='Sentinel Type - BigNoodleToo SDF Material (DX clone)' bakedAtlas=none
+Fonts: assign font='DXclone-Sentinel Type - BigNoodleToo SDF With Shadow' source='Sentinel Type - BigNoodleToo SDF With Shadow' glyphs=109 material='Sentinel Type - BigNoodleToo SDF Material (DX clone)' fallbacks=5 added=12 colorTagWorks=False plainWorks=False on PreloadingUI(Clone)/Parent/Text (TMP)
+RenderProof: 'П' U+041F asset='DXclone-Sentinel Type - BigNoodleToo SDF With Shadow' component.font='DXclone-Sentinel Type - BigNoodleToo SDF With Shadow' on PreloadingUI(Clone)/Parent/Text (TMP)
+Populate: replaced 1 texts
+DumpTranslations: wrote C:\Program Files (x86)\Steam\steamapps\common\Third Crisis Neon Nights\mods\NeonTranslatorDX\dump_GUIDictionary.json
+Switcher: UI font = Roboto Condensed
+Switcher: ready (en,zh,ru,es,pt,de,ja,fr,pl,ko,it)
+Populate: 'Exit' -> 'Выход' on Canvas TCNN Main Menu/Main Parent/ButtonContainer/Exit Button/Background/Text (TMP)
+Fonts: fallbacks on 'Orbitron-Black SDF' -> [DX-lat:112,DX-zh:97,DX-ja:97,DX-ko:97,DX-marks:0]
+Fonts: cloned 'Orbitron-Black SDF' -> 'DXclone-Orbitron-Black SDF' source='Orbitron-Black' point=90 padding=9 render=SDFAA material='Orbitron-Black Atlas Material (DX clone)' bakedAtlas=1024x1024
+Fonts: cloned 'Roboto-Condensed_DialogueUI' -> 'DXclone-Roboto-Condensed_DialogueUI' source='Roboto-Condensed' point=95 padding=9 render=SDFAA material='Roboto-Condensed Atlas Material (DX clone)' bakedAtlas=1024x1024
+Fonts: fallbacks on 'DXclone-Roboto-Condensed_DialogueUI' -> [DX-marks:0,DX-lat:112,DX-zh:97,DX-ja:97,DX-ko:97]
+Fonts: fallbackFont='DXclone-Roboto-Condensed_DialogueUI' source='Roboto-Condensed_DialogueUI' glyphs=241 material='Roboto-Condensed Atlas Material (DX clone)' fallbacks=6 on 'Orbitron-Black SDF'
+Fonts: fallback front font='DXclone-Roboto-Condensed_DialogueUI' (via fallback) source='Orbitron-Black SDF' colorTagWorks=False plainWorks=False on Canvas TCNN Main Menu/Main Parent/ButtonContainer/Exit Button/Background/Text (TMP)
+typography: ru scale=1.00 size=36->38
+RenderProof: 'В' U+0412 asset='DXclone-Roboto-Condensed_DialogueUI' component.font='Orbitron-Black SDF' on Canvas TCNN Main Menu/Main Parent/ButtonContainer/Exit Button/Background/Text (TMP)
+Populate: 'Options' -> 'НАСТРОЙКИ' on Canvas TCNN Main Menu/Main Parent/ButtonContainer/Options Button/Background/Text (TMP)
+Fonts: fallback front font='DXclone-Roboto-Condensed_DialogueUI' (via fallback) source='Orbitron-Black SDF' colorTagWorks=False plainWorks=False on Canvas TCNN Main Menu/Main Parent/ButtonContainer/Options Button/Background/Text (TMP)
+RenderProof: 'Н' U+041D asset='DXclone-Roboto-Condensed_DialogueUI' component.font='Orbitron-Black SDF' on Canvas TCNN Main Menu/Main Parent/ButtonContainer/Options Button/Background/Text (TMP)
+Populate: 'Load Save File' -> 'Загрузить файл сохранения' on Canvas TCNN Main Menu/Main Parent/ButtonContainer/Load Save Button/Background/Text (TMP)
+Fonts: fallback front font='DXclone-Roboto-Condensed_DialogueUI' (via fallback) source='Orbitron-Black SDF' colorTagWorks=False plainWorks=False on Canvas TCNN Main Menu/Main Parent/ButtonContainer/Load Save Button/Background/Text (TMP)
+Fit: ['Загрузить файл сохранения'] 38->36 (379>388)
+RenderProof: 'З' U+0417 asset='DXclone-Roboto-Condensed_DialogueUI' component.font='Orbitron-Black SDF' on Canvas TCNN Main Menu/Main Parent/ButtonContainer/Load Save Button/Background/Text (TMP)
+Populate: 'New Game' -> 'Новая игра' on Canvas TCNN Main Menu/Main Parent/ButtonContainer/New Game Button/Background/Text (TMP)
+Fonts: fallback front font='DXclone-Roboto-Condensed_DialogueUI' (via fallback) source='Orbitron-Black SDF' colorTagWorks=False plainWorks=False on Canvas TCNN Main Menu/Main Parent/ButtonContainer/New Game Button/Background/Text (TMP)
+RenderProof: 'Н' U+041D asset='DXclone-Roboto-Condensed_DialogueUI' component.font='Orbitron-Black SDF' on Canvas TCNN Main Menu/Main Parent/ButtonContainer/New Game Button/Background/Text (TMP)
+Populate: 'Continue' -> 'Продолжить' on Canvas TCNN Main Menu/Main Parent/ButtonContainer/Continue Button/Background/Text (TMP)
+Fonts: fallback front font='DXclone-Roboto-Condensed_DialogueUI' (via fallback) source='Orbitron-Black SDF' colorTagWorks=False plainWorks=False on Canvas TCNN Main Menu/Main Parent/ButtonContainer/Continue Button/Background/Text (TMP)
+RenderProof: 'П' U+041F asset='DXclone-Roboto-Condensed_DialogueUI' component.font='Orbitron-Black SDF' on Canvas TCNN Main Menu/Main Parent/ButtonContainer/Continue Button/Background/Text (TMP)
+Populate: replaced 5 texts
+Fonts: fallbacks on 'Roboto-Condensed_DialogueUI' -> [DX-lat:131,DX-zh:97,DX-ja:97,DX-ko:97,DX-marks:0]
+Font: preload chain ru = True: needed 72 (83 non-ASCII in corpus, 11 already baked), covered 72, unrenderable 0 | game 236 + dynamic 83 -> 319 glyphs (0,01 s)
+Font: render ru: 83 non-ASCII chars drawn by 'DX-lat' (67/83), chain lat->zh->ja->ko->marks, primary 'Roboto-Condensed_DialogueUI' keeps 236 baked glyphs
+typography: ru scale=1.00 lineHeight=1.00 (typography.json)
+Font: chain 'Roboto-Condensed_DialogueUI' baked 236 -> dynamic DX-lat 163 (total 399 glyphs)
+Font: initialization complete (DX-lat chars 163)
+UiProbe: === start ===
+UiProbe: fontSource 'Roboto-Condensed_DialogueUI' src=Roboto-Condensed mode=Dynamic point=95 scale=1 material=Roboto-Condensed Atlas Material padding=9 render=SDFAA loadface=Success Ж=450 idx cachedMissing=False tryAdd=False 236->236 miss=1
+UiProbe: fontSource 'Roboto-Regular SDF' src=null mode=Static point=90 scale=1 material=Roboto-Regular Atlas Material padding=9 render=SDFAA loadface=n/a cachedMissing=False
+UiProbe: fontSource 'Sentinel Type - BigNoodleToo SDF With Shadow' src=Sentinel Type - BigNoodleToo mode=Static point=89 scale=1 material=Sentinel Type - BigNoodleToo SDF Material padding=5 render=16426 loadface=Success Ж=329 idx cachedMissing=False
+UiProbe: fontSource 'Orbitron-Black SDF' src=Orbitron-Black mode=Dynamic point=90 scale=1 material=Orbitron-Black Atlas Material padding=9 render=SDFAA loadface=Success Ж=0 idx cachedMissing=False tryAdd=False 83->83 miss=1
+UiProbe: metrics ['Exit' -> 'Выход'] size=38 style=Normal spacing=-8 line=0 font=Orbitron-Black SDF en=72,82x48,86 ru=92,91x45,74 ratio=1,276 plate=92
+UiProbe: metrics ['Options' -> 'НАСТРОЙКИ'] size=38 style=Normal spacing=-8 line=0 font=Orbitron-Black SDF en=143,81x48,86 ru=171,82x45,74 ratio=1,195 plate=92
+UiProbe: metrics ['Load Save File' -> 'Загрузить файл сохранения'] size=36 style=Normal spacing=-8 line=0 font=Orbitron-Black SDF en=267,85x46,35 ru=359,37x43,39 ratio=1,342 plate=92
+UiProbe: metrics ['New Game' -> 'Новая игра'] size=38 style=Normal spacing=-8 line=0 font=Orbitron-Black SDF en=210,95x48,86 ru=152,11x45,74 ratio=0,721 plate=92
+UiProbe: spacingCal 'Продолжить' sp0=199,2x45,74 sp-5=182,1x45,74 sp-10=165x45,74 sp-20=130,8x45,74
+UiProbe: metrics ['Continue' -> 'Продолжить'] size=38 style=Normal spacing=-8 line=0 font=Orbitron-Black SDF en=168,4x48,86 ru=171,84x45,74 ratio=1,020 plate=92
+UiProbe: [Canvas TCNN Main Menu/Main Parent/ButtonContainer/Exit Button/Background/Text (TMP)]
+UiProbe:   button type=ANToolkit.UI.ANButton size=92x72 anchored=(46.00, -379.00) anchorMin=(0.00, 1.00) pivot=(0.50, 0.50) scale=(1.00, 1.00, 1.00)
+UiProbe:   selectable transition=Animation normal=#979797@1,00 hi=#F5F5F5@1,00 press=#C8C8C8@1,00 sel=#F5F5F5@1,00 disabled=#C8C8C8@0,50 mult=1 fade=0,1
+UiProbe:   sprites hi=- press=- sel=- disabled=-
+UiProbe:   AN fields: Bind=; shouldFire=False; TESTValie=0; RequireCancelStackEmpty=False; _didBinding=False; IsHovered=False; HoverOverride=False; CanSelect=True; RequiredHoldDuration=0; HoldStartTime=0; Volume=1; IsHeld=False; m_CurrentIndex=9
+UiProbe:   image [Canvas TCNN Main Menu/Main Parent/ButtonContainer/Exit Button/Background] GenericSquareTiltedButton type=Sliced color=#FFFFFF@1,00 rect=420x72 border=24,0,24,0 spriteRect=92x72 raycast=True
+UiProbe:   image [Canvas TCNN Main Menu/Main Parent/ButtonContainer/Exit Button/Background/Bind Display for Selectable Variant/Image] keyboard_e type=Simple color=#FFFFFF@1,00 rect=50x50 border=0,0,0,0 spriteRect=128x128 raycast=False
+UiProbe:   text size=38 style=Normal spacing=-8 wordSpacing=0 line=0 align=Center margin=(0.69, 0.00, 0.00, 1.20) color=#000000@1,00 font=Orbitron-Black SDF rect=387,74x58,79 autoSize=False overflow=Overflow raycast=True
+UiProbe:   mat=Orbitron-Black Atlas Material shader=TextMeshPro/Distance Field _FaceColor=#FFFFFF@1,00 _OutlineColor=#000000@1,00 _OutlineWidth=0 _UnderlayColor=#000000@0,50 _UnderlayOffsetX=0 _UnderlayOffsetY=0 _UnderlaySoftness=0 _UnderlayDilate=0 _GlowColor=#00FF00@0,50 _GlowPower=0,75 _GradientScale=10
+UiProbe:   layout=VerticalLayoutGroup padding=RectOffset (l:0 r:0 t:0 b:0) spacing=9 childControlH=False childForceExpandH=True on [Canvas TCNN Main Menu/Main Parent/ButtonContainer]
+UiProbe: sprite [Canvas TCNN Main Menu/Main Parent/ButtonContainer/MiniButtons/ButtonHGroup/Discord Button/Background] GenericSquareTiltedButton type=Simple color=#FFFFFF@1,00 rect=92x72 border=24,0,24,0
+UiProbe: sprite [Canvas TCNN Main Menu/Main Parent/ButtonContainer/MiniButtons/ButtonHGroup/Bug Report Button/Background] GenericSquareTiltedButton type=Simple color=#FFFFFF@1,00 rect=92x72 border=24,0,24,0
+UiProbe: sprite [Canvas TCNN Main Menu/Main Parent/ButtonContainer/MiniButtons/ButtonHGroup/Credits Button/Background] GenericSquareTiltedButton type=Simple color=#FFFFFF@1,00 rect=92x72 border=24,0,24,0
+UiProbe: sprite [Canvas TCNN Main Menu/Main Parent/ButtonContainer/MiniButtons/ButtonHGroup/Release Notes Button/Background] GenericSquareTiltedButton type=Simple color=#FFFFFF@1,00 rect=92x72 border=24,0,24,0
+UiProbe: sprite [Canvas TCNN Main Menu/Main Parent/ButtonContainer/Exit Button/Background] GenericSquareTiltedButton type=Sliced color=#FFFFFF@1,00 rect=420x72 border=24,0,24,0
+UiProbe: sprite [Canvas TCNN Main Menu/Main Parent/ButtonContainer/Options Button/Background] GenericSquareTiltedButton type=Sliced color=#FFFFFF@1,00 rect=420x72 border=24,0,24,0
+UiProbe: sprite [Canvas TCNN Main Menu/Main Parent/ButtonContainer/Load Save Button/Background] GenericSquareTiltedButton type=Sliced color=#FFFFFF@1,00 rect=420x72 border=24,0,24,0
+UiProbe: sprite [Canvas TCNN Main Menu/Main Parent/ButtonContainer/New Game Button/Background] GenericSquareTiltedButton type=Sliced color=#FFFFFF@1,00 rect=420x72 border=24,0,24,0
+UiProbe: sprite [Canvas TCNN Main Menu/Main Parent/ButtonContainer/Continue Button/Background] GenericSquareTiltedButton type=Sliced color=#FFFFFF@1,00 rect=420x72 border=24,0,24,0
+UiProbe: sprite [Canvas TCNN Main Menu/Main Parent/Image] verticalfade_QuadInOut type=Sliced color=#FAE360@1,00 rect=2593,41x2066,85 border=0,2034,0,0
+UiProbe: scaler [Canvas TCNN Main Menu] mode=ScaleWithScreenSize ref=(1920.00, 1080.00) match=0 scaleFactor=1 screen=1920x1200
+UiProbe: scaler [NeonTranslator_Scanner/NeonTranslator_LangUI] mode=ScaleWithScreenSize ref=(1920.00, 1080.00) match=0,5 scaleFactor=1 screen=1920x1200
+UiProbe: scaler [PreloadingUI(Clone)] mode=ScaleWithScreenSize ref=(1920.00, 1080.00) match=0 scaleFactor=1 screen=1920x1200
+UiProbe: scaler [Version UI] mode=ScaleWithScreenSize ref=(1920.00, 1080.00) match=0 scaleFactor=1 screen=1920x1200
+UiProbe: canvas [Canvas TCNN Main Menu] scale=1 order=0
+UiProbe: canvas [NeonTranslator_Scanner/NeonTranslator_LangUI] scale=1,054093 order=32767
+UiProbe: canvas [PreloadingUI(Clone)] scale=1 order=1000
+UiProbe: canvas [Version UI] scale=1 order=679
+UiProbe: === end ===
+typography: zh scale=1.08 size=24->26
+typography: ja scale=1.07 size=24->26
+typography: ko scale=1.04 size=24->25
