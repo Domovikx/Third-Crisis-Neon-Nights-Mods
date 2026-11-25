@@ -24017,7 +24017,7 @@ msgstr "Игрок действительно хочет потратить де
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Doesn't sound like no one to me, little man."
-msgstr "Не похоже на «никакого человека», малыш. (говорит Леона)"
+msgstr "Не похоже на «никакого человека», малыш."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -27744,7 +27744,7 @@ msgstr "Четверо — уже вечеринка"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Fourty Fuckbucks, if you let her grope your tits."
-msgstr "40 чертовых баксов, если позволишь ей пощупать твои сиськи. (говорит Ругнар)"
+msgstr "40 чертовых баксов, если позволишь ей пощупать твои сиськи."
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -31667,7 +31667,7 @@ msgstr "Вот вещи. Скажи Лио, чтобы он когда-нибу�
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Here's two hundred. Klaudia won't know and Nova is in on it."
-msgstr "Вот двести. Клавдия не узнает, а Нова в курсе. (говорит Ругнар)"
+msgstr "Вот двести. Клавдия не узнает, а Нова в курсе."
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -43505,7 +43505,7 @@ msgstr "М-м-мх... Мне так повезло работать с тако�
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Mmmh, that's good. Soft Rosie."
-msgstr "М-м-м, так хорошо. Мягкая Рози. (говорит Ругнар)"
+msgstr "М-м-м, так хорошо. Мягкая Рози."
 
 #. src: dialog
 msgctxt "ui"
@@ -47393,7 +47393,7 @@ msgstr "О боже, ты такая чертовски горячая, Зои! 
 #. src: dialog
 msgctxt "ui"
 msgid "Oh my god you are so adorable, Zoey... How about you sweeten the deal a little, Rungar darling, hm?"
-msgstr "О боже, ты такая прелесть, Зои... А ты, Ругнар, дорогой, как насчёт подсластить сделку, а?"
+msgstr "О боже, ты такая прелесть, Зои... А ты, Рунгар, дорогой, как насчёт подсластить сделку, а?"
 
 #. src: dialog
 #. rich_text: Oh my god you sound <b>so</b> cute, eheh!
@@ -51617,7 +51617,7 @@ msgstr "Выберите камеру для просмотра..."
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Please what, pet?"
-msgstr "Что же ты просишь, питомец? (говорит Леона)"
+msgstr "Что же ты просишь, питомец?"
 
 #. src: dialog
 msgctxt "ui"
@@ -54678,7 +54678,7 @@ msgstr "Рунгар не кончает так быстро, как други�
 #. src: dialog
 msgctxt "ui"
 msgid "Rungar... H-heh... S-so good to-... Ngh... See you... Eheh..."
-msgstr "Ругнар... Х-хе... Т-так хорошо тебя-... М-м-м... увидеть... Е-хе-хе..."
+msgstr "Рунгар... Х-хе... Т-так хорошо тебя-... М-м-м... увидеть... Е-хе-хе..."
 
 #. src: dialog
 msgctxt "ui"
@@ -70154,7 +70154,7 @@ msgstr "Что, по-твоему, нам делать?"
 #. src: dialog
 msgctxt "ui"
 msgid "What do you think, Rungar honey, hmmm?"
-msgstr "Что думаешь, Ругнар, дорогой, хммм?"
+msgstr "Что думаешь, Рунгар, дорогой, хммм?"
 
 #. src: dialog
 msgctxt "speaker:Woman"
@@ -73929,7 +73929,7 @@ msgstr "Ты же новая кролика-официантка, да? Я ве�
 #. src: dialog
 msgctxt "speaker:Man"
 msgid "You're the one asking me for cum. If you're not buying, scram!"
-msgstr "Это ты сама просила меня кончить на тебя. Если не хочешь платить — катись отсюда! (говорит мужчина)"
+msgstr "Это ты сама просила меня кончить на тебя. Если не хочешь платить — катись отсюда!"
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -76635,3 +76635,4 @@ msgstr "Зейн Дракко"
 msgctxt "ui"
 msgid "| GetDataFromItem: Item doesn't exist! Returning empty DynamicTable."
 msgstr "| GetDataFromItem: Предмет не существует! Возвращаю пустой DynamicTable."
+

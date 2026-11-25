@@ -224,12 +224,12 @@ msgstr "«¡Usa otro nombre!»"
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "'Coursee... Here."
-msgstr "«Corre... Aquí. (hablante: Cliente, masculino)»"
+msgstr "«Corre... Aquí.»"
 
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "'Ey waitress... Come keep me som' company with ya' hot bodyy, ehhh? *hic*"
-msgstr "«Oye, camarera... Ven a hacerme compañía con ese cuerpazo tuyo, ¿eh? *hic*» (hablante: Cliente, masculino)"
+msgstr "«Oye, camarera... Ven a hacerme compañía con ese cuerpazo tuyo, ¿eh? *hic*»"
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -3428,10 +3428,10 @@ msgstr "(¡No puedo... no puedo venir justo al lado de Sarah!)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(I can't-.. I can't hold it-.. Fghh-.. I-.. )</i></color>
-#. rich_translation: <color=#EB83FF><i>(No puedo... No puedo aguantarlo... Fghh... Yo...) (hablante: Zoey, mujer)</i></color>
+#. rich_translation: <color=#EB83FF><i>(No puedo... No puedo aguantarlo... Fghh... Yo...)</i></color>
 msgctxt "speaker:Zoey"
 msgid "(I can't-.. I can't hold it-.. Fghh-.. I-.. )"
-msgstr "(No puedo... No puedo aguantarlo... Fghh... Yo...) (hablante: Zoey, mujer)"
+msgstr "(No puedo... No puedo aguantarlo... Fghh... Yo...)"
 
 #. src: dialog
 #. rich_text: <i>(I can't... I don't wanna mess up anything else for her...)</i>
@@ -5049,10 +5049,10 @@ msgstr "(Si tan solo hubiera una manera de...)"
 
 #. src: dialog
 #. rich_text: <i>(If this can be mass reproduced... Whoever owns it could break free from GAG's control. The Cartel... Do they know about this?!)</i>
-#. rich_translation: <i>(Si esto se puede reproducir en masa... Quienquiera que lo posea podría liberarse del control de GAG. El Cartel... ¿Acaso saben de esto?!) (hablante: Zoey, mujer)</i>
+#. rich_translation: <i>(Si esto se puede reproducir en masa... Quienquiera que lo posea podría liberarse del control de GAG. El Cartel... ¿Acaso saben de esto?!)</i>
 msgctxt "speaker:Zoey"
 msgid "(If this can be mass reproduced... Whoever owns it could break free from GAG's control. The Cartel... Do they know about this?!)"
-msgstr "(Si esto se puede reproducir en masa... Quienquiera que lo posea podría liberarse del control de GAG. El Cartel... ¿Acaso saben de esto?!) (hablante: Zoey, mujer)"
+msgstr "(Si esto se puede reproducir en masa... Quienquiera que lo posea podría liberarse del control de GAG. El Cartel... ¿Acaso saben de esto?!)"
 
 #. src: dialog
 #. rich_text: <i>(In the machine it looked kinda... Cute... )</i>
@@ -5623,10 +5623,10 @@ msgstr "(¡Jackpot! ¡Ese es el caso que quiere el cliente! )"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Jaime... )</i></color>
-#. rich_translation: <color=#EB83FF><i>(Jaime...) (hablante: Zoey, mujer)</i></color>
+#. rich_translation: <color=#EB83FF><i>(Jaime...)</i></color>
 msgctxt "speaker:Zoey"
 msgid "(Jaime... )"
-msgstr "(Jaime...) (hablante: Zoey, mujer)"
+msgstr "(Jaime...)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Just a few favors... I-... It won't be too bad...)</i></color>
@@ -6170,10 +6170,10 @@ msgstr "(Dejar que me manosee... ¿De verdad... eso es lo que soy...?)"
 
 #. src: dialog
 #. rich_text: <i>(Letting him grope me again-...? Is that really... What I should do...?)</i>
-#. rich_translation: <i>(¿Dejar que me toque otra vez...? ¿Es eso realmente... lo que debería hacer...?) (hablante: Zoey, mujer)</i>
+#. rich_translation: <i>(¿Dejar que me toque otra vez...? ¿Es eso realmente... lo que debería hacer...?)</i>
 msgctxt "speaker:Zoey"
 msgid "(Letting him grope me again-...? Is that really... What I should do...?)"
-msgstr "(¿Dejar que me toque otra vez...? ¿Es eso realmente... lo que debería hacer...?) (hablante: Zoey, mujer)"
+msgstr "(¿Dejar que me toque otra vez...? ¿Es eso realmente... lo que debería hacer...?)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Letting some... pervert scratch my itch-... Khh... )</i></color>
@@ -6632,10 +6632,10 @@ msgstr "(No tiene sentido... montar un escándalo... Solo date la vuelta un segu
 
 #. src: dialog
 #. rich_text: <i>(N-no-... I-... Hhh... I'd never... Join these-... Khh... Oppressive pigs...!)</i>
-#. rich_translation: <i>(N-no... Yo... Hhh... Yo nunca... Me uniría a estos... Khh... Cerdos opresivos...!) (hablante: Zoey, mujer)</i>
+#. rich_translation: <i>(N-no... Yo... Hhh... Yo nunca... Me uniría a estos... Khh... Cerdos opresivos...!)</i>
 msgctxt "speaker:Zoey"
 msgid "(N-no-... I-... Hhh... I'd never... Join these-... Khh... Oppressive pigs...!)"
-msgstr "(N-no... Yo... Hhh... Yo nunca... Me uniría a estos... Khh... Cerdos opresivos...!) (hablante: Zoey, mujer)"
+msgstr "(N-no... Yo... Hhh... Yo nunca... Me uniría a estos... Khh... Cerdos opresivos...!)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(N-no-...! That's none of my business... I'm just-... Doing my job...! Keeping a lonely customer some company for a tip...! Mhm...!)</i></color>
@@ -7574,10 +7574,10 @@ msgstr "(La lengua de Rosie también estaba dentro de ella...)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Rungar is staring at us... Mnh... )</i></color>
-#. rich_translation: <color=#EB83FF><i>(Rugnar nos está mirando fijamente... Mmm...)</i></color>
+#. rich_translation: <color=#EB83FF><i>(Rungar nos está mirando fijamente... Mmm...)</i></color>
 msgctxt "speaker:Zoey"
 msgid "(Rungar is staring at us... Mnh... )"
-msgstr "(Rugnar nos está mirando fijamente... Mmm...)"
+msgstr "(Rungar nos está mirando fijamente... Mmm...)"
 
 #. src: dialog
 #. rich_text: <i>(S-Shit! Someone saw- I'm not a... I'm not like this, I swear!)</i>
@@ -8208,10 +8208,10 @@ msgstr "(Tanta gente... tan cerca...)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(So many-.. Watching-.. Khh-.. So-.. Wrong-.. Mnhhhh..!! )</i></color>
-#. rich_translation: <color=#EB83FF><i>(Tantos... Mirando... Khh... Así... Mal... Mnhhhh...!!) (hablante: Zoey, mujer)</i></color>
+#. rich_translation: <color=#EB83FF><i>(Tantos... Mirando... Khh... Así... Mal... Mnhhhh...!!)</i></color>
 msgctxt "speaker:Zoey"
 msgid "(So many-.. Watching-.. Khh-.. So-.. Wrong-.. Mnhhhh..!! )"
-msgstr "(Tantos... Mirando... Khh... Así... Mal... Mnhhhh...!!) (hablante: Zoey, mujer)"
+msgstr "(Tantos... Mirando... Khh... Así... Mal... Mnhhhh...!!)"
 
 #. src: dialog
 #. rich_text: <i>(So much food. )</i>
@@ -10975,7 +10975,7 @@ msgstr "... ¿Sí?"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "... Yes? But- You didn't tell me why the spirits are-"
-msgstr "... ¿Sí? Pero... no me dijiste por qué los espíritus están... (hablante: Zoey, mujer)"
+msgstr "... ¿Sí? Pero... no me dijiste por qué los espíritus están..."
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -12783,10 +12783,10 @@ msgstr "Sobre eso..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>A-and besides, I-... I don't... I-...</color>
-#. rich_translation: <color=#EB83FF>Y-y además, yo... yo no... yo... (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>Y-y además, yo... yo no... yo...</color>
 msgctxt "speaker:Zoey"
 msgid "A-and besides, I-... I don't... I-..."
-msgstr "Y-y además, yo... yo no... yo... (hablante: Zoey, mujer)"
+msgstr "Y-y además, yo... yo no... yo..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>A-and n-no touching...!</color>
@@ -12959,7 +12959,7 @@ msgstr "¡Aaaahhh!!! ¡Hahhh..!! ¡Khhmmnnn...!!"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Aaahh, fuck!!"
-msgstr "Aaahh, ¡joder! (hablante: Rugnar)"
+msgstr "Aaahh, ¡joder!"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Aaahhh..!! Rough-..! So-.. Rough-..! Khh-..!</color>
@@ -13859,7 +13859,7 @@ msgstr "¡Agh! Espero que ustedes, bellezas, puedan ayudar a los pequeños bots 
 #. src: dialog
 msgctxt "speaker:Lio"
 msgid "Agh- Thank fuck. Okay, you- aah~ You better hurry, Jan's getting aggravated. I've never seen her like this before-"
-msgstr "¡Agh! Menos mal, coño. Vale, tú... aah~ Más te vale darte prisa, que Jan se está poniendo de los nervios. Nunca la había visto así antes... (hablante: Lio, masculino)"
+msgstr "¡Agh! Menos mal, coño. Vale, tú... aah~ Más te vale darte prisa, que Jan se está poniendo de los nervios. Nunca la había visto así antes..."
 
 #. src: dialog
 msgctxt "ui"
@@ -14201,7 +14201,7 @@ msgstr "¡Ah! No me refería a ti, tontito!"
 #. src: dialog
 msgctxt "speaker:Mira"
 msgid "Ah-! I-it's fine... s-sorry..."
-msgstr "¡Ah! No... no pasa nada... p-perdón... (hablante: Mira)"
+msgstr "¡Ah! No... no pasa nada... p-perdón..."
 
 #. src: dialog
 msgctxt "ui"
@@ -14356,10 +14356,10 @@ msgstr "¡Ah...! ¡Perdón! Gracias... Señor..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Ah-...! Um-... I-...</color>
-#. rich_translation: <color=#EB83FF>¡Ah...! Eh... Yo... (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>¡Ah...! Eh... Yo...</color>
 msgctxt "speaker:Zoey"
 msgid "Ah-...! Um-... I-..."
-msgstr "¡Ah...! Eh... Yo... (hablante: Zoey, mujer)"
+msgstr "¡Ah...! Eh... Yo..."
 
 #. src: dialog
 msgctxt "speaker:Mira"
@@ -14421,7 +14421,7 @@ msgstr "¡Ah, joder! ¿Quieres mi semen, zorra de metal? Ahaha. ¡Muéstrale a t
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "Ahh yes... So firm... Incredible..."
-msgstr "Ahh, sí... Tan firmes... Increíble... (hablante: Varen, masculino)"
+msgstr "Ahh, sí... Tan firmes... Increíble..."
 
 #. src: dialog
 msgctxt "ui"
@@ -14728,7 +14728,7 @@ msgstr "Todo lo que necesitas es un poco de Glow."
 #. src: dialog
 msgctxt "speaker:Guy"
 msgid "AlleyFuckers Presets"
-msgstr "Presets de AlleyFuckers (hablante: Guy)"
+msgstr "Presets de AlleyFuckers"
 
 #. src: dialog
 msgctxt "ui"
@@ -15308,7 +15308,7 @@ msgstr "¿Y a dónde crees que vas?!"
 #. src: dialog
 msgctxt "speaker:Klaudia"
 msgid "And where is Mynx anyways?!"
-msgstr "¡Y dónde diablos está Mynx, de todos modos?! (hablante: Klaudia, femenina)"
+msgstr "¡Y dónde diablos está Mynx, de todos modos?!"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -16028,10 +16028,10 @@ msgstr "¿Vas a estar bien?!"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Are you going to-...</color>
-#. rich_translation: <color=#EB83FF>¿Vas a...? (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>¿Vas a...?</color>
 msgctxt "speaker:Zoey"
 msgid "Are you going to-..."
-msgstr "¿Vas a...? (hablante: Zoey, mujer)"
+msgstr "¿Vas a...?"
 
 #. src: dialog
 msgctxt "ui"
@@ -16522,7 +16522,7 @@ msgstr "AskAboutThem"
 #. src: dialog
 msgctxt "speaker:Woman"
 msgid "Asking someone at random?! But-"
-msgstr "¿Preguntarle a alguien al azar?! Pero— (hablante: Mujer)"
+msgstr "¿Preguntarle a alguien al azar?! Pero—"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18275,10 +18275,10 @@ msgstr "Pero... pero no puedes simplemente... ¿Y qué pasa con Zoey?"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>But- I-</color>
-#. rich_translation: <color=#EB83FF>Pero... yo... (hablante: Zoey, femenina)</color>
+#. rich_translation: <color=#EB83FF>Pero... yo...</color>
 msgctxt "speaker:Zoey"
 msgid "But- I-"
-msgstr "Pero... yo... (hablante: Zoey, femenina)"
+msgstr "Pero... yo..."
 
 #. src: dialog
 msgctxt "speaker:Woman"
@@ -18308,7 +18308,7 @@ msgstr "¡Pero...!"
 #. src: dialog
 msgctxt "speaker:Femboy"
 msgid "But-.. Klaudia said not to do that outside of the rooms-.. Hhh Nghh-..!"
-msgstr "Pero... Klaudia dijo que no lo hiciéramos fuera de las habitaciones... ¡Hhh, nghh...! (hablante: Femboy)"
+msgstr "Pero... Klaudia dijo que no lo hiciéramos fuera de las habitaciones... ¡Hhh, nghh...!"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>But-... N-no...!</color>
@@ -18400,7 +18400,7 @@ msgstr "Comprar condón"
 #. src: dialog
 msgctxt "speaker:Decline"
 msgid "Buy Drink"
-msgstr "Comprar bebida (hablante: Rechazar)"
+msgstr "Comprar bebida"
 
 #. src: settings
 msgctxt "ui"
@@ -20112,7 +20112,7 @@ msgstr "Ven conmigo, entonces. Puedes quedarte en mi casa hasta que resuelvas es
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Come'onnn... I'll make it worth'ya timee... *hic*..."
-msgstr "Venga... Haré que valga la pena tu tiempo... *hic*... (hablante: Cliente, masculino)"
+msgstr "Venga... Haré que valga la pena tu tiempo... *hic*..."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22815,10 +22815,10 @@ msgstr "¿No te dije que te largaras?"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Didn't Klaudia say-</color>
-#. rich_translation: <color=#EB83FF>¿No lo dijo Klaudia- (hablante: Zoey, femenina)</color>
+#. rich_translation: <color=#EB83FF>¿No lo dijo Klaudia-</color>
 msgctxt "speaker:Zoey"
 msgid "Didn't Klaudia say-"
-msgstr "¿No lo dijo Klaudia- (hablante: Zoey, femenina)"
+msgstr "¿No lo dijo Klaudia-"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -26078,10 +26078,10 @@ msgstr "B-Bien..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>F-... Fuckhh...</color>
-#. rich_translation: <color=#EB83FF>Joder... (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>Joder...</color>
 msgctxt "speaker:Zoey"
 msgid "F-... Fuckhh..."
-msgstr "Joder... (hablante: Zoey, mujer)"
+msgstr "Joder..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>F-Faster... Nghh... Y-Yess... Ma'ammhh...</color>
@@ -26128,7 +26128,7 @@ msgstr "B-bien... ¡Pero asegúrate de que mi cara no esté en eso, ¿vale?!"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "F-fine... How long will I-"
-msgstr "B-bien... ¿Cuánto tiempo tendré que...? (hablante: Zoey, mujer)"
+msgstr "B-bien... ¿Cuánto tiempo tendré que...?"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>F-fine... Just don't like... Do anything weird, okay?</color>
@@ -26781,7 +26781,7 @@ msgstr "Monólogo de femboy"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Femboy Uwawa"
-msgstr "Femboy Uwawa (hablante: Zoey, mujer)"
+msgstr "Femboy Uwawa"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -26832,7 +26832,7 @@ msgstr "¡Fffhah~! ¡Sí~! ¡Sí, sí, sí~!"
 #. src: dialog
 msgctxt "speaker:Salesman"
 msgid "Fffuck, I'm gonna-..."
-msgstr "Joder, voy a... (hablante: Salesman)"
+msgstr "Joder, voy a..."
 
 #. src: dialog
 msgctxt "ui"
@@ -28048,7 +28048,7 @@ msgstr "¿Coño?"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Fucking OW!"
-msgstr "¡Joder, cómo duele! (hablante: Zoey, mujer)"
+msgstr "¡Joder, cómo duele!"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Fucking anything, ngh! I- hahh! Fuck!</color>
@@ -28226,7 +28226,7 @@ msgstr "L-Luz... Inyección...? Yo... ¡Ngh...!"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "G-Glow...? But-"
-msgstr "G-Glow...? Pero... (hablante: Zoey, mujer)"
+msgstr "G-Glow...? Pero..."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -28778,11 +28778,11 @@ msgstr "Ghahh... te ves tan... caliente...! Por favor, ayúdame... necesito... n
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Ghh! Wh-... B-</color>But...
-#. rich_translation: ¡Ghh! P-Pero... (hablante: Zoey, mujer)
+#. rich_translation: ¡Ghh! P-Pero...
 #, rt-review
 msgctxt "speaker:Zoey"
 msgid "Ghh! Wh-... B-But..."
-msgstr "¡Ghh! P-Pero... (hablante: Zoey, mujer)"
+msgstr "¡Ghh! P-Pero..."
 
 #. src: dialog
 #. rich_text: Gh<color=#EB83FF>h... Hh... I... A-</color>Are yo<color=#EB83FF>u... su</color>re?
@@ -29367,7 +29367,7 @@ msgstr "Dios... Fgh... Nghh..."
 #. src: dialog
 msgctxt "speaker:Intercom"
 msgid "God-... hahh...! You-... you are... yes...!"
-msgstr "Dios... ¡Jaj...! Tú... tú eres... ¡sí...! (hablante: Intercom)"
+msgstr "Dios... ¡Jaj...! Tú... tú eres... ¡sí...!"
 
 #. src: dialog
 msgctxt "ui"
@@ -29387,7 +29387,7 @@ msgstr "¡Dios mío! Quiero tocarlo tan fuerte... *hipo*..."
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Godhh your' makin me wanna fuck a bunny so baddhhh...!"
-msgstr "¡Dios mío! ¡Me estás haciendo querer follar con un conejito con tanta fuerza...! (hablante: Cliente, masculino)"
+msgstr "¡Dios mío! ¡Me estás haciendo querer follar con un conejito con tanta fuerza...!"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Godhh... Hahhh... Fghh...</color>
@@ -30274,7 +30274,7 @@ msgstr "Ja... claro...! En... ¡entendido!"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Hah-...! Th-thanks, but-... I don't-... Uhm... Yeah... I-"
-msgstr "Ja... ¡Ja! Gra-gracias, pero... yo no... Eh... Sí... Yo... (hablante: Zoey, mujer)"
+msgstr "Ja... ¡Ja! Gra-gracias, pero... yo no... Eh... Sí... Yo..."
 
 #. src: dialog
 #. rich_text: Hah. Look at that. You <b>are</b> in need of cash.
@@ -30385,7 +30385,7 @@ msgstr "¡Jaj...! ¡Mnnnnnn! ¡Fghhhhh!"
 #. src: dialog
 msgctxt "speaker:Lio"
 msgid "Hahhh...!! I-... Ghhahhh...!! Fhuckkhhh! I can't-... Nghhh...!"
-msgstr "¡Jajaj...! Yo... ¡Ghahhh...! ¡Joder...! No puedo... ¡Nghhh...! (hablante: Lio, masculino)"
+msgstr "¡Jajaj...! Yo... ¡Ghahhh...! ¡Joder...! No puedo... ¡Nghhh...!"
 
 #. src: dialog
 msgctxt "ui"
@@ -30766,7 +30766,7 @@ msgstr "Levanta la palanca 2"
 #. src: dialog
 msgctxt "speaker:Yes"
 msgid "Has task?"
-msgstr "¿Tienes alguna tarea? (hablante: Sí)"
+msgstr "¿Tienes alguna tarea?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -32218,7 +32218,7 @@ msgstr "Oye, eh... Estoy buscando a Lio."
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Heyyy Lio, uh... I just got out of the tunnels and-"
-msgstr "¡Oye, Lio! Eh... Acabo de salir de los túneles y... (hablante: Zoey, mujer)"
+msgstr "¡Oye, Lio! Eh... Acabo de salir de los túneles y..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Hh- Hh- Hh-!</color>
@@ -32287,7 +32287,7 @@ msgstr "Jj, jj... Mmmmm... Qué bien se siente... Estás jodidamente caliente...
 #. src: dialog
 msgctxt "speaker:Femboy"
 msgid "Hhh-.. Th- thank you.. Hhh.. Our room is-"
-msgstr "Hhh... G-gracias... Hhh... Nuestra habitación está... (hablante: Femboy)"
+msgstr "Hhh... G-gracias... Hhh... Nuestra habitación está..."
 
 #. src: dialog
 msgctxt "speaker:Woman"
@@ -33009,7 +33009,7 @@ msgstr "Joder... Mover una cama por un tramo de escaleras... eso sí que fue un 
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Holyy shitt, ahaha! Yer' tits ar' fuckin' perfecthh...!"
-msgstr "¡Joder, ahaha! ¡Tus tetas son jodidamente perfectas...! (hablante: Cliente, masculino)"
+msgstr "¡Joder, ahaha! ¡Tus tetas son jodidamente perfectas...!"
 
 #. src: dialog
 msgctxt "ui"
@@ -34589,7 +34589,7 @@ msgstr "Normalmente intento ocultarlo, pero... no he tenido oportunidad de lavar
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "I wanna riph' off thath' shuit and shtick my tongue niiiice and deephh down ya shweaty little assholeeee', ahaha!"
-msgstr "¡Quiero arrancarme esa puta prenda y meterle la lengua bien, bien hondo en ese pequeño culo sudoroso tuyo, ahaha! (hablante: Trov, masculino)"
+msgstr "¡Quiero arrancarme esa puta prenda y meterle la lengua bien, bien hondo en ese pequeño culo sudoroso tuyo, ahaha!"
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -35323,10 +35323,10 @@ msgstr "Sí... sí que lo hago..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I- I dooo...! Nghh... Pleaseee...! I'm so... wettt... Fhhahhh... Pleaseeee...!</color>
-#. rich_translation: <color=#EB83FF>¡Yo... yo lo hago...! Nghh... Porfaaa... Estoy tan... mojada... Fhhahhh... ¡Porfaaaa...! (hablante: Zoey, femenina)</color>
+#. rich_translation: <color=#EB83FF>¡Yo... yo lo hago...! Nghh... Porfaaa... Estoy tan... mojada... Fhhahhh... ¡Porfaaaa...!</color>
 msgctxt "speaker:Zoey"
 msgid "I- I dooo...! Nghh... Pleaseee...! I'm so... wettt... Fhhahhh... Pleaseeee...!"
-msgstr "¡Yo... yo lo hago...! Nghh... Porfaaa... Estoy tan... mojada... Fhhahhh... ¡Porfaaaa...! (hablante: Zoey, femenina)"
+msgstr "¡Yo... yo lo hago...! Nghh... Porfaaa... Estoy tan... mojada... Fhhahhh... ¡Porfaaaa...!"
 
 #. src: dialog
 msgctxt "ui"
@@ -35589,14 +35589,14 @@ msgstr "Yo... solo vine a echar un vistazo, je...!"
 #. src: dialog
 msgctxt "speaker:Femboy"
 msgid "I-.. Mnhh.. I like the-.. Attentionhhh..."
-msgstr "Mmmh... Me gusta la... atenciónnnn... (hablante: Femboy)"
+msgstr "Mmmh... Me gusta la... atenciónnnn..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I-... </color>
-#. rich_translation: <color=#EB83FF>Yo... (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>Yo...</color>
 msgctxt "speaker:Zoey"
 msgid "I-..."
-msgstr "Yo... (hablante: Zoey, mujer)"
+msgstr "Yo..."
 
 #. src: dialog
 msgctxt "ui"
@@ -35734,7 +35734,7 @@ msgstr "Yo... yo no..."
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "I-... I'm-... gonna-"
-msgstr "Voy... voy a... (hablante: Varen, masculino)"
+msgstr "Voy... voy a..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I-... I've just... never seen something like this...</color>
@@ -35746,7 +35746,7 @@ msgstr "Yo... yo nunca había visto algo así..."
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "I-... I-"
-msgstr "Yo... Yo... (hablante: Zoey, femenina)"
+msgstr "Yo... Yo..."
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -35800,10 +35800,10 @@ msgstr "Yo... Así soy yo... Así es como la gente me ve..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I-... The other customers... I can't-</color>
-#. rich_translation: <color=#EB83FF>Yo... Los otros clientes... No puedo... (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>Yo... Los otros clientes... No puedo...</color>
 msgctxt "speaker:Zoey"
 msgid "I-... The other customers... I can't-"
-msgstr "Yo... Los otros clientes... No puedo... (hablante: Zoey, mujer)"
+msgstr "Yo... Los otros clientes... No puedo..."
 
 #. src: dialog
 msgctxt "ui"
@@ -36010,7 +36010,7 @@ msgstr "Lo... lo siento..."
 #. src: dialog
 msgctxt "speaker:Sarah"
 msgid "I... Mhm... But I-... No, I was just-"
-msgstr "Yo... Mmm... Pero yo... No, es que solo estaba... (hablante: Sarah, mujer)"
+msgstr "Yo... Mmm... Pero yo... No, es que solo estaba..."
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -37789,7 +37789,7 @@ msgstr "Está dentro de su... coño..."
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "It's just uh... a uh..."
-msgstr "Es solo... eh... un... (hablante: Zoey, mujer)"
+msgstr "Es solo... eh... un..."
 
 #. src: dialog
 msgctxt "ui"
@@ -38791,7 +38791,7 @@ msgstr "Ejecutor K12"
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "K12 Unit"
-msgstr "Unidad K12 (habla: Enforcer, masculino)"
+msgstr "Unidad K12"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -38848,7 +38848,7 @@ msgstr "Sigue llamándome LOL"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Keep looking up at me. New one is so hot, she's gonna make me-"
-msgstr "No dejes de mirarme. La nueva es tan caliente que va a hacer que yo— (hablante: Rugnar)"
+msgstr "No dejes de mirarme. La nueva es tan caliente que va a hacer que yo—"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39107,7 +39107,7 @@ msgstr "¡Khh...! ¡Qué...!"
 #. src: dialog
 msgctxt "speaker:Femboy"
 msgid "Khhh-..! Yess Ma'ammmm..!"
-msgstr "¡Khhhh...! Sí, señoraaaa...! (hablante: Femboy)"
+msgstr "¡Khhhh...! Sí, señoraaaa...!"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Khhh-...! Mnghh...!</color>
@@ -39423,7 +39423,7 @@ msgstr "A Klaudia solo le importa su beneficio neto. Rungar aquí no se hace con
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Klaudia pick'd a perfect replac'mnt, *hic*, ehehe... Yer tits look even hotter in this suit, mhmmm..."
-msgstr "Klaudia eligió un reemplazo perfecto, *hic*, ehehe... Tus tetas se ven aún más sexys con este traje, mhmmm... (hablante: Cliente, masculino)"
+msgstr "Klaudia eligió un reemplazo perfecto, *hic*, ehehe... Tus tetas se ven aún más sexys con este traje, mhmmm..."
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -39751,7 +39751,7 @@ msgstr "Último diálogo"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Last key! Let's get you out of there, Lio!"
-msgstr "¡Última llave! ¡Saquémonos de aquí, Lio! (hablante: Zoey, mujer)"
+msgstr "¡Última llave! ¡Saquémonos de aquí, Lio!"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -41162,7 +41162,7 @@ msgstr "Mira a la derecha"
 #. src: dialog
 msgctxt "speaker:Leave"
 msgid "Look Through Files"
-msgstr "Revisar archivos (hablante: Leave)"
+msgstr "Revisar archivos"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41177,7 +41177,7 @@ msgstr "¿Mirar por ahí? E-Eh. ¡Sí! Claro, pueden... Sí. Pueden mirar."
 #. src: dialog
 msgctxt "speaker:Leave"
 msgid "Look at Massage Room Recording"
-msgstr "Mira la grabación de la sala de masajes (hablante: Leave)"
+msgstr "Mira la grabación de la sala de masajes"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41813,10 +41813,10 @@ msgstr "¡Mi ropa! Tengo que... e-encontrar la maleta antes de que alguien la ve
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>M-My debt-... Right... Hh... What should I-</color>
-#. rich_translation: <color=#EB83FF>M-Mi deuda... Sí... Hh... ¿Qué debería yo...? (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>M-Mi deuda... Sí... Hh... ¿Qué debería yo...?</color>
 msgctxt "speaker:Zoey"
 msgid "M-My debt-... Right... Hh... What should I-"
-msgstr "M-Mi deuda... Sí... Hh... ¿Qué debería yo...? (hablante: Zoey, mujer)"
+msgstr "M-Mi deuda... Sí... Hh... ¿Qué debería yo...?"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>M-My-... outfit...? B-But-...</color>
@@ -41971,7 +41971,7 @@ msgstr "Te has madurado."
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Maid...? Sorry, I-"
-msgstr "¿Una sirvienta...? Perdón, yo... (hablante: Zoey, mujer)"
+msgstr "¿Una sirvienta...? Perdón, yo..."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -43575,7 +43575,7 @@ msgstr "Mmmh, qué suerte tengo de trabajar con una camarera tan guapa como tú,
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Mmmh, that's good. Soft Rosie."
-msgstr "Mmmh, qué bien. Rosie suave. (hablante: Rugnar)"
+msgstr "Mmmh, qué bien. Rosie suave."
 
 #. src: dialog
 msgctxt "ui"
@@ -43798,7 +43798,7 @@ msgstr "¡Mnnnnh...! D-destrúyeme... ¡Hahh...! ¡Destruyeme...!"
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Mnhahaha... Whatever ya shay', bhunny sluthh..."
-msgstr "Mnhahaha... Lo que digas, conejito sucio... (hablante: Trov, masculino)"
+msgstr "Mnhahaha... Lo que digas, conejito sucio..."
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -43853,7 +43853,7 @@ msgstr "Mnhhghhh... Hhh..."
 #. src: dialog
 msgctxt "speaker:Jay"
 msgid "Mnhhh.. Yess..! Please, put it innn..!!~"
-msgstr "Mmmmm... ¡Sí...! Por favor, métetelo...!!~ (hablante: Jay)"
+msgstr "Mmmmm... ¡Sí...! Por favor, métetelo...!!~"
 
 #. src: dialog
 msgctxt "ui"
@@ -43863,7 +43863,7 @@ msgstr "Mnhhh..!! Tu polla carnosa se siente tan jodidamente bien..!!~"
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Mnhhh... Amazinnhh'..."
-msgstr "Mmmmm... ¡Increíble...! (hablante: Cliente, masculino)"
+msgstr "Mmmmm... ¡Increíble...!"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Mnhhh... Hhhh...</color>
@@ -44682,10 +44682,10 @@ msgstr "Mi... Mírate... Ocultas un verdadero pervertido bajo toda esa aparienci
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>My... Tongue...? Inside?</color>
-#. rich_translation: <color=#EB83FF>Mi... lengua... ¿Dentro? (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>Mi... lengua... ¿Dentro?</color>
 msgctxt "speaker:Zoey"
 msgid "My... Tongue...? Inside?"
-msgstr "Mi... lengua... ¿Dentro? (hablante: Zoey, mujer)"
+msgstr "Mi... lengua... ¿Dentro?"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -44790,7 +44790,7 @@ msgstr "N-no... Estás bien. El problema es todo lo demás."
 #. src: dialog
 msgctxt "speaker:Intercom"
 msgid "N-no... no, no, no...! This is not-... the outfit!"
-msgstr "N-no... no, no, no... ¡Esto no es... el atuendo! (hablante: Intercom)"
+msgstr "N-no... no, no, no... ¡Esto no es... el atuendo!"
 
 #. src: dialog
 #. rich_text: <size=30><color=#EB83FF>N-not so loud-... please... what if someone... hears us...?</color>
@@ -44946,17 +44946,17 @@ msgstr "[Arrogante] Sí. Déjame explicarte..."
 #. src: bundle
 msgctxt "speaker:Lewd"
 msgid "Nail Salon Clerk"
-msgstr "ES: Empleada del salón de uñas (hablante: Lewd)"
+msgstr "ES: Empleada del salón de uñas"
 
 #. src: bundle
 msgctxt "speaker:Mewing"
 msgid "Nail Salon Clerk"
-msgstr "ES: Empleada del salón de uñas (hablante: Mewing)"
+msgstr "ES: Empleada del salón de uñas"
 
 #. src: bundle
 msgctxt "speaker:Scheming"
 msgid "Nail Salon Clerk"
-msgstr "ES: Empleada del salón de uñas (hablante: Scheming)"
+msgstr "ES: Empleada del salón de uñas"
 
 #. src: dialog
 msgctxt "speaker:Surprised"
@@ -45534,7 +45534,7 @@ msgstr "¿Pesadillas?"
 #. src: dialog
 msgctxt "speaker:Man"
 msgid "Niiice, hehehe. Not only are your tits organic. They're so fucking hot."
-msgstr "Qué rico, jejeje. No solo son tus pechos orgánicos... ¡son jodidamente sexis! (hablante: Hombre)"
+msgstr "Qué rico, jejeje. No solo son tus pechos orgánicos... ¡son jodidamente sexis!"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -47054,10 +47054,10 @@ msgstr "V-vale... Pero nada de manoseos... Solo... Nada raro, ¿vale?"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>O-okay...! So-...</color>
-#. rich_translation: <color=#EB83FF>¡O-okay...! E-es decir... (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>¡O-okay...! E-es decir...</color>
 msgctxt "speaker:Zoey"
 msgid "O-okay...! So-..."
-msgstr "¡O-okay...! E-es decir... (hablante: Zoey, mujer)"
+msgstr "¡O-okay...! E-es decir..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>O-okay...! That's e-enough...!</color>
@@ -48747,7 +48747,7 @@ msgstr "Ondine"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "One fifty."
-msgstr "Ciento cincuenta. (hablante: Rugnar)"
+msgstr "Ciento cincuenta."
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
@@ -51653,10 +51653,10 @@ msgstr "Por favor, elige una habitación para SLUT Service™..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Please cum on Rosies... nice big tits, mr Rungar...</color>
-#. rich_translation: <color=#EB83FF>Por favor, corrésese sobre las... grandes y bonitas tetas de Rosie, señor Rungar... (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>Por favor, corrésese sobre las... grandes y bonitas tetas de Rosie, señor Rungar...</color>
 msgctxt "speaker:Zoey"
 msgid "Please cum on Rosies... nice big tits, mr Rungar..."
-msgstr "Por favor, corrésese sobre las... grandes y bonitas tetas de Rosie, señor Rungar... (hablante: Zoey, mujer)"
+msgstr "Por favor, corrésese sobre las... grandes y bonitas tetas de Rosie, señor Rungar..."
 
 #. src: dialog
 msgctxt "ui"
@@ -53020,10 +53020,10 @@ msgstr "Reflexiones en tiempo real"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Rear-...? But-</color>
-#. rich_translation: <color=#EB83FF>¿La parte de atrás...? Pero... (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>¿La parte de atrás...? Pero...</color>
 msgctxt "speaker:Zoey"
 msgid "Rear-...? But-"
-msgstr "¿La parte de atrás...? Pero... (hablante: Zoey, mujer)"
+msgstr "¿La parte de atrás...? Pero..."
 
 #. src: dialog
 msgctxt "ui"
@@ -55857,7 +55857,7 @@ msgstr "Establecer rotación 2"
 #. src: dialog
 msgctxt "speaker:FINISHED"
 msgid "Set Save Key"
-msgstr "Establecer clave de guardado (hablante: TERMINADO)"
+msgstr "Establecer clave de guardado"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56846,7 +56846,7 @@ msgstr "Siente cómo la mano se agita contra sus dedos."
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "She gets customers off...? But-"
-msgstr "¿Ella satisface a los clientes...? Pero... (hablante: Zoey, mujer)"
+msgstr "¿Ella satisface a los clientes...? Pero..."
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -56903,7 +56903,7 @@ msgstr "¡Dijo que le enviaron una grabación suya de una de mis salas de masaje
 #. src: dialog
 msgctxt "speaker:Athletic"
 msgid "She seems very"
-msgstr "Parece muy (hablante: Atlética)"
+msgstr "Parece muy"
 
 #. src: dialog
 msgctxt "ui"
@@ -57000,7 +57000,7 @@ msgstr "¡Caray! Me alegro de que estés bien."
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Sheesh. Whatever. I'll fuck another bunny's ass tonight then."
-msgstr "¡Bah! Da igual. Pues esta noche me follaré el culo de otra conejita. (hablante: Trov, masculino)"
+msgstr "¡Bah! Da igual. Pues esta noche me follaré el culo de otra conejita."
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -57458,7 +57458,7 @@ msgstr "Muestra el teclado inicial 3"
 #. src: dialog
 msgctxt "speaker:FINISHED"
 msgid "Show inspection"
-msgstr "Mostrar inspección (hablante: TERMINADO)"
+msgstr "Mostrar inspección"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57887,7 +57887,7 @@ msgstr "Modo de salto"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Skip femboy uWu"
-msgstr "Salta al femboy uWu (hablante: Zoey, mujer)"
+msgstr "Salta al femboy uWu"
 
 #. src: us
 msgctxt "ui"
@@ -58263,7 +58263,7 @@ msgstr "Así que la cabreó a esa tía del laboratorio, ¿eh?"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "So soft, mmhhh."
-msgstr "Qué suave, mmm... (hablante: Rugnar)"
+msgstr "Qué suave, mmm..."
 
 #. src: dialog
 msgctxt "ui"
@@ -60248,7 +60248,7 @@ msgstr "Qué chica tan dócil, y qué cuerpo tan salvaje."
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Such a teasee... Godhhh yer' the hottest bunny in here by farrhhh..."
-msgstr "Qué provocadora... ¡Dios mío! Eres la conejita más sexy de todo este lugar, joder... (hablante: Cliente, masculino)"
+msgstr "Qué provocadora... ¡Dios mío! Eres la conejita más sexy de todo este lugar, joder..."
 
 #. src: dialog
 msgctxt "ui"
@@ -61340,7 +61340,7 @@ msgstr "Toma uno de los condones y ponérselo en la polla."
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Take the 200 and help Rosie get me off."
-msgstr "Toma los 200 y ayúdame a que Rosie me folle. (hablante: Rugnar)"
+msgstr "Toma los 200 y ayúdame a que Rosie me folle."
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -61931,7 +61931,7 @@ msgstr "Gra-gracias, je..."
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Th-thanks, heh... I- um. I should probably-"
-msgstr "Gra-gracias, je... Yo- eh... Supongo que debería... (hablante: Zoey, mujer)"
+msgstr "Gra-gracias, je... Yo- eh... Supongo que debería..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Th-that's enough...!</color>
@@ -61950,7 +61950,7 @@ msgstr "¡Eso es suficiente...! No soy una es... ¡K! ¡No me inclino...!"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Th-there..."
-msgstr "Ahí... (hablante: Zoey, mujer)"
+msgstr "Ahí..."
 
 #. src: dialog
 msgctxt "ui"
@@ -62671,10 +62671,10 @@ msgstr "Para eso estamos aquí. Para protegerte."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>That's-... I-...</color>
-#. rich_translation: <color=#EB83FF>Eso es... Yo... (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>Eso es... Yo...</color>
 msgctxt "speaker:Zoey"
 msgid "That's-... I-..."
-msgstr "Eso es... Yo... (hablante: Zoey, mujer)"
+msgstr "Eso es... Yo..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>That's-... enough...! Kh...</color>
@@ -62981,7 +62981,7 @@ msgstr "La única razón por la que es más barato es porque soy una guardaespal
 #. src: dialog
 msgctxt "speaker:Intercom"
 msgid "The outfit-... please... put it on...! The black net, please!"
-msgstr "El atuendo... por favor... ¡póntelo...! ¡La red negra, por favor! (hablante: Intercomunicador)"
+msgstr "El atuendo... por favor... ¡póntelo...! ¡La red negra, por favor!"
 
 #. src: us
 msgctxt "ui"
@@ -63484,10 +63484,10 @@ msgstr "Todavía están aquí..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>They're-... not fake...</color>
-#. rich_translation: <color=#EB83FF>No son... falsos... (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>No son... falsos...</color>
 msgctxt "speaker:Zoey"
 msgid "They're-... not fake..."
-msgstr "No son... falsos... (hablante: Zoey, mujer)"
+msgstr "No son... falsos..."
 
 #. src: dialog
 msgctxt "ui"
@@ -68606,7 +68606,7 @@ msgstr "Trabajando de camarera - Mantén la compañía - 4"
 #. src: dialog
 msgctxt "speaker:Agree"
 msgid "Waitressing - Mira Order 2"
-msgstr "Trabajo de camarera — Mira, pide 2 (hablante: De acuerdo)"
+msgstr "Trabajo de camarera — Mira, pide 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -69410,7 +69410,7 @@ msgstr "¡Bienvenida al Agujero Resplandeciente! ¡Me encanta tu pelo!"
 #. src: dialog
 msgctxt "speaker:Klaudia"
 msgid "Welcome to the Glowing Hole. What can I-"
-msgstr "Bienvenida al Agujero Resplandeciente. ¿Qué puedo— (hablante: Klaudia, mujer)"
+msgstr "Bienvenida al Agujero Resplandeciente. ¿Qué puedo—"
 
 #. src: dialog
 #. rich_text: <i>Welcome to the SLUT Service
@@ -70025,7 +70025,7 @@ msgstr "¿Qué-"
 #. src: dialog
 msgctxt "speaker:Brad"
 msgid "Wha- ?"
-msgstr "¿Q-qué? (hablante: Brad)"
+msgstr "¿Q-qué?"
 
 #. src: dialog
 msgctxt "speaker:Lio"
@@ -70034,10 +70034,10 @@ msgstr "¿Qué...? ¿En serio? Joder, Zoey, no te habría hecho pasar por ese t�
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Wha-... I-...</color>
-#. rich_translation: <color=#EB83FF>Qué... yo... (voz: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>Qué... yo...</color>
 msgctxt "speaker:Zoey"
 msgid "Wha-... I-..."
-msgstr "Qué... yo... (voz: Zoey, mujer)"
+msgstr "Qué... yo..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Wha-...! N-no...! That's-... No...!</color>
@@ -70101,7 +70101,7 @@ msgstr "¿Y tú, Zoey? ¿Podrías conseguirme uno para mí y para mi... hermanit
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "What am I-... Doing..."
-msgstr "¿Qué estoy... haciendo...? (hablante: Zoey, mujer)"
+msgstr "¿Qué estoy... haciendo...?"
 
 #. src: dialog
 msgctxt "ui"
@@ -70226,7 +70226,7 @@ msgstr "¿Qué crees que deberíamos hacer?"
 #. src: dialog
 msgctxt "ui"
 msgid "What do you think, Rungar honey, hmmm?"
-msgstr "¿Qué te parece, Rugnar, cariño, eh?"
+msgstr "¿Qué te parece, Rungar, cariño, eh?"
 
 #. src: dialog
 msgctxt "speaker:Woman"
@@ -70410,7 +70410,7 @@ msgstr "¡¿Qué coño?!"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "What the-"
-msgstr "¿Qué coño- (hablante: Zoey, mujer)"
+msgstr "¿Qué coño-"
 
 #. src: dialog
 msgctxt "ui"
@@ -70583,7 +70583,7 @@ msgstr "¿Qué? ¿Sin pasta? No soy una organización benéfica, pobrecito."
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "What? No they're so hot-"
-msgstr "¿Qué? No, son súper sexis... (hablante: Zoey, mujer)"
+msgstr "¿Qué? No, son súper sexis..."
 
 #. src: dialog
 msgctxt "ui"
@@ -71632,7 +71632,7 @@ msgstr "Y eres aún más sexy que la última camarera que trabajaba aquí... *hi
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Y'er personalities couldn'a been more diffrnt', ehehe..."
-msgstr "Las personalidades de ustedes no podrían haber sido más diferentes, ehehe... (hablante: Cliente, masculino)"
+msgstr "Las personalidades de ustedes no podrían haber sido más diferentes, ehehe..."
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -73048,10 +73048,10 @@ msgstr "¡Lo lograste! ¡Genial!"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>You did say that- but... I- um.</color>
-#. rich_translation: <color=#EB83FF>Lo dijiste... pero... yo... eh. (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>Lo dijiste... pero... yo... eh.</color>
 msgctxt "speaker:Zoey"
 msgid "You did say that- but... I- um."
-msgstr "Lo dijiste... pero... yo... eh. (hablante: Zoey, mujer)"
+msgstr "Lo dijiste... pero... yo... eh."
 
 #. src: dialog
 msgctxt "ui"
@@ -73144,7 +73144,7 @@ msgstr "Olvidaste algo, camarera."
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "You forgot, dear? He's just in the back, past my bed. Let's go talk to him quick so we can find my sweet Felicia."
-msgstr "¿Te olvidaste, cariño? Está justo detrás, pasando de mi cama. Vamos a hablar con él rápido para que podamos encontrar a mi dulce Felicia. (hablante: Leona, mujer)"
+msgstr "¿Te olvidaste, cariño? Está justo detrás, pasando de mi cama. Vamos a hablar con él rápido para que podamos encontrar a mi dulce Felicia."
 
 #. src: dialog
 msgctxt "ui"
@@ -73339,7 +73339,7 @@ msgstr "¡Me obligaste!"
 #. src: dialog
 msgctxt "speaker:Woman"
 msgid "You mean like... actually flashing in public...?"
-msgstr "¿Te refieres a... exhibirse en público de verdad...? (hablante: Mujer)"
+msgstr "¿Te refieres a... exhibirse en público de verdad...?"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -73876,10 +73876,10 @@ msgstr "¡Claro que puedes quedarte a mirar, cariño!~ No me importa, jejeje..~"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>You're nasty... Kh...</color>
-#. rich_translation: <color=#EB83FF>Qué asquerosa eres... Kh... (hablante: Zoey, mujer)</color>
+#. rich_translation: <color=#EB83FF>Qué asquerosa eres... Kh...</color>
 msgctxt "speaker:Zoey"
 msgid "You're nasty... Kh..."
-msgstr "Qué asquerosa eres... Kh... (hablante: Zoey, mujer)"
+msgstr "Qué asquerosa eres... Kh..."
 
 #. src: dialog
 msgctxt "speaker:Rugnar"
@@ -74093,7 +74093,7 @@ msgstr "¿Te lo... cortaste?"
 #. src: dialog
 msgctxt "speaker:Intercom"
 msgid "You-... You are... Come closer, please...!"
-msgstr "Tú... Eres... Acércate, por favor...! (hablante: Intercomunicador)"
+msgstr "Tú... Eres... Acércate, por favor...!"
 
 #. src: dialog
 msgctxt "ui"
@@ -76711,3 +76711,4 @@ msgstr "zane dragco"
 msgctxt "ui"
 msgid "| GetDataFromItem: Item doesn't exist! Returning empty DynamicTable."
 msgstr "| GetDataFromItem: ¡El objeto no existe! Se devuelve una DynamicTable vacía."
+

@@ -7601,10 +7601,10 @@ msgstr "（罗茜的舌头也伸进了她的身体里……）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Rungar is staring at us... Mnh... )</i></color>
-#. rich_translation: <color=#EB83FF><i>（鲁格纳正盯着我们看……嗯……）</i></color>
+#. rich_translation: <color=#EB83FF><i>（伦加尔正盯着我们看……嗯……）</i></color>
 msgctxt "speaker:Zoey"
 msgid "(Rungar is staring at us... Mnh... )"
-msgstr "（鲁格纳正盯着我们看……嗯……）"
+msgstr "（伦加尔正盯着我们看……嗯……）"
 
 #. src: dialog
 #. rich_text: <i>(S-Shit! Someone saw- I'm not a... I'm not like this, I swear!)</i>
@@ -14052,7 +14052,7 @@ msgstr "啊，没关系。只希望你和夫人能找到小费莉西娅。我得
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Ah, no, no worries. Lio just skipped his breakfast."
-msgstr "啊，不，别担心。莉奥只是没吃早餐而已。"
+msgstr "啊，不，别担心。利奥只是没吃早餐而已。"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -14878,10 +14878,10 @@ msgstr "好了，够了。这是你的电池，亲爱的。替我向我们那个
 
 #. src: dialog
 #. rich_text: <i>Alright, that's the second key. Time to get this back to Lio.)</i>
-#. rich_translation: <i>好了，这是第二把钥匙。该把它还给Lio了。）</i>
+#. rich_translation: <i>好了，这是第二把钥匙。该把它还给利奥了。）</i>
 msgctxt "speaker:Zoey"
 msgid "Alright, that's the second key. Time to get this back to Lio.)"
-msgstr "好了，这是第二把钥匙。该把它还给Lio了。）"
+msgstr "好了，这是第二把钥匙。该把它还给利奥了。）"
 
 #. src: dialog
 msgctxt "ui"
@@ -16293,12 +16293,12 @@ msgstr "问问杰米的耳机坏了怎么回事。"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Ask about Lio"
-msgstr "问关于Lio的事"
+msgstr "问关于利奥的事"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Ask about Lio's place."
-msgstr "问问莉奥住哪儿。"
+msgstr "问问利奥住哪儿。"
 
 #. src: dialog
 msgctxt "ui"
@@ -16548,7 +16548,7 @@ msgstr "接下来怎么办？"
 #. src: dialog
 msgctxt "ui"
 msgid "Ask where Lio is."
-msgstr "问Lio在哪儿。"
+msgstr "问利奥在哪儿。"
 
 #. src: dialog
 msgctxt "speaker-name"
@@ -18487,7 +18487,7 @@ msgstr "来吧，我会陪着你的。要是你无聊了，随时可以来逗我
 #. src: dialog
 msgctxt "ui"
 msgid "C'mon, Lio. Will you help us, pretty please?"
-msgstr "拜托啦，Lio。帮帮我们好不好？"
+msgstr "拜托啦，利奥。帮帮我们好不好？"
 
 #. src: dialog
 msgctxt "ui"
@@ -20860,7 +20860,7 @@ msgstr "刚要说出“那东西”，就被堵嘴打断了。"
 #. src: dialog
 msgctxt "ui"
 msgid "Cut off saying Lio"
-msgstr "别叫Lio了"
+msgstr "别叫利奥了"
 
 #. src: dialog
 msgctxt "ui"
@@ -20882,7 +20882,7 @@ msgstr "可爱。你现在可没资格提要求。你要的标记都在我办公
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Cutscene - Wait for Lio DeliveryTimeline"
-msgstr "过场动画 - 等待 Lio 的配送时间线"
+msgstr "过场动画 - 等待 利奥 的配送时间线"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23406,7 +23406,7 @@ msgstr "干吧！给我射，你这个被塞满东西的贱货！"
 #. src: dialog
 msgctxt "ui"
 msgid "Do it, Rungar babe! Give my tits your nice big load, just like you wanted!"
-msgstr "干吧，龙纳尔宝贝！把那满满的一大坨射进我的乳沟里，就像你一直想要的那样！"
+msgstr "干吧，伦加尔宝贝！把那满满的一大坨射进我的乳沟里，就像你一直想要的那样！"
 
 #. src: dialog
 msgctxt "ui"
@@ -23941,7 +23941,7 @@ msgstr "你接受这些条款吗？"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Do you also wash Lio's clothes?"
-msgstr "你也会帮Lio洗衣服吗？"
+msgstr "你也会帮利奥洗衣服吗？"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -23998,7 +23998,7 @@ msgstr "这还用问吗？当然可以。而且你在这儿的时候，别担心
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Do you really leave your trash laying around like this, Lio?"
-msgstr "你真的会把垃圾就这样到处乱扔吗，Lio？"
+msgstr "你真的会把垃圾就这样到处乱扔吗，利奥？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -30899,7 +30899,7 @@ msgstr "我们到底有没有见过诺瓦？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Have we met lio?"
-msgstr "我们见过吗，Lio？"
+msgstr "我们见过吗，利奥？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -31332,7 +31332,7 @@ msgstr "嘿嘿……对……"
 #. src: dialog
 msgctxt "ui"
 msgid "Heh... See ya, Lio... Good luck with cleaning... and finding clothes."
-msgstr "嘿嘿……再见了，Lio……祝你好运，把这里打扫干净……还有把衣服也找到。"
+msgstr "嘿嘿……再见了，利奥……祝你好运，把这里打扫干净……还有把衣服也找到。"
 
 #. src: dialog
 msgctxt "ui"
@@ -31760,7 +31760,7 @@ msgstr "这是杠杆。"
 #. src: dialog
 msgctxt "ui"
 msgid "Here's the stuff. Tell Lio to come pick up his black cage some time."
-msgstr "东西在这儿。叫Lio有空来拿他的黑色笼子吧。"
+msgstr "东西在这儿。叫利奥有空来拿他的黑色笼子吧。"
 
 #. src: dialog
 msgctxt "speaker:Rugnar"
@@ -31902,7 +31902,7 @@ msgstr "嘿，杰米。很高兴看到你。"
 #. src: dialog
 msgctxt "ui"
 msgid "Hey Lio!  This is my friend, Cypher. She's got that chip I told you about."
-msgstr "嘿，Lio！这位是我的朋友 赛弗。她身上有我跟你说过的芯片。"
+msgstr "嘿，利奥！这位是我的朋友 赛弗。她身上有我跟你说过的芯片。"
 
 #. src: dialog
 msgctxt "ui"
@@ -32754,7 +32754,7 @@ msgstr "嗯。你输了。"
 #. src: dialog
 msgctxt "ui"
 msgid "Hm... Guess she's not in Lio's place... Are you sure your systems didn't trip, Lio? Is there anything else you can think of?"
-msgstr "嗯……看来她不在莉奥的位置上……你确定你的系统没出问题吗，莉奥？还有没有其他可能？"
+msgstr "嗯……看来她不在利奥的位置上……你确定你的系统没出问题吗，利奥？还有没有其他可能？"
 
 #. src: dialog
 msgctxt "ui"
@@ -33265,7 +33265,7 @@ msgstr "你对在这里工作有什么感觉？难道不觉得有点阴森吗？
 #. src: dialog
 msgctxt "ui"
 msgid "How do you know Lio by the way?"
-msgstr "话说回来，你认识Lio吗？"
+msgstr "话说回来，你认识利奥吗？"
 
 #. src: dialog
 msgctxt "ui"
@@ -33900,7 +33900,7 @@ msgstr "我我得在有人看到我之前把这里收拾干净……"
 #. src: dialog
 msgctxt "ui"
 msgid "I got the mil gear you want. For a friend of Lio, I'll even make you a good deal. 800 fuckbucks and it's yours."
-msgstr "你要的乳具我搞到了。看在是Lio朋友的份上，我还能给你个优惠价——800个操币，就是你的了。"
+msgstr "你要的乳具我搞到了。看在是利奥朋友的份上，我还能给你个优惠价——800个操币，就是你的了。"
 
 #. src: dialog
 msgctxt "ui"
@@ -34168,7 +34168,7 @@ msgstr "我知道！我们把它拆箱然后装起来吧！"
 #. src: dialog
 msgctxt "ui"
 msgid "I know, Lio... Just... ugh... It's a little..."
-msgstr "我知道，Lio……只是……呃……这有点……"
+msgstr "我知道，利奥……只是……呃……这有点……"
 
 #. src: dialog
 msgctxt "ui"
@@ -35104,7 +35104,7 @@ msgstr "真的非常抱歉……我……我会尽快回来的，我保证！"
 #. src: dialog
 msgctxt "ui"
 msgid "I'm sorry Lio."
-msgstr "对不起，Lio。"
+msgstr "对不起，利奥。"
 
 #. src: dialog
 msgctxt "ui"
@@ -37610,7 +37610,7 @@ msgstr "已识别的问题："
 #. src: dialog
 msgctxt "ui"
 msgid "It better, ehehe! That's what will get us a nice fat paycheck, won't it Rungar?"
-msgstr "这样更好，嘿嘿嘿！这样才能拿到那笔丰厚的报酬，对吧，鲁格纳？"
+msgstr "这样更好，嘿嘿嘿！这样才能拿到那笔丰厚的报酬，对吧，伦加尔？"
 
 #. src: dialog
 #. rich_text: <size=35>It came from that room over there-</size>
@@ -38379,7 +38379,7 @@ msgstr "杰伊"
 #. src: dialog
 msgctxt "ui"
 msgid "Jeez, Lio! Are you- Do you want me to- Give you a minute?!"
-msgstr "天哪，Lio！你——你想让我——给你一分钟吗？！"
+msgstr "天哪，利奥！你——你想让我——给你一分钟吗？！"
 
 #. src: dialog
 msgctxt "ui"
@@ -39796,7 +39796,7 @@ msgstr "最后的对话"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Last key! Let's get you out of there, Lio!"
-msgstr "最后一把钥匙！快带你离开这里，Lio！"
+msgstr "最后一把钥匙！快带你离开这里，利奥！"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -40892,7 +40892,7 @@ msgstr "利奥默认受方"
 #. src: dialog
 msgctxt "ui"
 msgid "Lio Dialogue Preset"
-msgstr "莉奥对话预设"
+msgstr "利奥对话预设"
 
 #. src: dialog
 msgctxt "ui"
@@ -41277,7 +41277,7 @@ msgstr "看看那隻漂亮又年輕的手，正放在我的……下體上……
 #. src: dialog
 msgctxt "ui"
 msgid "Look at that, Rungar just couldn't resist your words, darling."
-msgstr "瞧，伦加根本没能抗拒你的话，亲爱的。"
+msgstr "瞧，伦加尔根本没能抗拒你的话，亲爱的。"
 
 #. src: dialog
 msgctxt "ui"
@@ -42643,7 +42643,7 @@ msgstr "水母"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Meet Lio"
-msgstr "见到Lio"
+msgstr "见到利奥"
 
 #. src: dialog
 msgctxt "ui"
@@ -43405,7 +43405,7 @@ msgstr "嗯……操……对……嗯……别停。你让我他妈的快失控
 #. src: dialog
 msgctxt "ui"
 msgid "Mmhh, trust me hun, his cock is amazing. Probably my favorite of the regulars. Show Zoey whats in your pants, Rungar darling."
-msgstr "嗯……相信我，亲爱的，他的鸡巴简直太棒了。可能是我常来的这些人里最喜欢的。让佐伊看看你裤子里有什么吧，鲁格纳，亲爱的。"
+msgstr "嗯……相信我，亲爱的，他的鸡巴简直太棒了。可能是我常来的这些人里最喜欢的。让佐伊看看你裤子里有什么吧，伦加尔，亲爱的。"
 
 #. src: dialog
 #. rich_text: Mmhh.. I want to do anything  <b><i>but</i></b> take my fingers off you.. Yet, sadly, I have to get back to guarding the hallway.
@@ -43595,7 +43595,7 @@ msgstr "嗯……真舒服。"
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Mmm... You know, I was thinking it'd be fun to do some training with you. Like what I've been doing with Lio lately."
-msgstr "嗯……你知道吗，我其实觉得和你一起训练会很有趣。就像最近我和Lio做的那样。"
+msgstr "嗯……你知道吗，我其实觉得和你一起训练会很有趣。就像最近我和利奥做的那样。"
 
 #. src: dialog
 msgctxt "ui"
@@ -43610,7 +43610,7 @@ msgstr "嗯？什么设定……？"
 #. src: dialog
 msgctxt "ui"
 msgid "Mmmh, I knowww, ehehe. Isn't that right, Rungar..."
-msgstr "嗯……我懂啦，嘿嘿。你说对吧，龙纳尔……"
+msgstr "嗯……我懂啦，嘿嘿。你说对吧，伦加尔……"
 
 #. src: dialog
 msgctxt "ui"
@@ -43635,7 +43635,7 @@ msgstr "嗯嘿嘿……你喜欢它们，对吧，佐伊？告诉我，亲爱的
 #. src: dialog
 msgctxt "ui"
 msgid "Mmmhh, I love feeling your cock between my tits, Rungar! Is Zoey doing a good job, hun?"
-msgstr "嗯……我喜欢你肉棒夹在我双乳间的感觉，伦加！佐伊做得不错吧，亲爱的？"
+msgstr "嗯……我喜欢你肉棒夹在我双乳间的感觉，伦加尔！佐伊做得不错吧，亲爱的？"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -47189,7 +47189,7 @@ msgstr "2026年10月"
 #. src: dialog
 msgctxt "ui"
 msgid "Of course I know Rungar. He's a big tipper and that's not the only big thing about him, ehehe!"
-msgstr "我当然认识朗加尔。他可是个大款，而且他“大”的可不止这一点，嘿嘿！"
+msgstr "我当然认识伦加尔。他可是个大款，而且他“大”的可不止这一点，嘿嘿！"
 
 #. src: dialog
 msgctxt "ui"
@@ -51702,10 +51702,10 @@ msgstr "请选择一个房间来体验 SLUT Service™……"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Please cum on Rosies... nice big tits, mr Rungar...</color>
-#. rich_translation: <color=#EB83FF>请射在罗茜……那对漂亮的大奶子上，伦加先生……</color>
+#. rich_translation: <color=#EB83FF>请射在罗茜……那对漂亮的大奶子上，伦加尔先生……</color>
 msgctxt "speaker:Zoey"
 msgid "Please cum on Rosies... nice big tits, mr Rungar..."
-msgstr "请射在罗茜……那对漂亮的大奶子上，伦加先生……"
+msgstr "请射在罗茜……那对漂亮的大奶子上，伦加尔先生……"
 
 #. src: dialog
 msgctxt "ui"
@@ -52539,7 +52539,7 @@ msgstr "穿上兔女郎服"
 #. src: dialog
 msgctxt "ui"
 msgid "Put your hands under my tits, press them up for Rungar."
-msgstr "把手放在我的奶子下面，为朗加尔把她们顶起来。"
+msgstr "把手放在我的奶子下面，为伦加尔把她们顶起来。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -53364,7 +53364,7 @@ msgstr "将莉昂娜从队伍中移除"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Remove Lio from party"
-msgstr "将Lio从队伍中移除"
+msgstr "将利奥从队伍中移除"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -54186,7 +54186,7 @@ msgstr "好的，我马上过去。"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Right. Maybe you should make Lio cook for you!"
-msgstr "对啊。也许你该让Lio来给你做饭！"
+msgstr "对啊。也许你该让利奥来给你做饭！"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -54789,20 +54789,20 @@ msgstr "符文……好吧。那我猜我……就自己解决了？"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Rungar asked, if-... like... he wants you to grope my chest...! </color>
-#. rich_translation: <color=#EB83FF>龙加尔问，好像……他想要你摸我的胸……！</color>
+#. rich_translation: <color=#EB83FF>伦加尔问，好像……他想要你摸我的胸……！</color>
 msgctxt "speaker:Zoey"
 msgid "Rungar asked, if-... like... he wants you to grope my chest...!"
-msgstr "龙加尔问，好像……他想要你摸我的胸……！"
+msgstr "伦加尔问，好像……他想要你摸我的胸……！"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Rungar doesn't cum quickly like other customers, darling. We'll need to give him the perfect titjob. Let's stroke it even faster!"
-msgstr "龙加尔可不像其他顾客那样很快就射了，亲爱的。我们得给他来一次完美的乳头舔舐。再快一点抚摸吧！"
+msgstr "伦加尔可不像其他顾客那样很快就射了，亲爱的。我们得给他来一次完美的乳头舔舐。再快一点抚摸吧！"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Rungar... H-heh... S-so good to-... Ngh... See you... Eheh..."
-msgstr "润加尔……呵……真……真舒服……嗯……再会……诶诶……"
+msgstr "伦加尔……呵……真……真舒服……嗯……再会……诶诶……"
 
 #. src: dialog
 msgctxt "ui"
@@ -58800,7 +58800,7 @@ msgstr "给您带来不便，非常抱歉！"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Sorry for the trouble, Lio. How's the cleaning going?"
-msgstr "抱歉给你添麻烦了，Lio。打扫得怎么样了？"
+msgstr "抱歉给你添麻烦了，利奥。打扫得怎么样了？"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -62027,7 +62027,7 @@ msgstr "感谢他让你还清了债务。"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Thank you Lio, you are the best!"
-msgstr "谢谢，Lio，你真是最棒的！"
+msgstr "谢谢，利奥，你真是最棒的！"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -62120,7 +62120,7 @@ msgstr "谢谢"
 #. src: dialog
 msgctxt "ui"
 msgid "Thanks Lio."
-msgstr "谢了，Lio。"
+msgstr "谢了，利奥。"
 
 #. src: dialog
 msgctxt "ui"
@@ -62172,7 +62172,7 @@ msgstr "谢啦，亲爱的，但我得自己把日子过明白。我想有自己
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Thanks so much, Lio! I owe you!"
-msgstr "太感谢了，Lio！我欠你个人情！"
+msgstr "太感谢了，利奥！我欠你个人情！"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -62182,7 +62182,7 @@ msgstr "谢谢！"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Thanks! I'll go visit Lio now then."
-msgstr "谢谢！那我这就去拜访Lio。"
+msgstr "谢谢！那我这就去拜访利奥。"
 
 #. src: dialog
 msgctxt "ui"
@@ -62197,7 +62197,7 @@ msgstr "谢谢，杰米……"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Thanks, Lio. I'll let ya know when I've got what you need."
-msgstr "谢了，Lio。拿到你要的东西后我会告诉你。"
+msgstr "谢了，利奥。拿到你要的东西后我会告诉你。"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Thanks, Mira. Let me know if you'd like to order another drink, hehe.</color>
@@ -62454,7 +62454,7 @@ msgstr "你配叫“女士”吗，兔崽子。"
 #. src: dialog
 msgctxt "ui"
 msgid "That's Lio for you."
-msgstr "这就是Lio啊。"
+msgstr "这就是利奥啊。"
 
 #. src: dialog
 msgctxt "ui"
@@ -62998,7 +62998,7 @@ msgstr "机器的速度翻倍了"
 #. src: dialog
 msgctxt "ui"
 msgid "The machine said the credits should be transferred to you, Lio."
-msgstr "机器说，奖金应该转给你，Lio。"
+msgstr "机器说，奖金应该转给你，利奥。"
 
 #. src: dialog
 msgctxt "ui"
@@ -65764,7 +65764,7 @@ msgstr "呃……我谁也不接受！"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Uhhh... Okay Lio, I've got another key. Here goes nothing."
-msgstr "呃……好吧，莉奥，我又拿到一把钥匙。试试运气吧。"
+msgstr "呃……好吧，利奥，我又拿到一把钥匙。试试运气吧。"
 
 #. src: dialog
 msgctxt "ui"
@@ -66043,7 +66043,7 @@ msgstr "脱掉夹克"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Undress Lio"
-msgstr "脱掉莉奥的衣服"
+msgstr "脱掉利奥的衣服"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -69787,7 +69787,7 @@ msgstr "嗯……那就试试看吧，对吧？"
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Well... Needless to say I didn't take her to the pound. Guess I have a soft spot for helpless things. Like Lio... and you."
-msgstr "嗯……不用说，我当然没把她送到收容所。大概我对无助的小东西总是心软吧。就像Lio……还有你。"
+msgstr "嗯……不用说，我当然没把她送到收容所。大概我对无助的小东西总是心软吧。就像利奥……还有你。"
 
 #. src: dialog
 msgctxt "ui"
@@ -70288,7 +70288,7 @@ msgstr "你觉得我们该怎么办？"
 #. src: dialog
 msgctxt "ui"
 msgid "What do you think, Rungar honey, hmmm?"
-msgstr "你觉得怎么样，龙加尔宝贝，嗯？"
+msgstr "你觉得怎么样，伦加尔宝贝，嗯？"
 
 #. src: dialog
 msgctxt "speaker:Woman"
@@ -72136,12 +72136,12 @@ msgstr "是啊，谢了！简单修好了。"
 #. src: dialog
 msgctxt "ui"
 msgid "Yeah, thanks, Lio. You're awesome!"
-msgstr "是啊，谢谢你，Lio。你真棒！"
+msgstr "是啊，谢谢你，利奥。你真棒！"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Yeah, thanks, Lio. You're awesome."
-msgstr "是啊，谢了，Lio。你真棒。"
+msgstr "是啊，谢了，利奥。你真棒。"
 
 #. src: dialog
 msgctxt "ui"
@@ -72601,7 +72601,7 @@ msgstr "是啊！算是吧~等准备好了你就知道了，亲爱的。现在�
 #. src: dialog
 msgctxt "ui"
 msgid "Yes! Thanks, Lio. You're a life-saver!"
-msgstr "是啊！谢谢，Lio。你可真是救星！"
+msgstr "是啊！谢谢，利奥。你可真是救星！"
 
 #. src: dialog
 msgctxt "ui"
@@ -75826,7 +75826,7 @@ msgstr "没有赛弗"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "no lio"
-msgstr "没有莉奥"
+msgstr "没有利奥"
 
 #. src: dialog
 msgctxt "ui"
@@ -76489,7 +76489,7 @@ msgstr "拍了张照"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "turn lio interactable back on"
-msgstr "重新启用 Lio 的可互动状态"
+msgstr "重新启用 利奥 的可互动状态"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76790,3 +76790,4 @@ msgstr "赞恩·德拉科"
 msgctxt "ui"
 msgid "| GetDataFromItem: Item doesn't exist! Returning empty DynamicTable."
 msgstr "| GetDataFromItem: 物品不存在！返回空 DynamicTable。"
+

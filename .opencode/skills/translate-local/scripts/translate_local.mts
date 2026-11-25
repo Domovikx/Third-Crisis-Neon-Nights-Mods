@@ -449,14 +449,71 @@ export function improvePrompt(
 // --- ответ модели ---
 
 const RESP_RX = /^\s*(\d+)\s*[.)]\s?(.*)$/;
-// Утечка метаданных промпта в текст: английская и русская формы. Модель
-// переводит «(speaker: Zoey)» и оставляет «(говорящий: Зои)» / «(эмоция: …)» —
-// в игре это видно как часть реплики (проверено 2026-11-23: 42 строки в ru).
-const SPEAKER_LEAK_RX =
-  /\s*[（(](?:speaker|emotion|говорящ[а-яё]*|говорит|голос[а-яё]*|эмоци[а-яё]*|说话人|说话者|发言者|扬声器|喇叭|旁白|语气|情感|角色)\s*[:：][^)）]*[)）]\s*$/iu;
+
+/**
+ * Метки подписи спикера на всех десяти языках корпуса.
+ *
+ * Модель переводит служебную скобку промпта «(speaker: Zoey, female)» вместе с
+ * текстом: в `msgstr` появляется «(hablante: Zoey, mujer)», «(parlante: …)»,
+ * «(falante: …)», «(話し手：ゾーイ、女性)», «(말하는 사람: 조이, 여성)». Прежний
+ * детектор знал только английскую, русскую и китайскую формы, поэтому в pt/es/it/
+ * fr/ja/ko/pl такие подписи остались в игре (замер 2026-11-24: 310 строк только
+ * в pt 129 / es 96 / it 60 / fr 19 / ru 6, плюс de/ja/ko/pl).
+ */
+const SPEAKER_LABELS = [
+  "speaker",
+  "sprecher(?:in)?",
+  "hablante",
+  "parlante",
+  "parler",
+  "parleur",
+  "parleuse",
+  "falante",
+  "voz",
+  "voix",
+  "mówi(?:ący)?",
+  "говорящ(?:ий|ая)",
+  "говорит",
+  "голос(?:а|ом)?",
+  "эмоци(?:я|и)",
+  "emotion",
+  "話し手",
+  "話者",
+  "スピーカー",
+  "说话人",
+  "说话者",
+  "发言者",
+  "扬声器",
+  "喇叭",
+  "旁白",
+  "语气",
+  "情感",
+  "角色",
+  "말하는 사람",
+  "발화자",
+  "발언자",
+  "화자",
+].join("|");
+
+/** Слова пола, которые модель приписывает рядом с именем. */
+const SPEAKER_GENDERS =
+  "female|male|woman|man|weiblich|männlich|femenina|femenino|mujer|hombre|femme|homme|femmina|maschio|maschile|femminile|feminina|masculino|mulher|homem|kobieta|mężczyzna|женщина|мужчина|женский|мужской|女性|男性|女|男|여성|남성";
+
+/** Подпись с меткой: «(hablante: Zoey, mujer)», «（話し手：ゾーイ、女性）». */
+const SPEAKER_LABEL_LEAK_RX = new RegExp(
+  `\\s*[（(]\\s*(?:${SPEAKER_LABELS})\\s*[:：]\\s*[^()（）]{1,40}?(?:\\s*[,，、]\\s*(?:${SPEAKER_GENDERS}))?\\s*[)）]\\s*$`,
+  "iu",
+);
+/** Подпись без двоеточия: «(говорит Ругнар)», «(mówi Zoey, kobieta)». */
+const SPEAKER_SPACE_LEAK_RX = new RegExp(
+  `\\s*[（(]\\s*(?:говорит|говорящ(?:ий|ая)|mówi(?:ący)?|speaker|sprecher(?:in)?)\\s+[^()（）]{1,40}?\\s*[)）]\\s*$`,
+  "iu",
+);
 // Второй вариант без метки: «（Zoey，女）» / «（Zoey，female）» в конце строки.
-const SPEAKER_LEAK_NO_LABEL_RX =
-  /\s*[（(][^（()）]{1,20}[，,]\s*(?:女性|男性|女|男|female|male)[)）]\s*$/iu;
+const SPEAKER_LEAK_NO_LABEL_RX = new RegExp(
+  `\\s*[（(][^（()）]{1,30}[，,、]\\s*(?:${SPEAKER_GENDERS})\\s*[)）]\\s*$`,
+  "iu",
+);
 // Голое «（扬声器）» / «(speaker)» без двоеточия и значения.
 const SPEAKER_LABEL_RX =
   /\s*[（(](?:扬声器|说话人|说话者|发言者|旁白|speaker|narration)[)）]\s*$/iu;
@@ -465,15 +522,53 @@ const SPEAKER_LABEL_RX =
 // иначе задели бы реплики вроде «(Голосовой файл)».
 const VOICE_TAIL_RX = /\s*\((?:голос[а-яё]*|эмоци[а-яё]*)\s+(?!файл)[^)]{1,30}\)\s*$/iu;
 
-/** Убрать эхо `(speaker: X)`, которое модель копирует из промпта. */
-export function stripSpeakerLeak(tr: string): { clean: string; leaked: boolean } {
-  const clean = tr
-    .replace(SPEAKER_LEAK_RX, "")
+/** Закрывающие теги и кавычки в хвосте: утечка стоит ДО них («… (hablante: Zoey)</i>»). */
+const CLOSING_TAGS_RX = /((?:\s*<\/[^>]+>)*\s*[»"”’』」】\]]*)\s*$/u;
+
+/**
+ * Срезать подпись с конца строки (с закрывающими тегами/кавычками).
+ *
+ * Возвращает null, если срезать нечего.
+ */
+function stripTailLeak(text: string): string | null {
+  const tags = CLOSING_TAGS_RX.exec(text);
+  const head = tags ? text.slice(0, tags.index) : text;
+  const tail = tags ? tags[1] : "";
+  const core = head
+    .replace(SPEAKER_LABEL_LEAK_RX, "")
+    .replace(SPEAKER_SPACE_LEAK_RX, "")
     .replace(SPEAKER_LEAK_NO_LABEL_RX, "")
     .replace(SPEAKER_LABEL_RX, "")
     .replace(VOICE_TAIL_RX, "")
-    .trim();
-  return { clean, leaked: clean !== tr.trim() };
+    .trimEnd();
+  if (core === head.trimEnd()) return null;
+  return (core + tail).trim();
+}
+
+/**
+ * Убрать эхо подписи спикера, которое модель копирует из промпта.
+ *
+ * Подпись ищется только в хвосте строки (перед закрывающими тегами и внешними
+ * скобками): в середине реплики скобка с «speaker» может быть честным текстом.
+ * Вложенный случай `(… (falante: Zoey, feminina))` — утечка внутри внешней
+ * скобки, поэтому хвостовой `)` снимается послойно (до трёх уровней).
+ */
+export function stripSpeakerLeak(tr: string): { clean: string; leaked: boolean } {
+  const trimmed = tr.trim();
+  let body = trimmed;
+  let suffix = "";
+  for (let depth = 0; depth < 3; depth += 1) {
+    const stripped = stripTailLeak(body);
+    if (stripped !== null) {
+      const clean = (stripped + suffix).trim();
+      return { clean, leaked: clean !== trimmed };
+    }
+    const m = /[)）]$/u.exec(body);
+    if (!m) break;
+    suffix = m[0] + suffix;
+    body = body.slice(0, -1);
+  }
+  return { clean: trimmed, leaked: false };
 }
 
 /**

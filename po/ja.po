@@ -247,11 +247,11 @@ msgstr "ここで本当に稼げるのは、自分の体を使うことなんだ
 
 #. src: dialog
 #. rich_text: 'Was <b>desperate</b> for cashh, so... Didn't say no, ehehe... Pr'tty hot too, buuuthh... Fuck, look a yahh...
-#. rich_translation: 金に困ってたから…断らなかったの、えへへ…結構ホットだし、うぅ…クソ、見てよ…（話し手：Customer、男性）
+#. rich_translation: 金に困ってたから…断らなかったの、えへへ…結構ホットだし、うぅ…クソ、見てよ…
 #, rt-review
 msgctxt "speaker:Customer"
 msgid "'Was desperate for cashh, so... Didn't say no, ehehe... Pr'tty hot too, buuuthh... Fuck, look a yahh..."
-msgstr "金に困ってたから…断らなかったの、えへへ…結構ホットだし、うぅ…クソ、見てよ…（話し手：Customer、男性）"
+msgstr "金に困ってたから…断らなかったの、えへへ…結構ホットだし、うぅ…クソ、見てよ…"
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -3044,10 +3044,10 @@ msgstr "（うーん…リオの好きなバンドのこと、どうやって知
 
 #. src: dialog
 #. rich_text: <i>(Hmm... It's addressed to my next door neighbour, Jaime. Says it's a CLIT maintenance kit.)</i>
-#. rich_translation: <i>（ふむ……隣に住んでるハイメ宛てだ。CLITメンテナンスキットだって書いてある。）</i>
+#. rich_translation: <i>（ふむ……隣に住んでるジェイミー宛てだ。CLITメンテナンスキットだって書いてある。）</i>
 msgctxt "ui"
 msgid "(Hmm... It's addressed to my next door neighbour, Jaime. Says it's a CLIT maintenance kit.)"
-msgstr "（ふむ……隣に住んでるハイメ宛てだ。CLITメンテナンスキットだって書いてある。）"
+msgstr "（ふむ……隣に住んでるジェイミー宛てだ。CLITメンテナンスキットだって書いてある。）"
 
 #. src: dialog
 #. rich_text: <i>(Hmm... Let's see...)</i>
@@ -3291,10 +3291,10 @@ msgstr "（彼の…）"
 
 #. src: dialog
 #. rich_text: <i>(I can hear someone in there
-#. rich_translation: <i>（中に誰かの声が聞こえる（話し手：ゾーイ、女性）
+#. rich_translation: <i>（中に誰かの声が聞こえる
 msgctxt "speaker:Zoey"
 msgid "(I can hear someone in there"
-msgstr "（中に誰かの声が聞こえる（話し手：ゾーイ、女性）"
+msgstr "（中に誰かの声が聞こえる"
 
 #. src: dialog
 #. rich_text: <i>(I can see a storage room on the other side... Maybe I can pry this open. )</i>
@@ -3640,10 +3640,10 @@ msgstr "（本当にその気があるなら…捨てちゃうよりは…マシ
 
 #. src: dialog
 #. rich_text: <i>(I guess it does have a bit of an.. aesthetic to it. )</i>
-#. rich_translation: <i>（まあ、確かにちょっと…エстет的な感じはするわね。）</i>
+#. rich_translation: <i>（まあ、確かにちょっと…美的な感じはするわね。）</i>
 msgctxt "ui"
 msgid "(I guess it does have a bit of an.. aesthetic to it. )"
-msgstr "（まあ、確かにちょっと…エстет的な感じはするわね。）"
+msgstr "（まあ、確かにちょっと…美的な感じはするわね。）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(I guess it was only a matter of time until... He'd ask for that... )</i></color>
@@ -7605,10 +7605,10 @@ msgstr "（ロージーの舌も彼女の中にあった……）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Rungar is staring at us... Mnh... )</i></color>
-#. rich_translation: <color=#EB83FF><i>（ルングナーが私たちをじっと見つめている……うん……）</i></color>
+#. rich_translation: <color=#EB83FF><i>（ルンガーが私たちをじっと見つめている……うん……）</i></color>
 msgctxt "speaker:Zoey"
 msgid "(Rungar is staring at us... Mnh... )"
-msgstr "（ルングナーが私たちをじっと見つめている……うん……）"
+msgstr "（ルンガーが私たちをじっと見つめている……うん……）"
 
 #. src: dialog
 #. rich_text: <i>(S-Shit! Someone saw- I'm not a... I'm not like this, I swear!)</i>
@@ -11024,7 +11024,7 @@ msgstr "…え？でも…なんで精霊たちが…って、教えてくれな
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "... or not."
-msgstr "…あるいは、違うのか？（話し手：執行官、男性）"
+msgstr "…あるいは、違うのか？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11034,7 +11034,7 @@ msgstr "…上へ…"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "...! I-... I- wont-...! Khh..."
-msgstr "…！わ…私…やらない…！っ…（話者：ゾーイ、女性）"
+msgstr "…！わ…私…やらない…！っ…"
 
 #. src: dialog
 msgctxt "ui"
@@ -11219,22 +11219,22 @@ msgstr "0.3 - ネイルサロン - 裏部屋 - 1 - 秘密のドア - 1"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Neon Rise - Enforcer Block - 01"
-msgstr "0.3 - ネオン・ライズ - エンفورサー・ブロック - 01"
+msgstr "0.3 - ネオン・ライズ - エンフォーサー・ブロック - 01"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Neon Rise - Enforcer Block - 02 - Has Party"
-msgstr "0.3 - ネオン・ライズ - エンفورサー・ブロック - 02 - パーティーあり"
+msgstr "0.3 - ネオン・ライズ - エンフォーサー・ブロック - 02 - パーティーあり"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Neon Rise - Enforcer Block - Rat Out - 01"
-msgstr "0.3 - ネオン・ライズ - エンفورサー・ブロック - ネズミ退治 - 01"
+msgstr "0.3 - ネオン・ライズ - エンフォーサー・ブロック - ネズミ退治 - 01"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Neon Rise - Enforcer Block - Rat Out - 02"
-msgstr "0.3 - ネオン・ライズ - エンفورサー・ブロック - ネズミ退治 - 02"
+msgstr "0.3 - ネオン・ライズ - エンフォーサー・ブロック - ネズミ退治 - 02"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -12688,7 +12688,7 @@ msgstr "命綱が断たれ、繋ぎ留める紐がほつれた"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "A maintenance report."
-msgstr "保守報告書。（話し手：ゾーイ、女性）"
+msgstr "保守報告書。"
 
 #. src: us
 msgctxt "ui"
@@ -12828,10 +12828,10 @@ msgstr "そ、それについては…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>A-and besides, I-... I don't... I-...</color>
-#. rich_translation: <color=#EB83FF>そ、それに、わ、私…私、そんな…（話者：Zoey、女性）</color>
+#. rich_translation: <color=#EB83FF>そ、それに、わ、私…私、そんな…</color>
 msgctxt "speaker:Zoey"
 msgid "A-and besides, I-... I don't... I-..."
-msgstr "そ、それに、わ、私…私、そんな…（話者：Zoey、女性）"
+msgstr "そ、それに、わ、私…私、そんな…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>A-and n-no touching...!</color>
@@ -13881,7 +13881,7 @@ msgstr "アフターグロウ・アニメーション"
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "Again. Look up at me, slummer."
-msgstr "またか。俺を見ろ、スラム野郎。（話し手：Enforcer、男性）"
+msgstr "またか。俺を見ろ、スラム野郎。"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Again... r-right...</color>
@@ -13903,7 +13903,7 @@ msgstr "うっ… 君たち、この小さなヘルパーボットたちを助�
 #. src: dialog
 msgctxt "speaker:Lio"
 msgid "Agh- Thank fuck. Okay, you- aah~ You better hurry, Jan's getting aggravated. I've never seen her like this before-"
-msgstr "ああー、ちくしょう。よし、お前——ああっ！早くしろ、ジャンがイライラし始めてる。こんな彼女、見たことないんだぞ——（話し手：リオ、男性）"
+msgstr "ああー、ちくしょう。よし、お前——ああっ！早くしろ、ジャンがイライラし始めてる。こんな彼女、見たことないんだぞ——"
 
 #. src: dialog
 msgctxt "ui"
@@ -14245,7 +14245,7 @@ msgstr "あっ！あなたのことじゃないのよ、バカ！"
 #. src: dialog
 msgctxt "speaker:Mira"
 msgid "Ah-! I-it's fine... s-sorry..."
-msgstr "あっ！い、いいのよ……す、すまない……（話し手：ミラ）"
+msgstr "あっ！い、いいのよ……す、すまない……"
 
 #. src: dialog
 msgctxt "ui"
@@ -14365,7 +14365,7 @@ msgstr "あっ……！違うの……私……ただ……仕事をしてるだ
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Ah-...! N-no, I-"
-msgstr "あっ…！い、いや、わ—（話し手：ゾーイ、女性）"
+msgstr "あっ…！い、いや、わ—"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Ah-...! N-nono! It's-... I, um... S-sorry!</color>
@@ -14400,10 +14400,10 @@ msgstr "あっ…！ごめんなさい！ありがとう…旦那様…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Ah-...! Um-... I-...</color>
-#. rich_translation: <color=#EB83FF>ああ…！えっと…わ、私…（話し手：Zoey、女性）</color>
+#. rich_translation: <color=#EB83FF>ああ…！えっと…わ、私…</color>
 msgctxt "speaker:Zoey"
 msgid "Ah-...! Um-... I-..."
-msgstr "ああ…！えっと…わ、私…（話し手：Zoey、女性）"
+msgstr "ああ…！えっと…わ、私…"
 
 #. src: dialog
 msgctxt "speaker:Mira"
@@ -14509,7 +14509,7 @@ msgstr "あっ！ま、待って！"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Ahh-.. yeah, hah... well I-... uhm..."
-msgstr "ああ…うん、はは…えっと…あの…（話し手：Zoey、女性）"
+msgstr "ああ…うん、はは…えっと…あの…"
 
 #. src: dialog
 msgctxt "ui"
@@ -14773,7 +14773,7 @@ msgstr "必要なのは、ほんの少しのグロウだけ。"
 #. src: dialog
 msgctxt "speaker:Guy"
 msgid "AlleyFuckers Presets"
-msgstr "アレイファッカーズ・プリセット（話し手：ガイ）"
+msgstr "アレイファッカーズ・プリセット"
 
 #. src: dialog
 msgctxt "ui"
@@ -15191,7 +15191,7 @@ msgstr "それと、私の提案も忘れないでね、へへっ。"
 #. src: dialog
 msgctxt "speaker:Lio"
 msgid "And done! Eheh. Sorry you had to see that, Zoey."
-msgstr "完了！エヘッ。それを見せちゃってごめん、ゾーイ。（話し手：リオ、男性）"
+msgstr "完了！エヘッ。それを見せちゃってごめん、ゾーイ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -15338,7 +15338,7 @@ msgstr "それに、君のこの子猫ちゃんをもう少し近くで見たか
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "And when yah' done, gimme a good sniff of ya nasty little asshole, ahaha! 'Pay whaeva tip ya want, ahaha!"
-msgstr "終わったら、その汚いケツの匂いをよーく嗅がせてくれよ、あはは！チップは好きなだけ払ってくれればいいぜ、あはは！（話し手：トロフ、男性）"
+msgstr "終わったら、その汚いケツの匂いをよーく嗅がせてくれよ、あはは！チップは好きなだけ払ってくれればいいぜ、あはは！"
 
 #. src: dialog
 msgctxt "ui"
@@ -16073,10 +16073,10 @@ msgstr "大丈夫なの！？"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Are you going to-...</color>
-#. rich_translation: <color=#EB83FF>本当に…（スピーカー：ゾーイ、女性）</color>
+#. rich_translation: <color=#EB83FF>本当に…</color>
 msgctxt "speaker:Zoey"
 msgid "Are you going to-..."
-msgstr "本当に…（スピーカー：ゾーイ、女性）"
+msgstr "本当に…"
 
 #. src: dialog
 msgctxt "ui"
@@ -16145,7 +16145,7 @@ msgstr "本当にこのアイテムを購入しますか？"
 #. src: dialog
 msgctxt "ui"
 msgid "Are you sure, Jaime? You don't have to be alone."
-msgstr "本当にそう思うの、ハイメ？一人でいる必要なんてないよ。"
+msgstr "本当にそう思うの、ジェイミー？一人でいる必要なんてないよ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -16912,7 +16912,7 @@ msgstr "うわぁ、サラ、ネイルがすごく素敵ね。その色、気に
 #. src: dialog
 msgctxt "speaker:Sarah"
 msgid "Aww- I Wish I could take my boobs off whenever I wanted too! You're super lucky, girlie."
-msgstr "ああー、私も胸をいつでも外せるようになりたいわ！あなたは本当に幸運ね、お嬢さん。（スピーカー：サラ、女性）"
+msgstr "ああー、私も胸をいつでも外せるようになりたいわ！あなたは本当に幸運ね、お嬢さん。"
 
 #. src: dialog
 msgctxt "ui"
@@ -16998,10 +16998,10 @@ msgstr "は、はやくしてください..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>B-but I thought-... We're not allowed to-...</color>
-#. rich_translation: <color=#EB83FF>で、でも、私…お客様をイかせるなんて、許されてないはずなのに…（話者：ゾーイ、女性）</color>
+#. rich_translation: <color=#EB83FF>で、でも、私…お客様をイかせるなんて、許されてないはずなのに…</color>
 msgctxt "speaker:Zoey"
 msgid "B-but I thought-... We're not allowed to-..."
-msgstr "で、でも、私…お客様をイかせるなんて、許されてないはずなのに…（話者：ゾーイ、女性）"
+msgstr "で、でも、私…お客様をイかせるなんて、許されてないはずなのに…"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17451,7 +17451,7 @@ msgstr "だって、外の地区にあるManaFactoryの機械に持って行っ�
 #. src: dialog
 msgctxt "speaker:Woman"
 msgid "Because her nails are like... really cute- and... We could like... frame it like she's another sister..."
-msgstr "彼女の爪が、ほら…すごく可愛くて…で、それを…例えば、彼女がもう一人の姉妹みたいにフレームインさせるとか… (話し手: 女性)"
+msgstr "彼女の爪が、ほら…すごく可愛くて…で、それを…例えば、彼女がもう一人の姉妹みたいにフレームインさせるとか…"
 
 #. src: dialog
 msgctxt "ui"
@@ -17958,10 +17958,10 @@ msgstr "ループを破って、間違ったダイアログを再生する"
 
 #. src: dialog
 #. rich_text: Break, hm? I think you need to be... <i>physically examined</i>... for suspicious behavior, girl.
-#. rich_translation: 休み、ね？　君は…容疑者として…<i>身体検査を受ける必要があると思うんだがな、お嬢さん。</i>（話し手：取り締まり官、男性）
+#. rich_translation: 休み、ね？　君は…容疑者として…<i>身体検査を受ける必要があると思うんだがな、お嬢さん。</i>
 msgctxt "speaker:Enforcer"
 msgid "Break, hm? I think you need to be... physically examined... for suspicious behavior, girl."
-msgstr "休み、ね？　君は…容疑者として…身体検査を受ける必要があると思うんだがな、お嬢さん。（話し手：取り締まり官、男性）"
+msgstr "休み、ね？　君は…容疑者として…身体検査を受ける必要があると思うんだがな、お嬢さん。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18298,7 +18298,7 @@ msgstr "でも、どうすればいいの？"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "But you don't care, now do you..."
-msgstr "でも、あなたには関係ないのよね…（スピーカー：Zoey、女性）"
+msgstr "でも、あなたには関係ないのよね…"
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -18322,10 +18322,10 @@ msgstr "でも…でも、そんなことして…ゾーイのことはどうな
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>But- I-</color>
-#. rich_translation: <color=#EB83FF>でも…私…（話し手：Zoey、女性）</color>
+#. rich_translation: <color=#EB83FF>でも…私…</color>
 msgctxt "speaker:Zoey"
 msgid "But- I-"
-msgstr "でも…私…（話し手：Zoey、女性）"
+msgstr "でも…私…"
 
 #. src: dialog
 msgctxt "speaker:Woman"
@@ -19188,7 +19188,7 @@ msgstr "考えを変えたの？"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Changed your mind?"
-msgstr "考えを変えたのか？（話し手：ルングナー）"
+msgstr "考えを変えたのか？"
 
 #. src: us
 msgctxt "ui"
@@ -20045,7 +20045,7 @@ msgstr "ここへおいで、ダーリン。"
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Come here, pet."
-msgstr "こっちにおいで、ペットちゃん。(話者: レオナ、女性)"
+msgstr "こっちにおいで、ペットちゃん。"
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -20090,7 +20090,7 @@ msgstr "元気を出せ、バニー！お前のために無料宣伝してやっ
 #. src: dialog
 msgctxt "speaker:Sarah"
 msgid "Come on, come on! Let's go get our nails done now, Z!"
-msgstr "早く早く！今からネイルしに行こうよ、Z！（話者：サラ、女性）"
+msgstr "早く早く！今からネイルしに行こうよ、Z！"
 
 #. src: dialog
 msgctxt "ui"
@@ -20160,7 +20160,7 @@ msgstr "じゃあ、私についてきて。この件を片付けるまで、私
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Come'onnn... I'll make it worth'ya timee... *hic*..."
-msgstr "ちくしょう…ちゃんと価値ある時間にしてやるから…*ヒク*…（話し手：客、男性）"
+msgstr "ちくしょう…ちゃんと価値ある時間にしてやるから…*ヒク*…"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -20947,7 +20947,7 @@ msgstr "サイファーの衣装"
 #. src: dialog
 msgctxt "speaker:Idle"
 msgid "Cypher Presets"
-msgstr "サイファーのプリセット（話し手：アイドル）"
+msgstr "サイファーのプリセット"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21377,7 +21377,7 @@ msgstr "インタラクションを無効にする"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Deactivate Jaime call"
-msgstr "ハイメの通話を無効にする"
+msgstr "ジェイミーの通話を無効にする"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22864,10 +22864,10 @@ msgstr "去れって言ったはずだろ？"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Didn't Klaudia say-</color>
-#. rich_translation: <color=#EB83FF>クラウディアが言ってたでしょ——（スピーカー：ゾーイ、女性）</color>
+#. rich_translation: <color=#EB83FF>クラウディアが言ってたでしょ——</color>
 msgctxt "speaker:Zoey"
 msgid "Didn't Klaudia say-"
-msgstr "クラウディアが言ってたでしょ——（スピーカー：ゾーイ、女性）"
+msgstr "クラウディアが言ってたでしょ——"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -22994,7 +22994,7 @@ msgstr "カットシーンを無効にする"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Enforcers"
-msgstr "エンفورサーを無効化せよ"
+msgstr "エンフォーサーを無効化せよ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23416,7 +23416,7 @@ msgstr "やれ！俺のためにイけ、口枷奴隷！"
 #. src: dialog
 msgctxt "ui"
 msgid "Do it, Rungar babe! Give my tits your nice big load, just like you wanted!"
-msgstr "やって、ルングナーのベイビー！私の胸にその大きな精液を注いで、あなたが望んだように！"
+msgstr "やって、ルンガーのベイビー！私の胸にその大きな精液を注いで、あなたが望んだように！"
 
 #. src: dialog
 msgctxt "ui"
@@ -24185,7 +24185,7 @@ msgstr "そんな風に…言わないでよ…！"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Don't mention it, Jaime. I'll be right next door if you ever need me."
-msgstr "気にしないで、ハイメ。もし必要なことがあったら、すぐ隣にいるから。"
+msgstr "気にしないで、ジェイミー。もし必要なことがあったら、すぐ隣にいるから。"
 
 #. src: dialog
 msgctxt "ui"
@@ -24662,7 +24662,7 @@ msgstr "う、うん！"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "E-eheh... Um... Thanks... Rosie, right?"
-msgstr "え、えへへ……えっと……ありがとう……ロージー、だよね？（話し手：Zoey、女性）"
+msgstr "え、えへへ……えっと……ありがとう……ロージー、だよね？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -24847,7 +24847,7 @@ msgstr "エヘッ…なんでだろうね。"
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "Eheh. Trying so hard to reject the lewdness that came over us all. And yet, here you are."
-msgstr "エヘッ。我々を襲ったこの淫らな誘惑を断ち切ろうと必死に頑張っているようだけど…それでも、君はここにいるんだね。（話し手：ヴァレン、男性）"
+msgstr "エヘッ。我々を襲ったこの淫らな誘惑を断ち切ろうと必死に頑張っているようだけど…それでも、君はここにいるんだね。"
 
 #. src: dialog
 msgctxt "ui"
@@ -24892,7 +24892,7 @@ msgstr "エヘッ……自分に嘘をつけばつくるほど、それはあな
 #. src: dialog
 msgctxt "speaker:Woman"
 msgid "Ehehe. Why don't you ask Zoey to take the picture of our tits, Anne, hmm?"
-msgstr "エヘヘ。ゾーイに私たちの胸の写真を撮って달라고 頼んでみたらどう？アン、ん？"
+msgstr "エヘヘ。ゾーイに私たちの胸の写真を撮ってくれるように頼んでみたらどう？アン、ん？"
 
 #. src: dialog
 msgctxt "ui"
@@ -25357,7 +25357,7 @@ msgstr "執行官"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enforcer 1025"
-msgstr "エンفورサー1025"
+msgstr "エンフォーサー1025"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25372,7 +25372,7 @@ msgstr "執行官1112"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enforcer 1392"
-msgstr "エンفورサー 1392"
+msgstr "エンフォーサー 1392"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25452,7 +25452,7 @@ msgstr "執行官はゾーイの胸に手を置いた。"
 #. src: dialog
 msgctxt "ui"
 msgid "Enforcer rubs her fingers over Zoeys clothed pussy"
-msgstr "エンفورサーはゾーイの服をまとった秘部を指でなぞった"
+msgstr "エンフォーサーはゾーイの服をまとった秘部を指でなぞった"
 
 #. src: dialog
 msgctxt "ui"
@@ -26794,7 +26794,7 @@ msgstr "フェムボーイ"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Femboy Bunnysuit BigDick"
-msgstr "フェムボーイ・バニー슈ート・デカチン"
+msgstr "フェムボーイ・バニースーツ・デカチン"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -26809,7 +26809,7 @@ msgstr "フェムボーイ・バニーズーツ・ミディアムディック"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Femboy Bunnysuit SmallDick"
-msgstr "フェムボーイ・バニー슈ート・スモールディック"
+msgstr "フェムボーイ・バニースーツ・スモールディック"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -26829,7 +26829,7 @@ msgstr "フェムボーイ・スタンドアップ"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Femboy Uwawa"
-msgstr "女の子ウワワ（話し手：ゾーイ、女性）"
+msgstr "女の子ウワワ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -27542,7 +27542,7 @@ msgstr "スカイライン・スパイアの32階。上層階からの眺めは�
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Fluffles"
-msgstr "フラффルス"
+msgstr "フラッフルス"
 
 #. src: dialog
 msgctxt "ui"
@@ -29258,7 +29258,7 @@ msgstr "彼女の言う通りにしてあげよう。"
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "Go and do a patrol round with the K-9 unit, 25."
-msgstr "K-9ユニットと一緒にパトロール回りをやってくれ、25。（話し手：Enforcer、男性）"
+msgstr "K-9ユニットと一緒にパトロール回りをやってくれ、25。"
 
 #. src: dialog
 msgctxt "ui"
@@ -29562,7 +29562,7 @@ msgstr "いい子だ…　これで十分だろう、ふふ…"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Good girls. That's hot."
-msgstr "いい子だ。そりゃホットだな。（話し手：ルングナー）"
+msgstr "いい子だ。そりゃホットだな。"
 
 #. src: dialog
 msgctxt "ui"
@@ -29602,7 +29602,7 @@ msgstr "おはよう、眠り姫！"
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Good pet. Let's start simple then. You did so well barking earlier, so try barking for me again now, darling."
-msgstr "優秀なペットだね。では、簡単なところから始めよう。さっきもよく吠えてたから、今も私に向かって吠えてみて、ダーリン。（話し手：レオナ、女性）"
+msgstr "優秀なペットだね。では、簡単なところから始めよう。さっきもよく吠えてたから、今も私に向かって吠えてみて、ダーリン。"
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -30127,10 +30127,10 @@ msgstr "う……ふふ……はい、お願いします……"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>H-Hhh... Y-Yes, ma'a-</color>
-#. rich_translation: <color=#EB83FF>は…はぁ…は、はい、お…お嬢様…（話者：ゾーイ、女性）</color>
+#. rich_translation: <color=#EB83FF>は…はぁ…は、はい、お…お嬢様…</color>
 msgctxt "speaker:Zoey"
 msgid "H-Hhh... Y-Yes, ma'a-"
-msgstr "は…はぁ…は、はい、お…お嬢様…（話者：ゾーイ、女性）"
+msgstr "は…はぁ…は、はい、お…お嬢様…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>H-Hohh... I-.. I'm c-close~ Don't stop- please- please don't stop~!</color>
@@ -30815,7 +30815,7 @@ msgstr "レバーがある"
 #. src: dialog
 msgctxt "speaker:Yes"
 msgid "Has task?"
-msgstr "タスクはある？（話し手：Yes）"
+msgstr "タスクはある？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -31851,7 +31851,7 @@ msgstr "これだ。薬草を集めてる時にこれを見つけたんだ。"
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Here. It's been so long and... this old gal can't remember her way around too well anymore."
-msgstr "ここよ。もうずいぶん経つし…この年増も、もう道がうまく覚えられないのよ。（話者：レオナ、女性）"
+msgstr "ここよ。もうずいぶん経つし…この年増も、もう道がうまく覚えられないのよ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -31926,7 +31926,7 @@ msgstr "やあ、マックス、どうしたの？"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Hey Max."
-msgstr "やあ、マックス。（話し手：ゾーイ、女性）"
+msgstr "やあ、マックス。"
 
 #. src: dialog
 msgctxt "ui"
@@ -32081,7 +32081,7 @@ msgstr "ねえ！そのポイ捨ては何？"
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "Hey, I think this little guy likes me..."
-msgstr "ねえ、このちっこい子、俺のこと好きみたいだな…（スピーカー：Enforcer、男性）"
+msgstr "ねえ、このちっこい子、俺のこと好きみたいだな…"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -32376,7 +32376,7 @@ msgstr "はぁ…はぁ…は、何…？"
 #. src: dialog
 msgctxt "speaker:Femboy"
 msgid "Hhh.. Hii.. Nghh.. Ffhha.."
-msgstr "うぅ…ひい…んっ…ふはぁ… (話し手: フェムボーイ)"
+msgstr "うぅ…ひい…んっ…ふはぁ…"
 
 #. src: dialog
 msgctxt "ui"
@@ -32994,7 +32994,7 @@ msgstr "ホームレス"
 #. src: dialog
 msgctxt "speaker:Man"
 msgid "Hoes will be hoes, I guess. I can fill one up for you. 100 fuckbucks."
-msgstr "女なんてどうせ女だろ。代わりに俺が埋めてやってもいいぜ。100ファックバックスでな。（話し手：男）"
+msgstr "女なんてどうせ女だろ。代わりに俺が埋めてやってもいいぜ。100ファックバックスでな。"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Hohh... Oh fuck... Wait-</color>
@@ -33171,7 +33171,7 @@ msgstr "ホットパンツ"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Hotter than the last waitress."
-msgstr "前のウェイトレスよりずっとホットだね。（スピーカー：ルングナー）"
+msgstr "前のウェイトレスよりずっとホットだね。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -34375,10 +34375,10 @@ msgstr "話したくないって言ったでしょ。頼むから。"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I saw a bunny wear writing and I-... I wanted to try it...</color>
-#. rich_translation: <color=#EB83FF>うさぎが字を書いているのを見て、私…試してみたくなったの…（話し手：Zoey、女性）</color>
+#. rich_translation: <color=#EB83FF>うさぎが字を書いているのを見て、私…試してみたくなったの…</color>
 msgctxt "speaker:Zoey"
 msgid "I saw a bunny wear writing and I-... I wanted to try it..."
-msgstr "うさぎが字を書いているのを見て、私…試してみたくなったの…（話し手：Zoey、女性）"
+msgstr "うさぎが字を書いているのを見て、私…試してみたくなったの…"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -34547,10 +34547,10 @@ msgstr "お前のケツ、セクシーだと思うぜ～"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I thought this was- a search...</color>
-#. rich_translation: <color=#EB83FF>これって…捜索だと思ってたのに…（話し手：Zoey、女性）</color>
+#. rich_translation: <color=#EB83FF>これって…捜索だと思ってたのに…</color>
 msgctxt "speaker:Zoey"
 msgid "I thought this was- a search..."
-msgstr "これって…捜索だと思ってたのに…（話し手：Zoey、女性）"
+msgstr "これって…捜索だと思ってたのに…"
 
 #. src: dialog
 msgctxt "ui"
@@ -34978,7 +34978,7 @@ msgstr "伺っております、奥様！"
 #. src: dialog
 msgctxt "speaker:Cartel Guy"
 msgid "I'm impressed that you can still walk, ehehe."
-msgstr "まだ歩けるなんて、感心するわ、えへへ。（話し手：カルテルの男）"
+msgstr "まだ歩けるなんて、感心するわ、えへへ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -35014,10 +35014,10 @@ msgstr "私はただ…くっ…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I'm looking for, um-... a marker for like- skin...</color>
-#. rich_translation: <color=#EB83FF>探してるの、えっと…皮膚の、みたいな印を…（話し手：Zoey、女性）</color>
+#. rich_translation: <color=#EB83FF>探してるの、えっと…皮膚の、みたいな印を…</color>
 msgctxt "speaker:Zoey"
 msgid "I'm looking for, um-... a marker for like- skin..."
-msgstr "探してるの、えっと…皮膚の、みたいな印を…（話し手：Zoey、女性）"
+msgstr "探してるの、えっと…皮膚の、みたいな印を…"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -35320,10 +35320,10 @@ msgstr "あの…えっと…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I, um-... this is- nice...</color>
-#. rich_translation: <color=#EB83FF>あの…これって…気持ちいい…（話し手：Zoey、女性）</color>
+#. rich_translation: <color=#EB83FF>あの…これって…気持ちいい…</color>
 msgctxt "speaker:Zoey"
 msgid "I, um-... this is- nice..."
-msgstr "あの…これって…気持ちいい…（話し手：Zoey、女性）"
+msgstr "あの…これって…気持ちいい…"
 
 #. src: dialog
 msgctxt "ui"
@@ -35342,10 +35342,10 @@ msgstr "あ…でも、さ、サラ！"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I- Hhh...</color>
-#. rich_translation: <color=#EB83FF>うっ…（ゾーイ、女性）</color>
+#. rich_translation: <color=#EB83FF>うっ…</color>
 msgctxt "speaker:Zoey"
 msgid "I- Hhh..."
-msgstr "うっ…（ゾーイ、女性）"
+msgstr "うっ…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I- Hhh... I just- Fhh...</color>
@@ -35368,10 +35368,10 @@ msgstr "だ…できない…はぁ…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I- I do...</color>
-#. rich_translation: <color=#EB83FF>う…うん…（スピーカー：Zoey、女性）</color>
+#. rich_translation: <color=#EB83FF>う…うん…</color>
 msgctxt "speaker:Zoey"
 msgid "I- I do..."
-msgstr "う…うん…（スピーカー：Zoey、女性）"
+msgstr "う…うん…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I- I dooo...! Nghh... Pleaseee...! I'm so... wettt... Fhhahhh... Pleaseeee...!</color>
@@ -35508,10 +35508,10 @@ msgstr "はぁっ…んっ…はぁっ…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I- ghh-... I-</color>
-#. rich_translation: <color=#EB83FF>うっ…うっ…（スピーカー：Zoey、女性）</color>
+#. rich_translation: <color=#EB83FF>うっ…うっ…</color>
 msgctxt "speaker:Zoey"
 msgid "I- ghh-... I-"
-msgstr "うっ…うっ…（スピーカー：Zoey、女性）"
+msgstr "うっ…うっ…"
 
 #. src: dialog
 msgctxt "speaker:Woman"
@@ -35646,10 +35646,10 @@ msgstr "う…んっ…この…注目…好きだぁ…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I-... </color>
-#. rich_translation: <color=#EB83FF>あ、……（話者：ゾーイ、女性）</color>
+#. rich_translation: <color=#EB83FF>あ、……</color>
 msgctxt "speaker:Zoey"
 msgid "I-..."
-msgstr "あ、……（話者：ゾーイ、女性）"
+msgstr "あ、……"
 
 #. src: dialog
 msgctxt "ui"
@@ -35799,7 +35799,7 @@ msgstr "こ…これは…こんなもの、見たこともない…"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "I-... I-"
-msgstr "あ…あ…（話者：ゾーイ、女性）"
+msgstr "あ…あ…"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -35872,10 +35872,10 @@ msgstr "あの…えっと…うぅ…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I-... Um... Thanks... Sir...</color>
-#. rich_translation: <color=#EB83FF>あ…ええと…ありがとう…お客様…（スピーカー：Zoey、女性）</color>
+#. rich_translation: <color=#EB83FF>あ…ええと…ありがとう…お客様…</color>
 msgctxt "speaker:Zoey"
 msgid "I-... Um... Thanks... Sir..."
-msgstr "あ…ええと…ありがとう…お客様…（スピーカー：Zoey、女性）"
+msgstr "あ…ええと…ありがとう…お客様…"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -35899,10 +35899,10 @@ msgstr "は…はい？"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I-... khh...</color>
-#. rich_translation: <color=#EB83FF>あ…っ…（話者：ゾーイ、女性）</color>
+#. rich_translation: <color=#EB83FF>あ…っ…</color>
 msgctxt "speaker:Zoey"
 msgid "I-... khh..."
-msgstr "あ…っ…（話者：ゾーイ、女性）"
+msgstr "あ…っ…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><size=28>I-... nhh...</color>
@@ -37267,7 +37267,7 @@ msgstr "衣装はインベントリにありますか？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Is past Intro?"
-msgstr "イン트로は終わった？"
+msgstr "イントロは終わった？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -37622,7 +37622,7 @@ msgstr "特定された問題："
 #. src: dialog
 msgctxt "ui"
 msgid "It better, ehehe! That's what will get us a nice fat paycheck, won't it Rungar?"
-msgstr "その方がいいわ、えへへ！それでこそ、たっぷりのお金がもらえるんでしょ、ルングァー？"
+msgstr "その方がいいわ、えへへ！それでこそ、たっぷりのお金がもらえるんでしょ、ルンガー？"
 
 #. src: dialog
 #. rich_text: <size=35>It came from that room over there-</size>
@@ -38181,87 +38181,87 @@ msgstr "ジェイミー"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Arm Dialogue"
-msgstr "ハイム・アームの会話"
+msgstr "ジェイミー・アームの会話"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Arm FSM"
-msgstr "ハイム・アーム FSM"
+msgstr "ジェイミー・アーム FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Arm Inspection"
-msgstr "ハイメの腕の検査"
+msgstr "ジェイミーの腕の検査"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Back Leg Dialogue"
-msgstr "ハイメの後ろ脚の会話"
+msgstr "ジェイミーの後ろ脚の会話"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Back Leg FSM"
-msgstr "ハイメの後ろ脚のFSM"
+msgstr "ジェイミーの後ろ脚のFSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Back Leg Inspection"
-msgstr "ハイメの後ろ脚の検査"
+msgstr "ジェイミーの後ろ脚の検査"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Boobs Dialogue"
-msgstr "ハイメの胸に関するセリフ"
+msgstr "ジェイミーの胸に関するセリフ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Boobs Dialogue 1"
-msgstr "ハイメの胸、セリフ1"
+msgstr "ジェイミーの胸、セリフ1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Boobs FSM"
-msgstr "ハイメの胸 FSM"
+msgstr "ジェイミーの胸 FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Boobs Inspection"
-msgstr "ハイメの胸の検査"
+msgstr "ジェイミーの胸の検査"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Crotch Dialogue"
-msgstr "ハイメの股間のセリフ"
+msgstr "ジェイミーの股間のセリフ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Crotch FSM"
-msgstr "ハイメの股間FSM"
+msgstr "ジェイミーの股間FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Crotch Inspection"
-msgstr "ハイメの股間検査"
+msgstr "ジェイミーの股間検査"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Head Dialogue"
-msgstr "ハイム・ヘッドの会話"
+msgstr "ジェイミー・ヘッドの会話"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Head FSM"
-msgstr "ハイム・ヘッドFSM"
+msgstr "ジェイミー・ヘッドFSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Head Inspection"
-msgstr "ハイメの頭部検査"
+msgstr "ジェイミーの頭部検査"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Jaime! How you doing?"
-msgstr "ハイム！元気？"
+msgstr "ジェイミー！元気？"
 
 #. src: dialog
 msgctxt "ui"
@@ -38271,7 +38271,7 @@ msgstr "ジェイミーのヘッドセット……"
 #. src: dialog
 msgctxt "ui"
 msgid "Jaime... You're okay now."
-msgstr "ハイメ…もう大丈夫だよ。"
+msgstr "ジェイミー…もう大丈夫だよ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -38846,7 +38846,7 @@ msgstr "K12執行官"
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "K12 Unit"
-msgstr "K12ユニット（話し手：執行官、男性）"
+msgstr "K12ユニット"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -38903,7 +38903,7 @@ msgstr "LOLって呼び続けて"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Keep looking up at me. New one is so hot, she's gonna make me-"
-msgstr "見上げ続けて。新しい子はすごくホットで、俺を——（話し手：ルグナー）"
+msgstr "見上げ続けて。新しい子はすごくホットで、俺を——"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39108,7 +39108,7 @@ msgstr "うっ…本当に…私を…引き伸ばしてる…"
 #. src: dialog
 msgctxt "speaker:Femboy"
 msgid "Khh-.. Mnh.. M-mhmm.."
-msgstr "うっ…んん…ん、んんん…（話し手：フェムボーイ）"
+msgstr "うっ…んん…ん、んんん…"
 
 #. src: dialog
 msgctxt "speaker:Femboy"
@@ -39474,12 +39474,12 @@ msgstr "クラウディアは、高価な趣味を持つ顧客のために新し
 #. src: dialog
 msgctxt "ui"
 msgid "Klaudia only cares about her bottom line. Rungar here isn't done with just one bit of fun."
-msgstr "クラウディアが気にするのは自分の利益だけ。ここでのランガーは、ほんの少しの楽しみで終わるものじゃないの。"
+msgstr "クラウディアが気にするのは自分の利益だけ。ここでのルンガーは、ほんの少しの楽しみで終わるものじゃないの。"
 
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Klaudia pick'd a perfect replac'mnt, *hic*, ehehe... Yer tits look even hotter in this suit, mhmmm..."
-msgstr "クラウディアは完璧な代わりを見つけたわ、*ヒク*、エヘヘ…このスーツで君の胸はさらにセクシーに見えるわ、ムフムフ… (話し手: 男性客)"
+msgstr "クラウディアは完璧な代わりを見つけたわ、*ヒク*、エヘヘ…このスーツで君の胸はさらにセクシーに見えるわ、ムフムフ…"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -40101,7 +40101,7 @@ msgstr "レオナ？その写真、もう一度見せてくれると思う？"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Leona? Hi!"
-msgstr "レオナ？こんにちは！（話者：Zoey、女性）"
+msgstr "レオナ？こんにちは！"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -40171,7 +40171,7 @@ msgstr "彼に君でイかせてやれ"
 #. src: dialog
 msgctxt "speaker:Yes"
 msgid "Let him grind on you."
-msgstr "彼に擦り付けさせてあげなさい。（スピーカー：イエス）"
+msgstr "彼に擦り付けさせてあげなさい。"
 
 #. src: dialog
 msgctxt "ui"
@@ -40725,7 +40725,7 @@ msgstr "気に入ったみたいね、ん？"
 #. src: dialog
 msgctxt "speaker:Bunnygirl"
 msgid "Like what you see?"
-msgstr "気に入った？（スピーカー：バニーガール）"
+msgstr "気に入った？"
 
 #. src: dialog
 msgctxt "ui"
@@ -41218,7 +41218,7 @@ msgstr "右を見る"
 #. src: dialog
 msgctxt "speaker:Leave"
 msgid "Look Through Files"
-msgstr "ファイルを調べる（話し手：Leave）"
+msgstr "ファイルを調べる"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41233,7 +41233,7 @@ msgstr "周りを見回す？え、ええと…はい！もちろん、見回し
 #. src: dialog
 msgctxt "speaker:Leave"
 msgid "Look at Massage Room Recording"
-msgstr "マッサージルームの録画を見る（話し手：Leave）"
+msgstr "マッサージルームの録画を見る"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41288,7 +41288,7 @@ msgstr "あの綺麗で若い手が、ちょうど俺の…股間に置かれて
 #. src: dialog
 msgctxt "ui"
 msgid "Look at that, Rungar just couldn't resist your words, darling."
-msgstr "ほら、ルングアルはあなたの言葉に我慢できなかったのよ、ダーリン。"
+msgstr "ほら、ルンガーはあなたの言葉に我慢できなかったのよ、ダーリン。"
 
 #. src: dialog
 msgctxt "ui"
@@ -41400,7 +41400,7 @@ msgstr "見て——この偽物をできるだけ早く完成させることが
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Lookin' goood, waitress... *hic* ehehe!"
-msgstr "調子いいね、ウェイトレスさん… *ヒック* エヘヘ！（話し手：客、男性）"
+msgstr "調子いいね、ウェイトレスさん… *ヒック* エヘヘ！"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41870,10 +41870,10 @@ msgstr "服が…！誰かに見られる前に、スーツケースを…見つ
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>M-My debt-... Right... Hh... What should I-</color>
-#. rich_translation: <color=#EB83FF>ぼ、私の借金…そう…うぅ…何をすれば…（話し手：ゾーイ、女性）</color>
+#. rich_translation: <color=#EB83FF>ぼ、私の借金…そう…うぅ…何をすれば…</color>
 msgctxt "speaker:Zoey"
 msgid "M-My debt-... Right... Hh... What should I-"
-msgstr "ぼ、私の借金…そう…うぅ…何をすれば…（話し手：ゾーイ、女性）"
+msgstr "ぼ、私の借金…そう…うぅ…何をすれば…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>M-My-... outfit...? B-But-...</color>
@@ -41998,7 +41998,7 @@ msgstr "2026年11月23日 12:00"
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Ma' frend's not believin' me that theresh' a hot new waitress..."
-msgstr "友達が新しいセクシーなウェイトレスがいるなんて信じないんだ…（話者：客、男性）"
+msgstr "友達が新しいセクシーなウェイトレスがいるなんて信じないんだ…"
 
 #. src: dialog
 msgctxt "speaker-name"
@@ -42550,7 +42550,7 @@ msgstr "もしも…彼が違いに気づかなければ…"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Maybe? I just need a fake to get them off me. They want me to bring it in to them, but I can't. If I do, bad things could happen."
-msgstr "多分？彼らから逃れるために嘘をつく必要があるの。彼らはそれを提出しろって言うけど、私にはできない。もし提出したら、悪いことが起こるかもしれないの。（話し手：Zoey、女性）"
+msgstr "多分？彼らから逃れるために嘘をつく必要があるの。彼らはそれを提出しろって言うけど、私にはできない。もし提出したら、悪いことが起こるかもしれないの。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -43420,7 +43420,7 @@ msgstr "うん、クソッ……その調子……うん……止まるな。俺
 #. src: dialog
 msgctxt "ui"
 msgid "Mmhh, trust me hun, his cock is amazing. Probably my favorite of the regulars. Show Zoey whats in your pants, Rungar darling."
-msgstr "うん、信じて、ハニー。彼のチンポは最高よ。たぶん、常連の中では一番好きかも。ルングアール、愛しい人、ズボンの中にあるものを見せてゾーイに。"
+msgstr "うん、信じて、ハニー。彼のチンポは最高よ。たぶん、常連の中では一番好きかも。ルンガー、愛しい人、ズボンの中にあるものを見せてゾーイに。"
 
 #. src: dialog
 #. rich_text: Mmhh.. I want to do anything  <b><i>but</i></b> take my fingers off you.. Yet, sadly, I have to get back to guarding the hallway.
@@ -43485,7 +43485,7 @@ msgstr "うぅ……いつでもこれが必要なら、また列車に乗りに
 #. src: dialog
 msgctxt "ui"
 msgid "Mmhhh... God your cock is so hard, Rungar darling... Zoey really gets you going, hmm?"
-msgstr "うーん…神様、あなたのチンポ、すごく硬いわね、ルングアール様…ゾーイは本当にあなたを興奮させるのね、え？"
+msgstr "うーん…神様、あなたのチンポ、すごく硬いわね、ルンガー様…ゾーイは本当にあなたを興奮させるのね、え？"
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -43625,7 +43625,7 @@ msgstr "うん？何の設定……？"
 #. src: dialog
 msgctxt "ui"
 msgid "Mmmh, I knowww, ehehe. Isn't that right, Rungar..."
-msgstr "うーん、わかってるわよ、えへへ。そうよね、ルングァー…"
+msgstr "うーん、わかってるわよ、えへへ。そうよね、ルンガー…"
 
 #. src: dialog
 msgctxt "ui"
@@ -43650,7 +43650,7 @@ msgstr "うふふふ…気に入ったのね、ゾーイ？教えて、ハニー
 #. src: dialog
 msgctxt "ui"
 msgid "Mmmhh, I love feeling your cock between my tits, Rungar! Is Zoey doing a good job, hun?"
-msgstr "うんっ、あなたの肉棒を胸の間に感じるの、大好きよ、ルングァー！ゾーイ、上手にしてる？"
+msgstr "うんっ、あなたの肉棒を胸の間に感じるの、大好きよ、ルンガー！ゾーイ、上手にしてる？"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -43687,7 +43687,7 @@ msgstr "うーん…なんて従順でいい子なんだろう。それに、な
 #. src: dialog
 msgctxt "ui"
 msgid "Mmmhhh that's right, Zoey. Be a good girl and stroke mr Rungar's cock between my tits faster!"
-msgstr "うん、その通りよ、ゾーイ。いい子にして、ランガーさんのチンポを私の乳の間にもっと速く撫でて！"
+msgstr "うん、その通りよ、ゾーイ。いい子にして、ルンガーさんのチンポを私の乳の間にもっと速く撫でて！"
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -43923,7 +43923,7 @@ msgstr "うんっ…！！その肉棒、めちゃくちゃ気持ちいい…！
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Mnhhh... Amazinnhh'..."
-msgstr "うーん……すっごい……（話し手：客、男性）"
+msgstr "うーん……すっごい……"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Mnhhh... Hhhh...</color>
@@ -44461,7 +44461,7 @@ msgstr "動きが通常に戻った！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Moving Jaime"
-msgstr "ハイメを動かす"
+msgstr "ジェイミーを動かす"
 
 #. src: dialog
 msgctxt "ui"
@@ -44642,7 +44642,7 @@ msgstr "どういたしまして！"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "My pleasure."
-msgstr "どういたしまして。（スピーカー：ルグナー）"
+msgstr "どういたしまして。"
 
 #. src: dialog
 #. rich_text: My pussy is waiting for your tongue, <i>Zoey</i>.
@@ -45004,22 +45004,22 @@ msgstr "ネイルサロン"
 #. src: bundle
 msgctxt "speaker:Cocky"
 msgid "Nail Salon Clerk"
-msgstr "ネイルサロンの店員（話し手：自信満々）"
+msgstr "ネイルサロンの店員"
 
 #. src: bundle
 msgctxt "speaker:Lewd"
 msgid "Nail Salon Clerk"
-msgstr "ネイルサロンの店員（話し手：Lewd）"
+msgstr "ネイルサロンの店員"
 
 #. src: bundle
 msgctxt "speaker:Mewing"
 msgid "Nail Salon Clerk"
-msgstr "Nail Salon Clerk（スピーカー：ミーウィング）"
+msgstr "Nail Salon Clerk"
 
 #. src: bundle
 msgctxt "speaker:Scheming"
 msgid "Nail Salon Clerk"
-msgstr "ネイルサロンの店員（話し手：Scheming）"
+msgstr "ネイルサロンの店員"
 
 #. src: dialog
 msgctxt "speaker:Surprised"
@@ -45398,7 +45398,7 @@ msgstr "NewTask: タスクを開始できません: '"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Newbie's amazing."
-msgstr "新人、最高だな。（スピーカー：ラグナー）"
+msgstr "新人、最高だな。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -45792,7 +45792,7 @@ msgstr "謝る必要なんてないよ。君と過ごせた短い時間、すご
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "No need to be insecure about your... abilities, young lady."
-msgstr "自分の…能力に自信がなくても、気にする必要はないよ、お嬢さん。（話し手：ヴァレン、男性）"
+msgstr "自分の…能力に自信がなくても、気にする必要はないよ、お嬢さん。"
 
 #. src: dialog
 msgctxt "ui"
@@ -46168,7 +46168,7 @@ msgstr "いや、これは正しくない！"
 #. src: dialog
 msgctxt "speaker:Bunnyboy"
 msgid "No.. No... Hmm... No..."
-msgstr "だめ…だめだ…うーん…だめ…（話し手：バニーボーイ）"
+msgstr "だめ…だめだ…うーん…だめ…"
 
 #. src: dialog
 msgctxt "ui"
@@ -46321,7 +46321,7 @@ msgstr "こんな風に痙攣する奴はそうそういないって、断言で
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "Not exactly sure what they're trying to resist. Ah-.. Who cares. Soon we'll have every single one of them sent off to Compliance Ward."
-msgstr "彼らが何に抵抗しようとしてるのか、よく分からんが…まあ、どうでもいい。近いうちに、奴らは全員コンプライアンス病棟送りになるんだ。（話し手：Enforcer、男性）"
+msgstr "彼らが何に抵抗しようとしてるのか、よく分からんが…まあ、どうでもいい。近いうちに、奴らは全員コンプライアンス病棟送りになるんだ。"
 
 #. src: us
 msgctxt "ui"
@@ -46763,7 +46763,7 @@ msgstr "ノヴァの秘密"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Nova's seen it before. Bribe her."
-msgstr "ノーヴァは前にも見たことがある。彼女を買収しろ。（話し手：ルグナー）"
+msgstr "ノーヴァは前にも見たことがある。彼女を買収しろ。"
 
 #. src: dialog
 #. rich_text: Nova, hm? She's in the back. Why don't you follow me there, <b>hm</b>?
@@ -46780,7 +46780,7 @@ msgstr "ノヴァ、だよね…？"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Nova."
-msgstr "ノヴァ。（ゾーイ、女性）"
+msgstr "ノヴァ。"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -46968,7 +46968,7 @@ msgstr "さあ…どうやるか、教えてあげるわ、えへへ…"
 #. src: dialog
 msgctxt "speaker:Man"
 msgid "Now... let me just take a nice picture, heh."
-msgstr "さて…じゃあ、ちょっといい写真撮らせてもらうぜ、へへ。（話し手：男）"
+msgstr "さて…じゃあ、ちょっといい写真撮らせてもらうぜ、へへ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -47442,7 +47442,7 @@ msgstr "ねえ、あなたのスマホにどんな同人誌が入ってるか、
 #. src: dialog
 msgctxt "speaker:Man"
 msgid "Oh come on, she won't mind. Though if you're feeling too much like a goody two shoes, you can just show yours to my camera instead."
-msgstr "おいおい、彼女も気にしないって。まあ、あんまりお人好しになりすぎたら、代わりに君のをカメラに見せてくれてもいいけどな。（話し手：男）"
+msgstr "おいおい、彼女も気にしないって。まあ、あんまりお人好しになりすぎたら、代わりに君のをカメラに見せてくれてもいいけどな。"
 
 #. src: dialog
 msgctxt "ui"
@@ -48177,7 +48177,7 @@ msgstr "う、えっと…君にそのバッテリーを手に入れるために
 #. src: dialog
 msgctxt "speaker:Sarah"
 msgid "Oh- We don't have those either-"
-msgstr "ああ——私たちもそんなもの持ってないのよ。（話し手：サラ、女性）"
+msgstr "ああ——私たちもそんなもの持ってないのよ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -48416,7 +48416,7 @@ msgstr "うん、わかった。それならいいよ。他のことでも、も
 #. src: dialog
 msgctxt "speaker:Bunnyboy"
 msgid "Ohh-.. She sounds fun. I'll let her book me, hehe."
-msgstr "おおっ…彼女は面白そうだな。彼女に予約させてもらうか、へへ。（話し手：Bunnyboy）"
+msgstr "おおっ…彼女は面白そうだな。彼女に予約させてもらうか、へへ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -48814,7 +48814,7 @@ msgstr "オンディーヌ"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "One fifty."
-msgstr "150だ。（スピーカー：ルグナー）"
+msgstr "150だ。"
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
@@ -48949,7 +48949,7 @@ msgstr "うおおお〜！マジでヤバい〜！今までこんなに情熱的
 #. src: dialog
 msgctxt "speaker:Sarah"
 msgid "Oop, my dad's callin' me, one second, Z."
-msgstr "おっと、パパから電話だ。ちょっと待ってて、Z。（話し手：サラ、女性）"
+msgstr "おっと、パパから電話だ。ちょっと待ってて、Z。"
 
 #. src: dialog
 msgctxt "ui"
@@ -49099,7 +49099,7 @@ msgstr "チョイスハブを開く"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open discord"
-msgstr "ディ스코ルドを開く"
+msgstr "ディスコードを開く"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49234,7 +49234,7 @@ msgstr "それとも、聞きたくないの？"
 #. src: dialog
 msgctxt "speaker:Klaudia"
 msgid "Or... I could give the Cartel a call... Tell them I found you carrying this little device they're after. Your choice, merc."
-msgstr "あるいは……カルテルに電話してみるのもありだわ……この奴らが探してる小型デバイスをあなたが持ってるって伝えれば。選択はあなた次第よ、傭兵さん。（話し手：クラウディア、女性）"
+msgstr "あるいは……カルテルに電話してみるのもありだわ……この奴らが探してる小型デバイスをあなたが持ってるって伝えれば。選択はあなた次第よ、傭兵さん。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50832,7 +50832,7 @@ msgstr "拒否のセリフをプレイする"
 #. src: dialog
 msgctxt "speaker:FINISHED"
 msgid "Play dialogue"
-msgstr "会話を実行（話し手：FINISHED）"
+msgstr "会話を実行"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51720,10 +51720,10 @@ msgstr "SLUT Service™の部屋を選んでください…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Please cum on Rosies... nice big tits, mr Rungar...</color>
-#. rich_translation: <color=#EB83FF>ロージーの…あの大きなおっぱいに、ザーメンをぶっかけてくださいよ、ルングァーさん…（話者：Zoey、女性）</color>
+#. rich_translation: <color=#EB83FF>ロージーの…あの大きなおっぱいに、ザーメンをぶっかけてくださいよ、ルンガーさん…</color>
 msgctxt "speaker:Zoey"
 msgid "Please cum on Rosies... nice big tits, mr Rungar..."
-msgstr "ロージーの…あの大きなおっぱいに、ザーメンをぶっかけてくださいよ、ルングァーさん…（話者：Zoey、女性）"
+msgstr "ロージーの…あの大きなおっぱいに、ザーメンをぶっかけてくださいよ、ルンガーさん…"
 
 #. src: dialog
 msgctxt "ui"
@@ -52554,7 +52554,7 @@ msgstr "バニー服を着る"
 #. src: dialog
 msgctxt "ui"
 msgid "Put your hands under my tits, press them up for Rungar."
-msgstr "Rungarのために、私の胸の下に手を入れて、押し上げて。"
+msgstr "ルンガーのために、私の胸の下に手を入れて、押し上げて。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -52642,7 +52642,7 @@ msgstr "持ち物を取り戻すなんて、ずいぶん大胆じゃない？あ
 #. src: dialog
 msgctxt "speaker:Klaudia"
 msgid "Quite the body you got there, thief. Not even any chrome on it. Customers will love you, ehehe."
-msgstr "ずいぶんいい体してるじゃないか、泥棒さん。クロームなんて一つも付いてないのに。客たちもきっと気に入るよ、えへへ。（話し手：クラウディア、女性）"
+msgstr "ずいぶんいい体してるじゃないか、泥棒さん。クロームなんて一つも付いてないのに。客たちもきっと気に入るよ、えへへ。"
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -54309,7 +54309,7 @@ msgstr "そうだ…！お、わかった…お姉さん…"
 #. src: dialog
 msgctxt "speaker:Max"
 msgid "Right? And I can just pull the ol' vagina off too. Rub it on things. Can still feel it remotely. No periods either."
-msgstr "そうだろ？それに俺は昔ながらのヴァギナを簡単に取り外せるんだ。物に擦ったりもできるし。遠隔で感覚も受け継げるし。生理もないしな。（スピーカー：マックス）"
+msgstr "そうだろ？それに俺は昔ながらのヴァギナを簡単に取り外せるんだ。物に擦ったりもできるし。遠隔で感覚も受け継げるし。生理もないしな。"
 
 #. src: dialog
 msgctxt "ui"
@@ -54594,7 +54594,7 @@ msgstr "RoomGenerator: ルームIDが見つかりませんでした: '"
 #. src: dialog
 msgctxt "speaker:Bunnyboy"
 msgid "Ropes, nipple clamps, heels.. This will be fun, hehe."
-msgstr "ロープ、乳首クリップ、ハイヒール……これは面白くなりそうね、へへっ。（話し手：バニーボーイ）"
+msgstr "ロープ、乳首クリップ、ハイヒール……これは面白くなりそうね、へへっ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -54699,7 +54699,7 @@ msgstr "ロージーは君がいてくれてかなり嬉しそうだったよ。
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Rosie's a good teacher."
-msgstr "ロージーは良い先生だ。（スピーカー：ルグナー）"
+msgstr "ロージーは良い先生だ。"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Rosie... protected me...?</color>
@@ -54766,7 +54766,7 @@ msgstr "ルングナー"
 #. src: dialog
 msgctxt "ui"
 msgid "Rugnar Cole"
-msgstr "ルグナー・コール"
+msgstr "ルングナー・コール"
 
 #. src: dialog
 msgctxt "ui"
@@ -54805,15 +54805,15 @@ msgstr "ルーンか…　わかったよ。じゃあ、お前だけには…任
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Rungar asked, if-... like... he wants you to grope my chest...! </color>
-#. rich_translation: <color=#EB83FF>ルングアルが尋ねた、もし…もし彼が俺の胸をまさぐってほしいって言うなら…！</color>
+#. rich_translation: <color=#EB83FF>ルンガーが尋ねた、もし…もし彼が俺の胸をまさぐってほしいって言うなら…！</color>
 msgctxt "speaker:Zoey"
 msgid "Rungar asked, if-... like... he wants you to grope my chest...!"
-msgstr "ルングアルが尋ねた、もし…もし彼が俺の胸をまさぐってほしいって言うなら…！"
+msgstr "ルンガーが尋ねた、もし…もし彼が俺の胸をまさぐってほしいって言うなら…！"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Rungar doesn't cum quickly like other customers, darling. We'll need to give him the perfect titjob. Let's stroke it even faster!"
-msgstr "ルングアルは他の客みたいにすぐイかないわ、ダーリン。完璧なティットジョブをしてあげないと。もっと速く撫でてあげましょう！"
+msgstr "ルンガーは他の客みたいにすぐイかないわ、ダーリン。完璧なティットジョブをしてあげないと。もっと速く撫でてあげましょう！"
 
 #. src: dialog
 msgctxt "ui"
@@ -54828,7 +54828,7 @@ msgstr "走っていく。"
 #. src: us
 msgctxt "ui"
 msgid "Russian Machine Translated / Русский Машинный Перевод"
-msgstr "Русский машинный перевод"
+msgstr "ロシア語の機械翻訳"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -55203,7 +55203,7 @@ msgstr "サラ！静かにして！彼らを怒らせちゃうわよ！"
 #. src: dialog
 msgctxt "ui"
 msgid "Sarah! Nice to meet ya, Jaime!"
-msgstr "サラ！会えて嬉しいよ、ハイメ！"
+msgstr "サラ！会えて嬉しいよ、ジェイミー！"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -55649,24 +55649,24 @@ msgstr "ほら？彼女は気にしてないみたいだ。"
 
 #. src: dialog
 #. rich_text: See? Wasn't that hard, was it? Your purse will be much heavier if you're nice to your customers, <i><b>waitress</b></i>.
-#. rich_translation: ほらね？そんなに難しくないだろ？客に優しくすれば、君の財布もずっと軽くなるよ、ウェイトレスさん。（話者：トロフ、男性）
+#. rich_translation: ほらね？そんなに難しくないだろ？客に優しくすれば、君の財布もずっと軽くなるよ、ウェイトレスさん。
 #, rt-review
 msgctxt "speaker:Trov"
 msgid "See? Wasn't that hard, was it? Your purse will be much heavier if you're nice to your customers, waitress."
-msgstr "ほらね？そんなに難しくないだろ？客に優しくすれば、君の財布もずっと軽くなるよ、ウェイトレスさん。（話者：トロフ、男性）"
+msgstr "ほらね？そんなに難しくないだろ？客に優しくすれば、君の財布もずっと軽くなるよ、ウェイトレスさん。"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "Seek her breast, K12."
-msgstr "彼女の胸を探れ、K12。（話し手：Enforcer、男性）"
+msgstr "彼女の胸を探れ、K12。"
 
 #. src: dialog
 #. rich_text: Seems like this room is under renovation. Perfect place to lay low until they are finally.. <i>done..
-#. rich_translation: この部屋、改装中みたいだな。奴らが完全に終わるまで身を隠すには、うってつけの場所だ…（スピーカー：Zoey、女性）
+#. rich_translation: この部屋、改装中みたいだな。奴らが完全に終わるまで身を隠すには、うってつけの場所だ…
 #, rt-review
 msgctxt "speaker:Zoey"
 msgid "Seems like this room is under renovation. Perfect place to lay low until they are finally.. done.."
-msgstr "この部屋、改装中みたいだな。奴らが完全に終わるまで身を隠すには、うってつけの場所だ…（スピーカー：Zoey、女性）"
+msgstr "この部屋、改装中みたいだな。奴らが完全に終わるまで身を隠すには、うってつけの場所だ…"
 
 #. src: dialog
 msgctxt "ui"
@@ -55786,7 +55786,7 @@ msgstr "SerializableMission: ベースとなるミッションが見つかりま
 #. src: us
 msgctxt "ui"
 msgid "SerializableTask: No base task was found for"
-msgstr "SerializableTask: ฐานタスクが見つかりませんでした"
+msgstr "SerializableTask: ベースタスクが見つかりませんでした"
 
 #. src: us
 msgctxt "ui"
@@ -55926,7 +55926,7 @@ msgstr "回転を設定 2"
 #. src: dialog
 msgctxt "speaker:FINISHED"
 msgid "Set Save Key"
-msgstr "セーブキーを設定する (スピーカー: FINISHED)"
+msgstr "セーブキーを設定する"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56972,7 +56972,7 @@ msgstr "彼女がマッサージルームの一つで自分の録画を送られ
 #. src: dialog
 msgctxt "speaker:Athletic"
 msgid "She seems very"
-msgstr "彼女はすごく（話し手：運動神経抜群）"
+msgstr "彼女はすごく"
 
 #. src: dialog
 msgctxt "ui"
@@ -57000,7 +57000,7 @@ msgstr "きっと…あなたのこと、嫌悪するわ…あはは！"
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "She'd come and go. Always getting into places she shouldn't. Climbing things she shouldn't. Biting things she shouldn't. Now this."
-msgstr "彼女は出入りしていた。いつも入っちゃいけない場所に。登っちゃいけないものに登って。噛んじゃいけないものを噛んで。そして、これが起きた。（話し手：レオナ、女性）"
+msgstr "彼女は出入りしていた。いつも入っちゃいけない場所に。登っちゃいけないものに登って。噛んじゃいけないものを噛んで。そして、これが起きた。"
 
 #. src: dialog
 msgctxt "speaker:Rugnar"
@@ -57094,10 +57094,10 @@ msgstr "しーっ！サラ！そんな大声で言わないで！"
 
 #. src: dialog
 #. rich_text: <size=24>Shh, just go along with it. Don't care about whats in your pockets. Just whats underneath them, ehehe.
-#. rich_translation: <size=24>しーっ、とりあえず協力して。ポケットの中身なんて気にするな。その下にあるものだけだ、えへへ。（話し手：Enforcer、男性）
+#. rich_translation: <size=24>しーっ、とりあえず協力して。ポケットの中身なんて気にするな。その下にあるものだけだ、えへへ。
 msgctxt "speaker:Enforcer"
 msgid "Shh, just go along with it. Don't care about whats in your pockets. Just whats underneath them, ehehe."
-msgstr "しーっ、とりあえず協力して。ポケットの中身なんて気にするな。その下にあるものだけだ、えへへ。（話し手：Enforcer、男性）"
+msgstr "しーっ、とりあえず協力して。ポケットの中身なんて気にするな。その下にあるものだけだ、えへへ。"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -57529,7 +57529,7 @@ msgstr "初期キーパッド3を表示する"
 #. src: dialog
 msgctxt "speaker:FINISHED"
 msgid "Show inspection"
-msgstr "検査を表示（話し手：FINISHED）"
+msgstr "検査を表示"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57959,7 +57959,7 @@ msgstr "スキップモード"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Skip femboy uWu"
-msgstr "女の子のふりをする男の子、うわぁ（話者：ゾーイ、女性）"
+msgstr "女の子のふりをする男の子、うわぁ"
 
 #. src: us
 msgctxt "ui"
@@ -58044,7 +58044,7 @@ msgstr "袖なしの白い"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Slightly annoyed / defeated exhale"
-msgstr "ちょっとイラっとした、あるいは打ちのめされたような吐息（話し手：ゾーイ、女性）"
+msgstr "ちょっとイラっとした、あるいは打ちのめされたような吐息"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -61413,7 +61413,7 @@ msgstr "コンドームを一つ取り、彼のチンポに被せて。"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Take the 200 and help Rosie get me off."
-msgstr "200ドル受け取って、ロージーを手伝って俺をイかせてくれ。（話者：ルグナー）"
+msgstr "200ドル受け取って、ロージーを手伝って俺をイかせてくれ。"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -61666,7 +61666,7 @@ msgstr "タスク進捗：タスク「"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Teach her to give a tip show."
-msgstr "彼女にチップの渡し方を教えてやれ。（スピーカー：ルグナー）"
+msgstr "彼女にチップの渡し方を教えてやれ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -61813,7 +61813,7 @@ msgstr "他の客が何を頼んだか彼女に伝えろ"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Tell her, Zoey."
-msgstr "彼女に言って、ゾーイ。（スピーカー：ルグナー）"
+msgstr "彼女に言って、ゾーイ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -62004,7 +62004,7 @@ msgstr "へ、へへ…"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Th-thanks, heh... I- um. I should probably-"
-msgstr "ち、ありがとう、へへ…えっと、その…たぶん…（話し手：ゾーイ、女性）"
+msgstr "ち、ありがとう、へへ…えっと、その…たぶん…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Th-that's enough...!</color>
@@ -62217,10 +62217,10 @@ msgstr "ありがとう、リオ。必要なものが手に入ったら連絡す
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Thanks, Mira. Let me know if you'd like to order another drink, hehe.</color>
-#. rich_translation: <color=#EB83FF>ありがとう、ミラ。他に飲み物が欲しければ教えてね、へへ。（話者：ゾーイ、女性）</color>
+#. rich_translation: <color=#EB83FF>ありがとう、ミラ。他に飲み物が欲しければ教えてね、へへ。</color>
 msgctxt "speaker:Zoey"
 msgid "Thanks, Mira. Let me know if you'd like to order another drink, hehe."
-msgstr "ありがとう、ミラ。他に飲み物が欲しければ教えてね、へへ。（話者：ゾーイ、女性）"
+msgstr "ありがとう、ミラ。他に飲み物が欲しければ教えてね、へへ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -62794,7 +62794,7 @@ msgstr "「何だって！？」は疑問ではなく、叫び声だ。ゾーイ
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "The Andro Hologram Boobs sudden grow."
-msgstr "アンドロ・ホログラムおっぱいが、突然大きくなった。（話し手：ゾーイ、女性）"
+msgstr "アンドロ・ホログラムおっぱいが、突然大きくなった。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -63078,14 +63078,14 @@ msgstr "セレクション・スフィアの半径"
 #. src: dialog
 msgctxt "speaker:Man"
 msgid "The rat's room is number 205, on the second floor. Get it done."
-msgstr "ネズミの部屋は2階の205号室だ。やり遂げろ。（話し手：男）"
+msgstr "ネズミの部屋は2階の205号室だ。やり遂げろ。"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>The remote. Right.</color>
-#. rich_translation: <color=#EB83FF>リモコン。そうね。（スピーカー：Zoey、女性）</color>
+#. rich_translation: <color=#EB83FF>リモコン。そうね。</color>
 msgctxt "speaker:Zoey"
 msgid "The remote. Right."
-msgstr "リモコン。そうね。（スピーカー：Zoey、女性）"
+msgstr "リモコン。そうね。"
 
 #. src: dialog
 msgctxt "ui"
@@ -63475,7 +63475,7 @@ msgstr "見つけちまったぞ、あのクソ場所を！"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "They have the wha' huh?"
-msgstr "何だって？（話者：Zoey、女性）"
+msgstr "何だって？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -63556,10 +63556,10 @@ msgstr "まだここにいるのか…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>They're-... not fake...</color>
-#. rich_translation: <color=#EB83FF>本物…なの…（スピーカー：Zoey、女性）</color>
+#. rich_translation: <color=#EB83FF>本物…なの…</color>
 msgctxt "speaker:Zoey"
 msgid "They're-... not fake..."
-msgstr "本物…なの…（スピーカー：Zoey、女性）"
+msgstr "本物…なの…"
 
 #. src: dialog
 msgctxt "ui"
@@ -65746,7 +65746,7 @@ msgstr "う、うん、そんな感じ！あ、もう行かなきゃ。着いた
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Uhhh- Soon? I really gotta go-"
-msgstr "うーん…すぐ？もう行かないと…（話し手：Zoey、女性）"
+msgstr "うーん…すぐ？もう行かないと…"
 
 #. src: dialog
 msgctxt "ui"
@@ -68574,7 +68574,7 @@ msgstr "待って——そういう意味で言ったわけじゃないの！"
 #. src: dialog
 msgctxt "ui"
 msgid "Wait- That was you two? Wow. You saved my synthetic bacon with that. Those two enforcers seemed like they were looking for trouble."
-msgstr "待って――あれ、あんたたち二人だったの？ うわぁ。それ、私の合成ベーコンを救ってくれたんだね。あの二人のエンفورサー、どうも面倒を探してるみたいだったけど。"
+msgstr "待って――あれ、あんたたち二人だったの？ うわぁ。それ、私の合成ベーコンを救ってくれたんだね。あの二人のエンフォーサー、どうも面倒を探してるみたいだったけど。"
 
 #. src: dialog
 msgctxt "ui"
@@ -68682,7 +68682,7 @@ msgstr "ウェイトレス — 会社を維持する — 4"
 #. src: dialog
 msgctxt "speaker:Agree"
 msgid "Waitressing - Mira Order 2"
-msgstr "ウェイトレスの仕事 — ミラ、注文2（話し手：同意）"
+msgstr "ウェイトレスの仕事 — ミラ、注文2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -69663,7 +69663,7 @@ msgstr "まあ、景色も君を楽しんでるみたいだね、セクシー～
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Well, uh... there's this andro woman that I found without power-"
-msgstr "あの、ええと…電力が切れてるアンドロイドの女の人を見つけたんだけど…（スピーカー：Zoey、女性）"
+msgstr "あの、ええと…電力が切れてるアンドロイドの女の人を見つけたんだけど…"
 
 #. src: dialog
 msgctxt "speaker:Enforcer"
@@ -69848,7 +69848,7 @@ msgstr "まあ…どうでもいいわ！だから何？彼らに何ができる
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Well... Yeah, actually. Lemme see..."
-msgstr "うーん……ええ、実はね。ええと、ちょっと見せて……（スピーカー：レオナ、女性）"
+msgstr "うーん……ええ、実はね。ええと、ちょっと見せて……"
 
 #. src: dialog
 msgctxt "ui"
@@ -70103,7 +70103,7 @@ msgstr "えっ—"
 #. src: dialog
 msgctxt "speaker:Brad"
 msgid "Wha- ?"
-msgstr "何だって？ (スピーカー: ブラッド)"
+msgstr "何だって？"
 
 #. src: dialog
 msgctxt "speaker:Lio"
@@ -70304,7 +70304,7 @@ msgstr "どうすればいいと思う？"
 #. src: dialog
 msgctxt "ui"
 msgid "What do you think, Rungar honey, hmmm?"
-msgstr "どう思う、ルングァー、ハニー、うーん？"
+msgstr "どう思う、ルンガー、ハニー、うーん？"
 
 #. src: dialog
 msgctxt "speaker:Woman"
@@ -70348,11 +70348,11 @@ msgstr "それと何の関係が——"
 
 #. src: dialog
 #. rich_text: What does that have to do with... <b>this</b>?!
-#. rich_translation: それと…これが何の関係があるっていうのよ？！（話者：ゾーイ、女性）
+#. rich_translation: それと…これが何の関係があるっていうのよ？！
 #, rt-review
 msgctxt "speaker:Zoey"
 msgid "What does that have to do with... this?!"
-msgstr "それと…これが何の関係があるっていうのよ？！（話者：ゾーイ、女性）"
+msgstr "それと…これが何の関係があるっていうのよ？！"
 
 #. src: dialog
 msgctxt "speaker:Sarah"
@@ -71083,7 +71083,7 @@ msgstr "なんで嫌いなんだ、Z？昔だって結構あちこち行けて�
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Why don'cha turn 'round for me..."
-msgstr "俺のために振り向いてくれないか…（話し手：客、男性）"
+msgstr "俺のために振り向いてくれないか…"
 
 #. src: dialog
 msgctxt "ui"
@@ -71939,7 +71939,7 @@ msgstr "そうよ！名前からもわかるでしょ？みんな、何も隠さ
 #. src: dialog
 msgctxt "ui"
 msgid "Yeah! Jaime, Sarah. Sarah, Jaime."
-msgstr "うん！ハイメ、サラ。サラ、ハイメ。"
+msgstr "うん！ジェイミー、サラ。サラ、ジェイミー。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -72257,7 +72257,7 @@ msgstr "うん。何か大きなことが起こるって、ずっと話してた
 #. src: dialog
 msgctxt "speaker:Man"
 msgid "Yeah. I'll use that picture you gave me last time. It's gotten plenty of use already hehehe"
-msgstr "うん。この前くれた写真、使わせてもらうよ。もう十分に使われてるけど、へへへ。（話し手：男）"
+msgstr "うん。この前くれた写真、使わせてもらうよ。もう十分に使われてるけど、へへへ。"
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -72591,7 +72591,7 @@ msgstr "はい、何です？"
 #. src: dialog
 msgctxt "speaker:Lio"
 msgid "Yes! Ah-...! Hurry! Nhhh!"
-msgstr "そうだ！あぁ…早く！うっ…！（話し手：リオ、男性）"
+msgstr "そうだ！あぁ…早く！うっ…！"
 
 #. src: dialog
 msgctxt "ui"
@@ -73044,7 +73044,7 @@ msgstr "できるわよ～"
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "You can feel it, can't you..."
-msgstr "感じるだろう…（スピーカー：Varen、男性）"
+msgstr "感じるだろう…"
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
@@ -73220,11 +73220,11 @@ msgstr "感情が？もっと詳しく話してくれる？"
 
 #. src: dialog
 #. rich_text: You forgot something, <i><b>waitress</b></i>.
-#. rich_translation: 何か忘れたんじゃないか、ウェイトレスさん。（スピーカー：Trov、男性）
+#. rich_translation: 何か忘れたんじゃないか、ウェイトレスさん。
 #, rt-review
 msgctxt "speaker:Trov"
 msgid "You forgot something, waitress."
-msgstr "何か忘れたんじゃないか、ウェイトレスさん。（スピーカー：Trov、男性）"
+msgstr "何か忘れたんじゃないか、ウェイトレスさん。"
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -73634,10 +73634,10 @@ msgstr "次回の集まりでは絶対に参加すべきだよ！"
 
 #. src: dialog
 #. rich_text: You trust in our <b>strength</b>. Don't you?
-#. rich_translation: <b>我々の力を信じているんだろう？</b>（話し手：Enforcer、男性）
+#. rich_translation: <b>我々の力を信じているんだろう？</b>
 msgctxt "speaker:Enforcer"
 msgid "You trust in our strength. Don't you?"
-msgstr "我々の力を信じているんだろう？（話し手：Enforcer、男性）"
+msgstr "我々の力を信じているんだろう？"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>You two are like... really cute, heh...!</color>
@@ -73733,10 +73733,10 @@ msgstr "手伝って片付けてもらえないかな？"
 
 #. src: dialog
 #. rich_text: You wouldn't happen to have a... <size=23>filled condom...</size> for sale?
-#. rich_translation: 혹시…<size=23>中身の入ったコンドーム</size>とか、売ってない？
+#. rich_translation: もしかして…<size=23>中身の入ったコンドーム</size>とか、売ってない？
 msgctxt "ui"
 msgid "You wouldn't happen to have a... filled condom... for sale?"
-msgstr "혹시…中身の入ったコンドームとか、売ってない？"
+msgstr "もしかして…中身の入ったコンドームとか、売ってない？"
 
 #. src: dialog
 msgctxt "ui"
@@ -74251,7 +74251,7 @@ msgstr "君の体は本当に…特別だ…"
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "Your breasts offer my hands such temptation, waitress..."
-msgstr "あなたの胸は、私の手にとってあまりにも誘惑的だわ、ウェイトレスさん……（話し手：ヴァレン、男性）"
+msgstr "あなたの胸は、私の手にとってあまりにも誘惑的だわ、ウェイトレスさん……"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -74915,7 +74915,7 @@ msgstr "もう一度ヴァレンに屈してしまえ…"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "[20] Squish your boobs for Rugnar"
-msgstr "ルグナーのために胸を押しつぶして"
+msgstr "ルングナーのために胸を押しつぶして"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76802,3 +76802,4 @@ msgstr "ゼイン・ドラグコ"
 msgctxt "ui"
 msgid "| GetDataFromItem: Item doesn't exist! Returning empty DynamicTable."
 msgstr "| GetDataFromItem: アイテムが存在しません！空のDynamicTableを返します。"
+
