@@ -19210,7 +19210,7 @@ msgstr "Controlla"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check 2nd Save Key"
-msgstr "Controlla il secondo tasto di salvataggio"
+msgstr "Controllo secondo tasto di salvataggio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19220,52 +19220,52 @@ msgstr "Controllo accessibilità modificato"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Accessibility Initially"
-msgstr "Controlla l'accessibilità inizialmente"
+msgstr "Verifica iniziale dell'accessibilità"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Day/Night"
-msgstr "Controlla Giorno/Notte"
+msgstr "Verifica Giorno/Notte"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check DayTime"
-msgstr "Controlla l'ora del giorno"
+msgstr "Verifica dell'ora del giorno"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Lewd Key"
-msgstr "Controlla la chiave esplicita"
+msgstr "Controllo chiave esplicita"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Mission"
-msgstr "Controlla la missione"
+msgstr "Controllare la missione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Mission state"
-msgstr "Controlla stato missione"
+msgstr "Controllo stato missione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Motion Sickness Setting"
-msgstr "Controlla l'impostazione della cinetosi"
+msgstr "Controllo impostazione cinetosi"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Motion Sickness Setting 2"
-msgstr "Controlla l'impostazione della cinetosi 2"
+msgstr "Verifica impostazione cinetosi 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Save Key"
-msgstr "Controlla la chiave di salvataggio"
+msgstr "Verifica chiave di salvataggio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Save Key 2"
-msgstr "Controlla la chiave di salvataggio 2"
+msgstr "Controllo chiave di salvataggio 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19280,12 +19280,12 @@ msgstr "Verifica chiave di salvataggio 4"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Save Key 5"
-msgstr "Controlla la chiave di salvataggio 5"
+msgstr "Controllo chiave di salvataggio 5"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Save Key Arm"
-msgstr "Controlla il braccio della chiave di salvataggio"
+msgstr "Controllo braccio chiave di salvataggio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19295,47 +19295,47 @@ msgstr "Verifica chiave di salvataggio fem"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Save Key after remote used once"
-msgstr "Controlla la chiave di salvataggio dopo aver usato il remoto una volta"
+msgstr "Verifica chiave di salvataggio dopo uso remoto"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Save key"
-msgstr "Controlla la chiave di salvataggio"
+msgstr "Verifica chiave di salvataggio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Savekeys"
-msgstr "Controlla le chiavi di salvataggio"
+msgstr "Controllo chiavi di salvataggio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check State"
-msgstr "Controlla stato"
+msgstr "Controllo stato"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Task"
-msgstr "Controlla il compito"
+msgstr "Verifica compito"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Task Status 1"
-msgstr "Controlla lo stato del compito 1"
+msgstr "Controllo stato compito 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Task Status 2"
-msgstr "Controlla stato del compito 2"
+msgstr "Controllo stato compito 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Task find lever"
-msgstr "Controlla il compito: trova la leva"
+msgstr "Verifica compito: trova leva"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Tasks"
-msgstr "Controlla i compiti"
+msgstr "Controllare i compiti"
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -19345,22 +19345,22 @@ msgstr "Controlla dietro a questo... qualunque cosa sia questo giocattolo, Lio."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for Cypher mission"
-msgstr "Controlla la missione di Cypher"
+msgstr "Verifica missione Cypher"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for Lio mission"
-msgstr "Controlla la missione di Lio"
+msgstr "Verifica missione Lio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for Nipple Sucker"
-msgstr "Controlla per il Succhiatore di Tette"
+msgstr "Verifica Succhiatore di Tette"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for Task State"
-msgstr "Controlla stato del task"
+msgstr "Controllo stato del task"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19370,87 +19370,87 @@ msgstr "Controlla se Leona è stata visitata"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for item"
-msgstr "Controlla l'oggetto"
+msgstr "Verifica dell'oggetto"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for jaime alive"
-msgstr "Controlla se Jaime è viva"
+msgstr "Verifica se Jaime è viva"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for main quest"
-msgstr "Controlla la missione principale"
+msgstr "Verifica missione principale"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for mission"
-msgstr "Controlla la missione"
+msgstr "Verifica missione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check if done"
-msgstr "Controlla se hai finito"
+msgstr "Verifica completamento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check int"
-msgstr "Controlla int"
+msgstr "Controllo int"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check is on Mission"
-msgstr "Controlla se sei in missione"
+msgstr "Verifica se si è in missione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check key"
-msgstr "Controlla la chiave"
+msgstr "Controllo chiave"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check motion sickness"
-msgstr "Controlla il mal di movimento"
+msgstr "Controllo del mal di movimento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check on Load"
-msgstr "Controlla al caricamento"
+msgstr "Controllo al caricamento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check progress"
-msgstr "Controlla i progressi"
+msgstr "Controllare i progressi"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check save key"
-msgstr "Controlla la chiave di salvataggio"
+msgstr "Verifica chiave di salvataggio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check savekey"
-msgstr "Controlla la chiave di salvataggio"
+msgstr "Controllo chiave di salvataggio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check task"
-msgstr "Controlla il compito"
+msgstr "Controllare il compito"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check task status"
-msgstr "Controlla lo stato del compito"
+msgstr "Verifica stato compito"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check the parcel"
-msgstr "Controlla il pacco"
+msgstr "Controllare il pacco"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check time of day"
-msgstr "Controlla l'ora del giorno"
+msgstr "Verifica dell'ora del giorno"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19750,17 +19750,17 @@ msgstr "Topo con mantello"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Close Arms"
-msgstr "Chiudi le braccia"
+msgstr "Chiudere le braccia"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Close Camera"
-msgstr "Chiudi la telecamera"
+msgstr "Chiudere la telecamera"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Close Hatch"
-msgstr "Chiudi il portellone"
+msgstr "Chiudere il portellone"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19770,17 +19770,17 @@ msgstr "Chiudi l'armadietto"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Close door"
-msgstr "Chiudi la porta"
+msgstr "Chiudere la porta"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Close door 2"
-msgstr "Chiudi la porta 2"
+msgstr "Chiudere la porta 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Close menu"
-msgstr "Chiudi il menu"
+msgstr "Chiudere il menu"
 
 #. src: dialog
 msgctxt "ui"
@@ -19790,7 +19790,7 @@ msgstr "Chiudi il menu."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Close tab menu"
-msgstr "Chiudi il menu della scheda"
+msgstr "Chiudere il menu della scheda"
 
 #. src: dialog
 msgctxt "ui"
@@ -22869,17 +22869,17 @@ msgstr "Inno funebre"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable"
-msgstr "Disattiva"
+msgstr "Disattivazione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Animations"
-msgstr "Disattiva animazioni"
+msgstr "Disattivazione animazioni"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Animator Bool"
-msgstr "Disattiva booleano animatore"
+msgstr "Disattivazione booleano animatore"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22889,7 +22889,7 @@ msgstr "Disattiva Attacco"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Blocker"
-msgstr "Disattiva il blocco"
+msgstr "Disattivazione del blocco"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22904,7 +22904,7 @@ msgstr "Disattiva Personaggi 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Continue button"
-msgstr "Disattiva il pulsante Continua"
+msgstr "Disattivazione pulsante Continua"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22919,12 +22919,12 @@ msgstr "Disattiva la scena"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Enforcers"
-msgstr "Disattiva gli Esecutori"
+msgstr "Disattivazione degli Esecutori"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Felicia"
-msgstr "Disattiva Felicia"
+msgstr "Disattivazione di Felicia"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22934,22 +22934,22 @@ msgstr "Disattiva Gag"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Interactable"
-msgstr "Disattiva Interattivo"
+msgstr "Disattivazione Interattivo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Interaction"
-msgstr "Disattiva interazione"
+msgstr "Disattivazione interazione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Leona"
-msgstr "Disattiva Leona"
+msgstr "Disattivazione Leona"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Lio"
-msgstr "Disattiva Lio"
+msgstr "Disattivazione di Lio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22959,27 +22959,27 @@ msgstr "Disattiva la musica"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Mynx"
-msgstr "Disattiva Mynx"
+msgstr "Disattivazione di Mynx"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Nova's Interaction"
-msgstr "Disattiva l'interazione di Nova"
+msgstr "Disattivazione interazione Nova"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Picture Receiver"
-msgstr "Disattiva Ricevitore Immagini"
+msgstr "Disattivazione Ricevitore Immagini"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Prompt"
-msgstr "Disattiva prompt"
+msgstr "Disattivazione prompt"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Rotation"
-msgstr "Disattiva la rotazione"
+msgstr "Disattivazione della rotazione"
 
 #. src: us
 msgctxt "ui"
@@ -22994,12 +22994,12 @@ msgstr "Disattiva te stesso"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Task Target"
-msgstr "Disattiva l'obiettivo del compito"
+msgstr "Disattivazione obiettivo compito"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable This"
-msgstr "Disattiva questo"
+msgstr "Disattivazione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23014,12 +23014,12 @@ msgstr "Disattiva la musica"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable UI"
-msgstr "Disattiva l'interfaccia utente"
+msgstr "Disattivazione dell'interfaccia utente"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Waitressing minigame"
-msgstr "Disattiva il minigioco di servizio"
+msgstr "Disattivazione del minigioco di servizio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23029,7 +23029,7 @@ msgstr "Disattiva e riattiva le Slutbox"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable and enable the slutboxes 2"
-msgstr "Disattiva e riattiva le scatole da scopone 2"
+msgstr "Disattivazione e riattivazione delle scatole da scopone 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23039,7 +23039,7 @@ msgstr "Disattiva gli interattivi della porta"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable guards"
-msgstr "Disattiva le guardie"
+msgstr "Disattivazione delle guardie"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23054,7 +23054,7 @@ msgstr "Disattiva interazione"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable interactable 2"
-msgstr "Disattiva l'interattività 2"
+msgstr "Disattivazione interattività 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23074,12 +23074,12 @@ msgstr "Spegni le luci"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable man"
-msgstr "Disattiva l'uomo"
+msgstr "Disattivazione uomo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable nudity zone"
-msgstr "Disattiva la zona di nudità"
+msgstr "Disattivazione zona nudità"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23094,12 +23094,12 @@ msgstr "Disattiva lo sbircio"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable self"
-msgstr "Disattiva te stesso"
+msgstr "Disattivazione di sé"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable the Bunnysuit Visuals"
-msgstr "Disattiva la visualizzazione della costume da coniglietta"
+msgstr "Disattivazione della visualizzazione del costume da coniglietta"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23109,7 +23109,7 @@ msgstr "Disattiva l’Uomo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable the hatch interactable"
-msgstr "Disattiva l'interattivo del portello"
+msgstr "Disattivazione dell'interattivo del portello"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23129,17 +23129,17 @@ msgstr "Disattivali inizialmente"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable this"
-msgstr "Disattiva questo"
+msgstr "Disattivazione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable this state"
-msgstr "Disattiva questo stato"
+msgstr "Disattivazione stato"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable this state 2"
-msgstr "Disattiva questo stato 2"
+msgstr "Disattivazione stato 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23154,12 +23154,12 @@ msgstr "Disattiva la spazzatura"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable trigger"
-msgstr "Disattiva il trigger"
+msgstr "Disattivazione del trigger"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable tunnel guy"
-msgstr "Disattiva il tizio del tunnel"
+msgstr "Disattivazione del tizio del tunnel"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23224,7 +23224,7 @@ msgstr "Esegui azione"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do Flash"
-msgstr "Fai un Flash"
+msgstr "Esegui un Flash"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23274,7 +23274,7 @@ msgstr "Avvia una scena d'intermezzo 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do anim"
-msgstr "Fai anim"
+msgstr "Animazione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23284,7 +23284,7 @@ msgstr "Abbaia"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do choice"
-msgstr "Fai una scelta"
+msgstr "Fare una scelta"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23299,7 +23299,7 @@ msgstr "Fai il dialogo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do dialogue and flush"
-msgstr "Fai il dialogo e scarica"
+msgstr "Esegui il dialogo e scarica"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23309,12 +23309,12 @@ msgstr "Avvia la scena finale"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do gas"
-msgstr "Fai gas"
+msgstr "Fare gas"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do hack"
-msgstr "Fai un hack."
+msgstr "Esegui un hack."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23426,7 +23426,7 @@ msgstr "Dai un'occhiata."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do perversion"
-msgstr "Fai perversione"
+msgstr "Perversione"
 
 #. src: us
 msgctxt "ui"
@@ -23436,12 +23436,12 @@ msgstr "Resetta l'FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do sex scene"
-msgstr "Fai la scena di sesso"
+msgstr "Eseguire scena sessuale"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do sex scene 2"
-msgstr "Fai la scena di sesso 2"
+msgstr "Esegui la scena di sesso 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23456,7 +23456,7 @@ msgstr "Fai una doccia"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do some lil anim blending"
-msgstr "Fai un po' di blending delle animazioni."
+msgstr "Blending delle animazioni"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23466,12 +23466,12 @@ msgstr "Continua le statistiche"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do streetlight"
-msgstr "Fai la luce stradale"
+msgstr "Fare la luce stradale"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do stuff"
-msgstr "Fai qualcosa"
+msgstr "Fare qualcosa"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -24956,7 +24956,7 @@ msgstr "Attiva"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable Attach"
-msgstr "Attiva l'attacco"
+msgstr "Attivazione attacco"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -24991,7 +24991,7 @@ msgstr "Abilita l'interazione con Guy"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable Halloween"
-msgstr "Attiva Halloween"
+msgstr "Attivazione Halloween"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25046,12 +25046,12 @@ msgstr "Attiva il Ricevitore Immagini"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable Random Unique Characters"
-msgstr "Attiva Personaggi Unici Casuali"
+msgstr "Attivazione Personaggi Unici Casuali"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable Rosie Interaction"
-msgstr "Attiva l'interazione con Rosie"
+msgstr "Attivazione interazione con Rosie"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25111,12 +25111,12 @@ msgstr "Attiva la sincronizzazione verticale"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable Winter"
-msgstr "Attiva l'inverno"
+msgstr "Attivazione dell'inverno"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable Zoeys"
-msgstr "Attiva le Zoeys"
+msgstr "Attivazione delle Zoeys"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25181,12 +25181,12 @@ msgstr "Attiva l'enigma"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable robos and wait for complete"
-msgstr "Attiva i robot e attendi il completamento"
+msgstr "Attivazione robot e attesa completamento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable sequence"
-msgstr "Attiva sequenza"
+msgstr "Attivazione sequenza"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25196,7 +25196,7 @@ msgstr "Attiva la modalità di salto"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable the character"
-msgstr "Attiva il personaggio"
+msgstr "Attivazione del personaggio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25206,7 +25206,7 @@ msgstr "Attiva i personaggi"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable the first intro and wait"
-msgstr "Attiva la prima introduzione e attendi"
+msgstr "Attivazione della prima introduzione e attesa"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25216,17 +25216,17 @@ msgstr "Abilita l'interattivo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable the label"
-msgstr "Attiva l'etichetta"
+msgstr "Attivazione etichetta"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable the roadblocks"
-msgstr "Attiva i blocchi stradali"
+msgstr "Attivazione dei blocchi stradali"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable the second intro"
-msgstr "Attiva la seconda introduzione"
+msgstr "Attivazione della seconda introduzione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41965,12 +41965,12 @@ msgstr "Maggiore"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Make Lady shower"
-msgstr "Fai fare la doccia a Lady"
+msgstr "Fare fare la doccia a Lady"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Make guards chase"
-msgstr "Fai inseguire le guardie"
+msgstr "Fare inseguire le guardie"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -44043,7 +44043,7 @@ msgstr "Porta Klaudia a Cal"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Move Leona inside"
-msgstr "Fai entrare Leona."
+msgstr "Far entrare Leona."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -44108,7 +44108,7 @@ msgstr "Sposta Zoey di lato e avvia l'animazione"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Move Zoey Inside"
-msgstr "Fai entrare Zoey"
+msgstr "Far entrare Zoey"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -48869,7 +48869,7 @@ msgstr "Oowee!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open"
-msgstr "Apri"
+msgstr "Aprire"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -48884,7 +48884,7 @@ msgstr "Conteggio scatole aperte"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open Boxes Count String"
-msgstr "Apri le scatole."
+msgstr "Aprire le scatole."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -48949,7 +48949,7 @@ msgstr "Apri la directory della cartella"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open Hatch"
-msgstr "Apri il portellone"
+msgstr "Apertura del portellone"
 
 #. src: us
 msgctxt "ui"
@@ -48964,17 +48964,17 @@ msgstr "Apri la cartella dei log nell'Esplora file"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open Menu"
-msgstr "Apri il menu"
+msgstr "Aprire il menu"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open Release Notes"
-msgstr "Apri le note sulla versione"
+msgstr "Apertura delle note sulla versione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open Twitter"
-msgstr "Apri Twitter"
+msgstr "Aprire Twitter"
 
 #. src: dialog
 msgctxt "ui"
@@ -48989,22 +48989,22 @@ msgstr "Apri visivamente"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open choice hub"
-msgstr "Apri il hub delle scelte"
+msgstr "Apertura hub scelte"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open discord"
-msgstr "Apri Discord"
+msgstr "Aprire Discord"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open door"
-msgstr "Apri la porta"
+msgstr "Aprire la porta"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open door 2"
-msgstr "Apri la porta 2"
+msgstr "Aprire la porta 2"
 
 #. src: dialog
 msgctxt "ui"
@@ -49019,32 +49019,32 @@ msgstr "Apri il menu"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open phone"
-msgstr "Apri il telefono"
+msgstr "Aprire il telefono"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open phone 2"
-msgstr "Apri il telefono 2"
+msgstr "Aprire il telefono 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open sesame"
-msgstr "Apri, sesamo"
+msgstr "Aprire, sesamo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open shop"
-msgstr "Apri il negozio"
+msgstr "Apertura negozio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open the Door"
-msgstr "Apri la porta"
+msgstr "Aprire la porta"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open the box"
-msgstr "Apri la scatola"
+msgstr "Aprire la scatola"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49054,7 +49054,7 @@ msgstr "Apri! Lascia che ti curi il prurito dall'interno, Skank!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open upgrades"
-msgstr "Apri i potenziamenti"
+msgstr "Potenziamenti aperti"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -50387,7 +50387,7 @@ msgstr "Riproduci dialogo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play Dialogue 1"
-msgstr "Inizia il dialogo 1"
+msgstr "Avvio dialogo 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50437,7 +50437,7 @@ msgstr "Riproduci animazione di palpamento"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play Initial Dialogue"
-msgstr "Inizia il dialogo iniziale"
+msgstr "Inizio dialogo iniziale"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50507,7 +50507,7 @@ msgstr "Riprendi il dialogo post-scena"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play Pre-Sex Scene"
-msgstr "Inizia la scena pre-sessuale"
+msgstr "Avvio scena pre-sessuale"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50562,7 +50562,7 @@ msgstr "1. Riproduci la scena 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play Sex Scene"
-msgstr "Inizia la scena sessuale"
+msgstr "Inizio scena sessuale"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50702,7 +50702,7 @@ msgstr "Non puoi ancora andartene."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play choice dialogue"
-msgstr "Scegli la tua risposta."
+msgstr "Scegliere la propria risposta."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50882,7 +50882,7 @@ msgstr "Gioca al primo dialogo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play first dialogue"
-msgstr "Inizia il primo dialogo"
+msgstr "Iniziare il primo dialogo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50907,7 +50907,7 @@ msgstr "Gioca al primo sguardo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play first quest dialogue"
-msgstr "Inizia il dialogo della prima missione"
+msgstr "Avvio dialogo prima missione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50957,7 +50957,7 @@ msgstr "Avvia il dialogo iniziale"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play initial dialogue"
-msgstr "Inizia il dialogo iniziale"
+msgstr "Iniziare il dialogo iniziale"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50972,7 +50972,7 @@ msgstr "Interagisci per avviare il dialogo."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play internal Monologue"
-msgstr "Inizia il monologo interno"
+msgstr "Inizio del monologo interno"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51297,7 +51297,7 @@ msgstr "Gioca la riga segreta all'inizio"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play sex scene"
-msgstr "Inizia la scena sessuale"
+msgstr "Avvio scena sessuale"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51322,7 +51322,7 @@ msgstr "Gioca al dialogo da seduto"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play slut service dialogue"
-msgstr "Inizia il dialogo del servizio da sgualdrina."
+msgstr "Avvio dialogo servizio da sgualdrina."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51457,7 +51457,7 @@ msgstr "Prova a giocare, poi esci dal dialogo."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play walk in cutscene"
-msgstr "Inizia la scena di camminata."
+msgstr "Avvio scena di camminata."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55709,7 +55709,7 @@ msgstr "Imposta booleano animatore"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Customer Drinking"
-msgstr "Imposta il consumo del cliente"
+msgstr "Impostazione del consumo del cliente"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55719,7 +55719,7 @@ msgstr "Impostazione del dialogo iniziale"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Expression"
-msgstr "Imposta espressione"
+msgstr "Impostazione espressione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55729,7 +55729,7 @@ msgstr "Imposta animazione di palpazione"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Interaction type to Grab"
-msgstr "Imposta il tipo di interazione su Afferra"
+msgstr "Imposta tipo interazione su Afferra"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55759,17 +55759,17 @@ msgstr "Imposta posizione e direzione"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Mission State"
-msgstr "Imposta stato missione"
+msgstr "Impostazione stato missione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Mission Task"
-msgstr "Imposta missione"
+msgstr "Impostazione missione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Mission and play dialogue"
-msgstr "Imposta la missione e gioca il dialogo"
+msgstr "Impostazione missione e riproduzione dialogo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55789,7 +55789,7 @@ msgstr "Avvia la musica 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Nipple Suckers Active"
-msgstr "Attiva i Succhiatori di Tette"
+msgstr "Attivazione Succhiatori di Tette"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55799,22 +55799,22 @@ msgstr "Imposta Desiderio Bevanda Nova"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Penis of Man to hard"
-msgstr "Imposta il pene dell'uomo su duro"
+msgstr "Impostazione del pene maschile su duro"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Random Selector"
-msgstr "Imposta selettore casuale"
+msgstr "Impostazione selettore casuale"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Rotation"
-msgstr "Imposta rotazione"
+msgstr "Impostazione rotazione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Rotation 2"
-msgstr "Imposta rotazione 2"
+msgstr "Impostazione rotazione 2"
 
 #. src: dialog
 msgctxt "speaker:FINISHED"
@@ -55824,7 +55824,7 @@ msgstr "Imposta chiave di salvataggio"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Save Key 2"
-msgstr "Imposta chiave di salvataggio 2"
+msgstr "Impostazione chiave di salvataggio 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55859,12 +55859,12 @@ msgstr "Imposta la chiave di salvataggio"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set SaveKey"
-msgstr "Imposta chiave di salvataggio"
+msgstr "Impostazione chiave di salvataggio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Savekey"
-msgstr "Imposta chiave di salvataggio"
+msgstr "Impostazione chiave di salvataggio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55879,12 +55879,12 @@ msgstr "Imposta le animazioni di rimprovero"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Scolding Animations 2"
-msgstr "Imposta le animazioni di rimprovero 2"
+msgstr "Impostazione animazioni rimprovero 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Scolding Animations 3"
-msgstr "Imposta le animazioni di rimprovero 3"
+msgstr "Impostazione animazioni rimprovero 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55894,27 +55894,27 @@ msgstr "Imposta lo stato sull'animazione di pulizia"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set State to Collected"
-msgstr "Imposta lo stato su Raccolto"
+msgstr "Imposta stato su Raccolto"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set State to Collected 2"
-msgstr "Imposta lo stato su \"Raccolto\" 2"
+msgstr "Imposta stato su \"Raccolto\" 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set State to Falling Animation"
-msgstr "Imposta lo stato sull'animazione di caduta"
+msgstr "Imposta stato su animazione caduta"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set State to Standup Animation"
-msgstr "Imposta lo stato sull'animazione di rialzo"
+msgstr "Imposta stato su animazione rialzo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Task"
-msgstr "Imposta compito"
+msgstr "Impostazione compito"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55924,12 +55924,12 @@ msgstr "Imposta stato attività"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Task states"
-msgstr "Imposta gli stati dei compiti"
+msgstr "Impostazione stati compiti"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set Tasks"
-msgstr "Imposta i compiti"
+msgstr "Impostazione compiti"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55974,7 +55974,7 @@ msgstr "Imposta rabbia"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set animation"
-msgstr "Imposta animazione"
+msgstr "Impostazione animazione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55989,12 +55989,12 @@ msgstr "Impostazione prima della macchina"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set begin task"
-msgstr "Inizia il compito"
+msgstr "Iniziare il compito"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set blocker task"
-msgstr "Imposta il compito del blocco"
+msgstr "Impostazione compito blocco"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56004,7 +56004,7 @@ msgstr "Imposta booleano"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set camera target"
-msgstr "Imposta il target della telecamera"
+msgstr "Impostazione target telecamera"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56014,7 +56014,7 @@ msgstr "Imposta il target della telecamera su 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set camera to follow the new player"
-msgstr "Imposta la telecamera per seguire il nuovo giocatore"
+msgstr "Impostazione della telecamera per seguire il nuovo giocatore"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56024,7 +56024,7 @@ msgstr "Visual intagliato impostato"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set character sprite and populate"
-msgstr "Imposta lo sprite del personaggio e popolalo"
+msgstr "Impostazione dello sprite del personaggio e popolamento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56054,7 +56054,7 @@ msgstr "Chiave rifiutata"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set departing"
-msgstr "Imposta partenza"
+msgstr "Impostazione partenza"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56064,7 +56064,7 @@ msgstr "Il set è stato scelto."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set enter box task"
-msgstr "Imposta il compito della finestra di dialogo"
+msgstr "Impostazione compito finestra di dialogo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56074,12 +56074,12 @@ msgstr "Imposta il compito di ingresso"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set escape tasks"
-msgstr "Imposta i compiti di fuga"
+msgstr "Impostazione compiti di fuga"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set fallback"
-msgstr "Imposta il fallback"
+msgstr "Impostazione fallback"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56089,12 +56089,12 @@ msgstr "Prima attività completata"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set guy idle animation to default"
-msgstr "Imposta l'animazione di inattività del personaggio maschile su quella predefinita"
+msgstr "Impostazione animazione inattività personaggio maschile su predefinita"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set happy"
-msgstr "Imposta felicità"
+msgstr "Impostare felicità"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56104,7 +56104,7 @@ msgstr "Posizionala"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set hideable position"
-msgstr "Imposta posizione nascondibile"
+msgstr "Impostazione posizione nascondibile"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56144,7 +56144,7 @@ msgstr "Imposta chiave"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set key and destroy"
-msgstr "Imposta la chiave e distruggi"
+msgstr "Impostazione chiave e distruzione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56159,7 +56159,7 @@ msgstr "Animazione sdraiata"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set level name"
-msgstr "Imposta il nome del livello"
+msgstr "Impostazione nome livello"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56174,7 +56174,7 @@ msgstr "Imposta la grafica bloccata"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set look at guard"
-msgstr "Fai in modo che il guardiano ti guardi."
+msgstr "Imposta lo sguardo verso il guardiano."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56189,7 +56189,7 @@ msgstr "Imposta il messaggio da toccare"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set mission"
-msgstr "Imposta missione"
+msgstr "Impostazione missione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56199,7 +56199,7 @@ msgstr "Missione completata"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set mission task"
-msgstr "Imposta il compito della missione"
+msgstr "Impostazione compito missione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56229,17 +56229,17 @@ msgstr "Imposta offset"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set open"
-msgstr "Apri"
+msgstr "Aprire"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set player transform as target"
-msgstr "Imposta la trasformazione del giocatore come target"
+msgstr "Impostare la trasformazione del giocatore come target"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set position"
-msgstr "Imposta la posizione"
+msgstr "Imposizione della posizione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56254,27 +56254,27 @@ msgstr "Imposta testo casuale per l'abbaiamento"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set return task"
-msgstr "Imposta il compito di ritorno"
+msgstr "Impostazione compito di ritorno"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set rotation"
-msgstr "Imposta la rotazione"
+msgstr "Impostazione della rotazione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set save key"
-msgstr "Imposta la chiave di salvataggio"
+msgstr "Impostazione chiave di salvataggio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set savekey"
-msgstr "Imposta chiave di salvataggio"
+msgstr "Impostazione chiave di salvataggio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set savekey about having done this scene"
-msgstr "Imposta la chiave di salvataggio per indicare che questa scena è stata completata"
+msgstr "Impostazione chiave di salvataggio per indicare completamento scena"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56299,7 +56299,7 @@ msgstr "Imposta il target"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set task"
-msgstr "Imposta compito"
+msgstr "Impostazione compito"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56319,17 +56319,17 @@ msgstr "Imposta lo stato del compito"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set task to find 205"
-msgstr "Imposta il compito di trovare 205"
+msgstr "Impostare il compito di trovare 205"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set tasks"
-msgstr "Imposta i compiti"
+msgstr "Impostazione dei compiti"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set tasks 2"
-msgstr "Imposta i compiti 2"
+msgstr "Impostazione compiti 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56339,12 +56339,12 @@ msgstr "Imposta i compiti 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set tasks 5"
-msgstr "Imposta i compiti 5"
+msgstr "Impostazione compiti 5"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set tasks and unlock player"
-msgstr "Imposta i compiti e sblocca il giocatore"
+msgstr "Impostazione compiti e sblocco giocatore"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56354,7 +56354,7 @@ msgstr "Imposta testo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set the key"
-msgstr "Imposta la chiave"
+msgstr "Impostazione della chiave"
 
 #. src: dialog
 msgctxt "ui"
@@ -56364,12 +56364,12 @@ msgstr "Crea l'atmosfera, perché non..."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set the tasks"
-msgstr "Imposta i compiti"
+msgstr "Impostazione dei compiti"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set things"
-msgstr "Imposta le cose"
+msgstr "Impostare le cose"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56444,7 +56444,7 @@ msgstr "Imposta lo zoom"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set zoom 2"
-msgstr "Imposta lo zoom a 2"
+msgstr "Impostare lo zoom a 2"
 
 #. src: us
 msgctxt "ui"
@@ -57251,7 +57251,7 @@ msgstr "Mostra interruzione"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show Dialogue looking at femboy"
-msgstr "Mostra il dialogo mentre guardi il femboy"
+msgstr "Mostrare il dialogo durante l'osservazione del femboy"
 
 #. src: settings
 msgctxt "ui"
@@ -57331,7 +57331,7 @@ msgstr "Mostra i tooltip"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show Zoeys outfit in Locker"
-msgstr "Mostra l'outfit di Zoe nell'armadietto"
+msgstr "Mostrare l'outfit di Zoe nell'armadietto"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57341,7 +57341,7 @@ msgstr "Mostra l'outfit di Zoe nell'armadietto 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show blocker in Locker"
-msgstr "Mostra il blocco nell'armadietto"
+msgstr "Mostrare il blocco nell'armadietto"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57351,7 +57351,7 @@ msgstr "Mostra la scelta per visualizzare l'immagine"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show choices"
-msgstr "Mostra le scelte"
+msgstr "Mostrare le scelte"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57426,7 +57426,7 @@ msgstr "Mostra ispezione"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show keypad"
-msgstr "Mostra la tastiera"
+msgstr "Mostrare la tastiera"
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -57454,7 +57454,7 @@ msgstr "Fammi vedere, fammi vedere!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show real window"
-msgstr "Mostra la finestra reale"
+msgstr "Mostrare la finestra reale"
 
 #. src: dialog
 msgctxt "ui"
@@ -57469,7 +57469,7 @@ msgstr "Mostrale la foto."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show tits Dialogue"
-msgstr "Mostra le tette"
+msgstr "Mostrare le tette"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Show your-... Friends...?!</color>
@@ -57616,7 +57616,7 @@ msgstr "Monologo sotto la doccia"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Shower off"
-msgstr "Fai una doccia."
+msgstr "Fare una doccia."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59239,7 +59239,7 @@ msgstr "Avvia la timeline audio"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Bartending"
-msgstr "Inizia a servire"
+msgstr "Iniziare a servire"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59264,12 +59264,12 @@ msgstr "Inizio della cutscene 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Cypher quest"
-msgstr "Inizia la quest di Cypher"
+msgstr "Avvio della quest di Cypher"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Dailogue"
-msgstr "Inizia il dialogo"
+msgstr "Avvio dialogo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59304,17 +59304,17 @@ msgstr "Inizia il dialogo 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Dialogue"
-msgstr "Inizia il dialogo"
+msgstr "Avvio dialogo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Dialogue 1"
-msgstr "Inizia il dialogo 1"
+msgstr "Avvio dialogo 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Dialogue 2"
-msgstr "Inizia il dialogo 2"
+msgstr "Avvio dialogo 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59329,22 +59329,22 @@ msgstr "Inizia il dialogo oscuro"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Dialogue Repeat"
-msgstr "Inizia il dialogo"
+msgstr "Avvio dialogo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Dialogue for Lockpicking"
-msgstr "Inizia il dialogo per lo scassinamento"
+msgstr "Avvio dialogo per scassinamento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Dialogue know remote"
-msgstr "Inizia il dialogo, sapendo che è a distanza."
+msgstr "Avvio dialogo a distanza"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Dialogue put lever in 1"
-msgstr "Inizia il dialogo: metti la leva in posizione 1."
+msgstr "Avvio dialogo: posizionamento leva in 1."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59369,7 +59369,7 @@ msgstr "Inizia l'ispezione"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Inspection 2"
-msgstr "Inizia l'ispezione 2"
+msgstr "Avvio ispezione 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59389,7 +59389,7 @@ msgstr "Avvia animazione telefono 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Phonecall"
-msgstr "Inizia la telefonata"
+msgstr "Avvio telefonata"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59404,12 +59404,12 @@ msgstr "Inizia Ripeti Dialogo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Scolding in Backroom"
-msgstr "Inizia a rimproverarla nel retrobottega"
+msgstr "Inizio rimprovero nel retrobottega"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Shower"
-msgstr "Inizia la doccia"
+msgstr "Avvio doccia"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59429,7 +59429,7 @@ msgstr "Inizio del Townhall 4"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Work"
-msgstr "Inizia a lavorare"
+msgstr "Iniziare a lavorare"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59439,7 +59439,7 @@ msgstr "Inizia una nuova partita"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start a shower"
-msgstr "Inizia una doccia"
+msgstr "Avviare una doccia"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59459,57 +59459,57 @@ msgstr "Inizia dal dialogo sul tavolo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark"
-msgstr "Inizia a abbaiare"
+msgstr "Inizio abbaiamento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark 2"
-msgstr "Inizia l'abbaiamento 2"
+msgstr "Inizio abbaiamento 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark 3"
-msgstr "Inizia l'abbaiamento 3"
+msgstr "Inizio abbaiamento 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark 4"
-msgstr "Inizia l'abbaiamento 4"
+msgstr "Inizio abbaiamento 4"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark 5"
-msgstr "Inizia l'abbaiamento 5"
+msgstr "Inizio abbaiamento 5"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark 6"
-msgstr "Inizia l'abbaiamento 6"
+msgstr "Inizio abbaiamento 6"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark 7"
-msgstr "Inizia l'abbaiamento 7"
+msgstr "Inizio abbaiamento 7"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark 8"
-msgstr "Inizia l'abbaiamento 8"
+msgstr "Inizio abbaiamento 8"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark 9"
-msgstr "Inizia l'abbaiamento 9"
+msgstr "Inizio abbaiamento 9"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start chase"
-msgstr "Inizia l'inseguimento"
+msgstr "Inizio inseguimento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start cold Shower"
-msgstr "Inizia con una doccia fredda"
+msgstr "Inizio con doccia fredda"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59524,7 +59524,7 @@ msgstr "Inizia il dialogo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start dialogue with Max"
-msgstr "Inizia il dialogo con Max"
+msgstr "Avvio dialogo con Max"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59534,12 +59534,12 @@ msgstr "Inizia il dialogo con Max 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start final scene"
-msgstr "Inizia la scena finale"
+msgstr "Avvio scena finale"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start first Dialogue"
-msgstr "Inizia il primo dialogo"
+msgstr "Avvio primo dialogo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59554,7 +59554,7 @@ msgstr "Inizia a fottere"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start groping"
-msgstr "Inizia a tastare"
+msgstr "Iniziare a tastare"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59594,7 +59594,7 @@ msgstr "Avvia nuova partita"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start race"
-msgstr "Inizia la gara"
+msgstr "Avvio gara"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59614,7 +59614,7 @@ msgstr "Inizia a carezzargli il cazzo."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start wait cutscene"
-msgstr "Inizia la cutscene di attesa."
+msgstr "Avvio cutscene di attesa"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -64474,12 +64474,12 @@ msgstr "Ho provato a impostare un tipo di dati inesistente"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Trigger Events"
-msgstr "Attiva eventi"
+msgstr "Attivazione eventi"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Trigger Events 2"
-msgstr "Attiva eventi 2"
+msgstr "Attivazione eventi 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67435,7 +67435,7 @@ msgstr "Attendi l'animazione"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Aquire UI to close"
-msgstr "Aspetta che l'interfaccia di Aquire si chiuda"
+msgstr "Aspetta chiusura interfaccia Aquire"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67450,12 +67450,12 @@ msgstr "Aspetta la scelta"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Click"
-msgstr "Aspetta il clic"
+msgstr "Aspetta clic"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Clothing Change"
-msgstr "Aspetta il cambio d'abito"
+msgstr "Aspetta cambio d'abito"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67465,17 +67465,17 @@ msgstr "Aspetta la fine della cutscene"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Dialogue"
-msgstr "Aspetta il dialogo"
+msgstr "Aspetta dialogo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Dialogue to end"
-msgstr "Aspetta che il dialogo finisca"
+msgstr "Aspetta la fine del dialogo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Door Change"
-msgstr "Aspetta il cambio di porta"
+msgstr "Aspetta cambio porta"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67500,22 +67500,22 @@ msgstr "Premi Invio"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Event 2"
-msgstr "Aspetta l'evento 2"
+msgstr "Aspetta evento 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Exit"
-msgstr "Aspetta l'uscita"
+msgstr "Aspettativa uscita"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Exiting"
-msgstr "Aspetta che esca"
+msgstr "Aspetta l'uscita"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Global Event"
-msgstr "Aspetta l'evento globale"
+msgstr "Aspetta evento globale"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67525,7 +67525,7 @@ msgstr "Attendi l'interazione per il handjob"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Hover"
-msgstr "Aspetta che si sovrapponga"
+msgstr "Aspetta sovrapposizione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67535,7 +67535,7 @@ msgstr "Attendi l'elemento interattivo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Interaction"
-msgstr "Aspetta l'interazione"
+msgstr "Aspetta interazione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67545,7 +67545,7 @@ msgstr "Attendi l'interazione 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Interaction 3"
-msgstr "Aspetta l'interazione 3"
+msgstr "Aspetta interazione 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67555,7 +67555,7 @@ msgstr "Attendi l'interazione dall'FSM principale"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Interaction with Leona"
-msgstr "Aspetta l'interazione con Leona"
+msgstr "Aspetta interazione con Leona"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67640,12 +67640,12 @@ msgstr "Aspetta Nova"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Photo"
-msgstr "Aspetta la foto"
+msgstr "Aspetta foto"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Picture"
-msgstr "Aspetta l'immagine"
+msgstr "Aspetta immagine"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67655,12 +67655,12 @@ msgstr "Attendi il comando \"Play\""
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Player inside"
-msgstr "Aspetta il giocatore all'interno"
+msgstr "Aspetta giocatore all'interno"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Player outside"
-msgstr "Aspetta il giocatore fuori"
+msgstr "Aspetta giocatore fuori"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67680,12 +67680,12 @@ msgstr "Aspetti che Sarah finisca di fare la doccia?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Savefile to Move Zoey"
-msgstr "Aspetta che il file di salvataggio si sposti, Zoey"
+msgstr "Aspetta che il file di salvataggio si sposti"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Sequence to be done"
-msgstr "Aspetta che la sequenza sia completata"
+msgstr "Aspetta il completamento della sequenza"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67695,7 +67695,7 @@ msgstr "Aspetta il suono"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Task"
-msgstr "Aspetta il compito"
+msgstr "Aspetta compito"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67710,22 +67710,22 @@ msgstr "Attendi il trigger della timeline"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Trigger"
-msgstr "Aspetta il trigger"
+msgstr "Aspetta trigger"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Trigger 2"
-msgstr "Aspetta il trigger 2"
+msgstr "Aspetta trigger 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Trigger 3"
-msgstr "Aspetta il Trigger 3"
+msgstr "Aspetta Trigger 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Undress"
-msgstr "Aspetta che si spogli"
+msgstr "Aspetta lo spogliamento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67735,22 +67735,22 @@ msgstr "Aspetta il Viewfinder"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Waitressing"
-msgstr "Aspetta che inizi il servizio."
+msgstr "Aspetta l'inizio del servizio."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Waitressing to End"
-msgstr "Aspetta che finisca il servizio."
+msgstr "Aspetta la fine del servizio."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Waitressing to Start"
-msgstr "Aspetta che inizi il servizio"
+msgstr "Aspetta l'inizio del servizio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Zoey"
-msgstr "Aspetta Zoey"
+msgstr "Aspettare Zoey"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67765,7 +67765,7 @@ msgstr "Aspetta che Zoey venga teletrasportata per iniziare la Location"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for a box interaction"
-msgstr "Aspetta un'interazione con la casella"
+msgstr "Aspetta interazione con la casella"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67785,17 +67785,17 @@ msgstr "Attendi l'attivazione"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for any of the door interactables"
-msgstr "Aspetta che compaia un elemento interattivo sulla porta."
+msgstr "Attesa di un elemento interattivo sulla porta"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for blocker"
-msgstr "Aspetta il blocco"
+msgstr "Aspetta blocco"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for button"
-msgstr "Aspetta il pulsante"
+msgstr "Aspetta pulsante"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67805,12 +67805,12 @@ msgstr "Aspetta la sfida"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for challenge start"
-msgstr "Aspetta l'inizio della sfida"
+msgstr "Attesa inizio sfida"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for chapter 1 to end"
-msgstr "Aspetta che finisca il capitolo 1"
+msgstr "Aspetta la fine del capitolo 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67850,22 +67850,22 @@ msgstr "Aspetta il completamento 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for dialogue"
-msgstr "Aspetta il dialogo"
+msgstr "Aspetta dialogo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for dialogue 2"
-msgstr "Aspetta il dialogo 2"
+msgstr "Aspetta dialogo 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for dialogue 3"
-msgstr "Aspetta il dialogo 3"
+msgstr "Aspetta dialogo 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for dialogue end"
-msgstr "Aspetta la fine del dialogo"
+msgstr "Aspetta fine dialogo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67875,7 +67875,7 @@ msgstr "Aspetta la fine del dialogo 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for dialogue end 3"
-msgstr "Aspetta la fine del dialogo 3"
+msgstr "Aspetta fine dialogo 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67890,37 +67890,37 @@ msgstr "Aspetta la fine 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for end of Dialogue"
-msgstr "Aspetta la fine del dialogo"
+msgstr "Aspetta fine dialogo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for end of dialogue"
-msgstr "Aspetta la fine del dialogo"
+msgstr "Aspetta fine dialogo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for enter Trigger"
-msgstr "Aspetta l'ingresso del trigger"
+msgstr "Aspetta ingresso trigger"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for event"
-msgstr "Aspetta l'evento"
+msgstr "Aspetta evento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for events"
-msgstr "Aspetta che accadano gli eventi"
+msgstr "Aspetta eventi"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for exit"
-msgstr "Aspetta l'uscita"
+msgstr "Aspettativa uscita"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for exit fail"
-msgstr "Aspetta il fallimento dell'uscita"
+msgstr "Attesa fallimento uscita"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67935,12 +67935,12 @@ msgstr "Aspetta l'ultimo compito"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for finish"
-msgstr "Aspetta che finisca"
+msgstr "Aspetta il completamento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for finish task"
-msgstr "Aspetta che il compito sia completato."
+msgstr "Aspetta il completamento del compito."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67955,7 +67955,7 @@ msgstr "Aspetta il frame"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for frame for Interactable"
-msgstr "Aspetta il frame per l'elemento interattivo"
+msgstr "Attesa del frame per l'elemento interattivo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67975,7 +67975,7 @@ msgstr "Aspetta che ci siano gli oggetti"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for health depletion"
-msgstr "Aspetta che la salute si esaurisca"
+msgstr "Attesa esaurimento salute"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67985,7 +67985,7 @@ msgstr "Aspetta che si nasconda"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for horny"
-msgstr "Aspetta, che voglia..."
+msgstr "Aspetta il desiderio..."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68015,17 +68015,17 @@ msgstr "Aspetta l'interattivo o il drop eccitante"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for interaction"
-msgstr "Aspetta l'interazione"
+msgstr "Aspetta interazione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for interactions"
-msgstr "Aspetta le interazioni"
+msgstr "Aspetta interazioni"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for item"
-msgstr "Aspetta l'oggetto"
+msgstr "Aspetta oggetto"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68040,17 +68040,17 @@ msgstr "Aspetta la riga"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for masturbate"
-msgstr "Aspetta di masturbarti"
+msgstr "Aspetta la masturbazione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for mission"
-msgstr "Aspetta la missione"
+msgstr "Aspetta missione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for mission complete"
-msgstr "Aspetta che la missione sia completata"
+msgstr "Aspetta il completamento della missione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68060,7 +68060,7 @@ msgstr "Attendi che la missione sia in corso"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for movement"
-msgstr "Aspetta il movimento"
+msgstr "Aspetta movimento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68075,17 +68075,17 @@ msgstr "Aspetta l'orgasmo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for other dialogues"
-msgstr "Aspetta gli altri dialoghi"
+msgstr "Aspetta altri dialoghi"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for overwhelm"
-msgstr "Aspetta che ti sopraffaccia"
+msgstr "Aspetta il sopraffacimento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for pick or strip"
-msgstr "Aspetta la scelta o spogliati"
+msgstr "Aspetta la scelta o spogliamento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68095,17 +68095,17 @@ msgstr "Aspetta di essere raccolta"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for picture"
-msgstr "Aspetta l'immagine"
+msgstr "Aspetta immagine"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for picture receiver"
-msgstr "Aspetta l'immagine del ricevitore"
+msgstr "Aspetta immagine ricevitore"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for picture taken"
-msgstr "Aspetta che la foto venga scattata"
+msgstr "Attesa scatto foto"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68115,12 +68115,12 @@ msgstr "Attendi che il giocatore entri"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for popup"
-msgstr "Aspetta il pop-up"
+msgstr "Aspetta pop-up"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for puzzle solve"
-msgstr "Aspetta la risoluzione del puzzle"
+msgstr "Attesa risoluzione puzzle"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68130,17 +68130,17 @@ msgstr "Aspetta la fine della gara"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for receiver"
-msgstr "Aspetta il ricevitore"
+msgstr "Aspetta ricevitore"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for recover"
-msgstr "Aspetta che ti riprenda"
+msgstr "Aspetta il recupero"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for rooftop enter"
-msgstr "Aspetta l'ingresso sul tetto"
+msgstr "Aspetta ingresso sul tetto"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68160,17 +68160,17 @@ msgstr "Attendi il savekey"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for seat"
-msgstr "Aspetta un posto"
+msgstr "Aspetta posto"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for showing Drink"
-msgstr "Aspetta che venga mostrato il Bevanda"
+msgstr "Aspetta visualizzazione Bevanda"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for sit"
-msgstr "Aspetta che mi sieda."
+msgstr "Aspetta seduta"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68185,7 +68185,7 @@ msgstr "Aspetta il cambio"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task"
-msgstr "Aspetta il compito"
+msgstr "Aspetta compito"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68252,7 +68252,7 @@ msgstr "Aspettiamo che le guardie se ne vadano?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for the interactable"
-msgstr "Aspetta l'elemento interagibile"
+msgstr "Aspetta elemento interagibile"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68262,7 +68262,7 @@ msgstr "Aspetta il trigger della timeline"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for timeline trigger 2"
-msgstr "Aspetta il trigger della timeline 2"
+msgstr "Aspetta trigger timeline 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68272,7 +68272,7 @@ msgstr "Attendi il timer"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for transition"
-msgstr "Aspetta la transizione"
+msgstr "Aspetta transizione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68282,22 +68282,22 @@ msgstr "Aspetta la transizione per interagire"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for trigger"
-msgstr "Aspetta il trigger"
+msgstr "Aspetta trigger"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for trigger 2"
-msgstr "Aspetta il trigger 2"
+msgstr "Aspetta trigger 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for trigger enter"
-msgstr "Aspetta l'attivazione dell'ingresso"
+msgstr "Aspetta attivazione ingresso"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for trigger exit"
-msgstr "Aspetta l'uscita del trigger"
+msgstr "Aspetta uscita trigger"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68307,7 +68307,7 @@ msgstr "Aspetta il trigger per andartene."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for try exit"
-msgstr "Aspetta il tentativo di uscita"
+msgstr "Attesa tentativo uscita"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68317,7 +68317,7 @@ msgstr "Aspetta, prova ad avvicinarti."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for turn in"
-msgstr "Aspetta il tuo turno in"
+msgstr "Aspetta il turno"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68327,17 +68327,17 @@ msgstr "Aspetta che mi sieda."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for upgrade"
-msgstr "Aspetta l'aggiornamento"
+msgstr "Aspetta aggiornamento"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for use"
-msgstr "Aspetta che ti usi"
+msgstr "Aspetta l'uso"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for use while locked"
-msgstr "Aspetta l'uso mentre sei bloccato"
+msgstr "Attesa dell'uso durante il blocco"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -74931,12 +74931,12 @@ msgstr "cambia direzione dello sguardo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "check for money"
-msgstr "Controlla i soldi."
+msgstr "Controllo del denaro"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "check task status"
-msgstr "Controlla lo stato del compito."
+msgstr "Verifica stato compito"
 
 #. src: dialog
 msgctxt "ui"
@@ -75006,7 +75006,7 @@ msgstr "Diego Mattison..."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "disable Jan interactions"
-msgstr "Disattiva le interazioni con Jan"
+msgstr "Disattivazione interazioni con Jan"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -75809,7 +75809,7 @@ msgstr "Solo tu, e non hai ancora..."
 #. src: field:fsm
 msgctxt "ui"
 msgid "open"
-msgstr "Apri"
+msgstr "Aprire"
 
 #. src: us
 msgctxt "ui"
@@ -76201,7 +76201,7 @@ msgstr "Impostazione idle"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "set offset"
-msgstr "imposta offset"
+msgstr "Impostazione offset"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76521,7 +76521,7 @@ msgstr "Aspetta prima di spogliarti."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wait for Interaction"
-msgstr "Aspetta l'interazione."
+msgstr "Aspetta interazione."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76536,7 +76536,7 @@ msgstr "Aspetta l'interattivo."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wait for interactable 2"
-msgstr "Aspetta l'elemento interattivo 2"
+msgstr "Aspetta elemento interattivo 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76546,7 +76546,7 @@ msgstr "Aspetta l'interazione."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wait for jaime"
-msgstr "Aspetta Jaime."
+msgstr "Aspettare Jaime."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76556,7 +76556,7 @@ msgstr "attendi il trigger della timeline"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wait for trigger"
-msgstr "Aspetta il trigger."
+msgstr "Aspetta trigger"
 
 #. src: field:fsm
 msgctxt "ui"

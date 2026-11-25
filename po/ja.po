@@ -67440,22 +67440,22 @@ msgstr "もう一度待って。"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for 2nd Click"
-msgstr "2回目のクリックを待ってください"
+msgstr "2回目のクリックを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for 2nd Trigger"
-msgstr "2つ目のトリガーを待って"
+msgstr "2つ目のトリガーを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Animation"
-msgstr "アニメーションを待って"
+msgstr "アニメーション待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Aquire UI to close"
-msgstr "AquireのUIが閉じるのを待って"
+msgstr "AquireのUIが閉じるのを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67475,32 +67475,32 @@ msgstr "クリックを待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Clothing Change"
-msgstr "着替えを待って"
+msgstr "着替え待ち"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Cutscene End"
-msgstr "カットシーンが終了するのを待って"
+msgstr "カットシーン終了待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Dialogue"
-msgstr "対話を待ってください"
+msgstr "対話を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Dialogue to end"
-msgstr "ダイアログが終わるのを待って"
+msgstr "ダイアログ終了待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Door Change"
-msgstr "ドアが変わるのを待って"
+msgstr "ドアの変化を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Door Unlocked"
-msgstr "ドアが開くのを待って"
+msgstr "ドアが開くのを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67510,7 +67510,7 @@ msgstr "空を待つ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for End"
-msgstr "終わりまで待って"
+msgstr "終わりまで待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67520,12 +67520,12 @@ msgstr "Enterキーを待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Event 2"
-msgstr "イベント2を待って"
+msgstr "イベント2を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Exit"
-msgstr "出口を待って"
+msgstr "出口を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67545,7 +67545,7 @@ msgstr "ハンドジョブのインタラクションを待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Hover"
-msgstr "ホバーを待って"
+msgstr "ホバー待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67595,12 +67595,12 @@ msgstr "サイモンとのインタラクションを待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Intro to finish"
-msgstr "イントロが終了するのを待ってください"
+msgstr "イントロの終了を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Jasmine"
-msgstr "ジャスミンを待って"
+msgstr "ジャスミンを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67610,7 +67610,7 @@ msgstr "ジャスミンを待って 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Leona strip"
-msgstr "レオナのストリップを待って"
+msgstr "レオナのストリップを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67630,7 +67630,7 @@ msgstr "上のレッドライト入口でリオのドローンを待って"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Mark"
-msgstr "マークを待って"
+msgstr "マークを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67645,12 +67645,12 @@ msgstr "マーク3を待て"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Mark or Jasmine"
-msgstr "マークかジャスミンを待って"
+msgstr "マークまたはジャスミンを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Mask On"
-msgstr "マスクを付けるのを待って"
+msgstr "マスク装着を待つ"
 
 #. src: dialog
 msgctxt "ui"
@@ -67660,7 +67660,7 @@ msgstr "ノヴァを待て"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Photo"
-msgstr "写真を待って"
+msgstr "写真待ち"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67705,7 +67705,7 @@ msgstr "セーブデータの移動を待って、ゾーイを移動させて。
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Sequence to be done"
-msgstr "シーケンスが完了するのを待って"
+msgstr "シーケンス完了待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67730,7 +67730,7 @@ msgstr "タイムラインのトリガーを待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Trigger"
-msgstr "トリガーを待って"
+msgstr "トリガーを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67740,17 +67740,17 @@ msgstr "トリガーを待っています 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Trigger 3"
-msgstr "トリガー3を待ってください"
+msgstr "トリガー3を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Undress"
-msgstr "脱衣を待って"
+msgstr "脱衣を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Viewfinder"
-msgstr "ビューファインダーを待ってください"
+msgstr "ビューファインダーを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67760,22 +67760,22 @@ msgstr "ウェイトレスの仕事の準備を待つ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Waitressing to End"
-msgstr "ウェイトレスの仕事が終わるのを待って"
+msgstr "ウェイトレスの仕事が終わるのを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Waitressing to Start"
-msgstr "ウェイトレスの仕事が始まるのを待って"
+msgstr "ウェイトレスの仕事が始まるのを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Zoey"
-msgstr "ゾーイを待って"
+msgstr "ゾーイを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Zoey strip"
-msgstr "ゾーイが服を脱ぐのを待って"
+msgstr "ゾーイが服を脱ぐのを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67785,7 +67785,7 @@ msgstr "ゾーイが転送されるのを待ってから、場所を開始する
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for a box interaction"
-msgstr "ボックスとのインタラクションを待ってください"
+msgstr "ボックスとのインタラクションを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67800,7 +67800,7 @@ msgstr "ランダムな時間だけ待つ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for activation"
-msgstr "アクティベーションを待って"
+msgstr "アクティベーション待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67810,17 +67810,17 @@ msgstr "ドアのインタラクト可能な要素のいずれかを待機して
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for blocker"
-msgstr "ブロッカーを待って"
+msgstr "ブロッカーを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for button"
-msgstr "ボタンを待ってください"
+msgstr "ボタン待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for challenge"
-msgstr "チャレンジを待って"
+msgstr "チャレンジを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67830,7 +67830,7 @@ msgstr "チャレンジ開始を待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for chapter 1 to end"
-msgstr "第1章が終わるのを待って"
+msgstr "第1章の終了を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67850,17 +67850,17 @@ msgstr "クリックを待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for clothed"
-msgstr "服を着たまま待って。"
+msgstr "服を着たまま待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for collect"
-msgstr "収集を待ってください"
+msgstr "収集を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for complete"
-msgstr "完了を待ってください"
+msgstr "完了を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67870,7 +67870,7 @@ msgstr "完了を待って 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for dialogue"
-msgstr "対話を待ってください"
+msgstr "対話を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67885,7 +67885,7 @@ msgstr "対話を待機中"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for dialogue end"
-msgstr "ダイアログの終了を待ってください"
+msgstr "ダイアログ終了待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67910,12 +67910,12 @@ msgstr "終了を待って 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for end of Dialogue"
-msgstr "ダイアログの終了を待ってください"
+msgstr "ダイアログ終了待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for end of dialogue"
-msgstr "対話の終わりを待ってください"
+msgstr "対話終了待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67935,7 +67935,7 @@ msgstr "イベントを待つ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for exit"
-msgstr "出口を待って"
+msgstr "出口を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67950,17 +67950,17 @@ msgstr "出口が隠れるまで待て"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for final task"
-msgstr "最終タスクを待って"
+msgstr "最終タスクを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for finish"
-msgstr "終わりを待って"
+msgstr "終わりを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for finish task"
-msgstr "タスクの完了を待ってください"
+msgstr "タスク完了待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67970,7 +67970,7 @@ msgstr "最初のトリガーを待っています。"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for frame"
-msgstr "フレームを待って"
+msgstr "フレーム待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67990,7 +67990,7 @@ msgstr "ゲームの初期化を待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for has items"
-msgstr "アイテムがあるか待って"
+msgstr "アイテムがあるか待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68000,7 +68000,7 @@ msgstr "体力が尽きるのを待つ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for hideable"
-msgstr "隠れるのを待って"
+msgstr "隠れるのを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68015,7 +68015,7 @@ msgstr "初期トリガーを待っています。"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for interact"
-msgstr "インタクトを待って"
+msgstr "インタクト待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68045,32 +68045,32 @@ msgstr "インタラクションを待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for item"
-msgstr "アイテムを待って"
+msgstr "アイテムを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for leave"
-msgstr "出ていくのを待って"
+msgstr "出ていくのを待つ"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Wait for line"
-msgstr "待って。"
+msgstr "セリフを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for masturbate"
-msgstr "オナニーを待って"
+msgstr "オナニーを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for mission"
-msgstr "ミッションを待って"
+msgstr "ミッションを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for mission complete"
-msgstr "ミッション完了を待って"
+msgstr "ミッション完了を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68080,12 +68080,12 @@ msgstr "ミッション進行中、待機中"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for movement"
-msgstr "動きを待って"
+msgstr "動きを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for naked"
-msgstr "裸になるのを待って"
+msgstr "裸になるのを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68095,7 +68095,7 @@ msgstr "オーガズムを待つ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for other dialogues"
-msgstr "他のセリフを待って"
+msgstr "他のセリフを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68110,12 +68110,12 @@ msgstr "選択肢を待つか、脱ぐか"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for pickup"
-msgstr "拾うのを待って"
+msgstr "拾うのを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for picture"
-msgstr "画像を待って"
+msgstr "画像を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68125,7 +68125,7 @@ msgstr "画像の読み込みを待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for picture taken"
-msgstr "写真が撮れるのを待って"
+msgstr "写真撮影の完了を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68135,12 +68135,12 @@ msgstr "プレイヤーが入るのを待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for popup"
-msgstr "ポップアップを待って"
+msgstr "ポップアップ待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for puzzle solve"
-msgstr "パズルを解くのを待って"
+msgstr "パズル解決の待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68160,17 +68160,17 @@ msgstr "回復を待つ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for rooftop enter"
-msgstr "屋上への進入を待って"
+msgstr "屋上への進入を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for rooftop exit"
-msgstr "屋上の出口を待って"
+msgstr "屋上の出口を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for round complete"
-msgstr "ラウンドが完了するのを待ってください"
+msgstr "ラウンド完了待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68180,17 +68180,17 @@ msgstr "セーブキーを待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for seat"
-msgstr "席を待って"
+msgstr "席を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for showing Drink"
-msgstr "飲み物を表示するのを待ってください"
+msgstr "飲み物表示待ち"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for sit"
-msgstr "座るのを待って"
+msgstr "座るのを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68200,7 +68200,7 @@ msgstr "開始を待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for switch"
-msgstr "スイッチを待って"
+msgstr "スイッチを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68215,7 +68215,7 @@ msgstr "タスク2を待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task complete"
-msgstr "タスクの完了を待ってください"
+msgstr "タスク完了待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68235,32 +68235,32 @@ msgstr "タスクの進捗を待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task to be in progress"
-msgstr "タスクが進行中になるまで待ってください"
+msgstr "タスクが進行中になるまで待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task to complete"
-msgstr "タスクが完了するのを待ってください"
+msgstr "タスク完了を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task to get in box"
-msgstr "タスクがボックスに入るのを待って"
+msgstr "タスクがボックスに入るのを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task to go inside"
-msgstr "タスクが中に入るのを待って"
+msgstr "タスクが中に入るのを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task to leave"
-msgstr "タスクが終わるのを待って"
+msgstr "タスク終了待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task to take pic"
-msgstr "タスクが画像をキャプチャするのを待って"
+msgstr "タスクによる画像キャプチャの待機"
 
 #. src: dialog
 #. rich_text: <i>Wait for the guards to leave?</i>
@@ -68272,7 +68272,7 @@ msgstr "衛兵が去るのを待つ？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for the interactable"
-msgstr "インタラクティブオブジェクトを待って"
+msgstr "インタラクティブオブジェクトを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68287,12 +68287,12 @@ msgstr "タイムラインのトリガーを待っています 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for timer"
-msgstr "タイマーを待って"
+msgstr "タイマー待機"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for transition"
-msgstr "遷移を待ってください"
+msgstr "遷移を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68327,7 +68327,7 @@ msgstr "トリガーを待って離れる"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for try exit"
-msgstr "終了を試みるまで待って"
+msgstr "終了を試みるまで待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68337,17 +68337,17 @@ msgstr "歩こうとするのを待って、トリガー"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for turn in"
-msgstr "順番を待って"
+msgstr "順番待ち"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for unsit"
-msgstr "座らないで待って"
+msgstr "座らないで待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for upgrade"
-msgstr "アップグレードを待って"
+msgstr "アップグレードを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68357,7 +68357,7 @@ msgstr "待機中"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for use while locked"
-msgstr "鍵がかかっている間は使用を待ってください"
+msgstr "鍵がかかっている間の使用待ち"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76572,7 +76572,7 @@ msgstr "インタラクションを待っています。"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wait for jaime"
-msgstr "ジェイミーを待って"
+msgstr "ジェイミーを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

@@ -23433,12 +23433,12 @@ msgstr "压倒一切"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do peek"
-msgstr "偷看吧"
+msgstr "偷看"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do perversion"
-msgstr "搞变态吧"
+msgstr "搞变态"
 
 #. src: us
 msgctxt "ui"
@@ -23463,7 +23463,7 @@ msgstr "进行性爱场景3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do shower"
-msgstr "去洗个澡吧"
+msgstr "去洗澡"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23483,7 +23483,7 @@ msgstr "做街灯"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do stuff"
-msgstr "做点事吧"
+msgstr "执行操作"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50663,7 +50663,7 @@ msgstr "玩屁股的对话"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play bark"
-msgstr "玩吧"
+msgstr "播放叫声"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50708,7 +50708,7 @@ msgstr "平静地玩"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play cant leave yet dialogue"
-msgstr "现在还不能离开，继续游戏吧。"
+msgstr "播放“还不能离开”对话"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50793,7 +50793,7 @@ msgstr "播放对话并显示键盘"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play dialogue or w/e"
-msgstr "开始对话或随便什么吧"
+msgstr "播放对话或其他"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57625,7 +57625,7 @@ msgstr "淋浴时的独白"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Shower off"
-msgstr "冲个澡吧"
+msgstr "关闭淋浴"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59560,7 +59560,7 @@ msgstr "开始第一个过场动画"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start fuckin"
-msgstr "开始操吧"
+msgstr "开始性交"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67592,12 +67592,12 @@ msgstr "等待开场动画结束"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Jasmine"
-msgstr "等着贾斯敏"
+msgstr "等待贾斯敏"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Jasmine 2"
-msgstr "等着茉莉花 2"
+msgstr "等待茉莉花 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67627,7 +67627,7 @@ msgstr "等等马克"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Mark 2"
-msgstr "等着马克 2"
+msgstr "等待马克 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67637,7 +67637,7 @@ msgstr "等待马克3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Mark or Jasmine"
-msgstr "等着马克或者贾斯敏"
+msgstr "等待马克或贾斯敏"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67762,7 +67762,7 @@ msgstr "等待服务开始"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Zoey"
-msgstr "等着佐伊"
+msgstr "等待佐伊"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67997,7 +67997,7 @@ msgstr "等待隐藏"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for horny"
-msgstr "等着上钩吧"
+msgstr "等待上钩"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68042,7 +68042,7 @@ msgstr "等待物品"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for leave"
-msgstr "等着离开"
+msgstr "等待离开"
 
 #. src: dialog
 msgctxt "ui"
@@ -68052,7 +68052,7 @@ msgstr "等待下一行"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for masturbate"
-msgstr "等着自慰吧"
+msgstr "等待自慰"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68077,7 +68077,7 @@ msgstr "等待移动"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for naked"
-msgstr "等着被干吧"
+msgstr "等待脱衣"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68324,7 +68324,7 @@ msgstr "等待尝试退出"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for try to walk up Trigger"
-msgstr "等着，试着走上去，触发。"
+msgstr "等待走上触发器"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68334,7 +68334,7 @@ msgstr "等待回合"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for unsit"
-msgstr "等着，别坐。"
+msgstr "等待站起"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76567,7 +76567,7 @@ msgstr "等待互动"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wait for jaime"
-msgstr "等着杰米。"
+msgstr "等待杰米"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

@@ -25151,7 +25151,7 @@ msgstr "콘솔을 켭니다 (~)"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable container"
-msgstr "컨테이너 활성화하기"
+msgstr "컨테이너 활성화"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25206,7 +25206,7 @@ msgstr "시퀀스를 활성화하세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable skip mode"
-msgstr "건너뛰기 모드 활성화하기"
+msgstr "건너뛰기 모드 활성화"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -27207,7 +27207,7 @@ msgstr "손가락이 되돌릴 수 없는 트랙을 따라 그린다"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Finish"
-msgstr "끝내."
+msgstr "마무리"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -27679,7 +27679,7 @@ msgstr "강제로 아래로 이동 후 페이드 아웃"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Force Move Nova just past the Door"
-msgstr "노바를 억지로 문 너머로 밀어내"
+msgstr "노바를 억지로 문 너머로 밀어내기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59575,7 +59575,7 @@ msgstr "첫 컷신을 시작하세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start fuckin"
-msgstr "시작해, 이 자식아."
+msgstr "시작하기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67503,7 +67503,7 @@ msgstr "대화가 끝날 때까지 기다리세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Door Change"
-msgstr "문이 바뀌길 기다려요."
+msgstr "문 변화 대기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67513,12 +67513,12 @@ msgstr "문이 열리는 것을 기다리세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Empty"
-msgstr "비어있을 때까지 기다려."
+msgstr "비어있을 때까지 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for End"
-msgstr "끝을 기다려."
+msgstr "끝을 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67533,7 +67533,7 @@ msgstr "이벤트 2를 기다리세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Exit"
-msgstr "출구를 기다려."
+msgstr "출구를 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67608,7 +67608,7 @@ msgstr "인트로가 끝나기를 기다리세요"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Jasmine"
-msgstr "재스민을 기다려."
+msgstr "재스민을 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67638,22 +67638,22 @@ msgstr "윗 레드라이트 입구에서 리오의 드론을 기다려."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Mark"
-msgstr "마크를 기다려."
+msgstr "마크를 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Mark 2"
-msgstr "마크 2를 기다려."
+msgstr "마크 2를 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Mark 3"
-msgstr "마크 3를 기다려."
+msgstr "마크 3를 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Mark or Jasmine"
-msgstr "마크나 재스민을 기다려."
+msgstr "마크 또는 재스민을 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67688,7 +67688,7 @@ msgstr "플레이어 대기 중..."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Player outside"
-msgstr "밖에서 플레이어를 기다려."
+msgstr "플레이어를 밖에서 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67778,12 +67778,12 @@ msgstr "웨이트리스 서비스가 시작되기를 기다리세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Zoey"
-msgstr "조이를 기다려."
+msgstr "조이를 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Zoey strip"
-msgstr "조이가 옷을 벗기를 기다려."
+msgstr "조이의 옷 벗기 대기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67858,7 +67858,7 @@ msgstr "클릭을 기다리세요"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for clothed"
-msgstr "옷 입은 사람을 기다려."
+msgstr "옷 입은 사람을 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67943,7 +67943,7 @@ msgstr "이벤트가 시작되기를 기다리세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for exit"
-msgstr "출구를 기다려."
+msgstr "출구를 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67963,7 +67963,7 @@ msgstr "최종 작업을 기다리세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for finish"
-msgstr "끝날 때까지 기다려."
+msgstr "끝나기를 기다린다."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68008,12 +68008,12 @@ msgstr "체력이 다할 때까지 기다리기"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for hideable"
-msgstr "숨을 수 있을 때까지 기다려."
+msgstr "숨을 수 있을 때까지 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for horny"
-msgstr "흥분되기를 기다려."
+msgstr "흥분 상태 대기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68058,7 +68058,7 @@ msgstr "아이템을 기다리세요"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for leave"
-msgstr "떠나기를 기다려."
+msgstr "떠나기를 기다린다."
 
 #. src: dialog
 msgctxt "ui"
@@ -68068,7 +68068,7 @@ msgstr "대기 중입니다."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for masturbate"
-msgstr "자위를 기다려."
+msgstr "자위를 기다린다."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68093,12 +68093,12 @@ msgstr "움직임이 있을 때까지 기다리세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for naked"
-msgstr "알몸인 사람을 기다려."
+msgstr "알몸인 사람 대기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for orgasm"
-msgstr "오르가즘을 기다려."
+msgstr "오르가즘을 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68108,7 +68108,7 @@ msgstr "다른 대화까지 기다려 주세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for overwhelm"
-msgstr "압도당할 때까지 기다려"
+msgstr "압도당할 때까지 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68118,7 +68118,7 @@ msgstr "선택을 기다리거나 옷을 벗으세요"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for pickup"
-msgstr "주워주길 기다려."
+msgstr "주워주기를 기다린다."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68133,7 +68133,7 @@ msgstr "그림이 나올 때까지 기다려 주세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for picture taken"
-msgstr "사진이 찍힐 때까지 기다려요."
+msgstr "사진 촬영 대기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68153,27 +68153,27 @@ msgstr "퍼즐 해결을 기다리세요"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for race end"
-msgstr "경주 끝날 때까지 기다려."
+msgstr "경주 종료 대기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for receiver"
-msgstr "수신기를 기다려."
+msgstr "수신기를 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for recover"
-msgstr "회복될 때까지 기다려."
+msgstr "회복될 때까지 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for rooftop enter"
-msgstr "옥상으로 들어갈 때까지 기다려."
+msgstr "옥상으로 들어갈 때까지 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for rooftop exit"
-msgstr "옥상 출구를 기다려."
+msgstr "옥상 출구 대기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68188,7 +68188,7 @@ msgstr "저장 키를 기다리세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for seat"
-msgstr "자리를 기다려요."
+msgstr "자리를 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68198,7 +68198,7 @@ msgstr "음료를 보여주는 것을 기다리세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for sit"
-msgstr "앉기를 기다려."
+msgstr "앉기를 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68258,7 +68258,7 @@ msgstr "상자에 들어올 때까지 기다리세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task to go inside"
-msgstr "임무가 시작될 때까지 기다려."
+msgstr "임무 시작 대기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68330,7 +68330,7 @@ msgstr "트리거가 종료되기를 기다리세요."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for trigger leave"
-msgstr "트리거가 떠날 때까지 기다려."
+msgstr "트리거가 떠날 때까지 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68340,7 +68340,7 @@ msgstr "종료 시도 대기 중"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for try to walk up Trigger"
-msgstr "Trigger가 다가오기를 기다려."
+msgstr "Trigger가 다가오기를 기다리다"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68350,7 +68350,7 @@ msgstr "차례를 기다리는 중"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for unsit"
-msgstr "앉지 말라는 신호를 기다려."
+msgstr "앉지 말라는 신호를 기다린다."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76580,7 +76580,7 @@ msgstr "상호작용을 기다립니다."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wait for jaime"
-msgstr "자이미를 기다려."
+msgstr "자이미를 기다리기"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

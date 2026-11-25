@@ -19295,7 +19295,7 @@ msgstr "Проверить статус задания 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check Task find lever"
-msgstr "Проверь задание: найди рычаг"
+msgstr "Проверка задания: поиск рычага"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19310,12 +19310,12 @@ msgstr "Проверь за этим... что бы эта игрушка ни �
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for Cypher mission"
-msgstr "Проверь миссию Сайфер?"
+msgstr "Проверка миссии Сайфер"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for Lio mission"
-msgstr "Проверь миссию Лио"
+msgstr "Проверка миссии Лио"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19350,12 +19350,12 @@ msgstr "Проверить основное задание"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check for mission"
-msgstr "Проверь миссию"
+msgstr "Проверка миссии"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Check if done"
-msgstr "Проверь, всё ли готово."
+msgstr "Проверка готовности"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -19731,12 +19731,12 @@ msgstr "Закрыть люк"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Close Locker"
-msgstr "Закрой шкаф."
+msgstr "Закрывать шкаф"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Close door"
-msgstr "Закрой дверь"
+msgstr "Закрывать дверь"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23014,7 +23014,7 @@ msgstr "Отключить стражников"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable her"
-msgstr "Отключи её"
+msgstr "Отключение"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23074,7 +23074,7 @@ msgstr "Отключите визуализацию костюма кролик�
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable the Man"
-msgstr "Отключи человека"
+msgstr "Отключение человека"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23209,7 +23209,7 @@ msgstr "Я отстой?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do Intro for Event"
-msgstr "Запусти вступление для события"
+msgstr "Запуск вступления для события"
 
 #. src: raw:MonoBehaviour
 #, fuzzy
@@ -23240,7 +23240,7 @@ msgstr "Запускаем кат-сцену."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do a cutscene 2"
-msgstr "Запусти кат-сцену 2"
+msgstr "Запуск кат-сцены 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23255,7 +23255,7 @@ msgstr "Зави"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do choice"
-msgstr "Сделай выбор"
+msgstr "Сделать выбор"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23300,7 +23300,7 @@ msgstr "Вступительная сцена"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do it again lmao"
-msgstr "Сделай это ещё раз, лол"
+msgstr "Сделай это ещё раз"
 
 #. src: dialog
 #. rich_text: <b>Do it! Cum for me, GAG slut!</b>
@@ -23347,7 +23347,7 @@ msgstr "Воспоминания"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do memory 2"
-msgstr "Включи память 2"
+msgstr "Включение памяти 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23406,7 +23406,7 @@ msgstr "Сброс FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do sex scene"
-msgstr "Начни сексуальную сцену."
+msgstr "Начать сексуальную сцену."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23461,12 +23461,12 @@ msgstr "Ничего не делать"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do the other thing"
-msgstr "Сделай другое."
+msgstr "Сделать другое."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do the outro cutscene"
-msgstr "Запусти финальную сцену."
+msgstr "Запуск финальной сцены"
 
 #. src: dialog
 msgctxt "ui"
@@ -25127,12 +25127,12 @@ msgstr "Включить взаимодействующие объекты"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable kibby"
-msgstr "Включи Кибби"
+msgstr "Включение Кибби"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable lights"
-msgstr "Включи свет"
+msgstr "Включение света"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -48958,7 +48958,7 @@ msgstr "Открыть дверь"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open door 2"
-msgstr "Открой дверь 2"
+msgstr "Открытие двери 2"
 
 #. src: dialog
 msgctxt "ui"
@@ -48973,12 +48973,12 @@ msgstr "Откройте меню"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open phone"
-msgstr "Открой телефон"
+msgstr "Открытие телефона"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Open phone 2"
-msgstr "Открой телефон 2"
+msgstr "Открытие телефона 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50282,7 +50282,7 @@ msgstr "Проиграть 2-ю реплику и дать Зои двигать
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play 3 - Retry Dialogue"
-msgstr "Играй 3 — Повторить диалог"
+msgstr "Игра 3 — Повторение диалога"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50302,7 +50302,7 @@ msgstr "Запустить CG"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play Choice Dialogue for getting groped"
-msgstr "Пройти диалог выбора, чтобы тебя пощупали"
+msgstr "Диалог выбора для того, чтобы тебя пощупали"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50502,7 +50502,7 @@ msgstr "Запускаем диалог Сары"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play Sarah dialogue 2"
-msgstr "Запусти диалог Сары 2"
+msgstr "Запуск диалога Сары 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50652,7 +50652,7 @@ msgstr "Играть спокойно"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play cant leave yet dialogue"
-msgstr "Ты не можешь уйти ещё, диалог"
+msgstr "Невозможность уйти ещё, диалог"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50692,12 +50692,12 @@ msgstr "Играть диалог 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play dialogue 3"
-msgstr "Запусти диалог 3"
+msgstr "Запуск диалога 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play dialogue 3 - help"
-msgstr "Запусти диалог 3 — помощь"
+msgstr "Запуск диалога 3 — помощь"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50737,7 +50737,7 @@ msgstr "Запустите диалог и покажите клавиатуру
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play dialogue or w/e"
-msgstr "Запусти диалог или что там"
+msgstr "Запуск диалога"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50752,12 +50752,12 @@ msgstr "Играть в диалог или что там ещё 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play dialogue or w/e 4"
-msgstr "Запусти диалог или что там ещё"
+msgstr "Запуск диалога или что-то подобное"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play dialogue or w/e 5"
-msgstr "Играй в диалог или что там ещё 5"
+msgstr "Игра в диалог или что-то ещё 5"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50787,7 +50787,7 @@ msgstr "Играй, изучай диалог"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play excuse dialogue"
-msgstr "Запусти диалог с оправданиями"
+msgstr "Запуск диалога с оправданиями"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50822,7 +50822,7 @@ msgstr "Запускаем финальный диалог"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play find token dialogue"
-msgstr "Играй в поиск токенов: диалог"
+msgstr "Игра в поиск токенов: диалог"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50837,7 +50837,7 @@ msgstr "Играть сначала — Диалог"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play first dialogue"
-msgstr "Начни диалог."
+msgstr "Начало диалога"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50862,7 +50862,7 @@ msgstr "Проиграть первый взгляд"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play first quest dialogue"
-msgstr "Начни диалог первого квеста."
+msgstr "Начало диалога первого квеста"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51127,7 +51127,7 @@ msgstr "Игровой диалог перед мини-игрой"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play privacy dialogue"
-msgstr "Играй в режиме приватности"
+msgstr "Режим приватности"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51267,7 +51267,7 @@ msgstr "Запустить показ фото с диалогом"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play shower minigame"
-msgstr "Запусти мини-игру в душе"
+msgstr "Запуск мини-игры в душе"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51297,7 +51297,7 @@ msgstr "Воспроизвести звук"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play stand dialogue"
-msgstr "Играй в диалог стоя"
+msgstr "Игра в диалог стоя"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51337,12 +51337,12 @@ msgstr "Играть с напряжением"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play that Cutscene"
-msgstr "Запусти эту кат-сцену"
+msgstr "Запуск кат-сцены"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play the dialogue"
-msgstr "Запусти диалог"
+msgstr "Запуск диалога"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51352,27 +51352,27 @@ msgstr "Играть диалог 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play the dialogue 3"
-msgstr "Запусти диалог 3"
+msgstr "Запуск диалога 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play the dialogue 4"
-msgstr "Запусти диалог 4"
+msgstr "Запуск диалога 4"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play the dialogue 5"
-msgstr "Запусти диалог 5"
+msgstr "Запуск диалога 5"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play the dialogue 6"
-msgstr "Запусти диалог 6"
+msgstr "Запуск диалога 6"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play the next dialogue"
-msgstr "Запусти следующий диалог"
+msgstr "Запуск следующего диалога"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51397,7 +51397,7 @@ msgstr "Играть третий ключевой диалог 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play third quest dialogue"
-msgstr "Играй в диалог третьего квеста"
+msgstr "Игра в диалог третьего квеста"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -56385,7 +56385,7 @@ msgstr "Ждём прибытия"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set waiting for depart"
-msgstr "Жди отправления."
+msgstr "Ожидание отправления"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57221,7 +57221,7 @@ msgstr "Показывать FPS"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show Femboy sex"
-msgstr "Покажи секс с фембоем"
+msgstr "Показ секса с фембоем"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57286,12 +57286,12 @@ msgstr "Показать подсказки"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show Zoeys outfit in Locker"
-msgstr "Покажи наряд Зои в раздевалке"
+msgstr "Показ наряда Зои в раздевалке"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show Zoeys outfit in Locker 2"
-msgstr "Покажи наряд Зои в шкафчике №2"
+msgstr "Показ наряда Зои в шкафчике №2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57301,7 +57301,7 @@ msgstr "Отобразите блокатор в шкафчике"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show choice to show the pic"
-msgstr "Покажи выбор, чтобы увидеть картинку"
+msgstr "Показ выбора для отображения изображения"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57423,7 +57423,7 @@ msgstr "Покажи фото."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show tits Dialogue"
-msgstr "Покажи сиськи"
+msgstr "Показать грудь"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Show your-... Friends...?!</color>
@@ -59293,17 +59293,17 @@ msgstr "Начало диалога по взлому замка"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Dialogue know remote"
-msgstr "Начни диалог, знаешь, удалённо."
+msgstr "Начать диалог удалённо"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Dialogue put lever in 1"
-msgstr "Начни диалог, поставь рычаг в положение «1»."
+msgstr "Начать диалог, установить рычаг в положение «1»."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Dialogue put lever in 2"
-msgstr "Начни диалог, поставь рычаг в положение «2»."
+msgstr "Начать диалог, установить рычаг в положение «2»."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59358,7 +59358,7 @@ msgstr "Начать повторный диалог"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Scolding in Backroom"
-msgstr "Начни отчитывать в задней комнате"
+msgstr "Начать отчитывать в задней комнате"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59393,7 +59393,7 @@ msgstr "Начать новую игру"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start a shower"
-msgstr "Начни душ"
+msgstr "Начать душ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59408,17 +59408,17 @@ msgstr "Начни Xhibition Run."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start at Table Dialogue"
-msgstr "Начни с диалога за столом"
+msgstr "Начало с диалога за столом"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark"
-msgstr "Начни лаять"
+msgstr "Начать лаять"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark 2"
-msgstr "Начни лаять 2"
+msgstr "Начать лаять 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59428,12 +59428,12 @@ msgstr "Начни лаять, три."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark 4"
-msgstr "Начни лаять 4"
+msgstr "Начать лаять 4"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark 5"
-msgstr "Начни лаять 5"
+msgstr "Начать лаять 5"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59448,7 +59448,7 @@ msgstr "Начинай лаять, 7"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark 8"
-msgstr "Начни лаять, 8"
+msgstr "Начать лаять 8"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59458,12 +59458,12 @@ msgstr "Начать лаять 9"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start chase"
-msgstr "Начни преследование"
+msgstr "Начать преследование"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start cold Shower"
-msgstr "Начни с холодного душа"
+msgstr "Начать с холодного душа"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59505,12 +59505,12 @@ msgstr "Начало первой кат-сцены"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start fuckin"
-msgstr "Начни, блядь."
+msgstr "Начать, блядь."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start groping"
-msgstr "Начни ласкать"
+msgstr "Начать ласкать"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59550,7 +59550,7 @@ msgstr "Новая игра"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start race"
-msgstr "Начни гонку"
+msgstr "Начало гонки"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59575,7 +59575,7 @@ msgstr "Запустить катсцену ожидания"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start warm Shower"
-msgstr "Начни с тёплого душа"
+msgstr "Начать с тёплого душа"
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -67378,12 +67378,12 @@ msgstr "Ожидание второго клика"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for 2nd Trigger"
-msgstr "Подожди второго триггера"
+msgstr "Ожидание второго триггера"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Animation"
-msgstr "Подождите, пока анимация загрузится"
+msgstr "Ожидание загрузки анимации"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67413,17 +67413,17 @@ msgstr "Ждать смены одежды"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Cutscene End"
-msgstr "Подождите окончания кат-сцены"
+msgstr "Ожидание окончания кат-сцены"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Dialogue"
-msgstr "Ждите диалога"
+msgstr "Ожидание диалога"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Dialogue to end"
-msgstr "Подождите, пока диалог закончится"
+msgstr "Ожидание завершения диалога"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67433,7 +67433,7 @@ msgstr "Ждать смены двери"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Door Unlocked"
-msgstr "Подождите, пока дверь не откроется."
+msgstr "Ожидание разблокировки двери"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67443,7 +67443,7 @@ msgstr "Ожидание очистки"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for End"
-msgstr "Подожди конца"
+msgstr "Ожидание конца"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67453,7 +67453,7 @@ msgstr "Ожидать Enter"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Event 2"
-msgstr "Подождите события 2"
+msgstr "Ожидание события 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67463,17 +67463,17 @@ msgstr "Ожидание выхода"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Exiting"
-msgstr "Подожди выхода"
+msgstr "Ожидание выхода"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Global Event"
-msgstr "Подождите глобального события"
+msgstr "Ожидание глобального события"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Handjob Interaction"
-msgstr "Подожди интеракции с рукоблудием"
+msgstr "Ожидание взаимодействия с рукоблудием"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67483,7 +67483,7 @@ msgstr "Ожидание наведения"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Interactable"
-msgstr "Подожди, пока объект станет доступен для взаимодействия."
+msgstr "Ожидание взаимодействия с объектом"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67499,7 +67499,7 @@ msgstr "Ждать взаимодействия"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Interaction 3"
-msgstr "Подождите взаимодействия 3"
+msgstr "Ожидание взаимодействия 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67509,7 +67509,7 @@ msgstr "Ждать взаимодействия от главного FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Interaction with Leona"
-msgstr "Подождите взаимодействия с Леоной"
+msgstr "Ожидание взаимодействия с Леоной"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67519,7 +67519,7 @@ msgstr "Ждать взаимодействия с Рози"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Interaction with Shower"
-msgstr "Подождите взаимодействия с душем"
+msgstr "Ожидание взаимодействия с душем"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67529,7 +67529,7 @@ msgstr "Ждать взаимодействия с Саймоном"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Intro to finish"
-msgstr "Подождите, пока не закончится вступление"
+msgstr "Ожидание завершения вступления"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67539,12 +67539,12 @@ msgstr "Ждать Жасмин"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Jasmine 2"
-msgstr "Подожди Джасмин 2"
+msgstr "Ожидание Джасмин 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Leona strip"
-msgstr "Подожди, пока Леона разденется"
+msgstr "Ожидание раздевания Леоны"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67559,7 +67559,7 @@ msgstr "Ждать строку"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Lios Drone at the Upper Redlight entrance"
-msgstr "Подожди дрон Лиоса у верхнего входа в Район красных фонарей"
+msgstr "Ждать дрон Лиоса у верхнего входа в Район красных фонарей"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67569,17 +67569,17 @@ msgstr "Ждать Марка"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Mark 2"
-msgstr "Подожди Марка 2"
+msgstr "Ожидание Марка 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Mark 3"
-msgstr "Подожди Марка 3"
+msgstr "Ожидание Марка 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Mark or Jasmine"
-msgstr "Подожди Марка или Жасмин"
+msgstr "Ожидание Марка или Жасмин"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67599,7 +67599,7 @@ msgstr "Ждать фото"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Picture"
-msgstr "Подождите изображения"
+msgstr "Ожидание изображения"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67624,7 +67624,7 @@ msgstr "Ждать нажатия Q"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Receive Money"
-msgstr "Подождите получения денег"
+msgstr "Ожидание получения денег"
 
 #. src: dialog
 msgctxt "ui"
@@ -67634,17 +67634,17 @@ msgstr "Подождать, пока Сара закончит мыться?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Savefile to Move Zoey"
-msgstr "Подождите, пока сохранение переместит Зои"
+msgstr "Ожидание перемещения Зои файлом сохранения"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Sequence to be done"
-msgstr "Подожди, пока последовательность завершится"
+msgstr "Ожидание завершения последовательности"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Sound"
-msgstr "Подождите звука"
+msgstr "Ожидание звука"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67654,27 +67654,27 @@ msgstr "Ожидание задачи"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Task in Progress"
-msgstr "Подождите, задача выполняется"
+msgstr "Ожидание выполнения задачи"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Timeline Trigger"
-msgstr "Подождите триггера таймлайна"
+msgstr "Ожидание триггера таймлайна"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Trigger"
-msgstr "Жди триггера"
+msgstr "Ожидание триггера"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Trigger 2"
-msgstr "Ждите триггера 2"
+msgstr "Ожидание триггера 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Trigger 3"
-msgstr "Подождите триггер 3"
+msgstr "Ожидание триггера 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67684,87 +67684,87 @@ msgstr "Ждать раздевания"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Viewfinder"
-msgstr "Подождите, пока появится видоискатель"
+msgstr "Ожидание появления видоискателя"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Waitressing"
-msgstr "Подожди, пока я не начну работать официанткой."
+msgstr "Ожидание начала работы официанткой"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Waitressing to End"
-msgstr "Подожди, пока закончится работа официанткой"
+msgstr "Ожидание окончания работы официанткой"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Waitressing to Start"
-msgstr "Подожди начала работы официанткой"
+msgstr "Ожидание начала работы официанткой"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Zoey"
-msgstr "Подожди Зои"
+msgstr "Ожидание Зои"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Zoey strip"
-msgstr "Подожди, пока Зои разденется"
+msgstr "Ожидание раздевания Зои"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Zoey to be teleported to start Location"
-msgstr "Подождите, пока Зои телепортируется, чтобы начать локацию."
+msgstr "Ждать телепортации Зои для старта локации"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for a box interaction"
-msgstr "Подождите взаимодействия с ящиком"
+msgstr "Ожидание взаимодействия с ящиком"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for a call from The Boss"
-msgstr "Жди звонка от Босса"
+msgstr "Ожидание звонка от Босса"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for a random amount of time"
-msgstr "Подожди случайное количество времени"
+msgstr "Ожидание случайного времени"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for activation"
-msgstr "Подождите активации"
+msgstr "Ожидание активации"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for any of the door interactables"
-msgstr "Подождите, пока появится что-нибудь интерактивное на двери."
+msgstr "Ожидание любого интерактивного элемента на двери"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for blocker"
-msgstr "Подожди, пока блокатор уйдёт."
+msgstr "Ожидание ухода блокатора"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for button"
-msgstr "Подождите нажатия кнопки"
+msgstr "Ожидание нажатия кнопки"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for challenge"
-msgstr "Жди вызова"
+msgstr "Ожидание вызова"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for challenge start"
-msgstr "Подожди начала испытания"
+msgstr "Ожидание начала испытания"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for chapter 1 to end"
-msgstr "Подожди, пока закончится первая глава"
+msgstr "Ожидание окончания первой главы"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67774,7 +67774,7 @@ msgstr "Ждать выбора"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for click"
-msgstr "Ждите клика"
+msgstr "Ожидание клика"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67784,22 +67784,22 @@ msgstr "Ожидание клика"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for clothed"
-msgstr "Подожди, пока оденусь"
+msgstr "Ожидание одевания"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for collect"
-msgstr "Подожди, пока соберёшь"
+msgstr "Ожидание сбора"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for complete"
-msgstr "Подожди, пока не закончится"
+msgstr "Ожидание завершения"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for complete 2"
-msgstr "Подожди, пока не закончится 2"
+msgstr "Ожидание завершения 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67809,37 +67809,37 @@ msgstr "Ждать диалога"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for dialogue 2"
-msgstr "Подожди диалога 2"
+msgstr "Ожидание диалога 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for dialogue 3"
-msgstr "Подожди диалога 3"
+msgstr "Ожидание диалога 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for dialogue end"
-msgstr "Подожди окончания диалога"
+msgstr "Ожидание окончания диалога"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for dialogue end 2"
-msgstr "Подожди конца диалога 2"
+msgstr "Ожидание окончания диалога 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for dialogue end 3"
-msgstr "Подожди окончания диалога 3"
+msgstr "Ожидание окончания диалога 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for end"
-msgstr "Подожди конца"
+msgstr "Ожидание конца"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for end 2"
-msgstr "Подожди конца 2"
+msgstr "Ожидание конца 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67849,12 +67849,12 @@ msgstr "Ждать конца диалога"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for end of dialogue"
-msgstr "Подождите окончания диалога"
+msgstr "Ожидание окончания диалога"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for enter Trigger"
-msgstr "Подождите входа в триггер"
+msgstr "Ожидание входа в триггер"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67864,17 +67864,17 @@ msgstr "Ждать события"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for events"
-msgstr "Подожди событий"
+msgstr "Ожидание событий"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for exit"
-msgstr "Подожди выхода"
+msgstr "Ожидание выхода"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for exit fail"
-msgstr "Жди выхода — не получится"
+msgstr "Ожидание выхода без результата"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67884,37 +67884,37 @@ msgstr "Ждать выхода скрываемого"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for final task"
-msgstr "Подожди финального задания"
+msgstr "Ожидание финального задания"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for finish"
-msgstr "Подожди, пока закончится"
+msgstr "Ожидание завершения"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for finish task"
-msgstr "Подожди, пока задача не будет завершена."
+msgstr "Ожидание завершения задачи"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for first trigger"
-msgstr "Подожди первого триггера"
+msgstr "Ожидание первого триггера"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for frame"
-msgstr "Подождите кадр"
+msgstr "Ожидание кадра"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for frame for Interactable"
-msgstr "Подождите появления фрейма для взаимодействия"
+msgstr "Ожидание появления фрейма для взаимодействия"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for frame lol"
-msgstr "Подожди кадр, лол"
+msgstr "Ожидание кадра"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67924,7 +67924,7 @@ msgstr "Ждать инициализации игры"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for has items"
-msgstr "Подожди, пока появятся предметы."
+msgstr "Ожидание появления предметов"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67939,7 +67939,7 @@ msgstr "Ждать укрытия"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for horny"
-msgstr "Подожди, пока я возбуждусь."
+msgstr "Ожидание возбуждения"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67964,7 +67964,7 @@ msgstr "Ждать интерактива 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for interactable or horny drop"
-msgstr "Подожди, пока появится что-то интерактивное или возбуждающее."
+msgstr "Ожидание интерактивного объекта или стимулирующего элемента"
 
 #. src: raw:MonoBehaviour
 #, fuzzy
@@ -67975,7 +67975,7 @@ msgstr "Ждать взаимодействия"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for interactions"
-msgstr "Подожди взаимодействия"
+msgstr "Ожидание взаимодействий"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68005,7 +68005,7 @@ msgstr "Ждать миссию"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for mission complete"
-msgstr "Подожди завершения миссии"
+msgstr "Ожидание завершения миссии"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68020,27 +68020,27 @@ msgstr "Ждать движения"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for naked"
-msgstr "Подожди, пока я разденусь"
+msgstr "Ожидание раздетого"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for orgasm"
-msgstr "Подожди оргазма"
+msgstr "Ожидание оргазма"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for other dialogues"
-msgstr "Подождите других диалогов"
+msgstr "Ожидание других диалогов"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for overwhelm"
-msgstr "Подожди, пока не захлестнет"
+msgstr "Ожидание перегрузки"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for pick or strip"
-msgstr "Жди выбора или раздеться"
+msgstr "Ожидание выбора или раздевания"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68060,7 +68060,7 @@ msgstr "Ждать получателя фото"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for picture taken"
-msgstr "Жди, пока сделают фото"
+msgstr "Ожидание завершения фотосъемки"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68070,22 +68070,22 @@ msgstr "Ждать входа игрока"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for popup"
-msgstr "Подождите появления окна"
+msgstr "Ожидание появления окна"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for puzzle solve"
-msgstr "Подожди, пока разгадаешь головоломку"
+msgstr "Ожидание решения головоломки"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for race end"
-msgstr "Подожди окончания гонки"
+msgstr "Ожидание окончания гонки"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for receiver"
-msgstr "Подожди получателя"
+msgstr "Ожидание получателя"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68095,22 +68095,22 @@ msgstr "Ждать восстановления"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for rooftop enter"
-msgstr "Подожди, пока войдёшь на крышу."
+msgstr "Ожидание входа на крышу"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for rooftop exit"
-msgstr "Подожди выхода на крышу"
+msgstr "Ожидание выхода на крышу"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for round complete"
-msgstr "Подождите завершения раунда"
+msgstr "Ожидание завершения раунда"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for savekey"
-msgstr "Ждите сохранения"
+msgstr "Ожидание сохранения"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68130,12 +68130,12 @@ msgstr "Ожидание посадки"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for start"
-msgstr "Подожди начала"
+msgstr "Ожидание начала"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for switch"
-msgstr "Подожди переключения"
+msgstr "Ожидание переключения"
 
 #. src: raw:MonoBehaviour
 #, fuzzy
@@ -68146,52 +68146,52 @@ msgstr "Ожидание задачи"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task 2"
-msgstr "Ждите вторую задачу"
+msgstr "Ожидание второй задачи"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task complete"
-msgstr "Подождите завершения задачи"
+msgstr "Ожидание завершения задачи"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task complete 2"
-msgstr "Подождите завершения задачи 2"
+msgstr "Ожидание завершения задачи 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task complete 3"
-msgstr "Подождите завершения задачи 3"
+msgstr "Ожидание завершения задачи 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task progress"
-msgstr "Подождите завершения задачи"
+msgstr "Ожидание завершения задачи"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task to be in progress"
-msgstr "Подождите, пока задача будет выполнена"
+msgstr "Ожидание выполнения задачи"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task to complete"
-msgstr "Подождите завершения задачи"
+msgstr "Ожидание завершения задачи"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task to get in box"
-msgstr "Ждите, пока задача не залезет в ящик."
+msgstr "Ожидание входа задачи в ящик"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task to go inside"
-msgstr "Подожди, пока задача не начнётся."
+msgstr "Ожидание начала задачи"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for task to leave"
-msgstr "Подожди, пока задача уйдёт"
+msgstr "Ожидание завершения задачи"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68208,52 +68208,52 @@ msgstr "Подождать, пока охранники уйдут?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for the interactable"
-msgstr "Подожди, пока объект станет интерактивным."
+msgstr "Ожидание интерактивности объекта"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for timeline trigger"
-msgstr "Подождите триггера временной линии"
+msgstr "Ожидание триггера временной линии"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for timeline trigger 2"
-msgstr "Подождите триггера таймлайна 2"
+msgstr "Ожидание триггера таймлайна 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for timer"
-msgstr "Подожди таймер"
+msgstr "Ожидание таймера"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for transition"
-msgstr "Подождите перехода"
+msgstr "Ожидание перехода"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for transition interact"
-msgstr "Подождите перехода и взаимодействуйте"
+msgstr "Ожидание перехода и взаимодействия"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for trigger"
-msgstr "Ждите триггера"
+msgstr "Ожидание триггера"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for trigger 2"
-msgstr "Подожди триггера 2"
+msgstr "Ожидание триггера 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for trigger enter"
-msgstr "Подожди, пока сработает триггер входа"
+msgstr "Ожидание срабатывания триггера входа"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for trigger exit"
-msgstr "Подожди выхода триггера"
+msgstr "Ожидание выхода триггера"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68268,12 +68268,12 @@ msgstr "Ожидание попытки выхода"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for try to walk up Trigger"
-msgstr "Подожди, пока попробует подойти Триггер"
+msgstr "Ожидание попытки подхода Триггера"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for turn in"
-msgstr "Жди своей очереди."
+msgstr "Ожидание своей очереди"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68283,22 +68283,22 @@ msgstr "Ожидание, пока не встанут."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for upgrade"
-msgstr "Подожди улучшения"
+msgstr "Ожидание улучшения"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for use"
-msgstr "Подожди, пока я использую это."
+msgstr "Ожидание использования"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for use while locked"
-msgstr "Подожди, пока я разблокируюсь"
+msgstr "Ожидание разблокировки"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for used when locked"
-msgstr "Подождите, пока не будет использовано при блокировке"
+msgstr "Ожидание использования при блокировке"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -74885,7 +74885,7 @@ msgstr "Изменить направление взгляда"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "check for money"
-msgstr "Проверь, есть ли деньги."
+msgstr "Проверка наличия денег"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76485,32 +76485,32 @@ msgstr "Ожидание клика"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wait for interactable"
-msgstr "Ждите возможности взаимодействия"
+msgstr "Ожидание возможности взаимодействия"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wait for interactable 2"
-msgstr "Подожди, пока объект станет интерактивным."
+msgstr "Ожидание интерактивности объекта"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wait for interaction"
-msgstr "Ждите взаимодействия"
+msgstr "Ожидание взаимодействия"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wait for jaime"
-msgstr "Подожди Джейми."
+msgstr "Ожидание Джейми"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wait for timeline trigger"
-msgstr "Жди триггера таймлайна"
+msgstr "Ожидание триггера таймлайна"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "wait for trigger"
-msgstr "Жди триггера."
+msgstr "Ожидание триггера"
 
 #. src: field:fsm
 msgctxt "ui"

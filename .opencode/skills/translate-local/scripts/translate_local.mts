@@ -1035,6 +1035,8 @@ export interface RunOptions {
   improve?: boolean;
   /** Ограничить очередь строками из списка `qa_judge --out` (ключи). */
   keys?: ReadonlySet<string>;
+  /** Доп. инструкция класса строк (FSM-имена, UI-подписи) — в системный промпт. */
+  instruction?: string;
   /** Пол спикеров (config/speaker-gender.json); тесты подменяют. */
   genders?: ReadonlyMap<string, "female" | "male">;
   /** Пауза между повторами запроса, мс (тесты ставят 0). */
@@ -1161,7 +1163,10 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
     );
   }
   const glossary = buildGlossary(entries);
-  const system = buildSystemPrompt(lang, target, glossary, root);
+  let system = buildSystemPrompt(lang, target, glossary, root);
+  if (opts.instruction)
+    system += `
+${opts.instruction}`;
   mkdirSync(tmpDir, { recursive: true });
   const note = (line: string): void => {
     try {
@@ -1364,6 +1369,8 @@ interface CliArgs {
   improve: boolean;
   /** Файл со списком строк на вычитку (`qa_judge` → `.bad.jsonl`). */
   keys?: string;
+  /** Инструкция класса (например, «это имена состояний FSM, не реплики»). */
+  instruction?: string;
   dumpDir?: string;
   url: string;
   model: string;
@@ -1424,6 +1431,9 @@ function parseArgs(argv: string[]): CliArgs {
         break;
       case "--keys":
         args.keys = value();
+        break;
+      case "--instruction":
+        args.instruction = value();
         break;
       case "--dump":
         args.dumpDir = value();
@@ -1504,6 +1514,7 @@ async function main(argv: string[]): Promise<number> {
     repair: a.repair,
     improve: a.improve,
     keys: a.keys ? readKeys(readFileSync(resolve(REPO_ROOT, a.keys), "utf8")) : undefined,
+    instruction: a.instruction,
     dumpDir: a.dumpDir,
     url: a.url,
     model: a.model,
