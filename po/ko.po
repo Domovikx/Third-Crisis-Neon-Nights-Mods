@@ -390,10 +390,10 @@ msgstr "(VR 헤드셋? 이거 방에 포함되어 있던 건가?)"
 
 #. src: dialog
 #. rich_text: <i>(A bunnysuit! )</i>
-#. rich_translation: <i>(버니슈트잖아!)</i>
+#. rich_translation: <i>(토끼 수트잖아!)</i>
 msgctxt "ui"
 msgid "(A bunnysuit! )"
-msgstr "(버니슈트잖아!)"
+msgstr "(토끼 수트잖아!)"
 
 #. src: dialog
 #. rich_text: <i>(A bunnysuit..? )</i>
@@ -4369,10 +4369,10 @@ msgstr "(나는... 아니... 흐...)"
 
 #. src: dialog
 #. rich_text: <i>(I'm really going to help record porn for the Cartel...?)</i>
-#. rich_translation: <i>(진짜 카르텔을 위해 포르노 촬영을 도와주게 되는 건가...?)</i>
+#. rich_translation: <i>(진짜 카텔을 위해 포르노 촬영을 도와주게 되는 건가...?)</i>
 msgctxt "ui"
 msgid "(I'm really going to help record porn for the Cartel...?)"
-msgstr "(진짜 카르텔을 위해 포르노 촬영을 도와주게 되는 건가...?)"
+msgstr "(진짜 카텔을 위해 포르노 촬영을 도와주게 되는 건가...?)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(I'm really going to let him get off to me...? Gahh... )</i></color>
@@ -7968,10 +7968,10 @@ msgstr "(젠장! 이 택배를 열려면 코드가 필요하잖아. 망했다, �
 
 #. src: dialog
 #. rich_text: <i>(Shit! It's the Cartel. What the hell do they want?)</i>
-#. rich_translation: <i>(젠장! 카르텔이잖아. 대체 뭘 원하는 거야?)</i>
+#. rich_translation: <i>(젠장! 카텔이잖아. 대체 뭘 원하는 거야?)</i>
 msgctxt "ui"
 msgid "(Shit! It's the Cartel. What the hell do they want?)"
-msgstr "(젠장! 카르텔이잖아. 대체 뭘 원하는 거야?)"
+msgstr "(젠장! 카텔이잖아. 대체 뭘 원하는 거야?)"
 
 #. src: dialog
 #. rich_text: <i>(Shit! This place must be <color=#B867FF>booby</color> trap<color=#B867FF>ped</color>...)</i>
@@ -8102,10 +8102,10 @@ msgstr "(내 가슴을 나보다 두 배는 더 나이 든 남자에게 보여�
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Shown off-.. Like a piece of-.. Meat-.. Nghhh..! )</i></color>
-#. rich_translation: <color=#EB83FF><i>(전시된-.. 마치 고기 한 조각처럼-.. 으으..!)</i></color>
+#. rich_translation: <color=#EB83FF><i>(어디서 자랑하는 거야.. 마치 고기 한 조각처럼.. 으으..!)</i></color>
 msgctxt "speaker:Zoey"
 msgid "(Shown off-.. Like a piece of-.. Meat-.. Nghhh..! )"
-msgstr "(전시된-.. 마치 고기 한 조각처럼-.. 으으..!)"
+msgstr "(어디서 자랑하는 거야.. 마치 고기 한 조각처럼.. 으으..!)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Since Sarah can't lend me money anymore... )</i></color>
@@ -8596,10 +8596,10 @@ msgstr "(그 손아귀가... 너무 꽉 잡히잖아... 으으...)"
 
 #. src: dialog
 #. rich_text: <i>(That is how those Cartel pervs text... and it does line up with what he's saying...)</i>
-#. rich_translation: <i>(카르텔의 그 변태들이 문자를 보내는 방식이... 그가 하는 말과 딱 맞아떨어지는군...)</i>
+#. rich_translation: <i>(카텔의 그 변태들이 문자를 보내는 방식이... 그가 하는 말과 딱 맞아떨어지는군...)</i>
 msgctxt "ui"
 msgid "(That is how those Cartel pervs text... and it does line up with what he's saying...)"
-msgstr "(카르텔의 그 변태들이 문자를 보내는 방식이... 그가 하는 말과 딱 맞아떨어지는군...)"
+msgstr "(카텔의 그 변태들이 문자를 보내는 방식이... 그가 하는 말과 딱 맞아떨어지는군...)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(That really made him-... hard... )</i></color>
@@ -15103,7 +15103,7 @@ msgstr "그리고 난 널 지켜볼 거야."
 #. src: dialog
 msgctxt "ui"
 msgid "And I'm talking about you, Zoey Madison. I know you have it in you. Just think about it before you pawn that thing off to the Cartel."
-msgstr "그리고 조이 매디슨, 바로 너를 말하는 거야. 네 안에 그 능력이 있다는 거 알아. 그 물건을 카르텔에 넘기기 전에 잘 생각해 봐."
+msgstr "그리고 조이 매디슨, 바로 너를 말하는 거야. 네 안에 그 능력이 있다는 거 알아. 그 물건을 카텔에 넘기기 전에 잘 생각해 봐."
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -15113,7 +15113,7 @@ msgstr "그리고 아까 말인데... 저, 어... 미안해요..."
 #. src: dialog
 msgctxt "speaker:Klaudia"
 msgid "And at the Glowing Hole, we keep that promise."
-msgstr "그리고 빛나는 구멍에서는 그 약속을 지키고 있어요."
+msgstr "그리고 글로잉 홀에서는 그 약속을 지키고 있어요."
 
 #. src: dialog
 msgctxt "ui"
@@ -17217,7 +17217,7 @@ msgstr "그녀를 위해 짖어라."
 #. src: dialog
 msgctxt "ui"
 msgid "Bark like a slut, you were so yappy earlier."
-msgstr "창녀처럼 짖어라, 아까는 그렇게 시끄러웠으면서."
+msgstr "어리숙하게 짖어라, 아까 그렇게 시끄럽게 떠들더니."
 
 #. src: us
 msgctxt "ui"
@@ -17566,7 +17566,7 @@ msgstr "더 큰 거... 더 큰 게 필요해...! 젠장, 지금 당장 필요하
 #. src: us
 msgctxt "ui"
 msgid "Bill in Bunnysuit"
-msgstr "버니슈트를 입은 빌"
+msgstr "토끼 옷을 입은 빌"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -20000,7 +20000,7 @@ msgstr "들어와서... 좀 도와줘... 제발! (발신: 인터콤)"
 #. src: dialog
 msgctxt "speaker:Intercom"
 msgid "Come in and-... let me cum to it... please-... I will finally be free...!"
-msgstr "들어와서... 이걸로 절 사정하게 해주세요... 그러면 드디어 자유로워질 거예요...!"
+msgstr "들어와서... 이걸로 절 사정하게 해주세요... 그러면 드디어 자유로워질 거예요...! (발신: 인터콤)"
 
 #. src: dialog
 msgctxt "ui"
@@ -22616,7 +22616,7 @@ msgstr "엿본 거야?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did we pick up Bunnysuit?"
-msgstr "버니슈트를 주웠나요?"
+msgstr "버니를 주웠나요?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23564,7 +23564,7 @@ msgstr "바나나 있어?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do we have enough perversion?"
-msgstr "우리에겐 충분한 변태성심이 있을까?"
+msgstr "우리에겐 충분한 변태심이 있을까?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25566,7 +25566,7 @@ msgstr "방에 들어왔습니다."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Entered Secret Backroom"
-msgstr "뒷방에 들어갔다"
+msgstr "비밀 방에 들어갔다"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25938,7 +25938,7 @@ msgstr "나갔다."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Exited Secret Backroom"
-msgstr "뒷방에서 나왔습니다."
+msgstr "비밀 방에서 나왔습니다."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -28232,10 +28232,10 @@ msgstr "GAG-발행 마스크"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><size=27>GAG... GAG protects- ngh- me...!</color>
-#. rich_translation: <color=#EB83FF><size=27>GAG... GAG가 날 지켜줘- 으으- 나를...!</color>
+#. rich_translation: <color=#EB83FF><size=27>갉... 갉아주면 안 돼—으으...!</color>
 msgctxt "ui"
 msgid "GAG... GAG protects- ngh- me...!"
-msgstr "GAG... GAG가 날 지켜줘- 으으- 나를...!"
+msgstr "갉... 갉아주면 안 돼—으으...!"
 
 #. src: dialog
 msgctxt "ui"
@@ -28373,7 +28373,7 @@ msgstr "으아아... 엄청난 몸매..."
 #. src: dialog
 msgctxt "ui"
 msgid "Gahhh...! No! I- I can't help you make porn for the Cartel behind Max's back, that's crazy!"
-msgstr "으악...! 안 돼! 나-나는 맥스의 뒤에서 카르텔을 위해 포르노를 만드는 걸 도와줄 수 없어, 그건 미친 짓이야!"
+msgstr "으악...! 안 돼! 나-나는 맥스의 뒤에서 카텔을 위해 포르노를 만드는 걸 도와줄 수 없어, 그건 미친 짓이야!"
 
 #. src: us
 msgctxt "ui"
@@ -29372,7 +29372,7 @@ msgstr "세상에… 진짜 기분 좋게 만져보고 싶어서 미칠 것 같�
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Godhh your' makin me wanna fuck a bunny so baddhhh...!"
-msgstr "젠장, 너 때문에 토끼랑 섹스하고 싶어져...!"
+msgstr "젠장, 너 때문에 토끼랑 제대로 한판 붙고 싶어져...!"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Godhh... Hahhh... Fghh...</color>
@@ -34800,7 +34800,7 @@ msgstr "거절로 받아들이지."
 #. src: dialog
 msgctxt "ui"
 msgid "I'll tell the Cartel about your situation. That'll calm them the fuck down. Just don't let the Enforcers or NCU get you, got it?"
-msgstr "카르텔에 네 상황이라고 말해줄게. 그럼 그놈들이 아주 진정될 거야. 집행관이나 NCU한테 잡히지만 않으면 돼, 알았지?"
+msgstr "카텔에 네 상황이라고 말해줄게. 그럼 그놈들이 아주 진정될 거야. 집행관이나 NCU한테 잡히지만 않으면 돼, 알았지?"
 
 #. src: dialog
 msgctxt "ui"
@@ -36251,7 +36251,7 @@ msgstr "원한다면... 나도... 돌아설 수는 있어..."
 #. src: dialog
 msgctxt "ui"
 msgid "If you wanted some perversion, you could've just asked~"
-msgstr "변태성적인 걸 원했다면, 그냥 말만 했어도 됐을 텐데~"
+msgstr "변태적인 걸 원했다면, 그냥 말만 했어도 됐을 텐데~"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>If you're not quite sure these pics are cutting it, maybe you could... like... go a step further.</color>
@@ -38133,7 +38133,7 @@ msgstr "하이메의 뒷다리 대화"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Back Leg FSM"
-msgstr "제이미의 뒷다리 FSM"
+msgstr "Jaime의 뒷다리 FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -40167,7 +40167,7 @@ msgstr "끝냈을 때 알려줘."
 #. src: dialog
 msgctxt "ui"
 msgid "Let me snap a pic of my fingers in your pussy."
-msgstr "내 손가락을 네 보지에 넣은 사진을 찍어볼까?"
+msgstr "내 손가락으로 네 보지를 찍어볼까?"
 
 #. src: dialog
 msgctxt "ui"
@@ -41361,7 +41361,7 @@ msgstr "상층구의 피상적인 화려함 대신 하층구에서 제대로 된
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Looking for or found Salon Backroom?w"
-msgstr "살롱 뒷방을 찾고 있거나 찾았나요?"
+msgstr "살롱 백룸을 찾고 있거나 찾았나요?"
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
@@ -44789,10 +44789,10 @@ msgstr "너무 시끄럽지 않게... 제발... 누가... 듣게 되면 어떡�
 
 #. src: dialog
 #. rich_text: <i>N69News reporter Katy Barnes reporting with breaking news in Neon City's Redlight District where a strange break-in has occurred.</i>
-#. rich_translation: <i>N69News의 기자 케이티 바언스가 네온 시티의 레드라이트에서 발생한 기이한 침입 사건에 대한 속보를 전해드립니다.</i>
+#. rich_translation: <i>N69News의 기자 케이티 바언스가 네온 시티의 적신구에서 발생한 기이한 침입 사건에 대한 속보를 전해드립니다.</i>
 msgctxt "ui"
 msgid "N69News reporter Katy Barnes reporting with breaking news in Neon City's Redlight District where a strange break-in has occurred."
-msgstr "N69News의 기자 케이티 바언스가 네온 시티의 레드라이트에서 발생한 기이한 침입 사건에 대한 속보를 전해드립니다."
+msgstr "N69News의 기자 케이티 바언스가 네온 시티의 적신구에서 발생한 기이한 침입 사건에 대한 속보를 전해드립니다."
 
 #. src: dialog
 #. rich_text: <color=yellow>N69News:</color> Glowing Hole Robbery
@@ -48655,7 +48655,7 @@ msgstr "처음에 문을 찾기 위한 임무인가요?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "On Task to go to Glowing Hole"
-msgstr "빛나는 구멍으로 가는 임무"
+msgstr "발광하는 구멍으로 가는 임무"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49095,7 +49095,7 @@ msgstr "인벤토리를 열어 칵테일을 마셔!"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Opi"
-msgstr "아편"
+msgstr "약"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50021,7 +50021,7 @@ msgstr "변태성 이벤트 완료"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Perversion Interference Profile"
-msgstr "변태성적 간섭 프로필"
+msgstr "변태적 간섭 프로필"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -52465,12 +52465,12 @@ msgstr "재킷과 상의를 입어라."
 #. src: dialog
 msgctxt "speaker:Klaudia"
 msgid "Put on a bunnysuit and ask customers for their orders. That's all. I'll even pay you for it. What do you think? Your... Proportions would be quite suitable for the outfit. Trust me."
-msgstr "버니슈트를 입고 손님들에게 주문을 받으세요. 그게 다예요. 심지어 돈을도 내줄게요. 어때요? 당신의... 몸매는 이 옷에 아주 잘 어울릴 거예요. 저를 믿으세요."
+msgstr "토끼 수트를 입고 손님들에게 주문을 받으세요. 그게 다예요. 심지어 돈을도 내줄게요. 어때요? 당신의... 몸매는 이 옷에 아주 잘 어울릴 거예요. 저를 믿으세요."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Put on the Bunnysuit"
-msgstr "버니슈트을 입어."
+msgstr "토끼복을 입어."
 
 #. src: dialog
 msgctxt "ui"
@@ -58110,7 +58110,7 @@ msgstr "스몰 코럽트 테크놀로지 광고"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Small Perversion Brew"
-msgstr "작은 변태성의 양조"
+msgstr "작은 변태의 양조"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58913,7 +58913,7 @@ msgstr "공간"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Space = Redress"
-msgstr "공간 = 옷 갈아입기"
+msgstr "공간 = 재의상"
 
 #. src: us
 msgctxt "ui"
@@ -63058,11 +63058,11 @@ msgstr "쩌어... 카르텔?"
 
 #. src: dialog
 #. rich_text: Then again this blocker could be huge. I wonder how much the Cartel knows about this. )</i>
-#. rich_translation: 하지만 이 장애물이 엄청나게 클 수도 있어. 카르텔이 이 일에 대해 얼마나 알고 있을지 궁금하네.）
+#. rich_translation: 하지만 이 장애물이 엄청나게 클 수도 있어. 카텔이 이 일에 대해 얼마나 알고 있을지 궁금하네.）
 #, rt-review
 msgctxt "speaker:Zoey"
 msgid "Then again this blocker could be huge. I wonder how much the Cartel knows about this. )"
-msgstr "하지만 이 장애물이 엄청나게 클 수도 있어. 카르텔이 이 일에 대해 얼마나 알고 있을지 궁금하네.）"
+msgstr "하지만 이 장애물이 엄청나게 클 수도 있어. 카텔이 이 일에 대해 얼마나 알고 있을지 궁금하네.）"
 
 #. src: dialog
 msgctxt "ui"
@@ -66856,7 +66856,7 @@ msgstr "엄청 긴 핀업 제목 ㅋㅋㅋ!"
 #. src: dialog
 msgctxt "ui"
 msgid "Very coy and playful"
-msgstr "아주 수줍고 장난스럽게"
+msgstr "헤헤, 기분 좋게 취하고 싶으면 음료수도 엄청 많거든~ 요즘은 나도 가끔 마시거든. 무슨 말인지 알지, 자기?"
 
 #. src: dialog
 msgctxt "ui"
@@ -69782,7 +69782,7 @@ msgstr "음... 어... 이 작은 장치를 복제해서 만들어야 할 것 같
 #. src: dialog
 msgctxt "ui"
 msgid "Well... yeah, at the Glowing Hole, but none of them looked that... lifelike."
-msgstr "음... 빛나는 구멍에서는 봤지만, 그 누구도 저렇게... 생생해 보이진 않았어."
+msgstr "음... 글로잉 홀에서는 봤지만, 그 누구도 저렇게... 생생해 보이진 않았어."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Well... you two <b>do</b> look similar...</color>
@@ -72494,7 +72494,7 @@ msgstr "네, 뭐라고요?"
 #. src: dialog
 msgctxt "speaker:Lio"
 msgid "Yes! Ah-...! Hurry! Nhhh!"
-msgstr "네! 아...! 서둘러! 흐으...!"
+msgstr "네! 아...! 서둘러! 흐으...! 그중 하나가... 아...! 그 코드가...!"
 
 #. src: dialog
 msgctxt "ui"

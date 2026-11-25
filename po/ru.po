@@ -29,17 +29,17 @@ msgstr "«ХЕР»...? Серьёзно...?"
 
 #. src: dialog
 #. rich_text: <i>"However, the Blocker can deliver an infinite number of injections. Just needs a day to recharge between each dose."
-#. rich_translation: <i>"Однако Блокиратор может сделать бесконечное количество инъекций. Просто нужен день на перезарядку между дозами."
+#. rich_translation: <i>"Однако Блокатор может сделать бесконечное количество инъекций. Просто нужен день на перезарядку между дозами."
 msgctxt "ui"
 msgid "\"However, the Blocker can deliver an infinite number of injections. Just needs a day to recharge between each dose.\""
-msgstr "\"Однако Блокиратор может сделать бесконечное количество инъекций. Просто нужен день на перезарядку между дозами.\""
+msgstr "\"Однако Блокатор может сделать бесконечное количество инъекций. Просто нужен день на перезарядку между дозами.\""
 
 #. src: dialog
 #. rich_text: <i>"However, the Blocker can deliver an infinite number of injections. Just needs to recharge between each dose."
-#. rich_translation: <i>"Однако Блокиратор может делать бесконечное число инъекций. Просто нужно перезаряжаться между дозами."
+#. rich_translation: <i>"Однако Блокатор может делать бесконечное число инъекций. Просто нужно перезаряжаться между дозами."
 msgctxt "ui"
 msgid "\"However, the Blocker can deliver an infinite number of injections. Just needs to recharge between each dose.\""
-msgstr "\"Однако Блокиратор может делать бесконечное число инъекций. Просто нужно перезаряжаться между дозами.\""
+msgstr "\"Однако Блокатор может делать бесконечное число инъекций. Просто нужно перезаряжаться между дозами.\""
 
 #. src: dialog
 #. rich_text: <i>"I just... couldn't perfect the antidote, so it's temporary. It only heals Crush buildup... or in layman's terms... reverses arousal."
@@ -110,10 +110,10 @@ msgstr "\"Этот?.. Странный же способ речи тебе пр�
 
 #. src: dialog
 #. rich_text: <i>"To use the blocker, first give it a squeeze to release the protrusion plug. Then inject it into your neck port."</i>
-#. rich_translation: <i>"Чтобы использовать блокиратор, сначала сожмите его, чтобы выпустить выступающий штекер. Затем введите его в шейный порт."</i>
+#. rich_translation: <i>"Чтобы использовать блокатор, сначала сожмите его, чтобы выпустить выступающий штекер. Затем введите его в шейный порт."</i>
 msgctxt "ui"
 msgid "\"To use the blocker, first give it a squeeze to release the protrusion plug. Then inject it into your neck port.\""
-msgstr "\"Чтобы использовать блокиратор, сначала сожмите его, чтобы выпустить выступающий штекер. Затем введите его в шейный порт.\""
+msgstr "\"Чтобы использовать блокатор, сначала сожмите его, чтобы выпустить выступающий штекер. Затем введите его в шейный порт.\""
 
 #. src: dialog
 #. rich_text: <i>"We recently conducted a successful test of Crush Waves... a true method of mind control... with a side effect of arousal."</i>
@@ -330,10 +330,10 @@ msgstr "(... чувствую... )"
 
 #. src: dialog
 #. rich_text: <i>(... recharge the blocker!)</i>
-#. rich_translation: <i>(... перезарядить блокиратор!)</i>
+#. rich_translation: <i>(... перезарядить блокатор!)</i>
 msgctxt "ui"
 msgid "(... recharge the blocker!)"
-msgstr "(... перезарядить блокиратор!)"
+msgstr "(... перезарядить блокатор!)"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -531,10 +531,10 @@ msgstr "(Ах- Как я вернусь без риска перегруза?)"
 
 #. src: dialog
 #. rich_text: <i>(Agh- It sprayed me in the fa<color=#EB83FF>ce. Need to... use the blocker...)</color></i>
-#. rich_translation: <i>(Ах- Она брызнула мне в ли<color=#EB83FF>цо. Нужно... использовать блокиратор...)</color></i>
+#. rich_translation: <i>(Ах- Она брызнула мне в ли<color=#EB83FF>цо. Нужно... использовать блокатор...)</color></i>
 msgctxt "ui"
 msgid "(Agh- It sprayed me in the face. Need to... use the blocker...)"
-msgstr "(Ах- Она брызнула мне в лицо. Нужно... использовать блокиратор...)"
+msgstr "(Ах- Она брызнула мне в лицо. Нужно... использовать блокатор...)"
 
 #. src: dialog
 #. rich_text: <i>(Agh- She's so pretty when she's bent over like that... Would she mind if I just... touched her ass?)</i>
@@ -1045,10 +1045,10 @@ msgstr "(Как... дома...? Х-х...)"
 
 #. src: dialog
 #. rich_text: <i>(Been feeling the <color=#EB83FF>itch</color> more on this ride too, but agh- I can't waste the blocker on it with no charger in sight.)</i>
-#. rich_translation: <i>(<color=#EB83FF>Зуд</color> ощущается сильнее и в этой поездке, но ах- я не могу тратить блокиратор, когда зарядки рядом нет.)</i>
+#. rich_translation: <i>(<color=#EB83FF>Зуд</color> ощущается сильнее и в этой поездке, но ах- я не могу тратить блокатор, когда зарядки рядом нет.)</i>
 msgctxt "ui"
 msgid "(Been feeling the itch more on this ride too, but agh- I can't waste the blocker on it with no charger in sight.)"
-msgstr "(Зуд ощущается сильнее и в этой поездке, но ах- я не могу тратить блокиратор, когда зарядки рядом нет.)"
+msgstr "(Зуд ощущается сильнее и в этой поездке, но ах- я не могу тратить блокатор, когда зарядки рядом нет.)"
 
 #. src: dialog
 #. rich_text: <i>(Being a merc feels like it's getting me into more and more trouble... Maybe I'm just not-... hhh... )</i>
@@ -1094,10 +1094,10 @@ msgstr "(Маркеры чёрного тела...! Это именно то, ч
 
 #. src: dialog
 #. rich_text: <i>(Blocker... That must be this little device in the suitcase. Looks like a little cylinder thing.)</i>
-#. rich_translation: <i>(Блокиратор... Должно быть, это то маленькое устройство в чемодане. Выглядит как маленькая цилиндрическая штука.)</i>
+#. rich_translation: <i>(Блокатор... Должно быть, это то маленькое устройство в чемодане. Выглядит как маленькая цилиндрическая штука.)</i>
 msgctxt "speaker:Zoey"
 msgid "(Blocker... That must be this little device in the suitcase. Looks like a little cylinder thing.)"
-msgstr "(Блокиратор... Должно быть, это то маленькое устройство в чемодане. Выглядит как маленькая цилиндрическая штука.)"
+msgstr "(Блокатор... Должно быть, это то маленькое устройство в чемодане. Выглядит как маленькая цилиндрическая штука.)"
 
 #. src: dialog
 #. rich_text: <i>(Bunnysuit? Where do I get one of those from? )</i>
@@ -1157,10 +1157,10 @@ msgstr "(Но это чувство не проходит... Этот... ною�
 
 #. src: dialog
 #. rich_text: <i>(But what would Sarah think of me if I just cashed in the blocker?)</i>
-#. rich_translation: <i>(Но что бы Сара подумала обо мне, если бы я просто сдала блокиратор?)</i>
+#. rich_translation: <i>(Но что бы Сара подумала обо мне, если бы я просто сдала блокатор?)</i>
 msgctxt "ui"
 msgid "(But what would Sarah think of me if I just cashed in the blocker?)"
-msgstr "(Но что бы Сара подумала обо мне, если бы я просто сдала блокиратор?)"
+msgstr "(Но что бы Сара подумала обо мне, если бы я просто сдала блокатор?)"
 
 #. src: dialog
 #. rich_text: <i>(But why... don't I... care...? )</i>
@@ -1270,10 +1270,10 @@ msgstr "(Сборка...? Не только я... заключает с ней �
 
 #. src: dialog
 #. rich_text: <i>(Come on, Zoey. Get it together. Focus on the blocker issue.)</i>
-#. rich_translation: <i>(Давай, Зои. Соберись. Сосредоточься на проблеме с блокиратором.)</i>
+#. rich_translation: <i>(Давай, Зои. Соберись. Сосредоточься на проблеме с блокатором.)</i>
 msgctxt "ui"
 msgid "(Come on, Zoey. Get it together. Focus on the blocker issue.)"
-msgstr "(Давай, Зои. Соберись. Сосредоточься на проблеме с блокиратором.)"
+msgstr "(Давай, Зои. Соберись. Сосредоточься на проблеме с блокатором.)"
 
 #. src: dialog
 #. rich_text: <i>(Come on, Zoey. Get your shit together, you whore... It's just fucking bathroom shit. Try to get it done without opening your legs. )</i>
@@ -1864,10 +1864,10 @@ msgstr "(Чёрт! Кто-то увидел— Охренеть! )"
 
 #. src: dialog
 #. rich_text: <i>(Fuck! There's more haze I gotta get through. No charges left on the blocker either. Gonna have to... touch myself. Take the edge off.)</i>
-#. rich_translation: <i>(Бля! Тут ещё дымка, нужно пробираться. На блокираторе заряды кончились. Придётся... тронуть себя. Снять напряжение.)</i>
+#. rich_translation: <i>(Бля! Тут ещё дымка, нужно пробираться. На блокаторе заряды кончились. Придётся... тронуть себя. Снять напряжение.)</i>
 msgctxt "ui"
 msgid "(Fuck! There's more haze I gotta get through. No charges left on the blocker either. Gonna have to... touch myself. Take the edge off.)"
-msgstr "(Бля! Тут ещё дымка, нужно пробираться. На блокираторе заряды кончились. Придётся... тронуть себя. Снять напряжение.)"
+msgstr "(Бля! Тут ещё дымка, нужно пробираться. На блокаторе заряды кончились. Придётся... тронуть себя. Снять напряжение.)"
 
 #. src: dialog
 #. rich_text: <i>(Fuck, I-... I just... I can't believe I just-... did that... on the damn train... )</i>
@@ -3103,10 +3103,10 @@ msgstr "(Горячая...? (... Он правда настолько-... увл
 
 #. src: dialog
 #. rich_text: <i>(How am I going to keep this place if Sarah doesn't help? Ughh... I've gotta fix this blocker mess fast or I'm screwed.)</i>
-#. rich_translation: <i>(Как я сохраню это место, если Сара не поможет? Угх... Надо быстро разобраться с этим блокиратором, иначе мне конец.)</i>
+#. rich_translation: <i>(Как я сохраню это место, если Сара не поможет? Угх... Надо быстро разобраться с этим блокатором, иначе мне конец.)</i>
 msgctxt "ui"
 msgid "(How am I going to keep this place if Sarah doesn't help? Ughh... I've gotta fix this blocker mess fast or I'm screwed.)"
-msgstr "(Как я сохраню это место, если Сара не поможет? Угх... Надо быстро разобраться с этим блокиратором, иначе мне конец.)"
+msgstr "(Как я сохраню это место, если Сара не поможет? Угх... Надо быстро разобраться с этим блокатором, иначе мне конец.)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(How can something like this feel... good...?)</i></color>
@@ -3229,10 +3229,10 @@ msgstr "(Думаю, смогу взломать. Нужно только отк
 
 #. src: dialog
 #. rich_text: <i>(I better call my tech guy, Lio. He'll know how to put together a convincing fake of the blocker.)</i>
-#. rich_translation: <i>(Надо позвонить моему технику, Лио. Он знает, как собрать убедительную подделку блокиратора.)</i>
+#. rich_translation: <i>(Надо позвонить моему технику, Лио. Он знает, как собрать убедительную подделку блокатора.)</i>
 msgctxt "ui"
 msgid "(I better call my tech guy, Lio. He'll know how to put together a convincing fake of the blocker.)"
-msgstr "(Надо позвонить моему технику, Лио. Он знает, как собрать убедительную подделку блокиратора.)"
+msgstr "(Надо позвонить моему технику, Лио. Он знает, как собрать убедительную подделку блокатора.)"
 
 #. src: dialog
 #. rich_text: <i>(I better leave him alone, don't want any trouble.)</i>
@@ -3890,10 +3890,10 @@ msgstr "(Мне стоит вернуться позже, когда со мно
 
 #. src: dialog
 #. rich_text: <i>(I should get a hold of my tech guy, Lio. He'll know how to put together a fake blocker to give to the Cartel.)</i>
-#. rich_translation: <i>(Нужно связаться с моим техником, Лио. Он знает, как собрать фальшивый блокиратор для Картеля.)</i>
+#. rich_translation: <i>(Нужно связаться с моим техником, Лио. Он знает, как собрать фальшивый блокатор для Картеля.)</i>
 msgctxt "ui"
 msgid "(I should get a hold of my tech guy, Lio. He'll know how to put together a fake blocker to give to the Cartel.)"
-msgstr "(Нужно связаться с моим техником, Лио. Он знает, как собрать фальшивый блокиратор для Картеля.)"
+msgstr "(Нужно связаться с моим техником, Лио. Он знает, как собрать фальшивый блокатор для Картеля.)"
 
 #. src: dialog
 #. rich_text: <i>(I should get a new umbrella next time I visit the store. )</i>
@@ -3925,10 +3925,10 @@ msgstr "(Мне пора.)"
 
 #. src: dialog
 #. rich_text: <i>(I should just get some sleep... then tackle my blocker problem. One step at a time.)
-#. rich_translation: <i>(Надо просто поспать... а потом разобраться с проблемой блокиратора. Шаг за шагом.)
+#. rich_translation: <i>(Надо просто поспать... а потом разобраться с проблемой блокатора. Шаг за шагом.)
 msgctxt "ui"
 msgid "(I should just get some sleep... then tackle my blocker problem. One step at a time.)"
-msgstr "(Надо просто поспать... а потом разобраться с проблемой блокиратора. Шаг за шагом.)"
+msgstr "(Надо просто поспать... а потом разобраться с проблемой блокатора. Шаг за шагом.)"
 
 #. src: dialog
 #. rich_text: <i>(I should move. Better leave before they're done. )</i>
@@ -4023,10 +4023,10 @@ msgstr "(Не стоит никого в это втягивать.)"
 
 #. src: dialog
 #. rich_text: <i>(I shouldn't draw any attention to myself with the blocker on me, right...? Just... Just <color=#EB83FF>ignore it...</color> )</i>
-#. rich_translation: <i>(Мне не стоит привлекать внимание с блокиратором на мне, да...? Просто... Просто <color=#EB83FF>игнорировать...</color>)</i>
+#. rich_translation: <i>(Мне не стоит привлекать внимание с блокатором на мне, да...? Просто... Просто <color=#EB83FF>игнорировать...</color>)</i>
 msgctxt "ui"
 msgid "(I shouldn't draw any attention to myself with the blocker on me, right...? Just... Just ignore it... )"
-msgstr "(Мне не стоит привлекать внимание с блокиратором на мне, да...? Просто... Просто игнорировать...)"
+msgstr "(Мне не стоит привлекать внимание с блокатором на мне, да...? Просто... Просто игнорировать...)"
 
 #. src: dialog
 #. rich_text: <i>(I shouldn't leave just yet...)</i>
@@ -4968,10 +4968,10 @@ msgstr "(Если я скажу Клавдии, что один из её пар
 
 #. src: dialog
 #. rich_text: <i>(If I'm gonna lie to the Cartel about this... I need a fake blocker.)</i>
-#. rich_translation: <i>(Если я собираюсь врать Картелю насчёт этого... Мне нужна подделка под блокиратор.)</i>
+#. rich_translation: <i>(Если я собираюсь врать Картелю насчёт этого... Мне нужна подделка под блокатор.)</i>
 msgctxt "ui"
 msgid "(If I'm gonna lie to the Cartel about this... I need a fake blocker.)"
-msgstr "(Если я собираюсь врать Картелю насчёт этого... Мне нужна подделка под блокиратор.)"
+msgstr "(Если я собираюсь врать Картелю насчёт этого... Мне нужна подделка под блокатор.)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(If I'm quiet... nobody will notice... )</i></color>
@@ -5281,10 +5281,10 @@ msgstr "(Это ненадолго.)"
 
 #. src: dialog
 #. rich_text: <i>(It worked! The blocker's all charged up again.)</i>
-#. rich_translation: <i>(Сработало! Блокиратор снова полностью заряжен.)</i>
+#. rich_translation: <i>(Сработало! Блокатор снова полностью заряжен.)</i>
 msgctxt "ui"
 msgid "(It worked! The blocker's all charged up again.)"
-msgstr "(Сработало! Блокиратор снова полностью заряжен.)"
+msgstr "(Сработало! Блокатор снова полностью заряжен.)"
 
 #. src: dialog
 #. rich_text: <i>(It worked!)</i>
@@ -6086,10 +6086,10 @@ msgstr "(В прошлый раз всё было... Слишком, да...?)"
 
 #. src: dialog
 #. rich_text: <i>(Leaving the blocker in the locker was so fucking stupid, khh!)</i>
-#. rich_translation: <i>(Оставить блокиратор в шкафчике было такой блядской глупостью, кхх!)</i>
+#. rich_translation: <i>(Оставить блокатор в шкафчике было такой блядской глупостью, кхх!)</i>
 msgctxt "speaker:Zoey"
 msgid "(Leaving the blocker in the locker was so fucking stupid, khh!)"
-msgstr "(Оставить блокиратор в шкафчике было такой блядской глупостью, кхх!)"
+msgstr "(Оставить блокатор в шкафчике было такой блядской глупостью, кхх!)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Left in a train with some strangers cum between my thighs-... Khhh... What am I doing... Fhh... )</i></color>
@@ -6423,10 +6423,10 @@ msgstr "(М-м... Что... происходит со мной-?)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Mnhh- The... blocker- I...?)</i></color>
-#. rich_translation: <color=#EB83FF><i>(М-н-н- Блокиратор... Я...?)</i></color>
+#. rich_translation: <color=#EB83FF><i>(М-н-н- Блокатор... Я...?)</i></color>
 msgctxt "ui"
 msgid "(Mnhh- The... blocker- I...?)"
-msgstr "(М-н-н- Блокиратор... Я...?)"
+msgstr "(М-н-н- Блокатор... Я...?)"
 
 #. src: dialog
 #. rich_text: <i>(Mnhh-.. I- it feels like.. <color=#EB83FF>warm gel</color>.. )</i>
@@ -6465,10 +6465,10 @@ msgstr "(Ещё Дымка. Уф, она даже из вентиляции со
 
 #. src: dialog
 #. rich_text: <i>(More haze I gotta get through... Gotta use the blocker if I wanna make it without getting overwhelmed.)</i>
-#. rich_translation: <i>(Ещё дымка, через которую надо пройти... Нужно использовать блокиратор, если хочу пройти без перегруза.)</i>
+#. rich_translation: <i>(Ещё дымка, через которую надо пройти... Нужно использовать блокатор, если хочу пройти без перегруза.)</i>
 msgctxt "ui"
 msgid "(More haze I gotta get through... Gotta use the blocker if I wanna make it without getting overwhelmed.)"
-msgstr "(Ещё дымка, через которую надо пройти... Нужно использовать блокиратор, если хочу пройти без перегруза.)"
+msgstr "(Ещё дымка, через которую надо пройти... Нужно использовать блокатор, если хочу пройти без перегруза.)"
 
 #. src: dialog
 #. rich_text: <i>(Most of her arm seems to be robotic. So many interlocked plates. )</i>
@@ -6640,10 +6640,10 @@ msgstr "(Нужно как-то перенаправить питание на �
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Need to... use the Blocker... Please work...)</i></color>
-#. rich_translation: <color=#EB83FF><i>(Нужно... использовать Блокиратор... Пожалуйста, сработай...)</i></color>
+#. rich_translation: <color=#EB83FF><i>(Нужно... использовать Блокатор... Пожалуйста, сработай...)</i></color>
 msgctxt "ui"
 msgid "(Need to... use the Blocker... Please work...)"
-msgstr "(Нужно... использовать Блокиратор... Пожалуйста, сработай...)"
+msgstr "(Нужно... использовать Блокатор... Пожалуйста, сработай...)"
 
 #. src: dialog
 #. rich_text: <i>(Never liked how my hands hurt after drills. )</i>
@@ -6738,10 +6738,10 @@ msgstr "(Понятия не имею, зачем они вставили эти
 
 #. src: dialog
 #. rich_text: <i>(No no no... Where's the blocker...?!)</i>
-#. rich_translation: <i>(Нет-нет-нет... Где блокиратор...?!)</i>
+#. rich_translation: <i>(Нет-нет-нет... Где блокатор...?!)</i>
 msgctxt "ui"
 msgid "(No no no... Where's the blocker...?!)"
-msgstr "(Нет-нет-нет... Где блокиратор...?!)"
+msgstr "(Нет-нет-нет... Где блокатор...?!)"
 
 #. src: dialog
 #. rich_text: <i>(No one sends me anything anyway.)</i>
@@ -7472,10 +7472,10 @@ msgstr "(Напоминание вымыть волосы, как только �
 
 #. src: dialog
 #. rich_text: <i>(Right. Better get some rest at my apartment and tackle this whole fake blocker issue in the morning. Onward and upward.)</i>
-#. rich_translation: <i>(Так. Надо отдохнуть в квартире и заняться этим поддельным блокиратором утром. Вперёд и вверх.)</i>
+#. rich_translation: <i>(Так. Надо отдохнуть в квартире и заняться этим поддельным блокатором утром. Вперёд и вверх.)</i>
 msgctxt "ui"
 msgid "(Right. Better get some rest at my apartment and tackle this whole fake blocker issue in the morning. Onward and upward.)"
-msgstr "(Так. Надо отдохнуть в квартире и заняться этим поддельным блокиратором утром. Вперёд и вверх.)"
+msgstr "(Так. Надо отдохнуть в квартире и заняться этим поддельным блокатором утром. Вперёд и вверх.)"
 
 #. src: dialog
 #. rich_text: <i>(Right. Better hurry this up.)</i>
@@ -7584,10 +7584,10 @@ msgstr "(Удовлетворение? Она ведь наслаждается 
 
 #. src: dialog
 #. rich_text: <i>(Saved again by Dr. Lozenge. Ugh, how am I going to get through this place if there's more haze? The blocker's only got one charge.)</i>
-#. rich_translation: <i>(Снова спасена доктором Леденцом. Уф, как я пройду через это место, если там ещё дымка? У блокиратора всего один заряд.)</i>
+#. rich_translation: <i>(Снова спасена доктором Леденцом. Уф, как я пройду через это место, если там ещё дымка? У блокатора всего один заряд.)</i>
 msgctxt "ui"
 msgid "(Saved again by Dr. Lozenge. Ugh, how am I going to get through this place if there's more haze? The blocker's only got one charge.)"
-msgstr "(Снова спасена доктором Леденцом. Уф, как я пройду через это место, если там ещё дымка? У блокиратора всего один заряд.)"
+msgstr "(Снова спасена доктором Леденцом. Уф, как я пройду через это место, если там ещё дымка? У блокатора всего один заряд.)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Scratch the itch... Just... Scratching my... i-itch... )</i></color>
@@ -7682,10 +7682,10 @@ msgstr "(Она держит их пристёгнутыми к бедру. Не
 
 #. src: dialog
 #. rich_text: <i>(She knows I stole the blocker!)</i>
-#. rich_translation: <i>(Она знает, что я украла блокиратор!)</i>
+#. rich_translation: <i>(Она знает, что я украла блокатор!)</i>
 msgctxt "ui"
 msgid "(She knows I stole the blocker!)"
-msgstr "(Она знает, что я украла блокиратор!)"
+msgstr "(Она знает, что я украла блокатор!)"
 
 #. src: dialog
 #. rich_text: <i>(She probably didn't get those tips for making exceptional drinks.. )</i>
@@ -7960,10 +7960,10 @@ msgstr "(Чёрт, я не могу себе этого позволить...)"
 
 #. src: dialog
 #. rich_text: <i>(Shit, do I tell her about the blocker? Better just play dumb for now.)</i>
-#. rich_translation: <i>(Чёрт, сказать ей про блокиратор? Лучше пока прикинуться дурочкой.)</i>
+#. rich_translation: <i>(Чёрт, сказать ей про блокатор? Лучше пока прикинуться дурочкой.)</i>
 msgctxt "ui"
 msgid "(Shit, do I tell her about the blocker? Better just play dumb for now.)"
-msgstr "(Чёрт, сказать ей про блокиратор? Лучше пока прикинуться дурочкой.)"
+msgstr "(Чёрт, сказать ей про блокатор? Лучше пока прикинуться дурочкой.)"
 
 #. src: dialog
 #. rich_text: <i>(Shit, how the hell am I gonna help him?! I better take a closer look. )</i>
@@ -8199,10 +8199,10 @@ msgstr "(Так это его любимая группа?)"
 
 #. src: dialog
 #. rich_text: <i>(So these are the parts Lio needs to make a fake of the blocker?)</i>
-#. rich_translation: <i>(Так вот они те части, которые Лио нужно сделать подделкой блокиратора?)</i>
+#. rich_translation: <i>(Так вот они те части, которые Лио нужно сделать подделкой блокатора?)</i>
 msgctxt "speaker:Zoey"
 msgid "(So these are the parts Lio needs to make a fake of the blocker?)"
-msgstr "(Так вот они те части, которые Лио нужно сделать подделкой блокиратора?)"
+msgstr "(Так вот они те части, которые Лио нужно сделать подделкой блокатора?)"
 
 #. src: dialog
 #. rich_text: <i>(So this remote is for the lights, good to know.)</i>
@@ -8493,10 +8493,10 @@ msgstr "(Такой-... Сладкий вкус... М-м-м-м...)"
 
 #. src: dialog
 #. rich_text: <i>(Th-The blocker- I... I have to... )</i>
-#. rich_translation: <i>(Б-Блокиратор- Я... Я должна... )</i>
+#. rich_translation: <i>(Б-Блокатор- Я... Я должна... )</i>
 msgctxt "ui"
 msgid "(Th-The blocker- I... I have to... )"
-msgstr "(Б-Блокиратор- Я... Я должна... )"
+msgstr "(Б-Блокатор- Я... Я должна... )"
 
 #. src: dialog
 #. rich_text: <i>(Thank fuck they didn't see me... )</i>
@@ -8507,10 +8507,10 @@ msgstr "(Чёрт возьми, они меня не увидели...)"
 
 #. src: dialog
 #. rich_text: <i>(Thank god. That'll give me time to come up with a fake blocker.)</i>
-#. rich_translation: <i>(Слава богу. Это даст мне время придумать поддельный блокиратор.)</i>
+#. rich_translation: <i>(Слава богу. Это даст мне время придумать поддельный блокатор.)</i>
 msgctxt "ui"
 msgid "(Thank god. That'll give me time to come up with a fake blocker.)"
-msgstr "(Слава богу. Это даст мне время придумать поддельный блокиратор.)"
+msgstr "(Слава богу. Это даст мне время придумать поддельный блокатор.)"
 
 #. src: dialog
 #. rich_text: <i>(Thank you, Dr. Lozenge. Now I just need to get out of here before this Crush Gas gets me again.)</i>
@@ -8771,10 +8771,10 @@ msgstr "(Внимание..? Они бы не... Они бы не... прихо�
 
 #. src: dialog
 #. rich_text: <i>(The blocker-...!)</i>
-#. rich_translation: <i>(Блокиратор-...!)</i>
+#. rich_translation: <i>(Блокатор-...!)</i>
 msgctxt "ui"
 msgid "(The blocker-...!)"
-msgstr "(Блокиратор-...!)"
+msgstr "(Блокатор-...!)"
 
 #. src: dialog
 #. rich_text: <i>(The box is shaking! Is it moving upstairs by itself?)</i>
@@ -9009,10 +9009,10 @@ msgstr "(Готово. Надеюсь, ей понравится этот наб
 
 #. src: dialog
 #. rich_text: <i>(There're andro charging stations like this all over the city... If I can get the blocker to recharge from them...)</i>
-#. rich_translation: <i>(Тут андро-зарядные станции по всему городу... Если я смогу заряжать блокиратор от них...)</i>
+#. rich_translation: <i>(Тут андро-зарядные станции по всему городу... Если я смогу заряжать блокатор от них...)</i>
 msgctxt "ui"
 msgid "(There're andro charging stations like this all over the city... If I can get the blocker to recharge from them...)"
-msgstr "(Тут андро-зарядные станции по всему городу... Если я смогу заряжать блокиратор от них...)"
+msgstr "(Тут андро-зарядные станции по всему городу... Если я смогу заряжать блокатор от них...)"
 
 #. src: dialog
 #. rich_text: <i>(There's Max-...)</i>
@@ -9628,10 +9628,10 @@ msgstr "(Угх... Отвратительный извращенец...)"
 
 #. src: dialog
 #. rich_text: <i>(Ugh... I really need that pay from tonight's gig... but could I live with myself if I handed over something as important as this blocker?)</i>
-#. rich_translation: <i>(Угх... Мне очень нужна оплата с сегодняшней халтуры... но смогу ли я жить с собой, если отдам такую важную вещь, как этот блокиратор?)</i>
+#. rich_translation: <i>(Угх... Мне очень нужна оплата с сегодняшней халтуры... но смогу ли я жить с собой, если отдам такую важную вещь, как этот блокатор?)</i>
 msgctxt "ui"
 msgid "(Ugh... I really need that pay from tonight's gig... but could I live with myself if I handed over something as important as this blocker?)"
-msgstr "(Угх... Мне очень нужна оплата с сегодняшней халтуры... но смогу ли я жить с собой, если отдам такую важную вещь, как этот блокиратор?)"
+msgstr "(Угх... Мне очень нужна оплата с сегодняшней халтуры... но смогу ли я жить с собой, если отдам такую важную вещь, как этот блокатор?)"
 
 #. src: dialog
 #. rich_text: <i>(Ugh... It wasn't the only way...)</i>
@@ -9883,10 +9883,10 @@ msgstr "(Молодец, Зои. Мало того, что ты разозлил
 
 #. src: dialog
 #. rich_text: <i>(We're all fine. Come on, Zoey. Blocker problem first.)</i>
-#. rich_translation: <i>(Мы все в порядке. Давай, Зои. Сначала проблема с блокиратором.)</i>
+#. rich_translation: <i>(Мы все в порядке. Давай, Зои. Сначала проблема с блокатором.)</i>
 msgctxt "ui"
 msgid "(We're all fine. Come on, Zoey. Blocker problem first.)"
-msgstr "(Мы все в порядке. Давай, Зои. Сначала проблема с блокиратором.)"
+msgstr "(Мы все в порядке. Давай, Зои. Сначала проблема с блокатором.)"
 
 #. src: dialog
 #. rich_text: <i>(Weirdo... )</i>
@@ -15819,7 +15819,7 @@ msgstr "Мы на уровне Галереи?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Are we in party?"
-msgstr "Мы в одной группе?"
+msgstr "Мы вместе?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17209,7 +17209,7 @@ msgstr "Основной полигон"
 #. src: dialog
 msgctxt "ui"
 msgid "Basically? It hasn't been easy, but... this blocker makes it possible."
-msgstr "Если кратко? Было нелегко, но... этот блокиратор всё делает возможным."
+msgstr "Если кратко? Было нелегко, но... этот блокатор всё делает возможным."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17547,10 +17547,10 @@ msgstr "Поближе, пожалуйста... И вытяни грудь... *�
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Bl-... Blocker-... Khhh-... Mnnhhh...</color>
-#. rich_translation: <color=#EB83FF>Бл-... Блокиратор-... Кххх-... М-н-н...</color>
+#. rich_translation: <color=#EB83FF>Бл-... Блокатор-... Кххх-... М-н-н...</color>
 msgctxt "ui"
 msgid "Bl-... Blocker-... Khhh-... Mnnhhh..."
-msgstr "Бл-... Блокиратор-... Кххх-... М-н-н..."
+msgstr "Бл-... Блокатор-... Кххх-... М-н-н..."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17660,12 +17660,12 @@ msgstr "Блок диалога"
 #. src: us
 msgctxt "ui"
 msgid "Blocker Recharged!"
-msgstr "Блокиратор перезаряжен!"
+msgstr "Блокатор перезаряжен!"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Blocker hint"
-msgstr "Подсказка блокиратора"
+msgstr "Подсказка блокатора"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Blocking my tip...?</color>
@@ -23801,7 +23801,7 @@ msgstr "У нас ведь нет этого предмета?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do we not have the task to use blocker?"
-msgstr "Неужели у нас нет задачи использовать блокиратор?"
+msgstr "Неужели у нас нет задачи использовать блокатор?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -24942,7 +24942,7 @@ msgstr "Включить взаимодействие с Калом"
 #. src: settings
 msgctxt "ui"
 msgid "Enable Cockblock Cat"
-msgstr "Включить кота-блокиратора"
+msgstr "Включить кота-блокатора"
 
 #. src: settings
 msgctxt "ui"
@@ -29236,7 +29236,7 @@ msgstr "Иди распакуй ванную, лучшая подруга! Я р
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "God all that andro cum looks so hot on you, ehehe... I haven't had enough yet..."
-msgstr "Боже, вся эта андро-сперма так горячо на тебе смотрится, эхе-хе... Мне всё ещё мало..."
+msgstr "Боже, вся эта мужская сперма так горячо на тебе выглядит, эхе-хе... Мне всё ещё мало..."
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -36111,7 +36111,7 @@ msgstr "Если нас никто не спасёт, то... нам прост�
 #. src: dialog
 msgctxt "ui"
 msgid "If only I had the blocker back then... ugh- Come on, Zoey."
-msgstr "Если бы у меня тогда был блокиратор... уф- Давай, Зои."
+msgstr "Если бы у меня тогда был блокатор... уф- Давай, Зои."
 
 #. src: dialog
 #. rich_text: <size=27>If the idea wasn't turning you on, you wouldn't have come back here.
@@ -36895,7 +36895,7 @@ msgstr "Наверху?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Is Use Blocker in progress?"
-msgstr "Блокиратор сейчас используется?"
+msgstr "Блокатор сейчас используется?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -38102,7 +38102,7 @@ msgstr "Диалог Джейми Крача"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Crotch FSM"
-msgstr "Джейми, пах FSM"
+msgstr "Джейми, членовый FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -38855,7 +38855,7 @@ msgstr "Найденные ключевые предметы"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "KeyItem - Fake Blocker Parts for Lio"
-msgstr "Ключевой предмет — Фальшивые детали для блокиратора Лио"
+msgstr "Ключевой предмет — Фальшивые детали для блокатора Лио"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39191,7 +39191,7 @@ msgstr "Клавдия: попроси подняться наверх, повт
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Klaudia Blocker In Hand"
-msgstr "Клавдия Блокиратор — в руке"
+msgstr "Клавдия Блокатор — в руке"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39637,7 +39637,7 @@ msgstr "Язык (машинный перевод)"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Lap"
-msgstr "Колени"
+msgstr "Колено"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -42195,7 +42195,7 @@ msgstr "Мастурбируй"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Masturbate Sarah"
-msgstr "Мастурбация Сары"
+msgstr "Похоти с Сарой"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -42205,7 +42205,7 @@ msgstr "Мастурбируй на аппарате Каллиак"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Masturbate dialogue"
-msgstr "Диалог мастурбации"
+msgstr "Мастурбация — это диалог."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -45793,7 +45793,7 @@ msgstr "Без проблем."
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "No worries. I managed to make it in one piece thanks to the blocker."
-msgstr "Не парься. Я добралась целой благодаря блокиратору."
+msgstr "Не парься. Я добралась целой благодаря блокатору."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -52747,7 +52747,7 @@ msgstr "Дистанция луча должна быть больше нуля!
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Re Enable Blocker"
-msgstr "Включить блокиратор"
+msgstr "Включить блокатор"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55949,7 +55949,7 @@ msgstr "Начать задание"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set blocker task"
-msgstr "Установить задачу блокиратора"
+msgstr "Установить задачу блокатора"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57296,7 +57296,7 @@ msgstr "Покажи наряд Зои в шкафчике №2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show blocker in Locker"
-msgstr "Отобразите блокиратор в шкафчике"
+msgstr "Отобразите блокатор в шкафчике"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57849,7 +57849,7 @@ msgstr "Худи с черепом"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Slap Dialogue"
-msgstr "Диалог пощёчины"
+msgstr "Шлеп — диалог"
 
 #. src: dialog
 msgctxt "ui"
@@ -60797,7 +60797,7 @@ msgstr "SuitcaseMinigame"
 #. src: dialog
 msgctxt "ui"
 msgid "Sup, Zoey! Here's your... totally legit blocker!"
-msgstr "Привет, Зои! Вот твой... абсолютно законный блокиратор!"
+msgstr "Привет, Зои! Вот твой... абсолютно законный блокатор!"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -61668,7 +61668,7 @@ msgstr "Скажи ему засунуть деньги себе в задниц
 #. src: dialog
 msgctxt "ui"
 msgid "Tell him what the blocker is."
-msgstr "Скажи ему, что такое блокиратор."
+msgstr "Скажи ему, что такое блокатор."
 
 #. src: dialog
 #. rich_text: <size=27>Tell me I'm right, or I'll stop right here.
@@ -62989,11 +62989,11 @@ msgstr "У-у... Картеля?"
 
 #. src: dialog
 #. rich_text: Then again this blocker could be huge. I wonder how much the Cartel knows about this. )</i>
-#. rich_translation: Хотя этот блокиратор может быть серьёзным. Интересно, сколько Картель знает об этом. )
+#. rich_translation: Хотя этот блокатор может быть серьёзным. Интересно, сколько Картель знает об этом. )
 #, rt-review
 msgctxt "speaker:Zoey"
 msgid "Then again this blocker could be huge. I wonder how much the Cartel knows about this. )"
-msgstr "Хотя этот блокиратор может быть серьёзным. Интересно, сколько Картель знает об этом. )"
+msgstr "Хотя этот блокатор может быть серьёзным. Интересно, сколько Картель знает об этом. )"
 
 #. src: dialog
 msgctxt "ui"
@@ -64613,7 +64613,7 @@ msgstr "Пытается остановить спираль мыслей."
 #. src: dialog
 msgctxt "ui"
 msgid "Trying to think of the blocker but overwhelmed with the lewd gasC"
-msgstr "Пытается придумать блокиратор, но перегружена пошлым газом"
+msgstr "Пытается придумать блокатор, но перегружена пошлым газом"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -66538,7 +66538,7 @@ msgstr "Использовать"
 #. src: us
 msgctxt "ui"
 msgid "Use Blocker"
-msgstr "Использовать блокиратор"
+msgstr "Использовать блокатор"
 
 #. src: settings
 msgctxt "ui"
@@ -66568,7 +66568,7 @@ msgstr "Используй правильный смещение"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Use the Blocker"
-msgstr "Используй Блокиратор"
+msgstr "Используй Блокатор"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67744,7 +67744,7 @@ msgstr "Подождите, пока появится что-нибудь инт
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for blocker"
-msgstr "Подожди, пока блокиратор уйдёт."
+msgstr "Подожди, пока блокатор уйдёт."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67939,7 +67939,7 @@ msgstr "Ждать укрытия"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for horny"
-msgstr "Ждать возбуждения."
+msgstr "Подожди, пока я возбуждусь."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68020,7 +68020,7 @@ msgstr "Ждать движения"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for naked"
-msgstr "Ждать, пока разденется."
+msgstr "Подожди, пока я разденусь"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -69631,7 +69631,7 @@ msgstr "Ну... Я вроде как украла её?"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Well... It's called a uh... Crush Blocker."
-msgstr "Ну... Это называется э-э... Блокиратор Похоти."
+msgstr "Ну... Это называется э-э... Блокатор Похоти."
 
 #. src: dialog
 msgctxt "ui"
@@ -70344,7 +70344,7 @@ msgstr "Что это было? Сжигание мозга?"
 #. src: dialog
 msgctxt "ui"
 msgid "What was that blocker thing for anyway?"
-msgstr "А для чего вообще нужен был этот блокиратор?"
+msgstr "А для чего вообще нужен был этот блокатор?"
 
 #. src: dialog
 msgctxt "ui"
@@ -70878,7 +70878,7 @@ msgstr "Кто бы ни устроил этот бардак, заплатит 
 #. src: dialog
 msgctxt "speaker:Man"
 msgid "Whoop-de-doo, here is your goo. Nice and fresh."
-msgstr "Ух ты-ты, вот и твоё семя. Свеженькое и приятное."
+msgstr "Ух ты-ты, вот и твой глёб. Свеженький и приятный."
 
 #. src: dialog
 msgctxt "ui"
@@ -75470,7 +75470,7 @@ msgstr "Ищу Лио."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "low perv"
-msgstr "Низкое извращение"
+msgstr "низкий похотник"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

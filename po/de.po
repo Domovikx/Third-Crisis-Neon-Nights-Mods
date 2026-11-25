@@ -20179,7 +20179,7 @@ msgstr "Komplimentiere ihre flache Brust."
 #. src: dialog
 msgctxt "ui"
 msgid "Compliment her flat."
-msgstr "Mach ihr ein Kompliment für ihre flache Brust."
+msgstr "Mach ihr Komplimente für ihre Wohnung."
 
 #. src: dialog
 msgctxt "ui"
@@ -23292,7 +23292,7 @@ msgstr "Triff eine Wahl"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do cutscene"
-msgstr "Cutscene abspielen"
+msgstr "Schnittstelle"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -27471,7 +27471,7 @@ msgstr "Fluffles"
 #. src: dialog
 msgctxt "ui"
 msgid "Flustered after getting wrecked by a hot milf."
-msgstr "Ganz aufgelöst, nachdem eine heiße MILF sie vernichtet hat."
+msgstr "Ich... ich tut mir wirklich leid, Liebling. Bist du sicher, dass es dir gut geht?"
 
 #. src: dialog
 msgctxt "ui"
@@ -29409,7 +29409,7 @@ msgstr "Braver Junge.. Bettle darum."
 #. src: dialog
 msgctxt "ui"
 msgid "Good boyyy..~ Now get dressed and lead the way. I want to fuck your brains out."
-msgstr "Braver Junge..~ Zieh dich jetzt an und geh voran. Ich will dir das Hirn rausficken."
+msgstr "Braver Jungee..~ Zieh dich jetzt an und geh voran. Ich will dir das Hirn rausficken."
 
 #. src: dialog
 msgctxt "ui"
@@ -35141,7 +35141,7 @@ msgstr "Ich warte."
 #. src: dialog
 msgctxt "ui"
 msgid "I'm wearing the cum as an accessory."
-msgstr "Ich trage das Sperma als Accessoire."
+msgstr "Ich trage den Cum als Accessoire."
 
 #. src: dialog
 msgctxt "ui"
@@ -40299,7 +40299,7 @@ msgstr "Level 13"
 #. src: us
 msgctxt "ui"
 msgid "Level 14"
-msgstr "Ebene 14"
+msgstr "Wichtig: Füge bei der Übersetzung keine Zeilennummer (z. B. „2. “) hinzu. Die Antwort enthält nur den Text selbst."
 
 #. src: us
 msgctxt "ui"
@@ -40743,7 +40743,7 @@ msgstr "Zeile 4"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Line 6"
-msgstr "Zeile 6"
+msgstr "WICHTIG: Füge bei der Übersetzung keine Zeilennummer (z. B. „2. “) hinzu: Die Antwort enthält nur den Text selbst."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -52663,7 +52663,7 @@ msgstr "RAM: #### MB"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "REDLIGHT DISTRICT"
-msgstr "ROTLICHTVIERTEL"
+msgstr "ROTLICHTBEZIRK"
 
 #. src: us
 msgctxt "ui"
@@ -52705,7 +52705,7 @@ msgstr "Animation zurücksetzen"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "RESIDENTIAL DISTRICT"
-msgstr "WOHNVIERTEL"
+msgstr "WOHNBEZIRK"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -75520,7 +75520,7 @@ msgstr "Suche nach Lio."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "low perv"
-msgstr "Niedrige Perversion"
+msgstr "Tiefes Verlangen"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

@@ -10066,10 +10066,10 @@ msgstr "(Che serata... Ho praticamente fatto incazzare tutti nel Quartiere Rosso
 
 #. src: dialog
 #. rich_text: <i>(What a night... I've basically pissed off everyone in the redlight district, and now I smell like a dumpster. Just my luck.)</i>
-#. rich_translation: <i>(Che notte... Ho praticamente fatto incazzare tutti nel quartiere rosso, e ora puzzo di bidone. Che sfortuna la mia.)</i>
+#. rich_translation: <i>(Che notte... Ho praticamente fatto incazzare tutti nel quartiere a luci rosse, e ora puzzo di bidone. Che sfortuna la mia.)</i>
 msgctxt "speaker:Zoey"
 msgid "(What a night... I've basically pissed off everyone in the redlight district, and now I smell like a dumpster. Just my luck.)"
-msgstr "(Che notte... Ho praticamente fatto incazzare tutti nel quartiere rosso, e ora puzzo di bidone. Che sfortuna la mia.)"
+msgstr "(Che notte... Ho praticamente fatto incazzare tutti nel quartiere a luci rosse, e ora puzzo di bidone. Che sfortuna la mia.)"
 
 #. src: dialog
 #. rich_text: <i>(What a subtle name for the place... )</i>
@@ -14370,7 +14370,7 @@ msgstr "Ahaha! Sì! Cedete al vostro desiderio!"
 #. src: dialog
 msgctxt "speaker:Salesman"
 msgid "Ahaha, almost seems like this meatframe is getting excited off you watching it getting railed!"
-msgstr "Ahaha, sembra quasi che questo telaio di carne si stia eccitando mentre lo guardi scopare!"
+msgstr "Ahaha, sembra quasi che questo telaio di carne si stia eccitando vedendoti scoparlo!"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -20171,12 +20171,12 @@ msgstr "Completamento"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Compliment her Flat"
-msgstr "Falle un complimento sul suo seno piatto."
+msgstr "Complimentala per il suo seno piatto."
 
 #. src: dialog
 msgctxt "ui"
 msgid "Compliment her flat."
-msgstr "Falle un complimento sul suo seno piatto."
+msgstr "Complimentale l'appartamento."
 
 #. src: dialog
 msgctxt "ui"
@@ -21823,7 +21823,7 @@ msgstr "DialogueManager: Fine del dialogo: '"
 #. src: us
 msgctxt "ui"
 msgid "DialogueManager: Playing line: '"
-msgstr "DialogueManager: riproduzione riga: '"
+msgstr "Importante: non aggiungere il numero della riga (ad esempio «2. ») nella traduzione: la risposta deve contenere solo il testo."
 
 #. src: us
 msgctxt "ui"
@@ -25331,7 +25331,7 @@ msgstr "Latrato dell'Agente"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enforcer Bark 2"
-msgstr "Latrato dell'Agente 2"
+msgstr "Latrato dell'Esecutore 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25341,7 +25341,7 @@ msgstr "Latrato dell'Agente 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enforcer Bark 4"
-msgstr "Latrato dell'Agente 4"
+msgstr "Latrato dell'Esecutore 4"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25396,7 +25396,7 @@ msgstr "Goditela, sorellina, tehehe!"
 #. src: dialog
 msgctxt "speaker:Lio"
 msgid "Enjoy the Redlight District!"
-msgstr "Goditi il Quartiere Rosso!"
+msgstr "Goditi il Quartiere a Luci Rosse!"
 
 #. src: dialog
 msgctxt "ui"
@@ -25842,7 +25842,7 @@ msgstr "Tranne che invece di grattare, ti strofini solo fino a diventare pazza. 
 #. src: dialog
 msgctxt "ui"
 msgid "Excited, Evil, lowkey manic"
-msgstr "Eccitato, malvagio, un po' maniacale."
+msgstr "Sììì... È proprio così... È qui che appartieni. Vuoi essere rovinata ancora di più...! Dillo, puttana di merda!"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -27181,7 +27181,7 @@ msgstr "Le dita non bastano- nghh... cazzo! Hhh... Vieni, ti prego- devo- Hahh..
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Fingering"
-msgstr "Ditalini"
+msgstr "Digitare"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -27920,7 +27920,7 @@ msgstr "Al diavolo. Dovremmo fare qualcosa contro questi tizi."
 #. src: dialog
 msgctxt "ui"
 msgid "Fuck yeah bunny girl, watch me getting stuffed!"
-msgstr "Cazzo sì, ragazza coniglio, guardami mentre mi fanno riempire!"
+msgstr "Cazzo sì, ragazza coniglio, guardami mentre mi riempi!"
 
 #. src: dialog
 msgctxt "ui"
@@ -29290,7 +29290,7 @@ msgstr "Dio, sembri così disperata, ehehe. Che succede, puttana, uhm? Non riesc
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "God you turned me on so much. I can't fucking wait to get out of this suit and let K12 ravage me... Soon..."
-msgstr "Dio, mi hai eccitato così tanto. Non vedo l'ora di togliermi questa tuta e lasciare che K12 mi distrugga... Presto..."
+msgstr "Dio, mi hai eccitata così tanto. Non vedo l'ora di togliermi questa tuta e lasciare che K12 mi distrugga... Presto..."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -30006,7 +30006,7 @@ msgstr "Uomo — abbaio 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Guy bark 4"
-msgstr "Uomo — abbaio 4"
+msgstr "Ragazzo, abbaià 4"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -31448,7 +31448,7 @@ msgstr "Certo che sì! Fammi pubblicarlo!"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Hello Gorgeous Bottom"
-msgstr "Hello Gorgeous — parte inferiore"
+msgstr "Ciao, bel sedere"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -34851,7 +34851,7 @@ msgstr "Sono impegnata, torna più tardi!"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "I'm coming, just give me a sec. I'm a little cum drunk right now."
-msgstr "Sto arrivando, dammi solo un attimo. Sono un po' rintronata dall'orgasmo."
+msgstr "Sto arrivando, dammi solo un attimo. Sono un po' ubriaca di sperma in questo momento."
 
 #. src: dialog
 msgctxt "ui"
@@ -42035,7 +42035,7 @@ msgstr "Ingrossamento maschile - Palpazione di Zoey"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "MaleBulge - Zoey ThighGrope"
-msgstr "MaleBulge - Zoey palpa la coscia"
+msgstr "Zoey si accarezza la coscia."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -42130,7 +42130,7 @@ msgstr "Segna come Fatto"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Mark dialogue post-mission"
-msgstr "Dialogo di Mark dopo la missione."
+msgstr "Segna il dialogo dopo la missione"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -42736,7 +42736,7 @@ msgstr "Mmmh... Il tuo culo sarebbe ancora più sexy se ti inclinassi anche solo
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Mhhh, fuckhhh your asshol' shmells so goooodhh, bunnyslut!"
-msgstr "Mhhh, cazzo, il tuo buco del culo ha un profumo così buono, puttana-coniglietta!"
+msgstr "Mhhh, cazzo, il tuo culo puzza così buono, puttana-coniglietta!"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -45073,7 +45073,7 @@ msgstr "Clienti bisognosi"
 #. src: dialog
 msgctxt "ui"
 msgid "Negative. This one is chasing a path towards independance. There is a suitable discreet location in the Redlight District where this one will take residence."
-msgstr "No. Questa sta cercando un percorso verso l'indipendenza. C'è un luogo discreto e adatto nel Quartiere Rosso dove si stabilirà."
+msgstr "No. Questa sta cercando un percorso verso l'indipendenza. C'è un luogo discreto e adatto nel Quartiere a Luci Rosse dove si stabilirà."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -46290,7 +46290,7 @@ msgstr "Non so bene cosa pensare del fatto che Max stia iniziando a cedere al cl
 #. src: dialog
 msgctxt "ui"
 msgid "Not sure which I like more.. Your boypussy or the slut from earlier today, hehe."
-msgstr "Non so quale mi piaccia di più... il tuo culo da ragazzino o quello della stronza di prima, hehe."
+msgstr "Non so quale mi piaccia di più... la tua fica da ragazzino o quella della stronza di prima, hehe."
 
 #. src: dialog
 msgctxt "ui"
@@ -50362,7 +50362,7 @@ msgstr "Riproduci scena"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play Decline DIalogue"
-msgstr "Riproduci il dialogo del rifiuto."
+msgstr "Gioca Rifiuta Dialogo"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50762,7 +50762,7 @@ msgstr "Riproduci dialogo 4"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play dialogue 5"
-msgstr "Riproduci il dialogo 5."
+msgstr "Continua il dialogo 5"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51207,7 +51207,7 @@ msgstr "Riproduci suono casuale"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play recover gear dialogue"
-msgstr "Riproduci il dialogo del recupero dell'equipaggiamento."
+msgstr "Riprendi il dialogo dell'equipaggiamento di recupero"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51897,7 +51897,7 @@ msgstr "La lucidità post-eiaculazione sta tornando. Il terrore si insinua lenta
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Post pic dialogue"
-msgstr "Pubblica il dialogo della foto."
+msgstr "Inserisci l'immagine per il dialogo."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -52769,12 +52769,12 @@ msgstr "Intervallo"
 #. src: dialog
 msgctxt "ui"
 msgid "Rat Out"
-msgstr "Fai la spia"
+msgstr "Tiralo fuori"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Rat out cutsceneTimeline"
-msgstr "Scena della spiata"
+msgstr "Segnala la cutsceneTimeline"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57716,7 +57716,7 @@ msgstr "Simon"
 #. src: us
 msgctxt "ui"
 msgid "Simplified Chinese Machine Translated / 中文机器翻译"
-msgstr "Cinese semplificato (traduzione automatica) / 中文机器翻译"
+msgstr "Traduzione automatica dal cinese semplificato / Traduzione automatica dal cinese"
 
 #. src: dialog
 #. rich_text: <i>Simply fill the SLUT Box
@@ -65984,7 +65984,7 @@ msgstr "Svestiti e gioca al dialogo 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Undress and play dialogue 3"
-msgstr "Spogliati e riproduci il dialogo 3."
+msgstr "Spogliati e gioca al dialogo 3."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -66828,7 +66828,7 @@ msgstr "Titolo pin-up lunghissimo, ahahah!"
 #. src: dialog
 msgctxt "ui"
 msgid "Very coy and playful"
-msgstr "Molto timida e giocosa."
+msgstr "Hehe, e poi ci sono un sacco di bevande se hai bisogno di darti una bella sborniolina~ So che a volte ne ho bisogno anch'io ultimamente. Capisci cosa intendo, tesoro?"
 
 #. src: dialog
 msgctxt "ui"
@@ -69327,7 +69327,7 @@ msgstr "\"Noi? Qualcuno ha ordinato un'offerta due per uno?\""
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "Wearing Andro semen like a good cum dump, ahaha! Take my baton like a good GAG slut!"
-msgstr "Porti lo sperma di Andro come un buon contenitore di sborra, ahaha! Prendi il mio manganello come una brava puttana GAG!"
+msgstr "Indossare lo sperma di Andro come un buon cum dump, ahaha! Prendi il mio bastone come una buona GAG slut!"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -72000,7 +72000,7 @@ msgstr "Sì, nessun problema."
 #. src: dialog
 msgctxt "ui"
 msgid "Yeah, not looking forward to that either."
-msgstr "Sì, neanche io ci tengo."
+msgstr "Sì, non vedo l'ora neanche per quello."
 
 #. src: dialog
 msgctxt "ui"
@@ -72584,7 +72584,7 @@ msgstr "Sì, va bene così."
 #. src: dialog
 msgctxt "ui"
 msgid "Yes, that's good.. Fuck, your boypussy is so tight and warm, mmhh.."
-msgstr "Sì, così va bene... Cazzo, il tuo culo da ragazzino è così stretto e caldo, mmhh..."
+msgstr "Sì, così va bene... Cazzo, la tua figa da ragazzino è così stretta e calda, mmhh..."
 
 #. src: dialog
 msgctxt "ui"
@@ -72717,7 +72717,7 @@ msgstr "Sì...! Scolare, ehehe! Stai scorrendo da quei tentacoli, Skank. Sei tu.
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "Yesss! Think of that mighty Andro cock you made spurt like a good citizen, Zoey! Feel that warm Andro cum on you while you grind my baton to orgasm!"
-msgstr "Sììì! Pensa a quel potente cazzo Andro che hai fatto schizzare come un bravo cittadino, Zoey! Senti quel caldo sperma Andro su di te mentre strofini il mio manganello fino all'orgasmo!"
+msgstr "Sììì! Pensa a quel potente cazzo di Andro che hai fatto venire come un buon cittadino, Zoey! Senti quel caldo sperma di Andro su di te mentre mi fai venire con il tuo bastone!"
 
 #. src: dialog
 msgctxt "ui"
@@ -73290,7 +73290,7 @@ msgstr "Hai perso il tuo gatto e non sai dove sia. Inizi a prendere il panico."
 #. src: dialog
 msgctxt "ui"
 msgid "You made me!"
-msgstr "Mi hai fatto venire!"
+msgstr "Mi hai costretta!"
 
 #. src: dialog
 msgctxt "speaker:Woman"

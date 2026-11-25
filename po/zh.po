@@ -342,10 +342,10 @@ msgstr "（……感觉……）"
 
 #. src: dialog
 #. rich_text: <i>(... recharge the blocker!)</i>
-#. rich_translation: <i>（……给阻断器充能！）</i>
+#. rich_translation: <i>（……给阻挡器充能！）</i>
 msgctxt "ui"
 msgid "(... recharge the blocker!)"
-msgstr "（……给阻断器充能！）"
+msgstr "（……给阻挡器充能！）"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -787,10 +787,10 @@ msgstr "（我真的要让他为了小费就随便摸我吗？我……我只是
 
 #. src: dialog
 #. rich_text: <i>(Am I really going to work in the glowing hole as a waitress going forwards...?)</i>
-#. rich_translation: <i>（我接下来真的要在这个发光洞穴里当服务员吗……？）</i>
+#. rich_translation: <i>（我接下来真的要在这个发光的洞里当服务员吗……？）</i>
 msgctxt "speaker:Zoey"
 msgid "(Am I really going to work in the glowing hole as a waitress going forwards...?)"
-msgstr "（我接下来真的要在这个发光洞穴里当服务员吗……？）"
+msgstr "（我接下来真的要在这个发光的洞里当服务员吗……？）"
 
 #. src: dialog
 #. rich_text: <i>(Am I really helping anyone anymore...?)</i>
@@ -1060,11 +1060,11 @@ msgstr "（在……家……？嗯……）"
 
 #. src: dialog
 #. rich_text: <i>(Been feeling the <color=#EB83FF>itch</color> more on this ride too, but agh- I can't waste the blocker on it with no charger in sight.)</i>
-#. rich_translation: <i>（这次旅行也让我越来越痒了，但啊——总不能在没有充电器的情况下浪费阻断器在这上面。）</i>
+#. rich_translation: <i>（这次旅行也让我越来越痒了，但啊——总不能在没有充电器的情况下浪费阻断剂在这上面。）</i>
 #, rt-review
 msgctxt "ui"
 msgid "(Been feeling the itch more on this ride too, but agh- I can't waste the blocker on it with no charger in sight.)"
-msgstr "（这次旅行也让我越来越痒了，但啊——总不能在没有充电器的情况下浪费阻断器在这上面。）"
+msgstr "（这次旅行也让我越来越痒了，但啊——总不能在没有充电器的情况下浪费阻断剂在这上面。）"
 
 #. src: dialog
 #. rich_text: <i>(Being a merc feels like it's getting me into more and more trouble... Maybe I'm just not-... hhh... )</i>
@@ -1173,10 +1173,10 @@ msgstr "（但这种感觉却挥之不去……这种……隐隐作痛……难
 
 #. src: dialog
 #. rich_text: <i>(But what would Sarah think of me if I just cashed in the blocker?)</i>
-#. rich_translation: <i>（但如果我直接把那个阻断器兑现了，莎拉会怎么想我？）</i>
+#. rich_translation: <i>（但如果我直接把那个阻止者兑现了，莎拉会怎么想我？）</i>
 msgctxt "ui"
 msgid "(But what would Sarah think of me if I just cashed in the blocker?)"
-msgstr "（但如果我直接把那个阻断器兑现了，莎拉会怎么想我？）"
+msgstr "（但如果我直接把那个阻止者兑现了，莎拉会怎么想我？）"
 
 #. src: dialog
 #. rich_text: <i>(But why... don't I... care...? )</i>
@@ -1286,10 +1286,10 @@ msgstr "（收藏……？难道我不是唯一一个……和她做交易的人
 
 #. src: dialog
 #. rich_text: <i>(Come on, Zoey. Get it together. Focus on the blocker issue.)</i>
-#. rich_translation: <i>（拜托了，佐伊。振作起来。集中解决这个阻断器的问题。）</i>
+#. rich_translation: <i>（拜托了，佐伊。振作起来。集中解决这个拦截器的问题。）</i>
 msgctxt "ui"
 msgid "(Come on, Zoey. Get it together. Focus on the blocker issue.)"
-msgstr "（拜托了，佐伊。振作起来。集中解决这个阻断器的问题。）"
+msgstr "（拜托了，佐伊。振作起来。集中解决这个拦截器的问题。）"
 
 #. src: dialog
 #. rich_text: <i>(Come on, Zoey. Get your shit together, you whore... It's just fucking bathroom shit. Try to get it done without opening your legs. )</i>
@@ -3253,10 +3253,10 @@ msgstr "（我肯定能把它破解开。只要把解码器擦干净就行。）
 
 #. src: dialog
 #. rich_text: <i>(I better call my tech guy, Lio. He'll know how to put together a convincing fake of the blocker.)</i>
-#. rich_translation: <i>（最好打电话给我的技术专家利奥。他肯定知道怎么伪造一个逼真的阻断器。）</i>
+#. rich_translation: <i>（最好打电话给我的技术专家利奥。他肯定知道怎么伪造一个逼真的阻断装置。）</i>
 msgctxt "ui"
 msgid "(I better call my tech guy, Lio. He'll know how to put together a convincing fake of the blocker.)"
-msgstr "（最好打电话给我的技术专家利奥。他肯定知道怎么伪造一个逼真的阻断器。）"
+msgstr "（最好打电话给我的技术专家利奥。他肯定知道怎么伪造一个逼真的阻断装置。）"
 
 #. src: dialog
 #. rich_text: <i>(I better leave him alone, don't want any trouble.)</i>
@@ -3916,10 +3916,10 @@ msgstr "（我应该等没人陪我的时候再回来……）"
 
 #. src: dialog
 #. rich_text: <i>(I should get a hold of my tech guy, Lio. He'll know how to put together a fake blocker to give to the Cartel.)</i>
-#. rich_translation: <i>（我得联系一下我的技术人员利奥。他肯定知道怎么弄个假的阻断器来糊弄卡特尔。）</i>
+#. rich_translation: <i>（我得联系一下我的技术人员利奥。他肯定知道怎么弄个假的封锁器来糊弄卡特尔。）</i>
 msgctxt "ui"
 msgid "(I should get a hold of my tech guy, Lio. He'll know how to put together a fake blocker to give to the Cartel.)"
-msgstr "（我得联系一下我的技术人员利奥。他肯定知道怎么弄个假的阻断器来糊弄卡特尔。）"
+msgstr "（我得联系一下我的技术人员利奥。他肯定知道怎么弄个假的封锁器来糊弄卡特尔。）"
 
 #. src: dialog
 #. rich_text: <i>(I should get a new umbrella next time I visit the store. )</i>
@@ -4049,10 +4049,10 @@ msgstr "（我不该把任何人卷进这件事里。）"
 
 #. src: dialog
 #. rich_text: <i>(I shouldn't draw any attention to myself with the blocker on me, right...? Just... Just <color=#EB83FF>ignore it...</color> )</i>
-#. rich_translation: <i>（身上还带着这个阻断器，我可不想引起任何注意，对吧……？就……<color=#EB83FF>就当没看见好了……</color>）</i>
+#. rich_translation: <i>（身上还带着这个遮挡物，我可不想引起任何注意，对吧……？就……<color=#EB83FF>就当没看见好了……</color>）</i>
 msgctxt "ui"
 msgid "(I shouldn't draw any attention to myself with the blocker on me, right...? Just... Just ignore it... )"
-msgstr "（身上还带着这个阻断器，我可不想引起任何注意，对吧……？就……就当没看见好了……）"
+msgstr "（身上还带着这个遮挡物，我可不想引起任何注意，对吧……？就……就当没看见好了……）"
 
 #. src: dialog
 #. rich_text: <i>(I shouldn't leave just yet...)</i>
@@ -5325,10 +5325,10 @@ msgstr "（成功了！）"
 
 #. src: dialog
 #. rich_text: <i>(It'd be wrong to take a picture of her while she's knocked out... but It'd save her... Ugh... maybe I should just flash him instead...)</i>
-#. rich_translation: <i>（在她昏迷的时候给她拍照确实不对……但那样就能救她……唉……或许我干脆直接给他看看我的身子好了……）</i>
+#. rich_translation: <i>（在她昏迷的时候给她拍照确实不对……但那样就能救她……唉……或许我干脆直接让他看个片儿好了……）</i>
 msgctxt "ui"
 msgid "(It'd be wrong to take a picture of her while she's knocked out... but It'd save her... Ugh... maybe I should just flash him instead...)"
-msgstr "（在她昏迷的时候给她拍照确实不对……但那样就能救她……唉……或许我干脆直接给他看看我的身子好了……）"
+msgstr "（在她昏迷的时候给她拍照确实不对……但那样就能救她……唉……或许我干脆直接让他看个片儿好了……）"
 
 #. src: dialog
 #. rich_text: <i>(It'll hurt her if I just pull the thing off. I've gotta get it under control somehow... but how?)</i>
@@ -6117,10 +6117,10 @@ msgstr "（上次是……有点太过了，对吧……？）"
 
 #. src: dialog
 #. rich_text: <i>(Leaving the blocker in the locker was so fucking stupid, khh!)</i>
-#. rich_translation: <i>（把那个阻断器留在储物柜里真是蠢到家了，靠！）</i>
+#. rich_translation: <i>（把那个障碍物留在储物柜里真是蠢到家了，靠！）</i>
 msgctxt "speaker:Zoey"
 msgid "(Leaving the blocker in the locker was so fucking stupid, khh!)"
-msgstr "（把那个阻断器留在储物柜里真是蠢到家了，靠！）"
+msgstr "（把那个障碍物留在储物柜里真是蠢到家了，靠！）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Left in a train with some strangers cum between my thighs-... Khhh... What am I doing... Fhh... )</i></color>
@@ -6496,10 +6496,10 @@ msgstr "（浓雾更重了。呃，它甚至从通风口漏出来了。这对环
 
 #. src: dialog
 #. rich_text: <i>(More haze I gotta get through... Gotta use the blocker if I wanna make it without getting overwhelmed.)</i>
-#. rich_translation: <i>(还得穿过更多迷雾……要想不被压垮地过去，就得用那个阻断器。)</i>
+#. rich_translation: <i>(还得穿过更多迷雾……要想不被压垮地过去，就得用那个阻挡器。)</i>
 msgctxt "ui"
 msgid "(More haze I gotta get through... Gotta use the blocker if I wanna make it without getting overwhelmed.)"
-msgstr "(还得穿过更多迷雾……要想不被压垮地过去，就得用那个阻断器。)"
+msgstr "(还得穿过更多迷雾……要想不被压垮地过去，就得用那个阻挡器。)"
 
 #. src: dialog
 #. rich_text: <i>(Most of her arm seems to be robotic. So many interlocked plates. )</i>
@@ -6671,10 +6671,10 @@ msgstr "（得想办法把电源引到门上……）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Need to... use the Blocker... Please work...)</i></color>
-#. rich_translation: <color=#EB83FF><i>（必须……使用那个阻断器……求你了，起作用吧……）</i></color>
+#. rich_translation: <color=#EB83FF><i>（必须……使用那个阻挡器……求你了，起作用吧……）</i></color>
 msgctxt "ui"
 msgid "(Need to... use the Blocker... Please work...)"
-msgstr "（必须……使用那个阻断器……求你了，起作用吧……）"
+msgstr "（必须……使用那个阻挡器……求你了，起作用吧……）"
 
 #. src: dialog
 #. rich_text: <i>(Never liked how my hands hurt after drills. )</i>
@@ -7617,10 +7617,10 @@ msgstr "（她在享受吗？她感到满足？）"
 
 #. src: dialog
 #. rich_text: <i>(Saved again by Dr. Lozenge. Ugh, how am I going to get through this place if there's more haze? The blocker's only got one charge.)</i>
-#. rich_translation: <i>（又被洛津博士救了一次。唉……要是这地方还有更多迷雾，我该怎么过去？那台阻断器只剩一次充能了。）</i>
+#. rich_translation: <i>（又被洛津博士救了一次。唉……要是这地方还有更多迷雾，我该怎么过去？那台阻隔器只剩一次充能了。）</i>
 msgctxt "ui"
 msgid "(Saved again by Dr. Lozenge. Ugh, how am I going to get through this place if there's more haze? The blocker's only got one charge.)"
-msgstr "（又被洛津博士救了一次。唉……要是这地方还有更多迷雾，我该怎么过去？那台阻断器只剩一次充能了。）"
+msgstr "（又被洛津博士救了一次。唉……要是这地方还有更多迷雾，我该怎么过去？那台阻隔器只剩一次充能了。）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Scratch the itch... Just... Scratching my... i-itch... )</i></color>
@@ -7996,10 +7996,10 @@ msgstr "（该死，我根本买不起……）"
 
 #. src: dialog
 #. rich_text: <i>(Shit, do I tell her about the blocker? Better just play dumb for now.)</i>
-#. rich_translation: <i>（糟了，要告诉她关于那个阻断器的事吗？还是先装傻比较好。）</i>
+#. rich_translation: <i>（糟了，要告诉她关于那个拦截器的事吗？还是先装傻比较好。）</i>
 msgctxt "ui"
 msgid "(Shit, do I tell her about the blocker? Better just play dumb for now.)"
-msgstr "（糟了，要告诉她关于那个阻断器的事吗？还是先装傻比较好。）"
+msgstr "（糟了，要告诉她关于那个拦截器的事吗？还是先装傻比较好。）"
 
 #. src: dialog
 #. rich_text: <i>(Shit, how the hell am I gonna help him?! I better take a closer look. )</i>
@@ -8236,10 +8236,10 @@ msgstr "（原来那是他最喜欢的乐队吗？）"
 
 #. src: dialog
 #. rich_text: <i>(So these are the parts Lio needs to make a fake of the blocker?)</i>
-#. rich_translation: <i>（所以这些就是利奥用来制造那个阻断器仿制品的零件？）</i>
+#. rich_translation: <i>（所以这些就是利奥用来制造那个拦截器仿制品的零件？）</i>
 msgctxt "speaker:Zoey"
 msgid "(So these are the parts Lio needs to make a fake of the blocker?)"
-msgstr "（所以这些就是利奥用来制造那个阻断器仿制品的零件？）"
+msgstr "（所以这些就是利奥用来制造那个拦截器仿制品的零件？）"
 
 #. src: dialog
 #. rich_text: <i>(So this remote is for the lights, good to know.)</i>
@@ -8481,10 +8481,10 @@ msgstr "（要是我稍微用一下自己的软件技术，应该没人会介意
 
 #. src: dialog
 #. rich_text: <i>(Surely there has to be one in the Glowing Hole, right? Maybe I could ask Klaudia. )</i>
-#. rich_translation: <i>（发发光洞穴里肯定有一个吧？或许可以问问克劳迪娅。）</i>
+#. rich_translation: <i>（发光洞里肯定有一个吧？或许可以问问克劳迪娅。）</i>
 msgctxt "ui"
 msgid "(Surely there has to be one in the Glowing Hole, right? Maybe I could ask Klaudia. )"
-msgstr "（发发光洞穴里肯定有一个吧？或许可以问问克劳迪娅。）"
+msgstr "（发光洞里肯定有一个吧？或许可以问问克劳迪娅。）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Swallowing squirt...?!)</i></color>
@@ -9025,10 +9025,10 @@ msgstr "（找到了。入口舱门 F04。嗯……看起来是锁着的。得�
 
 #. src: dialog
 #. rich_text: <i>(There it is... the Glowing Hole... Am I really about to just return to the spot I had to bust out of? Agh, I don't have a damn choice.)</i>
-#. rich_translation: <i>（就是它了……那个发光洞穴……我难道真的要回到那个我好不容易才逃出来的地方吗？啊，我根本别无选择。）</i>
+#. rich_translation: <i>（就是它了……那个发光的洞……我难道真的要回到那个我好不容易才逃出来的地方吗？啊，我根本别无选择。）</i>
 msgctxt "ui"
 msgid "(There it is... the Glowing Hole... Am I really about to just return to the spot I had to bust out of? Agh, I don't have a damn choice.)"
-msgstr "（就是它了……那个发光洞穴……我难道真的要回到那个我好不容易才逃出来的地方吗？啊，我根本别无选择。）"
+msgstr "（就是它了……那个发光的洞……我难道真的要回到那个我好不容易才逃出来的地方吗？啊，我根本别无选择。）"
 
 #. src: dialog
 #. rich_text: <i>(There we go! The case should just accept any code to unlock now!)</i>
@@ -11057,7 +11057,7 @@ msgstr "0.3 - 调酒 - 1 - 与克劳迪娅对话 - 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon - Told Max - Porn - 1 - 1"
-msgstr "0.3 - 美甲店 - 告诉马克斯 - 色情 - 1 - 1"
+msgstr "0.3 - 美甲沙龙 - 告诉马克斯 - 色情 - 1 - 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11067,7 +11067,7 @@ msgstr "0.3 - 美甲店 - 告诉马克斯 - 色情 - 1 - 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 1"
-msgstr "0.3 - 美甲店色情内容 - 1 - 1"
+msgstr "0.3 - 美甲沙龙色情内容 - 1 - 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11087,12 +11087,12 @@ msgstr "0.3 - 美甲沙龙色情内容 - 1 - 2 - 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 2 - 4"
-msgstr "0.3 - 美甲店色情内容 - 1 - 2 - 4"
+msgstr "0.3 - 美甲沙龙色情内容 - 1 - 2 - 4"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 2 - 5"
-msgstr "0.3 - 美甲店色情片 - 1 - 2 - 5"
+msgstr "0.3 - 美甲沙龙色情片 - 1 - 2 - 5"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11102,7 +11102,7 @@ msgstr "0.3 - 美甲沙龙色情游戏 - 1 - 2 - 6"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 3"
-msgstr "0.3 - 美甲店色情内容 - 1 - 3"
+msgstr "0.3 - 美甲沙龙色情内容 - 1 - 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11132,7 +11132,7 @@ msgstr "0.3 - 美甲沙龙色情片 - 1 - 5 - 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 6"
-msgstr "0.3 - 美甲店色情内容 - 1 - 6"
+msgstr "0.3 - 美甲沙龙色情内容 - 1 - 6"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11142,7 +11142,7 @@ msgstr "0.3 - 美甲沙龙色情内容 - 1 - 7"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Nail Salon Porn - 1 - 8"
-msgstr "0.3 - 美甲店色情片 - 1 - 8"
+msgstr "0.3 - 美甲沙龙色情片 - 1 - 8"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11182,32 +11182,32 @@ msgstr "0.3 - 霓虹崛起 - 执法者街区 - 老鼠出没 - 02"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Neon Rise - Enforcer Block - Rat Out - 03"
-msgstr "0.3 - 霓虹崛起 - 执法者区块 - 老鼠出没 - 03"
+msgstr "0.3 - 霓虹崛起 - 执行者区块 - 老鼠出没 - 03"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Residential - Cartel Event - 1"
-msgstr "0.3 - 住宅区 - 卡特尔事件 - 1"
+msgstr "0.3 - 住宅区 - 贩毒集团事件 - 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Residential - Cartel Event - 2 - Shorter"
-msgstr "0.3 - 住宅区 - 卡特尔事件 - 2 - 简短版"
+msgstr "0.3 - 住宅区 - 贩毒集团事件 - 2 - 简短版"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Residential - Cartel Event - 3"
-msgstr "0.3 - 住宅区 - 卡特尔事件 - 3"
+msgstr "0.3 - 住宅区 - 贩毒集团事件 - 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Residential - Cartel Event - 4"
-msgstr "0.3 - 住宅区 - 卡特尔事件 - 4"
+msgstr "0.3 - 住宅区 - 贩毒集团事件 - 4"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.3 - Residential - Cartel Event - 5 - Walk back"
-msgstr "0.3 - 住宅区 - 卡特尔事件 - 5 - 走回去"
+msgstr "0.3 - 住宅区 - 贩毒集团事件 - 5 - 走回去"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -12066,10 +12066,10 @@ msgstr "> 我……我真的很抱歉，夫人！它们太不可思议了！又�
 
 #. src: dialog
 #. rich_text: <i>> I-... I need more-... stroke my cock!
-#. rich_translation: <i>> 我……我需要更多……撸我的鸡巴！
+#. rich_translation: <i>> 我……我需要更多……快操我的鸡巴！
 msgctxt "ui"
 msgid "> I-... I need more-... stroke my cock!"
-msgstr "> 我……我需要更多……撸我的鸡巴！"
+msgstr "> 我……我需要更多……快操我的鸡巴！"
 
 #. src: dialog
 #. rich_text: <i>> I-... I-... !
@@ -12533,7 +12533,7 @@ msgstr "?xMnB z"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "@GalaxiaDubs - Nail Salon Robot #5"
-msgstr "@GalaxiaDubs - 美甲店机器人5号"
+msgstr "@GalaxiaDubs - 美甲沙龙机器人5号"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -15042,7 +15042,7 @@ msgstr "一个智能体完成了对非网格链接的穿越"
 #. src: dialog
 msgctxt "ui"
 msgid "An interesting suggestion. Please stimulate this one's vagina in an accelerated rhythm."
-msgstr "这个提议很有趣。请用更快的节奏刺激本机的阴道。"
+msgstr "这个提议很有趣。请用更快的节奏刺激我的阴道。"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -15102,7 +15102,7 @@ msgstr "我会看着你的。"
 #. src: dialog
 msgctxt "ui"
 msgid "And I'm talking about you, Zoey Madison. I know you have it in you. Just think about it before you pawn that thing off to the Cartel."
-msgstr "而且我说的就是你，佐伊·麦迪逊。我知道你绝对办得到。在把那东西卖给卡特尔之前，好好想想吧。"
+msgstr "而且我说的就是你，佐伊·麦迪逊。我知道你绝对办得到。在把那东西卖给黑手党之前，好好想想吧。"
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -17255,7 +17255,7 @@ msgstr "基础地面"
 #. src: dialog
 msgctxt "ui"
 msgid "Basically? It hasn't been easy, but... this blocker makes it possible."
-msgstr "基本上？虽然过程并不轻松，但……有了这个阻断器的存在，一切才成为可能。"
+msgstr "基本上？虽然过程并不轻松，但……有了这个障碍物的存在，一切才成为可能。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17564,7 +17564,7 @@ msgstr "更大的——我需要更大的东西……！该死的，我现在就
 #. src: us
 msgctxt "ui"
 msgid "Bill in Bunnysuit"
-msgstr "穿着兔女郎的比尔"
+msgstr "穿着兔装的比尔"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17706,7 +17706,7 @@ msgstr "阻止对话"
 #. src: us
 msgctxt "ui"
 msgid "Blocker Recharged!"
-msgstr "阻断器已充能！"
+msgstr "阻挡器已充能！"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18974,7 +18974,7 @@ msgstr "卡洛斯"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Cartel Dialoguepresets"
-msgstr "卡特尔对话预设"
+msgstr "贩毒集团对话预设"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18984,7 +18984,7 @@ msgstr "卡特尔女性"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Cartel Guard"
-msgstr "卡特尔守卫"
+msgstr "贩毒集团守卫"
 
 #. src: dialog
 msgctxt "speaker-name"
@@ -18999,7 +18999,7 @@ msgstr "卡特尔帽"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Cartel Member"
-msgstr "卡特尔成员"
+msgstr "贩毒集团成员"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -20813,7 +20813,7 @@ msgstr "别叫利奥了"
 #. src: dialog
 msgctxt "ui"
 msgid "Cute Awkward stumbling over her own words"
-msgstr "可爱又笨手笨脚地结巴着"
+msgstr "真……真……太棒了！你刚才还做了个高潮脸呢！看起来超可爱的，闺蜜！"
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
@@ -22901,7 +22901,7 @@ msgstr "禁用附加"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable Blocker"
-msgstr "禁用阻断器"
+msgstr "禁用封锁器"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23843,7 +23843,7 @@ msgstr "我们不是有那件物品吗？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do we not have the task to use blocker?"
-msgstr "我们不是有使用阻断器的任务吗？"
+msgstr "我们不是有使用拦截器的任务吗？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -24923,7 +24923,7 @@ msgstr "电子高速公路指示牌 SDF"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "ElethiaVT - Nail Salon Robot #3"
-msgstr "ElethiaVT - 美甲店机器人3号"
+msgstr "ElethiaVT - 美甲沙龙机器人3号"
 
 #. src: dialog
 msgctxt "ui"
@@ -25378,17 +25378,17 @@ msgstr "执法官开始用她的警棍摩擦佐伊的小穴。"
 #. src: dialog
 msgctxt "ui"
 msgid "Enforcer now gropes both breasts."
-msgstr "执法者现在开始揉捏她的双乳。"
+msgstr "执法官现在开始揉捏她的双乳。"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Enforcer puts her hand on Zoey's breast"
-msgstr "执法者将手放在佐伊的乳房上"
+msgstr "执法官将手放在佐伊的乳房上"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Enforcer rubs her fingers over Zoeys clothed pussy"
-msgstr "执法者用手指摩挲着佐伊仍穿着衣服的阴部"
+msgstr "执法官用手指摩挲着佐伊仍穿着衣服的阴部"
 
 #. src: dialog
 msgctxt "ui"
@@ -25543,7 +25543,7 @@ msgstr "输入文本"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enter the Nail Salon"
-msgstr "进入美甲店"
+msgstr "进入美甲沙龙"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25854,7 +25854,7 @@ msgstr "不过与其说是挠痒痒，不如说你就是把自己给揉得发傻
 #. src: dialog
 msgctxt "ui"
 msgid "Excited, Evil, lowkey manic"
-msgstr "兴奋、邪恶、略带癫狂"
+msgstr "兴奋、邪恶、略带癫狂地：嗯嗯……就是这样……你属于这里。你想被毁得更彻底……！说吧，该死的荡妇！"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -26695,7 +26695,7 @@ msgstr "女电工（上位）"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Female Enforcer #1112"
-msgstr "女执法者 #1112"
+msgstr "女执法官 #1112"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -26705,7 +26705,7 @@ msgstr "女性执法者制服"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Female Enforcer Suit Pink"
-msgstr "女执法者制服 粉色"
+msgstr "女执法官制服 粉色"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -26745,7 +26745,7 @@ msgstr "女仆兔女郎装 中号肉棒"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Femboy Bunnysuit SmallDick"
-msgstr "女仆兔女郎 小屌"
+msgstr "女仆兔装 小屌"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -28369,7 +28369,7 @@ msgstr "啊……这身材也太棒了……"
 #. src: dialog
 msgctxt "ui"
 msgid "Gahhh...! No! I- I can't help you make porn for the Cartel behind Max's back, that's crazy!"
-msgstr "啊……！不！我——我绝对不可能帮你背着马克斯为那个卡特尔拍色情片，这简直疯了！"
+msgstr "啊……！不！我——我绝对不可能帮你背着马克斯为那个贩毒集团拍色情片，这简直疯了！"
 
 #. src: us
 msgctxt "ui"
@@ -29226,7 +29226,7 @@ msgstr "去把她找出来。我会提前打个招呼，让她知道你要来了
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Go into the backroom behind the kitchen"
-msgstr "去厨房后面的后室"
+msgstr "去厨房后面的后屋"
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
@@ -31373,7 +31373,7 @@ msgstr "呵呵……这是你的报酬，亲爱的。如果想再玩点花样，
 #. src: dialog
 msgctxt "ui"
 msgid "Hehe... Sorry, hon. Up to you if you wanna do it. I get what it's like to not want to... Ah- Anyway. Hehe. Naked outside the Glowing Hole."
-msgstr "嘿嘿……抱歉，亲爱的。你想做的话就随你啦。我懂那种不想做的感觉……啊——总之。嘿嘿。在发发光洞穴窟外面裸体。"
+msgstr "嘿嘿……抱歉，亲爱的。你想做的话就随你啦。我懂那种不想做的感觉……啊——总之。嘿嘿。在发光洞窟外面裸体。"
 
 #. src: dialog
 msgctxt "ui"
@@ -33720,10 +33720,10 @@ msgstr "我可不"
 
 #. src: dialog
 #. rich_text: I don't care about the intruiges between you and the cartel. However. You <b>will</b> make up for the damage you caused me, Madison. <b>Understood</b>?!
-#. rich_translation: <b>我不管</b>你和卡特尔之间的那些勾当。不过，你必须弥补你给我造成的损失，麦迪逊。<b>听明白了吗？！</b>
+#. rich_translation: <b>我不管</b>你和贩毒集团之间的那些勾当。不过，你必须弥补你给我造成的损失，麦迪逊。<b>听明白了吗？！</b>
 msgctxt "speaker:Klaudia"
 msgid "I don't care about the intruiges between you and the cartel. However. You will make up for the damage you caused me, Madison. Understood?!"
-msgstr "<b>我不管</b>你和卡特尔之间的那些勾当。不过，你必须弥补你给我造成的损失，麦迪逊。<b>听明白了吗？！</b>"
+msgstr "我不管你和贩毒集团之间的那些勾当。不过，你必须弥补你给我造成的损失，麦迪逊。听明白了吗？！"
 
 #. src: dialog
 msgctxt "ui"
@@ -34173,7 +34173,7 @@ msgstr "我做出了决定，这真的对吗？"
 #. src: dialog
 msgctxt "ui"
 msgid "I mean close by, you animal. I'm at the nail salon in the Res."
-msgstr "我的意思是就在附近，你这个畜生。我现在在住宅区的美甲店。"
+msgstr "我的意思是就在附近，你这个畜生。我现在在住宅区的指甲店。"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -34391,7 +34391,7 @@ msgstr "我好像得再多看看……"
 #. src: dialog
 msgctxt "speaker:Woman"
 msgid "I think I saw a bunny in the Glowing Hole with body writing once..."
-msgstr "我好像曾经在发发光洞穴里看到过一只身上有文字的小兔子……"
+msgstr "我好像曾经在发光洞里看到过一只身上有文字的小兔子……"
 
 #. src: dialog
 msgctxt "ui"
@@ -35403,7 +35403,7 @@ msgstr "什——什么？！"
 #. src: dialog
 msgctxt "ui"
 msgid "I- Yeah okay, and if the Cartel comes after my ass?"
-msgstr "是——行啊，那要是卡特尔来追我的话呢？"
+msgstr "是——行啊，那要是黑手党来追我的话呢？"
 
 #. src: dialog
 msgctxt "ui"
@@ -36949,7 +36949,7 @@ msgstr "在楼上吗？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Is Use Blocker in progress?"
-msgstr "正在使用“使用阻断器”吗？"
+msgstr "正在使用“使用阻挡器”吗？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41344,7 +41344,7 @@ msgstr "想找个好时机吗？"
 #. src: dialog
 msgctxt "ui"
 msgid "Looking for a quality nut in the Lower District instead of the shallow flashiness of the Upper? Follow the Rabbit to the Glowing Hole!"
-msgstr "不想去上层那种肤浅的浮华之地，想在下层区找个有料的？那就跟着兔子去发发光洞穴吧！"
+msgstr "不想去上层那种肤浅的浮华之地，想在下层区找个有料的？那就跟着兔子去发光洞吧！"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -43630,10 +43630,10 @@ msgstr "嗯啊啊……真是个好女孩……"
 
 #. src: dialog
 #. rich_text: Mmmhh~ This is the <b>best</b> nail salon ever, hehe~!
-#. rich_translation: 嗯嗯~这里真是<b>最棒的</b>美甲店了，嘿嘿~！
+#. rich_translation: 嗯嗯~这里真是<b>最棒的</b>指甲店了，嘿嘿~！
 msgctxt "ui"
 msgid "Mmmhh~ This is the best nail salon ever, hehe~!"
-msgstr "嗯嗯~这里真是<b>最棒的</b>美甲店了，嘿嘿~！"
+msgstr "嗯嗯~这里真是<b>最棒的</b>指甲店了，嘿嘿~！"
 
 #. src: dialog
 msgctxt "ui"
@@ -45849,7 +45849,7 @@ msgstr "没关系。"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "No worries. I managed to make it in one piece thanks to the blocker."
-msgstr "别担心。多亏了那个阻断器，我才能完好无损地过来。"
+msgstr "别担心。多亏了那个障碍物，我才能完好无损地过来。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -45909,7 +45909,7 @@ msgstr "不，这不是你的错，Z。全都是我的问题。我老是这样�
 #. src: dialog
 msgctxt "ui"
 msgid "No, it's not. So you're going to have to lay low wherever you are. Stay out of the Redlight District until the lockdown is lifted."
-msgstr "不是的。所以你得在现在的位置上躲好。在封锁解除之前，千万别去红灯区。"
+msgstr "不是的。所以你得在现在的位置上躲好。在封锁解除之前，千万别去红区。"
 
 #. src: dialog
 msgctxt "ui"
@@ -52191,7 +52191,7 @@ msgstr "进度条"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Project Melody - Nail Salon Robot #2"
-msgstr "项目：旋律 - 美甲店机器人 2号"
+msgstr "项目：旋律 - 美甲沙龙机器人 2号"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57350,7 +57350,7 @@ msgstr "在2号储物柜里展示佐伊的服装"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show blocker in Locker"
-msgstr "在储物柜中显示阻断器"
+msgstr "在储物柜中显示遮挡物"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57680,7 +57680,7 @@ msgstr "她含住"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Sif Avellana - Nail Salon Robot #1"
-msgstr "西夫·阿维拉纳 - 美甲店机器人1号"
+msgstr "西夫·阿维拉纳 - 美甲沙龙机器人1号"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59415,7 +59415,7 @@ msgstr "开始重复对话"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start Scolding in Backroom"
-msgstr "在后室开始斥责"
+msgstr "在后屋开始斥责"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60851,7 +60851,7 @@ msgstr "SuitcaseMinigame"
 #. src: dialog
 msgctxt "ui"
 msgid "Sup, Zoey! Here's your... totally legit blocker!"
-msgstr "嘿，佐伊！这是你的……绝对合法的阻断器！"
+msgstr "嘿，佐伊！这是你的……绝对合法的阻挡器！"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -62530,7 +62530,7 @@ msgstr "太完美了……"
 #. src: dialog
 msgctxt "ui"
 msgid "That's right! Actual living ones! Hard to come by in this city, I know."
-msgstr "没错！是活生生的！我知道，在这座城市里可不好找。"
+msgstr "没错！是活生生的植物！我知道，在这座城市里可不好找。"
 
 #. src: dialog
 #. rich_text: <size=27>That's right, girl. Keep on acting like nothing's happening. I can feel how wet you are.
@@ -62833,7 +62833,7 @@ msgstr "你火辣的身体对我的鸡巴产生了怎样的影响。"
 #. src: dialog
 msgctxt "ui"
 msgid "The enforcer begins to grope Zoeys Ass"
-msgstr "执法者开始摸索佐伊的屁股。"
+msgstr "执法官开始摸索佐伊的屁股。"
 
 #. src: us
 msgctxt "ui"
@@ -63044,11 +63044,11 @@ msgstr "卡特尔……？"
 
 #. src: dialog
 #. rich_text: Then again this blocker could be huge. I wonder how much the Cartel knows about this. )</i>
-#. rich_translation: 话说回来，这个阻断器可能相当严重。我很好奇卡特尔对此了解多少。）
+#. rich_translation: 话说回来，这个障碍物可能相当严重。我很好奇卡特尔对此了解多少。）
 #, rt-review
 msgctxt "speaker:Zoey"
 msgid "Then again this blocker could be huge. I wonder how much the Cartel knows about this. )"
-msgstr "话说回来，这个阻断器可能相当严重。我很好奇卡特尔对此了解多少。）"
+msgstr "话说回来，这个障碍物可能相当严重。我很好奇卡特尔对此了解多少。）"
 
 #. src: dialog
 msgctxt "ui"
@@ -66840,7 +66840,7 @@ msgstr "超长角色立绘标题，笑死！"
 #. src: dialog
 msgctxt "ui"
 msgid "Very coy and playful"
-msgstr "非常害羞又俏皮"
+msgstr "嘿嘿，要是你想喝点东西提提神，这里还有好多饮料呢～我知道我最近有时候也会这样。懂我意思吗，亲爱的？"
 
 #. src: dialog
 msgctxt "ui"
@@ -67802,7 +67802,7 @@ msgstr "等待任何可交互的门"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for blocker"
-msgstr "等待阻断器"
+msgstr "等待障碍物"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68077,7 +68077,7 @@ msgstr "等待移动"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for naked"
-msgstr "等待裸体状态"
+msgstr "等着被干吧"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68587,7 +68587,7 @@ msgstr "当服务生——特罗夫 订单 1"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing - Trov Order 2"
-msgstr "当服务员——特罗夫，订单2"
+msgstr "当服务员——特罗夫，点餐2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68597,7 +68597,7 @@ msgstr "当服务员——特罗夫，订单 3"
 #. src: dialog
 msgctxt "ui"
 msgid "Waitressing - Trov Order 3 - 1"
-msgstr "当服务生 - 特罗夫订单 3 - 1"
+msgstr "当服务生 - 特罗夫点单 3 - 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68667,7 +68667,7 @@ msgstr "当服务生 - 瓦伦，订单 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing - Varen Order 4"
-msgstr "当服务生——瓦伦，订单4"
+msgstr "当服务生——瓦伦，点单4"
 
 #. src: dialog
 msgctxt "ui"
@@ -69898,7 +69898,7 @@ msgstr "可——可是你的同伴们呢？"
 #. src: dialog
 msgctxt "ui"
 msgid "Wh- Do I look like Vibe? I'm no hero, Sarah. We're talking about GAG here, not to mention the Cartel."
-msgstr "我——我看起来像维布吗？我可不是什么英雄，莎拉。我们这儿说的是GAG，更别提还有卡特尔呢。"
+msgstr "我——我看起来像维布吗？我可不是什么英雄，莎拉。我们这儿说的是GAG，更别提还有黑手党呢。"
 
 #. src: dialog
 msgctxt "ui"
@@ -70658,7 +70658,7 @@ msgstr "这他妈的到底什么时候才能结束啊？！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "When was the last time I went to the Glowing Hole?"
-msgstr "我上次去发发光洞穴是什么时候来着？"
+msgstr "我上次去发光洞是什么时候来着？"
 
 #. src: dialog
 #. rich_text: When you're  <b><i>done</i></b> in here, go talk to Klaudia. Maybe she already has a client lined up for you, hehe..~
@@ -71512,7 +71512,7 @@ msgstr "Xbox 控制器"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "XenoQueen - Nail Salon Robot #4"
-msgstr "异星女王 - 美甲店机器人4号"
+msgstr "异星女王 - 美甲沙龙机器人4号"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -74861,7 +74861,7 @@ msgstr "添加肢体效果"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "add perversion"
-msgstr "增加变态值"
+msgstr "添加色情内容"
 
 #. src: dialog
 msgctxt "ui"

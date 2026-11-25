@@ -389,17 +389,17 @@ msgstr "(Gogle VR? To było w pokoju? )"
 
 #. src: dialog
 #. rich_text: <i>(A bunnysuit! )</i>
-#. rich_translation: <i>(Kostium króliczka! )</i>
+#. rich_translation: <i>(Strój króliczki! )</i>
 msgctxt "ui"
 msgid "(A bunnysuit! )"
-msgstr "(Kostium króliczka! )"
+msgstr "(Strój króliczki! )"
 
 #. src: dialog
 #. rich_text: <i>(A bunnysuit..? )</i>
-#. rich_translation: <i>(Kostium króliczka..? )</i>
+#. rich_translation: <i>(Strój króliczki..? )</i>
 msgctxt "ui"
 msgid "(A bunnysuit..? )"
-msgstr "(Kostium króliczka..? )"
+msgstr "(Strój króliczki..? )"
 
 #. src: dialog
 #. rich_text: <i>(A dildo... Well, the chip is inside her. I guess it makes sense... )</i>
@@ -1107,10 +1107,10 @@ msgstr "(Bloker... To musi być to małe urządzenie w walizce. Wygląda jak ma�
 
 #. src: dialog
 #. rich_text: <i>(Bunnysuit? Where do I get one of those from? )</i>
-#. rich_translation: <i>(Kostium króliczka? Skąd wezmę taki? )</i>
+#. rich_translation: <i>(Strój króliczki? Skąd wezmę taki? )</i>
 msgctxt "ui"
 msgid "(Bunnysuit? Where do I get one of those from? )"
-msgstr "(Kostium króliczka? Skąd wezmę taki? )"
+msgstr "(Strój króliczki? Skąd wezmę taki? )"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(But I did all that nasty stuff with Nova... For what if not-... )</i></color>
@@ -8805,10 +8805,10 @@ msgstr "(Pudełko się trzęsie! Czy ono samo idzie na górę?)"
 
 #. src: dialog
 #. rich_text: <i>(The bunnysuit... Right... )</i>
-#. rich_translation: <i>(Kostium króliczka... No tak... )</i>
+#. rich_translation: <i>(Strój króliczki... No tak... )</i>
 msgctxt "speaker:Zoey"
 msgid "(The bunnysuit... Right... )"
-msgstr "(Kostium króliczka... No tak... )"
+msgstr "(Strój króliczki... No tak... )"
 
 #. src: dialog
 #. rich_text: <i>(The city's looking... peaceful tonight. )</i>
@@ -11776,10 +11776,10 @@ msgstr "> Dojdź dla mnie."
 
 #. src: dialog
 #. rich_text: <i>> Cum inside-...! Cum inside andro-... andro pussy...!
-#. rich_translation: <i>> Spuść się w środku-...! W andro-... andro cipce...!
+#. rich_translation: <i>> Dojdź do środka-...! Dojdź do środka andro-... andro cipki...!
 msgctxt "ui"
 msgid "> Cum inside-...! Cum inside andro-... andro pussy...!"
-msgstr "> Spuść się w środku-...! W andro-... andro cipce...!"
+msgstr "> Dojdź do środka-...! Dojdź do środka andro-... andro cipki...!"
 
 #. src: dialog
 #. rich_text: <i> > D'aww. Feels good, doesn't it?
@@ -16537,7 +16537,7 @@ msgstr "Zestawów na klatkę"
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Asshole? Hah! The asshole right in front of my nose, ngh! I wanna slather that perfect pucker of yours so bad, ahaha!"
-msgstr "Odbyt? Ha! Ten odbyt mam tuż przed nosem, ngh! Tak bardzo chcę obficie posmarować ten twój idealny odbyt, ahaha!"
+msgstr "Dupek? Ha! To właśnie ty jesteś dupkiem, stojącym mi tu przed nosem, ngh! Tak bardzo chcę obficie posmarować ten twój idealny odbyt, ahaha!"
 
 #. src: us
 msgctxt "ui"
@@ -20171,7 +20171,7 @@ msgstr "Pochwal jej płaski biust."
 #. src: dialog
 msgctxt "ui"
 msgid "Compliment her flat."
-msgstr "Pochwal jej płaski biust."
+msgstr "Pochwal jej mieszkanie."
 
 #. src: dialog
 msgctxt "ui"
@@ -20913,7 +20913,7 @@ msgstr "Scena ucieczki Cyphera"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Cypher strips down"
-msgstr "Cypher się rozbiera"
+msgstr "Cypher się redukuje"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22183,7 +22183,7 @@ msgstr "Zostało zhakowane?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did half Price already?"
-msgstr "Czy połowa ceny już zapłacona?"
+msgstr "Czy połowa ceny już?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23329,10 +23329,10 @@ msgstr "Zrób to jeszcze raz, lmao"
 
 #. src: dialog
 #. rich_text: <b>Do it! Cum for me, GAG slut!</b>
-#. rich_translation: <b>Zrób to! Dojdź dla mnie, ty GAG-slut!</b>
+#. rich_translation: <b>Zrób to! Skurcz się dla mnie, ty GAG-slut!</b>
 msgctxt "speaker:Enforcer"
 msgid "Do it! Cum for me, GAG slut!"
-msgstr "Zrób to! Dojdź dla mnie, ty GAG-slut!"
+msgstr "Zrób to! Skurcz się dla mnie, ty GAG-slut!"
 
 #. src: dialog
 msgctxt "ui"
@@ -28060,7 +28060,7 @@ msgstr "Pełny ekran"
 #. src: us
 msgctxt "ui"
 msgid "FullscreenPerversionEffect auf '"
-msgstr "Efekt pełnoekranowej perwersji włączony."
+msgstr "Efekt pełnoekranowego znieczyszczenia włącza się."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -35140,7 +35140,7 @@ msgstr "Czekam."
 #. src: dialog
 msgctxt "ui"
 msgid "I'm wearing the cum as an accessory."
-msgstr "Noszę spermę jako akcesorium."
+msgstr "Noszę CUM jako akcesorium."
 
 #. src: dialog
 msgctxt "ui"
@@ -35189,7 +35189,7 @@ msgstr "Miałem przyjemność obmacać już sporo słodziaków, ale ty jesteś p
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "I've held up my part of the deal. It's time for yours."
-msgstr "Wywiązałem się ze swojej części umowy. Czas na twoją."
+msgstr "Wywiązałam się ze swojej części umowy. Czas na twoją."
 
 #. src: dialog
 msgctxt "speaker:Mira"
@@ -41251,7 +41251,7 @@ msgstr "Spójrz w lewo"
 #. src: dialog
 msgctxt "speaker:Look"
 msgid "Look perversion"
-msgstr "Obejrzyj perwersję"
+msgstr "Obejrzyj zboczenie"
 
 #. src: dialog
 msgctxt "speaker:Rugnar"
@@ -43078,7 +43078,7 @@ msgstr "Panna, pokaż obrazek 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Miss slut service"
-msgstr "Usługa panny dziwki"
+msgstr "Usługa dla małych supek"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49117,7 +49117,7 @@ msgstr "A może nie powinniśmy..."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Or was it black hair and perky tits"
-msgstr "A może to były czarne włosy i sterczące cycki?"
+msgstr "A może to były czarne włosy i podniecone cycki?"
 
 #. src: dialog
 msgctxt "ui"
@@ -51592,10 +51592,10 @@ msgstr "Twórca gier PMA"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Pleaaase! Moore..! Last guys cum in my pussy wasn't enough, pleaase! I need moreeee!</color>
-#. rich_translation: <color=#EB83FF>Błaagam! Więcej..! Sperma ostatnich gości w mojej cipce mi nie wystarczyła, błaagam! Potrzebuję więceej!</color>
+#. rich_translation: <color=#EB83FF>Błaagam! Więcej..! Sperma ostatniego gościa w mojej cipce mi nie wystarczyła, błaagam! Potrzebuję więceej!</color>
 msgctxt "speaker:Zoey"
 msgid "Pleaaase! Moore..! Last guys cum in my pussy wasn't enough, pleaase! I need moreeee!"
-msgstr "Błaagam! Więcej..! Sperma ostatnich gości w mojej cipce mi nie wystarczyła, błaagam! Potrzebuję więceej!"
+msgstr "Błaagam! Więcej..! Sperma ostatniego gościa w mojej cipce mi nie wystarczyła, błaagam! Potrzebuję więceej!"
 
 #. src: dialog
 #. rich_text: <i>Please choose a room for SLUT Service
@@ -58081,7 +58081,7 @@ msgstr "Reklama Small Corrupt Technologies"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Small Perversion Brew"
-msgstr "Mały Napój Perwersji"
+msgstr "Mały Napój Znieczyszczenia"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -65852,7 +65852,7 @@ msgstr "Umm... Dobra..."
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Un/ZIP Jacket (Skimpy)"
-msgstr "Rozpinana kurtka (Skąpa)"
+msgstr "Rozpakuj kurtkę (Odbarwiona)"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -67752,7 +67752,7 @@ msgstr "Poczekaj na Zoey"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for Zoey strip"
-msgstr "Poczekaj, aż Zoey się rozbierze."
+msgstr "Poczekaj, aż Zoey się rozejdzie."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -72060,7 +72060,7 @@ msgstr "Tak, przeniesiono nas tutaj, gdy GAG relokowało ludzi po Kryzysie... Wy
 #. src: dialog
 msgctxt "ui"
 msgid "Yeah, well they can GAG on my ass."
-msgstr "No, no, mogą mi possać tyłek."
+msgstr "No, no, mogą się walić do mojego tyłka."
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -74228,7 +74228,7 @@ msgstr "Twoje obietnice jak dotąd nie pomagały."
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "Your pussy is oozing, Zoey... Does my baton feel that good, hmm?"
-msgstr "Czy moja pałeczka sprawia, że czujesz się tak dobrze, hmm?"
+msgstr "Twoja cipka ocieka, Zoey... Czy mój pałeczka sprawia, że czujesz się tak dobrze, hmmm?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

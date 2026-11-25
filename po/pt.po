@@ -7062,10 +7062,10 @@ msgstr "(Nossa... Não olhe para baixo, Zoey...)"
 
 #. src: dialog
 #. rich_text: <i>(Oh boy... He's in the virtual doghouse now. )</i>
-#. rich_translation: <i>(Ah, rapaz... Agora ele está na casinha do cachorro virtual.)</i>
+#. rich_translation: <i>(Ah, rapaz... Agora ele está na cadela virtual.)</i>
 msgctxt "ui"
 msgid "(Oh boy... He's in the virtual doghouse now. )"
-msgstr "(Ah, rapaz... Agora ele está na casinha do cachorro virtual.)"
+msgstr "(Ah, rapaz... Agora ele está na cadela virtual.)"
 
 #. src: dialog
 #. rich_text: <i>(Oh for fuck's sake! One of these has to work!)</i>
@@ -18432,7 +18432,7 @@ msgstr "Qual é? Você está exagerando."
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "C'moon! I wanna see ya' streched asshole already! N' then sniff it, ahaha!"
-msgstr "Vamos lá! Quero ver esse seu buraco do cu esticado já! E depois cheirar, ahaha!"
+msgstr "Vamos lá! Quero ver esse seu cu esticado já! E depois cheirar, ahaha!"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>C- Condoms...?</color>
@@ -20173,7 +20173,7 @@ msgstr "Elogie o corpo plano dela"
 #. src: dialog
 msgctxt "ui"
 msgid "Compliment her flat."
-msgstr "Elogie o peito reto dela."
+msgstr "Elogie o apartamento dela."
 
 #. src: dialog
 msgctxt "ui"
@@ -21450,7 +21450,7 @@ msgstr "Recusar diálogo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Decline Dialogue 2"
-msgstr "Diálogo da recusa 2"
+msgstr "Recuse o diálogo 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25373,7 +25373,7 @@ msgstr "A agente da lei coloca a mão no seio de Zoey."
 #. src: dialog
 msgctxt "ui"
 msgid "Enforcer rubs her fingers over Zoeys clothed pussy"
-msgstr "A Agente passa os dedos sobre a buceta coberta de roupas de Zoey."
+msgstr "A Enforcer passa os dedos sobre a buceta coberta de roupas de Zoey."
 
 #. src: dialog
 msgctxt "ui"
@@ -25839,7 +25839,7 @@ msgstr "Mas em vez de coçar, você só fica se esfregando até não poder mais.
 #. src: dialog
 msgctxt "ui"
 msgid "Excited, Evil, lowkey manic"
-msgstr "Excitada, má, discretamente maníaca."
+msgstr "Simmm... É isso... É aqui que você pertence. Você quer ser ainda mais arruinada...! Diga isso, puta do caralho!"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -27466,7 +27466,7 @@ msgstr "Fluffles"
 #. src: dialog
 msgctxt "ui"
 msgid "Flustered after getting wrecked by a hot milf."
-msgstr "Atordoada depois de ser destruída por uma milf gostosa."
+msgstr "Eu... eu sinto muito mesmo, querida. Tem certeza de que está bem?"
 
 #. src: dialog
 msgctxt "ui"
@@ -29284,7 +29284,7 @@ msgstr "Meu Deus, você parece tão desesperada, ehehe. O que foi, vadia, hein? 
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "God you turned me on so much. I can't fucking wait to get out of this suit and let K12 ravage me... Soon..."
-msgstr "Meu Deus, você me deixou tão excitado. Mal posso esperar para tirar esse uniforme e deixar o K12 me devorar... Em breve..."
+msgstr "Meu Deus, você me deixou tão excitada. Mal posso esperar para tirar esse uniforme e deixar o K12 me devorar... Em breve..."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -29523,7 +29523,7 @@ msgstr "Boa cadela. Vamos começar pelo simples, então. Você latiu tão bem an
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Good pet. Whine like a dog for me."
-msgstr "Bom animalzinho. Chora como um cachorrinho para mim."
+msgstr "Boa garota. Chora como um cachorrinho para mim."
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -34844,7 +34844,7 @@ msgstr "Estou ocupado(a), volte mais tarde!"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "I'm coming, just give me a sec. I'm a little cum drunk right now."
-msgstr "Já estou indo, só me dá um segundo. Estou um pouco zonza de orgasmo agora."
+msgstr "Já estou indo, só me dá um segundo. Estou um pouco bêbada de porra agora."
 
 #. src: dialog
 msgctxt "ui"
@@ -38244,7 +38244,7 @@ msgstr "Jan Bark 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jan bark"
-msgstr "Jan — latido"
+msgstr "Jan late"
 
 #. src: dialog
 msgctxt "speaker:Lio"
@@ -40805,7 +40805,7 @@ msgstr "Lio, o Parceiro Passivo Padrão"
 #. src: dialog
 msgctxt "ui"
 msgid "Lio Dialogue Preset"
-msgstr "Preset de diálogo do Lio"
+msgstr "Lio: Vamos lá, Zoey... Seu amigo andro fofo não é o único que precisa de ajuda."
 
 #. src: dialog
 msgctxt "ui"
@@ -42123,7 +42123,7 @@ msgstr "Marque como Concluído"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Mark dialogue post-mission"
-msgstr "Diálogo do Mark após a missão."
+msgstr "Marque os diálogos após a missão"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -44495,7 +44495,7 @@ msgstr "Meu favorito mesmo, heh..."
 #. src: dialog
 msgctxt "ui"
 msgid "My fingers in your pussy with a nice little memory and I'll slash the price in half, babe."
-msgstr "Meus dedos na sua buceta e uma boa recordaçãozinha, e eu corto o preço pela metade, baby."
+msgstr "Meus dedos na sua buceta, com uma lembrancinha legal, e eu corto o preço pela metade, baby."
 
 #. src: dialog
 #. rich_text: <size=28>My friend, she... wasn't online all day yesterday... same today... so I... was a bit like... lonely...
@@ -50091,10 +50091,10 @@ msgstr "Escolha um minijogo aleatório 2"
 
 #. src: dialog
 #. rich_text: <i>Pick the door?</i>
-#. rich_translation: <i>Arrombar a porta?</i>
+#. rich_translation: <i>Abre a porta?</i>
 msgctxt "ui"
 msgid "Pick the door?"
-msgstr "Arrombar a porta?"
+msgstr "Abre a porta?"
 
 #. src: dialog
 msgctxt "ui"
@@ -52511,7 +52511,7 @@ msgstr "Salvar rápido"
 #. src: dialog
 msgctxt "ui"
 msgid "Quietly, not really trying to be super confrontational, awkward about him having told his friends."
-msgstr "Baixinho, sem tentar ser super confrontador, sem graça por ele ter contado aos amigos."
+msgstr "Baixinho, sem tentar ser super confrontador, sem graça por ter contado aos amigos."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55445,7 +55445,7 @@ msgstr "Segundo Estado"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Second dialogue"
-msgstr "Segundo diálogo"
+msgstr "Importante: Não adicione o número da linha (por exemplo, «2. ») na tradução: a resposta deve conter apenas o texto. Responda com EXATAMENTE uma linha: apenas a tradução, sem numeração, sem aspas e sem explicações."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57706,7 +57706,7 @@ msgstr "Simon"
 #. src: us
 msgctxt "ui"
 msgid "Simplified Chinese Machine Translated / 中文机器翻译"
-msgstr "Chinês simplificado (tradução automática) / 中文机器翻译"
+msgstr "Tradução automática em chinês simplificado / Tradução automática em chinês"
 
 #. src: dialog
 #. rich_text: <i>Simply fill the SLUT Box
@@ -59033,7 +59033,7 @@ msgstr "Perfil da Câmera de Tela Dividida"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Spooks"
-msgstr "Fantasmas"
+msgstr "Assustador"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -59685,12 +59685,12 @@ msgstr "Continuar"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 5"
-msgstr "Estado 5"
+msgstr "Importante: Não adicione o número da linha (por exemplo, «2. ») na tradução: a resposta deve ser apenas o texto. Responda com EXATAMENTE uma linha: apenas a tradução, sem numeração, sem aspas e sem explicações."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 6"
-msgstr "Estado 6"
+msgstr "Importante: Não adicione o número da linha (por exemplo, «2. ») na tradução: a resposta deve ser apenas o texto. Responda com exatamente uma linha: apenas a tradução, sem numeração, sem aspas ou explicações."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59700,7 +59700,7 @@ msgstr "Estado 7"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 8"
-msgstr "Estado 8"
+msgstr "Importante: Não adicione o número da linha (por exemplo, \"2. \") na tradução: a resposta deve ser apenas o texto. Responda com EXATAMENTE uma linha: apenas a tradução, sem numeração, sem aspas ou explicações."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60044,7 +60044,7 @@ msgstr "Despir, reproduzir a animação e o segundo diálogo."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Stripn't characters"
-msgstr "Não desnude os personagens."
+msgstr "Não remova os personagens."
 
 #. src: dialog
 msgctxt "ui"
@@ -62282,7 +62282,7 @@ msgstr "Isso deve resolver."
 #. src: dialog
 msgctxt "ui"
 msgid "That so, eh? Mana, you gave this puta cold feet."
-msgstr "É isso, é? Mana, você deu um susto nessa puta."
+msgstr "É isso, é? Mana, você deu um pé frio pra essa puta."
 
 #. src: dialog
 msgctxt "ui"
@@ -66818,7 +66818,7 @@ msgstr "Título de Pinup Muito Longo Kkkk!"
 #. src: dialog
 msgctxt "ui"
 msgid "Very coy and playful"
-msgstr "Muito tímida e brincalhona."
+msgstr "Hehe, também tem um monte de bebidas se você quiser ficar bem animada~ Eu sei que às vezes preciso disso hoje em dia. Entende o que quero dizer, amor?"
 
 #. src: dialog
 msgctxt "ui"
@@ -68019,7 +68019,7 @@ msgstr "Aguarde o item"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for leave"
-msgstr "Espere a saída"
+msgstr "Espere ela sair"
 
 #. src: dialog
 msgctxt "ui"
@@ -68436,7 +68436,7 @@ msgstr "Espera, o quê? Você vai ficar bem?!"
 #. src: dialog
 msgctxt "ui"
 msgid "Wait, you fingered her? I'd pay to see that."
-msgstr "Espera, você enfiou os dedos nela? Eu pagaria para ver isso."
+msgstr "Espera, você a fodeu com os dedos? Eu pagaria para ver isso."
 
 #. src: dialog
 msgctxt "ui"
@@ -68538,17 +68538,17 @@ msgstr "Garçonete - Fazer Companhia - 1"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing - Keep Company - 2"
-msgstr "Garçonete - Fazer Companhia - 2"
+msgstr "Garçom - Manter a Companhia - 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing - Keep Company - 3"
-msgstr "Garçonete - Fazer Companhia - 3"
+msgstr "Garçom - Manter a Companhia - 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Waitressing - Keep Company - 4"
-msgstr "Garçonete - Fazer Companhia - 4"
+msgstr "Garçom - Manter a Companhia - 4"
 
 #. src: dialog
 msgctxt "speaker:Agree"
@@ -75622,7 +75622,7 @@ msgstr "Mensagem anexada"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "met lio"
-msgstr "conheceu o Lio"
+msgstr "encontre Lio"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -75880,7 +75880,7 @@ msgstr "Reproduza o diálogo"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "play dialogue 1"
-msgstr "Reproduza o diálogo 1"
+msgstr "jogue o diálogo 1"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76327,7 +76327,7 @@ msgstr "provocando-a com descrença, rindo amigavelmente."
 #. src: dialog
 msgctxt "ui"
 msgid "teasing, flirty, dominant."
-msgstr "Provocante, sedutora, dominante."
+msgstr "\"Uau, que colapso e tanto~ Está pensando no que preferiria ter aí embaixo?\""
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
