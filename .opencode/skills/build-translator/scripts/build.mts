@@ -1,5 +1,5 @@
 /**
- * build.mts — сборка `NeonTranslatorRuntime.dll` из C#-исходников через `csc.exe`.
+ * build.mts — сборка `NeonTranslatorDX.dll` из C#-исходников через `csc.exe`.
  *
  * Порт `build.py` (поведение 1:1): те же исходники, те же ссылки на сборки
  * Unity из `Managed/` установленной игры, тот же набор ключей csc. Отличие
@@ -11,7 +11,7 @@
  *   TCNN_GAME_DIR="<игра>" node .../build.mts        # явный путь к игре
  *   TCNN_CSC="<csc.exe>" node .../build.mts          # нестандартная установка .NET
  *
- * Результат: `runtime/NeonTranslatorRuntime.dll` (артефакт сборки, не в git).
+ * Результат: `runtime/NeonTranslatorDX.dll` (артефакт сборки, не в git).
  */
 import { existsSync, mkdirSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
@@ -233,10 +233,10 @@ export function buildRuntime(o: BuildOptions = {}): BuildResult {
 
   const outDir = join(repoRoot, "runtime");
   mkdirSync(outDir, { recursive: true });
-  const outPath = join(outDir, "NeonTranslatorRuntime.dll");
+  const outPath = join(outDir, "NeonTranslatorDX.dll");
   const sources = SOURCE_FILES.map((f) => join(sourceDir, f));
 
-  console.log("NeonTranslatorRuntime — сборка\n");
+  console.log("NeonTranslatorDX — сборка\n");
   console.log(`  исходники: ${SOURCE_FILES.length} файлов — OK`);
   console.log(`  ссылки Unity: ${refs.length} DLL (нет ${noRefs.length})`);
   console.log(`  компилятор: ${cscPath}`);
@@ -258,7 +258,7 @@ export function buildRuntime(o: BuildOptions = {}): BuildResult {
 
   const size = statSync(outPath).size;
   if (size === 0) throw new Error(`${outPath} пустой`);
-  console.log(`  OK: runtime/NeonTranslatorRuntime.dll (${(size / 1024).toFixed(1)} KB)`);
+  console.log(`  OK: runtime/NeonTranslatorDX.dll (${(size / 1024).toFixed(1)} KB)`);
   return { outPath, size, cscPath, refs };
 }
 

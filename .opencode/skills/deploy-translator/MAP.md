@@ -1,55 +1,74 @@
 # MAP — deploy-translator (факты и грабли)
 
-Деплой в установку игры. Порт `deploy.ps1` на `.mts` — 2026-11-21; проверено
-прогонами на живой установке (RU и EN).
+Установка NeonTranslatorDX в игру. Порт `deploy.ps1` на `.mts` — 2026-11-21;
+раскладка «одна папка» + бренд NeonTranslatorDX — 2026-11-25, проверено прогоном
+на живой установке (RU): install → игра → uninstall → diff с чистым снимком = 0.
 
 ## Готчи
 
-- ⚠️ **PowerShell-версия удаляла файлы из папки игры** (`patch_en.dat`,
-  `<игра>/translations/`) → в порте этого нет сознательно: чужие/старые файлы
-  не трогаем, только предупреждаем → проверено 2026-11-21 (в игре
-  `translations/` отсутствует; `patch_en.dat` в native-режиме не нужен, но не
-  удаляется).
+- ⚠️ **`Namespace` рантайма переименован в `NeonTranslatorDX`** вместе с файлом
+  `NeonTranslatorDX.dll` → прокси ищет класс по строке
+  `mono_class_from_name(image, "NeonTranslatorDX", "TranslatorPlugin")`; если
+  namespace откатить, а DLL/путь оставить — `FAIL: mono_class_from_name` в
+  `C:\temp\dwmapi_proxy.log` и пустой `NeonTranslatorDX.log` → проверено
+  2026-11-25 (русское меню, `Font: preload ... = False` — отдельный баг TMP).
 
-- ⚠️ **`active_lang.txt` пишется БЕЗ перевода строки** (`Set-Content -NoNewline`
-  в PowerShell) → файл ровно 2 байта `ru`, так его читает рантайм → проверено
-  2026-11-21 (`stat` 2 байта, `cat` печатает `ru` без пустой строки) → не
-  «улучшать» до `writeFileSync(path, lang + "\n")`.
+- ⚠️ **Рантайм разрешает ассеты от `Assembly.Location`**, поэтому переезд не
+  требует правок в `TranslationLoader`: `dllDir` = папка мода, шрифты — в
+  `dllDir/fonts`, `patch_*.dat`/`active_lang.txt` — рядом с DLL. `gameDir` для
+  legacy-YAML = `Path.GetDirectoryName(dllDir)` (в Managed-раскладке было два
+  уровня) → не возвращать двойной `GetDirectoryName`.
 
-- ⚠️ **Копия прокси в репозитории может отсутствовать** → `dwmapi.dll` в корне
-  репо не трекается (`git ls-files` пуст), его создаёт только `build:proxy` →
-  проверено 2026-11-21: деплой не падает, если прокси уже лежит в игре, и
-  печатает «пересобрать: npm run build:proxy»; порядок «build:proxy → deploy»
-  обязателен только для обновления самого прокси.
+- ⚠️ **`install-manifest.json` пишется последним**, после всех копий: в нём
+  размер и sha256 каждого файла. Uninstall удаляет файл только при совпадении
+  хэша; иначе оставляет и предупреждает (защита от ручных правок).
 
-- ⚠️ **Деплой пишет в установку игры** (`Program Files (x86)`) → на этой машине
-  ACL разрешает запись без админа (проверено touch/удалением 2026-11-21), но на
-  другой машине возможен отказ → `copyAtomic`/`writeAtomic` бросают ошибку с
-  подсказкой «нужны права или TCNN_GAME_DIR на копию установки»; сначала можно
-  прогнать `--dry-run` (он только читает).
+- ⚠️ **Артефакты рантайма не в манифесте** (`NeonTranslatorDX.log`,
+  `dump_GUIDictionary.json`, `nolog.txt`) → uninstall удаляет их отдельным
+  списком `RUNTIME_ARTIFACTS`, иначе папка не опустеет и не удалится → проверено
+  2026-11-25: после uninstall diff с чистым снимком `0/0/0`.
 
-- ⚠️ **Словарь собирает бинарь `rust-l10n po2dat` подпроцессом** → в отличие от
-  прежнего `deploy.ps1` (звал `po2dat` позиционным `$Lang`), деплой передаёт
-  `--root`/`--out` явно и пишет staging атомарно; но бинарь должен быть собран,
-  иначе деплой падает с «rust-l10n не собран: `npm run l10n:build`» → проверено
-  2026-11-21: `Managed/patch_ru.dat` == `runtime/patch_ru.dat` == независимый
-  `npm run po2dat -- ru` (sha256 `81f74e56…`, 18 535 строк, 1 739 174 байта).
+- ⚠️ **`active_lang.txt` пишется БЕЗ перевода строки** → файл ровно 2 байта
+  `ru`, так его читает рантайм → не «улучшать» до `lang + "\n"`.
 
-- ⚠️ **Steam «verify integrity» удаляет `dwmapi.dll` из корня игры** →
-  деплой просто повторяют; проверять наличие `dwmapi.dll` рядом с exe, а не в
-  `Managed/`.
+- ⚠️ **Копия прокси в репозитории может отсутствовать** (`dwmapi.dll`,
+  `dwmapi_real.dll` в `.gitignore`) → её создаёт только `build:proxy`; деплой не
+  падает, если прокси уже лежит в игре, и печатает «пересобрать:
+  npm run build:proxy». Порядок «build:proxy → deploy» обязателен для обновления
+  самого прокси и `dwmapi_real.dll`.
 
-- ⚠️ **`installer/install.mts` дублировал план раскладки** (`planInstall`) и писал
-  «копирование появится вместе с портом deploy.ps1» → это была отдельная зона; по
-  контракту он должен стать тонкой обёрткой над `deploy.mts`, чтобы знание о
-  раскладке жило в одном месте (DRY). Проверено 2026-11-24: сообщение из
-  инсталлятора и README убрано, копирование идёт через `deploy.mts`.
+- ⚠️ **`cl.exe` для DLL кладёт `.exp/.lib` рядом с `/Fe`, если не задан
+  `/IMPLIB`** → раньше в корне игры появлялись `dwmapi.exp`/`dwmapi.lib` →
+  `build_proxy.mts` передаёт `/IMPLIB:tmp/build_proxy/dwmapi.lib`; старые
+  артефакты убирает `--migrate` (проверено 2026-11-25: повторная сборка пишет
+  `.exp/.lib` только в `tmp/build_proxy`).
 
-## Проверенные цифры (2026-11-21)
+- ⚠️ **Steam «verify integrity» удаляет `dwmapi.dll`** → деплой просто
+  повторяют; проверять наличие `dwmapi.dll` рядом с exe, а не в папке мода.
 
-- `--lang ru`: 7 файлов (DLL 44 032 б, 3 шрифта, `patch_ru.dat` 1 739 174 б,
-  `active_lang.txt`, прокси), staging == Managed == `po2dat`.
-- `--lang en`: 6 файлов, словаря нет, `active_lang.txt` = `en`, 2 байта.
-- `TCNN_GAME_DIR=C:\no\such\game` → `ОШИБКА: TCNN_GAME_DIR указывает на
-несуществующую папку: C:\no\such\game`, код 1 (без тихого отката на Steam).
-- `--lang xx` → перечисление доступных языков, код 1.
+- ⚠️ **`--migrate` не рекурсивный**: удаляет известные имена и `patch_*.dat`
+  в `Managed/` и в старой папке `NeonTranslator/`; старая папка исчезает только
+  если опустела. Чужой файл внутри → папка остаётся (проверено тестом).
+
+## Проверенные цифры (2026-11-25, RU)
+
+- установка: 9 файлов = `dwmapi.dll` + 8 в `NeonTranslatorDX/` (DLL 44 032 б,
+  `dwmapi_real.dll` 195 032 б, 3 шрифта, `patch_ru.dat` 2 098 692 б,
+  `active_lang.txt`, `install-manifest.json`);
+- `patch_ru.dat`: 14 330 строк; `Translations: 14 007` в логе игры;
+- E2E: игра стартует, лог в `NeonTranslatorDX/NeonTranslatorDX.log`, меню
+  русское (Продолжить / Новая игра / Загрузить файл сохранения / НАСТРОЙКИ /
+  Выход);
+- `clean_room`: `game-clean → installed` = добавлено 9, изменено 0, удалено 0;
+  `game-clean → uninstalled` = 0/0/0;
+- `--lang en`: 8 файлов, словаря нет, `active_lang.txt` = `en`, 2 байта.
+- `TCNN_GAME_DIR=C:\no\such\game` → понятная ошибка, код 1 (без тихого отката
+  на Steam).
+
+## Открытый баг (не блокирует приёмку)
+
+`Font: preload Roboto-Condensed_DialogueUI (83) = False chars 236->236 atlas
+1024x1024` — `TryAddCharacters` не добавляет кириллицу в статический атлас
+1024×1024. Меню при этом рендерится по-русски (динамические глифы TMP), но
+предзагрузка не работает; отдельная задача — увеличить/сделать динамическим
+атлас или пересоздавать `TMP_FontAsset` из `RobotoCondensed-Regular.ttf`.

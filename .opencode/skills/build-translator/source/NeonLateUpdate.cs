@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace NeonTranslator
+namespace NeonTranslatorDX
 {
     [DefaultExecutionOrder(10000)]
     public class NeonLateUpdate : MonoBehaviour

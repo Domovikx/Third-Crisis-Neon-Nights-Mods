@@ -1,13 +1,13 @@
 ---
 name: build-translator
-description: Компиляция NeonTranslatorRuntime (C# → DLL через csc.exe) и нативного прокси dwmapi.dll (C → dll через cl.exe) для рантайм-перевода Unity-игр. Путь к игре — scripts/game_dir.mts (TCNN_GAME_DIR).
+description: Компиляция NeonTranslatorDX (C# → DLL через csc.exe) и нативного прокси dwmapi.dll (C → dll через cl.exe) для рантайм-перевода Unity-игр. Путь к игре — scripts/game_dir.mts (TCNN_GAME_DIR).
 ---
 
 # build-translator — сборка рантайм-переводчика
 
 Два независимых артефакта:
 
-- `runtime/NeonTranslatorRuntime.dll` — C#-плагин (scan-and-replace через
+- `runtime/NeonTranslatorDX.dll` — C#-плагин (scan-and-replace через
   `NeonLateUpdate` + `Canvas.willRenderCanvases`), собирается `csc.exe` из
   `.NET Framework 4.x`.
 - `<игра>/dwmapi.dll` — нативный прокси-лоадер, собирается `cl.exe` (MSVC).
@@ -15,8 +15,8 @@ description: Компиляция NeonTranslatorRuntime (C# → DLL через c
   перехватывает; без него рантайм в игре не загружается.
 
 ```text
-source/*.cs ──csc.exe──▶ runtime/NeonTranslatorRuntime.dll ──deploy──▶ Managed/
-source/dwmapi_proxy.c ──cl.exe──▶ <игра>/dwmapi.dll + dwmapi_real.dll (+ копия в репо)
+source/*.cs ──csc.exe──▶ runtime/NeonTranslatorDX.dll ──deploy──▶ <игра>/NeonTranslatorDX/
+source/dwmapi_proxy.c ──cl.exe──▶ <игра>/dwmapi.dll + <игра>/NeonTranslatorDX/dwmapi_real.dll (+ копии в репо)
 ```
 
 ## Скрипты (`scripts/`)
@@ -58,8 +58,8 @@ Steam-копию (иначе сборка уходит в другую уста�
 
 ### Куда что пишется
 
-- `runtime/NeonTranslatorRuntime.dll` — артефакт сборки (в git не попадает);
-- `<игра>/dwmapi.dll`, `<игра>/dwmapi_real.dll`;
+- `runtime/NeonTranslatorDX.dll` — артефакт сборки (в git не попадает);
+- `<игра>/dwmapi.dll`, `<игра>/NeonTranslatorDX/dwmapi_real.dll`;
 - копия прокси в корень репозитория (`dwmapi.dll`) — её ставит `deploy.mts`;
 - `tmp/build_proxy/` — `.obj/.lib/.exp` (в корне репозитория не мусорим).
 

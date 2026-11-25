@@ -1,40 +1,50 @@
 /**
- * deploy.mts — деплой рантайм-переводчика в установку игры.
+ * deploy.mts — установка/удаление рантайм-переводчика в игре.
  *
- * Порт `deploy.ps1` на TS (одна точка входа вместо PowerShell + python).
- * Делает то же и в том же порядке:
- *   1. (опция `--rebuild`) `buildRuntime()` → `runtime/NeonTranslatorRuntime.dll`;
- *   2. (опция `--proxy`) `buildProxy()` → `dwmapi.dll` в корне игры + копия в репо;
- *   3. `po/<lang>.po` → `runtime/patch_<lang>.dat` (через `rust-l10n po2dat`,
- *      одна реализация на весь репозиторий) → `Managed/patch_<lang>.dat`;
- *   4. DLL + шрифт(ы) + словарь + `active_lang.txt` → `Managed/`;
- *   5. `dwmapi.dll` из репозитория → корень игры (рядом с exe).
+ * Раскладка «одна папка» (2026-11-24):
  *
- * `--lang en` — native-режим: словарь не собирается и не кладётся, в
- * `active_lang.txt` пишется `en`.
+ *   <игра>/dwmapi.dll                     лоадер (единственный файл вне папки)
+ *   <игра>/NeonTranslatorDX/
+ *     NeonTranslatorDX.dll
+ *     fonts/{RobotoCondensed-Regular,NotoSansSC,NotoSansJP}.ttf
+ *     patch_<lang>.dat
+ *     active_lang.txt
+ *     install-manifest.json               что поставлено: файл, размер, sha256
  *
- * Чего нет в порте сознательно: удаления файлов из папки игры (`patch_en.dat`
- * прошлого деплоя, legacy `translations/`) — про них печатается предупреждение,
- * но чужие/старые файлы не стираются.
+ * Рантайм разрешает шрифты/словарь/`active_lang.txt` относительно
+ * собственной сборки (`Assembly.Location`), прокси грузит DLL по пути
+ * `<игра>/NeonTranslatorDX/NeonTranslatorDX.dll`.
+ *
+ * Команды:
+ *   deploy (по умолчанию) — поставить;
+ *   `--uninstall` — удалить ровно то, что записано в манифесте (чужие файлы
+ *     не трогаются), затем пустые папки;
+ *   `--migrate` — после установки убрать артефакты ПРЕЖНЕЙ раскладки из
+ *     `Managed/` (и мусор сборки из корня игры), с логом каждого удаления.
  *
  * CLI:
  *   node .opencode/skills/deploy-translator/scripts/deploy.mts --lang ru
  *   node .opencode/skills/deploy-translator/scripts/deploy.mts --lang ru --dry-run
  *   node .opencode/skills/deploy-translator/scripts/deploy.mts --lang en
  *   node .opencode/skills/deploy-translator/scripts/deploy.mts --lang de --rebuild --proxy
+ *   node .opencode/skills/deploy-translator/scripts/deploy.mts --uninstall
+ *   node .opencode/skills/deploy-translator/scripts/deploy.mts --lang ru --migrate
  */
 import { spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import {
   copyFileSync,
   existsSync,
   mkdirSync,
   readFileSync,
+  readdirSync,
   renameSync,
+  rmdirSync,
   rmSync,
   statSync,
   writeFileSync,
 } from "node:fs";
-import { dirname, join } from "node:path";
+import { dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
 import process from "node:process";
 
 import { GAME_DATA_FOLDER } from "../../../../scripts/game_dir.mts";
@@ -43,13 +53,37 @@ import { l10nBinary } from "../../../../scripts/text_cli.mts";
 import { buildRuntime, resolveGame } from "../../build-translator/scripts/build.mts";
 import { buildProxy } from "../../build-translator/scripts/build_proxy.mts";
 
-/** Шрифты, которые кладутся в `Managed/` рядом с основным. */
+/** Папка мода в установке: сюда идёт ВСЁ, кроме лоадера. */
+export const MOD_FOLDER = "NeonTranslatorDX";
+
+/** Имя рантайм-сборки внутри папки мода. */
+export const RUNTIME_DLL = "NeonTranslatorDX.dll";
+
+/** Прежняя (до бренда NeonTranslatorDX) папка установки — только для `--migrate`. */
+export const LEGACY_MOD_FOLDER = "NeonTranslator";
+
+/** Имя файла установки: список поставленного + хэши (для uninstall). */
+export const MANIFEST_NAME = "install-manifest.json";
+
+/** Подпапка шрифтов внутри папки мода. */
+export const FONT_SUBDIR = "fonts";
+
+/** Шрифты, которые кладутся в `fonts/` (CJK — необязательные). */
 export const CJK_FONTS = ["NotoSansSC.ttf", "NotoSansJP.ttf"];
 
 /** Основной шрифт с кириллицей (обязателен). */
 export const MAIN_FONT = "RobotoCondensed-Regular.ttf";
 
-export type DeployKind = "copy" | "build-dat" | "write-active-lang";
+/** Целевой каталог рантайма и его данных. */
+export function modDir(gameDir: string): string {
+  return join(gameDir, MOD_FOLDER);
+}
+
+export function manifestPath(gameDir: string): string {
+  return join(modDir(gameDir), MANIFEST_NAME);
+}
+
+export type DeployKind = "copy" | "build-dat" | "write-active-lang" | "write-manifest";
 
 export interface DeployOp {
   /** Что делаем (человекочитаемо). */
@@ -65,7 +99,9 @@ export interface DeployOp {
 
 export interface DeployPlan {
   game: string;
-  managed: string;
+  /** `<игра>/NeonTranslator` — куда идёт всё, кроме лоадера. */
+  modDir: string;
+  manifest: string;
   lang: string;
   /** `en`: нативный язык игры, словарь не нужен. */
   native: boolean;
@@ -85,7 +121,9 @@ export function planDeploy(
   lang: string,
   repoRoot: string = REPO_ROOT,
 ): DeployPlan {
-  const managed = join(gameDir, GAME_DATA_FOLDER, "Managed");
+  const target = modDir(gameDir);
+  const fontsTarget = join(target, FONT_SUBDIR);
+  const manifest = manifestPath(gameDir);
   const native = lang === SOURCE_LANG;
   const ops: DeployOp[] = [];
 
@@ -95,15 +133,15 @@ export function planDeploy(
 
   add({
     what: "рантайм (C# DLL)",
-    from: join(repoRoot, "runtime", "NeonTranslatorRuntime.dll"),
-    to: join(managed, "NeonTranslatorRuntime.dll"),
+    from: join(repoRoot, "runtime", RUNTIME_DLL),
+    to: join(target, RUNTIME_DLL),
     kind: "copy",
     optional: false,
   });
   add({
     what: `шрифт ${MAIN_FONT}`,
     from: join(repoRoot, "fonts", MAIN_FONT),
-    to: join(managed, MAIN_FONT),
+    to: join(fontsTarget, MAIN_FONT),
     kind: "copy",
     optional: false,
   });
@@ -111,16 +149,26 @@ export function planDeploy(
     add({
       what: `шрифт ${font} (CJK)`,
       from: join(repoRoot, "fonts", font),
-      to: join(managed, font),
+      to: join(fontsTarget, font),
       kind: "copy",
       optional: true,
     });
   }
+  // Необязательный, но нужный, если игра/мод вызывают прочие экспорты
+  // dwmapi: прокси форвардит их сюда. Лежит в папке мода, чтобы в корне
+  // оставался ровно один файл.
+  add({
+    what: "dwmapi_real.dll (цель форвардов прокси)",
+    from: join(repoRoot, "dwmapi_real.dll"),
+    to: join(target, "dwmapi_real.dll"),
+    kind: "copy",
+    optional: true,
+  });
   if (!native) {
     add({
       what: `словарь patch_${lang}.dat`,
       from: join(repoRoot, "po", `${lang}.po`),
-      to: join(managed, `patch_${lang}.dat`),
+      to: join(target, `patch_${lang}.dat`),
       kind: "build-dat",
       optional: false,
     });
@@ -128,7 +176,7 @@ export function planDeploy(
   add({
     what: "active_lang.txt",
     from: null,
-    to: join(managed, "active_lang.txt"),
+    to: join(target, "active_lang.txt"),
     kind: "write-active-lang",
     optional: false,
   });
@@ -145,6 +193,13 @@ export function planDeploy(
     kind: "copy",
     optional: !repoProxyExists && gameProxyExists,
   });
+  add({
+    what: MANIFEST_NAME,
+    from: null,
+    to: manifest,
+    kind: "write-manifest",
+    optional: false,
+  });
 
   const missing = ops
     .filter((op) => !op.optional && !op.exists)
@@ -160,10 +215,21 @@ export function planDeploy(
         "(пересобрать: npm run build:proxy)",
     );
   }
-  const staleEn = join(managed, "patch_en.dat");
-  if (native && existsSync(staleEn)) {
+  // Старый прокси грузит DLL по прежнему пути и молча ломает установку —
+  // проверяем, что в бинаре есть имя текущего бренда (ASCII-строка класса mono).
+  const proxyToCheck = repoProxyExists ? repoProxy : gameProxyExists ? gameProxy : null;
+  if (proxyToCheck && !proxyHasBrand(proxyToCheck)) {
     warnings.push(
-      `в Managed/ лежит patch_en.dat прошлого деплоя (не удаляю; рантайм в native-режиме его не читает)`,
+      `прокси ${proxyToCheck} собран под прежнюю раскладку (нет строки NeonTranslatorDX) — ` +
+        "пересоберите: npm run build:proxy",
+    );
+  }
+  // Предупреждаем о мусоре прежней раскладки, но не удаляем без --migrate.
+  const legacy = planMigrate(gameDir);
+  if (legacy.length) {
+    warnings.push(
+      `найдены артефакты прежней раскладки (${legacy.length}); удалить: --migrate ` +
+        `(${legacy.map((f) => relative(gameDir, f.abs).replaceAll("\\", "/")).join(", ")})`,
     );
   }
   const legacyTranslations = join(gameDir, "translations");
@@ -173,7 +239,16 @@ export function planDeploy(
     );
   }
 
-  return { game: gameDir, managed, lang, native, ops, missing, warnings };
+  return { game: gameDir, modDir: target, manifest, lang, native, ops, missing, warnings };
+}
+
+/** В бинаре прокси есть ASCII-строка текущего бренда (класс mono). */
+function proxyHasBrand(path: string): boolean {
+  try {
+    return readFileSync(path).includes("NeonTranslatorDX");
+  } catch {
+    return false;
+  }
 }
 
 /** Подсказка «чем починить» для отсутствующего источника. */
@@ -184,11 +259,37 @@ function hintFor(op: DeployOp, lang: string): string {
   return "проверьте репозиторий";
 }
 
+export interface ManifestFile {
+  /** Путь относительно корня игры, всегда с `/`. */
+  path: string;
+  size: number;
+  sha256: string;
+}
+
+export interface InstallManifest {
+  version: 1;
+  lang: string;
+  installedAt: string;
+  files: ManifestFile[];
+}
+
 export interface DeployResult {
   copied: string[];
-  /** Собранный и установленный словарь (`null` в native-режиме). */
+  /** Собранный и установленный словарь (`null` в native-режиме и при uninstall). */
   dat: { staged: string; installed: string; rows: number } | null;
   warnings: string[];
+  /** Записанный манифест. */
+  manifest: InstallManifest;
+}
+
+/** sha256 файла (hex). */
+export function sha256File(path: string): string {
+  return createHash("sha256").update(readFileSync(path)).digest("hex");
+}
+
+/** Путь от корня игры с прямыми слэшами — формат манифеста. */
+function manifestPathOf(gameDir: string, abs: string): string {
+  return relative(gameDir, abs).replaceAll("\\", "/");
 }
 
 /**
@@ -203,6 +304,7 @@ export function executeDeploy(plan: DeployPlan, repoRoot: string = REPO_ROOT): D
 
   const copied: string[] = [];
   let dat: DeployResult["dat"] = null;
+  const files: ManifestFile[] = [];
 
   for (const op of plan.ops) {
     if (!op.exists) {
@@ -212,12 +314,14 @@ export function executeDeploy(plan: DeployPlan, repoRoot: string = REPO_ROOT): D
     if (op.kind === "copy" && op.from) {
       copyAtomic(op.from, op.to);
       copied.push(op.to);
+      files.push(manifestEntry(plan.game, op.to));
       console.log(`  + ${op.what} -> ${op.to}`);
     } else if (op.kind === "build-dat") {
       const staged = join(repoRoot, "runtime", `patch_${plan.lang}.dat`);
       buildDatRust(plan.lang, repoRoot, staged);
       copyAtomic(staged, op.to);
       copied.push(op.to);
+      files.push(manifestEntry(plan.game, op.to));
       const rows = readFileSync(staged, "utf8").split(/\r?\n/).filter(Boolean).length;
       dat = { staged, installed: op.to, rows };
       console.log(`  + patch_${plan.lang}.dat: ${rows} строк (rust-l10n po2dat)`);
@@ -225,11 +329,31 @@ export function executeDeploy(plan: DeployPlan, repoRoot: string = REPO_ROOT): D
     } else if (op.kind === "write-active-lang") {
       writeAtomic(op.to, plan.lang);
       copied.push(op.to);
+      files.push(manifestEntry(plan.game, op.to));
       console.log(`  + active_lang.txt = ${plan.lang}`);
     }
   }
 
-  return { copied, dat, warnings: plan.warnings };
+  const manifest: InstallManifest = {
+    version: 1,
+    lang: plan.lang,
+    installedAt: new Date().toISOString(),
+    files: files.sort((a, b) => a.path.localeCompare(b.path)),
+  };
+  writeAtomic(plan.manifest, `${JSON.stringify(manifest, null, 2)}\n`);
+  copied.push(plan.manifest);
+  console.log(`  + ${MANIFEST_NAME}: ${manifest.files.length} файлов`);
+
+  return { copied, dat, warnings: plan.warnings, manifest };
+}
+
+function manifestEntry(gameDir: string, abs: string): ManifestFile {
+  const stat = statSync(abs);
+  return {
+    path: manifestPathOf(gameDir, abs),
+    size: stat.size,
+    sha256: sha256File(abs),
+  };
 }
 
 /**
@@ -240,8 +364,6 @@ export function executeDeploy(plan: DeployPlan, repoRoot: string = REPO_ROOT): D
  * свежего `.dat` игра показала бы прошлый словарь.
  */
 function buildDatRust(lang: string, repoRoot: string, out: string): void {
-  // Бинарь живёт в репозитории с `tools/`; у тестового «фейкового» репозитория
-  // его нет, поэтому фолбэк — настоящий корень репозитория.
   const bin = l10nBinary(repoRoot) ?? l10nBinary();
   if (!bin) {
     throw new Error("rust-l10n не собран: `npm run l10n:build` (нужен для словаря .dat)");
@@ -286,22 +408,322 @@ export function copyAtomic(from: string, to: string): void {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Uninstall
+// ---------------------------------------------------------------------------
+
+export interface UninstallTarget {
+  path: string;
+  abs: string;
+  size: number;
+  sha256: string;
+  exists: boolean;
+  /** Хэш на диске совпадает с манифестом (файл не правили руками). */
+  matches: boolean;
+}
+
+export interface UninstallPlan {
+  game: string;
+  modDir: string;
+  manifest: string;
+  installManifest: InstallManifest | null;
+  targets: UninstallTarget[];
+  /** Почему установку не удалить (манифеста нет / битый). */
+  error: string | null;
+  warnings: string[];
+}
+
+/** Прочитать и проверить манифест (`null` — файла нет). */
+export function readManifest(path: string): InstallManifest | null {
+  if (!existsSync(path)) return null;
+  const parsed = JSON.parse(readFileSync(path, "utf8")) as InstallManifest;
+  if (!parsed || parsed.version !== 1 || !Array.isArray(parsed.files)) {
+    throw new Error(`неизвестный формат манифеста: ${path}`);
+  }
+  return parsed;
+}
+
+/** Путь внутри корня игры (защита от `..` и абсолютных путей в манифесте). */
+function insideGame(gameDir: string, relPath: string): string | null {
+  if (!relPath || isAbsolute(relPath)) return null;
+  const root = resolve(gameDir);
+  const abs = resolve(root, relPath);
+  return abs === root || abs.startsWith(root + sep) ? abs : null;
+}
+
+/** Файлы, которые рантайм создаёт сам в папке мода (их нет в манифесте). */
+export const RUNTIME_ARTIFACTS = ["NeonTranslatorDX.log", "dump_GUIDictionary.json", "nolog.txt"];
+
+export function planUninstall(gameDir: string): UninstallPlan {
+  const target = modDir(gameDir);
+  const manifest = manifestPath(gameDir);
+  const warnings: string[] = [];
+
+  let installManifest: InstallManifest | null = null;
+  try {
+    installManifest = readManifest(manifest);
+  } catch (e) {
+    return {
+      game: gameDir,
+      modDir: target,
+      manifest,
+      installManifest: null,
+      targets: [],
+      error: e instanceof Error ? e.message : String(e),
+      warnings,
+    };
+  }
+  if (!installManifest) {
+    return {
+      game: gameDir,
+      modDir: target,
+      manifest,
+      installManifest: null,
+      targets: [],
+      error: `манифест не найден: ${manifest} (удалить вручную или поставьте заново и снимите через --uninstall)`,
+      warnings,
+    };
+  }
+
+  const targets: UninstallTarget[] = [];
+  for (const file of installManifest.files) {
+    const abs = insideGame(gameDir, file.path);
+    if (!abs) {
+      warnings.push(`пропущен опасный путь из манифеста: ${file.path}`);
+      continue;
+    }
+    const exists = existsSync(abs);
+    const matches = exists && sha256File(abs) === file.sha256;
+    if (exists && !matches) {
+      warnings.push(
+        `файл изменён после установки — оставлю: ${file.path} ` +
+          `(манифест ${file.sha256.slice(0, 12)}…, на диске ${sha256File(abs).slice(0, 12)}…)`,
+      );
+    }
+    targets.push({ path: file.path, abs, size: file.size, sha256: file.sha256, exists, matches });
+  }
+
+  // Журнал/дамп рантайма создаются при запуске игры и в манифест не попадают,
+  // но это наши файлы в нашей папке — удаляем их вместе с установкой. Сюда же
+  // словари других языков и dwmapi_real.dll: после смены языка манифест знает
+  // только последний patch_<lang>.dat, а папка должна опустеть.
+  const seen = new Set(targets.map((t) => t.abs));
+  const addOwn = (abs: string) => {
+    if (seen.has(abs) || !existsSync(abs)) return;
+    seen.add(abs);
+    targets.push({
+      path: manifestPathOf(gameDir, abs),
+      abs,
+      size: statSync(abs).size,
+      sha256: "",
+      exists: true,
+      matches: true,
+    });
+  };
+  for (const name of RUNTIME_ARTIFACTS) addOwn(join(target, name));
+  addOwn(join(target, "dwmapi_real.dll"));
+  for (const name of safeReaddir(target)) {
+    if (/^patch_[a-z]{2}\.dat$/i.test(name)) addOwn(join(target, name));
+  }
+  return {
+    game: gameDir,
+    modDir: target,
+    manifest,
+    installManifest,
+    targets,
+    error: null,
+    warnings,
+  };
+}
+
+export interface UninstallResult {
+  deleted: string[];
+  kept: string[];
+  removedDirs: string[];
+  manifestDeleted: boolean;
+}
+
+/**
+ * Удалить ровно поставленное: файлы из манифеста (только если хэш совпал),
+ * сам манифест и опустевшие папки мода. Чужие файлы не трогаются.
+ */
+export function executeUninstall(plan: UninstallPlan): UninstallResult {
+  if (plan.error) throw new Error(`удаление невозможно: ${plan.error}`);
+
+  const deleted: string[] = [];
+  const kept: string[] = [];
+
+  for (const target of plan.targets) {
+    if (!target.exists) {
+      kept.push(target.path);
+      console.log(`  · уже нет: ${target.path}`);
+      continue;
+    }
+    if (!target.matches) {
+      kept.push(target.path);
+      console.log(`  ! изменён, оставлен: ${target.path}`);
+      continue;
+    }
+    rmSync(target.abs, { force: true });
+    deleted.push(target.path);
+    console.log(`  - ${target.path}`);
+  }
+
+  let manifestDeleted = false;
+  if (existsSync(plan.manifest)) {
+    rmSync(plan.manifest, { force: true });
+    manifestDeleted = true;
+    console.log(`  - ${relative(plan.game, plan.manifest).replaceAll("\\", "/")}`);
+  }
+
+  // Сначала подпапки (fonts), затем папка мода. Только пустые: rmdir не
+  // рекурсивен, поэтому чужие файлы внутри сохраняют папку.
+  const removedDirs: string[] = [];
+  for (const dir of [join(plan.modDir, FONT_SUBDIR), plan.modDir]) {
+    if (!existsSync(dir)) continue;
+    if (readdirSync(dir).length === 0) {
+      rmdirSync(dir);
+      removedDirs.push(dir);
+      console.log(`  - папка: ${dir}`);
+    }
+  }
+
+  return { deleted, kept, removedDirs, manifestDeleted };
+}
+
+// ---------------------------------------------------------------------------
+// Migrate (прежняя раскладка в Managed/ + мусор сборки)
+// ---------------------------------------------------------------------------
+
+export interface LegacyFile {
+  path: string;
+  abs: string;
+}
+
+/** Точные имена артефактов прежней раскладки в Managed/. */
+const LEGACY_MANAGED_FILES = [
+  "NeonTranslatorRuntime.dll",
+  "NeonTranslatorDX.dll",
+  "active_lang.txt",
+  "NeonTranslator.log",
+  "NeonTranslatorDX.log",
+  "dump_GUIDictionary.json",
+  MAIN_FONT,
+  ...CJK_FONTS,
+];
+
+/** Имена, которые могли остаться в прежней папке `<игра>/NeonTranslator/`. */
+const LEGACY_OLD_MOD_FILES = [
+  "NeonTranslatorRuntime.dll",
+  "NeonTranslator.log",
+  "dump_GUIDictionary.json",
+  "active_lang.txt",
+  "install-manifest.json",
+];
+
+/** Мусор в корне игры от наших сборок (не файлы игры). */
+const LEGACY_ROOT_FILES = ["dwmapi.exp", "dwmapi.lib", "dwmapi_real.dll", "nul"];
+
+/**
+ * Что осталось от прежней раскладки. Возвращает только существующие файлы;
+ * ничего не удаляет. Чужие файлы (сборки Unity, сейвы) в список не попадают.
+ */
+export function planMigrate(gameDir: string): LegacyFile[] {
+  const out: LegacyFile[] = [];
+  const managed = join(gameDir, GAME_DATA_FOLDER, "Managed");
+  const oldMod = join(gameDir, LEGACY_MOD_FOLDER);
+  const push = (abs: string) => {
+    if (existsSync(abs) && !out.some((f) => f.abs === abs))
+      out.push({ path: relative(gameDir, abs).replaceAll("\\", "/"), abs });
+  };
+
+  for (const name of LEGACY_MANAGED_FILES) push(join(managed, name));
+  for (const name of safeReaddir(managed)) {
+    if (/^patch_[a-z]{2}\.dat$/i.test(name)) push(join(managed, name));
+  }
+  for (const name of LEGACY_OLD_MOD_FILES) push(join(oldMod, name));
+  for (const name of safeReaddir(oldMod)) {
+    if (/^patch_[a-z]{2}\.dat$/i.test(name)) push(join(oldMod, name));
+  }
+  for (const name of [MAIN_FONT, ...CJK_FONTS]) push(join(oldMod, FONT_SUBDIR, name));
+  for (const name of LEGACY_ROOT_FILES) push(join(gameDir, name));
+  return out;
+}
+
+export interface MigrateResult {
+  deleted: string[];
+  failed: string[];
+  removedDirs: string[];
+}
+
+/** Удалить артефакты прежней раскладки + опустевшую старую папку; всё — в логе. */
+export function executeMigrate(files: LegacyFile[], gameDir: string): MigrateResult {
+  const deleted: string[] = [];
+  const failed: string[] = [];
+  for (const file of files) {
+    try {
+      rmSync(file.abs, { force: true });
+      deleted.push(file.path);
+      console.log(`  - legacy: ${file.path}`);
+    } catch (e) {
+      failed.push(`${file.path}: ${e instanceof Error ? e.message : String(e)}`);
+    }
+  }
+
+  // Старая папка удаляется только если опустела: чужие файлы её сохранят.
+  const removedDirs: string[] = [];
+  const oldMod = join(gameDir, LEGACY_MOD_FOLDER);
+  for (const dir of [join(oldMod, FONT_SUBDIR), oldMod]) {
+    if (!existsSync(dir)) continue;
+    if (readdirSync(dir).length === 0) {
+      rmdirSync(dir);
+      removedDirs.push(dir);
+      console.log(`  - папка: ${relative(gameDir, dir).replaceAll("\\", "/")}`);
+    }
+  }
+  return { deleted, failed, removedDirs };
+}
+
+function safeReaddir(dir: string): string[] {
+  try {
+    return readdirSync(dir);
+  } catch {
+    return [];
+  }
+}
+
+// ---------------------------------------------------------------------------
+// CLI
+// ---------------------------------------------------------------------------
+
 export interface DeployArgs {
   lang: string;
   dryRun: boolean;
   rebuild: boolean;
   proxy: boolean;
+  uninstall: boolean;
+  migrate: boolean;
   help: boolean;
 }
 
-/** Разбор аргументов CLI (`--lang <code>`, `--dry-run`, `--rebuild`, `--proxy`). */
+/** Разбор аргументов CLI. */
 export function parseArgs(argv: string[]): DeployArgs {
-  const out: DeployArgs = { lang: "ru", dryRun: false, rebuild: false, proxy: false, help: false };
+  const out: DeployArgs = {
+    lang: "ru",
+    dryRun: false,
+    rebuild: false,
+    proxy: false,
+    uninstall: false,
+    migrate: false,
+    help: false,
+  };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     if (arg === "--dry-run") out.dryRun = true;
     else if (arg === "--rebuild") out.rebuild = true;
     else if (arg === "--proxy") out.proxy = true;
+    else if (arg === "--uninstall") out.uninstall = true;
+    else if (arg === "--migrate") out.migrate = true;
     else if (arg === "--help" || arg === "-h") out.help = true;
     else if (arg === "--lang") {
       const value = argv[++i];
@@ -313,22 +735,26 @@ export function parseArgs(argv: string[]): DeployArgs {
   return out;
 }
 
-const USAGE = `Деплой рантайм-переводчика в игру
+const USAGE = `Установка/удаление рантайм-переводчика в игре
 
   node .opencode/skills/deploy-translator/scripts/deploy.mts [опции]
 
   --lang <code>  язык из config/language-priority.json (по умолчанию ru);
                  "${SOURCE_LANG}" — native-режим (без словаря)
   --dry-run      показать план, ничего не писать
-  --rebuild      перед деплоем собрать runtime/NeonTranslatorRuntime.dll
+  --rebuild      перед деплоем собрать runtime/NeonTranslatorDX.dll
   --proxy        перед деплоем собрать dwmapi.dll (нужен MSVC)
+  --uninstall    удалить ровно поставленное (файлы из манифеста + пустые папки)
+  --migrate      после установки убрать артефакты прежней раскладки (Managed/)
   --help, -h     эта справка
 
+  Раскладка: <игра>/dwmapi.dll + <игра>/${MOD_FOLDER}/ (всё остальное).
   Игра: TCNN_GAME_DIR=<папка игры> (иначе автопоиск по Steam-библиотекам).
 `;
 
 function printPlan(plan: DeployPlan): void {
   console.log(`Игра:  ${plan.game}`);
+  console.log(`Папка мода: ${plan.modDir}`);
   console.log(`Язык:  ${plan.lang}${plan.native ? " (native, без словаря)" : ""}`);
   console.log("\nПлан:");
   for (const op of plan.ops) {
@@ -336,6 +762,21 @@ function printPlan(plan: DeployPlan): void {
     console.log(`  ${mark} ${op.what}`);
     if (op.from) console.log(`      ${op.from}`);
     console.log(`   -> ${op.to}`);
+  }
+  for (const w of plan.warnings) console.warn(`  ВНИМАНИЕ: ${w}`);
+}
+
+function printUninstallPlan(plan: UninstallPlan): void {
+  console.log(`Игра:  ${plan.game}`);
+  console.log(`Манифест: ${plan.manifest}`);
+  if (plan.error) {
+    console.error(`  ОШИБКА: ${plan.error}`);
+  } else {
+    console.log(`\nБудет удалено (${plan.targets.filter((t) => t.exists && t.matches).length}):`);
+    for (const t of plan.targets) {
+      const mark = !t.exists ? "·" : t.matches ? "-" : "!";
+      console.log(`  ${mark} ${t.path}`);
+    }
   }
   for (const w of plan.warnings) console.warn(`  ВНИМАНИЕ: ${w}`);
 }
@@ -353,12 +794,6 @@ function main(argv: string[]): number {
     return 0;
   }
 
-  const allowed = allLangs();
-  if (!allowed.includes(args.lang)) {
-    console.error(`язык "${args.lang}" не в приоритете. Доступны: ${allowed.join(", ")}`);
-    return 1;
-  }
-
   const game = resolveGame();
   if (game.error || !game.dir) {
     console.error(`ОШИБКА: ${game.error ?? "игра не найдена"}`);
@@ -367,6 +802,29 @@ function main(argv: string[]): number {
   const gameDir = game.dir;
 
   try {
+    if (args.uninstall) {
+      const plan = planUninstall(gameDir);
+      printUninstallPlan(plan);
+      if (plan.error) return 1;
+      if (args.dryRun) {
+        console.log("\nDry-run: ничего не удалено.");
+        return 0;
+      }
+      console.log("\n==> Удаление");
+      const result = executeUninstall(plan);
+      console.log(
+        `\nГотово: удалено файлов ${result.deleted.length}, оставлено ${result.kept.length}, ` +
+          `папок ${result.removedDirs.length}`,
+      );
+      return 0;
+    }
+
+    const allowed = allLangs();
+    if (!allowed.includes(args.lang)) {
+      console.error(`язык "${args.lang}" не в приоритете. Доступны: ${allowed.join(", ")}`);
+      return 1;
+    }
+
     if (args.rebuild) {
       console.log("==> Сборка рантайма");
       buildRuntime({ gameDir });
@@ -390,13 +848,27 @@ function main(argv: string[]): number {
 
     console.log("\n==> Раскладка");
     const result = executeDeploy(plan);
-    const managedDll = join(plan.managed, "NeonTranslatorRuntime.dll");
+    const runtime = join(plan.modDir, RUNTIME_DLL);
     console.log(`\nГотово: файлов записано ${result.copied.length}`);
-    console.log(`  DLL: ${managedDll} (${statSize(managedDll)} байт)`);
+    console.log(`  DLL: ${runtime} (${statSize(runtime)} байт)`);
     if (result.dat) console.log(`  словарь: ${result.dat.installed} (${result.dat.rows} строк)`);
     console.log(`  язык: ${plan.lang}${plan.native ? " (native)" : ""}`);
     console.log(`  лоадер: ${join(gameDir, "dwmapi.dll")}`);
-    console.log("\nПерезапустите игру; лог рантайма — Managed/NeonTranslator.log");
+    console.log(`  манифест: ${plan.manifest}`);
+
+    if (args.migrate) {
+      const legacy = planMigrate(gameDir);
+      console.log(`\n==> Migrate: артефактов прежней раскладки ${legacy.length}`);
+      if (!legacy.length) console.log("  (нечего удалять)");
+      const moved = executeMigrate(legacy, gameDir);
+      console.log(`  удалено: ${moved.deleted.length}, ошибок: ${moved.failed.length}`);
+      for (const f of moved.failed) console.error(`  ! ${f}`);
+      if (moved.failed.length) return 1;
+    }
+
+    console.log(
+      `\nПерезапустите игру; лог рантайма — ${join(plan.modDir, "NeonTranslatorDX.log")}`,
+    );
     return 0;
   } catch (e) {
     console.error(`ОШИБКА: ${e instanceof Error ? e.message : String(e)}`);

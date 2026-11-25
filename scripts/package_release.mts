@@ -31,9 +31,9 @@ export function expectedEntries(lang: string): string[] {
     "dwmapi.dll",
     "install.ps1",
     "README-INSTALL.md",
-    "runtime/NeonTranslatorRuntime.dll",
-    `runtime/patch_${lang}.dat`,
-    "fonts/RobotoCondensed-Regular.ttf",
+    "NeonTranslatorDX/NeonTranslatorDX.dll",
+    `NeonTranslatorDX/patch_${lang}.dat`,
+    "NeonTranslatorDX/fonts/RobotoCondensed-Regular.ttf",
   ];
 }
 
@@ -46,9 +46,15 @@ export interface SourcePlan {
 export function planSources(lang: string): SourcePlan[] {
   return [
     { from: "dwmapi.dll", to: "dwmapi.dll" },
-    { from: "runtime/NeonTranslatorRuntime.dll", to: "runtime/NeonTranslatorRuntime.dll" },
-    { from: `runtime/patch_${lang}.dat`, to: `runtime/patch_${lang}.dat` },
-    { from: "fonts/RobotoCondensed-Regular.ttf", to: "fonts/RobotoCondensed-Regular.ttf" },
+    {
+      from: "runtime/NeonTranslatorDX.dll",
+      to: "NeonTranslatorDX/NeonTranslatorDX.dll",
+    },
+    { from: `runtime/patch_${lang}.dat`, to: `NeonTranslatorDX/patch_${lang}.dat` },
+    {
+      from: "fonts/RobotoCondensed-Regular.ttf",
+      to: "NeonTranslatorDX/fonts/RobotoCondensed-Regular.ttf",
+    },
     { from: "README-INSTALL.md", to: "README-INSTALL.md" },
   ];
 }
@@ -83,8 +89,9 @@ export function installScript(lang: string): string {
   Install the ${lang} translation patch into the game folder (idempotent).
 .DESCRIPTION
   Run AFTER extracting the release archive into the game folder (the folder that
-  contains the game exe). Copies the payload into
-  "<game>/Third Crisis Neon Nights_Data/Managed/", writes active_lang.txt.
+  contains the game exe). Copies everything into "<game>/NeonTranslatorDX/"
+  (fonts in its "fonts/" subfolder), writes active_lang.txt and
+  install-manifest.json. The only file outside that folder is dwmapi.dll.
   Safe to re-run: all operations overwrite.
 .EXAMPLE
   powershell -ExecutionPolicy Bypass -File .\\install.ps1
@@ -93,33 +100,73 @@ param([string]$GameDir = "")
 
 $ErrorActionPreference = 'Stop'
 if ([string]::IsNullOrWhiteSpace($GameDir)) { $GameDir = $PSScriptRoot }
-$MANAGED = Join-Path $GameDir 'Third Crisis Neon Nights_Data\\Managed'
+$DATA = Join-Path $GameDir 'Third Crisis Neon Nights_Data'
+$MOD = Join-Path $GameDir 'NeonTranslatorDX'
+$FONTS = Join-Path $MOD 'fonts'
 $LANG = '${lang}'
 
 function Step($msg) { Write-Host ("==> " + $msg) }
 function Need-File($path, $hint) {
-  if (-not (Test-Path $path)) { throw ("MISSING: " + $path + ". " + $hint) }
-  if ((Get-Item $path).Length -le 0) { throw ("EMPTY: " + $path + ". " + $hint) }
+  if (-not (Test-Path -LiteralPath $path)) { throw ("MISSING: " + $path + ". " + $hint) }
+  if ((Get-Item -LiteralPath $path).Length -le 0) { throw ("EMPTY: " + $path + ". " + $hint) }
 }
 
 Step ("Game dir: " + $GameDir)
-if (-not (Test-Path $MANAGED)) { throw ("Managed dir not found: " + $MANAGED + ". Extract the FULL archive into the game folder and rerun.") }
+if (-not (Test-Path -LiteralPath (Join-Path $DATA 'Managed'))) {
+  throw ("Game data not found: " + $DATA + ". Extract the FULL archive into the game folder and rerun.")
+}
 
 Need-File (Join-Path $GameDir 'dwmapi.dll') 'dwmapi.dll must sit next to install.ps1'
-$SRC_DLL = Join-Path $GameDir 'runtime\\NeonTranslatorRuntime.dll'
-$SRC_DAT = Join-Path $GameDir ('runtime\\patch_' + $LANG + '.dat')
-$SRC_TTF = Join-Path $GameDir 'fonts\\RobotoCondensed-Regular.ttf'
-Need-File $SRC_DLL 'runtime/ is missing'
-Need-File $SRC_DAT 'runtime/ is missing'
-Need-File $SRC_TTF 'fonts/ is missing'
+$SRC_DLL = Join-Path $PSScriptRoot 'NeonTranslatorDX/NeonTranslatorDX.dll'
+$SRC_DAT = Join-Path $PSScriptRoot ('NeonTranslatorDX/patch_' + $LANG + '.dat')
+$SRC_TTF = Join-Path $PSScriptRoot 'NeonTranslatorDX/fonts/RobotoCondensed-Regular.ttf'
+Need-File $SRC_DLL 'archive payload is missing'
+Need-File $SRC_DAT 'archive payload is missing'
+Need-File $SRC_TTF 'archive payload is missing'
 
-Copy-Item $SRC_DLL $MANAGED -Force
-Copy-Item $SRC_DAT $MANAGED -Force
-Copy-Item $SRC_TTF $MANAGED -Force
-Set-Content -Path (Join-Path $MANAGED 'active_lang.txt') -Value $LANG -NoNewline
+New-Item -ItemType Directory -Force -Path $FONTS | Out-Null
+$DST_DLL = Join-Path $MOD 'NeonTranslatorDX.dll'
+$DST_DAT = Join-Path $MOD ('patch_' + $LANG + '.dat')
+$DST_TTF = Join-Path $FONTS 'RobotoCondensed-Regular.ttf'
+function Copy-IfDifferent($src, $dst) {
+  if ([IO.Path]::GetFullPath($src) -ne [IO.Path]::GetFullPath($dst)) {
+    Copy-Item $src $dst -Force
+  }
+}
+Copy-IfDifferent $SRC_DLL $DST_DLL
+Copy-IfDifferent $SRC_DAT $DST_DAT
+Copy-IfDifferent $SRC_TTF $DST_TTF
+Set-Content -Path (Join-Path $MOD 'active_lang.txt') -Value $LANG -NoNewline
+
+# Manifest for the uninstaller: file, size, sha256 (paths relative to game dir).
+$payload = @(
+  @{ rel='dwmapi.dll'; abs=(Join-Path $GameDir 'dwmapi.dll') },
+  @{ rel='NeonTranslatorDX/NeonTranslatorDX.dll'; abs=$DST_DLL },
+  @{ rel='NeonTranslatorDX/fonts/RobotoCondensed-Regular.ttf'; abs=$DST_TTF },
+  @{ rel=('NeonTranslatorDX/patch_' + $LANG + '.dat'); abs=$DST_DAT },
+  @{ rel='NeonTranslatorDX/active_lang.txt'; abs=(Join-Path $MOD 'active_lang.txt') }
+)
+$list = @()
+foreach ($p in $payload) {
+  if (Test-Path -LiteralPath $p.abs) {
+    $item = Get-Item -LiteralPath $p.abs
+    $list += @{
+      path = $p.rel
+      size = $item.Length
+      sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath $p.abs).Hash.ToLower()
+    }
+  }
+}
+$manifest = @{
+  version = 1
+  lang = $LANG
+  installedAt = (Get-Date).ToString('o')
+  files = $list
+}
+$manifest | ConvertTo-Json -Depth 5 | Set-Content -Path (Join-Path $MOD 'install-manifest.json') -Encoding UTF8
 
 Step 'Done'
-Write-Host ('Lang: ' + $LANG + ' installed. Restart the game and check Managed\\NeonTranslator.log')
+Write-Host ('Lang: ' + $LANG + ' installed. Restart the game and check NeonTranslatorDX\\NeonTranslatorDX.log')
 Write-Host 'NOTE: Steam "Verify integrity of game files" deletes dwmapi.dll; re-run install.ps1.'
 `;
 }
@@ -211,7 +258,7 @@ function main(argv: string[]): number {
   console.log("==> Stage собран:", listFiles(stage).length, "файлов");
 
   const sevenZip = find7z();
-  const archiveName = `NeonPatchTranslator-v${args.version}-${args.lang}.${args.format}`;
+  const archiveName = `NeonTranslatorDX-v${args.version}-${args.lang}.${args.format}`;
   const archive = join(dist, archiveName);
   rmSync(archive, { force: true });
 

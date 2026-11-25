@@ -17,8 +17,8 @@
  *   node .opencode/skills/build-translator/scripts/build_proxy.mts
  *   TCNN_MSVC_TOOLS="<...>/VC/Tools/MSVC/14.50.35717" node .../build_proxy.mts
  *
- * Результат: `<игра>/dwmapi.dll` + `<игра>/dwmapi_real.dll`; копия прокси
- * синхронизируется в корень репозитория (`dwmapi.dll`, трекается).
+ * Результат: `<игра>/dwmapi.dll` + `<игра>/NeonTranslatorDX/dwmapi_real.dll`; копия
+ * прокси синхронизируется в корень репозитория (`dwmapi.dll`, трекается).
  */
 import { copyFileSync, existsSync, mkdirSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
@@ -31,6 +31,8 @@ import { REPO_ROOT, requireGameDir } from "./build.mts";
 export const PROXY_SOURCE = join(import.meta.dirname, "..", "source", "dwmapi_proxy.c");
 export const PROXY_NAME = "dwmapi.dll";
 export const REAL_COPY_NAME = "dwmapi_real.dll";
+/** Папка мода: всё, кроме лоадера `dwmapi.dll`, живёт здесь. */
+export const MOD_FOLDER = "NeonTranslatorDX";
 
 /** Легаси-лоадеры прошлых версий: только предупреждаем, не удаляем. */
 export const LEGACY_FILES = ["version.dll", "version_proxy.c", "winhttp.dll"];
@@ -184,6 +186,7 @@ export function proxyArgs(
   source: string,
   outPath: string,
   objPath: string,
+  implibPath?: string,
 ): string[] {
   return [
     layout.cl,
@@ -197,6 +200,7 @@ export function proxyArgs(
     ...layout.includes.map((p) => `/I${p}`),
     source,
     "/link",
+    ...(implibPath ? [`/IMPLIB:${implibPath}`] : []),
     ...layout.libs.map((p) => `/LIBPATH:${p}`),
     "/MACHINE:X64",
     "kernel32.lib",
@@ -222,12 +226,14 @@ export interface ProxyBuildResult {
   size: number;
   realCopy: string | null;
   repoSync: string;
+  /** Копия системной DLL в репозитории (источник для `deploy`, `null` — не делали). */
+  repoSyncReal: string | null;
   /** Легаси-файлы в папке игры (не удалены, только перечислены). */
   legacy: string[];
   layout: MsvcLayout;
 }
 
-/** Собрать прокси и разложить: `<игра>/dwmapi.dll`, `<игра>/dwmapi_real.dll`, репо-копия. */
+/** Собрать прокси и разложить: `<игра>/dwmapi.dll`, `<игра>/NeonTranslatorDX/dwmapi_real.dll`, репо-копии. */
 export function buildProxy(o: ProxyBuildOptions = {}): ProxyBuildResult {
   const repoRoot = o.repoRoot ?? REPO_ROOT;
   const source = o.source ?? PROXY_SOURCE;
@@ -239,14 +245,20 @@ export function buildProxy(o: ProxyBuildOptions = {}): ProxyBuildResult {
   console.log("dwmapi.dll — сборка нативного прокси\n");
 
   // 1. Копия системной DLL: прокси форвардит в неё все остальные экспорты.
+  //    Лежит в папке мода, чтобы в корне игры остался один файл — лоадер.
   let realCopy: string | null = null;
+  let repoSyncReal: string | null = null;
   if (!o.skipRealCopy) {
     const systemDwmapi = join(process.env.SystemRoot ?? "C:\\Windows", "System32", PROXY_NAME);
     if (!existsSync(systemDwmapi)) throw new Error(`не найдена системная DLL: ${systemDwmapi}`);
-    realCopy = join(gameDir, REAL_COPY_NAME);
+    const modDir = join(gameDir, MOD_FOLDER);
+    mkdirSync(modDir, { recursive: true });
+    realCopy = join(modDir, REAL_COPY_NAME);
     copyWithHint(systemDwmapi, realCopy, "скопировать системную dwmapi.dll");
+    repoSyncReal = join(repoRoot, REAL_COPY_NAME);
+    copyFileSync(realCopy, repoSyncReal);
     console.log(`  системная DLL: ${systemDwmapi}`);
-    console.log(`  -> ${REAL_COPY_NAME} в папке игры (цель форвардов)`);
+    console.log(`  -> ${MOD_FOLDER}/${REAL_COPY_NAME} в папке мода (цель форвардов)`);
   }
 
   // 2. Легаси прошлых версий: не трогаем, но говорим вслух.
@@ -264,7 +276,13 @@ export function buildProxy(o: ProxyBuildOptions = {}): ProxyBuildResult {
   const objDir = join(repoRoot, "tmp", "build_proxy");
   mkdirSync(objDir, { recursive: true });
   const outPath = join(gameDir, PROXY_NAME);
-  const args = proxyArgs(layout, source, outPath, join(objDir, "dwmapi_proxy.obj"));
+  const args = proxyArgs(
+    layout,
+    source,
+    outPath,
+    join(objDir, "dwmapi_proxy.obj"),
+    join(objDir, "dwmapi.lib"),
+  );
 
   console.log(`  компилятор: ${layout.cl}`);
   console.log("  компиляция...\n");
@@ -288,6 +306,7 @@ export function buildProxy(o: ProxyBuildOptions = {}): ProxyBuildResult {
   console.log(`  OK: dwmapi.dll (${(size / 1024).toFixed(1)} KB)`);
   if (realCopy) {
     console.log(`  OK: ${REAL_COPY_NAME} (${(statSync(realCopy).size / 1024).toFixed(1)} KB)`);
+    if (repoSyncReal) console.log(`  OK: копия ${REAL_COPY_NAME} в репозитории -> ${repoSyncReal}`);
   }
 
   // 4. Ресинк копии в репозитории: `deploy` ставит прокси именно отсюда.
@@ -296,7 +315,7 @@ export function buildProxy(o: ProxyBuildOptions = {}): ProxyBuildResult {
   console.log(`  OK: копия в репозитории -> ${repoSync}`);
 
   console.log("\n  Перезапустите игру, чтобы загрузился новый прокси.");
-  return { outPath, size, realCopy, repoSync, legacy, layout };
+  return { outPath, size, realCopy, repoSync, repoSyncReal, legacy, layout };
 }
 
 /** Копирование с понятной ошибкой (нет прав / нет папки). */

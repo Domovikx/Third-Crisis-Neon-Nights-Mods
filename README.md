@@ -78,7 +78,7 @@ npm run potgen ──→ po/template.pot (источник правды, ~18k з
 po/<lang>.po ──→ npm run po2dat ──→ runtime/patch_<lang>.dat (JSON-lines)
         │
         ▼
-npm run deploy ──→ <игра>/…/Managed/ (DLL + patch + шрифт + active_lang.txt)
+npm run deploy ──→ <игра>/dwmapi.dll + <игра>/NeonTranslatorDX/ (DLL + patch + шрифты + active_lang.txt + манифест)
 ```
 
 Рантайм читает **один** `patch_<lang>.dat`; переводы живут в памяти, бинарники игры не
@@ -128,7 +128,7 @@ npm run verify         # typecheck + lint + format + langs + tests + e2e
 - Unity 2022.3.62f3 (URP), .NET 4.x (Mono), IL2CPP не используется
 - Фреймворк игры: ANToolkit; логика: PlayMaker FSM
 - Addressables: 97 `.bundle` (LZ4HC), из них с UI-текстом — 4
-- Рантайм: собственный `NeonTranslatorRuntime.dll` (BepInEx 5, без внешних библиотек)
+- Рантайм: собственный `NeonTranslatorDX.dll` (scan-and-replace, без внешних библиотек)
 - Пайплайн: TypeScript (`.mts`, Node 22+) + Python только для дампа Unity-ассетов
 
 ## Требования

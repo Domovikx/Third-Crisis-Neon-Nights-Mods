@@ -34,8 +34,8 @@ RTX-машина разработчика.
   мусор оказывался рядом с исходниками (в старом Python-скрипте) → проверено
   2026-11-21 → запуск с `cwd = tmp/build_proxy/`, туда же `/Fo`.
 
-- ⚠️ **`build_proxy.mts` перезаписывает `<игра>/dwmapi_real.dll` текущей системной
-  копией** → это by design (форвардер должен быть живой системной DLL), но при
+- ⚠️ **`build_proxy.mts` перезаписывает `<игра>/NeonTranslatorDX/dwmapi_real.dll`
+  текущей системной копией** → это by design (форвардер должен быть живой системной DLL), но при
   отладке старое содержимое теряется → проверено 2026-11-21: до прогона
   `dwmapi_real.dll` был от января 2026 (`c322e8…`), после — `db0ad9…` (=
   `C:\Windows\System32\dwmapi.dll`).
@@ -52,13 +52,24 @@ RTX-машина разработчика.
   Unity» → проверено чтением `REF_DLLS` → в CI (ubuntu) сборку не гоняем, там
   только `npm run typecheck` и тесты чистых функций.
 
+- ⚠️ **`cl /LD` без `/IMPLIB` кладёт `.exp/.lib` рядом с выходной DLL** → в корне
+  игры появлялись `dwmapi.exp`/`dwmapi.lib` → проверено 2026-11-25 → `buildProxy`
+  передаёт `/IMPLIB:tmp/build_proxy/dwmapi.lib`, мусор остаётся в `tmp/`;
+  старые файлы убирает `deploy --migrate`.
+
+- ⚠️ **Namespace C# переименован в `NeonTranslatorDX`** (файл —
+  `NeonTranslatorDX.dll`) → прокси ищет класс по строке
+  `mono_class_from_name(image, "NeonTranslatorDX", "TranslatorPlugin")`; менять
+  namespace и строку в `dwmapi_proxy.c` только вместе → проверено 2026-11-25
+  сборкой csc + запуском игры.
+
 - ⚠️ **Python-скрипты (`build.py`, `build_proxy.py`) удалены 2026-11-21** после
   порта и проверки на живой установке (паритет `.dat` по sha256). Если что-то
   понадобится сверить — история в git, в рабочем дереве их больше нет.
 
 ## Проверенные цифры (2026-11-21)
 
-- `node build.mts` → `runtime/NeonTranslatorRuntime.dll`, 43.0 KB (44032 байта),
+- `node build.mts` → `runtime/NeonTranslatorDX.dll`, 43.0 KB (44032 байта),
   6 исходников, 11 из 11 ссылок Unity.
 - `node build_proxy.mts` → `dwmapi.dll` 13.5 KB (13824 байта) в игре и в репо,
   `dwmapi_real.dll` 190.5 KB (системная копия), MSVC 14.50.35717 + SDK

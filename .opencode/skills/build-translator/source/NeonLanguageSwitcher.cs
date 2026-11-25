@@ -7,10 +7,11 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace NeonTranslator
+namespace NeonTranslatorDX
 {
     // In-game language switcher: F9 (or the mini-button) opens a panel with
-    // one button per patch_*.dat found in Managed/ (+ native English).
+    // one button per patch_*.dat found next to the runtime DLL (mod folder),
+    // + native English.
     // Switching is live: dictionary reload + UI repopulate, no restart.
     // Own texts are excluded from scan-and-replace via SetSwitcherRoot.
     public class NeonLanguageSwitcher : MonoBehaviour

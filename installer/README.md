@@ -36,8 +36,9 @@ node installer/install.mts --lang en          # native-режим (без сло
 
 ## Раскладка установки (контракт)
 
-- `runtime/NeonTranslatorRuntime.dll` → `<игра>/<Game>_Data/Managed/`
-- `runtime/patch_<lang>.dat` → `<игра>/<Game>_Data/Managed/` (кроме `en`)
-- `fonts/RobotoCondensed-Regular.ttf` → `<игра>/<Game>_Data/Managed/`
-- `Managed/active_lang.txt` → генерируется (код языка)
-- `dwmapi.dll` (прокси) → корень игры
+- `dwmapi.dll` (прокси/лоадер) → корень игры — единственный файл вне папки мода
+- `runtime/NeonTranslatorDX.dll` → `<игра>/NeonTranslatorDX/`
+- `runtime/patch_<lang>.dat` → `<игра>/NeonTranslatorDX/` (кроме `en`)
+- `fonts/RobotoCondensed-Regular.ttf` → `<игра>/NeonTranslatorDX/fonts/`
+- `NeonTranslatorDX/active_lang.txt` → генерируется (код языка)
+- `NeonTranslatorDX/install-manifest.json` → генерируется (файл, размер, sha256)

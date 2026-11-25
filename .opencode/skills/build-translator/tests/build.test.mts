@@ -187,6 +187,10 @@ test("proxyArgs: DLL, /MD, include/lib, kernel32", () => {
   assert.equal(args.filter((a) => a.startsWith("/I")).length, layout.includes.length);
   assert.equal(args.filter((a) => a.startsWith("/LIBPATH:")).length, layout.libs.length);
   assert.equal(args.at(-1), "kernel32.lib");
+
+  // `/IMPLIB` уводит .exp/.lib из корня игры в tmp/ (иначе там мусор).
+  const withImplib = proxyArgs(layout, "src.c", "out.dll", "obj.obj", "tmp\\dwmapi.lib");
+  assert.ok(withImplib.includes("/IMPLIB:tmp\\dwmapi.lib"));
 });
 
 test("discoverMsvc: оверрайды TCNN_MSVC_TOOLS и TCNN_WINDOWS_SDK", () => {

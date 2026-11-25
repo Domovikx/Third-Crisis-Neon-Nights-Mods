@@ -1,4 +1,4 @@
-# NeonPatchTranslator v1.0 (RU) — установка русского перевода
+# NeonTranslatorDX (RU) — установка русского перевода
 
 > **СТРОГО 18+.** Игра Third Crisis Neon Nights содержит откровенный сексуальный
 > контент и предназначена только для совершеннолетних. Этот патч переводит
@@ -7,22 +7,24 @@
 
 ## Что внутри архива
 
-| Файл в архиве                       | Куда ставится при установке                                      |
-| ----------------------------------- | ---------------------------------------------------------------- |
-| `dwmapi.dll`                        | В корень игры, рядом с exe (загрузчик перевода)                  |
-| `runtime/NeonTranslatorRuntime.dll` | В `Third Crisis Neon Nights_Data/Managed/`                       |
-| `runtime/patch_ru.dat`              | В `Third Crisis Neon Nights_Data/Managed/` (словарь перевода)    |
-| `fonts/RobotoCondensed-Regular.ttf` | В `Third Crisis Neon Nights_Data/Managed/` (кириллический шрифт) |
-| `install.ps1`                       | Скрипт установки (запускается один раз из папки игры)            |
-| `README-INSTALL.md`                 | Этот файл                                                        |
+| Файл в архиве                                        | Куда попадает при распаковке в папку игры                |
+| ---------------------------------------------------- | -------------------------------------------------------- |
+| `dwmapi.dll`                                         | В корень игры, рядом с exe (загрузчик перевода)          |
+| `NeonTranslatorDX/NeonTranslatorDX.dll`              | В `<игра>\NeonTranslatorDX\` (сам переводчик)            |
+| `NeonTranslatorDX/patch_ru.dat`                      | В `<игра>\NeonTranslatorDX\` (словарь перевода)          |
+| `NeonTranslatorDX/fonts/RobotoCondensed-Regular.ttf` | В `<игра>\NeonTranslatorDX\fonts\` (кириллический шрифт) |
+| `install.ps1`                                        | Скрипт установки (запускается один раз из папки игры)    |
+| `README-INSTALL.md`                                  | Этот файл                                                |
 
-Установка не трогает сохранения. Удаление патча полностью возвращает
+Установка не трогает сохранения и файлы игры: добавляется только `dwmapi.dll`
+и папка `NeonTranslatorDX\`. Удаление этих двух мест полностью возвращает
 оригинальный английский текст.
 
 ## Установка за 3 шага
 
 **Шаг 1.** Распакуйте ВЕСЬ zip в папку игры — туда, где лежит exe игры.
-После распаковки рядом с exe должны появиться `dwmapi.dll` и `install.ps1`.
+После распаковки рядом с exe должны появиться `dwmapi.dll`, `install.ps1`
+и папка `NeonTranslatorDX\`.
 Пример пути папки игры:
 
 ```text
@@ -37,19 +39,21 @@ C:\Program Files (x86)\Steam\steamapps\common\Third Crisis Neon Nights
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-Скрипт сам скопирует файлы в `Managed/`, запишет `active_lang.txt`
-и проверит каждую копию. Его можно безопасно запускать повторно.
+Скрипт проверит файлы в `NeonTranslatorDX\` (распаковка уже положила их на
+место), при необходимости скопирует их из папки архива, запишет
+`active_lang.txt` и `install-manifest.json` (список поставленного). Его можно
+безопасно запускать повторно.
 
 **Шаг 3.** Запустите игру как обычно.
 
 ## Как проверить, что перевод работает
 
 1. Запустите игру и дойдите до любого диалога.
-2. Откройте файл `Third Crisis Neon Nights_Data\Managed\NeonTranslator.log`.
+2. Откройте файл `<игра>\NeonTranslatorDX\NeonTranslatorDX.log`.
 3. В нём должны быть строки вида:
 
 ```text
-Lang: ru, source: ...
+Lang: ru, source: ...\NeonTranslatorDX\patch_ru.dat
 Translations: <число больше нуля>
 ```
 
@@ -59,15 +63,15 @@ Translations: <число больше нуля>
 
 ## Как удалить патч
 
-Удалите эти файлы (игра вернётся на английский):
+Удалите ровно два места (игра вернётся на английский):
 
 - `<игра>\dwmapi.dll`
-- `<игра>\Third Crisis Neon Nights_Data\Managed\NeonTranslatorRuntime.dll`
-- `<игра>\Third Crisis Neon Nights_Data\Managed\patch_ru.dat`
-- `<игра>\Third Crisis Neon Nights_Data\Managed\RobotoCondensed-Regular.ttf`
-- `<игра>\Third Crisis Neon Nights_Data\Managed\active_lang.txt`
-- `<игра>\Third Crisis Neon Nights_Data\Managed\NeonTranslator.log` (создаётся игрой при работе патча)
-- Остатки распаковки в корне игры (безвредны, можно удалить): `install.ps1`, `README-INSTALL.md`, папки `runtime\` и `fonts\`
+- папку `<игра>\NeonTranslatorDX\` целиком
+
+Если ставили через `install.ps1`, можно удалить и два файла в корне игры
+(безвредны): `install.ps1` и `README-INSTALL.md`. Либо переустановите мод и
+удалите его установщиком мода (он читает `install-manifest.json` и удаляет
+только своё).
 
 Сохранения и остальные файлы игры при этом не затрагиваются.
 
@@ -75,15 +79,15 @@ Translations: <число больше нуля>
 
 **После «Проверить целостность файлов» в Steam пропал перевод.**
 Это нормально: Steam удаляет `dwmapi.dll` из папки игры (этот файл не входит
-в состав игры). Файлы в `Managed/` обычно остаются на месте, но без загрузчика
-перевод не стартует. Лечение: заново выполните шаг 2 (`install.ps1`) —
-переустановка занимает минуту и ничего не ломает.
+в состав игры). Папка `NeonTranslatorDX\` обычно остаётся на месте, но без
+загрузчика перевод не стартует. Лечение: заново выполните шаг 2
+(`install.ps1`) — переустановка занимает минуту и ничего не ломает.
 
 **`install.ps1` не запускается, ошибка политики выполнения.**
 Запускайте именно так, как в шаге 2: `powershell -ExecutionPolicy Bypass -File .\install.ps1`.
 Двойной клик по `install.ps1` может открыть его в блокноте вместо запуска.
 
-**Ошибка `Managed dir not found`.**
+**Ошибка `Game data not found`.**
 Архив распакован не в папку игры. Правильная папка — та, где лежит exe игры
 и где после распаковки появился `dwmapi.dll`. Переместите туда содержимое
 архива и повторите шаг 2.
@@ -99,8 +103,8 @@ Translations: <число больше нуля>
 повторите шаг 2.
 
 **Русского текста нет, в логе `Translations: 0` или другой язык.**
-Проверьте, что `Managed\active_lang.txt` содержит ровно `ru` без пробелов
-и переносов строк, затем повторно запустите `install.ps1`.
+Проверьте, что `<игра>\NeonTranslatorDX\active_lang.txt` содержит ровно `ru`
+без пробелов и переносов строк, затем повторно запустите `install.ps1`.
 
 ## Повторная установка после проверки Steam
 

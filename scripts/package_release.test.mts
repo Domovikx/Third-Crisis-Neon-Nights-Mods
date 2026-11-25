@@ -49,9 +49,10 @@ test("parseArgs: неизвестная опция — ошибка", () => {
 test("контракт: ожидаемые файлы зависят от языка", () => {
   const ru = expectedEntries("ru");
   const de = expectedEntries("de");
-  assert.ok(ru.includes("runtime/patch_ru.dat"));
-  assert.ok(de.includes("runtime/patch_de.dat"));
-  assert.ok(!de.includes("runtime/patch_ru.dat"));
+  assert.ok(ru.includes("NeonTranslatorDX/patch_ru.dat"));
+  assert.ok(de.includes("NeonTranslatorDX/patch_de.dat"));
+  assert.ok(!de.includes("NeonTranslatorDX/patch_ru.dat"));
+  assert.ok(ru.includes("NeonTranslatorDX/NeonTranslatorDX.dll"));
   assert.equal(ru.length, 6);
 });
 

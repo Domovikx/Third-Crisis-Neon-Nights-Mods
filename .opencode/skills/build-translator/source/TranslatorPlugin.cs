@@ -12,7 +12,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.TextCore;
 using UnityEngine.UI;
 
-namespace NeonTranslator
+namespace NeonTranslatorDX
 {
     public static class TranslatorPlugin
     {
@@ -55,12 +55,19 @@ namespace NeonTranslator
         private static string _menuProbeLang = null;
 
 
+        // All runtime assets live next to the DLL (one mod folder), fonts in
+        // its `fonts/` subfolder. Nothing is looked up in Managed/ any more.
+        private static string FontsDir(string dllDir)
+        {
+            return Path.Combine(dllDir, "fonts");
+        }
+
         private static uint RegisterFontFile(string dllDir, string fileName)
         {
             // GDI registration only (no Unity objects): safe to call early.
             try
             {
-                string path = Path.Combine(dllDir, fileName);
+                string path = Path.Combine(FontsDir(dllDir), fileName);
                 if (!File.Exists(path)) return 0;
                 byte[] data = File.ReadAllBytes(path);
                 uint added;
@@ -128,7 +135,7 @@ namespace NeonTranslator
             try
             {
                 string dllDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                string fontPath = Path.Combine(dllDir, "RobotoCondensed-Regular.ttf");
+                string fontPath = Path.Combine(FontsDir(dllDir), "RobotoCondensed-Regular.ttf");
 
                 // Register our TTF with Windows so Unity can use it
                 Font unityFont = null;
@@ -222,11 +229,11 @@ namespace NeonTranslator
         {
             string dllPath = Assembly.GetExecutingAssembly().Location;
             string dllDir = Path.GetDirectoryName(dllPath);
-            return Path.Combine(dllDir, "NeonTranslator.log");
+            return Path.Combine(dllDir, "NeonTranslatorDX.log");
         }
 
         // Log master switch (no rebuild needed): create `nolog.txt` next to
-        // the DLL to silence NeonTranslator.log, delete it to resume.
+        // the DLL to silence NeonTranslatorDX.log, delete it to resume.
         // The flag is re-checked at most once per 2 seconds.
         private static bool _logEnabled = true;
         private static int _logFlagNextCheck = 0;
@@ -280,7 +287,7 @@ namespace NeonTranslator
                 {
                     _initialized = true;
                     string dllDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                    string gameDir = Path.GetDirectoryName(Path.GetDirectoryName(dllDir));
+                    string gameDir = Path.GetDirectoryName(dllDir);
                     string lang = "en";
                     try
                     {
@@ -735,7 +742,7 @@ namespace NeonTranslator
                     : lang == "zh" ? "NotoSansSC.ttf"
                     : lang == "ko" ? "NotoSansKR.ttf"
                     : "RobotoCondensed-Regular.ttf";
-                bool exists = File.Exists(Path.Combine(dllDir, file));
+                bool exists = File.Exists(Path.Combine(FontsDir(dllDir), file));
                 string[] families = lang == "ja" ? new string[] { "Noto Sans JP" }
                     : lang == "zh" ? new string[] { "Noto Sans SC" }
                     : lang == "ko" ? new string[] { "Noto Sans KR", "Malgun Gothic" }

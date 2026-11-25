@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace NeonTranslator
+namespace NeonTranslatorDX
 {
     // CJK overlay (ja/zh/ko only, everything else untouched). Covers the main
     // menu AND the dialogue box: both use TMP fonts without CJK glyphs

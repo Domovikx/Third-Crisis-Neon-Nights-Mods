@@ -1,6 +1,7 @@
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <stdio.h>
+#include <wchar.h>
 
 // Log to C:\temp\dwmapi_proxy.log
 static void DebugLog(const char* msg)
@@ -91,8 +92,13 @@ static void BootstrapTranslator(void)
     DebugLog("OK: root domain obtained");
 
     wchar_t dllPath[MAX_PATH];
-    GetCurrentDirectoryW(MAX_PATH, dllPath);
-    wcscat_s(dllPath, MAX_PATH, L"\\Third Crisis Neon Nights_Data\\Managed\\NeonTranslatorRuntime.dll");
+    wchar_t exePath[MAX_PATH];
+    if (!GetModuleFileNameW(NULL, exePath, MAX_PATH)) { DebugLog("FAIL: GetModuleFileNameW"); return; }
+    wchar_t* exeSlash = wcsrchr(exePath, L'\\');
+    if (!exeSlash) { DebugLog("FAIL: exe path has no separator"); return; }
+    *exeSlash = L'\0';
+    // Everything the mod ships lives in <game>/NeonTranslatorDX/.
+    swprintf_s(dllPath, MAX_PATH, L"%s\\NeonTranslatorDX\\NeonTranslatorDX.dll", exePath);
 
     char dllPathUtf8[MAX_PATH * 2];
     WideCharToMultiByte(CP_UTF8, 0, dllPath, -1, dllPathUtf8, (int)sizeof(dllPathUtf8), NULL, NULL);
@@ -106,7 +112,7 @@ static void BootstrapTranslator(void)
     if (!image) { DebugLog("FAIL: mono_assembly_get_image"); return; }
     DebugLog("OK: image obtained");
 
-    void* klass = mono_class_from_name(image, "NeonTranslator", "TranslatorPlugin");
+    void* klass = mono_class_from_name(image, "NeonTranslatorDX", "TranslatorPlugin");
     if (!klass) { DebugLog("FAIL: mono_class_from_name"); return; }
     DebugLog("OK: class found");
 
@@ -142,6 +148,23 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
     (void)hModule;
     (void)lpReserved;
     if (ul_reason_for_call == DLL_PROCESS_ATTACH)
+    {
+        // Forwarding target lives in the mod folder (one folder for the mod,
+        // a single dwmapi.dll outside it). Pre-load by full path; Windows
+        // resolves the later "dwmapi_real.Function" forwarders by base name.
+        wchar_t self[MAX_PATH];
+        if (GetModuleFileNameW(hModule, self, MAX_PATH))
+        {
+            wchar_t* slash = wcsrchr(self, L'\\');
+            if (slash)
+            {
+                *slash = L'\0';
+                wchar_t realPath[MAX_PATH];
+                swprintf_s(realPath, MAX_PATH, L"%s\\NeonTranslatorDX\\dwmapi_real.dll", self);
+                LoadLibraryW(realPath);
+            }
+        }
         LoadLibraryW(L"dwmapi_real");
+    }
     return TRUE;
 }

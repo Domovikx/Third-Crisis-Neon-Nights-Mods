@@ -1,16 +1,28 @@
 ---
 name: deploy-translator
-description: Деплой NeonTranslatorRuntime в игру — сборка словаря из po/<lang>.po, раскладка DLL/шрифтов/patch_<lang>.dat/active_lang.txt в Managed/ и прокси dwmapi.dll в корень игры. Одна TS-точка входа (deploy.mts), путь к игре — scripts/game_dir.mts.
+description: Установка/удаление NeonTranslatorDX в игру — раскладка «одна папка» (<игра>/dwmapi.dll + <игра>/NeonTranslatorDX/), словарь из po/<lang>.po, манифест установки, --uninstall, --migrate со старой раскладки. Одна TS-точка входа (deploy.mts), путь к игре — scripts/game_dir.mts.
 license: MIT
 compatibility: opencode
 ---
 
-# deploy-translator — деплой переводчика в игру
+# deploy-translator — установка и удаление NeonTranslatorDX
 
-Ставит в установку игры четыре вещи: рантайм-DLL, шрифт(ы), словарь и
-прокси-лоадер. Источник переводов — POT-хаб (`po/template.pot` + `po/<lang>.po`),
-словарь собирается тем же `rust-l10n po2dat`, что и `npm run po2dat` (второй
-реализации нет).
+Вся нагрузка мода живёт в одной папке `<игра>/NeonTranslatorDX/`; вне её —
+только лоадер `dwmapi.dll` (DLL-hijack, иначе рантайм не загрузится). Источник
+переводов — POT-хаб (`po/template.pot` + `po/<lang>.po`), словарь собирается
+тем же `rust-l10n po2dat`, что и `npm run po2dat` (второй реализации нет).
+
+```text
+<игра>/
+  dwmapi.dll                    # единственный файл вне папки
+  NeonTranslatorDX/
+    NeonTranslatorDX.dll
+    fonts/{RobotoCondensed-Regular,NotoSansSC,NotoSansJP}.ttf
+    patch_<lang>.dat
+    active_lang.txt
+    install-manifest.json       # файл, размер, sha256 каждого поставленного файла
+    dwmapi_real.dll             # цель форвардов прокси (если собрана)
+```
 
 ## Команды
 
@@ -23,57 +35,76 @@ node .opencode/skills/deploy-translator/scripts/deploy.mts --lang ru --dry-run #
 node .opencode/skills/deploy-translator/scripts/deploy.mts --lang en           # native English, без словаря
 node .opencode/skills/deploy-translator/scripts/deploy.mts --lang de --rebuild # + пересборка C# DLL
 node .opencode/skills/deploy-translator/scripts/deploy.mts --lang de --proxy   # + пересборка dwmapi.dll (MSVC)
+node .opencode/skills/deploy-translator/scripts/deploy.mts --lang ru --migrate # + чистка прежней раскладки
+node .opencode/skills/deploy-translator/scripts/deploy.mts --uninstall         # удалить ровно поставленное
+node .opencode/skills/deploy-translator/scripts/deploy.mts --uninstall --dry-run
 node .opencode/skills/deploy-translator/scripts/deploy.mts --help
 ```
 
-Флаги: `--lang <code>` (по умолчанию `ru`; список и порядок — из
-`config/language-priority.json`), `--dry-run`, `--rebuild`, `--proxy`.
 `--rebuild`/`--proxy` зовут функции скилла `build-translator` (не подпроцессы).
 
 ## Что делает деплой (и в каком порядке)
 
-1. `--rebuild`: `runtime/NeonTranslatorRuntime.dll` (нужны `csc.exe` и игра).
-2. `--proxy`: `<игра>/dwmapi.dll` + `<игра>/dwmapi_real.dll` + копия прокси в
-   репозиторий (нужен MSVC).
+1. `--rebuild`: `runtime/NeonTranslatorDX.dll` (нужны `csc.exe` и игра).
+2. `--proxy`: `<игра>/dwmapi.dll` + `<игра>/NeonTranslatorDX/dwmapi_real.dll`
+   (+ копии в репозиторий; нужен MSVC).
 3. `po/<lang>.po` → `runtime/patch_<lang>.dat` (`rust-l10n po2dat` подпроцессом;
-   запись атомарная) → `Managed/patch_<lang>.dat`.
-4. В `Managed/`: `NeonTranslatorRuntime.dll`, `RobotoCondensed-Regular.ttf`,
-   `NotoSansSC.ttf`/`NotoSansJP.ttf` (если есть), `patch_<lang>.dat`,
-   `active_lang.txt` (без перевода строки — рантайм читает как есть).
-5. `dwmapi.dll` из репозитория → корень игры (рядом с exe: требование
-   DLL-hijack). Если копии в репо нет, но прокси в игре уже стоит — не
-   перезаписываем, печатаем предупреждение (`npm run build:proxy`).
+   запись атомарная) → `NeonTranslatorDX/patch_<lang>.dat`.
+4. В `NeonTranslatorDX/`: `NeonTranslatorDX.dll`, `fonts/*.ttf`,
+   `patch_<lang>.dat`, `active_lang.txt` (без перевода строки),
+   необязательный `dwmapi_real.dll`.
+5. `dwmapi.dll` из репозитория → корень игры.
+6. `install-manifest.json` — ПОСЛЕ копирования: размер и sha256 каждого файла
+   (пути от корня игры). Без манифеста `--uninstall` отказывается что-либо
+   удалять.
 
 `--lang en` — native-режим: словарь не собирается и не кладётся, в
 `active_lang.txt` пишется `en`.
 
-### Чего деплой НЕ делает
+## Удаление (`--uninstall`)
 
-Не удаляет файлы из папки игры: `patch_en.dat` прошлого деплоя и legacy
-`translations/` только перечисляются в предупреждениях. Старые словари других
-языков (`patch_de.dat` и т.п.) остаются — рантайм читает ровно один по
-`active_lang.txt`.
+- читает манифест; удаляет только перечисленные файлы, причём лишь если sha256
+  на диске совпал (изменённый вручную файл остаётся с предупреждением);
+- дополнительно удаляет собственные артефакты рантайма в папке мода
+  (`NeonTranslatorDX.log`, `dump_GUIDictionary.json`, `nolog.txt`);
+- удаляет манифест и опустевшие папки (`NeonTranslatorDX/fonts`,
+  `NeonTranslatorDX`) — непустые не трогает; никакого рекурсивного удаления;
+- чужие файлы в `Managed/` и в папке мода не затрагиваются.
+
+## Переезд со старой раскладки (`--migrate`)
+
+По умолчанию старые артефакты не трогаются (только предупреждение в плане).
+С флагом деплой сначала ставит новую раскладку, затем удаляет по списку:
+
+- `Managed/`: `NeonTranslatorRuntime.dll`, `patch_*.dat`, `active_lang.txt`,
+  `NeonTranslator.log`, `dump_GUIDictionary.json`, шрифты;
+- старую папку `<игра>/NeonTranslator/` — только известные имена и `patch_*.dat`
+  из неё; папка удаляется, если опустела (чужой файл её сохранит);
+- мусор сборки в корне: `dwmapi.exp`, `dwmapi.lib`, `dwmapi_real.dll`, `nul`.
+
+Каждое удаление печатается строкой `- legacy: <путь>`.
 
 ## Проверка после деплоя
 
 ```bash
-M="<игра>/Third Crisis Neon Nights_Data/Managed"
-cat "$M/active_lang.txt"                       # ожидаемый код языка
-npm run po2dat -- ru                                    # независимая сборка (Rust)
-sha256sum "$M/patch_ru.dat" runtime/patch_ru.dat           # хэши совпадают
+G="<игра>"; M="$G/NeonTranslatorDX"
+cat "$M/active_lang.txt"                          # ожидаемый код языка
+sha256sum "$M/patch_ru.dat" runtime/patch_ru.dat  # хэши совпадают
+cat "$M/install-manifest.json"                    # список поставленного
 ```
 
-`Managed/patch_ru.dat` обязан совпадать с `runtime/patch_ru.dat` байт-в-байт:
-деплой пишет staging тем же `writeDat`, копия — атомарная.
-
-Затем перезапустить игру и смотреть `Managed/NeonTranslator.log`.
+Затем перезапустить игру и смотреть `NeonTranslatorDX/NeonTranslatorDX.log`
+(`Lang: ru`, `Translations: N`).
 
 ## Файлы
 
-- `scripts/deploy.mts` — вся логика: `planDeploy` (план, только чтение ФС),
-  `executeDeploy` (исполнение), атомарные `writeAtomic`/`copyAtomic`, разбор CLI.
-- `tests/deploy.test.mts` — `node --test` на фейковой установке в `tmp/`.
-- `runtime/patch_<lang>.dat` — staging словаря (в git не попадает).
+- `scripts/deploy.mts` — вся логика: `planDeploy`/`executeDeploy`,
+  `planUninstall`/`executeUninstall`, `planMigrate`/`executeMigrate`,
+  атомарные `writeAtomic`/`copyAtomic`, разбор CLI.
+- `tests/deploy.test.mts` — 20 тестов на фейковой установке в `tmp/`
+  (раскладка, манифест, uninstall, migrate, паритет `.dat`).
+- `runtime/NeonTranslatorDX.dll`, `runtime/patch_<lang>.dat` — артефакты сборки
+  (в git не попадают).
 - `<игра>/dwmapi.dll` — лоадер; Steam «verify integrity» его удаляет → просто
   повторить деплой.
 - `deploy.ps1` был легаси и удалён (2026-11-21, после порта на `.mts`).

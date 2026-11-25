@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace NeonTranslator
+namespace NeonTranslatorDX
 {
     internal static class NativeMethods
     {
