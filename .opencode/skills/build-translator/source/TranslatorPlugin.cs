@@ -213,6 +213,8 @@ namespace NeonTranslatorDX
                         }
                     }
                     catch { }
+                    string manifestMessage = ModManifest.Ensure(dllDir, gameDir);
+                    if (manifestMessage != null) Log(manifestMessage);
                     _translations = TranslationLoader.Load(dllDir, gameDir, lang);
                     _currentLang = lang;
                     Log("Lang: " + lang + ", source: " + TranslationLoader.LoadedSource);

@@ -30,7 +30,7 @@ import {
   statSync,
   writeFileSync,
 } from "node:fs";
-import { join, resolve } from "node:path";
+import { join, relative, resolve, sep } from "node:path";
 import process from "node:process";
 
 import { translateLangs } from "../../scripts/languages.mts";
@@ -207,21 +207,31 @@ export function payloadLangs(out: string): string[] {
   return ["en", ...langs];
 }
 
-export function countFiles(dir: string): { files: number; bytes: number } {
+export interface FileCount {
+  files: number;
+  bytes: number;
+  /** Пути относительно `dir`, с `/` (нужны проверкам состава архива). */
+  entries: string[];
+}
+
+export function countFiles(dir: string, base: string = dir): FileCount {
   let files = 0;
   let bytes = 0;
+  const entries: string[] = [];
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     const path = join(dir, entry.name);
     if (entry.isDirectory()) {
-      const nested = countFiles(path);
+      const nested = countFiles(path, base);
       files += nested.files;
       bytes += nested.bytes;
+      entries.push(...nested.entries);
     } else if (entry.isFile()) {
       files += 1;
       bytes += statSync(path).size;
+      entries.push(relative(base, path).split(sep).join("/"));
     }
   }
-  return { files, bytes };
+  return { files, bytes, entries };
 }
 
 export function buildPayload(args: PayloadArgs): PayloadReport {
@@ -281,7 +291,7 @@ function main(argv: string[]): number {
     );
     console.log(`    языки: ${report.langs.join(", ")}`);
     for (const warning of report.warnings) console.warn(`    ВНИМАНИЕ: ${warning}`);
-    console.log("Положите папку payload рядом с NeonTranslatorDX Installer.exe.");
+    console.log("Положите папку payload рядом с NeonTranslatorDXManager.exe.");
     return 0;
   } catch (error) {
     console.error(`ОШИБКА: ${error instanceof Error ? error.message : String(error)}`);

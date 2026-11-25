@@ -1,4 +1,4 @@
-# Инсталлятор (заготовка)
+# CLI-инсталлятор (заготовка)
 
 `install.mts` — будущая точка входа для игрока. Сейчас умеет главное, что не зависит
 от порта деплоя: **найти игру, проверить комплектность, показать точный план раскладки**.
@@ -23,11 +23,11 @@ node installer/install.mts --lang en          # native-режим (без сло
 - Копирования файлов — **намеренно**: реализация живёт в `deploy.mts`
   (задача `tasks/2026-11-21-port-build-deploy.md`), а инсталлятор — тонкая
   обёртка над ним. Двух реализаций копирования быть не должно.
-- GUI — отдельное приложение `installer-ui/` (Tauri 2: React 19 + StyleX,
-  Rust-команды `detect/install/uninstall/verify`, ручной `.7z` с тем же
-  манифестом). Сборка, payload и подпись — `installer-ui/README.md`.
+- GUI — `NeonTranslatorDX Manager` в `installer-ui/` (Tauri 2: React 19 +
+  StyleX; Rust-команды `status/install/update/uninstall/verify`; ручной `.7z`
+  с тем же манифестом). Сборка, payload и подпись — `installer-ui/README.md`.
 
-## Мод-менеджер (следующий шаг)
+## Менеджер мода (сделано в `installer-ui/`)
 
 Отдельная задача, когда появится деплой:
 

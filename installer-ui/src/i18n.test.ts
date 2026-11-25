@@ -19,9 +19,9 @@ describe("i18n", () => {
   });
 
   it("подставляет параметры и не теряет неизвестные плейсхолдеры", () => {
-    expect(t("ru", "doneFiles", { count: 7 })).toBe("Файлов: 7");
-    expect(t("en", "installingFile", { done: 2, total: 5, path: "a.dat" })).toBe("2 of 5: a.dat");
-    expect(t("ru", "doneFiles")).toContain("{count}");
+    expect(t("ru", "doneCopied", { count: 7 })).toBe("Записано файлов: 7");
+    expect(t("en", "progressFile", { done: 2, total: 5, path: "a.dat" })).toBe("2 of 5: a.dat");
+    expect(t("ru", "doneCopied")).toContain("{count}");
   });
 
   it("разбирает ошибку Rust и переводит известные коды", () => {

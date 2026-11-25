@@ -1,5 +1,5 @@
 /**
- * Связка reducer'а с платформой: все побочные эффекты установщика здесь.
+ * Связка reducer'а с платформой: все побочные эффекты менеджера здесь.
  * Экраны получают готовые колбэки и состояние, поэтому их можно рендерить
  * в тестах без Tauri.
  */
@@ -16,9 +16,21 @@ function errorMessage(error: unknown): string {
   return String(error);
 }
 
-export function useInstaller(platform: InstallerPlatform) {
+export function useManager(platform: InstallerPlatform) {
   const [state, dispatch] = useReducer(reduce, undefined, () => initialState("ru"));
   const [ready, setReady] = useState(false);
+
+  /** Опросить игру и статус мода; вызывается после каждой операции. */
+  const refresh = useCallback(async () => {
+    dispatch({ type: "refreshStart" });
+    try {
+      const game = await platform.detectGame();
+      const status = game ? await platform.statusMod(game.path) : null;
+      dispatch({ type: "refreshDone", game, status });
+    } catch (error) {
+      dispatch({ type: "fail", code: errorMessage(error) });
+    }
+  }, [platform]);
 
   useEffect(() => {
     let alive = true;
@@ -39,53 +51,43 @@ export function useInstaller(platform: InstallerPlatform) {
     };
   }, [platform]);
 
+  useEffect(() => {
+    void refresh();
+  }, [refresh]);
+
   useEffect(
     () => platform.onProgress((progress) => dispatch({ type: "progress", progress })),
     [platform],
   );
 
-  const detect = useCallback(async () => {
-    dispatch({ type: "detectStart" });
-    try {
-      const game = await platform.detectGame();
-      dispatch({ type: "detectDone", game });
-    } catch (error) {
-      dispatch({ type: "fail", code: errorMessage(error) });
-    }
-  }, [platform]);
-
-  const start = useCallback(() => {
-    dispatch({ type: "navigate", screen: "detect" });
-    void detect();
-  }, [detect]);
-
-  const chooseFolder = useCallback(async () => {
-    try {
-      const folder = await platform.chooseFolder();
-      if (!folder) return;
-      const probe = await platform.probeGame(folder);
-      if (probe.game) dispatch({ type: "probeDone", game: probe.game });
-      else
-        dispatch({
-          type: "probeFailed",
-          code: "game-invalid",
-          missing: probe.check.missing,
-        });
-    } catch (error) {
-      dispatch({ type: "fail", code: errorMessage(error) });
-    }
-  }, [platform]);
-
   const install = useCallback(async () => {
     if (!state.game?.path) return;
-    dispatch({ type: "installStart" });
+    dispatch({ type: "opStart", op: "install" });
     try {
-      const result = await platform.install({ gameDir: state.game.path, lang: state.lang });
-      dispatch({ type: "installDone", result });
+      const result = await platform.install({ gameDir: state.game.path, lang: "ru" });
+      dispatch({ type: "opDone", op: "install", result });
+      void refresh();
     } catch (error) {
       dispatch({ type: "fail", code: errorMessage(error) });
     }
-  }, [platform, state.game?.path, state.lang]);
+  }, [platform, refresh, state.game?.path]);
+
+  const update = useCallback(async () => {
+    if (!state.game?.path) return;
+    dispatch({ type: "opStart", op: "update" });
+    try {
+      const result = await platform.updateMod(state.game.path);
+      dispatch({ type: "opDone", op: "update", result });
+      void refresh();
+    } catch (error) {
+      dispatch({ type: "fail", code: errorMessage(error) });
+    }
+  }, [platform, refresh, state.game?.path]);
+
+  const retry = useCallback(() => {
+    if (state.op === "update") void update();
+    else void install();
+  }, [install, state.op, update]);
 
   const uninstall = useCallback(async () => {
     if (!state.game?.path) return;
@@ -93,10 +95,11 @@ export function useInstaller(platform: InstallerPlatform) {
     try {
       const result = await platform.uninstall(state.game.path);
       dispatch({ type: "uninstallDone", result });
+      void refresh();
     } catch (error) {
       dispatch({ type: "fail", code: errorMessage(error) });
     }
-  }, [platform, state.game?.path]);
+  }, [platform, refresh, state.game?.path]);
 
   const verify = useCallback(async () => {
     if (!state.game?.path) return;
@@ -108,6 +111,22 @@ export function useInstaller(platform: InstallerPlatform) {
       dispatch({ type: "fail", code: errorMessage(error) });
     }
   }, [platform, state.game?.path]);
+
+  const chooseFolder = useCallback(async () => {
+    try {
+      const folder = await platform.chooseFolder();
+      if (!folder) return;
+      const probe = await platform.probeGame(folder);
+      if (probe.game) {
+        const status = await platform.statusMod(probe.game.path);
+        dispatch({ type: "probeDone", game: probe.game, status });
+      } else {
+        dispatch({ type: "probeFailed", code: "game-invalid", missing: probe.check.missing });
+      }
+    } catch (error) {
+      dispatch({ type: "fail", code: errorMessage(error) });
+    }
+  }, [platform]);
 
   const navigate = useCallback((screen: Screen) => {
     dispatch({ type: "navigate", screen });
@@ -124,16 +143,17 @@ export function useInstaller(platform: InstallerPlatform) {
   return {
     state,
     ready,
-    start,
-    detect,
-    chooseFolder,
+    refresh,
     install,
+    update,
+    retry,
     uninstall,
     verify,
+    chooseFolder,
     navigate,
     setLocale,
     clearError,
   };
 }
 
-export type InstallerController = ReturnType<typeof useInstaller>;
+export type ManagerController = ReturnType<typeof useManager>;

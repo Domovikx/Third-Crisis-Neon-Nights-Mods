@@ -1,8 +1,9 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "NeonTranslatorDX Installer",
+  "productName": "NeonTranslatorDX Manager",
+  "mainBinaryName": "NeonTranslatorDXManager",
   "version": "0.1.0",
-  "identifier": "com.domovikx.neontranslatordx-installer",
+  "identifier": "com.domovikx.neontranslatordx-manager",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
@@ -12,11 +13,11 @@
   "app": {
     "windows": [
       {
-        "title": "NeonTranslatorDX — установщик",
-        "width": 900,
-        "height": 700,
-        "minWidth": 780,
-        "minHeight": 580,
+        "title": "NeonTranslatorDX Manager",
+        "width": 940,
+        "height": 720,
+        "minWidth": 820,
+        "minHeight": 600,
         "resizable": true
       }
     ],

@@ -1,12 +1,12 @@
 [package]
-name = "neon-installer-core"
+name = "neon-manager-core"
 version = "0.1.0"
 edition = "2021"
-description = "Install/uninstall/verify logic for the NeonTranslatorDX installer (no Tauri in this crate)"
+description = "Status/install/update/uninstall/verify logic for the NeonTranslatorDX manager (no Tauri in this crate)"
 license = "MIT"
 
 [lib]
-name = "neon_installer_core"
+name = "neon_manager_core"
 path = "src/lib.rs"
 
 [dependencies]

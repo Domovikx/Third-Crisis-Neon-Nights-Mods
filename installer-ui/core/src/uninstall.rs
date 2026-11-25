@@ -76,7 +76,10 @@ pub fn plan_uninstall(game: &Path) -> Result<UninstallPlan, CoreError> {
         }
         seen.push(abs.clone());
         let exists = abs.is_file();
-        let matches = exists && fsutil::sha256_file(&abs).ok().as_deref() == Some(&file.sha256);
+        // active_lang.txt переключается в игре — хэш сверять бессмысленно.
+        let mutable = crate::is_runtime_mutable(&file.path);
+        let matches =
+            exists && (mutable || fsutil::sha256_file(&abs).ok().as_deref() == Some(&file.sha256));
         if exists && !matches {
             warnings.push(format!(
                 "файл изменён после установки — оставлю: {}",
@@ -238,6 +241,18 @@ mod tests {
             mod_dir(&game).is_dir(),
             "папка с чужим файлом должна остаться"
         );
+    }
+
+    #[test]
+    fn uninstall_removes_active_lang_changed_in_game() {
+        let tmp = TempDir::new("uninstall-active-lang");
+        let (game, _payload, _) = installed(&tmp);
+        let lang_file = mod_dir(&game).join(crate::ACTIVE_LANG);
+        fs::write(&lang_file, "de").unwrap();
+        let done = uninstall(&game).unwrap();
+        assert!(!lang_file.exists());
+        assert!(done.kept.is_empty(), "{:?}", done.kept);
+        assert!(!mod_dir(&game).exists());
     }
 
     #[test]

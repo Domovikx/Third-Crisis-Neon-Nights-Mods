@@ -20,7 +20,11 @@ pub const MANIFEST_VERSION: u32 = 1;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct InstallManifest {
+    /// Версия ФОРМАТА манифеста (не пакета).
     pub version: u32,
+    /// Версия установленного пакета (`payload.json`), если известна.
+    #[serde(rename = "payloadVersion", default)]
+    pub payload_version: Option<String>,
     #[serde(default)]
     pub lang: String,
     #[serde(rename = "installedAt", default)]
@@ -70,10 +74,16 @@ pub fn read(game: &Path) -> Result<Option<InstallManifest>, CoreError> {
 }
 
 /// Записать манифест атомарно (отсортирован по пути — стабильный diff).
-pub fn write(game: &Path, lang: &str, files: &mut [ManifestFile]) -> Result<(), CoreError> {
+pub fn write(
+    game: &Path,
+    lang: &str,
+    payload_version: Option<&str>,
+    files: &mut [ManifestFile],
+) -> Result<(), CoreError> {
     files.sort_by(|a, b| a.path.cmp(&b.path));
     let manifest = InstallManifest {
         version: MANIFEST_VERSION,
+        payload_version: payload_version.map(str::to_string),
         lang: lang.to_string(),
         installed_at: now_iso8601(),
         files: files.to_vec(),
@@ -210,10 +220,11 @@ mod tests {
                 sha256: "bb".into(),
             },
         ];
-        write(&game, "ru", &mut files).unwrap();
+        write(&game, "ru", Some("2026.11.25"), &mut files).unwrap();
         let read_back = read(&game).unwrap().expect("manifest");
         assert_eq!(read_back.version, 1);
         assert_eq!(read_back.lang, "ru");
+        assert_eq!(read_back.payload_version.as_deref(), Some("2026.11.25"));
         assert_eq!(read_back.files[0].path, "dwmapi.dll");
         assert!(read_back.files[1].path.ends_with("NeonTranslatorDX.dll"));
         assert!(read_back.installed_at.ends_with('Z'));

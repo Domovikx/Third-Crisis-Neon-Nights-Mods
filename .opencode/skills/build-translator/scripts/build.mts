@@ -29,6 +29,7 @@ export const SOURCE_DIR = join(import.meta.dirname, "..", "source");
 /** Порядок исходников — как в `build.py` (csc порядок не важен, но логи стабильны). */
 export const SOURCE_FILES = [
   "NativeMethods.cs",
+  "ModManifest.cs",
   "TranslationLoader.cs",
   "TranslatorPlugin.cs",
   "NeonLateUpdate.cs",

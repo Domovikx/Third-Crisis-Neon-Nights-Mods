@@ -1980,25 +1980,25 @@ dependencies = [
 ]
 
 [[package]]
-name = "neon-installer"
-version = "0.1.0"
-dependencies = [
- "neon-installer-core",
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
- "tauri-plugin-dialog",
- "winreg 0.55.0",
-]
-
-[[package]]
-name = "neon-installer-core"
+name = "neon-manager-core"
 version = "0.1.0"
 dependencies = [
  "serde",
  "serde_json",
  "sha2 0.10.9",
+ "winreg 0.55.0",
+]
+
+[[package]]
+name = "neon-translator-dx-manager"
+version = "0.1.0"
+dependencies = [
+ "neon-manager-core",
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-dialog",
  "winreg 0.55.0",
 ]
 

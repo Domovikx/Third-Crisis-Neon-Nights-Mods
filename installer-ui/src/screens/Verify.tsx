@@ -29,7 +29,7 @@ export function Verify(props: {
       <h1 className={cx(common.title)}>{tr("verifyTitle")}</h1>
 
       {error ? <Note tone="error">{errorText(locale, error)}</Note> : null}
-      {busy ? <Note>{tr("verifyChecked", { count: 0 })}</Note> : null}
+      {busy ? <Note>{tr("verifyRunning")}</Note> : null}
 
       {!busy && result ? (
         <>

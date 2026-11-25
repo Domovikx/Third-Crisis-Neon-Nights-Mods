@@ -1,16 +1,20 @@
 /**
- * build_manual_archive.mts — ручной путь установки: `.7z` с той же раскладкой.
+ * build_manual_archive.mts — ручной путь установки: `.7z` с той же раскладкой,
+ * что у менеджера, но БЕЗ исполняемых файлов и скриптов.
  *
- * Архив собирается из того же `payload/`, что и exe-установщик, поэтому
- * результат файлов совпадает. Внутри:
+ * Почему без `install.ps1`: сканер Nexus отправляет архивы с `.exe/.cmd/.ps1`
+ * в карантин (проверено на странице мода TSSR 2026-11-13), а ручной путь
+ * должен ставиться простой распаковкой. Манифест создаёт сам рантайм при
+ * первом запуске игры (`ModManifest.cs`), поэтому менеджер и `--uninstall`
+ * работают и для такой установки.
+ *
+ * Состав архива:
  *
  *   dwmapi.dll
  *   mods/NeonTranslatorDX/…          (payload без payload.json)
- *   install.ps1                      пишет active_lang.txt + install-manifest.json
- *   README-INSTALL.md                инструкция для игрока
- *
- * Манифест — тот же контракт v1 (`version/lang/installedAt/files[path,size,sha256]`),
- * поэтому Rust-uninstall понимает установку из архива и наоборот.
+ *   README-INSTALL.md
+ *   fomod/info.xml                   для Vortex (не обязателен вручную)
+ *   fomod/ModuleConfig.xml
  *
  *   node installer-ui/scripts/build_manual_archive.mts [--version V] [--out dist] [--reuse]
  */
@@ -24,7 +28,7 @@ import {
   statSync,
   writeFileSync,
 } from "node:fs";
-import { join, resolve } from "node:path";
+import { extname, join, resolve } from "node:path";
 import process from "node:process";
 
 import {
@@ -40,11 +44,31 @@ import {
 
 export const REPO_ROOT = resolve(import.meta.dirname, "../..");
 
+/**
+ * Типы, которые Nexus считает исполняемыми и отправляет в карантин.
+ * В ручном архиве их быть не должно ни одного (проверяется до упаковки).
+ */
+export const FORBIDDEN_EXTENSIONS = [
+  ".exe",
+  ".cmd",
+  ".bat",
+  ".com",
+  ".ps1",
+  ".psm1",
+  ".vbs",
+  ".vbe",
+  ".js",
+  ".jse",
+  ".wsf",
+  ".wsh",
+  ".msi",
+  ".scr",
+];
+
 export interface ManualArgs {
   version: string;
   out: string;
   payload: string;
-  lang: string;
   reuse: boolean;
   help: boolean;
 }
@@ -54,7 +78,6 @@ export function parseArgs(argv: string[]): ManualArgs {
     version: todayVersion(),
     out: join(REPO_ROOT, "dist"),
     payload: DEFAULT_PAYLOAD,
-    lang: "ru",
     reuse: false,
     help: false,
   };
@@ -68,154 +91,146 @@ export function parseArgs(argv: string[]): ManualArgs {
     else if (arg.startsWith("--out=")) args.out = resolve(arg.slice("--out=".length));
     else if (arg === "--payload") args.payload = resolve(argv[++i] ?? "");
     else if (arg.startsWith("--payload=")) args.payload = resolve(arg.slice("--payload=".length));
-    else if (arg === "--lang") args.lang = argv[++i] ?? args.lang;
-    else if (arg.startsWith("--lang=")) args.lang = arg.slice("--lang=".length);
     else throw new Error(`неизвестная опция: ${arg}`);
   }
   return args;
 }
 
-const USAGE = `Сборка ручного 7z-архива NeonTranslatorDX
+const USAGE = `Сборка ручного 7z-архива NeonTranslatorDX (без exe и скриптов)
 
   node installer-ui/scripts/build_manual_archive.mts [--version V] [--out dist]
-                                                    [--payload <папка>] [--lang ru] [--reuse]
+                                                    [--payload <папка>] [--reuse]
 
-  --version  версия в имени архива и payload.json (по умолчанию YYYY.MM.DD)
+  --version  версия в имени архива и fomod/info.xml (по умолчанию YYYY.MM.DD)
   --out      каталог вывода (по умолчанию dist/)
   --payload  готовая папка payload (по умолчанию installer-ui/payload)
-  --lang     стартовый язык, который пишет install.ps1 (по умолчанию ru)
   --reuse    не пересобирать payload, взять существующий
 `;
 
-/** `install.ps1` ручного пути: файлы уже на месте, скрипт пишет манифест. */
-export function manualInstallScript(version: string, lang: string): string {
-  return `#Requires -Version 5.1
-<#
-.SYNOPSIS
-  Install NeonTranslatorDX ${version} into the game folder (idempotent).
-.DESCRIPTION
-  Run AFTER extracting the archive into the game folder (the folder that contains
-  the game exe). Files are already in place; this script writes active_lang.txt
-  and install-manifest.json (path, size, sha256) that the uninstaller uses.
-  The only file outside "<game>/mods/NeonTranslatorDX/" is dwmapi.dll.
-.EXAMPLE
-  powershell -ExecutionPolicy Bypass -File .\\install.ps1
-  powershell -ExecutionPolicy Bypass -File .\\install.ps1 -Lang de
-#>
-param(
-  [string]$GameDir = "",
-  [string]$Lang = "${lang}"
-)
-
-$ErrorActionPreference = 'Stop'
-if ([string]::IsNullOrWhiteSpace($GameDir)) { $GameDir = $PSScriptRoot }
-$GameDir = (Resolve-Path -LiteralPath $GameDir).Path
-$DATA = Join-Path $GameDir 'Third Crisis Neon Nights_Data'
-$MOD = Join-Path $GameDir 'mods\\NeonTranslatorDX'
-$LOADER = Join-Path $GameDir 'dwmapi.dll'
-
-function Fail($message) { throw $message }
-
-if (-not (Test-Path -LiteralPath (Join-Path $DATA 'Managed'))) {
-  Fail ("Game data not found: " + $DATA + ". Extract the archive into the game folder and rerun.")
-}
-if (-not (Test-Path -LiteralPath $LOADER)) {
-  Fail ("dwmapi.dll not found next to install.ps1: " + $LOADER)
-}
-if (-not (Test-Path -LiteralPath (Join-Path $MOD 'NeonTranslatorDX.dll'))) {
-  Fail ("Mod runtime missing: " + $MOD + "\\NeonTranslatorDX.dll")
-}
-if ($Lang -ne 'en' -and -not (Test-Path -LiteralPath (Join-Path $MOD ('patch_' + $Lang + '.dat')))) {
-  Fail ("No dictionary for language '" + $Lang + "' in " + $MOD)
-}
-
-Set-Content -Path (Join-Path $MOD 'active_lang.txt') -Value $Lang -NoNewline
-
-# Manifest contract v1: file, size, sha256; paths relative to the game folder.
-$files = @()
-$files += Get-Item -LiteralPath $LOADER
-# Свои файлы архива тоже в манифест: после удаления не остаётся ничего лишнего.
-foreach ($name in @('install.ps1', 'README-INSTALL.md')) {
-  $own = Join-Path $GameDir $name
-  if (Test-Path -LiteralPath $own) { $files += Get-Item -LiteralPath $own }
-}
-$files += Get-ChildItem -LiteralPath $MOD -Recurse -File |
-  Where-Object { $_.Name -ne 'install-manifest.json' }
-
-$list = @()
-foreach ($file in $files) {
-  $rel = $file.FullName.Substring($GameDir.Length).TrimStart('\\', '/').Replace('\\', '/')
-  $list += [ordered]@{
-    path   = $rel
-    size   = $file.Length
-    sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath $file.FullName).Hash.ToLower()
-  }
-}
-
-$manifest = [ordered]@{
-  version     = 1
-  lang        = $Lang
-  installedAt = (Get-Date).ToUniversalTime().ToString('yyyy-MM-ddTHH:mm:ss.fffZ')
-  files       = @($list)
-}
-$json = $manifest | ConvertTo-Json -Depth 5
-$encoding = New-Object System.Text.UTF8Encoding($false)
-[IO.File]::WriteAllText((Join-Path $MOD 'install-manifest.json'), $json, $encoding)
-
-Write-Host ("Installed files: " + $list.Count + " (lang " + $Lang + ")")
-Write-Host "Restart the game; the language is switched in the mod menu."
-Write-Host 'NOTE: Steam "Verify integrity of game files" deletes dwmapi.dll; run install.ps1 again.'
+/** info.xml FOMOD: только метаданные, без кода. */
+export function fomodInfo(version: string): string {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<fomod>
+  <Name>NeonTranslatorDX - Third Crisis: Neon Nights translation</Name>
+  <Author>DomovikXus</Author>
+  <Version MachineVersion="${version}">${version}</Version>
+  <Description>Text translation for 10 languages, fonts and the loader. No executable files.</Description>
+</fomod>
 `;
 }
 
-/** README для игрока (ручной архив; ru + короткий en-блок). */
+/** ModuleConfig.xml FOMOD: та же раскладка, что при ручной распаковке. */
+export function fomodModule(): string {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
+  <moduleName>NeonTranslatorDX</moduleName>
+  <requiredInstallFiles>
+    <file source="dwmapi.dll"/>
+    <folder source="mods/NeonTranslatorDX" destination="mods/NeonTranslatorDX"/>
+  </requiredInstallFiles>
+</config>
+`;
+}
+
+/** README для игрока: установка/обновление/удаление без скриптов. */
 export function manualReadme(version: string): string {
-  return `# NeonTranslatorDX ${version} — ручная установка
+  return `# NeonTranslatorDX ${version} — установка без exe
 
 > **СТРОГО 18+.** Игра содержит откровенный контент; перевод передаёт его без цензуры.
 
+В архиве **нет** \`.exe\`, \`.cmd\` и \`.ps1\` — только данные, шрифты, DLL перевода и
+лоадер. Ничего запускать не нужно: установка — это распаковка.
+
 ## Что в архиве
 
-| Путь                                   | Куда попадает                     |
-| -------------------------------------- | --------------------------------- |
-| \`dwmapi.dll\`                           | корень игры (загрузчик)           |
-| \`mods/NeonTranslatorDX/NeonTranslatorDX.dll\` | переводчик                  |
-| \`mods/NeonTranslatorDX/patch_<lang>.dat\` | словари всех языков (10 файлов) |
-| \`mods/NeonTranslatorDX/fonts/\`         | шрифты (латиница, кириллица, CJK) |
-| \`install.ps1\`                          | записывает манифест установки     |
+| Путь                                          | Куда попадает                    |
+| --------------------------------------------- | -------------------------------- |
+| \`dwmapi.dll\`                                  | корень игры (лоадер)             |
+| \`mods/NeonTranslatorDX/NeonTranslatorDX.dll\`  | переводчик                       |
+| \`mods/NeonTranslatorDX/patch_<lang>.dat\`      | словари всех языков (10 файлов)  |
+| \`mods/NeonTranslatorDX/fonts/\`                | шрифты (латиница, кириллица, CJK) |
+| \`mods/NeonTranslatorDX/active_lang.txt\`       | стартовый язык (\`ru\`)           |
+| \`README-INSTALL.md\`                           | этот файл                        |
+| \`fomod/\`                                      | для Vortex; при ручной распаковке не нужен |
 
-## Установка
+## Установка (3 шага)
 
-1. Распакуйте **всё** в папку игры — туда, где лежит \`Third Crisis Neon Nights.exe\`.
-   Пример: \`C:\\Program Files (x86)\\Steam\\steamapps\\common\\Third Crisis Neon Nights\`.
-2. В папке игры выполните (PowerShell):
+1. Распакуйте **весь** архив в папку игры — туда, где лежит
+   \`Third Crisis Neon Nights.exe\`. Например:
+   \`C:\\Program Files (x86)\\Steam\\steamapps\\common\\Third Crisis Neon Nights\`.
+2. Запустите игру **один раз**: рантайм сам создаст
+   \`mods\\NeonTranslatorDX\\install-manifest.json\` (список файлов с sha256).
+   Он нужен менеджеру и удалению; без него установка всё равно работает.
+3. Язык переключается в меню мода в игре.
 
-   \`\`\`powershell
-   powershell -ExecutionPolicy Bypass -File .\\install.ps1
-   \`\`\`
+Установка атомарна по папке: всё, кроме \`dwmapi.dll\`, лежит в
+\`mods\\NeonTranslatorDX\\\`.
 
-   Скрипт запишет \`active_lang.txt\` (по умолчанию \`ru\`; другой язык — \`-Lang de\`)
-   и \`install-manifest.json\` — список поставленного с контрольными суммами.
-3. Запустите игру и переключите язык в меню мода.
+## Обновление
+
+Распакуйте новый архив **поверх** (в ту же папку игры). Файлы заменятся, а
+манифест рантайм пересоберёт при следующем запуске игры — по sha256 самой DLL
+он увидит, что сборка новая. Ничего удалять руками не нужно.
 
 ## Удаление
 
-Любой из способов (результат одинаковый, манифест общий):
+Удалите два места (игра вернётся на английский):
 
-- установщиком NeonTranslatorDX: «Проверить установку» → «Удалить»;
-- вручную: удалите \`dwmapi.dll\` и папку \`mods\\NeonTranslatorDX\` (пустую \`mods\\\` тоже).
+- \`<игра>\\dwmapi.dll\`
+- папку \`<игра>\\mods\\NeonTranslatorDX\\\` целиком (пустая \`mods\\\` тоже удаляется)
 
-Сохранения и файлы игры не затрагиваются. Steam → «Проверить целостность файлов»
-не перекачивает файлы игры ни после установки, ни после удаления; он удаляет только
-\`dwmapi.dll\` — тогда запустите \`install.ps1\` заново.
+Файлы \`README-INSTALL.md\` и \`fomod\\\` в корне игры — из архива, их можно удалить.
+Сохранения и файлы игры не затрагиваются.
+
+Если установлен **NeonTranslatorDX Manager**, удаление проще: «Удалить» в окне
+менеджера (он читает \`install-manifest.json\` и удаляет только своё). Если
+менеджер пишет «не установлен» — запустите игру один раз, чтобы появился манифест.
+
+## Vortex
+
+«Install from file» с этим же архивом: \`fomod/ModuleConfig.xml\` раскладывает
+\`dwmapi.dll\` и \`mods/NeonTranslatorDX/\` в корень игры. Отдельный FOMOD-архив не
+нужен; ручная распаковка даёт тот же результат.
+
+## Про \`dwmapi.dll\`
+
+\`dwmapi.dll\` — **лоадер** (подмена системной DLL, DLL-hijack): игра грузит его
+раньше своих сборок, а он загружает \`mods/NeonTranslatorDX/NeonTranslatorDX.dll\`.
+Другого способа внедрить перевод без правки файлов игры нет. Антивирус может
+ругаться на «подмену системной DLL» — это известный паттерн, а не вирус;
+исходники лоадера открыты (\`dwmapi_proxy.c\` в репозитории мода). Файлы игры при
+этом не изменяются: Steam → «Проверить целостность» не перекачивает ничего,
+кроме самого \`dwmapi.dll\` (его можно вернуть повторной распаковкой).
 
 ## English (short)
 
-Extract the archive into the game folder (next to the game exe), then run
-\`powershell -ExecutionPolicy Bypass -File .\\install.ps1\`. Switch the language in the
-in-game mod menu. Uninstall with the installer (it reads \`install-manifest.json\`) or
-delete \`dwmapi.dll\` and \`mods/NeonTranslatorDX/\`.
+Extract the whole archive into the game folder (next to the game exe). Start the
+game once: the runtime writes \`mods/NeonTranslatorDX/install-manifest.json\`
+(file list with sha256) used by the manager and the uninstaller. Switch the
+language in the in-game mod menu. Update: extract a newer archive over the same
+folder (the manifest is rebuilt on the next launch). Uninstall: delete
+\`dwmapi.dll\` and \`mods/NeonTranslatorDX/\`. No executable files are included;
+\`dwmapi.dll\` is a loader (DLL-hijack) and may trigger antivirus heuristics —
+the proxy sources are public in the mod repository.
 `;
+}
+
+/** Файлы архива, которые обязаны быть на месте до упаковки. */
+export function expectedEntries(langs: string[]): string[] {
+  return [
+    "dwmapi.dll",
+    "README-INSTALL.md",
+    "fomod/info.xml",
+    "fomod/ModuleConfig.xml",
+    "mods/NeonTranslatorDX/NeonTranslatorDX.dll",
+    "mods/NeonTranslatorDX/active_lang.txt",
+    ...langs.map((lang) => `mods/NeonTranslatorDX/patch_${lang}.dat`),
+  ];
+}
+
+/** Записи архива, которые Nexus отправит в карантин (пусто — чисто). */
+export function forbiddenEntries(files: string[]): string[] {
+  return files.filter((file) => FORBIDDEN_EXTENSIONS.includes(extname(file).toLowerCase()));
 }
 
 export interface ArchiveReport {
@@ -223,7 +238,7 @@ export interface ArchiveReport {
   version: string;
   files: number;
   bytes: number;
-  stage: string;
+  entries: string[];
 }
 
 export function buildArchive(args: ManualArgs): ArchiveReport {
@@ -240,19 +255,28 @@ export function buildArchive(args: ManualArgs): ArchiveReport {
   const stage = join(REPO_ROOT, "installer-ui", "tmp", "manual-stage");
   rmSync(stage, { recursive: true, force: true });
   mkdirSync(join(stage, MOD_REL), { recursive: true });
+  mkdirSync(join(stage, "fomod"), { recursive: true });
 
   cpSync(join(payload, LOADER), join(stage, LOADER));
   cpSync(join(payload, MOD_REL), join(stage, MOD_REL), { recursive: true });
-  writeFileSync(join(stage, "install.ps1"), manualInstallScript(args.version, args.lang), "utf8");
+  // Стартовый язык — файл данных, не скрипт: без него ручная установка
+  // стартовала бы на английском (рантайм по умолчанию берёт "en").
+  writeFileSync(join(stage, MOD_REL, "active_lang.txt"), "ru", "utf8");
   writeFileSync(join(stage, "README-INSTALL.md"), manualReadme(args.version), "utf8");
+  writeFileSync(join(stage, "fomod", "info.xml"), fomodInfo(args.version), "utf8");
+  writeFileSync(join(stage, "fomod", "ModuleConfig.xml"), fomodModule(), "utf8");
 
-  // Контракт раскладки: без этих файлов архив бессмысленный (и это дешевле,
-  // чем ловить «пустую установку» у игрока).
+  // Контракт раскладки и «Nexus-clean» — до упаковки, а не после.
   const langs = readdirSync(join(stage, MOD_REL))
     .filter((name) => /^patch_[a-z]{2}\.dat$/.test(name))
     .map((name) => name.slice("patch_".length, -".dat".length));
   for (const rel of expectedEntries(langs)) {
     if (!existsSync(join(stage, rel))) throw new Error(`в архиве нет ${rel}`);
+  }
+  const entries = countFiles(stage).entries;
+  const forbidden = forbiddenEntries(entries);
+  if (forbidden.length) {
+    throw new Error(`в архиве исполняемые файлы: ${forbidden.join(", ")}`);
   }
 
   mkdirSync(args.out, { recursive: true });
@@ -271,18 +295,7 @@ export function buildArchive(args: ManualArgs): ArchiveReport {
 
   const { files, bytes } = countFiles(stage);
   rmSync(stage, { recursive: true, force: true });
-  return { archive, version: args.version, files, bytes, stage };
-}
-
-/** Проверка раскладки stage: без неё архив может быть «пустым» и незаметным. */
-export function expectedEntries(langs: string[]): string[] {
-  return [
-    "dwmapi.dll",
-    "install.ps1",
-    "README-INSTALL.md",
-    "mods/NeonTranslatorDX/NeonTranslatorDX.dll",
-    ...langs.map((lang) => `mods/NeonTranslatorDX/patch_${lang}.dat`),
-  ];
+  return { archive, version: args.version, files, bytes, entries };
 }
 
 function main(argv: string[]): number {
@@ -304,9 +317,8 @@ function main(argv: string[]): number {
     console.log(
       `    версия ${report.version}, файлов ${report.files}, ${(statSync(report.archive).size / 1048576).toFixed(2)} MB`,
     );
-    console.log(
-      "Установка: распаковать в папку игры и запустить install.ps1 (см. README-INSTALL.md).",
-    );
+    console.log("    в архиве нет .exe/.cmd/.ps1; манифест создаёт рантайм при первом запуске.");
+    console.log("Установка: распаковать в папку игры (см. README-INSTALL.md).");
     return 0;
   } catch (error) {
     console.error(`ОШИБКА: ${error instanceof Error ? error.message : String(error)}`);

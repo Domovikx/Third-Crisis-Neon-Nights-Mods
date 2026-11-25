@@ -32,10 +32,35 @@ export interface InstallResult {
   lang: string;
   payloadVersion: string | null;
   files: ManifestFile[];
+  /** Файлов реально записано (новые или изменённые). */
   copied: number;
+  /** Файлов уже совпадало по sha256 — не перезаписывались. */
+  skipped: number;
   bytes: number;
   manifestPath: string;
   removedStale: string[];
+}
+
+export type IntegrityState = "ok" | "missing" | "modified" | "broken" | "unknown";
+
+export interface StatusIntegrity {
+  state: IntegrityState;
+  checked: number;
+  missing: number;
+  modified: number;
+  unlisted: number;
+}
+
+export interface StatusResult {
+  installed: boolean;
+  modDirExists: boolean;
+  manifestFound: boolean;
+  version: string | null;
+  lang: string | null;
+  files: number;
+  installedAt: string | null;
+  integrity: StatusIntegrity;
+  problem: string | null;
 }
 
 export interface UninstallResult {
@@ -75,6 +100,9 @@ export interface PayloadStatus {
   langs: string[];
 }
 
+/** Операция, которая пишет файлы: свежая установка или обновление поверх. */
+export type ModOperation = "install" | "update";
+
 /** Транспорт: Tauri-команды или мок для dev/тестов. */
 export interface InstallerPlatform {
   kind: "tauri" | "mock";
@@ -83,9 +111,11 @@ export interface InstallerPlatform {
   probeGame(path: string): Promise<ProbeResult>;
   chooseFolder(): Promise<string | null>;
   payloadStatus(): Promise<PayloadStatus>;
+  statusMod(gameDir: string): Promise<StatusResult>;
   install(args: { gameDir: string; lang: string }): Promise<InstallResult>;
+  updateMod(gameDir: string): Promise<InstallResult>;
   uninstall(gameDir: string): Promise<UninstallResult>;
   verify(gameDir: string): Promise<VerifyResult>;
-  /** Подписка на прогресс установки; возвращает функцию отписки. */
+  /** Подписка на прогресс установки/обновления; возвращает функцию отписки. */
   onProgress(callback: (progress: InstallProgress) => void): () => void;
 }

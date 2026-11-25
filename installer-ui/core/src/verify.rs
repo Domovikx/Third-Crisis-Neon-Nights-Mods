@@ -86,6 +86,10 @@ pub fn verify(game: &Path) -> Result<VerifyResult, CoreError> {
             result.ok = false;
             continue;
         }
+        // active_lang.txt рантайм меняет штатно (переключение языка в игре).
+        if crate::is_runtime_mutable(&file.path) {
+            continue;
+        }
         let actual = fsutil::sha256_file(&abs)?;
         if actual != file.sha256 {
             result.ok = false;
@@ -179,6 +183,18 @@ mod tests {
         let result = verify(&game).unwrap();
         assert!(result.ok, "лог рантайма не ломает целостность");
         assert_eq!(result.unlisted, vec!["mods/NeonTranslatorDX/extra.bin"]);
+    }
+
+    #[test]
+    fn verify_ignores_active_lang_switch_by_runtime() {
+        let tmp = TempDir::new("verify-active-lang");
+        let game = fake_game(&tmp);
+        let payload = fake_payload(&tmp, &["ru"]);
+        install(&game, &payload, "ru").unwrap();
+        fs::write(mod_dir(&game).join(crate::ACTIVE_LANG), "de").unwrap();
+        let result = verify(&game).unwrap();
+        assert!(result.ok, "смена языка в игре не ломает целостность");
+        assert!(result.modified.is_empty());
     }
 
     #[test]

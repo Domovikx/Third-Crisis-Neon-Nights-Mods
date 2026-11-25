@@ -1,9 +1,9 @@
 {
-  "name": "neon-installer-ui",
+  "name": "neontranslatordx-manager",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "NeonTranslatorDX installer — Tauri 2 + React 19 + StyleX",
+  "description": "NeonTranslatorDX Manager — Tauri 2 + React 19 + StyleX",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -12,7 +12,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "payload": "node scripts/build_payload.mts",
-    "manual": "node scripts/build_manual_archive.mts"
+    "manual": "node scripts/build_manual_archive.mts",
+    "test:archive": "node --test scripts/build_manual_archive.test.mts",
+    "manual:e2e": "node scripts/manual_e2e.mts"
   },
   "dependencies": {
     "@tauri-apps/api": "^2",

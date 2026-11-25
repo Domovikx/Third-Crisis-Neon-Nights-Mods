@@ -23,6 +23,7 @@ pub mod error;
 pub mod fsutil;
 pub mod install;
 pub mod manifest;
+pub mod status;
 pub mod uninstall;
 pub mod verify;
 
@@ -96,6 +97,13 @@ pub fn required_markers() -> [String; 2] {
         format!("{GAME_FOLDER}.exe"),
         format!("{GAME_DATA_FOLDER}/Managed/Assembly-CSharp.dll"),
     ]
+}
+
+/// Файлы, которые рантайм меняет сам: `active_lang.txt` переключается в меню
+/// мода, поэтому его sha256 в манифесте устаревает штатно. Присутствие
+/// проверяем, хэш — нет; при удалении это наш файл в любом случае.
+pub fn is_runtime_mutable(rel: &str) -> bool {
+    rel.replace('\\', "/") == format!("{MODS_FOLDER}/{MOD_FOLDER}/{ACTIVE_LANG}")
 }
 
 /// Путь относительного файла в формате манифеста: только прямые слэши.

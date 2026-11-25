@@ -13,6 +13,7 @@ import type {
   InstallerPlatform,
   PayloadStatus,
   ProbeResult,
+  StatusResult,
   UninstallResult,
   VerifyResult,
 } from "@/core/types";
@@ -36,18 +37,18 @@ export const tauriPlatform: InstallerPlatform = {
     return typeof picked === "string" ? picked : null;
   },
   payloadStatus: () => invoke<PayloadStatus>("payload_status"),
+  statusMod: (gameDir) => invoke<StatusResult>("status_mod", { gameDir }),
   install: ({ gameDir, lang }) => invoke<InstallResult>("install_mod", { gameDir, lang }),
+  updateMod: (gameDir) => invoke<InstallResult>("update_mod", { gameDir }),
   uninstall: (gameDir) => invoke<UninstallResult>("uninstall_mod", { gameDir }),
   verify: (gameDir) => invoke<VerifyResult>("verify_mod", { gameDir }),
   onProgress: (callback) => {
     let unlisten: (() => void) | null = null;
     let disposed = false;
-    void listen<InstallProgress>("install-progress", (event) => callback(event.payload)).then(
-      (fn) => {
-        if (disposed) fn();
-        else unlisten = fn;
-      },
-    );
+    void listen<InstallProgress>("mod-progress", (event) => callback(event.payload)).then((fn) => {
+      if (disposed) fn();
+      else unlisten = fn;
+    });
     return () => {
       disposed = true;
       unlisten?.();

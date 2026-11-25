@@ -1,22 +1,21 @@
 import { LOCALE_LABELS, LOCALES, t } from "@/i18n";
 import type { InstallerPlatform } from "@/core/types";
 import { createPlatform } from "@/platform";
-import { useInstaller } from "@/hooks/useInstaller";
+import { useManager } from "@/hooks/useManager";
 import { Button, Note } from "@/ui/primitives";
 import { cx } from "@/ui/cx";
 import { Done } from "@/screens/Done";
-import { Detect } from "@/screens/Detect";
-import { Installing } from "@/screens/Installing";
+import { Progress } from "@/screens/Progress";
+import { Status } from "@/screens/Status";
 import { Uninstall } from "@/screens/Uninstall";
 import { Verify } from "@/screens/Verify";
-import { Welcome } from "@/screens/Welcome";
 import { styles } from "./App.styles";
 
 const defaultPlatform = createPlatform();
 
 export function App({ platform = defaultPlatform }: { platform?: InstallerPlatform }) {
-  const controller = useInstaller(platform);
-  const { state } = controller;
+  const manager = useManager(platform);
+  const { state } = manager;
   const tr = (key: Parameters<typeof t>[1]) => t(state.locale, key);
 
   return (
@@ -34,7 +33,7 @@ export function App({ platform = defaultPlatform }: { platform?: InstallerPlatfo
             <Button
               key={locale}
               variant={locale === state.locale ? "primary" : "ghost"}
-              onClick={() => controller.setLocale(locale)}
+              onClick={() => manager.setLocale(locale)}
               testId={`App--locale-${locale}`}
             >
               {LOCALE_LABELS[locale]}
@@ -46,48 +45,44 @@ export function App({ platform = defaultPlatform }: { platform?: InstallerPlatfo
       <main className={cx(styles.main)}>
         {platform.kind === "mock" ? <Note tone="warn">{tr("mockBanner")}</Note> : null}
 
-        {state.screen === "welcome" ? (
-          <Welcome
-            locale={state.locale}
-            payload={state.payload}
-            ready={controller.ready}
-            onStart={controller.start}
-          />
-        ) : null}
-
-        {state.screen === "detect" ? (
-          <Detect
+        {state.screen === "status" ? (
+          <Status
             locale={state.locale}
             game={state.game}
+            status={state.status}
+            payload={state.payload}
             detecting={state.detecting}
             folderError={state.folderError}
             folderMissing={state.folderMissing}
-            payload={state.payload}
             busy={state.busy}
             error={state.error}
-            onChooseFolder={controller.chooseFolder}
-            onInstall={controller.install}
-            onUninstall={controller.uninstall}
-            onVerify={controller.verify}
+            onRefresh={manager.refresh}
+            onChooseFolder={manager.chooseFolder}
+            onInstall={manager.install}
+            onUpdate={manager.update}
+            onVerify={manager.verify}
+            onUninstall={manager.uninstall}
           />
         ) : null}
 
-        {state.screen === "installing" ? (
-          <Installing
+        {state.screen === "progress" ? (
+          <Progress
             locale={state.locale}
+            op={state.op}
             progress={state.progress}
             error={state.error}
-            onRetry={controller.install}
-            onBack={() => controller.navigate("detect")}
+            onRetry={manager.retry}
+            onBack={() => manager.navigate("status")}
           />
         ) : null}
 
         {state.screen === "done" ? (
           <Done
             locale={state.locale}
-            result={state.install}
-            onVerify={controller.verify}
-            onClose={() => controller.navigate("detect")}
+            op={state.op}
+            result={state.result}
+            onVerify={manager.verify}
+            onBack={() => manager.navigate("status")}
           />
         ) : null}
 
@@ -98,9 +93,9 @@ export function App({ platform = defaultPlatform }: { platform?: InstallerPlatfo
             busy={state.busy}
             result={state.uninstall}
             error={state.error}
-            onConfirm={controller.uninstall}
-            onCancel={() => controller.navigate("detect")}
-            onBack={() => controller.navigate("detect")}
+            onConfirm={manager.uninstall}
+            onCancel={() => manager.navigate("status")}
+            onBack={() => manager.navigate("status")}
           />
         ) : null}
 
@@ -110,7 +105,7 @@ export function App({ platform = defaultPlatform }: { platform?: InstallerPlatfo
             result={state.verify}
             busy={state.busy}
             error={state.error}
-            onBack={() => controller.navigate("detect")}
+            onBack={() => manager.navigate("status")}
           />
         ) : null}
       </main>

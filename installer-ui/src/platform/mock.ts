@@ -1,11 +1,18 @@
 /**
  * Мок-транспорт: смотреть интерфейс в браузере (`npm run dev`) и тестировать
- * экраны без сборки exe. Это НЕ вторая реализация установки — только ответы
+ * экраны без сборки exe. Это НЕ вторая реализация менеджера — только ответы
  * с правдоподобными данными.
  */
-import type { GameInfo, InstallerPlatform, InstallProgress, PayloadStatus } from "@/core/types";
+import type {
+  GameInfo,
+  InstallerPlatform,
+  InstallProgress,
+  PayloadStatus,
+  StatusResult,
+} from "@/core/types";
 
 export const MOCK_GAME_PATH = "C:\\Games\\Third Crisis Neon Nights";
+export const MOCK_VERSION = "2026.11.25";
 
 const SAMPLE_FILES = [
   "dwmapi.dll",
@@ -21,18 +28,25 @@ export interface MockOptions {
   /** Найти игру сразу (по умолчанию да). */
   found?: boolean;
   payloadExists?: boolean;
+  /** Мод «уже стоит» при старте (для демонстрации экрана статуса). */
+  installed?: boolean;
+  /** Версия установленного мода (по умолчанию dev-версия пакета). */
+  installedVersion?: string | null;
 }
 
 export function createMockPlatform(options: MockOptions = {}): InstallerPlatform {
   const found = options.found ?? true;
-  let installed = false;
-  let installedLang: string | null = null;
+  let installed = options.installed ?? false;
+  let installedLang: string | null = installed ? "ru" : null;
+  let installedVersion: string | null = installed
+    ? (options.installedVersion ?? MOCK_VERSION)
+    : null;
   let progressListeners: Array<(progress: InstallProgress) => void> = [];
 
   const payload: PayloadStatus = {
-    dir: "C:\\Tools\\NeonTranslatorDX Installer\\payload",
+    dir: "C:\\Tools\\NeonTranslatorDX Manager\\payload",
     exists: options.payloadExists ?? true,
-    version: "dev",
+    version: MOCK_VERSION,
     langs: ["de", "en", "fr", "it", "ko", "ru", "zh"],
   };
 
@@ -44,8 +58,47 @@ export function createMockPlatform(options: MockOptions = {}): InstallerPlatform
     installedLang,
   });
 
+  const status = (): StatusResult => ({
+    installed,
+    modDirExists: installed,
+    manifestFound: installed,
+    version: installedVersion,
+    lang: installedLang,
+    files: installed ? SAMPLE_FILES.length : 0,
+    installedAt: installed ? "2026-11-25T10:00:00.000Z" : null,
+    integrity: {
+      state: installed ? "ok" : "unknown",
+      checked: installed ? SAMPLE_FILES.length : 0,
+      missing: 0,
+      modified: 0,
+      unlisted: 0,
+    },
+    problem: null,
+  });
+
   const emit = (progress: InstallProgress) => {
     for (const listener of progressListeners) listener(progress);
+  };
+
+  const simulate = async (copied: number) => {
+    for (let i = 0; i < SAMPLE_FILES.length; i++) {
+      emit({ done: i + 1, total: SAMPLE_FILES.length, path: SAMPLE_FILES[i] });
+      await new Promise((resolve) => setTimeout(resolve, 30));
+    }
+    return {
+      lang: installedLang ?? "ru",
+      payloadVersion: payload.version,
+      files: SAMPLE_FILES.map((path, index) => ({
+        path,
+        size: 1024 * (index + 1),
+        sha256: "mock",
+      })),
+      copied,
+      skipped: SAMPLE_FILES.length - copied,
+      bytes: copied * 2048,
+      manifestPath: `${MOCK_GAME_PATH}\\mods\\NeonTranslatorDX\\install-manifest.json`,
+      removedStale: [],
+    };
   };
 
   return {
@@ -53,39 +106,28 @@ export function createMockPlatform(options: MockOptions = {}): InstallerPlatform
     systemLocale: async () => "ru-RU",
     detectGame: async () => (found ? game() : null),
     probeGame: async (path) => ({
-      check: {
-        dir: path,
-        ok: true,
-        missing: [],
-      },
+      check: { dir: path, ok: true, missing: [] },
       game: { ...game(), path },
     }),
     chooseFolder: async () => MOCK_GAME_PATH,
     payloadStatus: async () => payload,
-    install: async ({ gameDir, lang }) => {
-      for (let i = 0; i < SAMPLE_FILES.length; i++) {
-        emit({ done: i + 1, total: SAMPLE_FILES.length, path: SAMPLE_FILES[i] });
-        await new Promise((resolve) => setTimeout(resolve, 40));
-      }
+    statusMod: async () => status(),
+    install: async ({ lang }) => {
       installed = true;
       installedLang = lang;
-      return {
-        lang,
-        payloadVersion: payload.version,
-        files: SAMPLE_FILES.map((path, index) => ({
-          path,
-          size: 1024 * (index + 1),
-          sha256: "mock",
-        })),
-        copied: SAMPLE_FILES.length,
-        bytes: SAMPLE_FILES.length * 2048,
-        manifestPath: `${gameDir}\\mods\\NeonTranslatorDX\\install-manifest.json`,
-        removedStale: [],
-      };
+      installedVersion = payload.version;
+      return simulate(SAMPLE_FILES.length);
+    },
+    updateMod: async () => {
+      installed = true;
+      installedLang = installedLang ?? "ru";
+      installedVersion = payload.version;
+      return simulate(2);
     },
     uninstall: async () => {
       installed = false;
       installedLang = null;
+      installedVersion = null;
       return {
         deleted: SAMPLE_FILES,
         kept: [],

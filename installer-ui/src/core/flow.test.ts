@@ -1,14 +1,15 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  canInstall,
+  canApply,
   initialState,
   installPercent,
+  isInstalled,
   localeFromSystem,
-  pickLang,
   reduce,
+  updateAvailable,
 } from "./flow";
-import type { InstallResult, GameInfo, PayloadStatus } from "./types";
+import type { GameInfo, InstallResult, PayloadStatus, StatusResult } from "./types";
 
 const game: GameInfo = {
   path: "C:\\game",
@@ -21,55 +22,152 @@ const game: GameInfo = {
 const payload: PayloadStatus = {
   dir: "C:\\payload",
   exists: true,
-  version: "2026.11.25",
+  version: "2026.12.01",
   langs: ["de", "en", "ru"],
 };
 
-const installResult: InstallResult = {
-  lang: "de",
-  payloadVersion: payload.version,
-  files: [],
-  copied: 7,
-  bytes: 1024,
-  manifestPath: "C:\\game\\mods\\NeonTranslatorDX\\install-manifest.json",
-  removedStale: [],
+const installed: StatusResult = {
+  installed: true,
+  modDirExists: true,
+  manifestFound: true,
+  version: "2026.11.25",
+  lang: "ru",
+  files: 14,
+  installedAt: "2026-11-25T10:00:00.000Z",
+  integrity: { state: "ok", checked: 14, missing: 0, modified: 0, unlisted: 0 },
+  problem: null,
 };
 
-describe("reducer", () => {
-  it("старт: приветствие, ru, без игры", () => {
+const notInstalled: StatusResult = {
+  installed: false,
+  modDirExists: false,
+  manifestFound: false,
+  version: null,
+  lang: null,
+  files: 0,
+  installedAt: null,
+  integrity: { state: "unknown", checked: 0, missing: 0, modified: 0, unlisted: 0 },
+  problem: null,
+};
+
+const installResult: InstallResult = {
+  lang: "ru",
+  payloadVersion: "2026.12.01",
+  files: [],
+  copied: 3,
+  skipped: 11,
+  bytes: 2048,
+  manifestPath: "C:\\game\\mods\\NeonTranslatorDX\\install-manifest.json",
+  removedStale: ["mods/NeonTranslatorDX/patch_it.dat"],
+};
+
+describe("reducer менеджера", () => {
+  it("стартует со статуса и не даёт ставить без игры/payload", () => {
     const state = initialState("ru");
-    expect(state.screen).toBe("welcome");
-    expect(state.game).toBeNull();
-    expect(canInstall(state)).toBe(false);
+    expect(state.screen).toBe("status");
+    expect(state.status).toBeNull();
+    expect(canApply(state)).toBe(false);
   });
 
-  it("welcome → detect → найдена игра → установка → готово", () => {
-    let state = reduce(initialState(), { type: "navigate", screen: "detect" });
-    state = reduce(state, { type: "detectStart" });
+  it("refresh: игра + статус → можно ставить", () => {
+    let state = reduce(initialState(), { type: "payload", payload });
+    state = reduce(state, { type: "refreshStart" });
     expect(state.detecting).toBe(true);
-    state = reduce(state, { type: "detectDone", game });
+    state = reduce(state, { type: "refreshDone", game, status: notInstalled });
     expect(state.detecting).toBe(false);
     expect(state.game?.path).toBe(game.path);
+    expect(canApply(state)).toBe(true);
+    expect(isInstalled(state)).toBe(false);
+  });
 
+  it("установка: progress → done, статус сразу «установлен»", () => {
+    let state = reduce(initialState(), { type: "refreshDone", game, status: notInstalled });
     state = reduce(state, { type: "payload", payload });
-    expect(canInstall(state)).toBe(true);
-
-    state = reduce(state, { type: "installStart" });
-    expect(state.screen).toBe("installing");
+    state = reduce(state, { type: "opStart", op: "install" });
+    expect(state.screen).toBe("progress");
     expect(state.busy).toBe(true);
     state = reduce(state, { type: "progress", progress: { done: 3, total: 10, path: "a" } });
     expect(installPercent(state.progress)).toBe(30);
-    state = reduce(state, { type: "installDone", result: installResult });
+    state = reduce(state, { type: "opDone", op: "install", result: installResult });
     expect(state.screen).toBe("done");
     expect(state.busy).toBe(false);
-    expect(state.game?.modInstalled).toBe(true);
-    expect(state.game?.installedLang).toBe("de");
+    expect(state.status?.installed).toBe(true);
+    expect(state.status?.version).toBe("2026.12.01");
+    expect(state.status?.integrity.state).toBe("ok");
   });
 
-  it("не найдена: игра остаётся null, выбор папки может исправить", () => {
-    let state = reduce(initialState(), { type: "detectStart" });
-    state = reduce(state, { type: "detectDone", game: null });
-    expect(state.detecting).toBe(false);
+  it("обновление доступно только при другой версии пакета", () => {
+    const installedCurrent = { ...installed, version: payload.version };
+    expect(updateAvailable({ status: installed, payload })).toBe(true);
+    expect(updateAvailable({ status: installedCurrent, payload })).toBe(false);
+    expect(updateAvailable({ status: notInstalled, payload })).toBe(false);
+    expect(updateAvailable({ status: installed, payload: { ...payload, exists: false } })).toBe(
+      false,
+    );
+  });
+
+  it("обновление: op=update, экран done, версия новая", () => {
+    let state = reduce(initialState(), { type: "refreshDone", game, status: installed });
+    state = reduce(state, { type: "payload", payload });
+    state = reduce(state, { type: "opStart", op: "update" });
+    expect(state.op).toBe("update");
+    state = reduce(state, { type: "opDone", op: "update", result: installResult });
+    expect(state.screen).toBe("done");
+    expect(state.op).toBe("update");
+    expect(state.result?.copied).toBe(3);
+    expect(state.status?.version).toBe("2026.12.01");
+  });
+
+  it("удаление сбрасывает статус", () => {
+    let state = reduce(initialState(), { type: "refreshDone", game, status: installed });
+    state = reduce(state, { type: "uninstallStart" });
+    expect(state.screen).toBe("uninstall");
+    expect(state.busy).toBe(true);
+    state = reduce(state, {
+      type: "uninstallDone",
+      result: { deleted: ["dwmapi.dll"], kept: [], removedDirs: ["mods"], manifestDeleted: true },
+    });
+    expect(state.busy).toBe(false);
+    expect(state.status?.installed).toBe(false);
+    expect(state.status?.files).toBe(0);
+    expect(state.game?.modInstalled).toBe(false);
+  });
+
+  it("проверка сохраняет экран verify", () => {
+    let state = reduce(initialState(), { type: "refreshDone", game, status: installed });
+    state = reduce(state, { type: "verifyStart" });
+    expect(state.screen).toBe("verify");
+    state = reduce(state, {
+      type: "verifyDone",
+      result: {
+        installed: true,
+        ok: false,
+        checked: 14,
+        lang: "ru",
+        missing: ["x"],
+        modified: [],
+        invalid: [],
+        unlisted: [],
+      },
+    });
+    expect(state.busy).toBe(false);
+    expect(state.verify?.ok).toBe(false);
+  });
+
+  it("ошибка снимает busy, но экран и операцию сохраняет", () => {
+    let state = reduce(initialState(), { type: "refreshDone", game, status: installed });
+    state = reduce(state, { type: "opStart", op: "update" });
+    state = reduce(state, { type: "fail", code: "payload-missing: нет" });
+    expect(state.screen).toBe("progress");
+    expect(state.op).toBe("update");
+    expect(state.busy).toBe(false);
+    expect(state.error).toBe("payload-missing: нет");
+    state = reduce(state, { type: "clearError" });
+    expect(state.error).toBeNull();
+  });
+
+  it("выбор папки: успех и провал", () => {
+    let state = reduce(initialState(), { type: "refreshDone", game: null, status: null });
     state = reduce(state, {
       type: "probeFailed",
       code: "game-invalid",
@@ -77,54 +175,10 @@ describe("reducer", () => {
     });
     expect(state.folderError).toBe("game-invalid");
     expect(state.folderMissing).toEqual(["x.exe"]);
-    state = reduce(state, { type: "probeDone", game });
+    state = reduce(state, { type: "probeDone", game, status: notInstalled });
     expect(state.game?.path).toBe(game.path);
+    expect(state.status?.installed).toBe(false);
     expect(state.folderError).toBeNull();
-    expect(state.folderMissing).toEqual([]);
-  });
-
-  it("удаление и проверка не теряют игру", () => {
-    let state = reduce(initialState(), {
-      type: "detectDone",
-      game: { ...game, modInstalled: true },
-    });
-    state = reduce(state, { type: "uninstallStart" });
-    expect(state.busy).toBe(true);
-    state = reduce(state, {
-      type: "uninstallDone",
-      result: { deleted: ["dwmapi.dll"], kept: [], removedDirs: ["mods"], manifestDeleted: true },
-    });
-    expect(state.game?.modInstalled).toBe(false);
-    expect(state.uninstall?.deleted).toEqual(["dwmapi.dll"]);
-
-    state = reduce(state, { type: "verifyStart" });
-    expect(state.screen).toBe("verify");
-    state = reduce(state, {
-      type: "verifyDone",
-      result: {
-        installed: false,
-        ok: false,
-        checked: 0,
-        lang: null,
-        missing: [],
-        modified: [],
-        invalid: [],
-        unlisted: [],
-      },
-    });
-    expect(state.busy).toBe(false);
-    expect(state.verify?.installed).toBe(false);
-  });
-
-  it("ошибка снимает busy, но оставляет экран", () => {
-    let state = reduce(initialState(), { type: "detectDone", game });
-    state = reduce(state, { type: "installStart" });
-    state = reduce(state, { type: "fail", code: "payload-missing: no" });
-    expect(state.screen).toBe("installing");
-    expect(state.busy).toBe(false);
-    expect(state.error).toBe("payload-missing: no");
-    state = reduce(state, { type: "clearError" });
-    expect(state.error).toBeNull();
   });
 });
 
@@ -135,17 +189,11 @@ describe("языки", () => {
     expect(localeFromSystem("de-DE")).toBe("ru");
   });
 
-  it("выбор языка: текущий → ru → первый", () => {
-    expect(pickLang("de", payload)).toBe("de");
-    expect(pickLang("fr", payload)).toBe("ru");
-    expect(pickLang("fr", { ...payload, langs: ["it", "en"] })).toBe("it");
-  });
-
-  it("нельзя ставить без игры или без payload", () => {
-    const base = reduce(initialState(), { type: "detectDone", game });
-    expect(canInstall({ ...base, payload })).toBe(true);
-    expect(canInstall({ ...base, payload: { ...payload, exists: false } })).toBe(false);
-    expect(canInstall({ ...base, game: null, payload })).toBe(false);
-    expect(canInstall({ ...base, payload, busy: true })).toBe(false);
+  it("без busy и при отсутствии данных применять нельзя", () => {
+    const base = reduce(initialState(), { type: "refreshDone", game, status: notInstalled });
+    expect(canApply({ ...base, payload })).toBe(true);
+    expect(canApply({ ...base, payload: { ...payload, exists: false } })).toBe(false);
+    expect(canApply({ ...base, payload, busy: true })).toBe(false);
+    expect(canApply({ ...base, game: null, payload })).toBe(false);
   });
 });

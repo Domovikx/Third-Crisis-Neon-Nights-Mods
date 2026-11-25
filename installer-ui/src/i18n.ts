@@ -1,70 +1,79 @@
 /**
- * Локали интерфейса установщика — ru/en на старте.
+ * Локали интерфейса менеджера — ru/en.
  *
  * Ключ — смысл, не текст: переименование текста не ломает типы, а пропуск
  * перевода ловится `Record<MessageKey, string>` у `en`. Параметры — `{name}`.
  */
 
 const ru = {
-  appTitle: "NeonTranslatorDX",
-  appSubtitle: "Перевод Third Crisis: Neon Nights",
+  appTitle: "NeonTranslatorDX Manager",
+  appSubtitle: "Third Crisis: Neon Nights — перевод под управлением",
   winNote: "Windows 10/11 · официальная Steam-версия",
   langLabel: "Язык интерфейса",
-  next: "Продолжить",
-  back: "Назад",
+  refresh: "Обновить данные",
+  back: "К статусу",
   cancel: "Отмена",
-  close: "Закрыть",
   retry: "Повторить",
   mockBanner: "Демо-режим без Tauri: действия имитируются.",
 
-  welcomeTitle: "Установка перевода",
-  welcomeLead:
-    "Установщик найдёт игру в библиотеках Steam, поставит перевод и запишет манифест установки. Удаление — по тому же манифесту, без следов.",
-  welcomeIncluded: "Что будет установлено",
-  welcomeLoader: "загрузчик в корне игры",
-  welcomeModFolder: "переводчик, словари всех языков и шрифты",
-  welcomeSafe:
-    "Файлы игры не изменяются: добавляются только эти два места. Steam «Проверить целостность» ничего не перекачивает.",
-  start: "Начать",
-
-  detectTitle: "Поиск игры",
-  detectSearching: "Ищем Third Crisis: Neon Nights в библиотеках Steam…",
+  statusTitle: "Состояние мода",
+  statusSearching: "Ищем игру и состояние мода…",
+  statusLead:
+    "Менеджер ставит, обновляет, проверяет и удаляет перевод. Все действия — из этого окна.",
+  gameLabel: "Игра",
   gameFound: "Игра найдена",
   gameNotFound: "Игра не найдена",
-  notFoundBody:
+  gameNotFoundBody:
     "Автопоиск не нашёл игру в Steam. Выберите папку игры вручную — ту, где лежит {exe}.",
   chooseFolder: "Выбрать папку",
   folderInvalid: "В выбранной папке нет игры: не хватает {missing}.",
   gameFolder: "Папка игры",
   steamBuild: "Сборка Steam",
-  modInstalled: "Мод установлен",
-  modNotInstalled: "Мод не установлен",
-  install: "Установить",
-  uninstall: "Удалить",
-  verify: "Проверить установку",
-  update: "Переустановить",
+
+  modLabel: "Мод",
+  modInstalled: "Установлен",
+  modNotInstalled: "Не установлен",
+  manifestPending:
+    "Файлы мода на месте, но манифеста нет. Запустите игру один раз — рантайм создаст манифест; либо нажмите «Установить».",
+  modLang: "Активный язык: {lang}",
+  modFiles: "Файлов: {count}",
+  integrityLabel: "Целостность",
+  integrityOk: "ok",
+  integrityMissing: "не хватает файлов: {count}",
+  integrityModified: "изменены: {count}",
+  integrityBroken: "манифест повреждён",
+  integrityUnknown: "нет данных",
+
+  payloadLabel: "Пакет",
   payloadLine: "Пакет: {version} · языков: {count}",
-  payloadMissing:
-    "Рядом с установщиком нет папки payload — пересоберите пакет (см. README установщика).",
+  payloadMissing: "Рядом с менеджером нет папки payload — пересоберите пакет (см. README).",
+  updateAvailable: "Доступно обновление: {from} → {to}",
+  actionInstall: "Установить",
+  actionUpdate: "Обновить",
+  actionVerify: "Проверить",
+  actionUninstall: "Удалить",
 
-  installingTitle: "Установка",
-  installingNote: "Не закрывайте окно: файлы пишутся атомарно, папка игры не блокируется.",
-  installingFile: "{done} из {total}: {path}",
-  installFailed: "Установка не удалась",
+  opInstallTitle: "Установка",
+  opUpdateTitle: "Обновление",
+  progressNote:
+    "Не закрывайте окно: файлы пишутся атомарно. Если операция оборвалась — запустите её снова, менеджер доведёт установку до конца.",
+  progressFile: "{done} из {total}: {path}",
+  opFailed: "Операция не удалась",
 
-  doneTitle: "Готово",
-  doneBody:
-    "Перевод установлен. Запустите игру: язык переключается в меню мода. Если меняли язык — это же меню сохранит выбор.",
-  doneFiles: "Файлов: {count}",
-  doneSize: "Объём: {size}",
-  doneLang: "Стартовый язык: {lang}",
-  doneStale: "Убрано из прошлой установки: {count}",
+  doneInstallTitle: "Установлено",
+  doneUpdateTitle: "Обновлено",
+  doneBody: "Готово. Язык переключается в меню мода в игре.",
+  doneCopied: "Записано файлов: {count}",
+  doneSkipped: "Пропущено (уже совпадали): {count}",
+  doneRemoved: "Удалено из прошлой установки: {count}",
+  doneSize: "Записано объёмом: {size}",
+  doneVersion: "Версия: {version}",
   doneVerify: "Проверить установку",
-  doneClose: "К экрану игры",
+  doneBack: "К статусу",
 
   uninstallTitle: "Удаление",
   uninstallBody:
-    "Будет удалено только поставленное установщиком: файлы из манифеста (при совпадении контрольных сумм), лоадер и опустевшие папки. Сохранения и файлы игры не трогаются.",
+    "Будет удалено только поставленное менеджером: файлы из манифеста (при совпадении контрольных сумм), лоадер и опустевшие папки. Сохранения и файлы игры не трогаются.",
   uninstallConfirm: "Удалить мод",
   uninstallDone: "Мод удалён",
   uninstallDeleted: "Удалено файлов: {count}",
@@ -78,8 +87,9 @@ const ru = {
   verifyModified: "Изменены после установки: {count}",
   verifyUnlisted: "Лишние файлы в папке мода: {count}",
   verifyChecked: "Проверено файлов: {count}",
-  verifyLang: "Язык в манифесте: {lang}",
+  verifyRunning: "Сверяем файлы…",
 
+  rowVersion: "Версия",
   rowFiles: "Файлов",
   rowSize: "Объём",
   rowLang: "Язык",
@@ -89,10 +99,11 @@ const ru = {
   rowChecked: "Проверено файлов",
   rowModified: "Изменено после установки",
   rowUnlisted: "Лишних файлов",
+
   errPayloadMissing: "Пакет установки не найден или неполный.",
   errLangUnavailable: "В пакете нет словаря для выбранного языка.",
   errGameInvalid: "Папка не похожа на установку игры.",
-  errManifestMissing: "Манифест установки не найден: удалять нечего.",
+  errManifestMissing: "Мод не установлен: сначала нажмите «Установить».",
   errManifestInvalid: "Манифест установки повреждён.",
   errUnsafePath: "В манифесте недопустимый путь — действие остановлено.",
   errIo: "Ошибка файловой системы.",
@@ -102,66 +113,74 @@ const ru = {
 export type MessageKey = keyof typeof ru;
 
 const en: Record<MessageKey, string> = {
-  appTitle: "NeonTranslatorDX",
-  appSubtitle: "Third Crisis: Neon Nights translation",
+  appTitle: "NeonTranslatorDX Manager",
+  appSubtitle: "Third Crisis: Neon Nights — translation under management",
   winNote: "Windows 10/11 · official Steam version",
   langLabel: "Interface language",
-  next: "Continue",
-  back: "Back",
+  refresh: "Refresh",
+  back: "Back to status",
   cancel: "Cancel",
-  close: "Close",
   retry: "Retry",
   mockBanner: "Demo mode without Tauri: actions are simulated.",
 
-  welcomeTitle: "Install the translation",
-  welcomeLead:
-    "The installer finds the game in your Steam libraries, installs the translation and writes an install manifest. Uninstall uses the same manifest and leaves no traces.",
-  welcomeIncluded: "What gets installed",
-  welcomeLoader: "loader in the game root",
-  welcomeModFolder: "runtime, dictionaries for every language and fonts",
-  welcomeSafe:
-    "Game files are not modified: only these two places are added. Steam “Verify integrity” will not redownload anything.",
-  start: "Start",
-
-  detectTitle: "Finding the game",
-  detectSearching: "Looking for Third Crisis: Neon Nights in Steam libraries…",
+  statusTitle: "Mod status",
+  statusSearching: "Looking for the game and mod status…",
+  statusLead:
+    "The manager installs, updates, verifies and removes the translation. Everything happens from this window.",
+  gameLabel: "Game",
   gameFound: "Game found",
   gameNotFound: "Game not found",
-  notFoundBody:
+  gameNotFoundBody:
     "The automatic search did not find the game in Steam. Pick the game folder manually — the one containing {exe}.",
   chooseFolder: "Choose folder",
   folderInvalid: "The selected folder is not the game: missing {missing}.",
   gameFolder: "Game folder",
   steamBuild: "Steam build",
-  modInstalled: "Mod installed",
-  modNotInstalled: "Mod not installed",
-  install: "Install",
-  uninstall: "Uninstall",
-  verify: "Check installation",
-  update: "Reinstall",
+
+  modLabel: "Mod",
+  modInstalled: "Installed",
+  modNotInstalled: "Not installed",
+  manifestPending:
+    "Mod files are in place, but there is no manifest. Start the game once — the runtime creates it; or press “Install”.",
+  modLang: "Active language: {lang}",
+  modFiles: "Files: {count}",
+  integrityLabel: "Integrity",
+  integrityOk: "ok",
+  integrityMissing: "missing files: {count}",
+  integrityModified: "modified: {count}",
+  integrityBroken: "manifest is damaged",
+  integrityUnknown: "no data",
+
+  payloadLabel: "Package",
   payloadLine: "Package: {version} · languages: {count}",
-  payloadMissing:
-    "No payload folder next to the installer — rebuild the package (see the installer README).",
+  payloadMissing: "No payload folder next to the manager — rebuild the package (see README).",
+  updateAvailable: "Update available: {from} → {to}",
+  actionInstall: "Install",
+  actionUpdate: "Update",
+  actionVerify: "Verify",
+  actionUninstall: "Uninstall",
 
-  installingTitle: "Installing",
-  installingNote:
-    "Keep this window open: files are written atomically, the game folder is not locked.",
-  installingFile: "{done} of {total}: {path}",
-  installFailed: "Installation failed",
+  opInstallTitle: "Installing",
+  opUpdateTitle: "Updating",
+  progressNote:
+    "Keep this window open: files are written atomically. If the operation was interrupted, run it again — the manager will finish the installation.",
+  progressFile: "{done} of {total}: {path}",
+  opFailed: "Operation failed",
 
-  doneTitle: "Done",
-  doneBody:
-    "The translation is installed. Start the game: the language is switched in the mod menu. The same menu remembers your choice.",
-  doneFiles: "Files: {count}",
-  doneSize: "Size: {size}",
-  doneLang: "Initial language: {lang}",
-  doneStale: "Removed from the previous install: {count}",
+  doneInstallTitle: "Installed",
+  doneUpdateTitle: "Updated",
+  doneBody: "Done. The language is switched in the in-game mod menu.",
+  doneCopied: "Files written: {count}",
+  doneSkipped: "Skipped (already matched): {count}",
+  doneRemoved: "Removed from the previous install: {count}",
+  doneSize: "Bytes written: {size}",
+  doneVersion: "Version: {version}",
   doneVerify: "Check installation",
-  doneClose: "Back to game screen",
+  doneBack: "Back to status",
 
   uninstallTitle: "Uninstall",
   uninstallBody:
-    "Only what the installer placed is removed: files from the manifest (when checksums match), the loader and empty folders. Saves and game files are untouched.",
+    "Only what the manager placed is removed: files from the manifest (when checksums match), the loader and empty folders. Saves and game files are untouched.",
   uninstallConfirm: "Uninstall mod",
   uninstallDone: "Mod removed",
   uninstallDeleted: "Files removed: {count}",
@@ -175,8 +194,9 @@ const en: Record<MessageKey, string> = {
   verifyModified: "Modified after install: {count}",
   verifyUnlisted: "Extra files in the mod folder: {count}",
   verifyChecked: "Files checked: {count}",
-  verifyLang: "Manifest language: {lang}",
+  verifyRunning: "Checking files…",
 
+  rowVersion: "Version",
   rowFiles: "Files",
   rowSize: "Size",
   rowLang: "Language",
@@ -186,10 +206,11 @@ const en: Record<MessageKey, string> = {
   rowChecked: "Files checked",
   rowModified: "Modified after install",
   rowUnlisted: "Extra files",
+
   errPayloadMissing: "The install package is missing or incomplete.",
   errLangUnavailable: "The package has no dictionary for the selected language.",
   errGameInvalid: "The folder does not look like a game installation.",
-  errManifestMissing: "Install manifest not found: nothing to remove.",
+  errManifestMissing: "The mod is not installed: press “Install” first.",
   errManifestInvalid: "The install manifest is damaged.",
   errUnsafePath: "The manifest contains an unsafe path — the action was stopped.",
   errIo: "File system error.",

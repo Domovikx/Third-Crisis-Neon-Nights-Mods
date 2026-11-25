@@ -105,16 +105,18 @@ npm run verify         # typecheck + lint + format + langs + tests + e2e
 - **Сайт (GitHub Pages).** `site/template.html` + `site/styles.css`; `npm run build:site`
   собирает `site/index.html`, подставляя языки и **реальное покрытие** из `po/*.po`.
   Цифры руками не правятся — иначе страница начнёт врать. Публикация — workflow `pages`.
-- **Инсталлятор (exe).** `installer-ui/` — Tauri 2 (Rust + React 19 + StyleX):
-  находит игру по Steam, ставит `dwmapi.dll` + `mods/NeonTranslatorDX/`, пишет
-  `install-manifest.json` (sha256), умеет проверить целостность и удалить ровно
-  поставленное. Payload (`payload/`) собирается `npm run payload`; ручной `.7z`
-  с тем же манифестом — `npm run manual`. См. `installer-ui/README.md`.
+- **Менеджер (exe).** `installer-ui/` — `NeonTranslatorDX Manager` на Tauri 2
+  (Rust + React 19 + StyleX): находит игру по Steam, показывает состояние мода
+  (версия, язык, целостность) и из одного окна **ставит, обновляет, проверяет и
+  удаляет** перевод. Манифест `install-manifest.json` (sha256 + версия пакета)
+  — общий с ручным `.7z` (там манифест создаёт рантайм при первом запуске),
+  поэтому удаление одинаковое. Payload
+  (`payload/`) собирается `npm run payload`; ручной архив (`npm run manual`) —
+  без `.exe/.cmd/.ps1`, манифест создаёт рантайм при первом запуске, FOMOD для
+  Vortex. См. `installer-ui/README.md`.
 - **CLI-план.** `installer/install.mts`: находит игру, сверяет язык с
   приоритетом, показывает план раскладки; копирование — через `deploy.mts`
   (отдельной второй реализации нет).
-- **Мод-менеджер** — следующий шаг после деплоя (список языков, переключение, удаление,
-  обновление); см. `installer/README.md`.
 
 ## Структура
 
