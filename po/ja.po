@@ -70,10 +70,10 @@ msgstr "“「自分の仕事が世界をより良い場所にすると、本気
 
 #. src: dialog
 #. rich_text: <i>"It worked... too well. The ramifications are horrifying. My coworkers are now discussing mass emission methods."</i>
-#. rich_translation: <i>“「効果があった……あまりにも。その影響は恐ろしい。同僚たちは今や集団射精の方法について話し合っている。」”</i>
+#. rich_translation: <i>「効果があった……あまりにも。その影響は恐ろしい。同僚たちは今や大量放出の方法について話し合っている。」</i>
 msgctxt "ui"
 msgid "\"It worked... too well. The ramifications are horrifying. My coworkers are now discussing mass emission methods.\""
-msgstr "“「効果があった……あまりにも。その影響は恐ろしい。同僚たちは今や集団射精の方法について話し合っている。」”"
+msgstr "「効果があった……あまりにも。その影響は恐ろしい。同僚たちは今や大量放出の方法について話し合っている。」"
 
 #. src: dialog
 msgctxt "ui"
@@ -160,7 +160,7 @@ msgstr "“「彼女がいなかったら、どうなっていたか想像もつ
 #. src: dialog
 msgctxt "ui"
 msgid "\"enjoy your meal!\" \"you too!\" instant suffering..."
-msgstr "“「ごちそうさま！」「お前もな！」……即座の苦痛が訪れる……"
+msgstr "「いただきます！」「お前もな！」……即座の苦痛が訪れる……"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -623,10 +623,10 @@ msgstr "（ああ！クソッ、シンクが私を噴射したのよ！うっ、
 
 #. src: dialog
 #. rich_text: <i>(Ahh... What am I doing? I'm just going to let an enforcer grope me?!)</i>
-#. rich_translation: <i>（ああ……私、何をしてるの？エンフォーサーに体をまさぐらせるなんて……！）</i>
+#. rich_translation: <i>（ああ……私、何をしてるの？執行官に体をまさぐらせるなんて……！）</i>
 msgctxt "ui"
 msgid "(Ahh... What am I doing? I'm just going to let an enforcer grope me?!)"
-msgstr "（ああ……私、何をしてるの？エンフォーサーに体をまさぐらせるなんて……！）"
+msgstr "（ああ……私、何をしてるの？執行官に体をまさぐらせるなんて……！）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Ahhh... )</i></color>
@@ -789,10 +789,10 @@ msgstr "（本当に彼にチップ目当てで体を触らせるつもり？私
 
 #. src: dialog
 #. rich_text: <i>(Am I really going to work in the glowing hole as a waitress going forwards...?)</i>
-#. rich_translation: <i>（これからずっと、この光り輝く穴でウェイトレスとして働くことになるの……？）</i>
+#. rich_translation: <i>（これからずっと、この光る穴でウェイトレスとして働くことになるの……？）</i>
 msgctxt "speaker:Zoey"
 msgid "(Am I really going to work in the glowing hole as a waitress going forwards...?)"
-msgstr "（これからずっと、この光り輝く穴でウェイトレスとして働くことになるの……？）"
+msgstr "（これからずっと、この光る穴でウェイトレスとして働くことになるの……？）"
 
 #. src: dialog
 #. rich_text: <i>(Am I really helping anyone anymore...?)</i>
@@ -978,10 +978,10 @@ msgstr "（少なくとも俺は彼女を助けた。他に誰もそうしよう
 
 #. src: dialog
 #. rich_text: <i>(At least I'm not a... skank... right?)</i>
-#. rich_translation: <i>（少なくとも、俺は…クソ女…ってわけじゃないだろ？）</i>
+#. rich_translation: <i>（少なくとも、私は…淫乱女…ってわけじゃないよね？）</i>
 msgctxt "speaker:Zoey"
 msgid "(At least I'm not a... skank... right?)"
-msgstr "（少なくとも、俺は…クソ女…ってわけじゃないだろ？）"
+msgstr "（少なくとも、私は…淫乱女…ってわけじゃないよね？）"
 
 #. src: dialog
 #. rich_text: <i>(At least I'm past them now...)</i>
@@ -2087,10 +2087,10 @@ msgstr "（うっ…変態…）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Ghh... What am I... Doing... )</i></color>
-#. rich_translation: <color=#EB83FF><i>（うっ… 俺… 何をしてるんだ…）</i></color>
+#. rich_translation: <color=#EB83FF><i>（うっ… 私… 何をしてるの…）</i></color>
 msgctxt "speaker:Zoey"
 msgid "(Ghh... What am I... Doing... )"
-msgstr "（うっ… 俺… 何をしてるんだ…）"
+msgstr "（うっ… 私… 何をしてるの…）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Ghhh s-so wet... Nghh... )</i></color>
@@ -4525,11 +4525,11 @@ msgstr "（今日だけで、彼女に十分傷つけてしまった。）"
 
 #. src: dialog
 #. rich_text: <i>(I've even spilled Lio's... <color=#EB83FF>s-stuff</color> all over myself... )</i>
-#. rich_translation: <i>（リオの…あ、あそこも、全部こぼしちゃった…）</i>
+#. rich_translation: <i>（リオの…<color=#EB83FF>あ、あの液…</color>を、自分に全部こぼしちゃった…）</i>
 #, rt-review
 msgctxt "ui"
 msgid "(I've even spilled Lio's... s-stuff all over myself... )"
-msgstr "（リオの…あ、あそこも、全部こぼしちゃった…）"
+msgstr "（リオの…あ、あの液…を、自分に全部こぼしちゃった…）"
 
 #. src: dialog
 #. rich_text: <i>(I've got no pockets... I guess I'll just leave all my stuff here in the locker. )</i>
@@ -5323,10 +5323,10 @@ msgstr "（うまくいった！）"
 
 #. src: dialog
 #. rich_text: <i>(It'd be wrong to take a picture of her while she's knocked out... but It'd save her... Ugh... maybe I should just flash him instead...)</i>
-#. rich_translation: <i>（気絶してる彼女を写真に撮るのは良くないけど…それで助かるんだ…はぁ…いっそ、彼にフェラしてやった方がマシか…）</i>
+#. rich_translation: <i>（気絶してる彼女を写真に撮るのは良くないけど…それで助かるんだ…はぁ…いっそ、彼に胸でも見せた方がマシか…）</i>
 msgctxt "ui"
 msgid "(It'd be wrong to take a picture of her while she's knocked out... but It'd save her... Ugh... maybe I should just flash him instead...)"
-msgstr "（気絶してる彼女を写真に撮るのは良くないけど…それで助かるんだ…はぁ…いっそ、彼にフェラしてやった方がマシか…）"
+msgstr "（気絶してる彼女を写真に撮るのは良くないけど…それで助かるんだ…はぁ…いっそ、彼に胸でも見せた方がマシか…）"
 
 #. src: dialog
 #. rich_text: <i>(It'll hurt her if I just pull the thing off. I've gotta get it under control somehow... but how?)</i>
@@ -7273,10 +7273,10 @@ msgstr "（あるいは……たくさん……）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(P-... perverthh... )</i></color>
-#. rich_translation: <color=#EB83FF><i>（い…いじわる…！）</i></color>
+#. rich_translation: <color=#EB83FF><i>（へ…変態…っ…）</i></color>
 msgctxt "ui"
 msgid "(P-... perverthh... )"
-msgstr "（い…いじわる…！）"
+msgstr "（へ…変態…っ…）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Paid just to be... Looked at...?)</i></color>
@@ -8484,10 +8484,10 @@ msgstr "（きっと「光る穴」に一つくらいあるはずだよね？ク
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Swallowing squirt...?!)</i></color>
-#. rich_translation: <color=#EB83FF><i>（中出しされた…？！）</i></color>
+#. rich_translation: <color=#EB83FF><i>（潮を飲んじゃった…？！）</i></color>
 msgctxt "speaker:Zoey"
 msgid "(Swallowing squirt...?!)"
-msgstr "（中出しされた…？！）"
+msgstr "（潮を飲んじゃった…？！）"
 
 #. src: dialog
 #. rich_text: (T-this <color=#EB83FF>lewd stuff</color>... )
@@ -11483,12 +11483,12 @@ msgstr "2Dの光がそれに届く："
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "2nd Agree Dialogue"
-msgstr "重要：行番号（例：「2. 」）を翻訳に含めないでください。回答は翻訳テキストのみで、番号、引用符、説明は一切不要です。"
+msgstr "2回目の同意ダイアログ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "2nd Dialogue"
-msgstr "重要：行番号（例：「2. 」）を翻訳に含めないでください。回答は翻訳テキストのみで。"
+msgstr "2回目のダイアログ"
 
 #. src: us
 msgctxt "ui"
@@ -11624,10 +11624,10 @@ msgstr ":: 性的準備がまもなく…開始されます…性的強度は…
 
 #. src: dialog
 #. rich_text: <i>:: T-T-T-T- Welcome to- Welc- Welcome to Slutbox! Error: No destination... Correc- Correcting- ::</i>
-#. rich_translation: <i>T-T-T-T- ようこそ――ようこそ、スラットボックスへ！エラー：目的地がありません……修正中――</i>
+#. rich_translation: <i>T-T-T-T- ようこそ――ようこそ、Slutboxへ！エラー：目的地がありません……修正中――</i>
 msgctxt "ui"
 msgid ":: T-T-T-T- Welcome to- Welc- Welcome to Slutbox! Error: No destination... Correc- Correcting- ::"
-msgstr "T-T-T-T- ようこそ――ようこそ、スラットボックスへ！エラー：目的地がありません……修正中――"
+msgstr "T-T-T-T- ようこそ――ようこそ、Slutboxへ！エラー：目的地がありません……修正中――"
 
 #. src: dialog
 #. rich_text: <i>:: Undressing process beginning shortly... Returning to route... Sexual preparations will begin after undressing... :: </i>
@@ -12663,7 +12663,7 @@ msgstr "お前みたいな可愛い子なら、切符の代金は…別の方法
 #. src: bundle
 msgctxt "ui"
 msgid "A pussy."
-msgstr "ちんぽ。"
+msgstr "マンコ。"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -13074,7 +13074,7 @@ msgstr "あっ！ごめん！"
 #. src: dialog
 msgctxt "ui"
 msgid "Act skank. Spank like skank."
-msgstr "下品な女みたいに振る舞え。下品な女みたいに平手打ちされろ。"
+msgstr "淫乱女のように振る舞え。淫乱女のように叩け。"
 
 #. src: dialog
 msgctxt "ui"
@@ -14894,7 +14894,7 @@ msgstr "Mynxも無効にする"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Also add Move Restraint"
-msgstr "拘束を解除する"
+msgstr "移動拘束も追加"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -15620,7 +15620,7 @@ msgstr "君のためなら、何だって…～"
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Anything to feel your *hic* fat ass, god yessh."
-msgstr "君の*ヒク*太ももを触って、神様、そうよ！"
+msgstr "君の*ヒク*分厚いケツを触れるなら、神様、そうだ！"
 
 #. src: dialog
 msgctxt "ui"
@@ -15899,7 +15899,7 @@ msgstr "もう2周目に入ってる？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Are we on the Bunnysuit Mission?"
-msgstr "今、バニースーツ任務中？"
+msgstr "今、バニー服任務中？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -16532,7 +16532,7 @@ msgstr "尻裸 - 片手で男をまさぐり"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "AssNude - 1 Hand Touching Male"
-msgstr "男性の尻の裸体 - 手が1つ触れている"
+msgstr "尻裸 - 片手で男性に触れる"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -16567,7 +16567,7 @@ msgstr "PinupUnlockUIにNotificationリファレンスを割り当ててくだ�
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Assistant"
-msgstr "重要：空の回答は不可。この行を翻訳してください。"
+msgstr "アシスタント"
 
 #. src: us
 msgctxt "ui"
@@ -16756,7 +16756,7 @@ msgstr "あぁぁ、この小さなウェイトレスちゃん、えへへ！か
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Awkward After Guard Grope in Neon Rise"
-msgstr "不自然なネオンライズのガード後のまさぐり"
+msgstr "不自然なネオン・ライズのガード後のまさぐり"
 
 #. src: dialog
 msgctxt "ui"
@@ -16776,7 +16776,7 @@ msgstr "ああ、もう。そんな目で見ないでよ。俺のチンポ、気
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Aww come on, it was just getting fun, whore!"
-msgstr "ああ、もうやめてよ、今ちょうど面白くなってきたところだったのに、この売女！"
+msgstr "おいおい、これから楽しくなるところだったのに、この売女！"
 
 #. src: dialog
 msgctxt "ui"
@@ -17045,7 +17045,7 @@ msgstr "裏部屋の片付け"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Backroom Trigger"
-msgstr "バックルームのトリガー"
+msgstr "裏部屋のトリガー"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17285,7 +17285,7 @@ msgstr "裸になれ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Be naked at Glowing Hole entrance"
-msgstr "輝く穴の入り口で裸になって"
+msgstr "光る穴の入り口で裸になって"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17305,7 +17305,7 @@ msgstr "ハックを完了する間は裸でいろ"
 #. src: dialog
 msgctxt "ui"
 msgid "Be professional"
-msgstr "彼にお金をケツに突っ込むように言え。"
+msgstr "プロらしくしろ。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17606,7 +17606,7 @@ msgstr "ブラックボディマーカー"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Black Bunnysuit"
-msgstr "ブラック・バニーズーツ"
+msgstr "ブラック・バニー服"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -18097,7 +18097,7 @@ msgstr "バニー服 - 200%"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Bunnysuit Dialogue"
-msgstr "バニーガールのセリフ"
+msgstr "バニー服のセリフ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -18827,7 +18827,7 @@ msgstr "ExternalCanForwardが設定されているため、ダイアログを先
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Can't fuckin' count 'nymore, ahah! Here! Take whateva' u want and stretch your little asshole for me!"
-msgstr "もう数えきれねえよ、あはは！ほら！欲しいものだけ持ってけ、俺のためにそのちんぽを拡張してやれ！"
+msgstr "もう数えきれねえよ、あはは！ほら！欲しいものだけ持ってけ、俺のためにその小さなケツ穴を広げてみせろ！"
 
 #. src: dialog
 msgctxt "speaker:Salesman"
@@ -20097,7 +20097,7 @@ msgstr "じゃあ、私についてきて。この件を片付けるまで、私
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Come'onnn... I'll make it worth'ya timee... *hic*..."
-msgstr "ちくしょう…ちゃんと価値ある時間にしてやるから…*ヒク*…"
+msgstr "なあなあ…ちゃんと価値ある時間にしてやるからな…*ヒク*…"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21009,7 +21009,7 @@ msgstr "うわぁ、照れくさそうな依頼主って最高に可愛い！ダ
 #. src: dialog
 msgctxt "ui"
 msgid "D'aww, just fucking with ya, periguete. Heard the boss is letting puta's snort glow off his cock today."
-msgstr "ああ、ただの冗談だよ、ペリグエテ。ボスが今日、このビッチの鼻からコックの光を吸わせるらしいって聞いたんだ。"
+msgstr "ああ、ただの冗談だよ、ペリグエテ。ボスが今日、このビッチに自分のチンポからグロウを吸わせるらしいって聞いたんだ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -21079,7 +21079,7 @@ msgstr "ダイアログ - ログ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DIALOGUE - SKIP"
-msgstr "翻訳"
+msgstr "ダイアログ - スキップ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21994,12 +21994,12 @@ msgstr "リオはクラウディアを誘い出すために酔っ払ったのか
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did Mouth Gag"
-msgstr "マウスギャグは？"
+msgstr "口にギャグを付けた？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did Mouth Gag?"
-msgstr "口で窒息した？"
+msgstr "口にギャグを付けた？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22119,7 +22119,7 @@ msgstr "前に片付けを手伝ってほしいって頼んだっけ？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did backroom Scolding?"
-msgstr "バックルームで叱られた？"
+msgstr "裏部屋で叱られた？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22589,7 +22589,7 @@ msgstr "彼女の胸を露出させたかな？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did we grab the Bunnysuit already?"
-msgstr "バニースーツはもう手に入れたの？"
+msgstr "バニー服はもう手に入れたの？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22614,7 +22614,7 @@ msgstr "覗き見したっけ？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did we pick up Bunnysuit?"
-msgstr "バニーシートの件は済んだの？"
+msgstr "バニー服の件は済んだの？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22782,7 +22782,7 @@ msgstr "二人で中で楽しかったの？音からすると、楽しそうだ
 #. src: dialog
 msgctxt "ui"
 msgid "Did you two see that Slutbox? Thing looked like it was gonna explode. Had the enforcers chasing after it."
-msgstr "お前ら二人、あのスラットボックス見たか？まるで爆発しそうだったぜ。執行官どもが追いかけてきてたしな。"
+msgstr "お前ら二人、あのSlutbox見たか？まるで爆発しそうだったぜ。執行官どもが追いかけてきてたしな。"
 
 #. src: dialog
 msgctxt "ui"
@@ -22829,12 +22829,12 @@ msgstr "彼女が奴らの変態的な要求に屈するまで、そう時間は
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Didn't the Glowing Hole have a break-in?"
-msgstr "発光する穴に侵入者はいなかったのか？"
+msgstr "光る穴に侵入者はいなかったのか？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Didnt Clean Dialogue"
-msgstr "会話の修正が完了していません"
+msgstr "掃除していない会話"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23111,7 +23111,7 @@ msgstr "セルフを無効にする"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Disable the Bunnysuit Visuals"
-msgstr "バニービジュアルを無効にする"
+msgstr "バニー服ビジュアルを無効にする"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23226,7 +23226,7 @@ msgstr "配信パフォーマンス："
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "District's toy was already prepped. Strapped in. Begging. Ugh! Fucking terrorists. I just want to grope some bitch so bad."
-msgstr "地区の玩具はすでに準備済み。固定されて、懇願している。くそっ！クソテロリストども。俺はただ、どこかの女をめちゃくちゃに犯したいだけなんだ。"
+msgstr "地区の玩具はすでに準備済み。固定されて、懇願している。くそっ！クソテロリストども。俺はただ、どこかの女をめちゃくちゃにまさぐりたいだけなんだ。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23246,7 +23246,7 @@ msgstr "叩くべきか、それとも…"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Do I suck?"
-msgstr "俺がしゃぶるの、ダメ？"
+msgstr "私がしゃぶるの、ダメ？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -24399,7 +24399,7 @@ msgstr "ジェイミーをネオン・ライズで降ろして"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Drop hammer item"
-msgstr "ドロップハンマーをアイテムとして捨てる"
+msgstr "ハンマーアイテムを落とす"
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
@@ -25079,7 +25079,7 @@ msgstr "シークエンスを有効にする"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enable Simon did clean 101 Room Check"
-msgstr "エンアブル・サイモンが101号室のチェックを完了した"
+msgstr "サイモンが101号室を掃除したかのチェックを有効にする"
 
 #. src: settings
 msgctxt "ui"
@@ -25294,7 +25294,7 @@ msgstr "執行官"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enforcer 1025"
-msgstr "エンフォーサー1025"
+msgstr "執行官1025"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25389,7 +25389,7 @@ msgstr "執行官はゾーイの胸に手を置いた。"
 #. src: dialog
 msgctxt "ui"
 msgid "Enforcer rubs her fingers over Zoeys clothed pussy"
-msgstr "エンフォーサーはゾーイの服をまとった秘部を指でなぞった"
+msgstr "執行官はゾーイの服をまとった秘部を指でなぞった"
 
 #. src: dialog
 msgctxt "ui"
@@ -25549,7 +25549,7 @@ msgstr "ネイルサロンに入る"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Enter the SLUT Box"
-msgstr "スラットボックスに入れ"
+msgstr "SLUTボックスに入る"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25855,7 +25855,7 @@ msgstr "でも、掻くんじゃなくて、自分をめちゃくちゃ撫でて
 #. src: dialog
 msgctxt "ui"
 msgid "Excited, Evil, lowkey manic"
-msgstr "そうよ……その調子……ここがあなたの居場所なの。もっともっと破滅したいんでしょ……！言って、このクソビッチ！"
+msgstr "興奮、邪悪、どこか躁的。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -26736,12 +26736,12 @@ msgstr "フェムボーイ・バニー服・デカチン"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Femboy Bunnysuit Jay"
-msgstr "フェムボーイのバニースーツを着たジェイ"
+msgstr "フェムボーイのバニー服を着たジェイ"
 
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Femboy Bunnysuit MediumDick"
-msgstr "フェムボーイ・バニーズーツ・ミディアムディック"
+msgstr "フェムボーイ・バニー服・ミディアムディック"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -26785,10 +26785,10 @@ msgstr "女性的"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Fff-! Fuck fuck fuck!! Hahh!! I'm- ngh- cumming...!</color>
-#. rich_translation: <color=#EB83FF>ふっっ！クソ、クソ、クソッ！！はぁっ！！俺は…んっ…イッてる…！</color>
+#. rich_translation: <color=#EB83FF>ふっっ！クソ、クソ、クソッ！！はぁっ！！私…んっ…イッてる…！</color>
 msgctxt "speaker:Zoey"
 msgid "Fff-! Fuck fuck fuck!! Hahh!! I'm- ngh- cumming...!"
-msgstr "ふっっ！クソ、クソ、クソッ！！はぁっ！！俺は…んっ…イッてる…！"
+msgstr "ふっっ！クソ、クソ、クソッ！！はぁっ！！私…んっ…イッてる…！"
 
 #. src: dialog
 #. rich_text: Ff<color=#EB83FF>ff... So hot...</color>
@@ -27938,7 +27938,7 @@ msgstr "クソ最高、バニーガール！俺がどうやって突っ込まれ
 #. src: dialog
 msgctxt "ui"
 msgid "Fuck yes Zoey! Make real sure I don't rat your ass out for whoring around and stealing Klaudias commission, ahaha!"
-msgstr "最高だぜ、ゾーイ！俺がクラウディアのコミッションを盗んで売春してたって、お前の尻を売ったりしないって、ちゃんと覚えとけよ、あはは！"
+msgstr "最高だぜ、ゾーイ！俺がお前を売春とクラウディアの取り分を盗んだ件で密告しないよう、ちゃんとしろよ、あはは！"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -28000,7 +28000,7 @@ msgstr "ちくしょう、可愛いじゃないか。こいつとそっくりだ
 #. src: dialog
 msgctxt "ui"
 msgid "Fuck- I- Ah-"
-msgstr "犯して——！あ——！"
+msgstr "クソ…私…あ…"
 
 #. src: dialog
 #. rich_text: Fuck... I can't... ca<color=#EB83FF>n't stop myself...</color>
@@ -28141,7 +28141,7 @@ msgstr "Futereswear スキントイトV2手袋"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Futereswear Straps Black"
-msgstr "フテレスイアーストラップ ブラック"
+msgstr "Futereswearーストラップ ブラック"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -29037,7 +29037,7 @@ msgstr "グロウ。マッサージオイルのタンクの中。彼らがそれ
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Glowing Hole"
-msgstr "光り輝く穴"
+msgstr "光る穴"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -29102,7 +29102,7 @@ msgstr "光る穴 201 覗き込み 3 エッチ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Glowing Hole Advertisement"
-msgstr "発光する穴の広告"
+msgstr "光る穴の広告"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -29112,7 +29112,7 @@ msgstr "光る穴のバー、2階のスプライト形状プロファイル"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Glowing Hole Bar Floor SpriteShapeProfile"
-msgstr "発光する穴のバー床スプライト形状プロファイル"
+msgstr "光る穴のバー床スプライト形状プロファイル"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -29122,22 +29122,22 @@ msgstr "光る穴のバスルームのスプライト形状プロファイル"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Glowing Hole Room 103 Peeking Perversion"
-msgstr "発光する穴の部屋 103 覗き見の変態"
+msgstr "光る穴の部屋 103 覗き見の変態性"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Glowing Hole Room 105 Peeking Perversion"
-msgstr "発光する穴の部屋 105 覗き見の性癖"
+msgstr "光る穴の部屋 105 覗き見の性癖"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Glowing Hole Room 201 Peeking Perversion"
-msgstr "発光する穴の部屋 201 覗き見の変態"
+msgstr "光る穴の部屋 201 覗き見の変態性"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Glowing Hole Tile SpriteShapeProfile"
-msgstr "発光する穴のタイルのスプライト形状プロファイル"
+msgstr "光る穴のタイルのスプライト形状プロファイル"
 
 #. src: dialog
 #. rich_text: Glowing Hole? Who cares about that old used hole, <b>Euphora </b>is where the money
@@ -29231,7 +29231,7 @@ msgstr "厨房の奥にある裏部屋に入ろう。"
 #. src: dialog
 msgctxt "speaker:Klaudia"
 msgid "Go on and put your bunnysuit on now."
-msgstr "さあ、早くバニーズーツを着なさい。"
+msgstr "さあ、早くバニー服を着なさい。"
 
 #. src: dialog
 msgctxt "ui"
@@ -29266,7 +29266,7 @@ msgstr "レベルへ進む"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Go to the Glowing Hole via the Train"
-msgstr "列車で発光する穴へ向かえ"
+msgstr "列車で光る穴へ向かえ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -31385,7 +31385,7 @@ msgstr "ふふ……うん……"
 #. src: dialog
 msgctxt "ui"
 msgid "Heheh. Whatever you say, hun. You look like they treated you rough. Are you okay?"
-msgstr "ふふふ…あなたの言う通りよ、ハニー。そのスーツを着て働きたいなら、そうするしかないわね。ひどい目に遭わされたみたいだけど…大丈夫？"
+msgstr "ふふふ…言う通りにするわ、ハニー。ひどく扱われたみたいね。大丈夫？"
 
 #. src: dialog
 msgctxt "speaker:Leona"
@@ -31462,7 +31462,7 @@ msgstr "最高！投稿させて！"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Hello Gorgeous Bottom"
-msgstr "こんにちは、美しいお尻さん"
+msgstr "Hello Gorgeous ボトム"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -32551,7 +32551,7 @@ msgstr "電話を隠す"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Hide hammer pickup"
-msgstr "ハマーの拾得を隠す"
+msgstr "ハンマーの拾得を隠す"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -33694,7 +33694,7 @@ msgstr "言ったよ！ところで、この「発信者番号表示」ってや
 #. src: dialog
 msgctxt "ui"
 msgid "I did, was hoping for some privacy while-... filming."
-msgstr "うん、光の橋のレバーは引いたよ。それで、こっそり…撮影しようと思ってたんだ。"
+msgstr "うん、撮影中は…少し一人になりたかったんだ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -33719,7 +33719,7 @@ msgstr "本当…？"
 #. src: dialog
 msgctxt "ui"
 msgid "I don"
-msgstr "わからないの？私の指紋もあなたの鍵に紐付いてるのよ、バカ！"
+msgstr "わ、私…"
 
 #. src: dialog
 #. rich_text: I don't care about the intruiges between you and the cartel. However. You <b>will</b> make up for the damage you caused me, Madison. <b>Understood</b>?!
@@ -34955,7 +34955,7 @@ msgstr "静寂の中で、私は途方に暮れている"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "I'm not a whore, you fucking asshole!"
-msgstr "俺は売女なんかじゃない、このクソ野郎！"
+msgstr "私は売女なんかじゃない、このクソ野郎！"
 
 #. src: dialog
 #. rich_text: I'm <b>not</b> eager to... show off!
@@ -34989,7 +34989,7 @@ msgstr "指が十分に長いのか自信がないけど……"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "I'm not sure that's a good idea.."
-msgstr "それって、いい考えだとは思うんだけど…"
+msgstr "それって、いい考えだとは思えないんだけど…"
 
 #. src: us
 msgctxt "ui"
@@ -35331,10 +35331,10 @@ msgstr "ご...ごめんなさい..."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I- I'm... a slut!</color>
-#. rich_translation: <color=#EB83FF>ち…ちんぽ…！</color>
+#. rich_translation: <color=#EB83FF>わ…私は…淫乱女…！</color>
 msgctxt "speaker:Zoey"
 msgid "I- I'm... a slut!"
-msgstr "ち…ちんぽ…！"
+msgstr "わ…私は…淫乱女…！"
 
 #. src: dialog
 msgctxt "speaker:Mira"
@@ -35713,7 +35713,7 @@ msgstr "わ…私は…"
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "I-... I'm-... gonna-"
-msgstr "だ…だめ…だめだ…"
+msgstr "俺…俺は…イきそう…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>I-... I've just... never seen something like this...</color>
@@ -36149,7 +36149,7 @@ msgstr "私の一番うざい客じゃなかったら…"
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "If it isn't my new favorite bunny... Come have a seat. Right here. My hands ache for your... company."
-msgstr "私の新しいお気に入りのウサギでなければ…さあ、座って。ちょうどここで。私の手はあなたの…仲間を渇望しているの。"
+msgstr "私の新しいお気に入りのウサギじゃないか…さあ、座りなさい。ここに。私の手はあなたの…そばにいることを待ち焦がれているの。"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -36245,7 +36245,7 @@ msgstr "もし望むなら…私も…振り返ることができるけど…"
 #. src: dialog
 msgctxt "ui"
 msgid "If you wanted some perversion, you could've just asked~"
-msgstr "変態的なものが欲しかったなら、ただ聞けばよかったのにね～"
+msgstr "変態性的なものが欲しかったなら、ただ聞けばよかったのにね～"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>If you're not quite sure these pics are cutting it, maybe you could... like... go a step further.</color>
@@ -36508,7 +36508,7 @@ msgstr "InputManager: 「をバインド"
 #. src: dialog
 msgctxt "ui"
 msgid "Insecure about being called hot in front of a customer, sexualizing her in a positive way."
-msgstr "客の前でセクシーだなんて呼ばれて、自信がなくなる。"
+msgstr "客の前で熱いと褒められて戸惑う。ポジティブな意味で性的に扱われている。"
 
 #. src: dialog
 msgctxt "ui"
@@ -36528,7 +36528,7 @@ msgstr "運命を受け入れる前の、不安げな息遣い。"
 #. src: dialog
 msgctxt "ui"
 msgid "Insecure sound about being squirted on while eating nova out like crazy"
-msgstr "うわっ、ノヴァをめちゃくちゃ掘られて、その上、潮をかけられるなんて…！"
+msgstr "ノヴァを夢中で舐めているときに潮をかけられて、不安そうな声"
 
 #. src: dialog
 msgctxt "ui"
@@ -36813,7 +36813,7 @@ msgstr "ブラッドは終わったの？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Is Bunnysuit Mission Active?"
-msgstr "バニーミッションはアクティブですか？"
+msgstr "バニー服ミッションはアクティブですか？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -37228,7 +37228,7 @@ msgstr "彼女は君のもの？またワンワン吠えてる、君のペット
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Is slut service in progress?"
-msgstr "スlutサービスは進行中？"
+msgstr "淫乱サービスは進行中？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -37475,7 +37475,7 @@ msgstr "ボディライティングを着用していますか？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Is wearing Bunnysuit?"
-msgstr "バニーコスチュームを着てる？"
+msgstr "バニー服を着てる？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -38401,7 +38401,7 @@ msgstr "ジョーダン"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jork it"
-msgstr "終わらせろ"
+msgstr "シコれ。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -40105,7 +40105,7 @@ msgstr "彼に体をまさぐらせて"
 #. src: dialog
 msgctxt "ui"
 msgid "Let him sniff your asshole and take his money."
-msgstr "彼にお前のケツを嗅がせて、金を奪わせろ。"
+msgstr "彼にお前のケツを嗅がせて、金を受け取れ。"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -40135,7 +40135,7 @@ msgstr "当ててみようか……隅にいる、無口で髭を生やした男
 #. src: dialog
 msgctxt "speaker:Klaudia"
 msgid "Let me know if you become interested in the service line of work. You certainly have the... proportions to make us a lot of money."
-msgstr "サービス業に興味を持ったなら教えて。君には、俺たちを大儲けさせてくれるような…体つきがあるからな。"
+msgstr "サービス業に興味を持ったら教えて。君には、私たちを大儲けさせてくれるような…体つきがあるから。"
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
@@ -40737,7 +40737,7 @@ msgstr "FPSを制限して"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Line 1"
-msgstr "1行目の翻訳"
+msgstr "1行目"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -40747,7 +40747,7 @@ msgstr "2."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Line 3"
-msgstr "翻訳"
+msgstr "3行目"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -41267,7 +41267,7 @@ msgstr "左を見て"
 #. src: dialog
 msgctxt "speaker:Look"
 msgid "Look perversion"
-msgstr "変態を見ろ"
+msgstr "変態性を見ろ"
 
 #. src: dialog
 msgctxt "speaker:Rugnar"
@@ -41537,10 +41537,10 @@ msgstr "私も愛してるわ、Z。前を向いて進もう、ね？"
 
 #. src: dialog
 #. rich_text: Lovely! Don't be afraid to let them know about your fantasies. You'll find our staff to be most  <i>qualified</i>.~
-#. rich_translation: <i>素敵ね！</i>遠慮なく彼らに自分の妄想を伝えれば大丈夫。うちのスタッフなら、きっとあなたの夜を忘れられないものにしてあげるから。
+#. rich_translation: <i>素敵ね！</i>遠慮なく彼らに自分の妄想を伝えれば大丈夫。うちのスタッフはとても優秀よ。~
 msgctxt "ui"
 msgid "Lovely! Don't be afraid to let them know about your fantasies. You'll find our staff to be most  qualified.~"
-msgstr "素敵ね！遠慮なく彼らに自分の妄想を伝えれば大丈夫。うちのスタッフなら、きっとあなたの夜を忘れられないものにしてあげるから。"
+msgstr "素敵ね！遠慮なく彼らに自分の妄想を伝えれば大丈夫。うちのスタッフはとても優秀よ。~"
 
 #. src: dialog
 msgctxt "ui"
@@ -42255,7 +42255,7 @@ msgstr "オナニーして"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Masturbate Sarah"
-msgstr "サラを自慰する"
+msgstr "サラを自慰させる"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -42415,7 +42415,7 @@ msgstr "じゃあ、外に出た方がいいかもね。そこでなら、誰も
 #. src: dialog
 msgctxt "ui"
 msgid "Maybe we should~"
-msgstr "うーん、彼女をイかせてあげた方がいいかもね～"
+msgstr "もしかしたら、私たち～"
 
 #. src: dialog
 msgctxt "ui"
@@ -42525,7 +42525,7 @@ msgstr "俺？本気か？！"
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "Me? Uh-... Nothing. I'm just taking a walk."
-msgstr "俺？ええと……別に。ただ散歩してるだけだよ。"
+msgstr "私？ええと……別に。ただ散歩してるだけだよ。"
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -42724,7 +42724,7 @@ msgstr "うーん……良い選択ね。二人にとって最善よ。"
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Mhh... Tha's worth the tip, ehehe... *hic*..."
-msgstr "うーん……チップは十分もらえたわね、えへへ……*ヒック*……"
+msgstr "うーん……チップは十分もらえたぜ、えへへ……*ヒック*……"
 
 #. src: dialog
 #. rich_text: <size=27>Mhh... That's good... See you next time, slut.
@@ -42959,7 +42959,7 @@ msgstr "うん……その通りよ、バニー。私の手、最高に気持ち
 #. src: dialog
 msgctxt "speaker:Customer"
 msgid "Mhmm... thesh heels look so hoth on you..."
-msgstr "うん……そのヒール、すごくセクシーに見えるわ……"
+msgstr "うん……そのヒール、すごくセクシーだぜ……"
 
 #. src: dialog
 msgctxt "ui"
@@ -43279,12 +43279,12 @@ msgstr "グロリーホールにいるミストレスとゾーイ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Mistress choking Zoey"
-msgstr "女主人がゾーイを絞め殺している"
+msgstr "女主人がゾーイの首を絞めている"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Mix of annoyed and insecure."
-msgstr "ジャケットが私の公務の邪魔になる。脱がなきゃ。今すぐ。"
+msgstr "イライラと不安が混ざっている。"
 
 #. src: dialog
 msgctxt "ui"
@@ -43374,7 +43374,7 @@ msgstr "うーん…いいウサギ娘だな…"
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Mmhh... Last bunny didn't have such a nice tight slap, you're just perfect, bunnybitch."
-msgstr "うーん…前のウサギはこんなにきつく締まってなかったけど、君は完璧だ、ウサギのクソ野郎。"
+msgstr "うーん…前のウサギはこんなにきつく締まってなかったけど、君は完璧だ、ウサギの牝犬。"
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -44652,7 +44652,7 @@ msgstr "うわ…ほら、汗かいてるじゃないの、えへへ。その上
 #. src: dialog
 msgctxt "speaker:Zoey"
 msgid "My... Look at you, Skank. All covered with nasty, slimy tentacles. You want them, don't you?"
-msgstr "私の……見てよ、スカンク。体中、気持ち悪いヌルヌルした触手に覆われてるじゃない。欲しいんでしょ、あれ？"
+msgstr "私の……見てよ、淫乱女。体中、気持ち悪いヌルヌルした触手に覆われてるじゃない。欲しいんでしょ、あれ？"
 
 #. src: dialog
 msgctxt "ui"
@@ -44715,7 +44715,7 @@ msgstr "い、いえ！こんなもの、見たこともありません！"
 #. src: dialog
 msgctxt "ui"
 msgid "N-No! You're not getting paid to jerk off to that... picture..."
-msgstr "い、いえ！そんな…絵…を見てオナニーするなんて、報酬なんてもらいません！"
+msgstr "い、いや！そんな…絵…を見てオナニーするために金をもらってるんじゃない！"
 
 #. src: dialog
 msgctxt "speaker:Brad"
@@ -44787,11 +44787,11 @@ msgstr "N69ニュースの記者、ケイティ・バーンズです。ネオン
 
 #. src: dialog
 #. rich_text: <color=yellow>N69News:</color> Glowing Hole Robbery
-#. rich_translation: N69News：発光する穴強盗
+#. rich_translation: N69News：光る穴強盗
 #, rt-review
 msgctxt "ui"
 msgid "N69News: Glowing Hole Robbery"
-msgstr "N69News：発光する穴強盗"
+msgstr "N69News：光る穴強盗"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -45779,7 +45779,7 @@ msgstr "日の出もない、太陽も見えない"
 #. src: dialog
 msgctxt "ui"
 msgid "No sweat babe, you can keep it. I looove being used as fap material."
-msgstr "問題ないわ、ベイビー。持っておいていいのよ。犯されるネタにされるの、大好きなんだから。"
+msgstr "問題ないわ、ベイビー。持っておいていいのよ。オナニーのネタにされるの、大好きなんだから。"
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -46548,7 +46548,7 @@ msgstr "ノヴァ - 4 部屋はロックされています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Nova - 5 - Got Bunnysuit before Quest"
-msgstr "ノヴァ - 5 - クエスト前にバニースーツを手に入れた"
+msgstr "ノヴァ - 5 - クエスト前にバニー服を手に入れた"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -46558,7 +46558,7 @@ msgstr "ノヴァ - 5 - シャワー室に入る"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Nova - 5 Got Bunnysuit"
-msgstr "ノヴァ - 5 バニーコスチュームを手に入れた"
+msgstr "ノヴァ - 5 バニー服を手に入れた"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -47192,7 +47192,7 @@ msgstr "もちろん、約束は約束だ。ほら、これをセクシーな友
 #. src: dialog
 msgctxt "ui"
 msgid "Of course, but I can't just let the Cartel dismantle his girlfriend either."
-msgstr "もちろん、でもカテルに彼女の身を潰させるわけにもいかないし。"
+msgstr "もちろん、でもカルテルに彼女の身を潰させるわけにもいかないし。"
 
 #. src: dialog
 msgctxt "ui"
@@ -47526,7 +47526,7 @@ msgstr "うわっ！なんて美味しそうなウサギちゃんなんだ！"
 #. src: dialog
 msgctxt "ui"
 msgid "Oh my, this little slut just twitched when you mentioned her tits."
-msgstr "おや、この小娘、お前の胸について言っただけで、びくっとしたじゃないか。"
+msgstr "おや、この淫乱娘、お前の胸について言っただけで、びくっとしたじゃないか。"
 
 #. src: dialog
 msgctxt "ui"
@@ -48612,7 +48612,7 @@ msgstr "行を表示中"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "On Line Displaying 2"
-msgstr "重要：行番号（例：「2. 」）を翻訳に含めないでください。回答は翻訳テキストのみで。"
+msgstr "表示中の行 2"
 
 #. src: dialog
 msgctxt "ui"
@@ -48647,7 +48647,7 @@ msgstr "最初からドアを探す任務？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "On Task to go to Glowing Hole"
-msgstr "発光する穴へ行く任務"
+msgstr "光る穴へ行く任務"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -49653,7 +49653,7 @@ msgstr "パテ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Path Femboy off screen"
-msgstr "オフスクリーンでフェムボーイのパス"
+msgstr "フェムボーイを画面外へ移動させる経路"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50008,17 +50008,17 @@ msgstr "変態のセリフ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Perversion Event Finished"
-msgstr "変態イベント終了"
+msgstr "変態性イベント終了"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Perversion Interference Profile"
-msgstr "変態干渉プロファイル"
+msgstr "変態性干渉プロファイル"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Perversion LVL:"
-msgstr "変態レベル："
+msgstr "変態性レベル："
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50550,7 +50550,7 @@ msgstr "プレイリマインダーのダイアログ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play Repeat Asking Dialogue"
-msgstr "再生、繰り返し、質問、会話"
+msgstr "繰り返し質問の会話を再生"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50665,7 +50665,7 @@ msgstr "服を着るよう促すセリフ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play ass dialogue"
-msgstr "尻のセックスのセリフをプレイする"
+msgstr "尻の会話を再生"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50675,7 +50675,7 @@ msgstr "鳴き声を再生する"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play boobs out dialogue"
-msgstr "胸を露わにしてセックスするセリフ"
+msgstr "胸を出す会話を再生"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -50965,7 +50965,7 @@ msgstr "ハブのダイアログをプレイする"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play in Backroom Dialogue"
-msgstr "バックルームでの会話でプレイする"
+msgstr "裏部屋での会話でプレイする"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51065,7 +51065,7 @@ msgstr "プレイループの会話"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play masturbate dialogue"
-msgstr "自慰のセックスシーンをプレイする"
+msgstr "自慰の会話を再生"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51340,7 +51340,7 @@ msgstr "座ってプレイする会話"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play slut service dialogue"
-msgstr "淫らな奉仕のセックスシーン"
+msgstr "淫乱サービスの会話を再生"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51385,12 +51385,12 @@ msgstr "タップゲームをプレイしよう"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play tell him"
-msgstr "彼にプレイして伝えて"
+msgstr "彼に伝えるを再生"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play tell him 2"
-msgstr "彼にプレイして伝えて"
+msgstr "彼に伝えるを再生 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51465,12 +51465,12 @@ msgstr "3つ目のクエストのダイアログをプレイする"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play top off repeat dialogue"
-msgstr "上の服を脱いで、セリフを繰り返して。"
+msgstr "上を脱ぐ繰り返し会話を再生"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Play try leave dialogue"
-msgstr "遊んで、試して、出ていけ、会話しろ"
+msgstr "去ろうとする会話を再生"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -51655,10 +51655,10 @@ msgstr "精液の入った保存剤を挿入してください。（機械）"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Please put your- um- cock between Rosies- boobs, s-sir...</color>
-#. rich_translation: <color=#EB83FF>ロージーさんの胸の間に、その…えっと…肉棒を入れてください、お、お父さん…</color>
+#. rich_translation: <color=#EB83FF>ロージーさんの胸の間に、その…えっと…肉棒を入れてください、お、お客様…</color>
 msgctxt "speaker:Zoey"
 msgid "Please put your- um- cock between Rosies- boobs, s-sir..."
-msgstr "ロージーさんの胸の間に、その…えっと…肉棒を入れてください、お、お父さん…"
+msgstr "ロージーさんの胸の間に、その…えっと…肉棒を入れてください、お、お客様…"
 
 #. src: dialog
 #. rich_text: <i>Please select a camera feed to view...</i>
@@ -51693,10 +51693,10 @@ msgstr "どうぞ、ダーリン。ここを自分の家のように感じてく
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Please, sir...! Please- Please cum-! Cumm...!</color>
-#. rich_translation: <color=#EB83FF>お願いです、旦那様…！お願い…イいて…！イいて…！</color>
+#. rich_translation: <color=#EB83FF>お願いです、旦那様…！お願い…イって…！イって…！</color>
 msgctxt "ui"
 msgid "Please, sir...! Please- Please cum-! Cumm...!"
-msgstr "お願いです、旦那様…！お願い…イいて…！イいて…！"
+msgstr "お願いです、旦那様…！お願い…イって…！イって…！"
 
 #. src: dialog
 msgctxt "ui"
@@ -53101,7 +53101,7 @@ msgstr "レッドライト・ステーション"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Redress"
-msgstr "再着"
+msgstr "服を着直す"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -53331,7 +53331,7 @@ msgstr "コライダーを削除する"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Remove int"
-msgstr "インテリジェントな思考を停止する"
+msgstr "intを削除"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -54642,7 +54642,7 @@ msgstr "ラウンド"
 #. src: us
 msgctxt "ui"
 msgid "Rub Pussy"
-msgstr "肉棒をこすれ"
+msgstr "マンコをこすれ"
 
 #. src: dialog
 msgctxt "ui"
@@ -54770,10 +54770,10 @@ msgstr "サービスは…サービスバニーだけのためです…旦那様
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>S-slap... slap m-me...</color>
-#. rich_translation: <color=#EB83FF>で…でで…でで…</color>
+#. rich_translation: <color=#EB83FF>た…叩いて…私を…</color>
 msgctxt "ui"
 msgid "S-slap... slap m-me..."
-msgstr "で…でで…でで…"
+msgstr "た…叩いて…私を…"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>S-so... much... ngh...</color>
@@ -55331,7 +55331,7 @@ msgstr "怖がらせてる？ただこの可愛いお嬢さんを褒めてるだ
 #. src: dialog
 msgctxt "ui"
 msgid "Scary screaming at zoey, trying to intimidate her."
-msgstr "ぞええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええ"
+msgstr "ゾーイに向かって怖い叫び声を上げ、威嚇しようとしている。"
 
 #. src: us
 msgctxt "ui"
@@ -55456,7 +55456,7 @@ msgstr "座った状態のアニメーションが再生されない！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Second Dialogue"
-msgstr "重要：行番号（例：「2. 」）を翻訳に含めないでください。回答は翻訳テキストのみで、番号付け、引用符、説明は一切不要です。"
+msgstr "2番目のダイアログ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -55471,7 +55471,7 @@ msgstr "第二の状態"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Second dialogue"
-msgstr "重要：行番号（例：「2. 」）を翻訳に含めないでください。回答は翻訳テキストのみで、番号付け、引用符、説明は一切不要です。"
+msgstr "2番目のダイアログ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57204,11 +57204,11 @@ msgstr "守護者たちに会えて、喜ぶべきじゃないのか？"
 
 #. src: dialog
 #. rich_text: Shouldn't you be nicer to well tipping customers, <b>waitress</b>? Let me enjoy the view of your massive ass, if you want your tip!
-#. rich_translation: チップをくれる客にはもっと優しくするべきじゃないの？ウェイトレスさん。その巨大な尻を存分に楽しませてくれたら、チップもたっぷりもらえるわよ！
+#. rich_translation: チップをくれる客にはもっと優しくするべきだろ、<b>ウェイトレスさん</b>。その巨大な尻を存分に楽しませてくれたら、チップもたっぷりやるぜ！
 #, rt-review
 msgctxt "speaker:Trov"
 msgid "Shouldn't you be nicer to well tipping customers, waitress? Let me enjoy the view of your massive ass, if you want your tip!"
-msgstr "チップをくれる客にはもっと優しくするべきじゃないの？ウェイトレスさん。その巨大な尻を存分に楽しませてくれたら、チップもたっぷりもらえるわよ！"
+msgstr "チップをくれる客にはもっと優しくするべきだろ、ウェイトレスさん。その巨大な尻を存分に楽しませてくれたら、チップもたっぷりやるぜ！"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57233,7 +57233,7 @@ msgstr "オートセーブを表示"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show Backroom CutsceneTimeline"
-msgstr "バックルームのカットシーンタイムラインを表示する"
+msgstr "裏部屋のカットシーンタイムラインを表示する"
 
 #. src: dialog
 msgctxt "ui"
@@ -57283,7 +57283,7 @@ msgstr "FPSを表示"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Show Femboy sex"
-msgstr "フェムボーイとのセックスを見る"
+msgstr "フェムボーイのセックスを見せる"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58103,7 +58103,7 @@ msgstr "スモール・カープテック広告"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Small Perversion Brew"
-msgstr "小規模な変態醸造"
+msgstr "小規模な変態性醸造"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58876,7 +58876,7 @@ msgstr "どうやらデモンストレーションが見たいようですね。
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Source"
-msgstr "翻訳"
+msgstr "ソース"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58906,7 +58906,7 @@ msgstr "空間"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Space = Redress"
-msgstr "スペース = 再着"
+msgstr "スペース = 着直す"
 
 #. src: us
 msgctxt "ui"
@@ -59223,7 +59223,7 @@ msgstr "ノヴァの胸をじっと見つめた"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Stared at Rosies Tits"
-msgstr "ローゼの乳をじっと見つめた"
+msgstr "ロージーの乳をじっと見つめた"
 
 #. src: dialog
 msgctxt "ui"
@@ -59688,12 +59688,12 @@ msgstr "ステート1"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 10"
-msgstr "重要：行番号（例：「2. 」）を翻訳に含めないでください。回答は翻訳テキストのみで。"
+msgstr "状態 10"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 11"
-msgstr "重要：行番号（例：「2. 」）を翻訳に含めないでください。回答は翻訳テキストのみで、番号、引用符、説明は一切不要です。"
+msgstr "状態 11"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59703,12 +59703,12 @@ msgstr "ステート2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 3"
-msgstr "重要：翻訳に「2. 」のような行番号を含めないこと。回答は翻訳テキストのみ。"
+msgstr "状態 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 4"
-msgstr "重要：行番号（例：「2. 」）を翻訳に含めないでください。回答は翻訳テキストのみで。"
+msgstr "状態 4"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59718,22 +59718,22 @@ msgstr "5."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 6"
-msgstr "重要：行番号（例：「2. 」）を翻訳に含めないでください。回答は翻訳テキストのみで、番号、引用符、説明は一切不要です。"
+msgstr "状態 6"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 7"
-msgstr "重要：行番号（例：「2. 」）を翻訳に含めないこと。回答は翻訳テキストのみ。"
+msgstr "状態 7"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 8"
-msgstr "重要：行番号（例：「2. 」）を翻訳に含めないでください。回答は翻訳テキストのみで。"
+msgstr "状態 8"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 9"
-msgstr "重要：行番号（例：「2. 」）を翻訳に含めないでください。回答は翻訳テキストのみで。"
+msgstr "状態 9"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60007,7 +60007,7 @@ msgstr "ブラを脱がす"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Strip Leona"
-msgstr "レオナを剥ぎ取れ"
+msgstr "レオナを脱がせ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60359,12 +60359,12 @@ msgstr "スーツケースのバッドエンド — カルテルの隠れ家 —
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 10_line_15-FSM"
-msgstr "旅行カバンバッドエンド - カルテル隠れ家 - 10行目15-FSM"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 10_line_15-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 10_line_3-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 10_line_3-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60374,7 +60374,7 @@ msgstr "旅行カバンバッドエンド - カルテルの隠れ家 - 10行_4-F
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 10_line_7-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 10_line_7-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60384,7 +60384,7 @@ msgstr "旅行ケースのバッドエンド - カルテルの隠れ家 - 11"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 11_line_10-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 11_line_10-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60394,7 +60394,7 @@ msgstr "旅行鞄のバッドエンド - カルテルの隠れ家 - 13"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 13_line_3-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 13_line_3-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60434,7 +60434,7 @@ msgstr "旅行カバンバッドエンド - カルテルの隠れ家 - 16行目3
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 16_line_8-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 16_line_8-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60469,7 +60469,7 @@ msgstr "旅行かばんのバッドエンド - カルテルの隠れ家 - 18"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 18_line_3-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 18_line_3-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60479,7 +60479,7 @@ msgstr "「スーツケースのバッドエンド」——カルテルの隠れ
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 18_line_6-FSM"
-msgstr "旅行カバンバッドエンド - カルテル隠れ家 - 18行目6-FSM"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 18_line_6-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60524,7 +60524,7 @@ msgstr "旅行鞄のバッドエンド — カルテルの隠れ家 — 21行目
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 21_line_6-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 21_line_6-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60534,7 +60534,7 @@ msgstr "スーツケースのバッドエンド - カルテルの隠れ家 - 22"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 22_line_2-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 22_line_2-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60559,12 +60559,12 @@ msgstr "旅行カバンバッドエンド - カルテル隠れ家 - 23"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 23_line_2-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 23_line_2-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 23_line_6-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 23_line_6-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60579,7 +60579,7 @@ msgstr "旅行鞄のバッドエンド - カルテルの隠れ家 - 24"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 24_line_4-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 24_line_4-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60609,7 +60609,7 @@ msgstr "旅行ケースのバッドエンド - カルテルの隠れ家 - 27"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 27_line_7-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 27_line_7-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60624,7 +60624,7 @@ msgstr "旅行カバンバッドエンド - カルテル隠れ家 - 28行_0-FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 28_line_4-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 28_line_4-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60639,7 +60639,7 @@ msgstr "スーツケースのバッドエンド — カルテルの隠れ家 —
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 29_line_11-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 29_line_11-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60649,7 +60649,7 @@ msgstr "旅行鞄のバッドエンド - カルテルの隠れ家 - 29行目_4-F
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 29_line_8-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 29_line_8-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60689,12 +60689,12 @@ msgstr "旅行カバンバッドエンド - カルテル隠れ家 - 31行目_0-F
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 31_line_4-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 31_line_4-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 31_line_9-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 31_line_9-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60709,7 +60709,7 @@ msgstr "旅行カバンバッドエンド - カルテル隠れ家 - 32行目_0-F
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 32_line_9-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 32_line_9-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60724,7 +60724,7 @@ msgstr "旅行鞄のバッドエンド - カルテルの隠れ家 - 33行目_0-F
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 33_line_10-FSM"
-msgstr "翻訳"
+msgstr "スーツケースバッドエンド - カルテル隠れ家 - 33_line_10-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60973,7 +60973,7 @@ msgstr "驚いた"
 #. src: dialog
 msgctxt "ui"
 msgid "Surprised by the squirting between her legs. Losing her cool for a moment, being too loud"
-msgstr "彼女の太ももの間から噴き出す精液に驚き、一瞬冷静さを失い、声が大きくなりすぎた。"
+msgstr "彼女の脚の間から潮が噴き出して驚き、一瞬冷静さを失って声が大きくなりすぎた。"
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
@@ -61205,7 +61205,7 @@ msgstr "アニメーションを取る"
 #. src: dialog
 msgctxt "ui"
 msgid "Take Drugs"
-msgstr "薬を飲む"
+msgstr "薬を飲め"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -61940,7 +61940,7 @@ msgstr "ありがとう！自分で選んだんだからね！"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Thanasis"
-msgstr "ギャル"
+msgstr "タナシス"
 
 #. src: dialog
 msgctxt "ui"
@@ -62369,10 +62369,10 @@ msgstr "今や「お姉さん」なんて呼ばないでよ、えへへ！"
 
 #. src: dialog
 #. rich_text: That's "ma'am" to you, <b>bunny bitch</b>.
-#. rich_translation: 「お嬢様」だと？<b>このウサギ野郎。</b>
+#. rich_translation: アタシには「お嬢様」って呼びなさいよ、<b>このウサギの淫乱女。</b>
 msgctxt "speaker:Klaudia"
 msgid "That's \"ma'am\" to you, bunny bitch."
-msgstr "「お嬢様」だと？このウサギ野郎。"
+msgstr "アタシには「お嬢様」って呼びなさいよ、このウサギの淫乱女。"
 
 #. src: dialog
 msgctxt "ui"
@@ -62731,7 +62731,7 @@ msgstr "クーガーズ・デン"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "The Glowing Hole"
-msgstr "光り輝く穴"
+msgstr "光る穴"
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -62841,7 +62841,7 @@ msgstr "君の熱い体が俺の肉棒に与えている影響。"
 #. src: dialog
 msgctxt "ui"
 msgid "The enforcer begins to grope Zoeys Ass"
-msgstr "エンフォーサーはゾーイの尻をまさぐり始めた"
+msgstr "執行官はゾーイの尻をまさぐり始めた"
 
 #. src: us
 msgctxt "ui"
@@ -63060,7 +63060,7 @@ msgstr "でも、この障害物は相当大きいかもしれないわね。カ
 #. src: dialog
 msgctxt "ui"
 msgid "Then getting them was a total success, hehe."
-msgstr "で、入れてもらったの、大成功だったんだ、へへ。"
+msgstr "じゃあ、手に入れたのは大成功だったんだな、へへ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -65138,7 +65138,7 @@ msgstr "う、うーん…私、無理です。"
 #. src: dialog
 msgctxt "ui"
 msgid "U-Uh- Yes... m-madam?"
-msgstr "う…ええ…か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か、か"
+msgstr "う…ええ…お、奥様？"
 
 #. src: dialog
 msgctxt "ui"
@@ -65994,17 +65994,17 @@ msgstr "ゾーイの服を脱がせ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Undress and play dialogue"
-msgstr "服を脱いで、セックスしよう"
+msgstr "服を脱いで会話を再生"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Undress and play dialogue 2"
-msgstr "服を脱いでセックスする会話2"
+msgstr "服を脱いで会話を再生 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Undress and play dialogue 3"
-msgstr "服を脱いでセックスしよう"
+msgstr "服を脱いで会話を再生 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -66803,12 +66803,12 @@ msgstr "ヴァレン・コス"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Varen Order 2 - 1 Currency"
-msgstr "ヴァレン・オーダー2 - 1通貨"
+msgstr "ヴァレンの注文2 - 1通貨"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Varen Order 2 - 2 Currency"
-msgstr "ヴァレン・オーダー2 - 2通貨"
+msgstr "ヴァレンの注文2 - 2通貨"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67990,7 +67990,7 @@ msgstr "ゲームの初期化を待っています"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for has items"
-msgstr "アイテムがあるか待って"
+msgstr "アイテム所持を待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68342,7 +68342,7 @@ msgstr "順番を待って"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for unsit"
-msgstr "座らないで待って"
+msgstr "立ち上がるのを待つ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -69353,7 +69353,7 @@ msgstr "アンドロの精液を良いザーメン受け入れ体みたいに纏
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wearing Bunnysuit?"
-msgstr "バニーコスチュームを着てるの？"
+msgstr "バニー服を着てるの？"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -69368,22 +69368,22 @@ msgstr "アフターグロウへようこそ、可愛い子ちゃん！～ ロ�
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Welcome to the Glowing Hole"
-msgstr "光り輝く穴へようこそ"
+msgstr "光る穴へようこそ"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Welcome to the Glowing Hole 2"
-msgstr "輝く穴へようこそ 2"
+msgstr "光る穴へようこそ 2"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Welcome to the Glowing Hole!"
-msgstr "光り輝く穴へようこそ！"
+msgstr "光る穴へようこそ！"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Welcome to the Glowing Hole! I love your hair!"
-msgstr "輝く穴へようこそ！君の髪型、大好き！"
+msgstr "光る穴へようこそ！君の髪型、大好き！"
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
@@ -72098,7 +72098,7 @@ msgstr "うん、まあ……もしもを悩んでる場合じゃないよ。"
 #. src: dialog
 msgctxt "ui"
 msgid "Yeah, well... We'll see how the Cartel reacts to me coming back empty handed."
-msgstr "うん、まあ…カテルが俺の空手帰りを見てどう反応するか、見ものだな。"
+msgstr "うん、まあ…カルテルが俺の空手帰りを見てどう反応するか、見ものだな。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -72910,7 +72910,7 @@ msgstr "ボスの言う通りにした方がいいわよ。そうすれば借金
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "You better not. I'd hate to have to lock a hot citizen like you into that lab- I mean prison, ehehe."
-msgstr "そんなことしない方がいいわ。あなたみたいなホットな市民をあの研究所に——いや、刑務所に閉じ込めるなんて、ごめんなさい、えへへ。"
+msgstr "そんなことしない方がいい。あなたみたいな熱い市民をあの研究所に——いや、刑務所に閉じ込めるなんて、ごめんだ、えへへ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -72920,7 +72920,7 @@ msgstr "まったくその通りよ～"
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "You both make me hard."
-msgstr "お前ら二人とも、俺を硬くさせるな。"
+msgstr "お前ら二人とも、俺を硬くさせる。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -73871,7 +73871,7 @@ msgstr "新入りか。"
 #. src: dialog
 msgctxt "ui"
 msgid "You're not cut out for merc work, loser girl. But this... mmm, you're right at home."
-msgstr "売春の仕事には向いてないわよ、負け犬の女の子。でもこれなら……うん、ちょうどいい感じね。"
+msgstr "傭兵の仕事には向いてないな、負け犬の女の子。でもこれなら……うん、うってつけだ。"
 
 #. src: dialog
 #. rich_text: You're not here for drinks.. <i>Yet</i>..~
@@ -74541,7 +74541,7 @@ msgstr "トリガーの内部にいるゾーイ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Zoey in the SlutBox"
-msgstr "スラットボックスの中のゾーイ"
+msgstr "Slutboxの中のゾーイ"
 
 #. src: dialog
 msgctxt "ui"
@@ -75586,7 +75586,7 @@ msgstr "何を確認しに行くつもりなんだ？"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "m here for the cute boys."
-msgstr "ここで可愛い男の子たちをmにして。"
+msgstr "可愛い男の子たちに会いに来たのよ。"
 
 #. src: dialog
 msgctxt "ui"
@@ -75924,7 +75924,7 @@ msgstr "会話3をプレイする"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "play lie dialogue"
-msgstr "嘘をついてプレイする"
+msgstr "嘘のセリフを再生"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76242,7 +76242,7 @@ msgstr "ヒントを表示する"
 #. src: dialog
 msgctxt "ui"
 msgid "shy and polite. catching on to what max is implying now."
-msgstr "は、はぁ…本当に？それに、私と一緒なら、客はいつも正しいの。あなたが望むなら、どんな私にもなれるわ。男でも、女でも、それ以外でも。"
+msgstr "恥ずかしそうで礼儀正しい。マックスの言いたいことに、今、気づき始めている。"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76317,7 +76317,7 @@ msgstr "何も残さないで"
 #. src: dialog
 msgctxt "ui"
 msgid "t mention it. It"
-msgstr "うん。ただのフラットな…"
+msgstr "気にしないで。それに…"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76657,7 +76657,7 @@ msgstr "yakiq - @therealyakiq"
 #. src: dialog
 msgctxt "ui"
 msgid "yalready know what the reference is here."
-msgstr "ああ、彼女は本当に可愛い！全部の猫ちゃんを撫でたいな。"
+msgstr "もう分かってるだろ、ここでの元ネタは。"
 
 #. src: dialog
 msgctxt "ui"

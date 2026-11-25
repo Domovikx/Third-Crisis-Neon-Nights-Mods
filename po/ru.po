@@ -29,17 +29,17 @@ msgstr "«ХЕР»...? Серьёзно...?"
 
 #. src: dialog
 #. rich_text: <i>"However, the Blocker can deliver an infinite number of injections. Just needs a day to recharge between each dose."
-#. rich_translation: <i>"Однако Блокатор может сделать бесконечное количество инъекций. Просто нужен день на перезарядку между дозами."
+#. rich_translation: <i>"Однако Блокиратор может сделать бесконечное количество инъекций. Просто нужен день на перезарядку между дозами."
 msgctxt "ui"
 msgid "\"However, the Blocker can deliver an infinite number of injections. Just needs a day to recharge between each dose.\""
-msgstr "\"Однако Блокатор может сделать бесконечное количество инъекций. Просто нужен день на перезарядку между дозами.\""
+msgstr "\"Однако Блокиратор может сделать бесконечное количество инъекций. Просто нужен день на перезарядку между дозами.\""
 
 #. src: dialog
 #. rich_text: <i>"However, the Blocker can deliver an infinite number of injections. Just needs to recharge between each dose."
-#. rich_translation: <i>"Однако Блокатор может делать бесконечное число инъекций. Просто нужно перезаряжаться между дозами."
+#. rich_translation: <i>"Однако Блокиратор может делать бесконечное число инъекций. Просто нужно перезаряжаться между дозами."
 msgctxt "ui"
 msgid "\"However, the Blocker can deliver an infinite number of injections. Just needs to recharge between each dose.\""
-msgstr "\"Однако Блокатор может делать бесконечное число инъекций. Просто нужно перезаряжаться между дозами.\""
+msgstr "\"Однако Блокиратор может делать бесконечное число инъекций. Просто нужно перезаряжаться между дозами.\""
 
 #. src: dialog
 #. rich_text: <i>"I just... couldn't perfect the antidote, so it's temporary. It only heals Crush buildup... or in layman's terms... reverses arousal."
@@ -1094,10 +1094,10 @@ msgstr "(Маркеры чёрного тела...! Это именно то, ч
 
 #. src: dialog
 #. rich_text: <i>(Blocker... That must be this little device in the suitcase. Looks like a little cylinder thing.)</i>
-#. rich_translation: <i>(Блокатор... Должно быть, это то маленькое устройство в чемодане. Выглядит как маленькая цилиндрическая штука.)</i>
+#. rich_translation: <i>(Блокиратор... Должно быть, это то маленькое устройство в чемодане. Выглядит как маленькая цилиндрическая штука.)</i>
 msgctxt "speaker:Zoey"
 msgid "(Blocker... That must be this little device in the suitcase. Looks like a little cylinder thing.)"
-msgstr "(Блокатор... Должно быть, это то маленькое устройство в чемодане. Выглядит как маленькая цилиндрическая штука.)"
+msgstr "(Блокиратор... Должно быть, это то маленькое устройство в чемодане. Выглядит как маленькая цилиндрическая штука.)"
 
 #. src: dialog
 #. rich_text: <i>(Bunnysuit? Where do I get one of those from? )</i>
@@ -6423,10 +6423,10 @@ msgstr "(М-м... Что... происходит со мной-?)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Mnhh- The... blocker- I...?)</i></color>
-#. rich_translation: <color=#EB83FF><i>(М-н-н- Блокатор... Я...?)</i></color>
+#. rich_translation: <color=#EB83FF><i>(М-н-н- Блокиратор... Я...?)</i></color>
 msgctxt "ui"
 msgid "(Mnhh- The... blocker- I...?)"
-msgstr "(М-н-н- Блокатор... Я...?)"
+msgstr "(М-н-н- Блокиратор... Я...?)"
 
 #. src: dialog
 #. rich_text: <i>(Mnhh-.. I- it feels like.. <color=#EB83FF>warm gel</color>.. )</i>
@@ -6640,10 +6640,10 @@ msgstr "(Нужно как-то перенаправить питание на �
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(Need to... use the Blocker... Please work...)</i></color>
-#. rich_translation: <color=#EB83FF><i>(Нужно... использовать Блокатор... Пожалуйста, сработай...)</i></color>
+#. rich_translation: <color=#EB83FF><i>(Нужно... использовать Блокиратор... Пожалуйста, сработай...)</i></color>
 msgctxt "ui"
 msgid "(Need to... use the Blocker... Please work...)"
-msgstr "(Нужно... использовать Блокатор... Пожалуйста, сработай...)"
+msgstr "(Нужно... использовать Блокиратор... Пожалуйста, сработай...)"
 
 #. src: dialog
 #. rich_text: <i>(Never liked how my hands hurt after drills. )</i>
@@ -8493,10 +8493,10 @@ msgstr "(Такой-... Сладкий вкус... М-м-м-м...)"
 
 #. src: dialog
 #. rich_text: <i>(Th-The blocker- I... I have to... )</i>
-#. rich_translation: <i>(Б-Блокатор- Я... Я должна... )</i>
+#. rich_translation: <i>(Б-Блокиратор- Я... Я должна... )</i>
 msgctxt "ui"
 msgid "(Th-The blocker- I... I have to... )"
-msgstr "(Б-Блокатор- Я... Я должна... )"
+msgstr "(Б-Блокиратор- Я... Я должна... )"
 
 #. src: dialog
 #. rich_text: <i>(Thank fuck they didn't see me... )</i>
@@ -11319,7 +11319,7 @@ msgstr "0.5 - Основная история - 1 - Поговорить с Но
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.5 - Main Story - 1 - Talk to Nova 2"
-msgstr "translation: 0.5 - Основная история - 1 - Поговорить с Новой 2"
+msgstr "0.5 - Основная история - 1 - Поговорить с Новой 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11334,12 +11334,12 @@ msgstr "0.5 - Основная история - 1 - Поговорить с Но
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.5 - Main Story - 1 - Talk to Nova 4 - Pay"
-msgstr "translation: 0.5 - Основная история - 1 - Поговорить с Нова 4 - Оплата"
+msgstr "0.5 - Основная история - 1 - Поговорить с Нова 4 - Оплата"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.5 - Main Story - 1 - Talk to Nova 5 - Repeat Ask"
-msgstr "translation: 0.5 - Основная история - 1 - Поговорите с Новой 5 - Повторить вопрос"
+msgstr "0.5 - Основная история - 1 - Поговорите с Новой 5 - Повторить вопрос"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -13030,7 +13030,7 @@ msgstr "Ай-! Прости!"
 #. src: dialog
 msgctxt "ui"
 msgid "Act skank. Spank like skank."
-msgstr "Веди себя как шлюха. Получишь как шлюха."
+msgstr "Веди себя как шлюха. Шлёпай как шлюха."
 
 #. src: dialog
 msgctxt "ui"
@@ -15819,7 +15819,7 @@ msgstr "Мы на уровне Галереи?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Are we in party?"
-msgstr "Мы вместе?"
+msgstr "Мы в одной группе?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -16731,7 +16731,7 @@ msgstr "Ах, блин. Ну, ну. Не смотри на меня так. Ты
 #. src: dialog
 msgctxt "speaker:Trov"
 msgid "Aww come on, it was just getting fun, whore!"
-msgstr "А ну да ладно, только начинало становиться интересно, шлюха!"
+msgstr "Да ладно тебе, только начинало становиться интересно, шлюха!"
 
 #. src: dialog
 msgctxt "ui"
@@ -17547,10 +17547,10 @@ msgstr "Поближе, пожалуйста... И вытяни грудь... *�
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Bl-... Blocker-... Khhh-... Mnnhhh...</color>
-#. rich_translation: <color=#EB83FF>Бл-... Блокер-... Кххх-... М-н-н...</color>
+#. rich_translation: <color=#EB83FF>Бл-... Блокиратор-... Кххх-... М-н-н...</color>
 msgctxt "ui"
 msgid "Bl-... Blocker-... Khhh-... Mnnhhh..."
-msgstr "Бл-... Блокер-... Кххх-... М-н-н..."
+msgstr "Бл-... Блокиратор-... Кххх-... М-н-н..."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17660,7 +17660,7 @@ msgstr "Блок диалога"
 #. src: us
 msgctxt "ui"
 msgid "Blocker Recharged!"
-msgstr "Блокировщик перезаряжен!"
+msgstr "Блокиратор перезаряжен!"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -20137,7 +20137,7 @@ msgstr "Завершение"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Compliment her Flat"
-msgstr "Похвали её плоскость"
+msgstr "Похвали её плоскую грудь"
 
 #. src: dialog
 msgctxt "ui"
@@ -20964,7 +20964,7 @@ msgstr "Ой, смущённые клиенты — самые милые! Бу�
 #. src: dialog
 msgctxt "ui"
 msgid "D'aww, just fucking with ya, periguete. Heard the boss is letting puta's snort glow off his cock today."
-msgstr "Ой-ой, я просто пошутил с тобой, перигуэте. Слышал, босс сегодня позволяет путе облизывать его член до сияния."
+msgstr "Ой-ой, я просто пошутил с тобой, перигуэте. Слышал, босс сегодня разрешает путам нюхать глоу с его члена."
 
 #. src: dialog
 msgctxt "ui"
@@ -21019,7 +21019,7 @@ msgstr "УХОЖУ"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DIALOGUE - AUTO"
-msgstr "ДИАЛОГ - ВКЛЮЧИТЬ"
+msgstr "ДИАЛОГ - АВТО"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21594,7 +21594,7 @@ msgstr "Джинсовая юбка"
 #. src: dialog
 msgctxt "ui"
 msgid "Denying that her boobs are too small would mean she was staring at them, fumbling around7"
-msgstr "Отрицать, что её грудь слишком мала, значило бы признать, что она на неё пялилась, мямля."
+msgstr "Отрицать, что её грудь слишком мала, значило бы признать, что она на неё пялилась, запинаясь."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -21862,7 +21862,7 @@ msgstr "Хуй, трущийся о киску"
 #. src: dialog
 msgctxt "ui"
 msgid "Dick move. She's always had a stick up her ass."
-msgstr "Вот же сука. У неё вечно палка в заднице."
+msgstr "Свинский поступок. У неё вечно палка в заднице."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -24287,7 +24287,7 @@ msgstr "Промокшая киска"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Dress Cypher up"
-msgstr "Оделите Сайфера"
+msgstr "Оденьте Сайфера"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -25332,7 +25332,7 @@ msgstr "Форма одежды силовика"
 #. src: dialog
 msgctxt "ui"
 msgid "Enforcer begins to rub her baton against zoeys pussy."
-msgstr "силовик начинает тереть свой дубинку о киску Зои."
+msgstr "Силовик начинает тереть свою дубинку о киску Зои."
 
 #. src: dialog
 msgctxt "ui"
@@ -26236,7 +26236,7 @@ msgstr "Экран темнеет до чёрного 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Fade Screen to Black 3"
-msgstr "Экран потемнел на три четверти."
+msgstr "Затемнить экран до чёрного 3"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -29236,7 +29236,7 @@ msgstr "Иди распакуй ванную, лучшая подруга! Я р
 #. src: dialog
 msgctxt "speaker:Enforcer"
 msgid "God all that andro cum looks so hot on you, ehehe... I haven't had enough yet..."
-msgstr "Боже, вся эта мужская сперма так горячо на тебе выглядит, эхе-хе... Мне всё ещё мало..."
+msgstr "Боже, вся эта андро-сперма так горячо на тебе смотрится, эхе-хе... Мне всё ещё мало..."
 
 #. src: dialog
 msgctxt "speaker:Customer"
@@ -30845,7 +30845,7 @@ msgstr "Ты уже вытащила чип Сайфера?"
 #. src: dialog
 msgctxt "ui"
 msgid "Have you willingly taken glow before, Madison?"
-msgstr "Ты уже принимала глау по своей воле, Мэдисон?"
+msgstr "Ты уже принимала глоу по своей воле, Мэдисон?"
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
@@ -32872,7 +32872,7 @@ msgstr "Бродяга"
 #. src: dialog
 msgctxt "speaker:Man"
 msgid "Hoes will be hoes, I guess. I can fill one up for you. 100 fuckbucks."
-msgstr "Шлюхи всегда будут шлюхами, полагаю. Могу тебе один наполнить. Сто чертовых баксов."
+msgstr "Шлюхи всегда будут шлюхами, полагаю. Могу тебе один наполнить. Сто факбаксов."
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>Hohh... Oh fuck... Wait-</color>
@@ -34256,7 +34256,7 @@ msgstr "Я видела кролика в одежде с надписями, и
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "I saw a chick in the fog"
-msgstr "Я увидел курочку в тумане"
+msgstr "Я увидел цыпочку в тумане"
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -36465,7 +36465,7 @@ msgstr "Я не уверена, что Макс поверит моей лжи..
 #. src: dialog
 msgctxt "ui"
 msgid "Insecure breath before accepting her fate."
-msgstr "Неповоротливое дыхание перед тем, как принять свою судьбу."
+msgstr "Неуверенное дыхание перед тем, как принять свою судьбу."
 
 #. src: dialog
 msgctxt "ui"
@@ -36645,7 +36645,7 @@ msgstr "Интерком"
 #. src: dialog
 msgctxt "ui"
 msgid "Interesting. This one is having a wardrobe malfunction. Correcting..."
-msgstr "Забавно. У этой неполадки с гардеробом. Исправляю..."
+msgstr "Забавно. У этой особи неполадка с гардеробом. Исправляю..."
 
 #. src: us
 msgctxt "ui"
@@ -36895,7 +36895,7 @@ msgstr "Наверху?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Is Use Blocker in progress?"
-msgstr "Блокатор сейчас используется?"
+msgstr "Блокиратор сейчас используется?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -37705,7 +37705,7 @@ msgstr "Горячо. Настоящее шоу, если честно. Дума
 #. src: dialog
 msgctxt "ui"
 msgid "It's inside her... pussy..."
-msgstr "Она внутри её... киски..."
+msgstr "Оно внутри её... киски..."
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -38102,7 +38102,7 @@ msgstr "Диалог Джейми Крача"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Jaime Crotch FSM"
-msgstr "Джейми, членовый FSM"
+msgstr "Джейми, пах FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39191,7 +39191,7 @@ msgstr "Клавдия: попроси подняться наверх, повт
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Klaudia Blocker In Hand"
-msgstr "Клавдия Блокер — в руке"
+msgstr "Клавдия Блокиратор — в руке"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39637,7 +39637,7 @@ msgstr "Язык (машинный перевод)"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Lap"
-msgstr "Колено"
+msgstr "Колени"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -42195,7 +42195,7 @@ msgstr "Мастурбируй"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Masturbate Sarah"
-msgstr "Похоти с Сарой"
+msgstr "Мастурбация Сары"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -42205,7 +42205,7 @@ msgstr "Мастурбируй на аппарате Каллиак"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Masturbate dialogue"
-msgstr "Мастурбация — это диалог."
+msgstr "Диалог мастурбации"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -47702,7 +47702,7 @@ msgstr "О! Ага- Как всё прошло?"
 #. src: dialog
 msgctxt "ui"
 msgid "Oh! You mean- flash someone while- Oh wow."
-msgstr "О! Ты имеешь в виду... обмануть кого-то, пока — о, вау."
+msgstr "О! Ты имеешь в виду... показать себя кому-то, пока — о, вау."
 
 #. src: dialog
 msgctxt "ui"
@@ -47901,7 +47901,7 @@ msgstr "Ох, ну ты большой ребёнок. Тут рядом ест�
 #. src: dialog
 msgctxt "ui"
 msgid "Oh, you didn't?"
-msgstr "О, не меня?"
+msgstr "О, ты не...?"
 
 #. src: dialog
 msgctxt "ui"
@@ -48141,7 +48141,7 @@ msgstr "О-о! Это... это звучит... приятно?"
 #. src: dialog
 msgctxt "ui"
 msgid "Oh-! Well, no. I haven't. I would've noticed her. Plus, she would've tripped one of my security systems."
-msgstr "Ох! Ну... нет. Я её не видела. Я бы заметила. К тому же, она бы сработала на одну из моих систем безопасности."
+msgstr "Ох! Ну... нет. Я её не видела. Я бы заметила. К тому же, она бы задела одну из моих систем безопасности."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -53467,7 +53467,7 @@ msgstr "Починить всю экипировку в инвентаре гр�
 #. src: us
 msgctxt "ui"
 msgid "Repair all worn equipment in party."
-msgstr "Починить всю надетую экипировку в группе."
+msgstr "Починить всё изношенное снаряжение в группе."
 
 #. src: dialog
 msgctxt "ui"
@@ -56759,7 +56759,7 @@ msgstr "Она не"
 #. src: dialog
 msgctxt "ui"
 msgid "She feels the hand jumping against her fingers"
-msgstr "Она чувствует, как её палец дёргается от прикосновения его руки."
+msgstr "Она чувствует, как рука подрагивает под её пальцами."
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -57849,7 +57849,7 @@ msgstr "Худи с черепом"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Slap Dialogue"
-msgstr "Шлеп — диалог"
+msgstr "Диалог пощёчины"
 
 #. src: dialog
 msgctxt "ui"
@@ -58160,7 +58160,7 @@ msgstr "Какая наблюдательная! Что, никогда не в�
 #. src: dialog
 msgctxt "speaker:Varen"
 msgid "So quiet... anxious, hmm? Now, now, girl. It's not difficult to keep conversation flowing. Why don't you tell me how my old cock feels in your young hand."
-msgstr "Так тихо... нервно, хм? Ну-ну, девочка. Поддержать разговор совсем не сложно. Почему бы тебе не рассказать, как моё старое член ощущается в твоей молодой руке."
+msgstr "Так тихо... нервно, хм? Ну-ну, девочка. Поддержать разговор совсем не сложно. Почему бы тебе не рассказать, как мой старый член ощущается в твоей молодой руке."
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -59734,12 +59734,12 @@ msgstr "Укради диалог"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Steal it"
-msgstr "Укрась это"
+msgstr "Укради это"
 
 #. src: dialog
 msgctxt "ui"
 msgid "Steal it."
-msgstr "Укрась это."
+msgstr "Укради это."
 
 #. src: us
 msgctxt "ui"
@@ -60337,7 +60337,7 @@ msgstr "SuitcaseBadend - CartelHideout - 13_line_3-FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 13_line_7-FSM"
-msgstr "Неверный формат ответа."
+msgstr "SuitcaseBadend - CartelHideout - 13_line_7-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -61258,7 +61258,7 @@ msgstr "Возьми один из презервативов и надень е
 #. src: dialog
 msgctxt "speaker:Rugnar"
 msgid "Take the 200 and help Rosie get me off."
-msgstr "Возьми 200 и помоги Рози довести меня до оргазма. (спикер: Ругнар)"
+msgstr "Возьми 200 и помоги Рози довести меня до оргазма."
 
 #. src: dialog
 msgctxt "speaker:Trov"
@@ -63850,7 +63850,7 @@ msgstr "Трое...! Их трое! М-м...! У одного из них ест
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Throb Perversion +5"
-msgstr "Пульсирующая порнография +5"
+msgstr "Пульсирующее извращение +5"
 
 #. src: dialog
 msgctxt "ui"
@@ -66291,7 +66291,7 @@ msgstr "Включите таймер"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Unpause shift and free customers"
-msgstr "Отключите сдвиг и освободите клиентов"
+msgstr "Снимите паузу со смены и освободите клиентов."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -66568,7 +66568,7 @@ msgstr "Используй правильный смещение"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Use the Blocker"
-msgstr "Используй Блокер"
+msgstr "Используй Блокиратор"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67939,7 +67939,7 @@ msgstr "Ждать укрытия"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for horny"
-msgstr "Подожди, пока я возбуждусь."
+msgstr "Ждать возбуждения."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -67995,7 +67995,7 @@ msgstr "Ждать строку"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for masturbate"
-msgstr "Подожди, пока я кончу."
+msgstr "Ждать мастурбации."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -68020,7 +68020,7 @@ msgstr "Ждать движения"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Wait for naked"
-msgstr "Подожди, пока я разденусь"
+msgstr "Ждать, пока разденется."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -70826,7 +70826,7 @@ msgstr "Кому нужны большие куши, если у тебя ест
 #. src: field:Description
 msgctxt "ui"
 msgid "Who needs velcro when you've got a big ass zipper? The Un/ZIP trenchcoat brings you a cool aesthetic without compromising on ease-of-use."
-msgstr "Кому нужен липучка, когда у тебя есть огромный молния? Плащ Un/ZIP дарит крутую эстетику, не жертвуя при этом удобством использования."
+msgstr "Кому нужна липучка, когда у тебя есть огромная молния? Плащ Un/ZIP дарит крутую эстетику, не жертвуя при этом удобством использования."
 
 #. src: dialog
 msgctxt "speaker:Klaudia"
@@ -70878,7 +70878,7 @@ msgstr "Кто бы ни устроил этот бардак, заплатит 
 #. src: dialog
 msgctxt "speaker:Man"
 msgid "Whoop-de-doo, here is your goo. Nice and fresh."
-msgstr "Ух ты-ты, вот и твой глёб. Свеженький и приятный."
+msgstr "Ух ты-ты, вот и твоё семя. Свеженькое и приятное."
 
 #. src: dialog
 msgctxt "ui"
@@ -74360,7 +74360,7 @@ msgstr "Молния"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Zipper Hoodie"
-msgstr "Свитер на молнии"
+msgstr "Худи на молнии"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -75470,7 +75470,7 @@ msgstr "Ищу Лио."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "low perv"
-msgstr "низкий похотник"
+msgstr "Низкое извращение"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76149,7 +76149,7 @@ msgstr "самоненависть только начинает едва про
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "set idle"
-msgstr "Иди"
+msgstr "Режим ожидания"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

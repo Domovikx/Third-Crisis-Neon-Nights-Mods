@@ -2603,10 +2603,10 @@ msgstr "(Er ist über doppelt so alt wie ich...?!)"
 
 #. src: dialog
 #. rich_text: <i>(He's pimping out that andro behind him...!)</i>
-#. rich_translation: <i>(Er bietet diesen Andro hinter ihm an...!)</i>
+#. rich_translation: <i>(Er verschachert diesen Andro hinter ihm...!)</i>
 msgctxt "speaker:Zoey"
 msgid "(He's pimping out that andro behind him...!)"
-msgstr "(Er bietet diesen Andro hinter ihm an...!)"
+msgstr "(Er verschachert diesen Andro hinter ihm...!)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(He's so... hard... )</i></color>
@@ -4064,10 +4064,10 @@ msgstr "(Ich hätte das nicht.. tun sollen.. Das... )"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(I showed a man over twice my age my-... )</i></color>
-#. rich_translation: <color=#EB83FF><i>(Ich habe einem Mann über doppelt so alt wie ich mein-... gezeigt... )</i></color>
+#. rich_translation: <color=#EB83FF><i>(Ich habe einem Mann, der über doppelt so alt ist wie ich, mein-... gezeigt... )</i></color>
 msgctxt "ui"
 msgid "(I showed a man over twice my age my-... )"
-msgstr "(Ich habe einem Mann über doppelt so alt wie ich mein-... gezeigt... )"
+msgstr "(Ich habe einem Mann, der über doppelt so alt ist wie ich, mein-... gezeigt... )"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(I showed my... Khh... For... This...?)</i></color>
@@ -7724,11 +7724,11 @@ msgstr "(Sie denkt wirklich nicht... dass das, was sie tut... schlimm ist...?)"
 
 #. src: dialog
 #. rich_text: <i>(She said "I" instead of "This one". Ghh... Her p<color=#EB83FF>ussy feels like it's gonna tear my fingers off...</color> )</i>
-#. rich_translation: <i>(Sie sagte „Ich“ statt „Diese hier“. Ghh... Ihr Pussy fühlt sich an, als würde es mir die Finger abreißen...)</i>
+#. rich_translation: <i>(Sie sagte „Ich“ statt „Diese hier“. Ghh... Ihre P<color=#EB83FF>ussy fühlt sich an, als würde es mir die Finger abreißen...</color> )</i>
 #, rt-review
 msgctxt "ui"
 msgid "(She said \"I\" instead of \"This one\". Ghh... Her pussy feels like it's gonna tear my fingers off... )"
-msgstr "(Sie sagte „Ich“ statt „Diese hier“. Ghh... Ihr Pussy fühlt sich an, als würde es mir die Finger abreißen...)"
+msgstr "(Sie sagte „Ich“ statt „Diese hier“. Ghh... Ihre Pussy fühlt sich an, als würde es mir die Finger abreißen...)"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF><i>(She said that it's for beginners and there's no crash after with this flavor, so-... )</i></color>
@@ -11232,7 +11232,7 @@ msgstr "0.3 Wohnhaus-Vollstrecker tastet 1"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.4 - GlowingHoleBartending - Nova - 2 - 2"
-msgstr "translation"
+msgstr "0.4 - GlowingHoleBartending - Nova - 2 - 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11307,7 +11307,7 @@ msgstr "0.4 - TunnelAddition - 5 - Mann helfen zustimmen - 0"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.4 - TunnelAddition - 5 - Agree to help man - 1:"
-msgstr "Übersetzung."
+msgstr "0.4 - TunnelAddition - 5 - Mann helfen zustimmen - 1:"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11352,7 +11352,7 @@ msgstr "0.5 - Leonas Pet.MeetLeona"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.5 - Main Story - 1 - Talk to Nova 1 - Never Met"
-msgstr "Übersetzung."
+msgstr "0.5 - Hauptgeschichte - 1 - Sprich mit Nova 1 - Noch nie getroffen"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11377,7 +11377,7 @@ msgstr "0.5 - Hauptgeschichte - 1 - Sprich mit Nova 4 - Bezahle"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.5 - Main Story - 1 - Talk to Nova 5 - Repeat Ask"
-msgstr "Übersetzung."
+msgstr "0.5 - Hauptgeschichte - 1 - Sprich mit Nova 5 - Erneute Frage"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11387,7 +11387,7 @@ msgstr "0.5 - Hauptgeschichte - Teile von Nova kaufen"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.5 - Main Story - Get Lio Parts"
-msgstr "Übersetzung"
+msgstr "0.5 - Hauptgeschichte - Lio-Teile holen"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -11397,7 +11397,7 @@ msgstr "0.5 Versionshinweise"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "0.6 - Main Story - Meet The Boss"
-msgstr "Übersetzung."
+msgstr "0.6 - Hauptgeschichte - Den Boss treffen"
 
 #. src: us
 msgctxt "ui"
@@ -11485,7 +11485,7 @@ msgstr "Zustimmen."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "2nd Dialogue"
-msgstr "Übersetzung"
+msgstr "2. Dialog"
 
 #. src: us
 msgctxt "ui"
@@ -14897,7 +14897,7 @@ msgstr "Deaktiviere auch Klaudias Interaktion."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Also do async logic"
-msgstr "Übersetze jede Zeile. Antworte mit genau 1 Zeile im Format „N. Übersetzung“. Wiederhole den Sprecher-Tag niemals in den Übersetzungen."
+msgstr "Asynchrone Logik ausführen"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -17633,7 +17633,7 @@ msgstr "Schwarzer Hoodie mit Hörnern"
 #. src: field:ItemName
 msgctxt "ui"
 msgid "Black Net Bottom"
-msgstr "Übersetzung."
+msgstr "Schwarzes Netz-Unterteil"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -19870,7 +19870,7 @@ msgstr "Selbstgefällig"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Code: 8862"
-msgstr "Übersetzung"
+msgstr "Code: 8862"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -20179,7 +20179,7 @@ msgstr "Komplimentiere ihre flache Brust."
 #. src: dialog
 msgctxt "ui"
 msgid "Compliment her flat."
-msgstr "Mach ihr Komplimente für ihre Wohnung."
+msgstr "Mach ihr ein Kompliment für ihre flache Brust."
 
 #. src: dialog
 msgctxt "ui"
@@ -21066,12 +21066,12 @@ msgstr "DIALOGUE - VERSTECKEN"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DIALOGUE - LOG"
-msgstr "Übersetzung"
+msgstr "DIALOG - LOG"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "DIALOGUE - SKIP"
-msgstr "Übersetzung"
+msgstr "DIALOG - ÜBERSPRINGEN"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -22191,7 +22191,7 @@ msgstr "Hast du gehackt?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Did half Price already?"
-msgstr "Hatte Price schon die Hälfte?"
+msgstr "Schon den halben Preis bezahlt?"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23292,7 +23292,7 @@ msgstr "Triff eine Wahl"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do cutscene"
-msgstr "Schnittstelle"
+msgstr "Cutscene abspielen"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -23444,7 +23444,7 @@ msgstr "Führe eine Sexszene durch."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Do sex scene 2"
-msgstr "Übersetze jede Zeile. Antworte mit genau 1 Zeile im Format „N. Übersetzung“. Wiederhole das Sprecher-Tag niemals in den Übersetzungen."
+msgstr "Sexszene 2 abspielen"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -24237,7 +24237,7 @@ msgstr "Tür verschlossen"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Door opened cleanup"
-msgstr "Die Tür öffnete sich und wurde gereinigt."
+msgstr "Tür geöffnet - Aufräumen"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -26128,7 +26128,7 @@ msgstr "Statusbericht"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "F04 rework"
-msgstr "Übersetzung"
+msgstr "F04-Überarbeitung"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -26595,10 +26595,10 @@ msgstr "Spüre das Brennen"
 
 #. src: dialog
 #. rich_text: Feeling <color=red>Glum</color>? Drink <color=#EB83FF>CUM!</color>
-#. rich_translation: Fühlst du dich <color=red>trübsinnig</color>? <color=#EB83FF>Trink SPERMA!</color>
+#. rich_translation: Fühlst du dich <color=red>trübsinnig</color>? <color=#EB83FF>Trink CUM!</color>
 msgctxt "ui"
 msgid "Feeling Glum? Drink CUM!"
-msgstr "Fühlst du dich trübsinnig? Trink SPERMA!"
+msgstr "Fühlst du dich trübsinnig? Trink CUM!"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -26612,10 +26612,10 @@ msgstr "Bist du neugierig, was zwischen meinen Beinen ist, Schatz~?"
 
 #. src: dialog
 #. rich_text: <i>Feeling glum? Drink CUM! Culinary Union Mixology has a brand new line of fruity cocktails that will tantalize your tastebuds.</i>
-#. rich_translation: <i>Fühlst du dich trübsinnig? Trink SPERMA! Culinary Union Mixology hat eine brandneue Linie fruchtiger Cocktails, die deine Geschmacksknospen verwöhnen werden.</i>
+#. rich_translation: <i>Fühlst du dich trübsinnig? Trink CUM! Culinary Union Mixology hat eine brandneue Linie fruchtiger Cocktails, die deine Geschmacksknospen verwöhnen werden.</i>
 msgctxt "ui"
 msgid "Feeling glum? Drink CUM! Culinary Union Mixology has a brand new line of fruity cocktails that will tantalize your tastebuds."
-msgstr "Fühlst du dich trübsinnig? Trink SPERMA! Culinary Union Mixology hat eine brandneue Linie fruchtiger Cocktails, die deine Geschmacksknospen verwöhnen werden."
+msgstr "Fühlst du dich trübsinnig? Trink CUM! Culinary Union Mixology hat eine brandneue Linie fruchtiger Cocktails, die deine Geschmacksknospen verwöhnen werden."
 
 #. src: dialog
 msgctxt "ui"
@@ -27471,7 +27471,7 @@ msgstr "Fluffles"
 #. src: dialog
 msgctxt "ui"
 msgid "Flustered after getting wrecked by a hot milf."
-msgstr "Ich... ich tut mir wirklich leid, Liebling. Bist du sicher, dass es dir gut geht?"
+msgstr "Ganz aufgelöst, nachdem eine heiße MILF sie vernichtet hat."
 
 #. src: dialog
 msgctxt "ui"
@@ -29409,7 +29409,7 @@ msgstr "Braver Junge.. Bettle darum."
 #. src: dialog
 msgctxt "ui"
 msgid "Good boyyy..~ Now get dressed and lead the way. I want to fuck your brains out."
-msgstr "Braver Jungee..~ Zieh dich jetzt an und geh voran. Ich will dir das Hirn rausficken."
+msgstr "Braver Junge..~ Zieh dich jetzt an und geh voran. Ich will dir das Hirn rausficken."
 
 #. src: dialog
 msgctxt "ui"
@@ -29862,12 +29862,12 @@ msgstr "Grope-Dialog 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Grope Dialogue 4"
-msgstr "Übersetzung."
+msgstr "Grabschen-Dialog 4"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Grope Dialogue 5"
-msgstr "Übersetzung."
+msgstr "Grabschen-Dialog 5"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -31144,7 +31144,7 @@ msgstr "Heh... Meine Dame... Sag ihr das bloß nicht!"
 #. src: dialog
 msgctxt "ui"
 msgid "Heh- No way Felicia is back here- Let's just... move on!"
-msgstr "Heh – auf keinen Fall ist Felicia hier hinten – lassen wir das einfach... auf uns beruhen!"
+msgstr "Heh – auf keinen Fall ist Felicia hier hinten – lassen wir es einfach... auf sich beruhen!"
 
 #. src: dialog
 msgctxt "ui"
@@ -31226,7 +31226,7 @@ msgstr "Heh..."
 #. src: dialog
 msgctxt "speaker:Leona"
 msgid "Heh... I can almost hear her purrs right now. Just how I remember..."
-msgstr "Hehe... Ich kann ihre Gurren fast schon jetzt hören. Genau so, wie ich sie in Erinnerung habe..."
+msgstr "Hehe... Ich kann ihr Schnurren jetzt fast schon hören. Genau so, wie ich sie in Erinnerung habe..."
 
 #. src: dialog
 msgctxt "ui"
@@ -33279,7 +33279,7 @@ msgstr "Wie oft Zoey öffentlich viel von ihrem Körper gezeigt hat."
 #. src: us
 msgctxt "ui"
 msgid "How often Zoey was denied an orgasm."
-msgstr "Wie oft Zoey ein Orgasmus verweigert wurde."
+msgstr "Wie oft Zoey einen Orgasmus verweigert wurde."
 
 #. src: us
 msgctxt "ui"
@@ -34298,7 +34298,7 @@ msgstr "Ich sah ein Kaninchen, das etwas Trägers trug, und ich... ich wollte es
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "I saw a chick in the fog"
-msgstr "Ich sah ein Hühnchen im Nebel."
+msgstr "Ich sah ein Mädchen im Nebel."
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -35141,7 +35141,7 @@ msgstr "Ich warte."
 #. src: dialog
 msgctxt "ui"
 msgid "I'm wearing the cum as an accessory."
-msgstr "Ich trage den Cum als Accessoire."
+msgstr "Ich trage das Sperma als Accessoire."
 
 #. src: dialog
 msgctxt "ui"
@@ -36384,7 +36384,7 @@ msgstr "In Müllsäcken?"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "In trigger"
-msgstr "translation"
+msgstr "In trigger"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -38278,7 +38278,7 @@ msgstr "Jane Doe"
 #. src: us
 msgctxt "ui"
 msgid "Japanese Machine Translated / 日本の機械翻訳"
-msgstr "Japanische maschinelle Übersetzung / Japanische maschinelle Übersetzung"
+msgstr "Japanisch maschinell übersetzt / 日本の機械翻訳"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39902,7 +39902,7 @@ msgstr "Linkes Bellen"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Left Bark 2"
-msgstr "Übersetzung."
+msgstr "Linkes Bellen 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -39922,7 +39922,7 @@ msgstr "Linkes Bellen 5"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Left Bark 6"
-msgstr "Übersetzung"
+msgstr "Linkes Bellen 6"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -40279,12 +40279,12 @@ msgstr "Level"
 #. src: us
 msgctxt "ui"
 msgid "Level 10"
-msgstr "Wichtig: Füge bei der Übersetzung keine Zeilennummer (z. B. „2. “) hinzu — antworte nur mit dem Text selbst."
+msgstr "Ebene 10"
 
 #. src: us
 msgctxt "ui"
 msgid "Level 11"
-msgstr "Wichtig: Füge die Zeilennummer nicht in die Übersetzung ein."
+msgstr "Ebene 11"
 
 #. src: us
 msgctxt "ui"
@@ -40299,7 +40299,7 @@ msgstr "Level 13"
 #. src: us
 msgctxt "ui"
 msgid "Level 14"
-msgstr "Wichtig: Füge bei der Übersetzung keine Zeilennummer (z. B. „2. “) hinzu. Die Antwort enthält nur den Text selbst."
+msgstr "Ebene 14"
 
 #. src: us
 msgctxt "ui"
@@ -40334,12 +40334,12 @@ msgstr "Level 2"
 #. src: us
 msgctxt "ui"
 msgid "Level 20"
-msgstr "Wichtig: Füge die Zeilennummer (z. B. „2. “) nicht in die Übersetzung ein: Die Antwort besteht nur aus dem Text selbst."
+msgstr "Ebene 20"
 
 #. src: us
 msgctxt "ui"
 msgid "Level 21"
-msgstr "Wichtig: Füge die Zeilennummer (z. B. „2. “) nicht in die Übersetzung ein. Die Antwort besteht nur aus dem Text selbst."
+msgstr "Ebene 21"
 
 #. src: us
 msgctxt "ui"
@@ -40743,7 +40743,7 @@ msgstr "Zeile 4"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Line 6"
-msgstr "WICHTIG: Füge bei der Übersetzung keine Zeilennummer (z. B. „2. “) hinzu: Die Antwort enthält nur den Text selbst."
+msgstr "Zeile 6"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -40753,7 +40753,7 @@ msgstr "Zeile DOne"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Line Done"
-msgstr "Übersetzung"
+msgstr "Zeile fertig"
 
 #. src: dialog
 msgctxt "ui"
@@ -41661,7 +41661,7 @@ msgstr "Unterstadt des roten Lichts – Mädchen, die sich zeigen – 2"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "LowerRedCartel - 1 - First time Get near"
-msgstr "translation"
+msgstr "LowerRedCartel - 1 - First time Get near"
 
 #. src: dialog
 msgctxt "ui"
@@ -42221,7 +42221,7 @@ msgstr "Meister/VA/unterdurchschnittliche VA"
 #. src: us
 msgctxt "ui"
 msgid "Master/VA/Sex Scene VA"
-msgstr "Übersetzung"
+msgstr "Master/VA/Sex-Szene-VA"
 
 #. src: us
 msgctxt "ui"
@@ -43400,7 +43400,7 @@ msgstr "Mmhhh... Braves Mädchen... Genau so..."
 #. src: dialog
 msgctxt "speaker:Salesman"
 msgid "Mmhhh... It may be-... Hhh... hard to see, but... It's sucking up my cock like it's desperate to feel it."
-msgstr "Mmhhh... Man sieht es vielleicht schwer-... Hhh... aber... Es saugt meinen Schwanz auf, als wäre es verzweifelt scharf drauf."
+msgstr "Mmhhh... Es ist vielleicht schwer zu sehen-... Hhh... aber... Es saugt an meinem Schwanz, als wäre es verzweifelt scharf darauf."
 
 #. src: dialog
 msgctxt "speaker:Varen"
@@ -44937,7 +44937,7 @@ msgstr "Das Geheimnis des Nagelstudios"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "NailSalonRobotBarks - Elethia"
-msgstr "Übersetzung"
+msgstr "Nagelsalon-Roboterbellen - Elethia"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -45781,7 +45781,7 @@ msgstr "Nichts."
 #. src: us
 msgctxt "ui"
 msgid "No translation for Item"
-msgstr "Kein Übersetzung für Item"
+msgstr "Keine Übersetzung für Item"
 
 #. src: us
 msgctxt "ui"
@@ -46809,10 +46809,10 @@ msgstr "Nun denn. Du weißt, wofür Kondome sind, nicht wahr?"
 
 #. src: dialog
 #. rich_text: Now then... Better do a good job if you want me to turn a blind eye on you getting customers cocks out, <b>waitress</b>.
-#. rich_translation: Na also... Dann solltest du dich wirklich anstrengen, wenn du willst, dass ich ein Auge zudrücke, wenn du den Kunden die Schwänze raussiehst, <b>Kellnerin.</b>
+#. rich_translation: Na also... Dann solltest du dich wirklich anstrengen, wenn du willst, dass ich ein Auge zudrücke, wenn du den Kunden die Schwänze rausholst, <b>Kellnerin.</b>
 msgctxt "ui"
 msgid "Now then... Better do a good job if you want me to turn a blind eye on you getting customers cocks out, waitress."
-msgstr "Na also... Dann solltest du dich wirklich anstrengen, wenn du willst, dass ich ein Auge zudrücke, wenn du den Kunden die Schwänze raussiehst, Kellnerin."
+msgstr "Na also... Dann solltest du dich wirklich anstrengen, wenn du willst, dass ich ein Auge zudrücke, wenn du den Kunden die Schwänze rausholst, Kellnerin."
 
 #. src: dialog
 msgctxt "ui"
@@ -49772,7 +49772,7 @@ msgstr "Erneut-Späh-Dialog"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Peek at them"
-msgstr "Sie bespitzeln"
+msgstr "Wirf einen Blick darauf"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -52663,7 +52663,7 @@ msgstr "RAM: #### MB"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "REDLIGHT DISTRICT"
-msgstr "ROTLICHTBEZIRK"
+msgstr "ROTLICHTVIERTEL"
 
 #. src: us
 msgctxt "ui"
@@ -52705,7 +52705,7 @@ msgstr "Animation zurücksetzen"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "RESIDENTIAL DISTRICT"
-msgstr "WOHNBEZIRK"
+msgstr "WOHNVIERTEL"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -53515,7 +53515,7 @@ msgstr "Repariere alle Ausrüstung im Gruppeninventar."
 #. src: us
 msgctxt "ui"
 msgid "Repair all worn equipment in party."
-msgstr "Repariere alle getragene Ausrüstung der Gruppe."
+msgstr "Repariere die gesamte abgenutzte Ausrüstung der Gruppe."
 
 #. src: dialog
 msgctxt "ui"
@@ -54723,7 +54723,7 @@ msgstr "Läuft weiter."
 #. src: us
 msgctxt "ui"
 msgid "Russian Machine Translated / Русский Машинный Перевод"
-msgstr "Russischer maschineller Übersetzungstext / Russischer maschineller Übersetzungstext"
+msgstr "Russisch maschinell übersetzt / Русский Машинный Перевод"
 
 #. src: field:ItemName
 msgctxt "ui"
@@ -54903,7 +54903,7 @@ msgstr "SLUT (Sexual Logistics and Utility Transport) Service"
 #. src: raw:Transform
 msgctxt "ui"
 msgid "SOA 5"
-msgstr "translation"
+msgstr "SOA 5"
 
 #. src: us
 msgctxt "ui"
@@ -56250,7 +56250,7 @@ msgstr "Positionen festlegen"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Set random Bark Text"
-msgstr "Übersetzung"
+msgstr "Zufälligen Bell-Text setzen"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -57596,7 +57596,7 @@ msgstr "Andere Speicherobjekte zeigen/verbergen\nShift-Klick für Mehrfachauswah
 #. src: us
 msgctxt "ui"
 msgid "ShowItem: Could not find UI element for item '"
-msgstr "Übersetzung."
+msgstr "ShowItem: UI-Element für Gegenstand nicht gefunden '"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -58404,10 +58404,10 @@ msgstr "Also, wo befindet sich dieser Chip?"
 
 #. src: dialog
 #. rich_text: <color=#EB83FF>So- ngh- thick... Hahh...! Fghhh! So warm, nghh!</color>
-#. rich_translation: <color=#EB83FF>D: So... so dick... Hahh...! Fghhh! So warm, nghh!</color>
+#. rich_translation: <color=#EB83FF>So... so dick... Hahh...! Fghhh! So warm, nghh!</color>
 msgctxt "speaker:Zoey"
 msgid "So- ngh- thick... Hahh...! Fghhh! So warm, nghh!"
-msgstr "D: So... so dick... Hahh...! Fghhh! So warm, nghh!"
+msgstr "So... so dick... Hahh...! Fghhh! So warm, nghh!"
 
 #. src: dialog
 #. rich_text: So-... <b>I</b> have to-...?
@@ -59499,7 +59499,7 @@ msgstr "Fang an zu bellen 8"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Start bark 9"
-msgstr "Übersetzung."
+msgstr "Start-Bellen 9"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59669,7 +59669,7 @@ msgstr "Status 1"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 10"
-msgstr "Wichtig: Füge keine Zeilennummer (z. B. „2. “) in die Übersetzung ein. Die Antwort besteht nur aus dem Text selbst."
+msgstr "Zustand 10"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59689,12 +59689,12 @@ msgstr "Status 3"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 4"
-msgstr "Übersetzung."
+msgstr "Zustand 4"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 5"
-msgstr "Wichtig: Füge bei der Übersetzung keine Zeilennummer (z. B. „2. “) hinzu. Die Antwort besteht ausschließlich aus dem Übersetzungstext."
+msgstr "Zustand 5"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -59704,7 +59704,7 @@ msgstr "Zustand 6"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "State 7"
-msgstr "Übersetzung."
+msgstr "Zustand 7"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60350,12 +60350,12 @@ msgstr "SuitcaseBadend - Kartell-Versteck - 10_line_3-FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 10_line_4-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 10_line_4-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 10_line_7-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 10_line_7-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60365,7 +60365,7 @@ msgstr "SuitcaseBadend - CartelHideout - 11"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 11_line_10-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 11_line_10-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60390,7 +60390,7 @@ msgstr "SuitcaseBadend - CartelHideout - 14"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 14_line_7-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 14_line_7-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60425,12 +60425,12 @@ msgstr "SuitcaseBadend - CartelHideout - 17"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 17_line_10-FSM"
-msgstr "Übersetzung"
+msgstr "Koffer schlecht Ende - Kartellversteck - 17_line_10-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 17_line_15-FSM"
-msgstr "Übersetzung"
+msgstr "Koffer schlecht Ende - Kartellversteck - 17_line_15-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60455,7 +60455,7 @@ msgstr "SuitcaseBadend - Kartell-Versteck - 18_line_3-FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 18_line_4-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 18_line_4-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60470,7 +60470,7 @@ msgstr "SuitcaseBadend - CartelHideout - 19"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 19_line_3-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 19_line_3-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60490,7 +60490,7 @@ msgstr "SuitcaseBadend - CartelHideout - 20"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 20_line_3-FSM"
-msgstr "translation"
+msgstr "SuitcaseBadend - CartelHideout - 20_line_3-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60505,7 +60505,7 @@ msgstr "SuitcaseBadend - CartelHideout - 21_line_3-FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 21_line_6-FSM"
-msgstr "translation"
+msgstr "SuitcaseBadend - CartelHideout - 21_line_6-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60515,17 +60515,17 @@ msgstr "SuitcaseBadend - CartelHideout - 22"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 22_line_2-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 22_line_2-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 22_line_6-FSM"
-msgstr "translation"
+msgstr "SuitcaseBadend - CartelHideout - 22_line_6-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 22_line_7-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 22_line_7-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60540,17 +60540,17 @@ msgstr "SuitcaseBadend - CartelHideout - 23"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 23_line_2-FSM"
-msgstr "Übersetzung"
+msgstr "Koffer schlecht Ende - Kartellversteck - 23_line_2-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 23_line_6-FSM"
-msgstr "translation"
+msgstr "SuitcaseBadend - CartelHideout - 23_line_6-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 23_line_7-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 23_line_7-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60580,7 +60580,7 @@ msgstr "SuitcaseBadend - CartelHideout - 26"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 26_line_7-FSM"
-msgstr "Übersetzung"
+msgstr "Koffer schlecht Ende - Kartellversteck - 26_line_7-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60590,7 +60590,7 @@ msgstr "SuitcaseBadend - CartelHideout - 27"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 27_line_7-FSM"
-msgstr "Übersetzung"
+msgstr "Koffer schlecht Ende - Kartellversteck - 27_line_7-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60620,12 +60620,12 @@ msgstr "Koffer-Badend - Kartell-Versteck - 29_Zeile_0-FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 29_line_11-FSM"
-msgstr "Übersetzung"
+msgstr "Koffer schlecht Ende - Kartellversteck - 29_line_11-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 29_line_4-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 29_line_4-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60635,7 +60635,7 @@ msgstr "SuitcaseBadend - CartelHideout - 29_line_8-FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 29_line_9-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 29_line_9-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60670,7 +60670,7 @@ msgstr "Koffer-Ende – Kartell-Versteck – 31_Line_0-FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 31_line_4-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 31_line_4-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60705,7 +60705,7 @@ msgstr "SuitcaseBadend - CartelHideout - 33_line_0-FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 33_line_10-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 33_line_10-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60720,7 +60720,7 @@ msgstr "SuitcaseBadend - CartelHideout - 34"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 3_line_1-FSM"
-msgstr "Übersetzung"
+msgstr "Koffer schlecht Ende - Kartellversteck - 3_line_1-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60765,7 +60765,7 @@ msgstr "SuitcaseBadend - CartelHideout - 6"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 6_line_0-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 6_line_0-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60785,7 +60785,7 @@ msgstr "SuitcaseBadend - CartelHideout - 7_line_11-FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 7_line_7-FSM"
-msgstr "translation"
+msgstr "SuitcaseBadend - CartelHideout - 7_line_7-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60795,7 +60795,7 @@ msgstr "SuitcaseBadend - CartelHideout - 8"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 8_line_0-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 8_line_0-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -60820,7 +60820,7 @@ msgstr "SuitcaseBadend - Kartell-Versteck - 9_Line_3-FSM"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "SuitcaseBadend - CartelHideout - 9_line_7-FSM"
-msgstr "Übersetzung."
+msgstr "Koffer schlecht Ende - Kartellversteck - 9_line_7-FSM"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -65910,7 +65910,7 @@ msgstr "Unentdeckbar"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Undetecting"
-msgstr "Übersetzung"
+msgstr "Nicht mehr erkennen"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -66343,7 +66343,7 @@ msgstr "Beende den Shift und befreie die Kunden"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "Unrestrain"
-msgstr "Enthalte nicht"
+msgstr "Fesseln lösen"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -72065,7 +72065,7 @@ msgstr "Ja, wir wurden hierher verlegt, als GAG nach der Krise die Leute umsorti
 #. src: dialog
 msgctxt "ui"
 msgid "Yeah, well they can GAG on my ass."
-msgstr "Ja, na ja, die können sich doch einen Dildo in den Arsch stecken."
+msgstr "Ja, na ja, die können an meinem Arsch würgen."
 
 #. src: dialog
 msgctxt "speaker:Zoey"
@@ -72162,7 +72162,7 @@ msgstr "Ja. Lass mich erklären..."
 #. src: dialog
 msgctxt "ui"
 msgid "Yeah. Make the mouthy bitch yip."
-msgstr "Ja. Lass die große Klappe eine kleine Wuffe machen."
+msgstr "Ja. Lass die vorlaute Schlampe jaulen."
 
 #. src: dialog
 msgctxt "ui"
@@ -73232,7 +73232,7 @@ msgstr "Du weißt doch, was als Nächstes kommt, nicht wahr? Ich spüre, wie dei
 #. src: dialog
 msgctxt "ui"
 msgid "You know what? I saw you go in with a friend earlier. I'll get her to lick it for you."
-msgstr "Weißt du was? Ich hab dich vorhin mit einer Freundin hierher kommen sehen. Ich werde sie dafür sorgen, dass sie es für dich leckt."
+msgstr "Weißt du was? Ich hab dich vorhin mit einer Freundin hierher kommen sehen. Ich sorge dafür, dass sie es für dich leckt."
 
 #. src: dialog
 msgctxt "ui"
@@ -74915,7 +74915,7 @@ msgstr "bum – @bumdraws"
 #. src: dialog
 msgctxt "ui"
 msgid "bust as in boobs. haha funny."
-msgstr "Büste wie in Titten. Haha lustig."
+msgstr "Brust wie in Titten. Haha, lustig."
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -74990,7 +74990,7 @@ msgstr "Cypher wartet."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "d Med Fl"
-msgstr "translation"
+msgstr "d Med Fl"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -75000,7 +75000,7 @@ msgstr "d gerne für mich erledigen."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "dOXA 9\\"
-msgstr "Übersetzung."
+msgstr "dOXA 9\\"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -75030,7 +75030,7 @@ msgstr "existiert nicht. Nutze String-Überladung, um eins zu erstellen."
 #. src: us
 msgctxt "ui"
 msgid "doesn't have the lineId"
-msgstr "Übersetzung."
+msgstr "hat keine lineId"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -75430,7 +75430,7 @@ msgstr "Lecken-Dialog"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "licking dialogue 2"
-msgstr "translation"
+msgstr "licking dialogue 2"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -75520,7 +75520,7 @@ msgstr "Suche nach Lio."
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "low perv"
-msgstr "Tiefes Verlangen"
+msgstr "Niedrige Perversion"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"
@@ -76186,7 +76186,7 @@ msgstr "Bildschirmverblasung"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "second triggered"
-msgstr "translation."
+msgstr "second triggered"
 
 #. src: dialog
 msgctxt "ui"
@@ -76211,7 +76211,7 @@ msgstr "Versatz einstellen"
 #. src: raw:MonoBehaviour
 msgctxt "ui"
 msgid "setup next state"
-msgstr "Übersetzung der nächsten Zustandskonfiguration"
+msgstr "nächsten Zustand einrichten"
 
 #. src: raw:MonoBehaviour
 msgctxt "ui"

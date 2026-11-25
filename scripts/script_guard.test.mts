@@ -17,6 +17,7 @@ import {
   GUARDED_LANGS,
   hasForeignScript,
   hasForeignScriptFor,
+  stubHits,
 } from "./script_guard.mts";
 
 const REPO = join(import.meta.dirname, "..");
@@ -87,4 +88,58 @@ test("script_guard: в 10 PO нет чужой письменности (реа�
     }
   }
   assert.deepEqual(hits, [], `чужая письменность:\n${hits.slice(0, 20).join("\n")}`);
+});
+
+test("stubHits: голое слово-заглушка — красный", () => {
+  for (const s of ["translation", "перевод", "翻訳", "Übersetzung", "traduction", "traducción"]) {
+    assert.deepEqual(stubHits(s), ["stub-word"], s);
+  }
+  // Регистр и хвостовая пунктуация не спасают.
+  assert.deepEqual(stubHits("Translation."), ["stub-word"]);
+  assert.deepEqual(stubHits("  übersetzt! "), ["stub-word"]);
+});
+
+test("stubHits: префикс translation: поверх имени ассета — красный", () => {
+  assert.deepEqual(stubHits("translation: 0.5 - Main Story - 1 - Talk to Nova 2"), ["stub-prefix"]);
+  // Если сам оригинал начинается с translation: — префикс легитимен.
+  assert.deepEqual(stubHits("translation: 0.5 - Main Story", "translation: 0.5 - Main Story"), []);
+});
+
+test("stubHits: утечка инструкции промпта — красный", () => {
+  assert.deepEqual(stubHits("重要：不要添加行号（例如“2. ”）到翻译中：回复只需译文本身。"), [
+    "prompt-instruction",
+  ]);
+  assert.deepEqual(stubHits("Important: do not add line numbers to the translation."), [
+    "prompt-instruction",
+  ]);
+});
+
+test("stubHits: легитимные подписи и фразы — не заглушки", () => {
+  const ok = [
+    "Russian Machine Translated / Русский Машинный Перевод",
+    "Японский машинный перевод / Японский машинный перевод",
+    "Язык (машинный перевод)",
+    "Нет перевода для элемента",
+    "Aucune traduction pour Journal",
+    "Sprache (maschinelle Übersetzung)",
+    "Japonés (traducción automática) / 日本の機械翻訳",
+    "Important: this is a test.",
+    "Set fallback translation",
+    "Перевод денег занимает день.",
+  ];
+  for (const s of ok) assert.deepEqual(stubHits(s), [], s);
+});
+
+test("script_guard: в 10 PO нет заглушек машинного прохода (реальный корпус)", () => {
+  const hits: string[] = [];
+  for (const lang of GUARDED_LANGS) {
+    const po = parsePo(readFileSync(join(REPO, "po", `${lang}.po`), "utf8"));
+    for (const e of po) {
+      if (!e.msgstr) continue;
+      for (const kind of stubHits(e.msgstr, e.msgid)) {
+        hits.push(`${lang}: [${kind}] ${e.msgstr.slice(0, 70)}`);
+      }
+    }
+  }
+  assert.deepEqual(hits, [], `заглушки машинного прохода:\n${hits.slice(0, 20).join("\n")}`);
 });

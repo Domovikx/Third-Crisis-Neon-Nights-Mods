@@ -146,3 +146,61 @@ export function hasForeignScriptFor(lang: string, text: string, source = ""): bo
 
 /** Языки, для которых определён набор письменностей. */
 export const GUARDED_LANGS: readonly string[] = Object.keys(SCRIPTS_BY_LANG);
+
+// --- заглушки машинного прохода -------------------------------------------
+
+/**
+ * Слова-заглушки, которые оставляет машинный проход вместо перевода.
+ *
+ * Симптом (2026-11-25, найдено в 6 языках): в `msgstr` стоит само слово
+ * «translation» / «перевод» / «翻訳» либо префикс `translation: …` поверх
+ * имени ассета. Второй класс — утечка инструкции промпта: «重要：不要添加行号…
+ * 回复只需译文本身» вместо реплики. Это видно игроку как текст.
+ *
+ * Проверка намеренно узкая, чтобы не ловить легитимные подписи:
+ * `Russian Machine Translated`, `Нет перевода для элемента`,
+ * `Sprache (maschinelle Übersetzung)` — не заглушки.
+ */
+const STUB_WORDS = new Set([
+  "translation",
+  "перевод",
+  "翻訳",
+  "翻譯",
+  "翻译",
+  "übersetzung",
+  "traduction",
+  "traduzione",
+  "traducción",
+  "tradução",
+  "traduit",
+  "übersetzt",
+]);
+
+const STUB_PREFIX =
+  /^(translation|перевод|翻訳|翻譯|翻译|übersetzung|traduction|traduzione|traducción|tradução)\s*:\s*/iu;
+
+const INSTRUCTION_MARK = /(重要|важно|important|wichtig|importante)/iu;
+const NUMBERING_MARK =
+  /(行号|行番号|номер строки|numéro de (la )?ligne|número de (la )?línea|line numbers?)/iu;
+const TRANSLATION_MARK =
+  /(翻译|翻訳|翻譯|译文|перевод|traduction|traduzione|traducción|tradução|translation)/iu;
+
+/**
+ * Заглушки машинного прохода в переводе. Пустой массив — чисто.
+ *
+ * `source` (msgid) снимает ложное срабатывание на строке, где сам оригинал
+ * начинается с `translation:` — там префикс легитимен.
+ */
+export function stubHits(msgstr: string, source = ""): string[] {
+  const text = msgstr.trim();
+  if (!text) return [];
+  const hits: string[] = [];
+  const bare = text.replace(/[.!?…\s]+$/u, "").toLowerCase();
+  if (STUB_WORDS.has(bare)) hits.push("stub-word");
+  const prefix = STUB_PREFIX.exec(text);
+  if (prefix && !STUB_PREFIX.test(source.trim())) hits.push("stub-prefix");
+  if (INSTRUCTION_MARK.test(text) && NUMBERING_MARK.test(text) && TRANSLATION_MARK.test(text)) {
+    hits.push("prompt-instruction");
+  }
+  return hits;
+}
