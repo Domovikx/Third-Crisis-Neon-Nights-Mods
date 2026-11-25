@@ -171,6 +171,11 @@ node scripts/rt_backfill.mts --dry      # план: что переставит�
 node scripts/rt_backfill.mts --dry --json tmp/rt-review.json
 ```
 
+Гейт читает PO с любыми переводами строк (EOL нормализуется до LF) и краснеет
+при открытых `#, rt-review`: «ждёт человека» — не «проверено». Осознанно
+смотреть только нарушения разметки — `--allow-review`; прогнать на фикстуре —
+`--root <dir>`.
+
 Гейт — `scripts/rich_gate.test.mts` (фикстура + реальные `po/*.po`, `.dat` —
 opt-in). Отчёт по строкам «на человеке»: `node scripts/rt_backfill.mts --dry
 --json tmp/rt-review.json`.

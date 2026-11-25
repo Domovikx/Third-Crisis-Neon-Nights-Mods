@@ -292,17 +292,53 @@ fn запись_атомарная_и_пустой_список_даёт_пус�
 }
 
 #[test]
-fn gated_победитель_скрывает_текст_целиком() {
-    // Характеризация поведения Python-версии: гейт смотрит только на filled[0].
+fn gated_все_варианты_догадки_скрывают_текст() {
+    // Характеризация: если ВСЕ переведённые варианты — auto-normalized,
+    // текст остаётся без перевода (гейт скрывает догадку, а не строку).
     let fx = Fixture::new(
         "gated-mixed",
         HEADER,
         &format!(
             "{HEADER}\n#: translations/a.yaml\n#, auto-normalized\nmsgid \"X\"\nmsgstr \"Икс\"\n\n\
-             #: translations/b.yaml\nmsgid \"X\"\nmsgstr \"ИКС\"\n"
+             #: translations/b.yaml\n#, auto-normalized\nmsgid \"X\"\nmsgstr \"ИКС\"\n"
         ),
     );
     let (rows, report) = build_dat("xx", &fx.root).expect("сборка");
     assert!(rows.is_empty());
+    assert_eq!(report.gated_auto_normalized, 2);
+}
+
+#[test]
+fn гейт_догадки_фолбэчит_на_человеческий_вариант() {
+    // Победитель по ref — догадка, но у другого контекста есть перевод
+    // человека: гейт скрывает ОДИН вариант, а не текст целиком.
+    let fx = Fixture::new(
+        "gate-fallback",
+        HEADER,
+        &format!(
+            "{HEADER}\n#: translations/aaa.yaml\n#, auto-normalized\nmsgid \"X\"\nmsgstr \"догадка\"\n\n\
+             #: translations/zzz.yaml\nmsgid \"X\"\nmsgstr \"человек\"\n"
+        ),
+    );
+    let (rows, report) = build_dat("xx", &fx.root).expect("сборка");
+    assert_eq!(rows.len(), 1);
+    assert_eq!(rows[0].x, "человек");
     assert_eq!(report.gated_auto_normalized, 1);
+}
+
+#[test]
+fn fuzzy_в_dat_не_компилируется_а_соседи_остаются() {
+    let fx = Fixture::new(
+        "fuzzy",
+        &format!("{HEADER}\nmsgid \"Dialogue 1\"\nmsgstr \"\"\n\nmsgid \"Plain\"\nmsgstr \"\"\n"),
+        &format!(
+            "{HEADER}\n#, fuzzy\nmsgid \"Dialogue 1\"\nmsgstr \"ДИАЛОГ\"\n\n\
+             msgid \"Plain\"\nmsgstr \"Обычный\"\n"
+        ),
+    );
+    let (rows, report) = build_dat("xx", &fx.root).expect("сборка");
+    assert_eq!(rows.len(), 1, "fuzzy-строка не компилируется");
+    assert_eq!(rows[0].t, "Plain");
+    assert_eq!(rows[0].x, "Обычный");
+    assert_eq!(report.gated_fuzzy, 1);
 }

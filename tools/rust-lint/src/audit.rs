@@ -867,7 +867,10 @@ fn check_po(
         }
     }
 
-    for e in pot_entries.iter().filter(|e| !e.msgid.is_empty()) {
+    for e in pot_entries
+        .iter()
+        .filter(|e| !e.msgid.is_empty() && !e.flags.iter().any(|f| f == "skip"))
+    {
         if !by_key.contains_key(&(e.msgctxt.clone(), e.msgid.clone())) {
             collector.add(
                 "po.missing-key",

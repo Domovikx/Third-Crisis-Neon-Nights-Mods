@@ -12,10 +12,14 @@
  *      обязан иметь размеченный перевод в `.dat`, и наоборот.
  *
  * CLI:
- *   node scripts/rich_gate.mts [--lang ru|all] [--dat]
+ *   node scripts/rich_gate.mts [--lang ru|all] [--dat] [--root <dir>] [--allow-review]
+ *
+ * `#, rt-review` — это «ждёт человека», а не «проверено»: при открытых
+ * review-строках гейт красный (exit ≠ 0). `--allow-review` — осознанный режим
+ * «смотреть только нарушения разметки».
  */
 import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import { join, resolve } from "node:path";
 import process from "node:process";
 
 import { parsePo } from "../.opencode/skills/extract-text/scripts/po_file.mts";
@@ -28,8 +32,8 @@ export const LANGS = ["zh", "ru", "es", "pt", "de", "ja", "fr", "pl", "ko", "it"
 export const tagSequence = (s: string): string[] => tagRaws(s);
 export const denseText = (s: string): string => s.replace(/<[^<>]*>/g, "").replace(/\s+/gu, "");
 
-export const RICH_LINE = /^#\. rich_text: (.*)$/;
-export const RT_LINE = /^#\. rich_translation:(?: (.*))?$/;
+export const RICH_LINE = /^#\. rich_text: (.*)$/m;
+export const RT_LINE = /^#\. rich_translation:(?: (.*))?$/m;
 
 export interface PoGate {
   lang: string;
@@ -60,7 +64,11 @@ export interface PoGate {
 }
 
 /** Проверить один PO-файл по правилу adjacency. */
-export function auditPoText(lang: string, text: string): PoGate {
+export function auditPoText(lang: string, raw: string): PoGate {
+  // EOL нормализуем до LF: иначе `split(/\n\n/)` не делит CRLF-блоки, а `$`
+  // без `/m` не матчит строку с `\r` — гейт молча проверяет 0 записей и
+  // показывает ложный зелёный на любом CRLF-PO.
+  const text = raw.replace(/\r\n?/g, "\n");
   const out: PoGate = {
     lang,
     rich: 0,
@@ -176,12 +184,19 @@ export function datRtKeys(datText: string): Set<string> {
 }
 
 function main(argv: string[]): number {
+  let root = REPO;
   let langs: string[] = [...LANGS];
   let checkDat = false;
+  let allowReview = false;
   for (let i = 0; i < argv.length; i += 1) {
     const a = argv[i];
     if (a === "--dat") checkDat = true;
-    else if (a === "--lang") {
+    else if (a === "--allow-review") allowReview = true;
+    else if (a === "--root") {
+      const v = argv[++i];
+      if (!v) throw new Error("--root: нужен каталог");
+      root = resolve(v);
+    } else if (a === "--lang") {
       const v = argv[++i] ?? "";
       if (v === "all") langs = [...LANGS];
       else if (!(LANGS as readonly string[]).includes(v)) throw new Error(`неизвестный язык: ${v}`);
@@ -189,20 +204,21 @@ function main(argv: string[]): number {
     } else throw new Error(`неизвестный аргумент: ${a}`);
   }
   const potKeysAll = checkDat
-    ? potRichKeys(readFileSync(join(REPO, "po", "template.pot"), "utf8"))
+    ? potRichKeys(readFileSync(join(root, "po", "template.pot"), "utf8"))
     : new Set<string>();
   console.log(
     "язык  rich  пар  заготовок  без пары  пустых  теги≠  текст≠  артефакты  на человеке  legacy  dat≠",
   );
   let bad = 0;
+  let reviewTotal = 0;
   for (const lang of langs) {
-    const poText = readFileSync(join(REPO, "po", `${lang}.po`), "utf8");
+    const poText = readFileSync(join(root, "po", `${lang}.po`), "utf8");
     const r = auditPoText(lang, poText);
     let datDiff = "-";
     if (checkDat) {
       const translated = poTranslatedKeys(poText);
       const potKeys = new Set([...potKeysAll].filter((k) => translated.has(k)));
-      const datKeys = datRtKeys(readFileSync(join(REPO, "runtime", `patch_${lang}.dat`), "utf8"));
+      const datKeys = datRtKeys(readFileSync(join(root, "runtime", `patch_${lang}.dat`), "utf8"));
       const missing = [...potKeys].filter((k) => !datKeys.has(k)).length;
       const extra = [...datKeys].filter((k) => !potKeys.has(k)).length;
       datDiff = `${missing}+${extra}`;
@@ -215,6 +231,10 @@ function main(argv: string[]): number {
       r.textMismatch.length +
       r.artifacts.length +
       r.legacy;
+    // `#, rt-review` = разметку ждёт человек. Молча-зелёный гейт при 1400
+    // открытых строках — дефект: без `--allow-review` они считаются отказом.
+    reviewTotal += r.review.length;
+    if (!allowReview) bad += r.review.length;
     console.log(
       `${lang.padEnd(4)} ${String(r.rich).padStart(5)} ${String(r.adjacent).padStart(4)} ` +
         `${String(r.stubs).padStart(9)} ${String(r.notAdjacent.length).padStart(8)} ` +
@@ -233,7 +253,17 @@ function main(argv: string[]): number {
       console.log(`  ! артефакт: ${x.key} — ${x.problems.join("; ").slice(0, 90)}`);
     if (r.untagged.length) console.log(`  ~ rich_text без тегов (шум дампа): ${r.untagged.length}`);
   }
-  console.log(bad ? `\nнарушений: ${bad}` : "\nнарушений нет");
+  if (bad) {
+    const note =
+      reviewTotal && !allowReview
+        ? ` (из них на человеке: ${reviewTotal}; осознанно пропустить — --allow-review)`
+        : "";
+    console.log(`\nнарушений: ${bad}${note}`);
+  } else if (reviewTotal) {
+    console.log(`\nнарушений нет (на человеке: ${reviewTotal}, пропущено по --allow-review)`);
+  } else {
+    console.log("\nнарушений нет");
+  }
   return bad ? 1 : 0;
 }
 

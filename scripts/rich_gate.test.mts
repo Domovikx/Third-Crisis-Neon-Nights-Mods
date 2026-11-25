@@ -249,6 +249,61 @@ test("реальные po/*.po: adjacency по всем языкам — 0 на�
   }
 });
 
+test("CRLF-фикстура: те же 2374 проверки и те же вердикты, что на LF", () => {
+  // На CRLF `split(/\n\n/)` не делил блоки, а `$` без `/m` не матчил строку
+  // с `\r`: гейт показывал 0 проверок и exit 0 на любом CRLF-PO.
+  const lf = readFileSync(join(REPO, "po", "ru.po"), "utf8").replace(/\r\n?/g, "\n");
+  const crlf = lf.replace(/\n/g, "\r\n");
+  const a = auditPoText("ru", lf);
+  const b = auditPoText("ru", crlf);
+  assert.equal(a.rich, 2374, "контроль: LF читается");
+  assert.equal(b.rich, a.rich, "CRLF не должен уменьшать число проверок");
+  assert.equal(b.adjacent, a.adjacent);
+  assert.deepEqual(b.notAdjacent, a.notAdjacent);
+  assert.deepEqual(b.emptyForTranslated, a.emptyForTranslated);
+  assert.deepEqual(b.tagMismatch, a.tagMismatch);
+  assert.deepEqual(b.textMismatch, a.textMismatch);
+  assert.deepEqual(b.artifacts, a.artifacts);
+  assert.deepEqual(b.review, a.review);
+});
+
+test("CLI: открытые `#, rt-review` не оставляют гейт зелёным", () => {
+  const dir = mkdtempSync(join(REPO, "tmp", "rt-review-"));
+  try {
+    mkdirSync(join(dir, "po"));
+    writeFileSync(
+      join(dir, "po", "ru.po"),
+      `msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\\n"
+
+#. src: dialog
+#. rich_text: A <b>bold</b> word
+#. rich_translation: Жирное слово
+#, rt-review
+msgctxt "speaker:Zoey"
+msgid "A bold word"
+msgstr "Жирное слово"
+`,
+      "utf8",
+    );
+    const script = join(REPO, "scripts", "rich_gate.mts");
+    const strict = spawnSync(process.execPath, [script, "--root", dir, "--lang", "ru"], {
+      encoding: "utf8",
+    });
+    assert.equal(strict.status, 1, `${strict.stdout}\n${strict.stderr}`);
+    assert.match(strict.stdout, /на человеке: 1/);
+
+    const allowed = spawnSync(
+      process.execPath,
+      [script, "--root", dir, "--lang", "ru", "--allow-review"],
+      { encoding: "utf8" },
+    );
+    assert.equal(allowed.status, 0, `${allowed.stdout}\n${allowed.stderr}`);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
 test("реальные runtime/*.dat: A == B по ключам (opt-in, если .dat собран)", (t) => {
   const dats = LANGS.map((l) => join(REPO, "runtime", `patch_${l}.dat`));
   if (dats.some((p) => !existsSync(p))) {

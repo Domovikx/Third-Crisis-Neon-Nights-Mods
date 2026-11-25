@@ -30,7 +30,7 @@
     "lint:fix": "oxlint --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "verify": "npm run typecheck && npm run lint && npm run format:check && npm run check:langs && npm test && npm run test:dump && npm run test:assemble && npm run test:qa && npm run test:e2e",
+    "verify": "npm run typecheck && npm run lint && npm run format:check && npm run check:langs && npm run rt:gate -- --allow-review && npm test && npm run test:dump && npm run test:assemble && npm run test:qa && npm run test:e2e",
     "build": "node .opencode/skills/build-translator/scripts/build.mts",
     "build:proxy": "node .opencode/skills/build-translator/scripts/build_proxy.mts",
     "deploy": "node .opencode/skills/deploy-translator/scripts/deploy.mts",

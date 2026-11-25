@@ -7,6 +7,11 @@
 //! rich_text берётся из `#. rich_text:` комментариев `po/template.pot`,
 //! явный rich_translation — из `# rich_translation: ...` (алиас `# rich: ...`) в PO. Дубликаты текста решаются
 //! «earliest-ref-file-wins» (повторяет first-wins загрузчика C#).
+//!
+//! Два гейта «перевод не готов»: `#, fuzzy` (gettext: не проверен) и
+//! `#, auto-normalized` (автоправка ждёт человека). Оба отбрасываются ПО ВАРИАНТУ:
+//! если у того же текста под другим контекстом есть человеческий перевод, в `.dat`
+//! идёт он, а не пустая строка.
 
 use std::collections::{HashMap, HashSet};
 use std::path::{Path, PathBuf};
@@ -35,6 +40,19 @@ pub struct DatReport {
     pub no_rich: usize,
     pub rich_only: usize,
     pub gated_auto_normalized: usize,
+    /// `#, fuzzy`: «перевод не проверен» (так его понимает gettext) — в `.dat`
+    /// не идёт, пока флаг не снят.
+    pub gated_fuzzy: usize,
+}
+
+/// `#, fuzzy` — перевод-догадка, не прошедший ревью: в словарь не попадает.
+fn is_fuzzy(entry: &PoEntry) -> bool {
+    entry.flags.iter().any(|f| f == "fuzzy")
+}
+
+/// `#, auto-normalized` — автоправка формы, которая ждёт человека.
+fn is_auto_normalized(entry: &PoEntry) -> bool {
+    entry.flags.iter().any(|f| f == "auto-normalized")
 }
 
 /// `msgid -> rich_text` из `#. rich_text:` комментариев template.pot
@@ -145,6 +163,11 @@ pub fn build_dat(lang: &str, root: &Path) -> Result<(Vec<DatRow>, DatReport), St
             .copied()
             .filter(|e| !e.msgstr.is_empty())
             .collect();
+        // `#, fuzzy` = перевод не проверен (gettext): в словарь его не пускаем,
+        // иначе непроверенная догадка молча становится финальным переводом.
+        let before_fuzzy = filled.len();
+        filled.retain(|e| !is_fuzzy(e));
+        report.gated_fuzzy += before_fuzzy - filled.len();
         let mut msgstr = String::new();
 
         if !filled.is_empty() {
@@ -161,13 +184,18 @@ pub fn build_dat(lang: &str, root: &Path) -> Result<(Vec<DatRow>, DatReport), St
                         .collect(),
                 ));
             }
-            msgstr = filled[0].msgstr.clone();
             // Гейт ревью: авто-нормализованное едет только после снятия флага.
-            // Гейт смотрит ТОЛЬКО на победителя сортировки (поведение Python).
-            if filled[0].flags.iter().any(|f| f == "auto-normalized") {
-                report.gated_auto_normalized += 1;
+            // Догадка отбрасывается ПО ВАРИАНТУ, а не вместе с текстом: если у
+            // другого контекста есть человеческий перевод, он и попадает в
+            // `.dat` (раньше `continue` уносил текст целиком).
+            let before_gated = filled.len();
+            filled.retain(|e| !is_auto_normalized(e));
+            report.gated_auto_normalized += before_gated - filled.len();
+            if filled.is_empty() {
                 continue;
             }
+            let winner = filled[0];
+            msgstr = winner.msgstr.clone();
         }
 
         if seen_texts.contains(text.as_str()) {

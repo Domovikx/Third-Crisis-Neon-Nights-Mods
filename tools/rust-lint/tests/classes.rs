@@ -532,3 +532,17 @@ fn calibration_font_tags_are_not_imbalance() {
 fn a_entry_with_rich() -> String {
     format!("#. rich_text: <i>Hello</i>\n{}", entry("ui", "Hello", ""))
 }
+
+#[test]
+fn skip_entries_are_not_missing_keys() {
+    // `#, skip` = «перевод не нужен», po_update такую запись в PO не заводит.
+    // Отсутствие ключа — норма, а не потеря строки на слиянии.
+    let pot_text = pot(&format!(
+        "#, skip\n{}#. src: ui\n{}",
+        entry("ui", "Apl_Noise", ""),
+        entry("ui", "Hello", "")
+    ));
+    let po_text = entry("ui", "Hello", "Привет");
+    let audit = audit_strings("ru", &pot_text, &po_text, None);
+    assert_eq!(audit.count("po.missing-key"), 0);
+}

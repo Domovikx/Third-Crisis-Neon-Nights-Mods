@@ -455,6 +455,10 @@ fn print_dat_report(lang: &str, rows: usize, out_path: &std::path::Path, report:
         "  gated auto-normalized (awaiting human): {}",
         report.gated_auto_normalized
     );
+    eprintln!(
+        "  gated fuzzy (not reviewed, gettext): {}",
+        report.gated_fuzzy
+    );
     for (text, variants) in &report.dupes {
         let pairs: Vec<String> = variants
             .iter()
