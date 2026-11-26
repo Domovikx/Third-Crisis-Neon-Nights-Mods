@@ -16,11 +16,15 @@
 /** JSON-артефакт конфига: prettier от компактного JSON. */
 export async function renderJson(value: unknown): Promise<string> {
   const { format } = await import("prettier");
-  return format(JSON.stringify(value), { parser: "json" });
+  return format(JSON.stringify(value), { parser: "json", filepath: "config/emit.json" });
 }
 
 /** Сгенерированный TypeScript (для `--write`-генераторов вроде speaker_gender). */
 export async function formatTypeScript(code: string): Promise<string> {
   const { format } = await import("prettier");
-  return format(code, { parser: "typescript" });
+  return format(code, {
+    parser: "typescript",
+    quoteProps: "consistent",
+    filepath: "config/emit.ts",
+  });
 }

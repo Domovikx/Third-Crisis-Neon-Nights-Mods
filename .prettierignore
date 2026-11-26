@@ -22,3 +22,5 @@ installer-ui/target/
 installer-ui/payload/
 installer-ui/src-tauri/gen/
 installer-ui/node_modules/
+# генерируется scripts/speaker_gender.mts --write (свои кавычки для читабельности)
+config/speaker-gender.mts
