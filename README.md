@@ -114,9 +114,11 @@ npm run verify         # typecheck + lint + format + langs + tests + e2e
   удаляет** перевод. Манифест `install-manifest.json` (sha256 + версия пакета)
   — общий с ручным `.7z` (там манифест создаёт рантайм при первом запуске),
   поэтому удаление одинаковое. Payload
-  (`payload/`) собирается `npm run payload`; ручной архив (`npm run manual`) —
-  без `.exe/.cmd/.ps1`, манифест создаёт рантайм при первом запуске, FOMOD для
-  Vortex. См. `installer-ui/README.md`.
+  (`payload/`) собирается `npm run payload` и **вшивается в бандл** как ресурс
+  (`bundle.resources`): NSIS кладёт его в папку установки, fallback — папка
+  `payload/` рядом с exe. Иконки — `npm run icons` из исходного арта. Ручной
+  архив (`npm run manual`) — без `.exe/.cmd/.ps1`, манифест создаёт рантайм при
+  первом запуске, FOMOD для Vortex. См. `installer-ui/README.md`.
 - **CLI-план.** `installer/install.mts`: находит игру, сверяет язык с
   приоритетом, показывает план раскладки; копирование — через `deploy.mts`
   (отдельной второй реализации нет).

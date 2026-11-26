@@ -46,7 +46,7 @@ const ru = {
 
   payloadLabel: "Пакет",
   payloadLine: "Пакет: {version} · языков: {count}",
-  payloadMissing: "Рядом с менеджером нет папки payload — пересоберите пакет (см. README).",
+  payloadMissing: "В пакете менеджера нет payload — пересоберите пакет (см. README).",
   updateAvailable: "Доступно обновление: {from} → {to}",
   actionInstall: "Установить",
   actionUpdate: "Обновить",
@@ -153,7 +153,7 @@ const en: Record<MessageKey, string> = {
 
   payloadLabel: "Package",
   payloadLine: "Package: {version} · languages: {count}",
-  payloadMissing: "No payload folder next to the manager — rebuild the package (see README).",
+  payloadMissing: "The manager package has no payload — rebuild the package (see README).",
   updateAvailable: "Update available: {from} → {to}",
   actionInstall: "Install",
   actionUpdate: "Update",

@@ -81,16 +81,19 @@ test("README: 3 шага, манифест рантайма, DLL-предупр�
   assert.doesNotMatch(readme, /powershell/i);
 });
 
-test("dist: исполняемые артефакты запрещены, exe менеджера — исключение", () => {
+test("dist: исполняемые артефакты запрещены, exe менеджера и NSIS — исключение", () => {
   const dir = mkdtempSync(join(tmpdir(), "ntdx-dist-"));
   try {
     writeFileSync(join(dir, "archive.7z"), "");
     writeFileSync(join(dir, "NeonTranslatorDXManager.exe"), "");
+    writeFileSync(join(dir, "NeonTranslatorDX Manager_2026.11.26-1_x64-setup.exe"), "");
     writeFileSync(join(dir, "setup.ps1"), "");
     writeFileSync(join(dir, "run.cmd"), "");
-    assert.deepEqual(forbiddenDistEntries(dir).sort(), ["run.cmd", "setup.ps1"]);
+    writeFileSync(join(dir, "other.exe"), "");
+    assert.deepEqual(forbiddenDistEntries(dir).sort(), ["other.exe", "run.cmd", "setup.ps1"]);
     unlinkSync(join(dir, "setup.ps1"));
     unlinkSync(join(dir, "run.cmd"));
+    unlinkSync(join(dir, "other.exe"));
     assert.deepEqual(forbiddenDistEntries(dir), []);
   } finally {
     rmSync(dir, { recursive: true, force: true });

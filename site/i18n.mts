@@ -33,7 +33,7 @@ const RU = {
   "hero.btn.exe": "Скачать (exe)",
   "hero.btn.manual": "Ручная установка (7z)",
   "hero.note":
-    "Сборка {version}: архивы и установщик публикуются в GitHub Releases. Установщик (exe) готовится к релизу; ручной архив ставится за три шага.",
+    "Сборка {version}: установщик (exe) и ручной архив публикуются в GitHub Releases. Менеджер ставит, обновляет и удаляет перевод одним окном; ручной архив ставится распаковкой за три шага.",
 
   "stats.label": "Покрытие перевода",
   "stats.lines": "строк на язык",
@@ -162,7 +162,7 @@ const EN: Record<SiteMessageKey, string> = {
   "hero.btn.exe": "Download (exe)",
   "hero.btn.manual": "Manual install (7z)",
   "hero.note":
-    "Build {version}: archives and the installer are published on GitHub Releases. The (exe) installer is being prepared; the manual archive installs in three steps.",
+    "Build {version}: the (exe) manager and the manual archive are published on GitHub Releases. The manager installs, updates and removes the translation in one window; the manual archive installs by extraction in three steps.",
 
   "stats.label": "Translation coverage",
   "stats.lines": "lines per language",

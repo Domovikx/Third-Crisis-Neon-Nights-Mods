@@ -69,7 +69,21 @@ export function scaleFilter(size: number): string {
 
 /** PNG указанного размера (буфер). */
 export function pngAt(src: string, size: number): Buffer {
-  return runFfmpeg(["-v", "error", "-i", src, "-vf", scaleFilter(size), "-frames:v", "1", "-f", "image2pipe", "-vcodec", "png", "-"]);
+  return runFfmpeg([
+    "-v",
+    "error",
+    "-i",
+    src,
+    "-vf",
+    scaleFilter(size),
+    "-frames:v",
+    "1",
+    "-f",
+    "image2pipe",
+    "-vcodec",
+    "png",
+    "-",
+  ]);
 }
 
 /** Сырой BGRA (top-down, как у ffmpeg) для BMP-записи .ico. */

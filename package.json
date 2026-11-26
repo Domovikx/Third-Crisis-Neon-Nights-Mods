@@ -62,7 +62,8 @@
     "rt:audit": "node scripts/rt_audit.mts",
     "rt:backfill": "node scripts/rt_backfill.mts",
     "rt:gate": "node scripts/rich_gate.mts",
-    "rt:pass": "node scripts/rich_pass.mts"
+    "rt:pass": "node scripts/rich_pass.mts",
+    "manual": "node installer-ui/scripts/build_manual_archive.mts"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

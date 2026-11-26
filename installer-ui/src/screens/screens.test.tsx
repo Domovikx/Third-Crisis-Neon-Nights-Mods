@@ -174,7 +174,7 @@ describe("Status", () => {
         payload={{ ...payload, exists: false, langs: [] }}
       />,
     );
-    expect(markup).toContain("нет папки payload");
+    expect(markup).toContain("нет payload");
     expect(markup).toMatch(/disabled[^>]*data-testid="Status--install"/);
   });
 

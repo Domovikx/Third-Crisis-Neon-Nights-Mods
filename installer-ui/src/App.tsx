@@ -9,7 +9,11 @@ import { Progress } from "@/screens/Progress";
 import { Status } from "@/screens/Status";
 import { Uninstall } from "@/screens/Uninstall";
 import { Verify } from "@/screens/Verify";
+import pkg from "../package.json";
 import { styles } from "./App.styles";
+
+/** Версия приложения — из package.json (одна с tauri.conf.json). */
+export const APP_VERSION = pkg.version;
 
 const defaultPlatform = createPlatform();
 
@@ -111,7 +115,9 @@ export function App({ platform = defaultPlatform }: { platform?: InstallerPlatfo
       </main>
 
       <footer className={cx(styles.footer)}>
-        <span>{tr("appTitle")} · v0.1.0</span>
+        <span>
+          {tr("appTitle")} · v{APP_VERSION}
+        </span>
         <span>{tr("winNote")}</span>
       </footer>
     </div>

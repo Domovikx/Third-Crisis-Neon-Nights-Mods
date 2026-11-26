@@ -284,6 +284,55 @@ pub fn run() {
 // CLI: поддержка и E2E (в реальную игру без явного пути не ходит)
 // ---------------------------------------------------------------------------
 
+/// `--install <game> [lang]`: поставить мод из payload (по умолчанию `ru`).
+pub fn cli_install(game: &str, lang: &str) -> i32 {
+    let payload = install::find_payload(&exe_dir());
+    println!("payload: {}", payload.display());
+    match install::install(Path::new(game), &payload, lang) {
+        Ok(result) => {
+            println!(
+                "установлено: {} файлов, записано {}, язык {}, версия {}",
+                result.files.len(),
+                result.copied,
+                result.lang,
+                result.payload_version.as_deref().unwrap_or("-")
+            );
+            println!("манифест: {}", result.manifest_path);
+            0
+        }
+        Err(error) => {
+            eprintln!("ОШИБКА: {error}");
+            1
+        }
+    }
+}
+
+/// `--update <game>`: обновить установленное из payload бандла.
+pub fn cli_update(game: &str) -> i32 {
+    let payload = install::find_payload(&exe_dir());
+    println!("payload: {}", payload.display());
+    match install::update(Path::new(game), &payload) {
+        Ok(result) => {
+            println!(
+                "обновлено: язык {}, версия {}, записано {}, пропущено {}, удалено {}",
+                result.lang,
+                result.payload_version.as_deref().unwrap_or("-"),
+                result.copied,
+                result.skipped,
+                result.removed_stale.len()
+            );
+            for path in &result.removed_stale {
+                println!("  удалено: {path}");
+            }
+            0
+        }
+        Err(error) => {
+            eprintln!("ОШИБКА: {error}");
+            1
+        }
+    }
+}
+
 /// `--status <game>`: напечатать статус и код 0/2.
 pub fn cli_status(game: &str) -> i32 {
     match status::status(Path::new(game)) {

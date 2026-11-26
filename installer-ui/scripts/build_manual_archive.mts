@@ -165,9 +165,15 @@ export function forbiddenEntries(files: string[]): string[] {
 }
 
 /**
- * Исполняемые файлы, лежащие в каталоге релиза рядом с архивами. Сам exe
- * менеджера — легальный артефакт, его не считаем.
+ * Исполняемые файлы, лежащие в каталоге релиза рядом с архивами. Легальные
+ * артефакты менеджера — `NeonTranslatorDXManager.exe` и его NSIS-инсталлятор
+ * (`NeonTranslatorDX Manager_<версия>_x64-setup.exe`); всё остальное
+ * (.ps1/.cmd/чужой exe) — повод остановиться.
  */
+export function isManagerArtifact(name: string): boolean {
+  return name.startsWith("NeonTranslatorDX") && name.toLowerCase().endsWith(".exe");
+}
+
 export function forbiddenDistEntries(dir: string): string[] {
   if (!existsSync(dir)) return [];
   return readdirSync(dir, { withFileTypes: true })
@@ -175,8 +181,7 @@ export function forbiddenDistEntries(dir: string): string[] {
     .map((entry) => entry.name)
     .filter(
       (name) =>
-        name !== "NeonTranslatorDXManager.exe" &&
-        FORBIDDEN_EXTENSIONS.includes(extname(name).toLowerCase()),
+        !isManagerArtifact(name) && FORBIDDEN_EXTENSIONS.includes(extname(name).toLowerCase()),
     );
 }
 
