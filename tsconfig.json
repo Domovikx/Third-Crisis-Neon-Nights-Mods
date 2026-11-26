@@ -10,6 +10,6 @@
     "lib": ["es2023"],
     "types": ["node"]
   },
-  "include": [".opencode/skills/**/*.mts", "scripts/**/*.mts"],
+  "include": [".opencode/skills/**/*.mts", "scripts/**/*.mts", "config/**/*.mts"],
   "exclude": ["node_modules", "**/node_modules", "tmp", "output", "runtime", "fonts", "po"]
 }

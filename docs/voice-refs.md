@@ -100,7 +100,10 @@ Denoise). Наши рефы уже вычищены, поэтому `denoise=Fal
 
 ## 6. Что мы собрали и почему так
 
-12 файлов в `voice-demo/refs-ready/` (подробности — `index.md` рядом):
+12 заготовок лежат в `voice-refs/<Персонаж>/candidates/` (`A.wav`, `B.wav`,
+`C.wav`, у Rosie — `probe.wav`; состав — `voice-demo/refs-ready/index.md`).
+Выбранный реф владелец кладёт в `voice-refs/<Персонаж>/chosen/`; правила —
+`voice-refs/README.md`.
 
 - Zoey A 11,60 / B 16,29 / C 21,55 с — три **непересекающихся** набора клипов
   (2 / 4 / 5 фрагментов), все из сцены Lio (самый чистый источник);

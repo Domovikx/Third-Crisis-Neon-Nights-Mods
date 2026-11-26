@@ -47,3 +47,10 @@ dist/
 po/*.bak
 # демо озвучки: аудио и референсы живут локально
 voice-demo/
+
+# Рефы озвучки: аудио — локальный артефакт, в git только структура и README
+voice-refs/**/*.wav
+voice-refs/**/*.mp3
+voice-refs/**/*.flac
+voice-refs/**/*.ogg
+voice-refs/**/*.opus
