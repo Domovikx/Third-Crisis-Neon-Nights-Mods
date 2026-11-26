@@ -167,3 +167,15 @@ npm run verify         # typecheck + lint + format + langs + tests + e2e
 Перевод — неофициальная фанатская работа, не связанная с разработчиками. Все права на игру
 принадлежат [Anduo Games](https://store.steampowered.com/app/3400350/Third_Crisis_Neon_Nights/).
 Для использования перевода нужна лицензионная копия игры.
+
+## Где посмотреть и послушать
+
+- **Сайт (опубликован):** https://domovikx.github.io/Third-Crisis-Neon-Nights-Mods/ — RU/EN.
+- **Релиз:** https://github.com/Domovikx/Third-Crisis-Neon-Nights-Mods/releases/tag/v2026.11.26-1
+  (`NeonTranslatorDXManager.exe`, NSIS-setup, `manual.7z`).
+- **UI менеджера локально:** собрать `cd installer-ui && npm run build && npm run tauri dev`
+  или запустить `dist/NeonTranslatorDXManager.exe` (payload лежит в `dist/payload/`).
+  Браузерный мок без Tauri: `cd installer-ui && npm run dev`.
+- **Послушать пробу озвучки:** `tmp/vox-test/` — варианты рефа Narrator A/B/C на одной
+  длинной русской фразе с эмоцией (`report.md` рядом: длительности, LUFS, время).
+- **Рефы голосов:** `voice-refs/<Персонаж>/candidates/` (+ `chosen/` — выбранный вручную).
