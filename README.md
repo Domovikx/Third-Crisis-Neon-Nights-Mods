@@ -172,7 +172,7 @@ npm run verify         # typecheck + lint + format + langs + tests + e2e
 
 - **Сайт (опубликован):** https://domovikx.github.io/Third-Crisis-Neon-Nights-Mods/ — RU/EN.
 - **Релиз:** https://github.com/Domovikx/Third-Crisis-Neon-Nights-Mods/releases/tag/v2026.11.26-1
-  (`NeonTranslatorDXManager.exe`, NSIS-setup, `manual.7z`).
+  (`NeonTranslatorDXManager.exe` — портативный, словари вшиты; `manual.7z` — ручная установка).
 - **UI менеджера локально:** собрать `cd installer-ui && npm run build && npm run tauri dev`
   или запустить `dist/NeonTranslatorDXManager.exe` (payload лежит в `dist/payload/`).
   Браузерный мок без Tauri: `cd installer-ui && npm run dev`.
