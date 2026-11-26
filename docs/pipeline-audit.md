@@ -6,17 +6,17 @@
 
 ## 1. Карта и контракты
 
-| стадия    | вход                                      | выход                          | владелец кода                         |
-| --------- | ----------------------------------------- | ------------------------------ | ------------------------------------- |
-| дамп      | `*.assets`, бандлы, `Assembly-CSharp.dll` | `tmp/dump-after/*.jsonl`       | `dump-assets` (Rust-байты + TS-смысл) |
-| инвентарь | JSONL                                     | `{text,speaker,rich,kind,src}` | `extract-text/inventory`              |
-| каталог   | инвентарь                                 | `(msgid,msgctxt)→slot`         | `potgen`                              |
-| отбор     | каталог + `config/pot-src-policy.json`    | POT без ассетов                | `potgen`                              |
-| skip      | каталог + политика + `pot-skip-ids.json`  | `#, skip` в POT                | `potgen`                              |
-| POT       | —                                         | `po/template.pot`              | `potgen` (Rust)                       |
-| перевод   | POT + `po/<lang>.po` + дамп (контекст)    | `po/<lang>.po`                 | `translate-local`                     |
-| словарь   | PO + `#. rich_text:` (POT)                | `runtime/patch_<lang>.dat`     | `po2dat` (Rust)                       |
-| игра      | `.dat`                                    | заменённый текст TMP           | C# рантайм (`build-translator`)       |
+| стадия    | вход                                                        | выход                          | владелец кода                         |
+| --------- | ----------------------------------------------------------- | ------------------------------ | ------------------------------------- |
+| дамп      | `*.assets`, бандлы, `Assembly-CSharp.dll`                   | `tmp/dump-after/*.jsonl`       | `dump-assets` (Rust-байты + TS-смысл) |
+| инвентарь | JSONL                                                       | `{text,speaker,rich,kind,src}` | `extract-text/inventory`              |
+| каталог   | инвентарь                                                   | `(msgid,msgctxt)→slot`         | `potgen`                              |
+| отбор     | каталог + `config/pot-src-policy.json` (артефакт `.mts`)    | POT без ассетов                | `potgen`                              |
+| skip      | каталог + политика + `pot-skip-ids.json` (артефакты `.mts`) | `#, skip` в POT                | `potgen`                              |
+| POT       | —                                                           | `po/template.pot`              | `potgen` (Rust)                       |
+| перевод   | POT + `po/<lang>.po` + дамп (контекст)                      | `po/<lang>.po`                 | `translate-local`                     |
+| словарь   | PO + `#. rich_text:` (POT)                                  | `runtime/patch_<lang>.dat`     | `po2dat` (Rust)                       |
+| игра      | `.dat`                                                      | заменённый текст TMP           | C# рантайм (`build-translator`)       |
 
 Контракты зафиксированы тестами: POT — `docs/pot-contract.md` (14+ инвариантов),
 PO — `references/PO_FORMAT.md`, rich — `docs/rich-text-audit.md`.

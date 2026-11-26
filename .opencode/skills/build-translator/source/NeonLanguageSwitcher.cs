@@ -15,7 +15,7 @@ namespace NeonTranslatorDX
     // RIGHT corner, two columns of language rows, native names only, current
     // language highlighted in the game's pink accent. It is sized and anchored
     // so it never covers the main-menu buttons, at 1920x1080 and 1600x900.
-    // Language order comes from config/language-priority.json (guarded by
+    // Language order comes from config/language-priority.mts (JSON artifact, guarded by
     // .opencode/skills/build-translator/tests/menu.test.mts).
     // Own texts are excluded from scan-and-replace via SetSwitcherRoot.
     public class NeonLanguageSwitcher : MonoBehaviour

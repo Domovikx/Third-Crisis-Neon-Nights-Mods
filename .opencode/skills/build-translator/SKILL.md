@@ -34,7 +34,8 @@ source/dwmapi_proxy.c ──cl.exe──▶ <игра>/dwmapi.dll + <игра>/m
 - `tests/neoncore.test.mts` — компилирует `source/NeonFontCore.cs` настоящим `csc.exe`
   и проверяет свойства подбора кегля (не растёт, пол 60 %, влезает), типографику
   (zh/ja/ko/лат) и цепочку фолбэков `lat → SC → JP → KR → marks`.
-- `tests/menu.test.mts` — порядок языков = `config/language-priority.json`, геометрия
+- `tests/menu.test.mts` — порядок языков = `config/language-priority.mts` (читает
+  JSON-артефакт `config/language-priority.json`), геометрия
   панели (не наезжает на кнопки на 1600×900 / 1920×1080 / 2560×1080 / 1440×1080),
   значения `fonts/typography.json`.
 

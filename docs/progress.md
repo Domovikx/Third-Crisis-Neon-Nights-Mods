@@ -12,6 +12,19 @@
 - Устаревшее не удалять, а помечать `(устарело)` — история полезна.
 - Дешёвые гочи — в `MAP.md` соответствующего скилла (кайдзен), не сюда.
 
+## 2026-11-26 — конфиги переехали в типизированные `.mts`
+
+- `config/*.mts` — источник истины (`as const satisfies`): `name-canon`,
+  `speaker-gender` (генерится `scripts/speaker_gender.mts --write`),
+  `language-priority`, `pot-src-policy`, `pot-skip-policy`, `pot-skip-ids`;
+  JSON рядом остался только мостом для Rust/скриптов и перегенерируется
+  модулем (`node config/<name>.mts > config/<name>.json`).
+- `name-canon.json` и `speaker-gender.json` удалены (JSON был не нужен никому,
+  кроме TS). `game-snapshot.json` — не конфиг, а снимок версии игры, остался.
+- Паритет JSON ↔ модуль стерегут `config/<name>.test.mts` в `npm test`.
+  Правило и команды — `docs/config.md`, краткая версия — `AGENTS.md`.
+- Дальше: правки конфигов только в `.mts`; JSON руками не трогать.
+
 ## 2026-11-24 — `rich_translation` переехал в PO (контракт владельца)
 
 - Разобрано расхождение «2 374 rich_text / 479 rich_translation»: 479 — это число

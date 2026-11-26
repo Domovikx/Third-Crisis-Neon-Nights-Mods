@@ -137,7 +137,8 @@ pub fn triage_reason(text: &str, kind: ItemKind) -> &'static str {
 }
 
 // ---------------------------------------------------------------------------
-// Политика отбора по провенансу (`config/pot-src-policy.json`).
+// Политика отбора по провенансу (`config/pot-src-policy.mts` — модуль,
+// `config/pot-src-policy.json` — его JSON-артефакт).
 //
 // Политика — ДАННЫЕ, а не код: `exclude` перечисляет метки `#. src:`, которые
 // не попадают в POT; `include` — что вообще допускается (`*` = всё). Шаблон
@@ -538,7 +539,8 @@ pub fn write_journal(path: &Path, text: &str) -> Result<(), String> {
 // ---------------------------------------------------------------------------
 // Skip-политика («этой строке перевод не нужен»).
 //
-// Данные — `config/pot-skip-policy.json`: правило = `id` + метка `src` (та же
+// Данные — `config/pot-skip-policy.mts` (JSON рядом — артефакт): правило = `id`
+// + метка `src` (та же
 // грамматика, что у политики отбора) + условие `when` из `pot_skip`. Записи
 // НЕ удаляются: POT получает `#, skip` и `#. skip: <id>`; журнал —
 // `tmp/pot-skip.jsonl` (1:1 с TS-эталоном).
@@ -810,7 +812,7 @@ pub fn apply_skip_policy(
     (journal.len(), journal, by_rule)
 }
 
-/// id правила для записей из `config/pot-skip-ids.json`.
+/// id правила для записей из `config/pot-skip-ids.mts` (JSON — артефакт).
 pub const REVIEWED_RULE_ID: &str = "reviewed";
 
 /// Разобрать `{"skip": ["msgid", …]}` (подтверждённые человеком решения).
@@ -1269,7 +1271,8 @@ pub fn run(options: &PotgenOptions) -> Result<PotgenResult, String> {
     // в другой файл: это только статистика new/vanished.
     let old_keys = old_keys_from_pot(&options.root.join("po").join("template.pot"));
 
-    // Политика отбора по провенансу — данные (`config/pot-src-policy.json`).
+    // Политика отбора по провенансу — данные (`config/pot-src-policy.mts`;
+    // JSON рядом — артефакт).
     // Читается ДО сборки каталога: дедуп должен знать исключённые метки.
     let policy = match &options.policy {
         PolicySource::Disabled => None,
@@ -1353,7 +1356,7 @@ pub fn run(options: &PotgenOptions) -> Result<PotgenResult, String> {
     if let Some((_, _, unused)) = &ids_applied {
         if *unused > 0 {
             eprintln!(
-                "skip-ids: {unused} записей из config/pot-skip-ids.json не найдены в POT (устаревшие? удали их из файла)"
+                "skip-ids: {unused} записей из config/pot-skip-ids.json не найдены в POT (устаревшие? удали их из config/pot-skip-ids.mts и перегенерируй JSON)"
             );
         }
     }

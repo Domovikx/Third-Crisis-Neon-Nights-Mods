@@ -833,7 +833,7 @@ const USAGE = `Установка/удаление рантайм-перевод
 
   node .opencode/skills/deploy-translator/scripts/deploy.mts [опции]
 
-  --lang <code>  язык из config/language-priority.json (по умолчанию ru);
+  --lang <code>  язык из config/language-priority.mts (JSON-артефакт; по умолчанию ru);
                  "${SOURCE_LANG}" — native-режим (без словаря)
   --dry-run      показать план, ничего не писать
   --rebuild      перед деплоем собрать runtime/NeonTranslatorDX.dll

@@ -21,7 +21,8 @@ QA (`npm run qa`) отвечает на вопрос «переведено ли
 (cd tools/rust-lint && cargo build --release && cargo test && \
   cargo clippy --all-targets -- -D warnings && cargo fmt --check)
 
-# полный прогон по языкам из config/language-priority.json (из корня репозитория)
+# полный прогон по языкам из config/language-priority.mts
+# (JSON рядом — генерируемый артефакт, его читает rust-lint)
 ./tools/rust-lint/target/release/rust-lint --root . --json-dir tmp \
   --report tmp/lint-report.md
 
@@ -36,7 +37,7 @@ QA (`npm run qa`) отвечает на вопрос «переведено ли
 Опции:
 
 - `--root <репо>` — где `po/`, `runtime/`, `config/` (по умолчанию `.`);
-- `--lang <код>[,<код>]` — языки; без флага берётся порядок `config/language-priority.json`;
+- `--lang <код>[,<код>]` — языки; без флага берётся порядок `config/language-priority.mts`;
 - `--pot`, `--po`, `--dat` — подменить файл (для калибровки на старом снимке);
 - `--json-dir` — куда писать `lint-pot.json` и `lint-<lang>.json` (по умолчанию `tmp`);
 - `--report` / `--no-report` — markdown-сводка;

@@ -25,7 +25,7 @@ const USAGE = `Установка мода Third Crisis: Neon Nights
 
   node installer/install.mts [--lang <code>] [--game <путь>] [--apply]
 
-  --lang <code>  язык из config/language-priority.json (по умолчанию ru);
+  --lang <code>  язык из config/language-priority.mts (JSON-артефакт; по умолчанию ru);
                  "${SOURCE_LANG}" — native-режим без словаря
   --game <путь>  папка игры (иначе автопоиск по Steam-библиотекам)
   --apply        выполнить установку (по умолчанию только план)

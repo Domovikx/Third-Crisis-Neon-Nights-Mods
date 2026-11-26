@@ -9,7 +9,7 @@
  *   po/*.po                     — прогресс по языкам (parsePo)
  *   tmp/translate-local/run.out — позиция прогона и хвост лога
  *   tmp/translate-local/PAUSE   — пауза
- *   config/language-priority.json — порядок языков
+ *   config/language-priority.json — порядок языков (артефакт модуля .mts)
  *   tmp/pot-skip.jsonl, tmp/pot-excluded.jsonl — отчёт политик
  *   lms ps / nvidia-smi         — модель и VRAM (если есть)
  *

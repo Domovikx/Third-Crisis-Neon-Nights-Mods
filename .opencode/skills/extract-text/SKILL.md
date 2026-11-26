@@ -114,7 +114,10 @@ npm run rich:audit -- --examples 20 --out tmp/rich-audit.md
 
 ### Политика отбора по провенансу
 
-`config/pot-src-policy.json` — **данные**, а не код: `exclude` перечисляет
+`config/pot-src-policy.mts` — **данные**, а не код (источник истины;
+`config/pot-src-policy.json` рядом — генерируемый артефакт для Rust и проверок,
+перегенерировать: `node config/pot-src-policy.mts > config/pot-src-policy.json`):
+`exclude` перечисляет
 метки `#. src:`, которые не попадают в POT (точная метка или префикс с `*`:
 `raw:Font`, `raw:Tex*`, `raw:*`, `field:*`), `include: ["*"]` — «всё
 остальное». По умолчанию исключены 5 идентификаторных raw-классов
@@ -157,7 +160,7 @@ msgstr ""
 - `msgstr ""` → не переведено.
 
 Записи, чья метка `#. src:` исключена политикой
-(`config/pot-src-policy.json`), в POT не пишутся — они лежат в
+(`config/pot-src-policy.mts`; JSON — артефакт), в POT не пишутся — они лежат в
 `tmp/pot-excluded.jsonl` (`{src, msgid, msgctxt, reason}`), чтобы отбор не был
 потерей данных.
 

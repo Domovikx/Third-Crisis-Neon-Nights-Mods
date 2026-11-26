@@ -4,7 +4,12 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { buildGenderMap, loadGenderMap, renderGenderConfig } from "./speaker_gender.mts";
+import {
+  buildGenderMap,
+  loadGenderMap,
+  renderGenderModule,
+  SPEAKER_GENDER,
+} from "./speaker_gender.mts";
 import { newEntry, type PoEntry } from "../.opencode/skills/extract-text/scripts/po_file.mts";
 
 function line(speaker: string, text: string): PoEntry {
@@ -55,20 +60,31 @@ test("buildGenderMap: строки без спикера не участвуют
   assert.deepEqual(map, {}, "у нарратива спикера нет — пол не выводим");
 });
 
-test("loadGenderMap: нет файла — пустая карта, промпт живёт без подсказки", () => {
-  const map = loadGenderMap("C:/definitely/no/such/root");
-  assert.equal(map.size, 0);
+test("loadGenderMap: читает конфиг, null-пол не попадает в промпт", () => {
+  const map = loadGenderMap();
+  assert.equal(map.get("Zoey"), "female");
+  assert.equal(map.get("Trov"), "male");
+  assert.equal(map.has("Max"), false, "пол не выведен — подсказки нет");
 });
 
-test("renderGenderConfig: null-пол не попадает в промпт, список отсортирован", () => {
-  const cfg = JSON.parse(
-    renderGenderConfig({
-      Trov: { gender: "male", fem: 1, masc: 9 },
-      Cypher: { gender: null, fem: 1, masc: 0 },
-    }),
-  ) as {
-    speakers: Record<string, { gender: string | null }>;
-  };
-  assert.deepEqual(Object.keys(cfg.speakers), ["Cypher", "Trov"]);
-  assert.equal(cfg.speakers["Cypher"].gender, null);
+test("SPEAKER_GENDER: счётчики не противоречат решению", () => {
+  const entries = Object.entries(SPEAKER_GENDER.speakers);
+  assert.ok(entries.length > 0, "карта пуста — потерян снимок корпуса");
+  assert.ok(SPEAKER_GENDER.min_evidence >= 1);
+  for (const [name, e] of entries) {
+    if (e.gender === "female") assert.ok(e.fem > e.masc, `${name}: female при fem<=masc`);
+    if (e.gender === "male") assert.ok(e.masc > e.fem, `${name}: male при masc<=fem`);
+  }
+});
+
+test("renderGenderModule: типизированный модуль, ключи отсортированы, null сохранён", async () => {
+  const src = await renderGenderModule({
+    Trov: { gender: "male", fem: 1, masc: 9 },
+    Cypher: { gender: null, fem: 1, masc: 0 },
+  });
+  assert.match(src, /export const SPEAKER_GENDER = \{/);
+  assert.match(src, /as const satisfies SpeakerGenderConfig;/);
+  assert.ok(src.indexOf("Cypher:") < src.indexOf("Trov:"), "список отсортирован");
+  assert.match(src, /Cypher: \{ gender: null, fem: 1, masc: 0 \},/);
+  assert.match(src, /Trov: \{ gender: "male", fem: 1, masc: 9 \},/);
 });

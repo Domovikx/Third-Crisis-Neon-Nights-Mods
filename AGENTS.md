@@ -209,14 +209,33 @@ deploy ─→ <игра>/dwmapi.dll + <игра>/mods/NeonTranslatorDX/ (DLL + p
   (штатный селектор разработчики скрыли: в `StreamingAssets/Languages/` пусто).
 - Оригинал не модифицируется: перевод подменяется в памяти (scan-and-replace).
 
+## Конфиги: `.mts` — источник, JSON — генерируемый артефакт
+
+Решение владельца (2026-11-26): конфиги живут в `config/*.mts` — типизированные
+объекты (`as const satisfies`, экспортируемые типы). JSON рядом остаётся только
+там, где его читает Rust/рантайм, и **руками не правится** — это артефакт.
+Подробности, команды и список файлов — `docs/config.md`.
+
+- **Только TS** (JSON удалён): `name-canon.mts` (канон имён),
+  `speaker-gender.mts` (пол спикеров; генерируется
+  `node scripts/speaker_gender.mts --write` из `po/ru.po`),
+  `voice-characters.mts` (карта персонажей).
+- **`.mts` + JSON-артефакт**: `language-priority`, `pot-src-policy`,
+  `pot-skip-policy`, `pot-skip-ids`. После правки модуля:
+  `node config/<name>.mts > config/<name>.json` (вывод детерминирован).
+  Паритет стерегут `config/<name>.test.mts` в `npm test`.
+- **`game-snapshot.json` — не конфиг, а снимок** версии установки: его пишет
+  `npm run check:version -- --write` из Steam-манифеста, поэтому он остаётся
+  JSON-артефактом.
+
 ## Языки
 
-Единый источник — `config/language-priority.json` (копия приоритета TSSR: языковая статистика
-Steam, окт. 2026). Правила:
+Единый источник — `config/language-priority.mts` (копия приоритета TSSR: языковая статистика
+Steam, окт. 2026); `config/language-priority.json` — артефакт для Rust и скриптов. Правила:
 
 - Язык-источник — `en`: его текст в `po/template.pot`, отдельного `en.po` нет.
 - Остальные языки — `po/<code>.po`; **порядок везде берётся из конфига**, руками не переставлять.
-- Новый язык = строка в JSON + `po/<code>.po` + запись в списке UI.
+- Новый язык = строка в модуле + `po/<code>.po` + запись в списке UI.
 - Страж: `node scripts/languages.mts --check` и `scripts/languages.test.mts` — набор языков и
   порядок обязаны совпадать с конфигом.
 
@@ -225,7 +244,7 @@ Steam, окт. 2026). Правила:
 ```bash
 npm install
 npm run check:game     # найти и проверить установку игры
-npm run check:langs    # состав/порядок языков = config/language-priority.json
+npm run check:langs    # состав/порядок языков = config/language-priority.mts
 npm run potgen         # дамп -> tmp/potgen/template.pot (без --update po/ не трогает)
 npm run po2dat -- ru   # po/ru.po -> runtime/patch_ru.dat
 npm test               # node --test

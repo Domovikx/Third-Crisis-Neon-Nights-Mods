@@ -129,7 +129,7 @@ export interface PotCheckOptions {
   /**
    * Skip-политика для проверки `#, skip` (инвариант 15).
    *
-   * `undefined` — найти `config/pot-skip-policy.json` (репозиторий);
+   * `undefined` — найти `config/pot-skip-policy.json` (артефакт модуля .mts);
    * `null` — политики нет: любой `#, skip` тогда нарушение.
    */
   skipPolicy?: SkipPolicy | null;
@@ -878,7 +878,7 @@ function checkSrc(
  *
  * Правила:
  *   - флаг и причина пишутся парой; причина — id правила из skip-политики
- *     (`config/pot-skip-policy.json`), а не свободный текст;
+ *     (`config/pot-skip-policy.mts`, JSON — артефакт), а не свободный текст;
  *   - правило обязано подтверждаться записью (метка `src` и условие `when`),
  *     иначе метка протухла (`skip-stale`, warn: potgen перегенерирует);
  *   - без политики любой `#, skip` — ошибка (метка без источника смысла).

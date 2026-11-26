@@ -27,7 +27,7 @@ node .opencode/skills/translate-local/scripts/translate_local.mts --lang ru --li
 # Продолжить с места (заполненные пропускаются сами)
 node .opencode/skills/translate-local/scripts/translate_local.mts --lang ru --batch 8
 
-# Любой язык из config/language-priority.json, кроме en
+# Любой язык из config/language-priority.mts, кроме en
 node .opencode/skills/translate-local/scripts/translate_local.mts --lang de --batch 8
 
 # Пауза: файл-пауза (цикл допишет текущую пачку и выйдет)
@@ -38,7 +38,7 @@ rm tmp/translate-local/PAUSE
 Модель задаётся `--model` (по умолчанию `trans14` — идентификатор, под которым
 модель загружена в LM Studio). `--url` переключает бэкенд, если он
 OpenAI-совместим. Список языков и их названия для промпта берутся из
-`config/language-priority.json` (свой хардкод не заводить); неизвестный код —
+`config/language-priority.mts` (свой хардкод не заводить); неизвестный код —
 ошибка со списком допустимых.
 
 ## Как устроено

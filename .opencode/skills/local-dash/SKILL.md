@@ -15,7 +15,7 @@ node .opencode/skills/local-dash/dashboard.mts --port 8090
 Показывает:
 
 - **прогон**: идёт / пауза (`tmp/translate-local/PAUSE`) / не запущен, позиция `pos/total`, скорость (строк/мин по дельте между запросами) и ETA;
-- **языки**: переведено / пусто / skip / готовность — из `po/*.po`, порядок из `config/language-priority.json`;
+- **языки**: переведено / пусто / skip / готовность — из `po/*.po`, порядок из `config/language-priority.mts` (JSON-артефакт);
 - **POT**: записей, skip по правилам, починенные обрывки, вырезано политикой;
 - **спорное**: последние `UNPARSABLE/BANNED/LEAK` из `tmp/translate-local/ru.review`;
 - **модель и GPU**: `lms ps` + `nvidia-smi` (если есть), RAM;

@@ -13,6 +13,7 @@ import { join } from "node:path";
 
 import { parsePo, type PoEntry } from "../.opencode/skills/extract-text/scripts/po_file.mts";
 import {
+  NAME_LANGS,
   REPO_ROOT,
   loadNameCanon,
   mentions,
@@ -21,7 +22,7 @@ import {
   speakerNameMismatches,
 } from "./name_canon.mts";
 
-const LANGS = ["zh", "ru", "es", "pt", "de", "ja", "fr", "pl", "ko", "it"];
+const LANGS = NAME_LANGS;
 
 function entry(ctxt: string, msgid: string, msgstr: string): PoEntry {
   return { msgid, msgctxt: ctxt, msgstr, refs: [], comments: [], flags: [], translator: [] };

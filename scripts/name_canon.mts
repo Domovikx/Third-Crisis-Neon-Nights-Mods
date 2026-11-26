@@ -7,7 +7,7 @@
  * `Rungar`/`Rugnar`: в оригинале это два написания, и перевод обязан повторять
  * написание КОНКРЕТНОЙ строки, а не выбирать одно на всех.
  *
- * Источник канона — `config/name-canon.json`:
+ * Источник канона — модуль `config/name-canon.mts` (JSON-артефакта нет):
  *   - `canon`  — имена, у которых есть строка `msgctxt "speaker-name"`. Тест
  *                требует, чтобы каждый PO был с ней согласен (это и есть
  *                «все speaker-name совпадают с каноном»);
@@ -19,28 +19,25 @@
  * поэтому для варианта-префикса канона (zh `伦加` ⊂ `伦加尔`) требуется, чтобы
  * следующий символ канона не стоял после варианта.
  */
-import { readFileSync } from "node:fs";
-import { join, resolve } from "node:path";
+import { resolve } from "node:path";
 
 import { type PoEntry } from "../.opencode/skills/extract-text/scripts/po_file.mts";
+import { NAME_CANON, type NameCanon, type NameLang } from "../config/name-canon.mts";
+
+export {
+  NAME_CANON,
+  NAME_LANGS,
+  type NameCanon,
+  type NameForms,
+  type NameLang,
+} from "../config/name-canon.mts";
 
 /** Корень репозитория: scripts/ → на уровень выше. */
 export const REPO_ROOT = resolve(import.meta.dirname, "..");
 
-/** Путь к файлу канона. */
-export const NAME_CANON_PATH = "config/name-canon.json";
-
-export interface NameCanon {
-  order: string[];
-  canon: Record<string, Record<string, string>>;
-  extra: Record<string, Record<string, string>>;
-  wrong: Record<string, Record<string, string[]>>;
-}
-
-/** Загрузить канон имён (корень — по умолчанию репозиторий). */
-export function loadNameCanon(root: string = REPO_ROOT): NameCanon {
-  const raw = JSON.parse(readFileSync(join(root, NAME_CANON_PATH), "utf8")) as NameCanon;
-  return { order: raw.order, canon: raw.canon, extra: raw.extra, wrong: raw.wrong };
+/** Канон имён — сам модуль конфига (единственный источник, без чтения файлов). */
+export function loadNameCanon(): NameCanon {
+  return NAME_CANON;
 }
 
 const esc = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -80,7 +77,7 @@ export function mentions(text: string, name: string): boolean {
  */
 export function speakerNameMismatches(
   canon: NameCanon,
-  lang: string,
+  lang: NameLang,
   entries: PoEntry[],
 ): string[] {
   const byName = new Map(
@@ -103,7 +100,7 @@ export function speakerNameMismatches(
  * Смотрим только строки, где имя есть в оригинале: если перевод имени нет
  * вовсе (местоимение), это другой класс дефекта — потеря, а не разнобой.
  */
-export function wrongNameHits(canon: NameCanon, lang: string, entries: PoEntry[]): string[] {
+export function wrongNameHits(canon: NameCanon, lang: NameLang, entries: PoEntry[]): string[] {
   const out: string[] = [];
   const canonById = { ...canon.canon, ...canon.extra };
   for (const e of entries) {

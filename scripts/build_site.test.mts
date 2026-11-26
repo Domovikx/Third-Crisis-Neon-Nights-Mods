@@ -34,7 +34,7 @@ test("языки идут в порядке приоритета, английс
   assert.deepEqual(
     expected,
     ["zh", "ru", "es", "pt", "de", "ja", "fr", "pl", "ko", "it"],
-    "порядок должен совпадать с config/language-priority.json",
+    "порядок должен совпадать с config/language-priority.mts",
   );
 
   const grid = RU.slice(

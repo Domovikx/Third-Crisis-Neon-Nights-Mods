@@ -338,7 +338,7 @@ async function main(argv: string[]): Promise<number> {
   }
   const entries = parsePo(readFileSync(join(REPO, "po", `${cli.lang}.po`), "utf8"));
   // Пол спикера помогает судье ловить ошибки согласования, а не догадываться.
-  const genders = loadGenderMap(REPO);
+  const genders = loadGenderMap();
   const pool = candidates(entries);
   let todo: PoEntry[];
   if (cli.keys) {

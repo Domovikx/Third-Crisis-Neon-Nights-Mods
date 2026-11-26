@@ -19,12 +19,13 @@
  *     удаляется: рантайм ищет по голому тексту, дубль = двойной перевод;
  *   - записи отсортированы по (msgid, msgctxt) — стабильные диффы переводов.
  *
- * Политика отбора по провенансу (`config/pot-src-policy.json`, см.
+ * Политика отбора по провенансу (`config/pot-src-policy.mts` — модуль,
+ * `config/pot-src-policy.json` — его JSON-артефакт; см.
  * `docs/pot-provenance.md`): записи, чья метка `src` исключена политикой,
  * в POT НЕ пишутся, а складываются в `tmp/pot-excluded.jsonl`
  * (`{src, msgid, msgctxt, reason}`) — ничего не теряется молча.
  *
- * Skip-политика (`config/pot-skip-policy.json`, см. `docs/pot-skip.md`):
+ * Skip-политика (`config/pot-skip-policy.mts` + JSON-артефакт, см. `docs/pot-skip.md`):
  * записи, которым перевод не нужен, ОСТАЮТСЯ в POT, но получают `#, skip` и
  * `#. skip: <id правила>`; журнал — `tmp/pot-skip.jsonl`. Условия и чистка
  * TMP-тегов — в `pot_skip.mts` (одна реализация на инвариант и на политику).
@@ -111,7 +112,7 @@ export function triageReason(text: string, kind: ItemKind): string {
 }
 
 // ---------------------------------------------------------------------------
-// Политика отбора по провенансу (`config/pot-src-policy.json`).
+// Политика отбора по провенансу (`config/pot-src-policy.mts`; JSON — артефакт).
 //
 // Политика — ДАННЫЕ, а не код: `exclude` перечисляет метки `#. src:`, которые
 // не попадают в POT; `include` — что вообще допускается (`*` = всё). Шаблон
@@ -410,7 +411,7 @@ export function renderExcludedJsonl(entries: readonly ExcludedEntry[]): string {
 // ---------------------------------------------------------------------------
 // Skip-политика («этой строке перевод не нужен»).
 //
-// Политика — ДАННЫЕ (`config/pot-skip-policy.json`): правило = `id` + метка
+// Политика — ДАННЫЕ (`config/pot-skip-policy.mts`; JSON — артефакт): правило = `id` + метка
 // `src` (та же грамматика, что у политики отбора) + условие `when` из
 // `pot_skip.mts`. Неизвестное условие/метка — ошибка, а не тихий игнор.
 // Записи НЕ удаляются: POT получает `#, skip` и `#. skip: <id>`.

@@ -1133,7 +1133,7 @@ export async function runQueue(opts: RunOptions): Promise<RunSummary> {
 
   // --repair: очередь — не пустые, а ПЕРЕВЕДЁННЫЕ строки, которые не проходят
   // validate (потеря маркера, дисбаланс тегов). Обычный прогон их не трогает.
-  const genders = opts.genders ?? loadGenderMap(opts.root ?? REPO_ROOT);
+  const genders = opts.genders ?? loadGenderMap();
 
   let todo = opts.improve
     ? entries.filter((e) => e.msgstr && !e.flags.includes("skip"))

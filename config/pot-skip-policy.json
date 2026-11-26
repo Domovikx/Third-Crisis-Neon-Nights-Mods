@@ -15,66 +15,22 @@
     "code-ref": "ссылка на код: путь без пробелов и расширения (`Dialogue/Auto`) или имя типа .NET (`X, Assembly-CSharp`). 2026-11-23: 27 записей."
   },
   "rules": [
-    {
-      "id": "no-letters",
-      "src": "raw:*",
-      "when": "noLetters"
-    },
+    { "id": "no-letters", "src": "raw:*", "when": "noLetters" },
     {
       "id": "short-token",
       "src": "raw:*",
       "srcExclude": ["raw:MonoBehaviour"],
       "when": "shortToken"
     },
-    {
-      "id": "no-word",
-      "src": "raw:*",
-      "when": "noWord"
-    },
-    {
-      "id": "identifier",
-      "src": "raw:*",
-      "when": "identifier"
-    },
-    {
-      "id": "tokens",
-      "src": "*",
-      "when": "tokens"
-    },
-    {
-      "id": "hex-color",
-      "src": "*",
-      "when": "hexColor"
-    },
-    {
-      "id": "save-key",
-      "src": "*",
-      "when": "saveKey"
-    },
-    {
-      "id": "snake-case",
-      "src": "*",
-      "when": "snakeCase"
-    },
-    {
-      "id": "fsm-label",
-      "src": "*",
-      "when": "fsmLabel"
-    },
-    {
-      "id": "state-name",
-      "src": "*",
-      "when": "stateName"
-    },
-    {
-      "id": "code-ref",
-      "src": "*",
-      "when": "codeRef"
-    },
-    {
-      "id": "fragment",
-      "src": "*",
-      "when": "fragment"
-    }
+    { "id": "no-word", "src": "raw:*", "when": "noWord" },
+    { "id": "identifier", "src": "raw:*", "when": "identifier" },
+    { "id": "tokens", "src": "*", "when": "tokens" },
+    { "id": "hex-color", "src": "*", "when": "hexColor" },
+    { "id": "save-key", "src": "*", "when": "saveKey" },
+    { "id": "snake-case", "src": "*", "when": "snakeCase" },
+    { "id": "fsm-label", "src": "*", "when": "fsmLabel" },
+    { "id": "state-name", "src": "*", "when": "stateName" },
+    { "id": "code-ref", "src": "*", "when": "codeRef" },
+    { "id": "fragment", "src": "*", "when": "fragment" }
   ]
 }

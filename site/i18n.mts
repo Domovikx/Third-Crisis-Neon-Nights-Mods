@@ -62,7 +62,7 @@ const RU = {
 
   "languages.title": "Языки",
   "languages.lead":
-    "Десять языков перевода плюс английский оригинал. Порядок — по языковой статистике Steam (config/language-priority.json); покрытие считается из po/<lang>.po при каждой сборке.",
+    "Десять языков перевода плюс английский оригинал. Порядок — по языковой статистике Steam (config/language-priority.mts); покрытие считается из po/<lang>.po при каждой сборке.",
   "languages.cell": "{lines} строк · {pct}%",
   "languages.primary": "основной",
   "languages.source": "Английский — оригинал: словарь не нужен, игра запускается как есть.",
@@ -192,7 +192,7 @@ const EN: Record<SiteMessageKey, string> = {
 
   "languages.title": "Languages",
   "languages.lead":
-    "Ten translation languages plus the English original. The order follows Steam language statistics (config/language-priority.json); coverage is computed from po/<lang>.po on every build.",
+    "Ten translation languages plus the English original. The order follows Steam language statistics (config/language-priority.mts); coverage is computed from po/<lang>.po on every build.",
   "languages.cell": "{lines} lines · {pct}%",
   "languages.primary": "primary",
   "languages.source":

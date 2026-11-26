@@ -4,7 +4,8 @@
  * Проверяются не «картинки», а инварианты, из-за которых панель наезжала на
  * кнопки главного меню или язык приходил в неправильном порядке:
  *
- * - порядок языков в `NeonLanguageSwitcher` = `config/language-priority.json`
+ * - порядок языков в `NeonLanguageSwitcher` = `config/language-priority.mts`
+ *   (тест читает JSON-артефакт `config/language-priority.json`)
  *   (единый источник истины для любых списков языков);
  * - панель (правый нижний угол, 360×392 при 1920×1080) не заходит на кнопки:
  *   правый край кнопок главного меню по замерам E2E — 0.758·W, панель должна
@@ -57,7 +58,7 @@ function uiScale(width: number, height: number): number {
 const MENU_RIGHT = 0.758;
 const CLEARANCE = 8;
 
-test("порядок языков в свитчере = config/language-priority.json", () => {
+test("порядок языков в свитчере = config/language-priority.mts", () => {
   assert.deepEqual(switcherCodes(), priority());
 });
 
