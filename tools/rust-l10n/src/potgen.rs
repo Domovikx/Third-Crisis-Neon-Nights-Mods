@@ -11,7 +11,7 @@
 //! - ui-двойник строки с диалоговым/спикерским контекстом удаляется;
 //! - записи отсортированы по (msgid, msgctxt).
 
-use std::collections::{HashMap, HashSet};
+use std::collections::{BTreeMap, HashMap, HashSet};
 use std::path::{Path, PathBuf};
 use std::time::{SystemTime, UNIX_EPOCH};
 
@@ -929,6 +929,150 @@ pub fn write_skip_journal(path: &Path, entries: &[SkipJournalEntry]) -> Result<(
     write_journal(path, &render_skip_journal_jsonl(entries)?)
 }
 
+// ---------------------------------------------------------------------------
+// Оверлей эмоций: msgid -> English delivery instruction (`#. emotion:`).
+//
+// LLM живёт СНАРУЖИ Rust: классификатор пишет JSON (`config/emotions.json`),
+// potgen применяет его детерминированно, как `--skip-ids`. Тон — не перевод,
+// поэтому в `po/*.po` он не попадает (фильтр в `po_update`).
+// ---------------------------------------------------------------------------
+
+/// Оверлей тона: msgid -> английское описание состояния диктора.
+///
+/// `BTreeMap` — чтобы порядок был детерминирован (журнал/счётчики не зависят
+/// от порядка ключей в JSON).
+pub type EmotionMap = BTreeMap<String, String>;
+
+/// Максимальная длина значения тона (формат 2–6 слов проверяет TS-аудит).
+pub const EMOTION_MAX_CHARS: usize = 120;
+
+/// Итог применения оверлея — для отчёта прогона.
+#[derive(Debug, Clone, Default, PartialEq, Eq)]
+pub struct EmotionReport {
+    pub path: String,
+    /// Записей каталога, получивших `#. emotion:` (msgid × msgctxt).
+    pub applied: usize,
+    /// Ключи оверлея, найденные в каталоге, но не на озвучиваемых записях.
+    pub skipped: usize,
+    /// Ключи оверлея, которых в каталоге нет вовсе (устаревшие).
+    pub unused: usize,
+}
+
+/// Разобрать оверлей `{"emotions": {msgid: "тон", …}, "_…": "…"}`.
+///
+/// Проверяются только структурные инварианты (объект, непустые ключ/значение,
+/// одна строка, лимит длины). Правила качества тона (2–6 слов, заглавная,
+/// без кавычек) живут в TS-аудите — второй реализации не заводим.
+pub fn parse_emotions(text: &str, source: &str) -> Result<EmotionMap, String> {
+    let value: Value =
+        serde_json::from_str(text).map_err(|e| format!("невалидный JSON эмоций {source}: {e}"))?;
+    let Value::Object(map) = value else {
+        return Err(format!(
+            "эмоции {source}: ожидался объект {{\"emotions\": {{…}}}}"
+        ));
+    };
+    for key in map.keys() {
+        if key != "emotions" && !key.starts_with('_') {
+            return Err(format!(
+                "эмоции {source}: неизвестное поле \"{key}\" (допустимы emotions и _комментарии)"
+            ));
+        }
+    }
+    let Some(Value::Object(items)) = map.get("emotions") else {
+        return Err(format!(
+            "эмоции {source}: поле \"emotions\" должно быть объектом msgid -> тон"
+        ));
+    };
+
+    let mut out: EmotionMap = BTreeMap::new();
+    for (msgid, value) in items {
+        if msgid.is_empty() {
+            return Err(format!("эмоции {source}: пустой msgid"));
+        }
+        let Value::String(raw) = value else {
+            return Err(format!(
+                "эмоции {source}: тон для \"{msgid}\" должен быть строкой"
+            ));
+        };
+        let emotion = raw.trim();
+        if emotion.is_empty() {
+            return Err(format!("эмоции {source}: пустой тон для \"{msgid}\""));
+        }
+        if emotion.contains('\n') || emotion.contains('\r') {
+            return Err(format!(
+                "эмоции {source}: тон для \"{msgid}\" содержит перевод строки"
+            ));
+        }
+        if emotion.chars().count() > EMOTION_MAX_CHARS {
+            return Err(format!(
+                "эмоции {source}: тон для \"{msgid}\" длиннее {EMOTION_MAX_CHARS} символов"
+            ));
+        }
+        out.insert(msgid.clone(), emotion.to_string());
+    }
+    Ok(out)
+}
+
+/// Прочитать оверлей с диска (как `load_skip_ids`: нет файла — `None`).
+pub fn load_emotions(path: &Path) -> Result<Option<EmotionMap>, String> {
+    match std::fs::read_to_string(path) {
+        Ok(text) => Ok(Some(parse_emotions(&text, &path.display().to_string())?)),
+        Err(err) if err.kind() == std::io::ErrorKind::NotFound => Ok(None),
+        Err(err) => Err(format!("эмоции не читаются {}: {err}", path.display())),
+    }
+}
+
+/// Найти `config/emotions.json` в `start` или выше (как у skip-id).
+pub fn discover_emotions_path(start: &Path) -> Option<PathBuf> {
+    let mut dir = if start.as_os_str().is_empty() {
+        PathBuf::from(".")
+    } else {
+        start.to_path_buf()
+    };
+    loop {
+        let candidate = dir.join("config").join("emotions.json");
+        if candidate.exists() {
+            return Some(candidate);
+        }
+        match dir.parent() {
+            Some(parent) if parent != dir => dir = parent.to_path_buf(),
+            _ => return None,
+        }
+    }
+}
+
+/// Применить оверлей к каталогу: пометить озвучиваемые записи.
+///
+/// Тон получают только записи, которые реально озвучиваются: `src: dialog`,
+/// не `speaker-name` и без `#, skip`. Остальные ключи считаются пропущенными
+/// (есть в POT, но не озвучиваются) или устаревшими (нет в POT).
+///
+/// Возвращает `(applied, skipped, unused)`; `applied` — по записям каталога
+/// (msgid × msgctxt), `skipped`/`unused` — по ключам оверлея.
+pub fn apply_emotions(catalog: &mut Catalog, emotions: &EmotionMap) -> (usize, usize, usize) {
+    let mut applied = 0usize;
+    let mut skipped = 0usize;
+    let mut unused = 0usize;
+    for (msgid, emotion) in emotions {
+        let Some(by_ctxt) = catalog.get_mut(msgid) else {
+            unused += 1;
+            continue;
+        };
+        let mut marked = false;
+        for (ctxt, slot) in by_ctxt.iter_mut() {
+            if slot.src == "dialog" && ctxt != "speaker-name" && slot.skip.is_none() {
+                slot.emotion = Some(emotion.clone());
+                applied += 1;
+                marked = true;
+            }
+        }
+        if !marked {
+            skipped += 1;
+        }
+    }
+    (applied, skipped, unused)
+}
+
 /// Слот каталога: провенанс и комментарии будущей записи.
 #[derive(Debug, Default)]
 pub struct Slot {
@@ -937,6 +1081,8 @@ pub struct Slot {
     pub comments: Vec<String>,
     /// Id правила skip-политики: в POT даёт `#, skip` и `#. skip: <id>`.
     pub skip: Option<String>,
+    /// Тон диктора из оверлея: в POT даёт `#. emotion: <тон>`.
+    pub emotion: Option<String>,
 }
 
 /// msgid → msgctxt → слот. Порядок не важен: рендер сортирует ключи.
@@ -1137,6 +1283,10 @@ pub fn render_pot(catalog: &Catalog, created: &str) -> String {
             if let Some(rule) = &slot.skip {
                 comments.push(format!("skip: {rule}"));
             }
+            // Тон диктора — сразу после провенанса и причины (до rich_text).
+            if let Some(emotion) = &slot.emotion {
+                comments.push(format!("emotion: {emotion}"));
+            }
             comments.extend(slot.comments.iter().cloned());
             let mut entry = PoEntry {
                 msgid: text.to_string(),
@@ -1213,6 +1363,8 @@ pub struct PotgenOptions {
     pub skip_ids: PolicySource,
     /// Куда писать журнал skip (по умолчанию `tmp/pot-skip.jsonl`).
     pub skip_journal_path: Option<PathBuf>,
+    /// Оверлей тона: по умолчанию `config/emotions.json`, Disabled — без тонов.
+    pub emotions: PolicySource,
 }
 
 #[derive(Debug)]
@@ -1230,6 +1382,8 @@ pub struct PotgenResult {
     pub skip: Option<SkipReport>,
     /// Путь журнала skip (`None`, если skip-политика не применялась).
     pub skip_journal_path: Option<PathBuf>,
+    /// `None` — оверлей эмоций не применялся.
+    pub emotions: Option<EmotionReport>,
 }
 
 impl PotgenOptions {
@@ -1245,6 +1399,7 @@ impl PotgenOptions {
             skip_policy: PolicySource::Default,
             skip_ids: PolicySource::Default,
             skip_journal_path: None,
+            emotions: PolicySource::Default,
         }
     }
 }
@@ -1361,6 +1516,34 @@ pub fn run(options: &PotgenOptions) -> Result<PotgenResult, String> {
         }
     }
 
+    // Оверлей тона — последним: тон получают только живые озвучиваемые
+    // записи (`src: dialog`, не `speaker-name`, без `#, skip`). Второго
+    // источника тона нет: LLM пишет JSON, Rust применяет его детерминированно.
+    let emotions: Option<(String, EmotionMap)> = match &options.emotions {
+        PolicySource::Disabled => None,
+        PolicySource::Path(path) => load_emotions(path)?
+            .map(|map| (path.display().to_string(), map)),
+        PolicySource::Default => match discover_emotions_path(&options.root) {
+            Some(path) => load_emotions(&path)?.map(|map| (path.display().to_string(), map)),
+            None => None,
+        },
+    };
+    let emotions_applied = emotions
+        .as_ref()
+        .map(|(_, map)| apply_emotions(&mut catalog, map));
+    if let Some((_, skipped, unused)) = &emotions_applied {
+        if *unused > 0 {
+            eprintln!(
+                "emotions: {unused} ключей оверлея нет в POT (устаревшие? удали их из источника оверлея)"
+            );
+        }
+        if *skipped > 0 {
+            eprintln!(
+                "emotions: {skipped} ключей есть в POT, но не на озвучиваемых записях (не диалог/нарратив или `#, skip`) — тон не поставлен"
+            );
+        }
+    }
+
     let out_path = options.out_path.clone().unwrap_or_else(|| {
         if options.update {
             options.root.join("po").join("template.pot")
@@ -1465,5 +1648,14 @@ pub fn run(options: &PotgenOptions) -> Result<PotgenResult, String> {
         excluded_path,
         skip: skip_report,
         skip_journal_path,
+        emotions: emotions.map(|(path, _)| {
+            let (applied, skipped, unused) = emotions_applied.unwrap_or((0, 0, 0));
+            EmotionReport {
+                path,
+                applied,
+                skipped,
+                unused,
+            }
+        }),
     })
 }

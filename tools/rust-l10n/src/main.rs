@@ -30,6 +30,8 @@ rust-l10n — текстовый пайплайн локализации (POT/PO
   rust-l10n potgen [--update] [--dump <dir>] [--out <path>] [--created <date>]
                    [--policy <path> | --no-policy] [--excluded <path>]
                    [--skip-policy <path> | --no-skip-policy] [--skip-journal <path>]
+                   [--skip-ids <path> | --no-skip-ids]
+                   [--emotions <path> | --no-emotions]
                    [--root <dir>]
       --update        записать <root>/po/template.pot (без флага — только tmp/potgen/)
       --dump <dir>    каталог JSONL-дампа (по умолчанию <root>/tmp/dump)
@@ -41,6 +43,10 @@ rust-l10n — текстовый пайплайн локализации (POT/PO
       --skip-policy <p>  политика «перевод не нужен» (config/pot-skip-policy.json)
       --no-skip-policy   не ставить '#, skip'
       --skip-journal <p> журнал помеченных (по умолчанию tmp/pot-skip.jsonl)
+      --skip-ids <p>  подтверждённые skip-решения (config/pot-skip-ids.json)
+      --no-skip-ids   не применять список skip-id
+      --emotions <p>  оверлей тона msgid -> тон (config/emotions.json)
+      --no-emotions   не ставить '#. emotion:'
       --root <dir>    корень репозитория (по умолчанию текущий каталог)
 
   rust-l10n po2dat [lang] [--root <dir>] [--out <path>]
@@ -235,8 +241,12 @@ fn potgen_cli(argv: &[String]) -> u8 {
                 options.skip_ids = potgen::PolicySource::Disabled;
                 Ok(())
             }
+            "--no-emotions" => {
+                options.emotions = potgen::PolicySource::Disabled;
+                Ok(())
+            }
             "--dump" | "--out" | "--created" | "--root" | "--policy" | "--excluded"
-            | "--skip-policy" | "--skip-journal" => {
+            | "--skip-policy" | "--skip-journal" | "--skip-ids" | "--emotions" => {
                 let value = flag_value(argv, &mut i, arg);
                 value.map(|value| match arg {
                     "--dump" => dump = Some(PathBuf::from(value)),
@@ -251,6 +261,9 @@ fn potgen_cli(argv: &[String]) -> u8 {
                     "--skip-ids" => {
                         options.skip_ids = potgen::PolicySource::Path(PathBuf::from(value))
                     }
+                    "--emotions" => {
+                        options.emotions = potgen::PolicySource::Path(PathBuf::from(value))
+                    }
                     _ => options.root = PathBuf::from(value),
                 })
             }
@@ -262,7 +275,8 @@ fn potgen_cli(argv: &[String]) -> u8 {
                 || arg.starts_with("--excluded=")
                 || arg.starts_with("--skip-policy=")
                 || arg.starts_with("--skip-journal=")
-                || arg.starts_with("--skip-ids=") =>
+                || arg.starts_with("--skip-ids=")
+                || arg.starts_with("--emotions=") =>
             {
                 let name = arg.split('=').next().unwrap_or(arg);
                 flag_value(argv, &mut i, name).map(|value| match name {
@@ -275,6 +289,12 @@ fn potgen_cli(argv: &[String]) -> u8 {
                         options.skip_policy = potgen::PolicySource::Path(PathBuf::from(value))
                     }
                     "--skip-journal" => skip_journal = Some(PathBuf::from(value)),
+                    "--skip-ids" => {
+                        options.skip_ids = potgen::PolicySource::Path(PathBuf::from(value))
+                    }
+                    "--emotions" => {
+                        options.emotions = potgen::PolicySource::Path(PathBuf::from(value))
+                    }
                     _ => options.root = PathBuf::from(value),
                 })
             }
@@ -359,6 +379,21 @@ fn potgen_cli(argv: &[String]) -> u8 {
                     path.display(),
                     res.skip.as_ref().map(|p| p.marked).unwrap_or(0)
                 );
+            }
+            match &res.emotions {
+                Some(report) => {
+                    eprintln!(
+                        "  emotions: {} — applied {}, skipped {}, unused {}",
+                        report.path, report.applied, report.skipped, report.unused
+                    );
+                }
+                None => {
+                    if matches!(options.emotions, potgen::PolicySource::Disabled) {
+                        eprintln!("  emotions: выключены (--no-emotions)");
+                    } else {
+                        eprintln!("  emotions: не найдены (config/emotions.json) — POT без тона");
+                    }
+                }
             }
             0
         }

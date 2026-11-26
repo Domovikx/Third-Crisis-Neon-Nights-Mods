@@ -232,10 +232,13 @@ pub fn clean_translator(translator: &[String], drop_rich: bool) -> Vec<String> {
 /// Пустое значение — это заготовка (`#. rich_translation:` без хвоста): она
 /// остаётся, чтобы переводчик видел, что поле обязано быть заполнено, а гейт
 /// разрешал непереведённые строки. Записи без `rich_text` поля не получают.
+///
+/// `#. emotion:` НЕ переносится: тон — инструкция диктору и живёт только в
+/// POT (единый холд). Иначе `po:update` размножил бы 6 041 тон на 10 языков.
 pub fn with_rich_translation(comments: &[String], rt: &str) -> Vec<String> {
     let mut out: Vec<String> = comments
         .iter()
-        .filter(|c| !c.starts_with("rich_translation:"))
+        .filter(|c| !c.starts_with("rich_translation:") && !c.starts_with("emotion:"))
         .cloned()
         .collect();
     if let Some(at) = out.iter().position(|c| c.starts_with("rich_text:")) {

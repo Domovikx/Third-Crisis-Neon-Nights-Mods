@@ -16,7 +16,7 @@
     "sha256": "784cccac26fa6df6bf96edf3e3d6272bfa40aa198fc5bd2e3cc18574c4f863f6",
     "created": "2026-01-02 03:04+0000",
     "source_dump": ".opencode/skills/extract-text/test_data/tiny-dump",
-    "reproduce": "node scripts/text_cli.mts potgen --root tmp --dump .opencode/skills/extract-text/test_data/tiny-dump --out tmp/pot-golden-small.pot --created \"2026-01-02 03:04+0000\" --no-policy --no-skip-policy --no-skip-ids"
+    "reproduce": "node scripts/text_cli.mts potgen --root tmp --dump .opencode/skills/extract-text/test_data/tiny-dump --out tmp/pot-golden-small.pot --created \"2026-01-02 03:04+0000\" --no-policy --no-skip-policy --no-skip-ids --no-emotions"
   },
   "po_update": {
     "dir": ".opencode/skills/extract-text/test_data/po-update-golden",

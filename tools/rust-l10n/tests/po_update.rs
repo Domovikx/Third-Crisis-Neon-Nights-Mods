@@ -779,3 +779,29 @@ fn legacy_rich_переводчика_переезжает_в_извлечённ
     );
     assert!(!out.contains("# rich_translation:"), "старой формы нет");
 }
+
+#[test]
+fn эмоция_из_pot_не_утекает_в_po() {
+    let mut voiced = e("Hi <b>there</b>", "ui", "", &[]);
+    voiced.comments = vec![
+        "src: dialog".to_string(),
+        "emotion: Warmly, with relief".to_string(),
+        "rich_text: Hi <b>there</b>".to_string(),
+    ];
+    let pot = pot_text(&[voiced], &[]);
+    let fx = Fixture::new("emo-stay", &pot, "");
+    run_po_update(&fx.options()).expect("прогон");
+    let out = fx.read();
+    assert!(
+        !out.contains("emotion"),
+        "тон — инструкция диктору, в PO ему не место:\n{out}"
+    );
+    assert!(
+        out.contains("#. src: dialog\n#. rich_text: Hi <b>there</b>"),
+        "остальные комментарии на месте:\n{out}"
+    );
+
+    // Повторный прогон не возвращает тон из ниоткуда.
+    run_po_update(&fx.options()).expect("второй прогон");
+    assert!(!fx.read().contains("emotion"), "повтор тоже чист");
+}

@@ -5,9 +5,10 @@ use std::path::{Path, PathBuf};
 
 use rust_l10n::inventory::{InventoryItem, ItemKind};
 use rust_l10n::potgen::{
-    apply_skip_ids, apply_src_policy, build_catalog, discover_policy_path, parse_skip_ids,
-    parse_src_policy, policy_decision, render_excluded_jsonl, run, src_matches_pattern,
-    validate_policy_pattern, PolicySource, PotgenOptions, SrcPolicy, KNOWN_RAW_CLASSES,
+    apply_emotions, apply_skip_ids, apply_src_policy, build_catalog, discover_policy_path,
+    parse_emotions, parse_skip_ids, parse_src_policy, policy_decision, render_excluded_jsonl,
+    render_pot, run, src_matches_pattern, validate_policy_pattern, PolicySource, PotgenOptions,
+    SrcPolicy, KNOWN_RAW_CLASSES,
 };
 
 fn repo() -> PathBuf {
@@ -39,6 +40,7 @@ fn мини_дамп_совпадает_с_ts_эталоном_побайтов�
     options.created = Some("2026-01-02 03:04+0000".to_string());
     // Золотой POT — состояние ДО политики: discovery выключен явно.
     options.policy = PolicySource::Disabled;
+    options.emotions = PolicySource::Disabled;
 
     let res = run(&options).expect("potgen прошёл");
     assert_eq!(res.entries, 10);
@@ -621,4 +623,181 @@ fn список_skip_id_ошибки_не_молчат() {
     assert!(parse_skip_ids("[]", "ids")
         .expect_err("объект")
         .contains("объект"));
+}
+
+// ---------------------------------------------------------------------------
+// Оверлей эмоций (`--emotions`): данные, а не код.
+// ---------------------------------------------------------------------------
+
+#[test]
+fn оверлей_эмоций_разбирается_и_ошибки_не_молчат() {
+    let map = parse_emotions(
+        r#"{"_comment":"тон","emotions":{"B":"Softly, as an inner thought","A":"Quietly observing"}}"#,
+        "e.json",
+    )
+    .expect("валидный оверлей");
+    // BTreeMap: порядок ключей детерминирован.
+    assert_eq!(
+        map.keys().cloned().collect::<Vec<_>>(),
+        vec!["A".to_string(), "B".to_string()]
+    );
+    assert_eq!(map["A"], "Quietly observing");
+
+    assert!(parse_emotions("[]", "e.json")
+        .expect_err("объект")
+        .contains("объект"));
+    assert!(parse_emotions(r#"{"tones":{}}"#, "e.json")
+        .expect_err("поле")
+        .contains("неизвестное поле"));
+    assert!(parse_emotions(r#"{"emotions":[]}"#, "e.json")
+        .expect_err("объект emotions")
+        .contains("объектом"));
+    assert!(parse_emotions(r#"{"emotions":{"A":""}}"#, "e.json")
+        .expect_err("пустой тон")
+        .contains("пустой тон"));
+    assert!(parse_emotions(r#"{"emotions":{"A":"line one\nline two"}}"#, "e.json")
+        .expect_err("перевод строки")
+        .contains("перевод строки"));
+    assert!(parse_emotions(
+        &format!(r#"{{"emotions":{{"A":"{}"}}}}"#, "x".repeat(121)),
+        "e.json"
+    )
+    .expect_err("длинный тон")
+    .contains("длиннее"));
+}
+
+#[test]
+fn оверлей_эмоций_ставится_только_на_озвучиваемые_записи() {
+    let mut catalog = tiny_catalog();
+    let map = parse_emotions(
+        r#"{"emotions":{
+            "Welcome back, Sarah.":"Warmly, with relief",
+            "Where are you going now, my dear friend?":"Lightly teasing",
+            "Ask about her Arm":"Curious",
+            "NOPE":"Nowhere"
+        }}"#,
+        "e.json",
+    )
+    .expect("оверлей");
+
+    // "Welcome back, Sarah." — src: dialog → тон ставится.
+    // bundle/field:fsm — не диалог → тон не ставится (ключи пропущены).
+    // NOPE нет в POT → устаревший ключ.
+    let (applied, skipped, unused) = apply_emotions(&mut catalog, &map);
+    assert_eq!(applied, 1, "только диалоговая запись");
+    assert_eq!(skipped, 2, "bundle и field:fsm не озвучиваются");
+    assert_eq!(unused, 1, "NOPE нет в каталоге");
+
+    let pot = render_pot(&catalog, "2026-01-02 03:04+0000");
+    assert!(
+        pot.contains(
+            "#. src: dialog\n#. emotion: Warmly, with relief\n#. rich_text: <color=#EB83FF>Welcome back, Sarah.</color>"
+        ),
+        "тон сразу после src и до rich_text:\n{pot}"
+    );
+    assert_eq!(pot.matches("#. emotion:").count(), 1, "{pot}");
+
+    // Идемпотентность: повторное применение не плодит и не меняет строки.
+    apply_emotions(&mut catalog, &map);
+    assert_eq!(
+        render_pot(&catalog, "2026-01-02 03:04+0000"),
+        pot,
+        "два применения подряд = тот же POT"
+    );
+}
+
+#[test]
+fn запись_с_skip_не_получает_тон() {
+    let mut catalog = tiny_catalog();
+    // Ставим skip вручную: правило в мини-дампе для этой строки не срабатывает.
+    catalog
+        .get_mut("Welcome back, Sarah.")
+        .expect("запись")
+        .get_mut("speaker:Zoey")
+        .expect("контекст")
+        .skip = Some("reviewed".to_string());
+
+    let map = parse_emotions(
+        r#"{"emotions":{"Welcome back, Sarah.":"Warmly, with relief"}}"#,
+        "e.json",
+    )
+    .expect("оверлей");
+    let (applied, skipped, unused) = apply_emotions(&mut catalog, &map);
+    assert_eq!((applied, skipped, unused), (0, 1, 0));
+
+    let pot = render_pot(&catalog, "2026-01-02 03:04+0000");
+    assert!(!pot.contains("#. emotion:"), "{pot}");
+}
+
+#[test]
+fn прогон_с_оверлеем_даёт_ровно_ожидаемый_дифф() {
+    let dir = out_dir("emotions");
+    let overlay = dir.join("emotions.json");
+    std::fs::write(
+        &overlay,
+        r#"{"emotions":{"Welcome back, Sarah.":"Warmly, with relief"}}"#,
+    )
+    .expect("оверлей записан");
+
+    let base_opts = |out: &Path| {
+        let mut options = PotgenOptions::new(&dir);
+        options.dump_dir = tiny_dump();
+        options.out_path = Some(out.to_path_buf());
+        options.created = Some("2026-01-02 03:04+0000".to_string());
+        options.policy = PolicySource::Disabled;
+        options.skip_policy = PolicySource::Disabled;
+        options.skip_ids = PolicySource::Disabled;
+        options.emotions = PolicySource::Disabled;
+        options
+    };
+
+    let plain_path = dir.join("plain.pot");
+    let plain = base_opts(&plain_path);
+    run(&plain).expect("прогон без тона");
+    let plain_text = std::fs::read_to_string(&plain_path).expect("POT без тона");
+
+    let mut with = base_opts(&dir.join("with.pot"));
+    with.emotions = PolicySource::Path(overlay.clone());
+    let res = run(&with).expect("прогон с тоном");
+    let report = res.emotions.expect("отчёт об оверлее");
+    assert_eq!(report.applied, 1);
+    assert_eq!(report.skipped, 0);
+    assert_eq!(report.unused, 0);
+    let with_text = std::fs::read_to_string(dir.join("with.pot")).expect("POT с тоном");
+
+    // Дифф — ровно одна вставленная строка, на своём месте.
+    let expected = plain_text.replace(
+        "#. src: dialog\n#. rich_text: <color=#EB83FF>Welcome back, Sarah.</color>",
+        "#. src: dialog\n#. emotion: Warmly, with relief\n#. rich_text: <color=#EB83FF>Welcome back, Sarah.</color>",
+    );
+    assert_eq!(with_text, expected, "оверлей добавляет только emotion");
+    assert_eq!(
+        with_text.lines().count(),
+        plain_text.lines().count() + 1,
+        "одна вставка"
+    );
+
+    // Два прогона байт-в-байт (детерминизм при замороженном оверлее).
+    let mut again = base_opts(&dir.join("again.pot"));
+    again.emotions = PolicySource::Path(overlay.clone());
+    run(&again).expect("повторный прогон");
+    assert_eq!(
+        std::fs::read_to_string(dir.join("again.pot")).expect("повтор"),
+        with_text
+    );
+
+    // Пустой оверлей = POT без тона (регрессии нет).
+    let empty = dir.join("empty.json");
+    std::fs::write(&empty, r#"{"emotions":{}}"#).expect("пустой оверлей");
+    let mut empty_run = base_opts(&dir.join("empty.pot"));
+    empty_run.emotions = PolicySource::Path(empty);
+    let empty_res = run(&empty_run).expect("прогон с пустым оверлеем");
+    assert_eq!(empty_res.emotions.expect("отчёт").applied, 0);
+    assert_eq!(
+        std::fs::read_to_string(dir.join("empty.pot")).expect("пустой POT"),
+        plain_text,
+        "пустой оверлей ничего не меняет"
+    );
+
+    let _ = std::fs::remove_dir_all(&dir);
 }

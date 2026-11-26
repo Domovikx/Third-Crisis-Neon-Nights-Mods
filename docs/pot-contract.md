@@ -270,6 +270,41 @@ const violations = await checkPot("po/template.pot", { dumpPath: "tmp/dump-new" 
 - **Если нарушить:** PO начнёт заводить пустые строки для мусора (или,
   наоборот, терять переводы) — при том что в POT написано «переводить».
 
+## Тон диктора (`#. emotion:`)
+
+- **Что это:** инструкция диктору — КАК произносится строка (состояние
+  говорящего/рассказчика), а не что в ней сказано. Всегда по-английски, 2–6
+  слов, с заглавной; пример: `#. emotion: Quietly observing, a little flustered`.
+- **Единственный холд — POT.** Тон стоит сразу после `#. src:`/`#. skip:` и до
+  `#. rich_text:`. В `po/*.po` он НЕ переносится: `po_update` отфильтровывает
+  `emotion:` (иначе 6 041 тон размножился бы на 10 языков).
+- **Оверлей — данные, а не код** (как `--skip-ids`): разметчик пишет JSON
+  `{msgid: "тон"}`, Rust применяет его детерминированно.
+
+  ```bash
+  # разметка (LLM снаружи; черновик в tmp)
+  node .opencode/skills/extract-text/scripts/emotion_tag.mts --sample 100 \
+    --out tmp/emotions_ru.json
+
+  # сборка POT с тоном (без флага — discovery config/emotions.json)
+  node scripts/text_cli.mts potgen --dump tmp/dump --out tmp/pot-with-tones.pot \
+    --emotions tmp/emotions_ru.json
+
+  # выключить тон (POT как до оверлея)
+  node scripts/text_cli.mts potgen --dump tmp/dump --out tmp/pot-plain.pot --no-emotions
+  ```
+
+- **Кому ставится:** только озвучиваемым записям — `src: dialog`, не
+  `speaker-name`, без `#, skip`. Ключ оверлея — точный `msgid` (дублей в наборе
+  озвучки нет); ключи вне POT и неозвучиваемые записи считаются в отчёте
+  (`applied/skipped/unused`) и печатаются предупреждением.
+- **Пустой оверлей ничего не меняет:** POT байт-в-байт равен сборке без флага
+  (проверено на реальном дампе, sha256 совпал).
+- **Ещё не сделано (следующий шаг):** инвариант 16 в `pot_invariants.mts`
+  (`emotion-syntax`, `emotion-duplicate`, `emotion-on-skip`,
+  `emotion-on-non-dialog`), аудит формата/однородности и `config/emotions.json`
+  как закоммиченный артефакт — см. `tasks/2026-11-26-pot-voicing-plan.md` (4.3).
+
 ## Что проверки не покрывают
 
 - **Смысл перевода** (`po/*.po`) — это QA перевода, а не POT.

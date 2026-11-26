@@ -116,6 +116,7 @@ test(
       "--no-policy",
       "--no-skip-policy",
       "--no-skip-ids",
+      "--no-emotions",
     ]);
 
     const text = readFileSync(out, "utf8");
@@ -143,6 +144,62 @@ test(
   },
 );
 
+test("Rust potgen: --emotions ставит тон только озвучиваемым записям", { skip: rustSkip }, () => {
+  const overlay = join(root, "emotions.json");
+  writeFileSync(
+    overlay,
+    JSON.stringify({
+      _comment: "тон диктора",
+      emotions: {
+        "Welcome back, Sarah.": "Warmly, with relief",
+        "Where are you going now, my dear friend?": "Lightly teasing",
+        NOPE: "Nowhere",
+      },
+    }),
+  );
+  const base = [
+    "potgen",
+    "--root",
+    root,
+    "--dump",
+    FIXTURE,
+    "--created",
+    CREATED,
+    "--no-policy",
+    "--no-skip-policy",
+    "--no-skip-ids",
+  ];
+  const plainOut = join(root, "emo-plain.pot");
+  ok([...base, "--out", plainOut, "--no-emotions"]);
+  const withOut = join(root, "emo-with.pot");
+  const run = cli([...base, "--out", withOut, "--emotions", overlay]);
+  assert.equal(run.status, 0, run.stderr);
+  assert.ok(
+    run.stderr.includes("emotions:") && run.stderr.includes("applied 1, skipped 1, unused 1"),
+    `отчёт оверлея (диалог 1, bundle 1, устаревший 1):\n${run.stderr}`,
+  );
+
+  const plain = readFileSync(plainOut, "utf8");
+  const withEmotion = readFileSync(withOut, "utf8");
+  const expected = plain.replace(
+    "#. src: dialog\n#. rich_text: <color=#EB83FF>Welcome back, Sarah.</color>",
+    "#. src: dialog\n#. emotion: Warmly, with relief\n#. rich_text: <color=#EB83FF>Welcome back, Sarah.</color>",
+  );
+  assert.notEqual(expected, plain, "ожидаемый дифф существует");
+  assert.equal(withEmotion, expected, "оверлей добавляет ровно одну строку тона");
+
+  // Идемпотентность: повторный прогон — байт-в-байт.
+  ok([...base, "--out", withOut, "--emotions", overlay]);
+  assert.equal(readFileSync(withOut, "utf8"), withEmotion, "второй прогон не меняет POT");
+
+  // Пустой оверлей — POT как без тона.
+  const empty = join(root, "emotions-empty.json");
+  writeFileSync(empty, JSON.stringify({ emotions: {} }));
+  const emptyOut = join(root, "emo-empty.pot");
+  ok([...base, "--out", emptyOut, "--emotions", empty]);
+  assert.equal(readFileSync(emptyOut, "utf8"), plain, "пустой оверлей ничего не меняет");
+});
+
 test("Rust potgen: msgctxt по видам, rich_text, ui-двойник удалён", { skip: rustSkip }, () => {
   const out = join(root, "contexts.pot");
   ok([
@@ -158,6 +215,7 @@ test("Rust potgen: msgctxt по видам, rich_text, ui-двойник уда�
     "--no-policy",
     "--no-skip-policy",
     "--no-skip-ids",
+    "--no-emotions",
   ]);
   const entries = parsePo(readFileSync(out, "utf8")).filter((e) => e.msgid);
   const byId = new Map(entries.map((e) => [e.msgid, e]));
@@ -206,6 +264,7 @@ test("Rust potgen: политика отбора исключает из POT и 
     excluded,
     "--no-skip-policy",
     "--no-skip-ids",
+    "--no-emotions",
   ]);
 
   const pot = readFileSync(out, "utf8");
@@ -242,6 +301,7 @@ test("Rust potgen: невалидная политика — ошибка, POT �
     policy,
     "--no-skip-policy",
     "--no-skip-ids",
+    "--no-emotions",
   ]);
   assert.notEqual(run.status, 0, "неизвестная метка — не тихий игнор");
   assert.match(run.stderr, /raw:Fontt/);
@@ -279,6 +339,7 @@ test(
       "--skip-journal",
       journal,
       "--no-skip-ids",
+      "--no-emotions",
     ]);
 
     const pot = readFileSync(out, "utf8");
@@ -310,6 +371,7 @@ test(
       "--no-policy",
       "--no-skip-policy",
       "--no-skip-ids",
+      "--no-emotions",
     ]);
     assert.ok(!readFileSync(offOut, "utf8").includes("#, skip"), "выключено — меток нет");
   },
@@ -328,6 +390,7 @@ test("Rust potgen: нет дампа — ненулевой код, POT не с�
     "--no-policy",
     "--no-skip-policy",
     "--no-skip-ids",
+    "--no-emotions",
   ]);
   assert.notEqual(run.status, 0);
   assert.equal(existsSync(out), false);

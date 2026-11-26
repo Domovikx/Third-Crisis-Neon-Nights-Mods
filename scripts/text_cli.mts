@@ -48,12 +48,15 @@ const PATH_FLAGS = new Set([
   "--dump",
   "--skip-policy",
   "--skip-journal",
+  "--emotions",
 ]);
 
 const USAGE = `rust-l10n (обёртка)
 
   node scripts/text_cli.mts potgen [--update] [--dump <dir>] [--out <path>]
                         [--skip-policy <p> | --no-skip-policy] [--skip-journal <p>]
+                        [--skip-ids <p> | --no-skip-ids]
+                        [--emotions <p> | --no-emotions]
   node scripts/text_cli.mts po2dat [lang]
   node scripts/text_cli.mts po_update [lang] [--po-dir <dir>] [--dup-rule <r>]
                         [--json <path>] [--no-backup]

@@ -101,6 +101,7 @@ test("Rust potgen == золото мини-дампа: байт-в-байт", { 
     "--no-policy",
     "--no-skip-policy",
     "--no-skip-ids",
+    "--no-emotions",
   ]);
   const actual = readFileSync(out);
   assert.equal(actual.byteLength, meta.small.bytes, "размер POT");
