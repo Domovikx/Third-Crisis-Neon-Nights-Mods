@@ -23,7 +23,7 @@ export const CHARACTERS = {
       "Молодая работница бара, от лица которой идёт игра: новые смены, клиенты и знакомства в неоновом городе. Sarah зовёт её «Z»; большая часть корпуса — её реплики и мысли.",
     voicedInOriginal: "yes",
     refs: {
-      chosen: null,
+      chosen: "voice-refs/Zoey/chosen/B.wav",
       candidates: [
         { id: "A", path: "voice-refs/Zoey/candidates/A.wav", manualCheck: "pending" },
         { id: "B", path: "voice-refs/Zoey/candidates/B.wav", manualCheck: "pending" },

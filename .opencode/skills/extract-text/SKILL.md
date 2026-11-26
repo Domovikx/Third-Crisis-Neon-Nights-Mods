@@ -41,6 +41,9 @@ description: PO-пайплайн текста игры (inventory, pot_rules, po
 - `po_file.mts` — парсер/рендер PO (детерминированный round-trip).
 - `pot_skip.mts` — условия skip-политики (что переводить не нужно) и чистка
   TMP-тегов; `pot_skip_review.mts` — отчёт для ревью правил.
+- `pot_voice_stats.mts` — счёт POT для озвучки: классы записей, `#, skip`, стоны
+  M0/M1/M2, `rich_text`, строки по спикерам и итоговый набор озвучки (7 199 uid);
+  только чтение POT, CPU (план — `tasks/2026-11-26-pot-voicing-plan.md`).
 
 Удалены после миграции на Rust (брать из `rust-l10n`): `prefill_po.mts`,
 `po2dat.mts`, `find_source.mts`, `potgen.mts`, `po_update.mts` (2026-11-24).
