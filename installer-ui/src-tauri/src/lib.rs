@@ -38,6 +38,29 @@ fn exe_dir() -> PathBuf {
         .unwrap_or_else(|| PathBuf::from("."))
 }
 
+/// Payload, вшитый в бандл через `bundle.resources` (`resource_dir()/payload`).
+fn bundled_payload(app: &AppHandle) -> Option<PathBuf> {
+    use tauri::Manager;
+    app.path()
+        .resource_dir()
+        .ok()
+        .map(|dir| dir.join("payload"))
+        .filter(|dir| dir.is_dir())
+}
+
+/// Порядок поиска: явный путь → ресурс бандла → рядом с exe / dev-дерево.
+fn resolve_payload(app: Option<&AppHandle>, explicit: Option<String>) -> PathBuf {
+    if let Some(dir) = explicit {
+        return PathBuf::from(dir);
+    }
+    if let Some(app) = app {
+        if let Some(dir) = bundled_payload(app) {
+            return dir;
+        }
+    }
+    install::find_payload(&exe_dir())
+}
+
 /// Журнал менеджера: рядом с exe, а если папка только для чтения — в `%TEMP%`.
 /// Формат — ISO-время + строка; пишется best-effort, установку не ломает.
 fn log(line: &str) {
@@ -101,10 +124,11 @@ fn probe_game(path: String) -> ProbeResult {
     ProbeResult { check, game }
 }
 
-/// Payload рядом с exe: есть ли, какая версия, какие языки.
+/// Payload: есть ли, какая версия, какие языки. Сначала ресурс бандла,
+/// затем папка рядом с exe (dev).
 #[tauri::command]
-fn payload_status() -> PayloadStatus {
-    let dir = install::payload_dir(&exe_dir());
+fn payload_status(app: AppHandle) -> PayloadStatus {
+    let dir = resolve_payload(Some(&app), None);
     let exists = dir.is_dir();
     let info = install::read_payload_info(&dir);
     let langs = if exists {
@@ -147,9 +171,7 @@ fn install_mod(
     lang: String,
     payload_dir: Option<String>,
 ) -> Result<InstallResult, String> {
-    let payload = payload_dir
-        .map(PathBuf::from)
-        .unwrap_or_else(|| install::payload_dir(&exe_dir()));
+    let payload = resolve_payload(Some(&app), payload_dir);
     let game = PathBuf::from(&game_dir);
     let result =
         install::install_with_progress(&game, &payload, &lang, &mut |progress: InstallProgress| {
@@ -160,8 +182,9 @@ fn install_mod(
             e.wire()
         })?;
     log(&format!(
-        "install game={} lang={} version={} copied={} skipped={} removed={}",
+        "install game={} payload={} lang={} version={} copied={} skipped={} removed={}",
         game_dir,
+        payload.display(),
         result.lang,
         result.payload_version.as_deref().unwrap_or("-"),
         result.copied,
@@ -179,9 +202,7 @@ fn update_mod(
     game_dir: String,
     payload_dir: Option<String>,
 ) -> Result<InstallResult, String> {
-    let payload = payload_dir
-        .map(PathBuf::from)
-        .unwrap_or_else(|| install::payload_dir(&exe_dir()));
+    let payload = resolve_payload(Some(&app), payload_dir);
     let game = PathBuf::from(&game_dir);
     let result =
         install::update_with_progress(&game, &payload, &mut |progress: InstallProgress| {
@@ -192,8 +213,9 @@ fn update_mod(
             e.wire()
         })?;
     log(&format!(
-        "update game={} lang={} version={} copied={} skipped={} removed={}",
+        "update game={} payload={} lang={} version={} copied={} skipped={} removed={}",
         game_dir,
+        payload.display(),
         result.lang,
         result.payload_version.as_deref().unwrap_or("-"),
         result.copied,
@@ -368,7 +390,7 @@ fn copy_tree(from: &Path, to: &Path) -> std::io::Result<()> {
 pub fn selftest(payload_arg: Option<String>) -> i32 {
     let payload = payload_arg
         .map(PathBuf::from)
-        .unwrap_or_else(|| install::payload_dir(&exe_dir()));
+        .unwrap_or_else(|| install::find_payload(&exe_dir()));
     if let Err(e) = install::validate_payload(&payload) {
         eprintln!("SELFTEST FAIL: payload: {e}");
         return 1;

@@ -21,7 +21,7 @@ import { parsePo } from "../.opencode/skills/extract-text/scripts/po_file.mts";
 import { NATIVE_NAMES, SITE_TEXT, type SiteLang } from "../site/i18n.mts";
 
 /** Версия страницы = версия релиза. Обновляется вместе с `npm run release -- --version`. */
-export const SITE_VERSION = "2026.11.25";
+export const SITE_VERSION = "2026.11.26";
 
 export interface LangCoverage {
   code: string;

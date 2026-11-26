@@ -1991,7 +1991,7 @@ dependencies = [
 
 [[package]]
 name = "neon-translator-dx-manager"
-version = "0.1.0"
+version = "2026.11.26-1"
 dependencies = [
  "neon-manager-core",
  "serde",

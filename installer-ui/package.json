@@ -1,7 +1,7 @@
 {
   "name": "neontranslatordx-manager",
   "private": true,
-  "version": "0.1.0",
+  "version": "2026.11.26-1",
   "type": "module",
   "description": "NeonTranslatorDX Manager — Tauri 2 + React 19 + StyleX",
   "scripts": {
@@ -14,7 +14,9 @@
     "payload": "node scripts/build_payload.mts",
     "manual": "node scripts/build_manual_archive.mts",
     "test:archive": "node --test scripts/build_manual_archive.test.mts",
-    "manual:e2e": "node scripts/manual_e2e.mts"
+    "manual:e2e": "node scripts/manual_e2e.mts",
+    "icons": "node scripts/make_icons.mts",
+    "test:icons": "node --test scripts/make_icons.test.mts"
   },
   "dependencies": {
     "@tauri-apps/api": "^2",

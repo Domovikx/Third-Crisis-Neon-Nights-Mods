@@ -1,3 +1,13 @@
+MIT License — applies to code and tooling only (scripts, extractor, dumper, runtime source, installer).
+
+This license covers OUR CODE ONLY. Game assets, game text, characters, story and
+character voices are not licensed by us; all rights to them belong to Anduo Games
+and the respective rights holders. Voice-over is non-commercial fan work — see
+NOTICE-FANWORK.md. / Эта лицензия распространяется ТОЛЬКО на наш код. Ассеты игры,
+тексты, персонажи и голоса персонажей нами не лицензируются; права на них
+принадлежат Anduo Games и соответствующим правообладателям. Озвучка —
+некоммерческая фан-работа, см. NOTICE-FANWORK.md.
+
 MIT License — applies to code and tooling (scripts, extractor, dumper, runtime source).
 
 Copyright (c) 2025 Domovikx

@@ -86,6 +86,24 @@ export const CHARACTERS = {
     lines: { total: 0, toVoice: 0 },
     priority: 4,
   },
+  Narrator: {
+    name: "Narrator",
+    gender: "female",
+    role: "рассказчик",
+    description:
+      "Голос описания и мыслей от первого лица: то, что Зои думает и замечает по ходу сцен, плюс пояснения автора. Отдельного актёра в оригинале нет — мысли в четырёх озвученных сценах читает та же актриса, что и Зои, поэтому профиль отдельный только по тону (наблюдение, а не реплика).",
+    voicedInOriginal: "partial",
+    refs: {
+      chosen: null,
+      candidates: [
+        { id: "A", path: "voice-refs/Narrator/candidates/A.wav", manualCheck: "pending" },
+        { id: "B", path: "voice-refs/Narrator/candidates/B.wav", manualCheck: "pending" },
+        { id: "C", path: "voice-refs/Narrator/candidates/C.wav", manualCheck: "pending" },
+      ],
+    },
+    lines: { total: 4801, toVoice: 4777 },
+    priority: 5,
+  },
   Rosie: {
     name: "Rosie",
     gender: null,
@@ -105,7 +123,7 @@ export const CHARACTERS = {
       ],
     },
     lines: { total: 15, toVoice: 15 },
-    priority: 5,
+    priority: 6,
   },
   Leona: {
     name: "Leona",
@@ -116,7 +134,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 190, toVoice: 190 },
-    priority: 6,
+    priority: 7,
   },
   Klaudia: {
     name: "Klaudia",
@@ -127,7 +145,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 133, toVoice: 133 },
-    priority: 7,
+    priority: 8,
   },
   Customer: {
     name: "Customer",
@@ -138,7 +156,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 124, toVoice: 124 },
-    priority: 8,
+    priority: 9,
   },
   Enforcer: {
     name: "Enforcer",
@@ -149,7 +167,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 124, toVoice: 124 },
-    priority: 9,
+    priority: 10,
   },
   Varen: {
     name: "Varen",
@@ -160,7 +178,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 123, toVoice: 122 },
-    priority: 10,
+    priority: 11,
   },
   Trov: {
     name: "Trov",
@@ -171,7 +189,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 86, toVoice: 86 },
-    priority: 11,
+    priority: 12,
   },
   Woman: {
     name: "Woman",
@@ -182,7 +200,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 71, toVoice: 71 },
-    priority: 12,
+    priority: 13,
   },
   Rugnar: {
     name: "Rugnar",
@@ -193,7 +211,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 59, toVoice: 59 },
-    priority: 13,
+    priority: 14,
   },
   Sarah: {
     name: "Sarah",
@@ -203,7 +221,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 46, toVoice: 46 },
-    priority: 14,
+    priority: 15,
   },
   Man: {
     name: "Man",
@@ -214,7 +232,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 41, toVoice: 41 },
-    priority: 15,
+    priority: 16,
   },
   Mira: {
     name: "Mira",
@@ -225,7 +243,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 36, toVoice: 36 },
-    priority: 16,
+    priority: 17,
   },
   Salesman: {
     name: "Salesman",
@@ -236,7 +254,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 33, toVoice: 33 },
-    priority: 17,
+    priority: 18,
   },
   Bunnyboy: {
     name: "Bunnyboy",
@@ -247,7 +265,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 26, toVoice: 26 },
-    priority: 18,
+    priority: 19,
   },
   Femboy: {
     name: "Femboy",
@@ -258,7 +276,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 15, toVoice: 15 },
-    priority: 19,
+    priority: 20,
   },
   Intercom: {
     name: "Intercom",
@@ -269,7 +287,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 14, toVoice: 14 },
-    priority: 20,
+    priority: 21,
   },
   Brad: {
     name: "Brad",
@@ -280,7 +298,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 11, toVoice: 11 },
-    priority: 21,
+    priority: 22,
   },
   Jay: {
     name: "Jay",
@@ -291,7 +309,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 3, toVoice: 3 },
-    priority: 22,
+    priority: 23,
   },
   Bunnygirl: {
     name: "Bunnygirl",
@@ -302,7 +320,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 6, toVoice: 6 },
-    priority: 23,
+    priority: 24,
   },
   "Cartel Guy": {
     name: "Cartel Guy",
@@ -313,7 +331,7 @@ export const CHARACTERS = {
     voicedInOriginal: "no",
     refs: { chosen: null, candidates: [] },
     lines: { total: 4, toVoice: 4 },
-    priority: 24,
+    priority: 25,
   },
 } as const satisfies Record<string, Character>;
 

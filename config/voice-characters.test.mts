@@ -74,6 +74,18 @@ test("CHARACTERS: порядок ключей совпадает с приори
   );
 });
 
+test("Narrator: отдельный профиль, но не спикер POT", () => {
+  const narrator = CHARACTERS.Narrator;
+  assert.equal(narrator.gender, "female", "нарратив озвучен актрисой Зои — женский голос");
+  assert.equal(narrator.voicedInOriginal, "partial", "озвучены только мысли в 4 сценах");
+  assert.ok(narrator.lines.total >= 4800, "строки нарратива — весь класс без speaker:");
+  // Спикера `Narrator` в POT нет: строки определяются классом (src: dialog без
+  // speaker), поэтому в SPEAKER_TO_CHARACTER его быть не должно — иначе тест
+  // покрытия POT покраснеет, а карта начнёт врать.
+  assert.ok(!("Narrator" in SPEAKER_TO_CHARACTER), "Narrator не должен быть спикером POT");
+  assert.ok(!potSpeakers().includes("Narrator"), "в POT нет msgctxt speaker:Narrator");
+});
+
 test("refs: chosen либо null, либо существующий файл внутри voice-refs/", () => {
   for (const [key, character] of Object.entries(CHARACTERS)) {
     // Аннотация снимает литеральное сужение: сейчас все chosen = null, но тест

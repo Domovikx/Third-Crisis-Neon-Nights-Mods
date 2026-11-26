@@ -69,6 +69,47 @@ pub fn payload_dir(exe_dir: &Path) -> PathBuf {
     exe_dir.join("payload")
 }
 
+/// Где искать payload, в порядке приоритета:
+///
+/// 1. рядом с exe (`<exe_dir>/payload`) — так кладут NSIS-бандл и dev-сборка
+///    (tauri-build копирует `bundle.resources` в `target/<profile>/`);
+/// 2. `<exe_dir>/resources/payload` — запасная раскладка;
+/// 3. вверх по дереву до 4 уровней (`src-tauri/target/debug` →
+///    `installer-ui/payload`) — `cargo run` без копирования ресурсов;
+/// 4. `./payload` от текущего каталога.
+pub fn payload_candidates(exe_dir: &Path) -> Vec<PathBuf> {
+    let mut candidates = vec![
+        payload_dir(exe_dir),
+        exe_dir.join("resources").join("payload"),
+    ];
+    for ancestor in exe_dir.ancestors().skip(1).take(4) {
+        candidates.push(ancestor.join("payload"));
+    }
+    if let Ok(cwd) = std::env::current_dir() {
+        candidates.push(cwd.join("payload"));
+    }
+    candidates
+}
+
+/// Найти payload: валидный кандидат → существующая папка → первый кандидат
+/// (его путь попадёт в сообщение об ошибке).
+pub fn find_payload(exe_dir: &Path) -> PathBuf {
+    let candidates = payload_candidates(exe_dir);
+    if let Some(found) = candidates
+        .iter()
+        .find(|candidate| validate_payload(candidate).is_ok())
+    {
+        return found.clone();
+    }
+    if let Some(found) = candidates.iter().find(|candidate| candidate.is_dir()) {
+        return found.clone();
+    }
+    candidates
+        .into_iter()
+        .next()
+        .unwrap_or_else(|| payload_dir(exe_dir))
+}
+
 /// Прочитать `payload.json` (нет файла — пустые поля, это не ошибка).
 pub fn read_payload_info(payload: &Path) -> PayloadInfo {
     let path = payload.join(PAYLOAD_INFO);
