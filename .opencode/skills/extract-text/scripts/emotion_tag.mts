@@ -37,7 +37,14 @@
  * НЕ коммитит и не трогает `po/**`: черновик — `tmp/`, в POT он попадает
  * только через `potgen --emotions` (решение владельца).
  */
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  renameSync,
+  writeFileSync,
+} from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import process from "node:process";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -387,6 +394,8 @@ export async function tagAll(
     existing?: Record<string, string>;
     resume?: boolean;
     onProgress?: (done: number, total: number) => void;
+    /** Периодический снимок черновика (резюмабельность при 6 000 строк). */
+    onCheckpoint?: (done: number, data: TagResult) => void;
     fetchImpl?: typeof fetch;
   },
 ): Promise<TagResult> {
@@ -402,6 +411,7 @@ export async function tagAll(
   const recent: string[] = [];
   const FAMILY_WINDOW = 12;
   const FAMILY_LIMIT = 3;
+  const CHECKPOINT_EVERY = 200;
 
   const worker = async (): Promise<void> => {
     while (index < candidates.length) {
@@ -439,6 +449,15 @@ export async function tagAll(
       }
       done += 1;
       opts.onProgress?.(done, candidates.length);
+      if (done % CHECKPOINT_EVERY === 0) {
+        opts.onCheckpoint?.(done, {
+          emotions: { ...emotions },
+          seconds,
+          fallbacks,
+          errors,
+          retries,
+        });
+      }
     }
   };
 
@@ -568,6 +587,36 @@ export async function run(opts: CliOptions): Promise<number> {
   }
 
   const started = Date.now();
+  const perLineOf = (data: { seconds: number[] }): number =>
+    data.seconds.length ? data.seconds.reduce((a, b) => a + b, 0) / data.seconds.length : 0;
+  /** Атомарная запись черновика: `<out>.part` → rename (убийство процесса не обнуляет файл). */
+  const save = (data: TagResult): void => {
+    const sortedEmotions = Object.fromEntries(
+      Object.entries(data.emotions).sort(([a], [b]) => (a < b ? -1 : 1)),
+    );
+    const doc = {
+      _comment:
+        "Черновик тона: msgid -> English delivery instruction. Генерит emotion_tag.mts; potgen ставит `#. emotion:`.",
+      _meta: {
+        model: opts.model,
+        baseUrl: opts.baseUrl,
+        sampled: candidates.length,
+        concurrency: opts.concurrency,
+        totalSeconds: Number(((Date.now() - started) / 1000).toFixed(2)),
+        secondsPerLine: Number(perLineOf(data).toFixed(3)),
+        fallbacks: data.fallbacks,
+        errors: data.errors,
+        retries: data.retries,
+        generatedAt: new Date().toISOString(),
+        distribution: distribution(data.emotions),
+      },
+      emotions: sortedEmotions,
+    };
+    mkdirSync(dirname(opts.out), { recursive: true });
+    writeFileSync(`${opts.out}.part`, `${JSON.stringify(doc, null, 2)}\n`);
+    renameSync(`${opts.out}.part`, opts.out);
+  };
+
   const result = await tagAll(candidates, {
     baseUrl: opts.baseUrl,
     model: opts.model,
@@ -577,38 +626,17 @@ export async function run(opts: CliOptions): Promise<number> {
     onProgress: (done, total) => {
       if (done % 20 === 0 || done === total) process.stderr.write(`  ... ${done}/${total}\n`);
     },
+    onCheckpoint: (done, data) => {
+      save(data);
+      process.stderr.write(`  ... чекпоинт ${done}/${candidates.length} -> ${opts.out}\n`);
+    },
   });
   const totalSeconds = (Date.now() - started) / 1000;
-  const sortedEmotions = Object.fromEntries(
-    Object.entries(result.emotions).sort(([a], [b]) => (a < b ? -1 : 1)),
-  );
-  const perLine = result.seconds.length
-    ? result.seconds.reduce((a, b) => a + b, 0) / result.seconds.length
-    : 0;
-
-  mkdirSync(dirname(opts.out), { recursive: true });
-  const doc = {
-    _comment:
-      "Черновик тона: msgid -> English delivery instruction. Генерит emotion_tag.mts; potgen ставит `#. emotion:`.",
-    _meta: {
-      model: opts.model,
-      baseUrl: opts.baseUrl,
-      sampled: candidates.length,
-      concurrency: opts.concurrency,
-      totalSeconds: Number(totalSeconds.toFixed(2)),
-      secondsPerLine: Number(perLine.toFixed(3)),
-      fallbacks: result.fallbacks,
-      errors: result.errors,
-      retries: result.retries,
-      generatedAt: new Date().toISOString(),
-      distribution: distribution(result.emotions),
-    },
-    emotions: sortedEmotions,
-  };
-  writeFileSync(opts.out, `${JSON.stringify(doc, null, 2)}\n`);
+  const perLine = perLineOf(result);
+  save(result);
 
   console.log(
-    `размечено: ${Object.keys(sortedEmotions).length}; ${perLine.toFixed(2)} с/строка ` +
+    `размечено: ${Object.keys(result.emotions).length}; ${perLine.toFixed(2)} с/строка ` +
       `(всего ${totalSeconds.toFixed(1)} с); fallback ${result.fallbacks}; ` +
       `повторов из-за семьи ${result.retries}`,
   );
