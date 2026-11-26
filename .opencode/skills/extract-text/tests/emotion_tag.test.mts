@@ -79,10 +79,7 @@ test("sampleEntries: детерминирована и берёт оба кла�
   const second = sampleEntries(entries, 2);
   assert.deepEqual(first, second, "тот же вход = тот же сэмпл");
   assert.equal(first.length, 2);
-  assert.deepEqual(
-    new Set(first.map((e) => e.kind)),
-    new Set(["dialog", "narration"]),
-  );
+  assert.deepEqual(new Set(first.map((e) => e.kind)), new Set(["dialog", "narration"]));
 });
 
 test("buildPrompt: спикер/класс/соседи по сцене + правила тона", () => {
@@ -94,7 +91,7 @@ test("buildPrompt: спикер/класс/соседи по сцене + пра
   assert.ok(prompt.includes("Line (EN): A voiced line."), prompt);
   assert.ok(prompt.includes("adult (18+)"), "18+ регистр");
   assert.ok(prompt.includes("NOT a summary"), "состояние, а не пересказ");
-  assert.ok(prompt.includes("NEVER reply \"none\""), "none запрещён");
+  assert.ok(prompt.includes('NEVER reply "none"'), "none запрещён");
   assert.ok(prompt.includes("2-6 words"), "формат инструкции");
 
   const narration = voicedEntries(POT)[1];

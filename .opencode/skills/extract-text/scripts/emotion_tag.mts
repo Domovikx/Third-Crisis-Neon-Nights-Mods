@@ -25,6 +25,7 @@
  *   --sample N        стратифицированная выборка (диалог/нарратив, все голоса,
  *                     мысли в скобках); одинаковый N = одинаковые строки
  *   --sample-out <p>  записать выбранные строки (msgid, спикер, класс)
+ *   --sample-file <p> размечать ровно эти msgid (сравнение моделей, добор)
  *   --limit N         первые N кандидатов (быстрый прогон)
  *   --out <p>         куда писать черновик (по умолчанию tmp/emotions_tagged.json)
  *   --base-url <u>    OpenAI-compatible бэкенд (по умолчанию http://127.0.0.1:1234)
@@ -378,6 +379,7 @@ interface CliOptions {
   out: string;
   sample?: number;
   sampleOut?: string;
+  sampleFile?: string;
   limit?: number;
   baseUrl: string;
   model: string;
@@ -401,6 +403,7 @@ function parseCli(argv: string[]): CliOptions {
     out,
     sample: flag("--sample") ? Number(flag("--sample")) : undefined,
     sampleOut: flag("--sample-out"),
+    sampleFile: flag("--sample-file"),
     limit: flag("--limit") ? Number(flag("--limit")) : undefined,
     baseUrl: flag("--base-url") ?? process.env.TCNN_LLM_URL ?? DEFAULT_BASE_URL,
     model: flag("--model") ?? process.env.TCNN_LLM_MODEL ?? DEFAULT_MODEL,
@@ -417,6 +420,15 @@ export async function run(opts: CliOptions): Promise<number> {
   let candidates = withContext(allCandidates, sceneContext);
 
   const total = candidates.length;
+  if (opts.sampleFile) {
+    // Повторная разметка РОВНО тех же строк (сравнение моделей, добор после ревью).
+    const raw = JSON.parse(readFileSync(opts.sampleFile, "utf8")) as Array<
+      string | { msgid: string }
+    >;
+    const order = raw.map((item) => (typeof item === "string" ? item : item.msgid));
+    const byMsgid = new Map(candidates.map((c) => [c.msgid, c]));
+    candidates = order.map((msgid) => byMsgid.get(msgid)).filter((c): c is Candidate => Boolean(c));
+  }
   if (opts.sample) candidates = sampleEntries(candidates, opts.sample);
   if (opts.limit) candidates = candidates.slice(0, opts.limit);
 

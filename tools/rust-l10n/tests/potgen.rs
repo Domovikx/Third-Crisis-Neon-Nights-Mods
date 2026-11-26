@@ -655,9 +655,11 @@ fn оверлей_эмоций_разбирается_и_ошибки_не_мо�
     assert!(parse_emotions(r#"{"emotions":{"A":""}}"#, "e.json")
         .expect_err("пустой тон")
         .contains("пустой тон"));
-    assert!(parse_emotions(r#"{"emotions":{"A":"line one\nline two"}}"#, "e.json")
-        .expect_err("перевод строки")
-        .contains("перевод строки"));
+    assert!(
+        parse_emotions(r#"{"emotions":{"A":"line one\nline two"}}"#, "e.json")
+            .expect_err("перевод строки")
+            .contains("перевод строки")
+    );
     assert!(parse_emotions(
         &format!(r#"{{"emotions":{{"A":"{}"}}}}"#, "x".repeat(121)),
         "e.json"

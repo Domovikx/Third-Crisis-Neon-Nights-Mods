@@ -1521,8 +1521,9 @@ pub fn run(options: &PotgenOptions) -> Result<PotgenResult, String> {
     // источника тона нет: LLM пишет JSON, Rust применяет его детерминированно.
     let emotions: Option<(String, EmotionMap)> = match &options.emotions {
         PolicySource::Disabled => None,
-        PolicySource::Path(path) => load_emotions(path)?
-            .map(|map| (path.display().to_string(), map)),
+        PolicySource::Path(path) => {
+            load_emotions(path)?.map(|map| (path.display().to_string(), map))
+        }
         PolicySource::Default => match discover_emotions_path(&options.root) {
             Some(path) => load_emotions(&path)?.map(|map| (path.display().to_string(), map)),
             None => None,
