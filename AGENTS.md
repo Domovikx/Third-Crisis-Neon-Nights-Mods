@@ -318,3 +318,5 @@ npm run verify         # всё вместе
 
 - Старый репозиторий: `<игра>/NeonTranslator` (DEPRECATED, см. `DEPRECATED.md` там).
 - Дамп и перевод — `docs/migration.md`.
+
+- **Роли моделей — `docs/llm-roles.md`**: перевод и судья — `Index-Translate-9B`, эмоции — `qwen3.6-35b` (Strata), 35B на переводе не выигрывает (замер). Смену модели делать только по измерению и фиксировать там же.
