@@ -132,6 +132,45 @@ export function voicedEntries(potText: string): Candidate[] {
   return out;
 }
 
+/** Техническая строка поля выбора (`List<DialogueLineLogic>`). */
+const CHOICE_TYPE_PREFIX = "System.Collections.Generic.List`1[[Asuna.Dialogues.DialogueLineLogic";
+
+/**
+ * Тексты UI-выборов внутри `src: dialog` (у них нет спикера, поэтому класс
+ * «нарратив» захватывает их как реплики: `Work as waitress`, `Ask about Arm`).
+ *
+ * Сигнал — объект диалога, где есть техническая строка
+ * `System.Collections.Generic.List\`1[[Asuna.Dialogues.DialogueLineLogic…]]`
+ * (поле выбора/`SaveKey`): всё остальное в таком объекте — варианты выбора,
+ * а не речь. Проверено на дампе 2026-11-26: 45 объектов, 28 уникальных текстов,
+ * 21 из них попадал в набор озвучки.
+ */
+export function choiceMsgids(dumpDir: string): Set<string> {
+  const out = new Set<string>();
+  if (!existsSync(dumpDir)) return out;
+  for (const name of readdirSync(dumpDir)) {
+    if (!name.endsWith(".jsonl") || name === "summaries.jsonl") continue;
+    for (const line of readFileSync(join(dumpDir, name), "utf8").split("\n")) {
+      if (!line.trim() || !line.includes("DialogueLineLogic")) continue;
+      let object: { dialogues?: Array<{ text?: string }> };
+      try {
+        object = JSON.parse(line) as typeof object;
+      } catch {
+        continue;
+      }
+      const dialogues = object.dialogues;
+      if (!Array.isArray(dialogues)) continue;
+      const isType = (d: { text?: string }): boolean =>
+        typeof d.text === "string" && d.text.startsWith(CHOICE_TYPE_PREFIX);
+      if (!dialogues.some(isType)) continue;
+      for (const d of dialogues) {
+        if (!isType(d) && typeof d.text === "string" && d.text.trim()) out.add(d.text.trim());
+      }
+    }
+  }
+  return out;
+}
+
 /** Соседи по сцене из дампа: `dialogues[]` каждого ассета — настоящий порядок. */
 export function loadSceneContext(dumpDir: string): Map<string, { prev: string; next: string }> {
   const context = new Map<string, { prev: string; next: string }>();
@@ -176,7 +215,7 @@ export function withContext(
 }
 
 /** Промпт одной строки: спикер/класс + соседи по сцене. */
-export function buildPrompt(c: Candidate): string {
+export function buildPrompt(c: Candidate, opts: { avoidFamily?: string } = {}): string {
   const who = c.speaker ?? "Narrator (Zoey's inner voice)";
   const ctx = [
     `Speaker: ${who} | kind: ${c.kind}${c.parenthetical ? " (a thought in parentheses)" : ""}`,
@@ -184,7 +223,11 @@ export function buildPrompt(c: Candidate): string {
   if (c.prev) ctx.push(`Previous line: ${c.prev.slice(0, 200)}`);
   ctx.push(`Line (EN): ${c.msgid}`);
   if (c.next) ctx.push(`Next line: ${c.next.slice(0, 200)}`);
-  return LLM_PROMPT + ctx.join("\n");
+  const avoid = opts.avoidFamily
+    ? `\n- Avoid the ${opts.avoidFamily} register: recent lines already used it, ` +
+      "this moment needs a different nuance.\n"
+    : "";
+  return LLM_PROMPT + ctx.join("\n") + avoid;
 }
 
 /** Чистка ответа модели: кавычки/точка/регистр; null — ответ непригоден. */
@@ -199,6 +242,21 @@ export function normalizeEmotion(raw: string | null | undefined): string | null 
   if (/[\u0400-\u04FF\u3040-\u30FF\u4E00-\u9FFF]/.test(text)) return null;
   if (text.split(/\s+/).length > 6) return null;
   return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+/**
+ * Семьи тонов, которые 9B любит переиспользовать (ревью выборки 2026-11-26:
+ * «Playful/teasing» — 25 из 100 строк). Точных дублей почти нет, поэтому
+ * запрещаем не слово, а смысловую семью: при переполнении — один повтор.
+ */
+const OVERUSED_FAMILIES: ReadonlyArray<{ name: string; re: RegExp }> = [
+  { name: "playful/teasing", re: /\b(playful|teas|mischief|cheeky|coy|flirt|sly|smirk)\w*/i },
+];
+
+/** Семья тона или null (для мягкого штрафа за повтор). */
+export function toneFamily(tone: string): string | null {
+  for (const family of OVERUSED_FAMILIES) if (family.re.test(tone)) return family.name;
+  return null;
 }
 
 /** Равномерная детерминированная выборка из списка (список должен быть отсортирован). */
@@ -315,6 +373,8 @@ export interface TagResult {
   fallbacks: number;
   /** Сколько запросов упало с ошибкой (пустой ответ = fallback). */
   errors: number;
+  /** Сколько раз повторили запрос из-за переиспользования семьи тона. */
+  retries: number;
 }
 
 /** Разметить список кандидатов с ограничением параллельности. */
@@ -327,6 +387,7 @@ export async function tagAll(
     existing?: Record<string, string>;
     resume?: boolean;
     onProgress?: (done: number, total: number) => void;
+    fetchImpl?: typeof fetch;
   },
 ): Promise<TagResult> {
   const emotions: Record<string, string> = { ...opts.existing };
@@ -335,7 +396,12 @@ export async function tagAll(
   let done = 0;
   let fallbacks = 0;
   let errors = 0;
+  let retries = 0;
   let index = 0;
+  /** Последние тоны: мягкий штраф за переиспользование семьи (см. toneFamily). */
+  const recent: string[] = [];
+  const FAMILY_WINDOW = 12;
+  const FAMILY_LIMIT = 3;
 
   const worker = async (): Promise<void> => {
     while (index < candidates.length) {
@@ -346,7 +412,21 @@ export async function tagAll(
         continue;
       }
       const started = Date.now();
-      const answer = await askLlm(opts.baseUrl, opts.model, buildPrompt(candidate));
+      let answer = await askLlm(opts.baseUrl, opts.model, buildPrompt(candidate), {
+        fetchImpl: opts.fetchImpl,
+      });
+      const family = answer ? toneFamily(answer) : null;
+      const familyUsed = family ? recent.filter((tone) => toneFamily(tone) === family).length : 0;
+      if (answer && family && familyUsed >= FAMILY_LIMIT) {
+        retries += 1;
+        const second = await askLlm(
+          opts.baseUrl,
+          opts.model,
+          buildPrompt(candidate, { avoidFamily: family }),
+          { fetchImpl: opts.fetchImpl },
+        );
+        if (second && toneFamily(second) !== family) answer = second;
+      }
       seconds.push((Date.now() - started) / 1000);
       if (!answer) {
         errors += 1;
@@ -354,6 +434,8 @@ export async function tagAll(
         emotions[candidate.msgid] = DEFAULT_EMO;
       } else {
         emotions[candidate.msgid] = answer;
+        recent.push(answer);
+        if (recent.length > FAMILY_WINDOW) recent.shift();
       }
       done += 1;
       opts.onProgress?.(done, candidates.length);
@@ -361,7 +443,7 @@ export async function tagAll(
   };
 
   await Promise.all(Array.from({ length: concurrency }, () => worker()));
-  return { emotions, seconds, fallbacks, errors };
+  return { emotions, seconds, fallbacks, errors, retries };
 }
 
 /** Распределение тонов (для отчёта и проверки «одна эмоция на всё»). */
@@ -417,7 +499,12 @@ export async function run(opts: CliOptions): Promise<number> {
   const potText = readFileSync(opts.pot, "utf8");
   const allCandidates = voicedEntries(potText);
   const sceneContext = loadSceneContext(opts.dump);
-  let candidates = withContext(allCandidates, sceneContext);
+  const choices = choiceMsgids(opts.dump);
+  const choiceHits = allCandidates.filter((c) => choices.has(c.msgid));
+  let candidates = withContext(
+    allCandidates.filter((c) => !choices.has(c.msgid)),
+    sceneContext,
+  );
 
   const total = candidates.length;
   if (opts.sampleFile) {
@@ -442,6 +529,13 @@ export async function run(opts: CliOptions): Promise<number> {
       sceneContext.size ? `${sceneContext.size} строк из ${opts.dump}` : "нет (дампа нет)"
     }`,
   );
+  if (choiceHits.length) {
+    console.log(
+      `исключено UI-выборов: ${choiceHits.length} (${choiceHits
+        .map((c) => JSON.stringify(c.msgid))
+        .join(", ")})`,
+    );
+  }
   console.log(
     `по спикерам: ${[...speakerCounts.entries()]
       .sort((a, b) => b[1] - a[1])
@@ -505,6 +599,7 @@ export async function run(opts: CliOptions): Promise<number> {
       secondsPerLine: Number(perLine.toFixed(3)),
       fallbacks: result.fallbacks,
       errors: result.errors,
+      retries: result.retries,
       generatedAt: new Date().toISOString(),
       distribution: distribution(result.emotions),
     },
@@ -514,7 +609,8 @@ export async function run(opts: CliOptions): Promise<number> {
 
   console.log(
     `размечено: ${Object.keys(sortedEmotions).length}; ${perLine.toFixed(2)} с/строка ` +
-      `(всего ${totalSeconds.toFixed(1)} с); fallback ${result.fallbacks}`,
+      `(всего ${totalSeconds.toFixed(1)} с); fallback ${result.fallbacks}; ` +
+      `повторов из-за семьи ${result.retries}`,
   );
   for (const [emotion, count] of distribution(result.emotions).slice(0, 10)) {
     console.log(`  ${String(count).padStart(4)}  ${emotion}`);
